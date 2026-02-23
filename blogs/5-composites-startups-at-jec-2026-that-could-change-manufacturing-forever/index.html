@@ -724,13 +724,449 @@
           </div>
 
           <!-- Infographic placeholder for Figure 1 -->
-          <div class="infographic-placeholder">
-            <p class="infographic-label">Suggested Infographic — Figure 1</p>
-            <p class="infographic-description">
-              Fibionic FFP Process Schematic: Airstream fiber deposition
-              creating load-path-optimized reinforcement preforms, followed by
-              overmolding via injection or compression molding.
-            </p>
+
+          <div class="fibionic-process-container">
+            <h4 class="fibionic-process-title">
+              Fibionic Hybrid Process: Airstream Deposition → Overmolding
+            </h4>
+            <div class="fibionic-process-subtitle">
+              Two-step thermoplastic composite manufacturing combining load-path
+              fiber placement with injection overmolding
+            </div>
+
+            <div class="fibionic-process-flow">
+              <!-- Stage 1: Airstream Deposition -->
+              <div class="fibionic-stage" id="fibionicStage1">
+                <span class="fibionic-stage-label">Step 1</span>
+                <div class="fibionic-stage-name">Airstream Deposition</div>
+                <svg
+                  class="fibionic-visual"
+                  viewBox="0 0 320 140"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- Substrate base -->
+                  <rect
+                    x="40"
+                    y="100"
+                    width="240"
+                    height="20"
+                    rx="3"
+                    fill="#e2e8f0"
+                    stroke="#9d9d9c"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="160"
+                    y="114"
+                    text-anchor="middle"
+                    font-size="9"
+                    fill="#64748b"
+                    font-family="Inter, sans-serif"
+                  >
+                    Substrate
+                  </text>
+                  <!-- Fibers being placed along load paths -->
+                  <line
+                    x1="60"
+                    y1="95"
+                    x2="120"
+                    y2="60"
+                    stroke="#47577c"
+                    stroke-width="2.5"
+                    class="fiber-line-anim"
+                  />
+                  <line
+                    x1="120"
+                    y1="60"
+                    x2="180"
+                    y2="95"
+                    stroke="#47577c"
+                    stroke-width="2.5"
+                    class="fiber-line-anim"
+                    style="animation-delay: 0.2s"
+                  />
+                  <line
+                    x1="180"
+                    y1="95"
+                    x2="240"
+                    y2="60"
+                    stroke="#47577c"
+                    stroke-width="2.5"
+                    class="fiber-line-anim"
+                    style="animation-delay: 0.4s"
+                  />
+                  <line
+                    x1="240"
+                    y1="60"
+                    x2="280"
+                    y2="85"
+                    stroke="#47577c"
+                    stroke-width="2.5"
+                    class="fiber-line-anim"
+                    style="animation-delay: 0.6s"
+                  />
+                  <!-- Second fiber path -->
+                  <line
+                    x1="60"
+                    y1="85"
+                    x2="110"
+                    y2="50"
+                    stroke="#bf3425"
+                    stroke-width="2"
+                    class="fiber-line-anim"
+                    style="animation-delay: 0.3s"
+                  />
+                  <line
+                    x1="110"
+                    y1="50"
+                    x2="170"
+                    y2="85"
+                    stroke="#bf3425"
+                    stroke-width="2"
+                    class="fiber-line-anim"
+                    style="animation-delay: 0.5s"
+                  />
+                  <line
+                    x1="170"
+                    y1="85"
+                    x2="230"
+                    y2="50"
+                    stroke="#bf3425"
+                    stroke-width="2"
+                    class="fiber-line-anim"
+                    style="animation-delay: 0.7s"
+                  />
+                  <line
+                    x1="230"
+                    y1="50"
+                    x2="270"
+                    y2="75"
+                    stroke="#bf3425"
+                    stroke-width="2"
+                    class="fiber-line-anim"
+                    style="animation-delay: 0.9s"
+                  />
+                  <!-- Deposition head -->
+                  <rect
+                    x="50"
+                    y="15"
+                    width="50"
+                    height="25"
+                    rx="4"
+                    fill="#47577c"
+                    opacity="0.9"
+                  />
+                  <text
+                    x="75"
+                    y="31"
+                    text-anchor="middle"
+                    font-size="8"
+                    fill="#ffffff"
+                    font-weight="600"
+                    font-family="Inter, sans-serif"
+                  >
+                    HEAD
+                  </text>
+                  <line
+                    x1="75"
+                    y1="40"
+                    x2="60"
+                    y2="85"
+                    stroke="#47577c"
+                    stroke-width="1"
+                    stroke-dasharray="3,3"
+                    opacity="0.4"
+                  />
+                  <!-- Airstream arrows -->
+                  <path
+                    d="M55,22 L45,17 M55,22 L45,27"
+                    stroke="#9d9d9c"
+                    stroke-width="1.5"
+                    fill="none"
+                  />
+                  <path
+                    d="M55,30 L45,25 M55,30 L45,35"
+                    stroke="#9d9d9c"
+                    stroke-width="1.5"
+                    fill="none"
+                  />
+                  <text
+                    x="30"
+                    y="28"
+                    text-anchor="middle"
+                    font-size="7"
+                    fill="#9d9d9c"
+                    font-family="Inter, sans-serif"
+                  >
+                    Air
+                  </text>
+                  <!-- Speed label -->
+                  <text
+                    x="260"
+                    y="25"
+                    text-anchor="end"
+                    font-size="9"
+                    fill="#bf3425"
+                    font-weight="600"
+                    font-family="Inter, sans-serif"
+                  >
+                    ~milliseconds
+                  </text>
+                </svg>
+                <div class="fibionic-detail-tags">
+                  <span class="fibionic-tag">Load-path fibers</span>
+                  <span class="fibionic-tag">Pneumatic placement</span>
+                  <span class="fibionic-tag">Ultra-fast</span>
+                </div>
+                <div class="fibionic-tooltip">
+                  Fibers are pneumatically deposited along calculated load paths
+                  at extremely high speeds, creating an optimized preform in
+                  milliseconds.
+                </div>
+              </div>
+
+              <!-- Arrow -->
+              <div class="fibionic-arrow">
+                <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M8 24 L36 24"
+                    stroke="#9d9d9c"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M30 18 L36 24 L30 30"
+                    stroke="#9d9d9c"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="fibionic-arrow-text">Transfer</div>
+              </div>
+
+              <!-- Stage 2: Overmolding -->
+              <div class="fibionic-stage" id="fibionicStage2">
+                <span class="fibionic-stage-label">Step 2</span>
+                <div class="fibionic-stage-name">Overmolding</div>
+                <svg
+                  class="fibionic-visual"
+                  viewBox="0 0 320 140"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- Mold top -->
+                  <rect
+                    x="60"
+                    y="10"
+                    width="200"
+                    height="35"
+                    rx="4"
+                    fill="#9d9d9c"
+                    opacity="0.3"
+                    class="mold-pulse"
+                  />
+                  <rect
+                    x="60"
+                    y="10"
+                    width="200"
+                    height="35"
+                    rx="4"
+                    fill="none"
+                    stroke="#9d9d9c"
+                    stroke-width="1.5"
+                  />
+                  <text
+                    x="160"
+                    y="32"
+                    text-anchor="middle"
+                    font-size="9"
+                    fill="#64748b"
+                    font-family="Inter, sans-serif"
+                    font-weight="600"
+                  >
+                    MOLD (top)
+                  </text>
+                  <!-- Injection arrows -->
+                  <path
+                    d="M160,45 L160,55"
+                    stroke="#bf3425"
+                    stroke-width="2"
+                    stroke-dasharray="2,2"
+                  />
+                  <path
+                    d="M120,45 L130,55"
+                    stroke="#bf3425"
+                    stroke-width="1.5"
+                    stroke-dasharray="2,2"
+                    opacity="0.6"
+                  />
+                  <path
+                    d="M200,45 L190,55"
+                    stroke="#bf3425"
+                    stroke-width="1.5"
+                    stroke-dasharray="2,2"
+                    opacity="0.6"
+                  />
+                  <!-- Consolidated preform with embedded fibers -->
+                  <rect
+                    x="80"
+                    y="55"
+                    width="160"
+                    height="35"
+                    rx="3"
+                    fill="#bf3425"
+                    opacity="0.15"
+                    class="mold-pulse"
+                    style="animation-delay: 0.5s"
+                  />
+                  <rect
+                    x="80"
+                    y="55"
+                    width="160"
+                    height="35"
+                    rx="3"
+                    fill="none"
+                    stroke="#bf3425"
+                    stroke-width="1.5"
+                  />
+                  <!-- Fiber traces inside preform -->
+                  <line
+                    x1="90"
+                    y1="65"
+                    x2="130"
+                    y2="80"
+                    stroke="#47577c"
+                    stroke-width="1.5"
+                    opacity="0.6"
+                  />
+                  <line
+                    x1="130"
+                    y1="80"
+                    x2="170"
+                    y2="65"
+                    stroke="#47577c"
+                    stroke-width="1.5"
+                    opacity="0.6"
+                  />
+                  <line
+                    x1="170"
+                    y1="65"
+                    x2="210"
+                    y2="80"
+                    stroke="#47577c"
+                    stroke-width="1.5"
+                    opacity="0.6"
+                  />
+                  <line
+                    x1="210"
+                    y1="80"
+                    x2="230"
+                    y2="70"
+                    stroke="#47577c"
+                    stroke-width="1.5"
+                    opacity="0.6"
+                  />
+                  <text
+                    x="160"
+                    y="75"
+                    text-anchor="middle"
+                    font-size="9"
+                    fill="#1e293b"
+                    font-weight="600"
+                    font-family="Inter, sans-serif"
+                  >
+                    PREFORM
+                  </text>
+                  <!-- Mold bottom -->
+                  <rect
+                    x="60"
+                    y="95"
+                    width="200"
+                    height="35"
+                    rx="4"
+                    fill="#9d9d9c"
+                    opacity="0.3"
+                    class="mold-pulse"
+                    style="animation-delay: 1s"
+                  />
+                  <rect
+                    x="60"
+                    y="95"
+                    width="200"
+                    height="35"
+                    rx="4"
+                    fill="none"
+                    stroke="#9d9d9c"
+                    stroke-width="1.5"
+                  />
+                  <text
+                    x="160"
+                    y="117"
+                    text-anchor="middle"
+                    font-size="9"
+                    fill="#64748b"
+                    font-family="Inter, sans-serif"
+                    font-weight="600"
+                  >
+                    MOLD (bottom)
+                  </text>
+                  <!-- Pressure arrows -->
+                  <path
+                    d="M80,95 L80,90 M160,95 L160,90 M240,95 L240,90"
+                    stroke="#9d9d9c"
+                    stroke-width="1.5"
+                  />
+                  <!-- Label -->
+                  <text
+                    x="290"
+                    y="75"
+                    text-anchor="end"
+                    font-size="9"
+                    fill="#bf3425"
+                    font-weight="600"
+                    font-family="Inter, sans-serif"
+                  >
+                    Injection
+                  </text>
+                </svg>
+                <div class="fibionic-detail-tags">
+                  <span class="fibionic-tag">Injection molding</span>
+                  <span class="fibionic-tag">Consolidated part</span>
+                  <span class="fibionic-tag">Net-shape</span>
+                </div>
+                <div class="fibionic-tooltip">
+                  The fiber preform is placed into an injection mold where
+                  thermoplastic resin is overmolded, creating a fully
+                  consolidated final part with optimized mechanical properties.
+                </div>
+              </div>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="fibionic-stats-row">
+              <div class="fibionic-stat">
+                <div class="fibionic-stat-value">ms</div>
+                <div class="fibionic-stat-label">Fiber Placement Speed</div>
+              </div>
+              <div class="fibionic-stat">
+                <div class="fibionic-stat-value">2-Step</div>
+                <div class="fibionic-stat-label">Hybrid Process</div>
+              </div>
+              <div class="fibionic-stat">
+                <div class="fibionic-stat-value">Load-Path</div>
+                <div class="fibionic-stat-label">Optimized Fibers</div>
+              </div>
+              <div class="fibionic-stat">
+                <div class="fibionic-stat-value">Net Shape</div>
+                <div class="fibionic-stat-label">Final Part Output</div>
+              </div>
+            </div>
+
+            <div class="fibionic-source">
+              Source: Based on Fibionic process description [9][10]
+            </div>
           </div>
         </section>
 
@@ -881,14 +1317,262 @@
           </div>
 
           <!-- Infographic placeholder for Figure 2 -->
-          <div class="infographic-placeholder">
-            <p class="infographic-label">Suggested Infographic — Figure 2</p>
-            <p class="infographic-description">
-              Carbon Fiber Precursor Pathways: Comparison of conventional
-              PAN-based and CGreen cellulose-based carbon fiber production
-              routes, showing fossil feedstock → PAN vs. recycled paper/cotton →
-              cellulose precursor pathways.
-            </p>
+
+          <div class="cgreen-compare-container">
+            <h4 class="cgreen-compare-title">
+              Carbon Fiber Precursor Pathway: Conventional vs. CGreen
+            </h4>
+            <div class="cgreen-compare-subtitle">
+              Comparing fossil-based PAN against recycled cellulose-based carbon
+              fiber production
+            </div>
+
+            <div class="cgreen-columns">
+              <!-- Conventional Column -->
+              <div class="cgreen-col cgreen-col--conv">
+                <div class="cgreen-col-header">Conventional</div>
+
+                <div class="cgreen-step">
+                  <div class="cgreen-step-label">Feedstock</div>
+                  <div class="cgreen-step-name">Fossil Feedstock</div>
+                  <div class="cgreen-step-detail">Petroleum / Natural gas</div>
+                  <div class="cgreen-step-tooltip">
+                    Derived from acrylonitrile, a petrochemical product
+                    requiring fossil fuel extraction and refining.
+                  </div>
+                </div>
+
+                <div class="cgreen-arrow-down">
+                  <svg viewBox="0 0 20 28">
+                    <path
+                      d="M10 2 L10 20 M5 16 L10 22 L15 16"
+                      fill="none"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+
+                <div class="cgreen-step">
+                  <div class="cgreen-step-label">Precursor</div>
+                  <div class="cgreen-step-name">PAN Precursor</div>
+                  <div class="cgreen-step-detail">Polyacrylonitrile</div>
+                  <div class="cgreen-step-tooltip">
+                    PAN accounts for ~50% of carbon fiber production cost and is
+                    entirely petroleum-derived.
+                  </div>
+                </div>
+
+                <div class="cgreen-arrow-down">
+                  <svg viewBox="0 0 20 28">
+                    <path
+                      d="M10 2 L10 20 M5 16 L10 22 L15 16"
+                      fill="none"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+
+                <div class="cgreen-step">
+                  <div class="cgreen-step-label">Stabilization</div>
+                  <div class="cgreen-step-name">Oxidation</div>
+                  <div class="cgreen-step-detail">200–300 °C</div>
+                  <div class="cgreen-step-tooltip">
+                    Fibers are heated in air to stabilize the molecular
+                    structure, a slow and energy-intensive step.
+                  </div>
+                </div>
+
+                <div class="cgreen-arrow-down">
+                  <svg viewBox="0 0 20 28">
+                    <path
+                      d="M10 2 L10 20 M5 16 L10 22 L15 16"
+                      fill="none"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+
+                <div class="cgreen-step">
+                  <div class="cgreen-step-label">Conversion</div>
+                  <div class="cgreen-step-name">Carbonization</div>
+                  <div class="cgreen-step-detail">1000–1500 °C</div>
+                  <div class="cgreen-step-tooltip">
+                    High-temperature treatment in inert atmosphere drives off
+                    non-carbon atoms, yielding >90% carbon content.
+                  </div>
+                </div>
+
+                <div class="cgreen-arrow-down">
+                  <svg viewBox="0 0 20 28">
+                    <path
+                      d="M10 2 L10 20 M5 16 L10 22 L15 16"
+                      fill="none"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+
+                <div class="cgreen-result">
+                  <div class="cgreen-result-title">Carbon Fiber</div>
+                  <div class="cgreen-result-co2">
+                    CO₂ Footprint: <strong>Baseline</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CGreen Column -->
+              <div class="cgreen-col cgreen-col--green">
+                <div class="cgreen-col-header">CGreen</div>
+
+                <div class="cgreen-step">
+                  <div class="cgreen-step-label">Feedstock</div>
+                  <div class="cgreen-step-name">Recycled Paper / Cotton</div>
+                  <div class="cgreen-step-detail">Bio-based waste streams</div>
+                  <div class="cgreen-step-tooltip">
+                    Uses recycled paper or cotton waste as feedstock — fully
+                    bio-based, diverting waste from landfills.
+                  </div>
+                </div>
+
+                <div class="cgreen-arrow-down">
+                  <svg viewBox="0 0 20 28">
+                    <path
+                      d="M10 2 L10 20 M5 16 L10 22 L15 16"
+                      fill="none"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+
+                <div class="cgreen-step">
+                  <div class="cgreen-step-label">Precursor</div>
+                  <div class="cgreen-step-name">Cellulose Precursor</div>
+                  <div class="cgreen-step-detail">Bio-derived polymer</div>
+                  <div class="cgreen-step-tooltip">
+                    Cellulose extracted from recycled sources replaces
+                    petroleum-based PAN, dramatically lowering embodied carbon.
+                  </div>
+                </div>
+
+                <div class="cgreen-arrow-down">
+                  <svg viewBox="0 0 20 28">
+                    <path
+                      d="M10 2 L10 20 M5 16 L10 22 L15 16"
+                      fill="none"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+
+                <div class="cgreen-step">
+                  <div class="cgreen-step-label">Processing</div>
+                  <div class="cgreen-step-name">Proprietary Spinning</div>
+                  <div class="cgreen-step-detail">Optimized process</div>
+                  <div class="cgreen-step-tooltip">
+                    A proprietary spinning process converts cellulose into
+                    precursor fibers with reduced energy consumption and
+                    chemical usage.
+                  </div>
+                </div>
+
+                <div class="cgreen-arrow-down">
+                  <svg viewBox="0 0 20 28">
+                    <path
+                      d="M10 2 L10 20 M5 16 L10 22 L15 16"
+                      fill="none"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+
+                <div class="cgreen-step">
+                  <div class="cgreen-step-label">Conversion</div>
+                  <div class="cgreen-step-name">Carbonization</div>
+                  <div class="cgreen-step-detail">Optimized temperatures</div>
+                  <div class="cgreen-step-tooltip">
+                    Optimized carbonization parameters for cellulose-based
+                    fibers reduce energy demand compared to conventional PAN
+                    processing.
+                  </div>
+                </div>
+
+                <div class="cgreen-arrow-down">
+                  <svg viewBox="0 0 20 28">
+                    <path
+                      d="M10 2 L10 20 M5 16 L10 22 L15 16"
+                      fill="none"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+
+                <div class="cgreen-result">
+                  <div class="cgreen-result-title">Carbon Fiber</div>
+                  <div class="cgreen-result-co2">
+                    CO₂ Footprint: <strong>~3× Lower</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CO2 Comparison Bar -->
+            <div class="cgreen-co2-compare">
+              <div class="cgreen-co2-compare-title">
+                CO₂ Emissions Comparison
+              </div>
+              <div class="cgreen-co2-bars">
+                <div class="cgreen-co2-bar-row">
+                  <div class="cgreen-co2-bar-label" style="color: #47577c">
+                    Conventional
+                  </div>
+                  <div class="cgreen-co2-bar-track">
+                    <div
+                      class="cgreen-co2-bar-fill cgreen-co2-bar-fill--conv"
+                      id="cgreenBarConv"
+                    >
+                      Baseline (100%)
+                    </div>
+                  </div>
+                </div>
+                <div class="cgreen-co2-bar-row">
+                  <div class="cgreen-co2-bar-label" style="color: #bf3425">
+                    CGreen
+                  </div>
+                  <div class="cgreen-co2-bar-track">
+                    <div
+                      class="cgreen-co2-bar-fill cgreen-co2-bar-fill--green"
+                      id="cgreenBarGreen"
+                    >
+                      ~33%
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cgreen-co2-badge-wrap">
+                <span class="cgreen-co2-badge">~3× Lower CO₂ Footprint</span>
+              </div>
+            </div>
+
+            <div class="cgreen-source">
+              Source: Based on CGreen and IRT Jules Verne process descriptions
+              [12][13]
+            </div>
           </div>
         </section>
 
@@ -1036,14 +1720,510 @@
           </div>
 
           <!-- Infographic placeholder for Figure 3 -->
-          <div class="infographic-placeholder">
-            <p class="infographic-label">Suggested Infographic — Figure 3</p>
-            <p class="infographic-description">
-              PolyMorphic Moulding Concept: Fyous pin-based reconfigurable mold
-              system showing digital geometry → pin array (28,000 pins) → final
-              mold surface with flexible membrane. Reconfiguration in under 20
-              minutes.
-            </p>
+
+          <div class="fyous-process-container">
+            <h4 class="fyous-process-title">
+              Fyous Reconfigurable Mold Technology
+            </h4>
+            <div class="fyous-process-subtitle">
+              From CAD geometry to production-ready mold surface in ~20 minutes
+              using 28,000 actuated pins
+            </div>
+
+            <div class="fyous-flow">
+              <!-- Stage 1: Digital Geometry -->
+              <div class="fyous-stage">
+                <span class="fyous-stage-badge">Step 1</span>
+                <div class="fyous-stage-name">Digital Geometry</div>
+                <svg
+                  class="fyous-visual"
+                  viewBox="0 0 260 140"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- Grid background -->
+                  <line
+                    x1="30"
+                    y1="20"
+                    x2="30"
+                    y2="120"
+                    stroke="#e2e8f0"
+                    stroke-width="0.5"
+                  />
+                  <line
+                    x1="70"
+                    y1="20"
+                    x2="70"
+                    y2="120"
+                    stroke="#e2e8f0"
+                    stroke-width="0.5"
+                  />
+                  <line
+                    x1="110"
+                    y1="20"
+                    x2="110"
+                    y2="120"
+                    stroke="#e2e8f0"
+                    stroke-width="0.5"
+                  />
+                  <line
+                    x1="150"
+                    y1="20"
+                    x2="150"
+                    y2="120"
+                    stroke="#e2e8f0"
+                    stroke-width="0.5"
+                  />
+                  <line
+                    x1="190"
+                    y1="20"
+                    x2="190"
+                    y2="120"
+                    stroke="#e2e8f0"
+                    stroke-width="0.5"
+                  />
+                  <line
+                    x1="230"
+                    y1="20"
+                    x2="230"
+                    y2="120"
+                    stroke="#e2e8f0"
+                    stroke-width="0.5"
+                  />
+                  <line
+                    x1="30"
+                    y1="40"
+                    x2="230"
+                    y2="40"
+                    stroke="#e2e8f0"
+                    stroke-width="0.5"
+                  />
+                  <line
+                    x1="30"
+                    y1="70"
+                    x2="230"
+                    y2="70"
+                    stroke="#e2e8f0"
+                    stroke-width="0.5"
+                  />
+                  <line
+                    x1="30"
+                    y1="100"
+                    x2="230"
+                    y2="100"
+                    stroke="#e2e8f0"
+                    stroke-width="0.5"
+                  />
+                  <!-- 3D wireframe surface -->
+                  <path
+                    d="M40,90 Q80,50 130,75 Q180,100 220,55"
+                    fill="none"
+                    stroke="#47577c"
+                    stroke-width="2.5"
+                    class="fyous-cad-dash"
+                  />
+                  <path
+                    d="M50,95 Q90,60 140,80 Q185,100 225,62"
+                    fill="none"
+                    stroke="#47577c"
+                    stroke-width="1.5"
+                    class="fyous-cad-dash"
+                    style="animation-delay: 0.3s"
+                    opacity="0.5"
+                  />
+                  <path
+                    d="M35,85 Q75,45 125,70 Q175,95 215,50"
+                    fill="none"
+                    stroke="#47577c"
+                    stroke-width="1.5"
+                    class="fyous-cad-dash"
+                    style="animation-delay: 0.6s"
+                    opacity="0.5"
+                  />
+                  <!-- Control points -->
+                  <circle cx="40" cy="90" r="3" fill="#47577c" />
+                  <circle cx="130" cy="75" r="3" fill="#47577c" />
+                  <circle cx="220" cy="55" r="3" fill="#47577c" />
+                  <circle
+                    cx="80"
+                    cy="60"
+                    r="2.5"
+                    fill="#47577c"
+                    opacity="0.6"
+                  />
+                  <circle
+                    cx="180"
+                    cy="95"
+                    r="2.5"
+                    fill="#47577c"
+                    opacity="0.6"
+                  />
+                  <!-- Label -->
+                  <text
+                    x="130"
+                    y="128"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#47577c"
+                    font-weight="600"
+                    font-family="Inter, sans-serif"
+                  >
+                    CAD Model
+                  </text>
+                </svg>
+                <div class="fyous-tags">
+                  <span class="fyous-tag">CAD import</span>
+                  <span class="fyous-tag">3D surface</span>
+                  <span class="fyous-tag">Digital twin</span>
+                </div>
+                <div class="fyous-tooltip">
+                  The target mold geometry is defined digitally — any freeform
+                  3D surface can be imported from standard CAD files.
+                </div>
+              </div>
+
+              <!-- Arrow 1 -->
+              <div class="fyous-arrow">
+                <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6 18 L26 18"
+                    stroke="#9d9d9c"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M21 12 L27 18 L21 24"
+                    stroke="#9d9d9c"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="fyous-arrow-label">~20 min</div>
+              </div>
+
+              <!-- Stage 2: Pin Array -->
+              <div class="fyous-stage">
+                <span class="fyous-stage-badge">Step 2</span>
+                <div class="fyous-stage-name">Pin Array</div>
+                <svg
+                  class="fyous-visual"
+                  viewBox="0 0 260 140"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- Base plate -->
+                  <rect
+                    x="25"
+                    y="110"
+                    width="210"
+                    height="12"
+                    rx="2"
+                    fill="#e2e8f0"
+                    stroke="#9d9d9c"
+                    stroke-width="1"
+                  />
+                  <!-- Pins at varying heights to form a curved surface -->
+                  <rect
+                    x="35"
+                    y="60"
+                    width="8"
+                    height="50"
+                    rx="1"
+                    fill="#9d9d9c"
+                    class="fyous-pin-anim"
+                    style="animation-delay: 0s"
+                  />
+                  <rect
+                    x="50"
+                    y="48"
+                    width="8"
+                    height="62"
+                    rx="1"
+                    fill="#9d9d9c"
+                    class="fyous-pin-anim"
+                    style="animation-delay: 0.1s"
+                  />
+                  <rect
+                    x="65"
+                    y="40"
+                    width="8"
+                    height="70"
+                    rx="1"
+                    fill="#9d9d9c"
+                    class="fyous-pin-anim"
+                    style="animation-delay: 0.2s"
+                  />
+                  <rect
+                    x="80"
+                    y="35"
+                    width="8"
+                    height="75"
+                    rx="1"
+                    fill="#9d9d9c"
+                    class="fyous-pin-anim"
+                    style="animation-delay: 0.3s"
+                  />
+                  <rect
+                    x="95"
+                    y="38"
+                    width="8"
+                    height="72"
+                    rx="1"
+                    fill="#9d9d9c"
+                    class="fyous-pin-anim"
+                    style="animation-delay: 0.4s"
+                  />
+                  <rect
+                    x="110"
+                    y="45"
+                    width="8"
+                    height="65"
+                    rx="1"
+                    fill="#9d9d9c"
+                    class="fyous-pin-anim"
+                    style="animation-delay: 0.5s"
+                  />
+                  <rect
+                    x="125"
+                    y="52"
+                    width="8"
+                    height="58"
+                    rx="1"
+                    fill="#9d9d9c"
+                    class="fyous-pin-anim"
+                    style="animation-delay: 0.6s"
+                  />
+                  <rect
+                    x="140"
+                    y="55"
+                    width="8"
+                    height="55"
+                    rx="1"
+                    fill="#9d9d9c"
+                    class="fyous-pin-anim"
+                    style="animation-delay: 0.7s"
+                  />
+                  <rect
+                    x="155"
+                    y="48"
+                    width="8"
+                    height="62"
+                    rx="1"
+                    fill="#9d9d9c"
+                    class="fyous-pin-anim"
+                    style="animation-delay: 0.8s"
+                  />
+                  <rect
+                    x="170"
+                    y="40"
+                    width="8"
+                    height="70"
+                    rx="1"
+                    fill="#9d9d9c"
+                    class="fyous-pin-anim"
+                    style="animation-delay: 0.9s"
+                  />
+                  <rect
+                    x="185"
+                    y="35"
+                    width="8"
+                    height="75"
+                    rx="1"
+                    fill="#9d9d9c"
+                    class="fyous-pin-anim"
+                    style="animation-delay: 1s"
+                  />
+                  <rect
+                    x="200"
+                    y="42"
+                    width="8"
+                    height="68"
+                    rx="1"
+                    fill="#9d9d9c"
+                    class="fyous-pin-anim"
+                    style="animation-delay: 1.1s"
+                  />
+                  <rect
+                    x="215"
+                    y="52"
+                    width="8"
+                    height="58"
+                    rx="1"
+                    fill="#9d9d9c"
+                    class="fyous-pin-anim"
+                    style="animation-delay: 1.2s"
+                  />
+                  <!-- Curved profile line over pin tops -->
+                  <path
+                    d="M39,60 Q57,46 69,40 Q89,33 99,38 Q119,46 129,52 Q149,58 159,48 Q179,36 189,35 Q209,40 219,52"
+                    fill="none"
+                    stroke="#47577c"
+                    stroke-width="2"
+                    stroke-dasharray="4,3"
+                  />
+                  <!-- Label -->
+                  <text
+                    x="130"
+                    y="128"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#9d9d9c"
+                    font-weight="600"
+                    font-family="Inter, sans-serif"
+                  >
+                    28,000 Pins
+                  </text>
+                </svg>
+                <div class="fyous-tags">
+                  <span class="fyous-tag">28,000 actuators</span>
+                  <span class="fyous-tag">Height-controlled</span>
+                  <span class="fyous-tag">Reconfigurable</span>
+                </div>
+                <div class="fyous-tooltip">
+                  28,000 individually actuated pins move to precise heights,
+                  physically replicating the digital surface geometry within ~20
+                  minutes.
+                </div>
+              </div>
+
+              <!-- Arrow 2 -->
+              <div class="fyous-arrow">
+                <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6 18 L26 18"
+                    stroke="#9d9d9c"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M21 12 L27 18 L21 24"
+                    stroke="#9d9d9c"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="fyous-arrow-label">Membrane</div>
+              </div>
+
+              <!-- Stage 3: Final Mold -->
+              <div class="fyous-stage">
+                <span class="fyous-stage-badge">Step 3</span>
+                <div class="fyous-stage-name">Final Mold Surface</div>
+                <svg
+                  class="fyous-visual"
+                  viewBox="0 0 260 140"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- Mold body (solid filled shape) -->
+                  <path
+                    d="M30,110 L30,80 Q80,40 130,70 Q180,100 230,55 L230,110 Z"
+                    fill="#bf3425"
+                    opacity="0.12"
+                  />
+                  <path
+                    d="M30,80 Q80,40 130,70 Q180,100 230,55"
+                    fill="none"
+                    stroke="#bf3425"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                  />
+                  <!-- Smooth surface highlight -->
+                  <path
+                    d="M35,77 Q83,38 132,67 Q178,96 228,53"
+                    fill="none"
+                    stroke="#bf3425"
+                    stroke-width="1"
+                    opacity="0.3"
+                  />
+                  <!-- Membrane label annotation -->
+                  <line
+                    x1="160"
+                    y1="30"
+                    x2="160"
+                    y2="82"
+                    stroke="#9d9d9c"
+                    stroke-width="1"
+                    stroke-dasharray="3,2"
+                  />
+                  <circle cx="160" cy="82" r="2.5" fill="#9d9d9c" />
+                  <rect
+                    x="115"
+                    y="18"
+                    width="90"
+                    height="18"
+                    rx="4"
+                    fill="#ffffff"
+                    stroke="#9d9d9c"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="160"
+                    y="30"
+                    text-anchor="middle"
+                    font-size="9"
+                    fill="#64748b"
+                    font-weight="600"
+                    font-family="Inter, sans-serif"
+                  >
+                    Membrane layer
+                  </text>
+                  <!-- Surface quality indicators -->
+                  <circle cx="70" cy="64" r="2" fill="#bf3425" opacity="0.5" />
+                  <circle cx="110" cy="72" r="2" fill="#bf3425" opacity="0.5" />
+                  <circle cx="195" cy="70" r="2" fill="#bf3425" opacity="0.5" />
+                  <!-- Smooth surface label -->
+                  <text
+                    x="130"
+                    y="128"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#bf3425"
+                    font-weight="600"
+                    font-family="Inter, sans-serif"
+                  >
+                    Production-Ready Surface
+                  </text>
+                </svg>
+                <div class="fyous-tags">
+                  <span class="fyous-tag">Smooth surface</span>
+                  <span class="fyous-tag">Membrane interpolation</span>
+                  <span class="fyous-tag">Layup-ready</span>
+                </div>
+                <div class="fyous-tooltip">
+                  An elastomeric membrane drapes over the pin tips,
+                  interpolating between them to produce a smooth, continuous
+                  mold surface ready for composite layup.
+                </div>
+              </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="fyous-stats">
+              <div class="fyous-stat">
+                <div class="fyous-stat-value">28K</div>
+                <div class="fyous-stat-label">Actuated Pins</div>
+              </div>
+              <div class="fyous-stat">
+                <div class="fyous-stat-value">~20 min</div>
+                <div class="fyous-stat-label">Reconfiguration Time</div>
+              </div>
+              <div class="fyous-stat">
+                <div class="fyous-stat-value">∞</div>
+                <div class="fyous-stat-label">Reusable Geometries</div>
+              </div>
+              <div class="fyous-stat">
+                <div class="fyous-stat-value">Zero</div>
+                <div class="fyous-stat-label">Mold Waste</div>
+              </div>
+            </div>
+
+            <div class="fyous-source">
+              Source: Based on Fyous product descriptions [14][15][16]
+            </div>
           </div>
         </section>
 
@@ -1250,14 +2430,584 @@
           </div>
 
           <!-- Infographic placeholder for Figure 4 -->
-          <div class="infographic-placeholder">
-            <p class="infographic-label">Suggested Infographic — Figure 4</p>
-            <p class="infographic-description">
-              GENE.SYS Lifecycle Tracking: Composite part lifecycle with
-              embedded chip tracking across manufacture → in-service →
-              end-of-life stages, connected to a cloud database and EU Digital
-              Product Passport.
-            </p>
+
+          <div class="genesys-container">
+            <h4 class="genesys-title">GENE.SYS: Full Lifecycle Digital Twin</h4>
+            <div class="genesys-subtitle">
+              Cradle-to-grave data continuity from manufacturing through
+              in-service to end-of-life, feeding the EU Digital Product Passport
+            </div>
+
+            <!-- Three lifecycle phases -->
+            <div class="genesys-phases">
+              <!-- Phase 1: Manufacture -->
+              <div class="genesys-phase">
+                <div class="genesys-phase-card">
+                  <span class="genesys-phase-badge">Manufacture</span>
+                  <div class="genesys-phase-name">AFP / FW Layup + CHIP</div>
+                  <svg
+                    class="genesys-phase-icon"
+                    viewBox="0 0 200 70"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <!-- Layup surface -->
+                    <rect
+                      x="30"
+                      y="42"
+                      width="140"
+                      height="14"
+                      rx="3"
+                      fill="#47577c"
+                      opacity="0.12"
+                    />
+                    <rect
+                      x="30"
+                      y="42"
+                      width="140"
+                      height="14"
+                      rx="3"
+                      fill="none"
+                      stroke="#47577c"
+                      stroke-width="1.5"
+                    />
+                    <!-- Fiber tows being placed -->
+                    <line
+                      x1="40"
+                      y1="42"
+                      x2="80"
+                      y2="42"
+                      stroke="#47577c"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                    />
+                    <line
+                      x1="85"
+                      y1="42"
+                      x2="125"
+                      y2="42"
+                      stroke="#47577c"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      opacity="0.6"
+                    />
+                    <line
+                      x1="130"
+                      y1="42"
+                      x2="160"
+                      y2="42"
+                      stroke="#47577c"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      opacity="0.3"
+                    />
+                    <!-- AFP head -->
+                    <rect
+                      x="55"
+                      y="16"
+                      width="34"
+                      height="18"
+                      rx="3"
+                      fill="#47577c"
+                    />
+                    <text
+                      x="72"
+                      y="28"
+                      text-anchor="middle"
+                      font-size="7"
+                      fill="#ffffff"
+                      font-weight="600"
+                      font-family="Inter, sans-serif"
+                    >
+                      AFP
+                    </text>
+                    <line
+                      x1="72"
+                      y1="34"
+                      x2="72"
+                      y2="42"
+                      stroke="#47577c"
+                      stroke-width="1"
+                      stroke-dasharray="2,2"
+                    />
+                    <!-- Data signal -->
+                    <circle
+                      cx="155"
+                      cy="24"
+                      r="8"
+                      fill="none"
+                      stroke="#47577c"
+                      stroke-width="1"
+                      opacity="0.3"
+                    >
+                      <animate
+                        attributeName="r"
+                        values="5;12;5"
+                        dur="2s"
+                        repeatCount="indefinite"
+                      />
+                      <animate
+                        attributeName="opacity"
+                        values="0.5;0;0.5"
+                        dur="2s"
+                        repeatCount="indefinite"
+                      />
+                    </circle>
+                    <circle
+                      cx="155"
+                      cy="24"
+                      r="4"
+                      fill="#47577c"
+                      opacity="0.6"
+                    />
+                  </svg>
+                  <div class="genesys-phase-items">
+                    <div class="genesys-phase-item">Process parameters</div>
+                    <div class="genesys-phase-item">Material batch IDs</div>
+                    <div class="genesys-phase-item">
+                      Quality inspection data
+                    </div>
+                  </div>
+                </div>
+                <!-- Arrow to next phase -->
+                <div class="genesys-harrow">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4 12 L18 12 M14 7 L19 12 L14 17"
+                      fill="none"
+                      stroke="#9d9d9c"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="genesys-phase-tooltip">
+                  Captures all manufacturing data during AFP/FW layup including
+                  process parameters, material traceability, and automated
+                  quality inspection results via the CHIP system.
+                </div>
+              </div>
+
+              <!-- Phase 2: In-Service -->
+              <div class="genesys-phase">
+                <div class="genesys-phase-card">
+                  <span class="genesys-phase-badge">In-Service</span>
+                  <div class="genesys-phase-name">Operation & Maintenance</div>
+                  <svg
+                    class="genesys-phase-icon"
+                    viewBox="0 0 200 70"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <!-- Structure outline -->
+                    <path
+                      d="M30,55 L60,25 L140,25 L170,55"
+                      fill="none"
+                      stroke="#9d9d9c"
+                      stroke-width="2"
+                      stroke-linejoin="round"
+                    />
+                    <line
+                      x1="30"
+                      y1="55"
+                      x2="170"
+                      y2="55"
+                      stroke="#9d9d9c"
+                      stroke-width="2"
+                    />
+                    <!-- SHM sensor dots -->
+                    <circle
+                      cx="70"
+                      cy="35"
+                      r="3.5"
+                      fill="#9d9d9c"
+                      opacity="0.8"
+                    >
+                      <animate
+                        attributeName="opacity"
+                        values="0.4;1;0.4"
+                        dur="2.5s"
+                        repeatCount="indefinite"
+                      />
+                    </circle>
+                    <circle
+                      cx="100"
+                      cy="30"
+                      r="3.5"
+                      fill="#9d9d9c"
+                      opacity="0.8"
+                    >
+                      <animate
+                        attributeName="opacity"
+                        values="0.4;1;0.4"
+                        dur="2.5s"
+                        repeatCount="indefinite"
+                        begin="0.5s"
+                      />
+                    </circle>
+                    <circle
+                      cx="130"
+                      cy="35"
+                      r="3.5"
+                      fill="#9d9d9c"
+                      opacity="0.8"
+                    >
+                      <animate
+                        attributeName="opacity"
+                        values="0.4;1;0.4"
+                        dur="2.5s"
+                        repeatCount="indefinite"
+                        begin="1s"
+                      />
+                    </circle>
+                    <!-- Signal waves from sensors -->
+                    <circle
+                      cx="100"
+                      cy="30"
+                      r="10"
+                      fill="none"
+                      stroke="#9d9d9c"
+                      stroke-width="0.8"
+                      opacity="0"
+                    >
+                      <animate
+                        attributeName="r"
+                        values="6;18"
+                        dur="2s"
+                        repeatCount="indefinite"
+                      />
+                      <animate
+                        attributeName="opacity"
+                        values="0.4;0"
+                        dur="2s"
+                        repeatCount="indefinite"
+                      />
+                    </circle>
+                    <!-- Wrench icon for maintenance -->
+                    <text
+                      x="160"
+                      y="20"
+                      font-size="14"
+                      font-family="Inter, sans-serif"
+                    >
+                      🔧
+                    </text>
+                  </svg>
+                  <div class="genesys-phase-items">
+                    <div class="genesys-phase-item">Maintenance log</div>
+                    <div class="genesys-phase-item">Repair history</div>
+                    <div class="genesys-phase-item">SHM sensor readings</div>
+                  </div>
+                </div>
+                <!-- Arrow to next phase -->
+                <div class="genesys-harrow">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M4 12 L18 12 M14 7 L19 12 L14 17"
+                      fill="none"
+                      stroke="#9d9d9c"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="genesys-phase-tooltip">
+                  Continuously logs operational data, structural health
+                  monitoring (SHM) readings, maintenance events, and repair
+                  history throughout the product's service life.
+                </div>
+              </div>
+
+              <!-- Phase 3: End-of-Life -->
+              <div class="genesys-phase">
+                <div class="genesys-phase-card">
+                  <span class="genesys-phase-badge">End-of-Life</span>
+                  <div class="genesys-phase-name">Recycling & Recovery</div>
+                  <svg
+                    class="genesys-phase-icon"
+                    viewBox="0 0 200 70"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <!-- Recycle arrows (three curved arrows forming a triangle) -->
+                    <g transform="translate(100,38)">
+                      <g>
+                        <path
+                          d="M0,-20 L12,-6"
+                          fill="none"
+                          stroke="#bf3425"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M12,-6 L6,-6 L10,-2"
+                          fill="none"
+                          stroke="#bf3425"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </g>
+                      <g transform="rotate(120)">
+                        <path
+                          d="M0,-20 L12,-6"
+                          fill="none"
+                          stroke="#bf3425"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M12,-6 L6,-6 L10,-2"
+                          fill="none"
+                          stroke="#bf3425"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </g>
+                      <g transform="rotate(240)">
+                        <path
+                          d="M0,-20 L12,-6"
+                          fill="none"
+                          stroke="#bf3425"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M12,-6 L6,-6 L10,-2"
+                          fill="none"
+                          stroke="#bf3425"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </g>
+                    </g>
+                    <!-- Pulsing ring -->
+                    <circle
+                      cx="100"
+                      cy="38"
+                      r="24"
+                      fill="none"
+                      stroke="#bf3425"
+                      stroke-width="1"
+                      opacity="0"
+                    >
+                      <animate
+                        attributeName="r"
+                        values="20;30"
+                        dur="2s"
+                        repeatCount="indefinite"
+                      />
+                      <animate
+                        attributeName="opacity"
+                        values="0.4;0"
+                        dur="2s"
+                        repeatCount="indefinite"
+                      />
+                    </circle>
+                  </svg>
+                  <div class="genesys-phase-items">
+                    <div class="genesys-phase-item">Material composition</div>
+                    <div class="genesys-phase-item">Recycling pathway info</div>
+                    <div class="genesys-phase-item">Regulatory compliance</div>
+                  </div>
+                </div>
+                <div class="genesys-phase-tooltip">
+                  Provides complete material composition data and processing
+                  history to enable informed recycling decisions, material
+                  recovery, and regulatory compliance at end-of-life.
+                </div>
+              </div>
+            </div>
+
+            <!-- Down arrows to cloud -->
+            <div class="genesys-down-arrows">
+              <div class="genesys-down-arrow">
+                <svg viewBox="0 0 20 30">
+                  <path
+                    d="M10 2 L10 22 M5 18 L10 24 L15 18"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="genesys-down-arrow">
+                <svg viewBox="0 0 20 30">
+                  <path
+                    d="M10 2 L10 22 M5 18 L10 24 L15 18"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="genesys-down-arrow">
+                <svg viewBox="0 0 20 30">
+                  <path
+                    d="M10 2 L10 22 M5 18 L10 24 L15 18"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Cloud Database -->
+            <div class="genesys-cloud">
+              <div class="genesys-cloud-tooltip">
+                A centralized cloud platform that aggregates all lifecycle data
+                — from initial layup through service life to end-of-life —
+                creating a complete digital thread for each composite product.
+              </div>
+              <div class="genesys-cloud-header">
+                <div class="genesys-cloud-icon">
+                  <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7,18 Q2,18 2,14 Q2,10 6,9.5 Q6,5 11,5 Q15,5 16,8 Q17,7 19,7 Q23,7 23,11 Q26,11.5 26,14.5 Q26,18 22,18 Z"
+                      fill="rgba(255,255,255,0.2)"
+                      stroke="rgba(255,255,255,0.6)"
+                      stroke-width="1.5"
+                    />
+                    <!-- Database lines inside cloud -->
+                    <line
+                      x1="9"
+                      y1="13"
+                      x2="19"
+                      y2="13"
+                      stroke="rgba(255,255,255,0.4)"
+                      stroke-width="1"
+                    />
+                    <line
+                      x1="9"
+                      y1="15.5"
+                      x2="19"
+                      y2="15.5"
+                      stroke="rgba(255,255,255,0.4)"
+                      stroke-width="1"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="genesys-cloud-title">GENE.SYS Cloud Database</div>
+                  <div class="genesys-cloud-subtitle">
+                    Centralized lifecycle data aggregation
+                  </div>
+                </div>
+              </div>
+              <div class="genesys-cloud-cols">
+                <div class="genesys-cloud-col">
+                  <div class="genesys-cloud-col-title">Manufacture</div>
+                  <div class="genesys-cloud-col-item">Process params</div>
+                  <div class="genesys-cloud-col-item">Material batch</div>
+                  <div class="genesys-cloud-col-item">Quality data</div>
+                </div>
+                <div class="genesys-cloud-col">
+                  <div class="genesys-cloud-col-title">In-Service</div>
+                  <div class="genesys-cloud-col-item">Maintenance log</div>
+                  <div class="genesys-cloud-col-item">Repair history</div>
+                  <div class="genesys-cloud-col-item">SHM readings</div>
+                </div>
+                <div class="genesys-cloud-col">
+                  <div class="genesys-cloud-col-title">End-of-Life</div>
+                  <div class="genesys-cloud-col-item">Composition</div>
+                  <div class="genesys-cloud-col-item">Recycle info</div>
+                  <div class="genesys-cloud-col-item">Compliance</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Arrow to DPP -->
+            <div class="genesys-passport-arrow">
+              <svg viewBox="0 0 20 32">
+                <path
+                  d="M10 2 L10 24 M5 20 L10 26 L15 20"
+                  fill="none"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+
+            <!-- EU Digital Product Passport -->
+            <div class="genesys-dpp-wrap">
+              <div class="genesys-dpp">
+                <div class="genesys-dpp-icon">
+                  <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Passport book icon -->
+                    <rect
+                      x="6"
+                      y="4"
+                      width="24"
+                      height="28"
+                      rx="3"
+                      fill="rgba(255,255,255,0.2)"
+                      stroke="rgba(255,255,255,0.7)"
+                      stroke-width="1.5"
+                    />
+                    <circle
+                      cx="18"
+                      cy="15"
+                      r="5"
+                      fill="none"
+                      stroke="rgba(255,255,255,0.7)"
+                      stroke-width="1.2"
+                    />
+                    <text
+                      x="18"
+                      y="18"
+                      text-anchor="middle"
+                      font-size="6"
+                      fill="rgba(255,255,255,0.8)"
+                      font-weight="700"
+                      font-family="Inter, sans-serif"
+                    >
+                      EU
+                    </text>
+                    <line
+                      x1="11"
+                      y1="24"
+                      x2="25"
+                      y2="24"
+                      stroke="rgba(255,255,255,0.4)"
+                      stroke-width="1"
+                    />
+                    <line
+                      x1="11"
+                      y1="27"
+                      x2="21"
+                      y2="27"
+                      stroke="rgba(255,255,255,0.4)"
+                      stroke-width="1"
+                    />
+                  </svg>
+                </div>
+                <div class="genesys-dpp-text">
+                  <div class="genesys-dpp-title">
+                    EU Digital Product Passport
+                  </div>
+                  <div class="genesys-dpp-desc">
+                    Full traceability from cradle to grave
+                  </div>
+                </div>
+              </div>
+              <div class="genesys-dpp-tooltip">
+                The aggregated lifecycle data enables compliance with the EU
+                Digital Product Passport regulation — providing full material
+                traceability, environmental impact data, and recyclability
+                information for each composite part.
+              </div>
+            </div>
+
+            <div class="genesys-source">
+              Source: Based on P2M GENE.SYS system description and Italia Yachts
+              deployment [19][20]
+            </div>
           </div>
         </section>
 
@@ -1470,14 +3220,148 @@
           </p>
 
           <!-- Infographic placeholder for Figure 5 -->
-          <div class="infographic-placeholder">
-            <p class="infographic-label">Suggested Infographic — Figure 5</p>
-            <p class="infographic-description">
-              The Startup-Driven Composites Value Chain: How the six featured
-              startups map onto the composites value chain, from raw materials
-              (CGreen) → design/R&D (Novium) → tooling (Fyous) → manufacture
-              (Fibionic) → in-service (P2M) → end-of-life (Plastalyst).
-            </p>
+
+          <div class="jec-chain-container">
+            <h4 class="jec-chain-title">
+              Composites Value Chain: JEC 2026 Startup Booster Finalists
+            </h4>
+            <div class="jec-chain-subtitle">
+              Six startups spanning raw materials → design → tooling →
+              manufacture → in-service → end-of-life
+            </div>
+
+            <div class="jec-chain-hint">← Scroll horizontally →</div>
+
+            <div class="jec-chain-rail">
+              <div class="jec-chain-line"></div>
+
+              <div class="jec-chain-cards">
+                <!-- 1. CGreen -->
+                <div class="jec-chain-card">
+                  <div class="jec-chain-phase">Raw<br />Materials</div>
+                  <div class="jec-chain-dot"></div>
+                  <div class="jec-chain-body">
+                    <div class="jec-chain-company">CGreen</div>
+                    <div class="jec-chain-tech">
+                      Bio-based carbon fiber from recycled cellulose
+                    </div>
+                    <div class="jec-chain-divider"></div>
+                    <div class="jec-chain-kpi-value">3×</div>
+                    <div class="jec-chain-kpi-label">Lower CO₂</div>
+                  </div>
+                  <div class="jec-chain-tooltip">
+                    CGreen produces carbon fiber from recycled paper and cotton
+                    waste, replacing petroleum-based PAN precursor with
+                    cellulose for ~3× lower CO₂ emissions.
+                  </div>
+                </div>
+
+                <!-- 2. Novium -->
+                <div class="jec-chain-card">
+                  <div class="jec-chain-phase">Design<br />& R&D</div>
+                  <div class="jec-chain-dot"></div>
+                  <div class="jec-chain-body">
+                    <div class="jec-chain-company">Novium</div>
+                    <div class="jec-chain-tech">
+                      AI-powered R&D acceleration platform
+                    </div>
+                    <div class="jec-chain-divider"></div>
+                    <div class="jec-chain-kpi-value">2–5×</div>
+                    <div class="jec-chain-kpi-label">Faster Qualification</div>
+                  </div>
+                  <div class="jec-chain-tooltip">
+                    Novium uses AI to accelerate composite material and process
+                    qualification by 2–5×, compressing R&D timelines from years
+                    to months.
+                  </div>
+                </div>
+
+                <!-- 3. Fyous -->
+                <div class="jec-chain-card">
+                  <div class="jec-chain-phase">Tooling</div>
+                  <div class="jec-chain-dot"></div>
+                  <div class="jec-chain-body">
+                    <div class="jec-chain-company">Fyous</div>
+                    <div class="jec-chain-tech">
+                      PolyMorphic reconfigurable pin molds
+                    </div>
+                    <div class="jec-chain-divider"></div>
+                    <div class="jec-chain-kpi-value">Zero</div>
+                    <div class="jec-chain-kpi-label">Tooling Waste</div>
+                  </div>
+                  <div class="jec-chain-tooltip">
+                    Fyous eliminates disposable molds with 28,000 actuated pins
+                    that reconfigure to any 3D surface in ~20 minutes — zero
+                    tooling waste.
+                  </div>
+                </div>
+
+                <!-- 4. Fibionic -->
+                <div class="jec-chain-card">
+                  <div class="jec-chain-phase">Manufacture</div>
+                  <div class="jec-chain-dot"></div>
+                  <div class="jec-chain-body">
+                    <div class="jec-chain-company">Fibionic</div>
+                    <div class="jec-chain-tech">
+                      FFP airstream deposition + overmolding
+                    </div>
+                    <div class="jec-chain-divider"></div>
+                    <div class="jec-chain-kpi-value">1 min</div>
+                    <div class="jec-chain-kpi-label">Cycle Time</div>
+                  </div>
+                  <div class="jec-chain-tooltip">
+                    Fibionic's Functional Fiber Placement deposits load-path
+                    fibers in milliseconds, then overmolds — targeting 500K
+                    parts/year at ~1-minute cycle times.
+                  </div>
+                </div>
+
+                <!-- 5. P2M -->
+                <div class="jec-chain-card">
+                  <div class="jec-chain-phase">In-Service</div>
+                  <div class="jec-chain-dot"></div>
+                  <div class="jec-chain-body">
+                    <div class="jec-chain-company">P2M</div>
+                    <div class="jec-chain-tech">
+                      GENE.SYS lifecycle digital twin
+                    </div>
+                    <div class="jec-chain-divider"></div>
+                    <div class="jec-chain-kpi-value">EU DPP</div>
+                    <div class="jec-chain-kpi-label">Compliant</div>
+                  </div>
+                  <div class="jec-chain-tooltip">
+                    P2M's GENE.SYS tracks composite products from manufacturing
+                    through service to end-of-life, enabling full EU Digital
+                    Product Passport compliance.
+                  </div>
+                </div>
+
+                <!-- 6. Plastalyst -->
+                <div class="jec-chain-card">
+                  <div class="jec-chain-phase">End-of-Life</div>
+                  <div class="jec-chain-dot"></div>
+                  <div class="jec-chain-body">
+                    <div class="jec-chain-company">Plastalyst</div>
+                    <div class="jec-chain-tech">
+                      Low-temp catalytic recycling ≤200°C
+                    </div>
+                    <div class="jec-chain-divider"></div>
+                    <div class="jec-chain-kpi-value">≤200°C</div>
+                    <div class="jec-chain-kpi-label">Monomer Recovery</div>
+                  </div>
+                  <div class="jec-chain-tooltip">
+                    Plastalyst recycles thermoset composites at ≤200°C using
+                    catalytic depolymerization, recovering monomers for true
+                    closed-loop material circularity.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="jec-chain-source">
+              Source: Addcomposites analysis of JEC 2026 Startup Booster
+              finalists
+            </div>
           </div>
 
           <h3>The Democratization Thread</h3>
@@ -1979,7 +3863,11 @@
                     />
                   </svg>
                 </a>
-                <a href="mailto:pravin@addcomposites.com" aria-label="Email">
+                <a
+                  href="mailto:pravin@addcomposites.com"
+                  aria-label="Email"
+                  target="_blank"
+                >
                   <svg viewBox="0 0 24 24" fill="#EA4335">
                     <path
                       d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"

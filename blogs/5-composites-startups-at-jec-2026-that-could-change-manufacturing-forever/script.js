@@ -235,3 +235,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
   createProgressBar();
 });
+// <!-- Infographic placeholder for Figure 1 -->
+//  <!-- Infographic placeholder for Figure 2 -->
+(function () {
+  function animateBars() {
+    var convBar = document.getElementById("cgreenBarConv");
+    var greenBar = document.getElementById("cgreenBarGreen");
+    if (convBar) convBar.style.width = "100%";
+    if (greenBar) greenBar.style.width = "33%";
+  }
+
+  // Intersection Observer for scroll-triggered animation
+  if ("IntersectionObserver" in window) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            setTimeout(animateBars, 300);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 },
+    );
+
+    var target = document.getElementById("cgreenBarConv");
+    if (target) observer.observe(target.closest(".cgreen-co2-compare"));
+  } else {
+    setTimeout(animateBars, 500);
+  }
+})();
+// <!-- Infographic placeholder for Figure 3 -->
+//  <!-- Infographic placeholder for Figure 4 -->
+// <!-- Infographic placeholder for Figure 5 -->
