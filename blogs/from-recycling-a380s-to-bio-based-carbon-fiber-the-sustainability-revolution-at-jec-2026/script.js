@@ -255,3 +255,116 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+//  <!-- Infographic Placeholder 1 -->
+// <!-- Infographic Placeholder 2 -->
+// <!-- Infographic Placeholder 3 -->
+(function () {
+  var ctx = document.getElementById("co2FiberChart");
+
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: [
+        "Virgin CF (PAN)",
+        "Bio-based CF (Cellulose, target)",
+        "Recycled CF (pyrolysis)",
+        "Natural Fiber (flax)",
+      ],
+      datasets: [
+        {
+          label: "kg CO₂eq/kg",
+          data: [26.5, 9, 1.5, 1.25],
+          backgroundColor: [
+            "#47577c",
+            "#bf3425",
+            "#9d9d9c",
+            "rgba(71, 87, 124, 0.55)",
+          ],
+          hoverBackgroundColor: [
+            "#5a6d94",
+            "#d44536",
+            "#b0b0b0",
+            "rgba(71, 87, 124, 0.75)",
+          ],
+          borderRadius: 4,
+          barPercentage: 0.7,
+          categoryPercentage: 0.8,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      indexAxis: "y",
+      scales: {
+        x: {
+          beginAtZero: true,
+          max: 32,
+          grid: { color: "#f1f5f9" },
+          ticks: {
+            color: "#64748b",
+            font: { size: 12 },
+            callback: function (value) {
+              return value;
+            },
+          },
+          title: {
+            display: true,
+            text: "kg CO₂eq/kg",
+            color: "#47577c",
+            font: { size: 12, weight: "600" },
+          },
+        },
+        y: {
+          grid: { display: false },
+          ticks: {
+            color: "#1e293b",
+            font: { size: 13, weight: "bold" },
+          },
+        },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: "#ffffff",
+          titleColor: "#bf3425",
+          bodyColor: "#1e293b",
+          borderColor: "#e2e8f0",
+          borderWidth: 1,
+          padding: 14,
+          displayColors: true,
+          callbacks: {
+            title: function (items) {
+              return items[0].label;
+            },
+            label: function (context) {
+              var ranges = {
+                0: "~24–29 kg CO₂eq/kg",
+                1: "~8–10 kg CO₂eq/kg (target)",
+                2: "~1.5 kg CO₂eq/kg",
+                3: "~0.5–2 kg CO₂eq/kg",
+              };
+              return (
+                ranges[context.dataIndex] || context.parsed.x + " kg CO₂eq/kg"
+              );
+            },
+            afterLabel: function (context) {
+              var notes = {
+                0: "Conventional PAN precursor — highest energy process",
+                1: "CGreen cellulose route — 65% reduction target",
+                2: "Pyrolysis recovery from end-of-life CFRP",
+                3: "Bcomp flax — lowest embodied carbon option",
+              };
+              return notes[context.dataIndex] || "";
+            },
+          },
+        },
+      },
+      animation: {
+        duration: 1200,
+        easing: "easeOutQuart",
+      },
+    },
+  });
+})();
+// <!-- Infographic Placeholder 4 -->
