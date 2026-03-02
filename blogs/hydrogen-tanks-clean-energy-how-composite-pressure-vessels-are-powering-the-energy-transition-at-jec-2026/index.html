@@ -179,18 +179,40 @@
           </div>
 
           <!-- Figure 1 Placeholder -->
-          <div class="infographic-placeholder">
-            <p class="infographic-label">
-              Figure 1: Composite Pressure Vessel Market Growth 2020–2030
-            </p>
-            <p class="infographic-description">
-              Bar chart showing the composite pressure vessel market size from
-              2020 through 2030 (projected), with segments for:
-              mobility/transportation (hydrogen FCEV, CNG), industrial gas,
-              aerospace, and stationary storage. Annotated CAGR of 13-15%. Data
-              point: $1.8B in 2024, projected $4.2-5.0B by 2030.
-            </p>
+
+          <div class="h2-market-chart-container">
+            <h4 class="h2-market-chart-title">
+              Hydrogen Fuel Cell Market Size ($B)
+            </h4>
+            <div class="h2-market-chart-subtitle">
+              Projected growth by application segment, 2020–2030
+            </div>
+            <div class="h2-market-chart-wrapper">
+              <canvas id="h2MarketStackedChart"></canvas>
+            </div>
+
+            <div class="h2-market-stats-row">
+              <div class="h2-market-stat-item">
+                <div class="h2-market-stat-value">~10×</div>
+                <div class="h2-market-stat-label">Market Growth</div>
+              </div>
+              <div class="h2-market-stat-item">
+                <div class="h2-market-stat-value">$5.2B</div>
+                <div class="h2-market-stat-label">2030 Forecast</div>
+              </div>
+              <div class="h2-market-stat-item">
+                <div class="h2-market-stat-value">26%</div>
+                <div class="h2-market-stat-label">CAGR 2020–2030</div>
+              </div>
+            </div>
+
+            <div class="h2-market-chart-source">
+              Source: Industry analyst consensus, IEA Global Hydrogen Review
+              2024
+            </div>
           </div>
+
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         </section>
 
         <!-- Taxonomy Section -->
@@ -370,19 +392,373 @@
           </p>
 
           <!-- Figure 2 Placeholder -->
-          <div class="infographic-placeholder">
-            <p class="infographic-label">
-              Figure 2: LeiWaCo LH2 Tank — Cross-Section Architecture
-            </p>
-            <p class="infographic-description">
-              Cross-sectional schematic of the LeiWaCo cryogenic composite tank
-              showing: (1) outer thermoplastic CFRP structural shell with
-              optimised helical and hoop winding layers; (2) all-composite inner
-              liner (no metal); (3) key dimension callouts for wall thickness;
-              (4) annotation showing -253°C operating temperature; (5)
-              comparison inset showing conventional metal-liner tank with CTE
-              mismatch arrow indicating microcracking location.
-            </p>
+
+          <div class="h2-tank-container">
+            <h4 class="h2-tank-title">All-Composite LH2 Tank Architecture</h4>
+            <div class="h2-tank-subtitle">
+              Linerless thermoplastic CFRP design eliminates CTE mismatch at
+              cryogenic temperatures
+            </div>
+
+            <div class="h2-tank-diagram-wrapper" id="h2TankDiagram">
+              <svg viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <!-- Hatch pattern for composite laminate -->
+                  <pattern
+                    id="hatchCFRP"
+                    patternUnits="userSpaceOnUse"
+                    width="8"
+                    height="8"
+                    patternTransform="rotate(45)"
+                  >
+                    <line
+                      x1="0"
+                      y1="0"
+                      x2="0"
+                      y2="8"
+                      stroke="#3a4866"
+                      stroke-width="0.8"
+                      opacity="0.25"
+                    />
+                  </pattern>
+                  <!-- Subtle gradient for inner liner -->
+                  <linearGradient id="linerGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#e8ecf2" />
+                    <stop offset="100%" stop-color="#d1d8e4" />
+                  </linearGradient>
+                  <!-- Core LH2 gradient -->
+                  <radialGradient id="lh2Grad" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#eef4ff" />
+                    <stop offset="100%" stop-color="#d0dffa" />
+                  </radialGradient>
+                </defs>
+
+                <!-- ─── OUTER SHELL: Structural Shell / CFRP Laminate ─── -->
+                <g class="h2-layer-outer" data-layer="outer">
+                  <rect
+                    x="100"
+                    y="30"
+                    width="560"
+                    height="250"
+                    rx="32"
+                    ry="32"
+                    fill="#47577c"
+                    opacity="0.92"
+                  />
+                  <rect
+                    x="100"
+                    y="30"
+                    width="560"
+                    height="250"
+                    rx="32"
+                    ry="32"
+                    fill="url(#hatchCFRP)"
+                  />
+                </g>
+
+                <!-- ─── INNER LAYER: All-Composite Liner ─── -->
+                <g class="h2-layer-inner" data-layer="inner">
+                  <rect
+                    x="130"
+                    y="60"
+                    width="500"
+                    height="190"
+                    rx="22"
+                    ry="22"
+                    fill="url(#linerGrad)"
+                    stroke="#9d9d9c"
+                    stroke-width="1.5"
+                  />
+                </g>
+
+                <!-- ─── CORE: LH2 Cavity ─── -->
+                <g class="h2-layer-core" data-layer="core">
+                  <rect
+                    x="160"
+                    y="88"
+                    width="440"
+                    height="134"
+                    rx="14"
+                    ry="14"
+                    fill="url(#lh2Grad)"
+                    stroke="#a8bce0"
+                    stroke-width="1"
+                    stroke-dasharray="6 3"
+                  />
+                </g>
+
+                <!-- ─── LABELS ON DIAGRAM ─── -->
+
+                <!-- Outer shell label - top -->
+                <text
+                  x="380"
+                  y="22"
+                  text-anchor="middle"
+                  font-family="Inter, sans-serif"
+                  font-size="11"
+                  font-weight="700"
+                  fill="#47577c"
+                  letter-spacing="1.2"
+                  class="h2-label-anim"
+                  style="animation-delay: 0.1s"
+                >
+                  STRUCTURAL SHELL
+                </text>
+
+                <!-- CFRP laminate label -->
+                <text
+                  x="380"
+                  y="52"
+                  text-anchor="middle"
+                  font-family="Inter, sans-serif"
+                  font-size="12"
+                  font-weight="600"
+                  fill="#ffffff"
+                  class="h2-label-anim"
+                  style="animation-delay: 0.25s"
+                >
+                  Thermoplastic CFRP Laminate
+                </text>
+                <text
+                  x="380"
+                  y="68"
+                  text-anchor="middle"
+                  font-family="Inter, sans-serif"
+                  font-size="10.5"
+                  fill="#c8d0dc"
+                  class="h2-label-anim"
+                  style="animation-delay: 0.35s"
+                >
+                  (Optimised Helical + Hoop Winding)
+                </text>
+
+                <!-- Inner liner label -->
+                <text
+                  x="380"
+                  y="83"
+                  text-anchor="middle"
+                  font-family="Inter, sans-serif"
+                  font-size="11"
+                  font-weight="700"
+                  fill="#47577c"
+                  letter-spacing="0.6"
+                  class="h2-label-anim"
+                  style="animation-delay: 0.45s"
+                >
+                  ALL-COMPOSITE LINER
+                </text>
+
+                <!-- Benefits inside liner area -->
+                <g class="h2-label-anim" style="animation-delay: 0.55s">
+                  <text
+                    x="260"
+                    y="142"
+                    font-family="Inter, sans-serif"
+                    font-size="12"
+                    fill="#47577c"
+                    font-weight="600"
+                  >
+                    <tspan>✓</tspan>
+                    No Metal Liner
+                  </text>
+                  <text
+                    x="260"
+                    y="164"
+                    font-family="Inter, sans-serif"
+                    font-size="12"
+                    fill="#47577c"
+                    font-weight="600"
+                  >
+                    <tspan>✓</tspan>
+                    No CTE Mismatch
+                  </text>
+                  <text
+                    x="260"
+                    y="186"
+                    font-family="Inter, sans-serif"
+                    font-size="12"
+                    fill="#47577c"
+                    font-weight="600"
+                  >
+                    <tspan>✓</tspan>
+                    No Microcracking
+                  </text>
+                </g>
+
+                <!-- LH2 labels on the sides -->
+                <g class="h2-lh2-pulse">
+                  <text
+                    x="68"
+                    y="150"
+                    text-anchor="middle"
+                    font-family="Inter, sans-serif"
+                    font-size="14"
+                    font-weight="800"
+                    fill="#bf3425"
+                  >
+                    LH₂
+                  </text>
+                  <text
+                    x="68"
+                    y="168"
+                    text-anchor="middle"
+                    font-family="Inter, sans-serif"
+                    font-size="11"
+                    fill="#bf3425"
+                  >
+                    −253 °C
+                  </text>
+                </g>
+                <g class="h2-lh2-pulse" style="animation-delay: 0.4s">
+                  <text
+                    x="692"
+                    y="150"
+                    text-anchor="middle"
+                    font-family="Inter, sans-serif"
+                    font-size="14"
+                    font-weight="800"
+                    fill="#bf3425"
+                  >
+                    LH₂
+                  </text>
+                  <text
+                    x="692"
+                    y="168"
+                    text-anchor="middle"
+                    font-family="Inter, sans-serif"
+                    font-size="11"
+                    fill="#bf3425"
+                  >
+                    −253 °C
+                  </text>
+                </g>
+
+                <!-- Arrows pointing inward (indicating cryogenic environment) -->
+                <line
+                  x1="86"
+                  y1="155"
+                  x2="98"
+                  y2="155"
+                  stroke="#bf3425"
+                  stroke-width="1.5"
+                  marker-end="url(#arrowRed)"
+                />
+                <line
+                  x1="674"
+                  y1="155"
+                  x2="662"
+                  y2="155"
+                  stroke="#bf3425"
+                  stroke-width="1.5"
+                  marker-end="url(#arrowRed)"
+                />
+                <defs>
+                  <marker
+                    id="arrowRed"
+                    markerWidth="7"
+                    markerHeight="5"
+                    refX="6"
+                    refY="2.5"
+                    orient="auto"
+                  >
+                    <polygon points="0 0, 7 2.5, 0 5" fill="#bf3425" />
+                  </marker>
+                </defs>
+
+                <!-- Layer dimension brackets (right side) -->
+                <!-- Outer bracket -->
+                <line
+                  x1="670"
+                  y1="34"
+                  x2="680"
+                  y2="34"
+                  stroke="#9d9d9c"
+                  stroke-width="1"
+                />
+                <line
+                  x1="680"
+                  y1="34"
+                  x2="680"
+                  y2="276"
+                  stroke="#9d9d9c"
+                  stroke-width="1"
+                />
+                <line
+                  x1="670"
+                  y1="276"
+                  x2="680"
+                  y2="276"
+                  stroke="#9d9d9c"
+                  stroke-width="1"
+                />
+                <text
+                  x="694"
+                  y="160"
+                  text-anchor="middle"
+                  font-family="Inter, sans-serif"
+                  font-size="9"
+                  fill="#9d9d9c"
+                  transform="rotate(90 694 160)"
+                  opacity="0"
+                >
+                  <!-- hidden, tooltip shows detail -->
+                </text>
+
+                <!-- Subtle bottom line -->
+                <line
+                  x1="140"
+                  y1="300"
+                  x2="620"
+                  y2="300"
+                  stroke="#e2e8f0"
+                  stroke-width="1"
+                />
+                <text
+                  x="380"
+                  y="320"
+                  text-anchor="middle"
+                  font-family="Inter, sans-serif"
+                  font-size="11"
+                  fill="#9d9d9c"
+                  class="h2-label-anim"
+                  style="animation-delay: 0.7s"
+                >
+                  Hover each layer for details
+                </text>
+              </svg>
+
+              <!-- Tooltip element -->
+              <div class="h2-tank-tooltip" id="h2TankTooltip"></div>
+            </div>
+
+            <!-- ── Comparison Cards ── -->
+            <div class="h2-tank-comparison">
+              <div class="h2-tank-card h2-tank-card-novel">
+                <span class="h2-card-badge h2-badge-novel">Novel Design</span>
+                <div class="h2-card-heading">All-Composite Linerless Tank</div>
+                <ul class="h2-card-list">
+                  <li class="h2-good">Thermoplastic CFRP throughout</li>
+                  <li class="h2-good">Matched CTE across all layers</li>
+                  <li class="h2-good">No microcracking at −253 °C</li>
+                  <li class="h2-good">30–40% weight reduction</li>
+                </ul>
+              </div>
+              <div class="h2-tank-card h2-tank-card-conv">
+                <span class="h2-card-badge h2-badge-conv">Conventional</span>
+                <div class="h2-card-heading">Metal Liner + CFRP Shell</div>
+                <ul class="h2-card-list">
+                  <li class="h2-bad">ΔαCTE = 12–20 ppm/K</li>
+                  <li class="h2-bad">Thermal stress at cryo temps</li>
+                  <li class="h2-bad">Microcracking &amp; permeation</li>
+                  <li class="h2-bad">Higher mass, fatigue concerns</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="h2-tank-source">
+              Source: CTC GmbH / LeiWaCo Consortium, JEC Innovation Award —
+              Pipes, Tanks &amp; Hydrogen 2026 [7]
+            </div>
           </div>
 
           <h3>Why This Consortium Is Strategically Significant</h3>
@@ -475,19 +851,509 @@
           </p>
 
           <!-- Figure 3 Placeholder -->
-          <div class="infographic-placeholder">
-            <p class="infographic-label">
-              Figure 3: Cryogenic Microcracking Mechanism
-            </p>
-            <p class="infographic-description">
-              Technical illustration showing: (a) conventional metal-liner CFRP
-              tank at room temperature (no damage); (b) same tank at -253°C
-              showing CTE mismatch stresses (arrows indicating liner contraction
-              vs composite restraint), matrix microcracking at ply interfaces,
-              and hydrogen permeation path through cracked matrix; (c)
-              thermoplastic CFRP with all-composite liner showing uniform
-              contraction, no CTE mismatch, no microcracking.
-            </p>
+
+          <div class="h2-cte-container">
+            <h4 class="h2-cte-title">
+              CTE Mismatch: Why Conventional Tanks Fail at Cryo
+            </h4>
+            <div class="h2-cte-subtitle">
+              Side-by-side thermal behaviour of thermoset/metal liner vs.
+              thermoplastic/composite liner
+            </div>
+
+            <!-- Column headers -->
+            <div class="h2-cte-headers">
+              <div class="h2-cte-header h2-cte-header-conv">
+                Thermoset / Metal Liner
+              </div>
+              <div class="h2-cte-header h2-cte-header-novel">
+                Thermoplastic / Composite Liner (LeiWaCo)
+              </div>
+            </div>
+
+            <!-- ═══ ROOM TEMPERATURE ROW ═══ -->
+            <div class="h2-cte-temp-section h2-cte-temp-room">
+              <div class="h2-cte-temp-label">
+                Room Temperature
+                <span class="h2-cte-temp-range">(−20 °C to +60 °C)</span>
+              </div>
+              <div class="h2-cte-panels">
+                <!-- Conventional @ Room Temp -->
+                <div
+                  class="h2-cte-panel h2-cte-panel-conv h2-cte-fadein"
+                  style="animation-delay: 0.1s"
+                >
+                  <div class="h2-cte-panel-tooltip">
+                    Both layers relaxed — no thermal stress
+                  </div>
+                  <svg viewBox="0 0 380 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0" y="0" width="380" height="140" fill="#fafafa" />
+                    <!-- Outer shell -->
+                    <rect
+                      x="30"
+                      y="16"
+                      width="320"
+                      height="108"
+                      rx="14"
+                      fill="#47577c"
+                      opacity="0.15"
+                      stroke="#47577c"
+                      stroke-width="1.5"
+                    />
+                    <!-- Inner liner -->
+                    <rect
+                      x="50"
+                      y="36"
+                      width="280"
+                      height="68"
+                      rx="8"
+                      fill="#9d9d9c"
+                      opacity="0.18"
+                      stroke="#9d9d9c"
+                      stroke-width="1.2"
+                    />
+                    <!-- Labels -->
+                    <text
+                      x="190"
+                      y="32"
+                      text-anchor="middle"
+                      font-family="Inter,sans-serif"
+                      font-size="11"
+                      font-weight="600"
+                      fill="#47577c"
+                    >
+                      CFRP Shell
+                    </text>
+                    <text
+                      x="190"
+                      y="76"
+                      text-anchor="middle"
+                      font-family="Inter,sans-serif"
+                      font-size="11"
+                      font-weight="600"
+                      fill="#64748b"
+                    >
+                      Aluminium Liner
+                    </text>
+                    <!-- Interface line (smooth = no stress) -->
+                    <line
+                      x1="50"
+                      y1="36"
+                      x2="330"
+                      y2="36"
+                      stroke="#9d9d9c"
+                      stroke-width="1"
+                      stroke-dasharray="4 2"
+                    />
+                  </svg>
+                  <div class="h2-cte-result h2-cte-result-ok">
+                    <span>✓ No stress, no damage</span>
+                  </div>
+                </div>
+
+                <!-- LeiWaCo @ Room Temp -->
+                <div
+                  class="h2-cte-panel h2-cte-panel-novel h2-cte-fadein"
+                  style="animation-delay: 0.2s"
+                >
+                  <div class="h2-cte-panel-tooltip">
+                    Matched CTE — stress-free at all temps
+                  </div>
+                  <svg viewBox="0 0 380 140" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0" y="0" width="380" height="140" fill="#fafafa" />
+                    <!-- Outer shell -->
+                    <rect
+                      x="30"
+                      y="16"
+                      width="320"
+                      height="108"
+                      rx="14"
+                      fill="#47577c"
+                      opacity="0.15"
+                      stroke="#47577c"
+                      stroke-width="1.5"
+                    />
+                    <!-- Inner liner -->
+                    <rect
+                      x="50"
+                      y="36"
+                      width="280"
+                      height="68"
+                      rx="8"
+                      fill="#47577c"
+                      opacity="0.08"
+                      stroke="#47577c"
+                      stroke-width="1.2"
+                    />
+                    <!-- Labels -->
+                    <text
+                      x="190"
+                      y="32"
+                      text-anchor="middle"
+                      font-family="Inter,sans-serif"
+                      font-size="11"
+                      font-weight="600"
+                      fill="#47577c"
+                    >
+                      TP-CFRP Shell
+                    </text>
+                    <text
+                      x="190"
+                      y="76"
+                      text-anchor="middle"
+                      font-family="Inter,sans-serif"
+                      font-size="11"
+                      font-weight="600"
+                      fill="#47577c"
+                    >
+                      Composite Liner
+                    </text>
+                    <!-- Interface line (smooth) -->
+                    <line
+                      x1="50"
+                      y1="36"
+                      x2="330"
+                      y2="36"
+                      stroke="#47577c"
+                      stroke-width="1"
+                      stroke-dasharray="4 2"
+                    />
+                  </svg>
+                  <div class="h2-cte-result h2-cte-result-ok">
+                    <span>✓ No stress, no damage</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ═══ CRYOGENIC ROW ═══ -->
+            <div class="h2-cte-temp-section h2-cte-temp-cryo">
+              <div class="h2-cte-temp-label">
+                Cryogenic
+                <span class="h2-cte-temp-range"
+                  >(−253 °C — Liquid Hydrogen)</span
+                >
+              </div>
+              <div class="h2-cte-panels">
+                <!-- Conventional @ Cryo -->
+                <div
+                  class="h2-cte-panel h2-cte-panel-conv h2-cte-fadein"
+                  style="animation-delay: 0.35s"
+                >
+                  <div class="h2-cte-panel-tooltip">
+                    αCTE mismatch: Al ≈ 23 ppm/K vs CFRP ≈ 2 ppm/K
+                  </div>
+                  <svg viewBox="0 0 380 160" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0" y="0" width="380" height="160" fill="#fdf2f2" />
+                    <!-- Outer shell (distorted — wavy edges to show stress) -->
+                    <path
+                      d="M44,16 Q50,20 56,16 Q62,12 68,16 Q74,20 80,16 L336,16 Q342,20 336,24 L336,124 Q330,128 336,132 L44,132 Q38,128 44,124 Z"
+                      fill="#47577c"
+                      opacity="0.15"
+                      stroke="#47577c"
+                      stroke-width="1.5"
+                    />
+                    <!-- Inner liner (distorted — contracted more) -->
+                    <g class="h2-crack-anim">
+                      <rect
+                        x="60"
+                        y="38"
+                        width="260"
+                        height="68"
+                        rx="6"
+                        fill="#bf3425"
+                        opacity="0.08"
+                        stroke="#bf3425"
+                        stroke-width="1.2"
+                        stroke-dasharray="6 4"
+                      />
+                    </g>
+                    <!-- Crack lines -->
+                    <g opacity="0.8">
+                      <line
+                        x1="110"
+                        y1="38"
+                        x2="105"
+                        y2="55"
+                        stroke="#bf3425"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                      />
+                      <line
+                        x1="105"
+                        y1="55"
+                        x2="112"
+                        y2="65"
+                        stroke="#bf3425"
+                        stroke-width="1.2"
+                        stroke-linecap="round"
+                      />
+                      <line
+                        x1="200"
+                        y1="38"
+                        x2="196"
+                        y2="50"
+                        stroke="#bf3425"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                      />
+                      <line
+                        x1="196"
+                        y1="50"
+                        x2="202"
+                        y2="62"
+                        stroke="#bf3425"
+                        stroke-width="1.2"
+                        stroke-linecap="round"
+                      />
+                      <line
+                        x1="270"
+                        y1="38"
+                        x2="266"
+                        y2="52"
+                        stroke="#bf3425"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                      />
+                      <line
+                        x1="266"
+                        y1="52"
+                        x2="273"
+                        y2="60"
+                        stroke="#bf3425"
+                        stroke-width="1.2"
+                        stroke-linecap="round"
+                      />
+                    </g>
+                    <!-- Wavy stress interface -->
+                    <path
+                      d="M60,38 Q80,32 100,38 Q120,44 140,38 Q160,32 180,38 Q200,44 220,38 Q240,32 260,38 Q280,44 300,38 Q310,35 320,38"
+                      fill="none"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="10 5"
+                      class="h2-wavy-stress"
+                    />
+                    <!-- Labels -->
+                    <text
+                      x="190"
+                      y="30"
+                      text-anchor="middle"
+                      font-family="Inter,sans-serif"
+                      font-size="11"
+                      font-weight="600"
+                      fill="#47577c"
+                    >
+                      CFRP (αCTE ≈ 2 ppm/K)
+                    </text>
+                    <text
+                      x="190"
+                      y="78"
+                      text-anchor="middle"
+                      font-family="Inter,sans-serif"
+                      font-size="11"
+                      font-weight="700"
+                      fill="#bf3425"
+                    >
+                      Al (αCTE ≈ 23 ppm/K)
+                    </text>
+                    <!-- Warning text -->
+                    <text
+                      x="190"
+                      y="122"
+                      text-anchor="middle"
+                      font-family="Inter,sans-serif"
+                      font-size="10"
+                      font-weight="700"
+                      fill="#bf3425"
+                      letter-spacing="1.5"
+                    >
+                      ⚠ MICRO-CRACKS
+                    </text>
+                    <!-- Stress arrows showing differential contraction -->
+                    <g opacity="0.5">
+                      <line
+                        x1="55"
+                        y1="72"
+                        x2="70"
+                        y2="72"
+                        stroke="#bf3425"
+                        stroke-width="1"
+                        marker-end="url(#arrowR)"
+                      />
+                      <line
+                        x1="325"
+                        y1="72"
+                        x2="310"
+                        y2="72"
+                        stroke="#bf3425"
+                        stroke-width="1"
+                        marker-end="url(#arrowR)"
+                      />
+                    </g>
+                    <defs>
+                      <marker
+                        id="arrowR"
+                        markerWidth="6"
+                        markerHeight="4"
+                        refX="5"
+                        refY="2"
+                        orient="auto"
+                      >
+                        <polygon points="0 0,6 2,0 4" fill="#bf3425" />
+                      </marker>
+                    </defs>
+                  </svg>
+                  <div class="h2-cte-result h2-cte-result-bad">
+                    <span>✗ CTE mismatch → cracking</span>
+                    <span>✗ H₂ permeation risk</span>
+                  </div>
+                </div>
+
+                <!-- LeiWaCo @ Cryo -->
+                <div
+                  class="h2-cte-panel h2-cte-panel-novel h2-cte-fadein"
+                  style="animation-delay: 0.5s"
+                >
+                  <div class="h2-cte-panel-tooltip">
+                    Matched CTE — uniform contraction, no delamination
+                  </div>
+                  <svg viewBox="0 0 380 160" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0" y="0" width="380" height="160" fill="#f0fdf4" />
+                    <!-- Outer shell (clean, contracted uniformly) -->
+                    <rect
+                      x="44"
+                      y="16"
+                      width="292"
+                      height="118"
+                      rx="14"
+                      fill="#47577c"
+                      opacity="0.15"
+                      stroke="#47577c"
+                      stroke-width="1.5"
+                    />
+                    <!-- Inner liner (clean, contracted uniformly) -->
+                    <rect
+                      x="60"
+                      y="38"
+                      width="260"
+                      height="68"
+                      rx="8"
+                      fill="#47577c"
+                      opacity="0.08"
+                      stroke="#47577c"
+                      stroke-width="1.2"
+                    />
+                    <!-- Interface line (smooth = matched) -->
+                    <line
+                      x1="60"
+                      y1="38"
+                      x2="320"
+                      y2="38"
+                      stroke="#47577c"
+                      stroke-width="1"
+                      stroke-dasharray="4 2"
+                    />
+                    <!-- Labels -->
+                    <text
+                      x="190"
+                      y="30"
+                      text-anchor="middle"
+                      font-family="Inter,sans-serif"
+                      font-size="11"
+                      font-weight="600"
+                      fill="#47577c"
+                    >
+                      TP-CFRP (matched CTE)
+                    </text>
+                    <text
+                      x="190"
+                      y="78"
+                      text-anchor="middle"
+                      font-family="Inter,sans-serif"
+                      font-size="11"
+                      font-weight="600"
+                      fill="#47577c"
+                    >
+                      Composite Liner
+                    </text>
+                    <!-- Uniform contraction arrows -->
+                    <g opacity="0.3">
+                      <line
+                        x1="40"
+                        y1="75"
+                        x2="50"
+                        y2="75"
+                        stroke="#47577c"
+                        stroke-width="1"
+                        marker-end="url(#arrowN)"
+                      />
+                      <line
+                        x1="340"
+                        y1="75"
+                        x2="330"
+                        y2="75"
+                        stroke="#47577c"
+                        stroke-width="1"
+                        marker-end="url(#arrowN)"
+                      />
+                      <line
+                        x1="190"
+                        y1="10"
+                        x2="190"
+                        y2="18"
+                        stroke="#47577c"
+                        stroke-width="1"
+                        marker-end="url(#arrowN)"
+                      />
+                      <line
+                        x1="190"
+                        y1="140"
+                        x2="190"
+                        y2="132"
+                        stroke="#47577c"
+                        stroke-width="1"
+                        marker-end="url(#arrowN)"
+                      />
+                    </g>
+                    <defs>
+                      <marker
+                        id="arrowN"
+                        markerWidth="6"
+                        markerHeight="4"
+                        refX="5"
+                        refY="2"
+                        orient="auto"
+                      >
+                        <polygon points="0 0,6 2,0 4" fill="#47577c" />
+                      </marker>
+                    </defs>
+                    <!-- Check mark -->
+                    <text
+                      x="190"
+                      y="122"
+                      text-anchor="middle"
+                      font-family="Inter,sans-serif"
+                      font-size="10"
+                      font-weight="700"
+                      fill="#166534"
+                      letter-spacing="1"
+                    >
+                      UNIFORM CONTRACTION
+                    </text>
+                  </svg>
+                  <div class="h2-cte-result h2-cte-result-ok">
+                    <span>✓ Uniform contraction</span>
+                    <span>✓ No cracking</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="h2-cte-source">
+              Source: Based on [9][10]; LeiWaCo solution approach per CTC / JEC
+              2026 Award [7]
+            </div>
           </div>
         </section>
 
@@ -731,19 +1597,110 @@
           </p>
 
           <!-- Figure 4 Placeholder -->
-          <div class="infographic-placeholder">
-            <p class="infographic-label">
-              Figure 4: Composite Pressure Vessel Industry News — Early 2026
-            </p>
-            <p class="infographic-description">
-              Timeline graphic showing the four key composite pressure vessel
-              industry events from January–March 2026: (1) Jan 2026 - LeiWaCo
-              wins JEC Innovation Award (LH2, cryogenic); (2) Feb 2026 -
-              CIMC-Hexagon Type 4 MEGC launch (H2 transport); (3) Feb 2026 -
-              Hexagon Agility aerospace Type 4 order; (4) Feb 2026 - Hexagon
-              Purus aerospace divested to SpaceX (Type V linerless); (5) March
-              2026 - JEC World showcases LeiWaCo demonstrator.
-            </p>
+
+          <div class="h2-timeline-container">
+            <h4 class="h2-timeline-title">
+              H₂ Tank Industry — Key Events Q1 2026
+            </h4>
+            <div class="h2-timeline-subtitle">
+              Rapid acceleration in composite pressure vessel development and
+              partnerships
+            </div>
+
+            <div class="h2-timeline-track">
+              <!-- Animated line -->
+              <div class="h2-timeline-line">
+                <div class="h2-timeline-line-inner"></div>
+              </div>
+
+              <div class="h2-timeline-events">
+                <!-- Event 1 — Above -->
+                <div class="h2-timeline-event h2-timeline-event-above">
+                  <div class="h2-timeline-date">Jan 2026</div>
+                  <div class="h2-timeline-card">
+                    <span class="h2-timeline-badge h2-badge-award">Award</span>
+                    <div class="h2-timeline-card-title">
+                      LeiWaCo Wins JEC Award
+                    </div>
+                    <div class="h2-timeline-card-desc">
+                      All-composite LH₂ tank innovation
+                    </div>
+                  </div>
+                  <div class="h2-timeline-stem h2-timeline-stem-down"></div>
+                  <div class="h2-timeline-dot h2-timeline-dot-key"></div>
+                </div>
+
+                <!-- Event 2 — Below -->
+                <div class="h2-timeline-event h2-timeline-event-below">
+                  <div class="h2-timeline-dot"></div>
+                  <div class="h2-timeline-stem h2-timeline-stem-down"></div>
+                  <div class="h2-timeline-card">
+                    <span class="h2-timeline-badge h2-badge-launch"
+                      >Launch</span
+                    >
+                    <div class="h2-timeline-card-title">
+                      CIMC-Hexagon Type 4 MEGC
+                    </div>
+                    <div class="h2-timeline-card-desc">
+                      Multi-element gas container launch
+                    </div>
+                  </div>
+                  <div class="h2-timeline-date">Feb 2026</div>
+                </div>
+
+                <!-- Event 3 — Above -->
+                <div class="h2-timeline-event h2-timeline-event-above">
+                  <div class="h2-timeline-date">Feb 2026</div>
+                  <div class="h2-timeline-card">
+                    <span class="h2-timeline-badge h2-badge-deal">Order</span>
+                    <div class="h2-timeline-card-title">
+                      Hexagon Agility Aero Type 4
+                    </div>
+                    <div class="h2-timeline-card-desc">
+                      Major aerospace tank order placed
+                    </div>
+                  </div>
+                  <div class="h2-timeline-stem h2-timeline-stem-down"></div>
+                  <div class="h2-timeline-dot"></div>
+                </div>
+
+                <!-- Event 4 — Below -->
+                <div class="h2-timeline-event h2-timeline-event-below">
+                  <div class="h2-timeline-dot"></div>
+                  <div class="h2-timeline-stem h2-timeline-stem-down"></div>
+                  <div class="h2-timeline-card">
+                    <span class="h2-timeline-badge h2-badge-divest"
+                      >Divest</span
+                    >
+                    <div class="h2-timeline-card-title">
+                      Hexagon Purus → SpaceX
+                    </div>
+                    <div class="h2-timeline-card-desc">
+                      Type V tank division divestiture
+                    </div>
+                  </div>
+                  <div class="h2-timeline-date">Feb 2026</div>
+                </div>
+
+                <!-- Event 5 — Above -->
+                <div class="h2-timeline-event h2-timeline-event-above">
+                  <div class="h2-timeline-date">Mar 2026</div>
+                  <div class="h2-timeline-card">
+                    <span class="h2-timeline-badge h2-badge-award">Demo</span>
+                    <div class="h2-timeline-card-title">
+                      JEC 2026 LeiWaCo Demo
+                    </div>
+                    <div class="h2-timeline-card-desc">
+                      Live Paris demonstration event
+                    </div>
+                  </div>
+                  <div class="h2-timeline-stem h2-timeline-stem-down"></div>
+                  <div class="h2-timeline-dot h2-timeline-dot-key"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="h2-timeline-source">Source: [6][7][12][13]</div>
           </div>
         </section>
 
@@ -954,22 +1911,520 @@
           </p>
 
           <!-- Figure 5 Placeholder -->
-          <div class="infographic-placeholder">
-            <p class="infographic-label">
-              Figure 5: AFP and Filament Winding Integration for Pressure
-              Vessels
-            </p>
-            <p class="infographic-description">
-              Process diagram showing a combined manufacturing workflow for a
-              Type V linerless composite hydrogen tank: (1) mandrel preparation;
-              (2) robot-mounted AFP for polar boss and dome reinforcement
-              (complex non-geodesic paths); (3) transition to filament winding
-              for cylindrical body (geodesic helical + hoop); (4) optional AFP
-              over-wrap for local reinforcement; (5) in-situ consolidation
-              (thermoplastic) or oven cure (thermoset); (6) mandrel extraction
-              or dissolution; (7) NDT inspection; (8) proof pressure test and
-              certification.
-            </p>
+
+          <div class="h2-process-container">
+            <h4 class="h2-process-title">
+              Hybrid Manufacturing Process — Composite H₂ Tank
+            </h4>
+            <div class="h2-process-subtitle">
+              Robot AFP for domes + filament winding for cylinder, converging
+              into consolidation &amp; inspection
+            </div>
+
+            <div
+              class="h2-process-diagram"
+              id="h2ProcessDiagram"
+              style="position: relative"
+            >
+              <svg viewBox="0 0 760 520" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <marker
+                    id="h2FlowArrow"
+                    markerWidth="8"
+                    markerHeight="6"
+                    refX="7"
+                    refY="3"
+                    orient="auto"
+                  >
+                    <polygon points="0 0,8 3,0 6" fill="#47577c" />
+                  </marker>
+                  <marker
+                    id="h2FlowArrowRed"
+                    markerWidth="8"
+                    markerHeight="6"
+                    refX="7"
+                    refY="3"
+                    orient="auto"
+                  >
+                    <polygon points="0 0,8 3,0 6" fill="#bf3425" />
+                  </marker>
+                  <!-- Subtle shadow filter -->
+                  <filter
+                    id="h2BoxShadow"
+                    x="-4%"
+                    y="-4%"
+                    width="108%"
+                    height="116%"
+                  >
+                    <feDropShadow
+                      dx="0"
+                      dy="2"
+                      stdDeviation="3"
+                      flood-color="#000"
+                      flood-opacity="0.08"
+                    />
+                  </filter>
+                </defs>
+
+                <!-- ════════ STEP 1a: Robot AFP Head (left) ════════ -->
+                <g
+                  class="h2-proc-box h2-proc-fadein-left"
+                  style="animation-delay: 0.2s"
+                  data-step="robot"
+                >
+                  <!-- Step number badge -->
+                  <circle cx="108" cy="32" r="12" fill="#47577c" />
+                  <text x="108" y="36" text-anchor="middle" class="h2-step-num">
+                    1a
+                  </text>
+                  <!-- Header bar -->
+                  <rect
+                    x="60"
+                    y="48"
+                    width="240"
+                    height="32"
+                    rx="8"
+                    ry="8"
+                    fill="#47577c"
+                  />
+                  <text
+                    x="180"
+                    y="69"
+                    text-anchor="middle"
+                    font-family="Inter,sans-serif"
+                    font-size="13"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    ROBOT (AFP Head)
+                  </text>
+                  <!-- Card body -->
+                  <g class="h2-proc-box-bg">
+                    <rect
+                      x="60"
+                      y="80"
+                      width="240"
+                      height="100"
+                      rx="0"
+                      ry="0"
+                      fill="#f8fafc"
+                      stroke="#47577c"
+                      stroke-width="1.5"
+                      filter="url(#h2BoxShadow)"
+                    />
+                    <rect
+                      x="60"
+                      y="168"
+                      width="240"
+                      height="12"
+                      rx="0"
+                      ry="6"
+                      fill="#47577c"
+                      opacity="0.06"
+                    />
+                  </g>
+                  <!-- Content -->
+                  <text
+                    x="84"
+                    y="106"
+                    font-family="Inter,sans-serif"
+                    font-size="13"
+                    font-weight="600"
+                    fill="#1e293b"
+                  >
+                    Dome Layup
+                  </text>
+                  <text
+                    x="84"
+                    y="128"
+                    font-family="Inter,sans-serif"
+                    font-size="12"
+                    fill="#64748b"
+                  >
+                    Non-geodesic paths
+                  </text>
+                  <text
+                    x="84"
+                    y="148"
+                    font-family="Inter,sans-serif"
+                    font-size="12"
+                    fill="#64748b"
+                  >
+                    Complex curvature steering
+                  </text>
+                  <!-- Bottom rounded -->
+                  <rect
+                    x="60"
+                    y="172"
+                    width="240"
+                    height="8"
+                    rx="0"
+                    ry="0"
+                    fill="#47577c"
+                    opacity="0.04"
+                  />
+                </g>
+
+                <!-- ════════ PLUS SYMBOL ════════ -->
+                <g class="h2-plus-symbol">
+                  <circle
+                    cx="380"
+                    cy="120"
+                    r="18"
+                    fill="#ffffff"
+                    stroke="#9d9d9c"
+                    stroke-width="1.5"
+                  />
+                  <line
+                    x1="372"
+                    y1="120"
+                    x2="388"
+                    y2="120"
+                    stroke="#9d9d9c"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                  />
+                  <line
+                    x1="380"
+                    y1="112"
+                    x2="380"
+                    y2="128"
+                    stroke="#9d9d9c"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                  />
+                </g>
+
+                <!-- ════════ STEP 1b: Winding Machine (right) ════════ -->
+                <g
+                  class="h2-proc-box h2-proc-fadein-right"
+                  style="animation-delay: 0.35s"
+                  data-step="winding"
+                >
+                  <!-- Step number badge -->
+                  <circle cx="508" cy="32" r="12" fill="#bf3425" />
+                  <text x="508" y="36" text-anchor="middle" class="h2-step-num">
+                    1b
+                  </text>
+                  <!-- Header bar -->
+                  <rect
+                    x="460"
+                    y="48"
+                    width="240"
+                    height="32"
+                    rx="8"
+                    ry="8"
+                    fill="#bf3425"
+                  />
+                  <text
+                    x="580"
+                    y="69"
+                    text-anchor="middle"
+                    font-family="Inter,sans-serif"
+                    font-size="13"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    WINDING MACHINE
+                  </text>
+                  <!-- Card body -->
+                  <g class="h2-proc-box-bg">
+                    <rect
+                      x="460"
+                      y="80"
+                      width="240"
+                      height="100"
+                      rx="0"
+                      ry="0"
+                      fill="#fefcfb"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      filter="url(#h2BoxShadow)"
+                    />
+                    <rect
+                      x="460"
+                      y="168"
+                      width="240"
+                      height="12"
+                      rx="0"
+                      ry="0"
+                      fill="#bf3425"
+                      opacity="0.06"
+                    />
+                  </g>
+                  <!-- Content -->
+                  <text
+                    x="484"
+                    y="106"
+                    font-family="Inter,sans-serif"
+                    font-size="13"
+                    font-weight="600"
+                    fill="#1e293b"
+                  >
+                    Cylinder Body
+                  </text>
+                  <text
+                    x="484"
+                    y="128"
+                    font-family="Inter,sans-serif"
+                    font-size="12"
+                    fill="#64748b"
+                  >
+                    Geodesic hoop winding
+                  </text>
+                  <text
+                    x="484"
+                    y="148"
+                    font-family="Inter,sans-serif"
+                    font-size="12"
+                    fill="#64748b"
+                  >
+                    + helical reinforcement
+                  </text>
+                </g>
+
+                <!-- ════════ CONNECTOR LINES: Both merge down ════════ -->
+                <!-- Left arm down -->
+                <line
+                  x1="180"
+                  y1="180"
+                  x2="180"
+                  y2="230"
+                  stroke="#47577c"
+                  stroke-width="1.5"
+                  class="h2-proc-connector"
+                  style="animation-delay: 0.6s"
+                />
+                <!-- Left arm horizontal to center -->
+                <line
+                  x1="180"
+                  y1="230"
+                  x2="380"
+                  y2="230"
+                  stroke="#47577c"
+                  stroke-width="1.5"
+                  class="h2-proc-connector"
+                  style="animation-delay: 0.7s"
+                />
+                <!-- Right arm down -->
+                <line
+                  x1="580"
+                  y1="180"
+                  x2="580"
+                  y2="230"
+                  stroke="#bf3425"
+                  stroke-width="1.5"
+                  class="h2-proc-connector"
+                  style="animation-delay: 0.6s"
+                />
+                <!-- Right arm horizontal to center -->
+                <line
+                  x1="580"
+                  y1="230"
+                  x2="380"
+                  y2="230"
+                  stroke="#bf3425"
+                  stroke-width="1.5"
+                  class="h2-proc-connector"
+                  style="animation-delay: 0.7s"
+                />
+                <!-- Merge point down -->
+                <line
+                  x1="380"
+                  y1="230"
+                  x2="380"
+                  y2="270"
+                  stroke="#9d9d9c"
+                  stroke-width="1.5"
+                  marker-end="url(#h2FlowArrow)"
+                  class="h2-proc-connector"
+                  style="animation-delay: 0.85s"
+                />
+
+                <!-- Merge point dot -->
+                <circle cx="380" cy="230" r="5" fill="#9d9d9c" opacity="0.6" />
+
+                <!-- Flow arrow triangle -->
+                <polygon
+                  points="372,260 388,260 380,272"
+                  fill="#47577c"
+                  class="h2-arrow-pulse"
+                />
+
+                <!-- ════════ STEP 2: In-Situ Consolidation ════════ -->
+                <g
+                  class="h2-proc-box h2-proc-fadein-down"
+                  style="animation-delay: 0.9s"
+                  data-step="consol"
+                >
+                  <!-- Step number badge -->
+                  <circle cx="290" cy="278" r="12" fill="#9d9d9c" />
+                  <text
+                    x="290"
+                    y="282"
+                    text-anchor="middle"
+                    class="h2-step-num"
+                  >
+                    2
+                  </text>
+                  <!-- Header bar -->
+                  <rect
+                    x="260"
+                    y="294"
+                    width="240"
+                    height="30"
+                    rx="8"
+                    ry="8"
+                    fill="#9d9d9c"
+                  />
+                  <text
+                    x="380"
+                    y="314"
+                    text-anchor="middle"
+                    font-family="Inter,sans-serif"
+                    font-size="12"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    CONSOLIDATION / CURE
+                  </text>
+                  <!-- Card body -->
+                  <g class="h2-proc-box-bg">
+                    <rect
+                      x="260"
+                      y="324"
+                      width="240"
+                      height="82"
+                      rx="0"
+                      ry="0"
+                      fill="#f8fafc"
+                      stroke="#9d9d9c"
+                      stroke-width="1.5"
+                      filter="url(#h2BoxShadow)"
+                    />
+                  </g>
+                  <!-- Content -->
+                  <text
+                    x="284"
+                    y="350"
+                    font-family="Inter,sans-serif"
+                    font-size="13"
+                    font-weight="600"
+                    fill="#1e293b"
+                  >
+                    In-Situ Consolidation
+                  </text>
+                  <text
+                    x="284"
+                    y="370"
+                    font-family="Inter,sans-serif"
+                    font-size="12"
+                    fill="#64748b"
+                  >
+                    (TP) or Oven Cure (thermoset)
+                  </text>
+                  <text
+                    x="284"
+                    y="390"
+                    font-family="Inter,sans-serif"
+                    font-size="11"
+                    fill="#94a3b8"
+                  >
+                    Full laminate integration
+                  </text>
+                </g>
+
+                <!-- ════════ CONNECTOR: Step 2 → Step 3 ════════ -->
+                <line
+                  x1="380"
+                  y1="406"
+                  x2="380"
+                  y2="440"
+                  stroke="#9d9d9c"
+                  stroke-width="1.5"
+                  class="h2-proc-connector"
+                  style="animation-delay: 1.2s"
+                />
+                <polygon
+                  points="372,432 388,432 380,444"
+                  fill="#47577c"
+                  class="h2-arrow-pulse"
+                  style="animation-delay: 0.5s"
+                />
+
+                <!-- ════════ STEP 3: NDT Inspection ════════ -->
+                <g
+                  class="h2-proc-box h2-proc-fadein-down"
+                  style="animation-delay: 1.3s"
+                  data-step="ndt"
+                >
+                  <!-- Step number badge -->
+                  <circle cx="290" cy="448" r="12" fill="#47577c" />
+                  <text
+                    x="290"
+                    y="452"
+                    text-anchor="middle"
+                    class="h2-step-num"
+                  >
+                    3
+                  </text>
+                  <!-- Header bar -->
+                  <rect
+                    x="260"
+                    y="464"
+                    width="240"
+                    height="30"
+                    rx="8"
+                    ry="8"
+                    fill="#47577c"
+                  />
+                  <text
+                    x="380"
+                    y="484"
+                    text-anchor="middle"
+                    font-family="Inter,sans-serif"
+                    font-size="12"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    QUALITY ASSURANCE
+                  </text>
+                  <!-- Card body -->
+                  <g class="h2-proc-box-bg">
+                    <rect
+                      x="260"
+                      y="494"
+                      width="240"
+                      height="22"
+                      rx="0"
+                      ry="6"
+                      fill="#eef1f6"
+                      stroke="#47577c"
+                      stroke-width="1.5"
+                    />
+                  </g>
+                  <text
+                    x="380"
+                    y="510"
+                    text-anchor="middle"
+                    font-family="Inter,sans-serif"
+                    font-size="12"
+                    font-weight="600"
+                    fill="#47577c"
+                  >
+                    NDT Inspection + Proof Test
+                  </text>
+                </g>
+              </svg>
+
+              <!-- Tooltip -->
+              <div class="h2-process-tooltip" id="h2ProcessTooltip"></div>
+            </div>
+
+            <div class="h2-process-source">
+              Source: Based on [14][15][16]; Addcomposites internal
+              manufacturing concept
+            </div>
           </div>
         </section>
 
@@ -1044,20 +2499,624 @@
           </p>
 
           <!-- Figure 6 Placeholder -->
-          <div class="infographic-placeholder">
-            <p class="infographic-label">
-              Figure 6: Metyx Composite PV Module Cross-Section
-            </p>
-            <p class="infographic-description">
-              Cross-sectional schematic comparing a conventional glass/aluminium
-              PV module (top) with the Metyx composite module (bottom).
-              Conventional: glass front sheet, EVA encapsulant, PV cells, EVA,
-              TPT back sheet, Al frame — showing heavy, rigid, flat
-              construction. Metyx: GFRP transparent front sheet,
-              EVA/encapsulant, PV cells, CFRP sandwich back sheet — showing
-              lighter, curved-surface-compatible construction. Weight comparison
-              annotations showing 50-80% weight reduction.
-            </p>
+
+          <div class="pv-compare-container">
+            <h4 class="pv-compare-title">
+              PV Module Architecture — Glass vs Composite
+            </h4>
+            <div class="pv-compare-subtitle">
+              Conventional rigid glass panel vs. Metyx lightweight GFRP/CFRP
+              composite enabling curved surfaces
+            </div>
+
+            <div class="pv-compare-grid">
+              <!-- ════════ CONVENTIONAL ════════ -->
+              <div
+                class="pv-module-card pv-card-conv pv-fadein"
+                style="animation-delay: 0.1s"
+              >
+                <div class="pv-card-header">
+                  <span class="pv-card-badge pv-badge-conv">Conventional</span>
+                  <span class="pv-card-header-text">Glass PV Module</span>
+                </div>
+
+                <div
+                  class="pv-card-svg-wrap"
+                  id="pvConvSvg"
+                  style="position: relative"
+                >
+                  <svg viewBox="0 0 380 210" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Layer 1: Glass -->
+                    <g class="pv-layer-group" data-tip="conv-glass">
+                      <rect
+                        class="pv-layer-rect"
+                        x="20"
+                        y="10"
+                        width="340"
+                        height="34"
+                        rx="4"
+                        fill="#a8bce0"
+                        stroke="#47577c"
+                        stroke-width="1"
+                      />
+                      <text
+                        x="30"
+                        y="32"
+                        font-family="Inter,sans-serif"
+                        font-size="11"
+                        font-weight="600"
+                        fill="#1e293b"
+                      >
+                        Glass (3.2 mm)
+                      </text>
+                      <text
+                        x="290"
+                        y="32"
+                        font-family="Inter,sans-serif"
+                        font-size="10"
+                        fill="#64748b"
+                        text-anchor="end"
+                      >
+                        ~8–12 kg/m²
+                      </text>
+                    </g>
+                    <!-- Layer 2: EVA top -->
+                    <g class="pv-layer-group" data-tip="conv-eva">
+                      <rect
+                        class="pv-layer-rect"
+                        x="20"
+                        y="48"
+                        width="340"
+                        height="22"
+                        rx="2"
+                        fill="#f5e6b8"
+                        stroke="#d4a843"
+                        stroke-width="0.8"
+                      />
+                      <text
+                        x="30"
+                        y="64"
+                        font-family="Inter,sans-serif"
+                        font-size="10"
+                        fill="#8b6914"
+                      >
+                        EVA encapsulant
+                      </text>
+                    </g>
+                    <!-- Layer 3: Solar cells -->
+                    <g class="pv-layer-group" data-tip="conv-cells">
+                      <rect
+                        class="pv-layer-rect"
+                        x="20"
+                        y="74"
+                        width="340"
+                        height="42"
+                        rx="2"
+                        fill="#2d3a5c"
+                        stroke="#47577c"
+                        stroke-width="1"
+                      />
+                      <!-- Cell pattern -->
+                      <g opacity="0.5">
+                        <rect
+                          x="30"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="58"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="86"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="114"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="142"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="170"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="198"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="226"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="254"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="282"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="310"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                      </g>
+                      <text
+                        x="188"
+                        y="100"
+                        text-anchor="middle"
+                        font-family="Inter,sans-serif"
+                        font-size="10"
+                        font-weight="600"
+                        fill="#c8d0dc"
+                      >
+                        Silicon PV Cells
+                      </text>
+                    </g>
+                    <!-- Layer 4: EVA bottom -->
+                    <g class="pv-layer-group" data-tip="conv-eva">
+                      <rect
+                        class="pv-layer-rect"
+                        x="20"
+                        y="120"
+                        width="340"
+                        height="22"
+                        rx="2"
+                        fill="#f5e6b8"
+                        stroke="#d4a843"
+                        stroke-width="0.8"
+                      />
+                      <text
+                        x="30"
+                        y="136"
+                        font-family="Inter,sans-serif"
+                        font-size="10"
+                        fill="#8b6914"
+                      >
+                        EVA encapsulant
+                      </text>
+                    </g>
+                    <!-- Layer 5: TPT Backsheet -->
+                    <g class="pv-layer-group" data-tip="conv-tpt">
+                      <rect
+                        class="pv-layer-rect"
+                        x="20"
+                        y="146"
+                        width="340"
+                        height="24"
+                        rx="4"
+                        fill="#e8e8e8"
+                        stroke="#9d9d9c"
+                        stroke-width="1"
+                      />
+                      <text
+                        x="30"
+                        y="163"
+                        font-family="Inter,sans-serif"
+                        font-size="11"
+                        font-weight="600"
+                        fill="#64748b"
+                      >
+                        TPT Backsheet
+                      </text>
+                    </g>
+                    <!-- Al frame -->
+                    <rect
+                      x="14"
+                      y="6"
+                      width="6"
+                      height="168"
+                      rx="2"
+                      fill="#9d9d9c"
+                      opacity="0.6"
+                    />
+                    <rect
+                      x="360"
+                      y="6"
+                      width="6"
+                      height="168"
+                      rx="2"
+                      fill="#9d9d9c"
+                      opacity="0.6"
+                    />
+                    <text
+                      x="190"
+                      y="196"
+                      text-anchor="middle"
+                      font-family="Inter,sans-serif"
+                      font-size="11"
+                      font-weight="600"
+                      fill="#9d9d9c"
+                    >
+                      Al frame (rigid, flat only)
+                    </text>
+                  </svg>
+                  <div class="pv-layer-tooltip" id="pvConvTip"></div>
+                </div>
+
+                <div class="pv-card-props">
+                  <div class="pv-prop-row">
+                    <span class="pv-prop-icon pv-icon-bad">✗</span> Heavy glass
+                    front layer
+                  </div>
+                  <div class="pv-prop-row">
+                    <span class="pv-prop-icon pv-icon-bad">✗</span> Rigid
+                    aluminium frame required
+                  </div>
+                  <div class="pv-prop-row">
+                    <span class="pv-prop-icon pv-icon-bad">✗</span> Flat
+                    surfaces only
+                  </div>
+                </div>
+
+                <div class="pv-weight-bar-wrap">
+                  <div class="pv-weight-label">Areal weight</div>
+                  <div class="pv-weight-bar-track">
+                    <div
+                      class="pv-weight-bar-fill pv-weight-bar-fill-conv"
+                    ></div>
+                  </div>
+                  <div class="pv-weight-value pv-weight-value-conv">
+                    ~8–12 kg/m²
+                  </div>
+                </div>
+              </div>
+
+              <!-- ════════ METYX COMPOSITE ════════ -->
+              <div
+                class="pv-module-card pv-card-metyx pv-fadein"
+                style="animation-delay: 0.25s"
+              >
+                <div class="pv-card-header">
+                  <span class="pv-card-badge pv-badge-metyx"
+                    >Metyx Composite</span
+                  >
+                  <span class="pv-card-header-text">GFRP / CFRP Module</span>
+                </div>
+
+                <div
+                  class="pv-card-svg-wrap"
+                  id="pvMetyxSvg"
+                  style="position: relative"
+                >
+                  <svg viewBox="0 0 380 210" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Layer 1: GFRP front (wavy to show flexibility) -->
+                    <g class="pv-layer-group" data-tip="metyx-gfrp">
+                      <path
+                        class="pv-layer-rect"
+                        d="M20,30 Q100,10 190,30 Q280,50 360,30 L360,10 Q280,30 190,10 Q100,-10 20,10 Z"
+                        fill="#b8d4e8"
+                        stroke="#47577c"
+                        stroke-width="1"
+                        opacity="0.85"
+                      />
+                      <text
+                        x="30"
+                        y="24"
+                        font-family="Inter,sans-serif"
+                        font-size="11"
+                        font-weight="600"
+                        fill="#1e293b"
+                      >
+                        GFRP front (transparent)
+                      </text>
+                      <text
+                        x="310"
+                        y="24"
+                        font-family="Inter,sans-serif"
+                        font-size="10"
+                        fill="#64748b"
+                        text-anchor="end"
+                      >
+                        ~2–4 kg/m²
+                      </text>
+                    </g>
+                    <!-- Layer 2: EVA top -->
+                    <g class="pv-layer-group" data-tip="metyx-eva">
+                      <rect
+                        class="pv-layer-rect"
+                        x="20"
+                        y="48"
+                        width="340"
+                        height="22"
+                        rx="2"
+                        fill="#f5e6b8"
+                        stroke="#d4a843"
+                        stroke-width="0.8"
+                      />
+                      <text
+                        x="30"
+                        y="64"
+                        font-family="Inter,sans-serif"
+                        font-size="10"
+                        fill="#8b6914"
+                      >
+                        EVA encapsulant
+                      </text>
+                    </g>
+                    <!-- Layer 3: Solar cells -->
+                    <g class="pv-layer-group" data-tip="metyx-cells">
+                      <rect
+                        class="pv-layer-rect"
+                        x="20"
+                        y="74"
+                        width="340"
+                        height="42"
+                        rx="2"
+                        fill="#2d3a5c"
+                        stroke="#47577c"
+                        stroke-width="1"
+                      />
+                      <g opacity="0.5">
+                        <rect
+                          x="30"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="58"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="86"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="114"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="142"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="170"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="198"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="226"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="254"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="282"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                        <rect
+                          x="310"
+                          y="82"
+                          width="24"
+                          height="24"
+                          rx="1"
+                          fill="#4a5f8c"
+                        />
+                      </g>
+                      <text
+                        x="188"
+                        y="100"
+                        text-anchor="middle"
+                        font-family="Inter,sans-serif"
+                        font-size="10"
+                        font-weight="600"
+                        fill="#c8d0dc"
+                      >
+                        Silicon PV Cells
+                      </text>
+                    </g>
+                    <!-- Layer 4: EVA bottom -->
+                    <g class="pv-layer-group" data-tip="metyx-eva">
+                      <rect
+                        class="pv-layer-rect"
+                        x="20"
+                        y="120"
+                        width="340"
+                        height="22"
+                        rx="2"
+                        fill="#f5e6b8"
+                        stroke="#d4a843"
+                        stroke-width="0.8"
+                      />
+                      <text
+                        x="30"
+                        y="136"
+                        font-family="Inter,sans-serif"
+                        font-size="10"
+                        fill="#8b6914"
+                      >
+                        EVA encapsulant
+                      </text>
+                    </g>
+                    <!-- Layer 5: CFRP sandwich (thicker, with hatching) -->
+                    <g class="pv-layer-group" data-tip="metyx-cfrp">
+                      <defs>
+                        <pattern
+                          id="pvHatch"
+                          patternUnits="userSpaceOnUse"
+                          width="6"
+                          height="6"
+                          patternTransform="rotate(45)"
+                        >
+                          <line
+                            x1="0"
+                            y1="0"
+                            x2="0"
+                            y2="6"
+                            stroke="#3a4866"
+                            stroke-width="0.7"
+                            opacity="0.2"
+                          />
+                        </pattern>
+                      </defs>
+                      <rect
+                        class="pv-layer-rect"
+                        x="20"
+                        y="146"
+                        width="340"
+                        height="30"
+                        rx="4"
+                        fill="#47577c"
+                        opacity="0.85"
+                      />
+                      <rect
+                        x="20"
+                        y="146"
+                        width="340"
+                        height="30"
+                        rx="4"
+                        fill="url(#pvHatch)"
+                      />
+                      <text
+                        x="30"
+                        y="166"
+                        font-family="Inter,sans-serif"
+                        font-size="11"
+                        font-weight="700"
+                        fill="#ffffff"
+                      >
+                        CFRP sandwich (can curve!)
+                      </text>
+                    </g>
+                    <!-- No frame indicator -->
+                    <text
+                      x="190"
+                      y="200"
+                      text-anchor="middle"
+                      font-family="Inter,sans-serif"
+                      font-size="11"
+                      font-weight="600"
+                      fill="#47577c"
+                    >
+                      No frame — curved surfaces possible ✓
+                    </text>
+                  </svg>
+                  <div class="pv-layer-tooltip" id="pvMetyxTip"></div>
+                </div>
+
+                <div class="pv-card-props">
+                  <div class="pv-prop-row">
+                    <span class="pv-prop-icon pv-icon-good">✓</span> Lightweight
+                    GFRP transparent front
+                  </div>
+                  <div class="pv-prop-row">
+                    <span class="pv-prop-icon pv-icon-good">✓</span> No frame —
+                    self-supporting CFRP
+                  </div>
+                  <div class="pv-prop-row">
+                    <span class="pv-prop-icon pv-icon-good">✓</span> Curved
+                    &amp; complex surface mounting
+                  </div>
+                </div>
+
+                <div class="pv-weight-bar-wrap">
+                  <div class="pv-weight-label">Areal weight</div>
+                  <div class="pv-weight-bar-track">
+                    <div
+                      class="pv-weight-bar-fill pv-weight-bar-fill-metyx"
+                    ></div>
+                  </div>
+                  <div class="pv-weight-value pv-weight-value-metyx">
+                    ~2–4 kg/m² (50–66% lighter)
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pv-compare-source">
+              Source: Metyx Composites / Itech Solar / METU, JEC Innovation
+              Award — Renewable Energies 2026 [17]
+            </div>
           </div>
 
           <h3>Wind Energy: The Silent Giant</h3>
@@ -1631,7 +3690,9 @@
               Have questions about composite pressure vessel manufacturing or
               AFP technology for hydrogen tank applications?
             </p>
-            <a href="https://www.addcomposites.com/contact" class="cta-button"
+            <a
+              href="https://www.addcomposites.com/contact-us"
+              class="cta-button"
               >Contact Us for a Consultation</a
             >
           </div>
