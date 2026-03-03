@@ -1246,3 +1246,712 @@ section {
     border: 1px solid #334155;
   }
 }
+/* <!-- Infographic Placeholder 1 --> */
+.lsam-diagram-container {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.lsam-diagram-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #47577c;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.lsam-diagram-svg-wrap {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.lsam-diagram-svg-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Component hover styles */
+.lsam-component {
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.lsam-component:hover {
+  filter: drop-shadow(0 0 8px rgba(71, 87, 124, 0.4));
+}
+
+.lsam-component:hover .lsam-fill-navy {
+  fill: #3a4866;
+}
+
+.lsam-component:hover .lsam-fill-red {
+  fill: #a82c1f;
+}
+
+.lsam-component:hover .lsam-fill-gray {
+  fill: #8a8a89;
+}
+
+/* Tooltip */
+.lsam-tooltip {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  transform: translateY(6px);
+  z-index: 10;
+  max-width: 260px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.lsam-tooltip.lsam-tooltip-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lsam-tooltip-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #47577c;
+  margin-bottom: 4px;
+}
+
+.lsam-tooltip-highlight {
+  color: #bf3425;
+  font-weight: 600;
+}
+
+/* Animated flow lines */
+@keyframes lsamFlowDown {
+  0% {
+    stroke-dashoffset: 20;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.lsam-flow-line {
+  stroke-dasharray: 6 4;
+  animation: lsamFlowDown 0.8s linear infinite;
+}
+
+/* Material bead animation */
+@keyframes lsamBeadMove {
+  0% {
+    transform: translateX(-30px);
+  }
+  100% {
+    transform: translateX(30px);
+  }
+}
+
+.lsam-bead {
+  animation: lsamBeadMove 2s ease-in-out infinite alternate;
+}
+
+/* Pulse on extruder nozzle */
+@keyframes lsamPulse {
+  0%,
+  100% {
+    r: 4;
+    opacity: 0.8;
+  }
+  50% {
+    r: 7;
+    opacity: 0.3;
+  }
+}
+
+.lsam-pulse-dot {
+  animation: lsamPulse 1.6s ease-in-out infinite;
+}
+
+/* Gantry shuttle animation */
+@keyframes lsamGantryShuttle {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+.lsam-gantry-head {
+  animation: lsamGantryShuttle 3s ease-in-out infinite;
+}
+
+/* Source note */
+.lsam-source-note {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* Legend */
+.lsam-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.lsam-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.lsam-legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
+/* <!-- Infographic Placeholder 2 --> */
+.lsam-crossover-container {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.lsam-crossover-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #47577c;
+  margin-bottom: 20px;
+}
+
+.lsam-crossover-chart-wrap {
+  position: relative;
+  width: 100%;
+  height: 380px;
+}
+
+@media (min-width: 768px) {
+  .lsam-crossover-chart-wrap {
+    height: 420px;
+  }
+}
+
+.lsam-crossover-note {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 13px;
+  color: #64748b;
+  font-style: italic;
+}
+
+.lsam-crossover-source {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+  font-style: italic;
+}
+/* <!-- Infographic Placeholder 3 --> */
+.afp-timeline-container {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px 24px 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.afp-timeline-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #47577c;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.afp-timeline-svg-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.afp-timeline-svg-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+/* Milestone hover */
+.afp-tl-milestone {
+  cursor: pointer;
+}
+
+.afp-tl-milestone .afp-tl-dot-outer {
+  transition:
+    r 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.afp-tl-milestone:hover .afp-tl-dot-outer {
+  r: 18;
+  opacity: 0.18;
+}
+
+.afp-tl-milestone .afp-tl-dot-inner {
+  transition: r 0.2s ease;
+}
+
+.afp-tl-milestone:hover .afp-tl-dot-inner {
+  r: 9;
+}
+
+.afp-tl-milestone .afp-tl-card {
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.afp-tl-milestone:hover .afp-tl-card {
+  transform: translateY(-4px);
+}
+
+.afp-tl-milestone:hover .afp-tl-card-bg {
+  filter: brightness(0.96);
+}
+
+/* Tooltip */
+.afp-tl-tooltip {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  transform: translateY(6px);
+  z-index: 10;
+  max-width: 240px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.afp-tl-tooltip.afp-tl-tooltip-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.afp-tl-tooltip-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #47577c;
+  margin-bottom: 4px;
+}
+
+.afp-tl-tooltip-highlight {
+  color: #bf3425;
+  font-weight: 600;
+}
+
+/* Arrow animation */
+@keyframes afpTlArrowPulse {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(6px);
+    opacity: 0.6;
+  }
+}
+
+.afp-tl-arrow-head {
+  animation: afpTlArrowPulse 2s ease-in-out infinite;
+}
+
+/* Dot entrance animation */
+@keyframes afpTlDotIn {
+  0% {
+    r: 0;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.afp-tl-dot-inner {
+  animation: afpTlDotIn 0.5s ease-out both;
+}
+
+/* Progress bar fill animation */
+@keyframes afpTlProgressFill {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.afp-tl-source {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+  font-style: italic;
+}
+/* <!-- Infographic Placeholder 4 --> */
+.afp-workflow-container {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.afp-workflow-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #47577c;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.afp-workflow-svg-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.afp-workflow-svg-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Node hover */
+.afp-wf-node {
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.afp-wf-node:hover {
+  filter: drop-shadow(0 0 10px rgba(71, 87, 124, 0.35));
+}
+
+.afp-wf-node:hover .afp-wf-node-bg {
+  transform: scale(1.04);
+  transform-origin: center;
+}
+
+.afp-wf-node .afp-wf-node-bg {
+  transition: transform 0.25s ease;
+}
+
+/* Flow arrow dash animation */
+@keyframes afpWfFlowForward {
+  0% {
+    stroke-dashoffset: 16;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes afpWfFlowBack {
+  0% {
+    stroke-dashoffset: -16;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.afp-wf-arrow-fwd {
+  stroke-dasharray: 8 4;
+  animation: afpWfFlowForward 0.7s linear infinite;
+}
+
+.afp-wf-arrow-back {
+  stroke-dasharray: 8 4;
+  animation: afpWfFlowBack 0.7s linear infinite;
+}
+
+/* Feedback loop pulse */
+@keyframes afpWfFeedbackPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.afp-wf-feedback-label {
+  animation: afpWfFeedbackPulse 2s ease-in-out infinite;
+}
+
+/* Tooltip */
+.afp-wf-tooltip {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  transform: translateY(6px);
+  z-index: 10;
+  max-width: 250px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.afp-wf-tooltip.afp-wf-tooltip-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.afp-wf-tooltip-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #47577c;
+  margin-bottom: 4px;
+}
+
+.afp-wf-tooltip-hl {
+  color: #bf3425;
+  font-weight: 600;
+}
+
+.afp-wf-source {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.afp-wf-legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.afp-wf-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.afp-wf-legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
+/* <!-- Infographic Placeholder 5 --> */
+.sauber-arch-container {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sauber-arch-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #47577c;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sauber-arch-svg-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.sauber-arch-svg-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Node hover */
+.sauber-node {
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.sauber-node:hover {
+  filter: drop-shadow(0 0 12px rgba(71, 87, 124, 0.35));
+}
+
+.sauber-node .sauber-node-bg {
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+  transform-origin: center;
+}
+
+.sauber-node:hover .sauber-node-bg {
+  transform: scale(1.03);
+}
+
+/* Data flow animation */
+@keyframes sauberDataFlow {
+  0% {
+    stroke-dashoffset: 16;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.sauber-flow-line {
+  stroke-dasharray: 6 4;
+  animation: sauberDataFlow 0.8s linear infinite;
+}
+
+/* Pulse on backbone */
+@keyframes sauberBackbonePulse {
+  0%,
+  100% {
+    opacity: 0.06;
+  }
+  50% {
+    opacity: 0.14;
+  }
+}
+
+.sauber-backbone-glow {
+  animation: sauberBackbonePulse 3s ease-in-out infinite;
+}
+
+/* Partner badge hover */
+.sauber-partner-badge {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  transform-origin: center;
+}
+
+.sauber-partner-badge:hover {
+  transform: scale(1.08);
+}
+
+/* Tooltip */
+.sauber-tooltip {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  transform: translateY(6px);
+  z-index: 10;
+  max-width: 260px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.sauber-tooltip.sauber-tooltip-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sauber-tooltip-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #47577c;
+  margin-bottom: 4px;
+}
+
+.sauber-tooltip-hl {
+  color: #bf3425;
+  font-weight: 600;
+}
+
+.sauber-source {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+  font-style: italic;
+}

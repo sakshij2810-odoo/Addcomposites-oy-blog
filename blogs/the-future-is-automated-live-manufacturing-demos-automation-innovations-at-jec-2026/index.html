@@ -534,12 +534,581 @@
           </p>
 
           <!-- Infographic Placeholder 1 -->
-          <!-- INFOGRAPHIC PLACEHOLDER: Thermwood LSAM AP510 System Schematic
-               Schematic showing the Thermwood LSAM AP510 gantry system configuration with moving table,
-               print head, and dual hopper material handling. Annotate key specifications: 5'×10' table,
-               4' max height, 450°F max temperature. Show material flow path from pellet hoppers through
-               extruder to deposition head.
-               Source: Thermwood Corporation LSAM product documentation; JEC World 2026 Live Demo program [3][4] -->
+
+          <div class="lsam-diagram-container" id="lsamDiagramRoot">
+            <h4 class="lsam-diagram-title">
+              Thermwood LSAM AP510 — System Architecture
+            </h4>
+
+            <div class="lsam-diagram-svg-wrap" id="lsamSvgWrap">
+              <svg viewBox="0 0 720 520" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient
+                    id="lsamNavyGrad"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#5a6d96" />
+                    <stop offset="100%" stop-color="#47577c" />
+                  </linearGradient>
+                  <linearGradient
+                    id="lsamRedGrad"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#d94a3a" />
+                    <stop offset="100%" stop-color="#bf3425" />
+                  </linearGradient>
+                  <linearGradient
+                    id="lsamGrayGrad"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#b0b0af" />
+                    <stop offset="100%" stop-color="#9d9d9c" />
+                  </linearGradient>
+                  <filter id="lsamShadow">
+                    <feDropShadow
+                      dx="0"
+                      dy="2"
+                      stdDeviation="3"
+                      flood-color="#000"
+                      flood-opacity="0.08"
+                    />
+                  </filter>
+                </defs>
+
+                <!-- Outer machine frame -->
+                <rect
+                  x="60"
+                  y="20"
+                  width="600"
+                  height="470"
+                  rx="14"
+                  fill="none"
+                  stroke="#47577c"
+                  stroke-width="2.5"
+                  stroke-dasharray="8 4"
+                  opacity="0.35"
+                />
+                <text
+                  x="360"
+                  y="15"
+                  text-anchor="middle"
+                  font-size="11"
+                  fill="#94a3b8"
+                  font-weight="600"
+                  letter-spacing="1.5"
+                >
+                  LSAM AP510 ENCLOSURE
+                </text>
+
+                <!-- ============ HOPPER A ============ -->
+                <g class="lsam-component" data-lsam-tip="hopperA">
+                  <rect
+                    class="lsam-fill-navy"
+                    x="195"
+                    y="55"
+                    width="110"
+                    height="80"
+                    rx="8"
+                    fill="url(#lsamNavyGrad)"
+                    filter="url(#lsamShadow)"
+                  />
+                  <text
+                    x="250"
+                    y="90"
+                    text-anchor="middle"
+                    font-size="13"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    HOPPER A
+                  </text>
+                  <text
+                    x="250"
+                    y="108"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#c8d0e0"
+                  >
+                    Primary Resin
+                  </text>
+                  <!-- Small pellet indicators -->
+                  <circle
+                    cx="225"
+                    cy="120"
+                    r="3"
+                    fill="#8a9bc2"
+                    opacity="0.7"
+                  />
+                  <circle
+                    cx="240"
+                    cy="125"
+                    r="2.5"
+                    fill="#8a9bc2"
+                    opacity="0.5"
+                  />
+                  <circle
+                    cx="260"
+                    cy="122"
+                    r="3"
+                    fill="#8a9bc2"
+                    opacity="0.6"
+                  />
+                  <circle
+                    cx="275"
+                    cy="126"
+                    r="2"
+                    fill="#8a9bc2"
+                    opacity="0.5"
+                  />
+                </g>
+
+                <!-- ============ HOPPER B ============ -->
+                <g class="lsam-component" data-lsam-tip="hopperB">
+                  <rect
+                    class="lsam-fill-red"
+                    x="415"
+                    y="55"
+                    width="110"
+                    height="80"
+                    rx="8"
+                    fill="url(#lsamRedGrad)"
+                    filter="url(#lsamShadow)"
+                  />
+                  <text
+                    x="470"
+                    y="90"
+                    text-anchor="middle"
+                    font-size="13"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    HOPPER B
+                  </text>
+                  <text
+                    x="470"
+                    y="108"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#f0c4bf"
+                  >
+                    Secondary Resin
+                  </text>
+                  <circle
+                    cx="445"
+                    cy="120"
+                    r="3"
+                    fill="#e88a80"
+                    opacity="0.7"
+                  />
+                  <circle
+                    cx="460"
+                    cy="125"
+                    r="2.5"
+                    fill="#e88a80"
+                    opacity="0.5"
+                  />
+                  <circle
+                    cx="480"
+                    cy="122"
+                    r="3"
+                    fill="#e88a80"
+                    opacity="0.6"
+                  />
+                  <circle
+                    cx="495"
+                    cy="126"
+                    r="2"
+                    fill="#e88a80"
+                    opacity="0.5"
+                  />
+                </g>
+
+                <!-- Dual feed label -->
+                <text
+                  x="600"
+                  y="95"
+                  font-size="11"
+                  fill="#64748b"
+                  font-weight="600"
+                >
+                  ← Dual material
+                </text>
+                <text
+                  x="614"
+                  y="110"
+                  font-size="11"
+                  fill="#64748b"
+                  font-weight="600"
+                >
+                  feed system
+                </text>
+
+                <!-- Flow lines from hoppers to extruder -->
+                <line
+                  class="lsam-flow-line"
+                  x1="250"
+                  y1="135"
+                  x2="250"
+                  y2="185"
+                  stroke="#47577c"
+                  stroke-width="2.5"
+                  opacity="0.6"
+                />
+                <line
+                  class="lsam-flow-line"
+                  x1="470"
+                  y1="135"
+                  x2="470"
+                  y2="165"
+                  stroke="#bf3425"
+                  stroke-width="2.5"
+                  opacity="0.6"
+                />
+                <line
+                  class="lsam-flow-line"
+                  x1="470"
+                  y1="165"
+                  x2="360"
+                  y2="185"
+                  stroke="#bf3425"
+                  stroke-width="2"
+                  opacity="0.5"
+                />
+                <line
+                  class="lsam-flow-line"
+                  x1="250"
+                  y1="175"
+                  x2="360"
+                  y2="185"
+                  stroke="#47577c"
+                  stroke-width="2"
+                  opacity="0.5"
+                  style="animation-delay: 0.3s"
+                />
+
+                <!-- Merge point -->
+                <circle
+                  cx="360"
+                  cy="185"
+                  r="5"
+                  fill="#9d9d9c"
+                  stroke="#fff"
+                  stroke-width="1.5"
+                />
+
+                <!-- ============ EXTRUDER ============ -->
+                <g class="lsam-component" data-lsam-tip="extruder">
+                  <rect
+                    class="lsam-fill-gray"
+                    x="285"
+                    y="200"
+                    width="150"
+                    height="70"
+                    rx="8"
+                    fill="url(#lsamGrayGrad)"
+                    filter="url(#lsamShadow)"
+                  />
+                  <text
+                    x="360"
+                    y="228"
+                    text-anchor="middle"
+                    font-size="14"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    EXTRUDER
+                  </text>
+                  <text
+                    x="360"
+                    y="248"
+                    text-anchor="middle"
+                    font-size="11"
+                    fill="#ffffff"
+                    opacity="0.85"
+                  >
+                    450 °F max
+                  </text>
+                  <!-- Nozzle -->
+                  <polygon
+                    points="345,270 375,270 365,290 355,290"
+                    fill="#7a7a79"
+                  />
+                  <!-- Heat pulse -->
+                  <circle
+                    class="lsam-pulse-dot"
+                    cx="360"
+                    cy="290"
+                    r="4"
+                    fill="#bf3425"
+                    opacity="0.8"
+                  />
+                </g>
+
+                <!-- Flow line extruder to gantry -->
+                <line
+                  class="lsam-flow-line"
+                  x1="360"
+                  y1="292"
+                  x2="360"
+                  y2="315"
+                  stroke="#9d9d9c"
+                  stroke-width="2.5"
+                  opacity="0.6"
+                />
+
+                <!-- ============ GANTRY ============ -->
+                <g class="lsam-component" data-lsam-tip="gantry">
+                  <!-- Gantry rail -->
+                  <rect
+                    x="140"
+                    y="320"
+                    width="440"
+                    height="12"
+                    rx="3"
+                    fill="#47577c"
+                  />
+                  <rect
+                    x="140"
+                    y="336"
+                    width="440"
+                    height="12"
+                    rx="3"
+                    fill="#47577c"
+                  />
+                  <!-- Gantry head -->
+                  <g class="lsam-gantry-head">
+                    <rect
+                      x="330"
+                      y="312"
+                      width="60"
+                      height="44"
+                      rx="6"
+                      fill="url(#lsamRedGrad)"
+                      filter="url(#lsamShadow)"
+                    />
+                    <text
+                      x="360"
+                      y="340"
+                      text-anchor="middle"
+                      font-size="9"
+                      font-weight="700"
+                      fill="#ffffff"
+                    >
+                      HEAD
+                    </text>
+                  </g>
+                  <!-- Axis labels -->
+                  <text
+                    x="600"
+                    y="335"
+                    font-size="11"
+                    fill="#64748b"
+                    font-weight="600"
+                  >
+                    ← Gantry
+                  </text>
+                  <text
+                    x="606"
+                    y="350"
+                    font-size="11"
+                    fill="#64748b"
+                    font-weight="600"
+                  >
+                    (X / Y / Z)
+                  </text>
+                </g>
+
+                <!-- ============ MATERIAL BEAD ============ -->
+                <g class="lsam-bead" opacity="0.7">
+                  <ellipse
+                    cx="360"
+                    cy="370"
+                    rx="18"
+                    ry="5"
+                    fill="#bf3425"
+                    opacity="0.45"
+                  />
+                </g>
+
+                <!-- ============ MOVING TABLE ============ -->
+                <g class="lsam-component" data-lsam-tip="table">
+                  <rect
+                    class="lsam-fill-navy"
+                    x="150"
+                    y="385"
+                    width="420"
+                    height="80"
+                    rx="10"
+                    fill="url(#lsamNavyGrad)"
+                    filter="url(#lsamShadow)"
+                  />
+                  <!-- Table surface pattern -->
+                  <line
+                    x1="180"
+                    y1="395"
+                    x2="180"
+                    y2="455"
+                    stroke="#5a6d96"
+                    stroke-width="1"
+                    opacity="0.4"
+                  />
+                  <line
+                    x1="240"
+                    y1="395"
+                    x2="240"
+                    y2="455"
+                    stroke="#5a6d96"
+                    stroke-width="1"
+                    opacity="0.4"
+                  />
+                  <line
+                    x1="300"
+                    y1="395"
+                    x2="300"
+                    y2="455"
+                    stroke="#5a6d96"
+                    stroke-width="1"
+                    opacity="0.4"
+                  />
+                  <line
+                    x1="360"
+                    y1="395"
+                    x2="360"
+                    y2="455"
+                    stroke="#5a6d96"
+                    stroke-width="1"
+                    opacity="0.4"
+                  />
+                  <line
+                    x1="420"
+                    y1="395"
+                    x2="420"
+                    y2="455"
+                    stroke="#5a6d96"
+                    stroke-width="1"
+                    opacity="0.4"
+                  />
+                  <line
+                    x1="480"
+                    y1="395"
+                    x2="480"
+                    y2="455"
+                    stroke="#5a6d96"
+                    stroke-width="1"
+                    opacity="0.4"
+                  />
+                  <line
+                    x1="540"
+                    y1="395"
+                    x2="540"
+                    y2="455"
+                    stroke="#5a6d96"
+                    stroke-width="1"
+                    opacity="0.4"
+                  />
+
+                  <text
+                    x="360"
+                    y="418"
+                    text-anchor="middle"
+                    font-size="14"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    MOVING TABLE (5′ × 10′)
+                  </text>
+
+                  <!-- Mold outline -->
+                  <rect
+                    x="240"
+                    y="430"
+                    width="240"
+                    height="28"
+                    rx="5"
+                    fill="none"
+                    stroke="#c8d0e0"
+                    stroke-width="1.5"
+                    stroke-dasharray="5 3"
+                  />
+                  <text
+                    x="360"
+                    y="449"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#c8d0e0"
+                    font-weight="600"
+                  >
+                    DRONE MOLD IN PROGRESS
+                  </text>
+                </g>
+
+                <!-- Table legs -->
+                <rect
+                  x="180"
+                  y="465"
+                  width="12"
+                  height="20"
+                  rx="2"
+                  fill="#47577c"
+                  opacity="0.5"
+                />
+                <rect
+                  x="528"
+                  y="465"
+                  width="12"
+                  height="20"
+                  rx="2"
+                  fill="#47577c"
+                  opacity="0.5"
+                />
+              </svg>
+
+              <!-- Tooltip element -->
+              <div class="lsam-tooltip" id="lsamTooltip">
+                <div class="lsam-tooltip-title" id="lsamTooltipTitle"></div>
+                <div id="lsamTooltipBody"></div>
+              </div>
+            </div>
+
+            <!-- Legend -->
+            <div class="lsam-legend">
+              <div class="lsam-legend-item">
+                <div
+                  class="lsam-legend-swatch"
+                  style="background: #47577c"
+                ></div>
+                Structure / Feed
+              </div>
+              <div class="lsam-legend-item">
+                <div
+                  class="lsam-legend-swatch"
+                  style="background: #bf3425"
+                ></div>
+                Active / Thermal
+              </div>
+              <div class="lsam-legend-item">
+                <div
+                  class="lsam-legend-swatch"
+                  style="background: #9d9d9c"
+                ></div>
+                Processing Unit
+              </div>
+            </div>
+
+            <div class="lsam-source-note">
+              Source: Thermwood Corporation LSAM product documentation; JEC
+              World 2026 Live Demo program
+            </div>
+          </div>
         </section>
 
         <!-- Live Demo #3 — Caracol Robotic Manufacturing -->
@@ -936,12 +1505,26 @@
           </p>
 
           <!-- Infographic Placeholder 2 -->
-          <!-- INFOGRAPHIC PLACEHOLDER: The Automation ROI Threshold
-               Bar chart showing manufacturing cost per part (y-axis) vs. annual production volume
-               (x-axis, 10–1,000 parts/year) comparing manual hand layup vs. AFP automation.
-               Show crossover point at ~150 parts/year where AFP becomes cost-competitive.
-               Include second y-axis or annotation showing defect rate curve declining with automation.
-               Source: Addcomposites ROI analysis; Plataine composites labor analysis [9][10] -->
+
+          <div class="lsam-crossover-container">
+            <h4 class="lsam-crossover-title">
+              Cost Per Part vs. Annual Production Volume
+            </h4>
+            <div class="lsam-crossover-chart-wrap">
+              <canvas id="lsamCrossoverChart"></canvas>
+            </div>
+            <div class="lsam-crossover-note">
+              Crossover at ~150 parts/year — beyond this volume, AFP/Automated
+              delivers lower per-unit cost
+            </div>
+            <div class="lsam-crossover-source">
+              Source: Addcomposites ROI analysis; Plataine composites labor
+              analysis
+            </div>
+          </div>
+
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.2.1/dist/chartjs-plugin-annotation.min.js"></script>
         </section>
 
         <!-- AFP & Filament Winding -->
@@ -1011,13 +1594,705 @@
           </div>
 
           <!-- Infographic Placeholder 3 -->
-          <!-- INFOGRAPHIC PLACEHOLDER: AFP Technology Evolution Timeline
-               Horizontal timeline from 1980 to 2026 showing key milestones. Key nodes:
-               1980s (first AFP systems, Cincinnati Milacron); 1990s (A320/777 wing skins);
-               2000s (F-35 composite fuselage, 787 barrel sections); 2010s (first robotic AFP systems);
-               2018 (Addcomposites AFP-XS launched); 2020s (rental/lease models, SME adoption);
-               2026 (JEC 2026 — thermoplastic AFP wins Innovation Award).
-               Source: CompositesWorld AFP history; Addcomposites technology timeline [11][12] -->
+
+          <div class="afp-timeline-container">
+            <h4 class="afp-timeline-title">
+              AFP Technology Evolution — From Aerospace Giants to Accessible
+              Manufacturing
+            </h4>
+
+            <div class="afp-timeline-svg-wrap" id="afpTlWrap">
+              <svg viewBox="0 0 820 310" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient
+                    id="afpTlLineGrad"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop offset="0%" stop-color="#9d9d9c" />
+                    <stop offset="50%" stop-color="#47577c" />
+                    <stop offset="100%" stop-color="#bf3425" />
+                  </linearGradient>
+                  <linearGradient
+                    id="afpTlNavyGrad"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#5a6d96" />
+                    <stop offset="100%" stop-color="#47577c" />
+                  </linearGradient>
+                  <linearGradient
+                    id="afpTlRedGrad"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#d94a3a" />
+                    <stop offset="100%" stop-color="#bf3425" />
+                  </linearGradient>
+                  <filter id="afpTlShadow">
+                    <feDropShadow
+                      dx="0"
+                      dy="2"
+                      stdDeviation="3"
+                      flood-color="#000"
+                      flood-opacity="0.08"
+                    />
+                  </filter>
+                </defs>
+
+                <!-- Main timeline line -->
+                <line
+                  x1="60"
+                  y1="130"
+                  x2="760"
+                  y2="130"
+                  stroke="url(#afpTlLineGrad)"
+                  stroke-width="3.5"
+                  stroke-linecap="round"
+                />
+
+                <!-- Arrow head -->
+                <g class="afp-tl-arrow-head">
+                  <polygon points="758,120 780,130 758,140" fill="#bf3425" />
+                </g>
+                <text
+                  x="790"
+                  y="135"
+                  font-size="12"
+                  fill="#bf3425"
+                  font-weight="700"
+                >
+                  Year
+                </text>
+
+                <!-- ============ MILESTONE 1: 1980s ============ -->
+                <g class="afp-tl-milestone" data-afp-tl-tip="m1980">
+                  <!-- Tick -->
+                  <line
+                    x1="100"
+                    y1="118"
+                    x2="100"
+                    y2="142"
+                    stroke="#9d9d9c"
+                    stroke-width="2"
+                  />
+                  <!-- Dot -->
+                  <circle
+                    class="afp-tl-dot-outer"
+                    cx="100"
+                    cy="130"
+                    r="14"
+                    fill="#9d9d9c"
+                    opacity="0.1"
+                  />
+                  <circle
+                    class="afp-tl-dot-inner"
+                    cx="100"
+                    cy="130"
+                    r="7"
+                    fill="#9d9d9c"
+                    style="animation-delay: 0.1s"
+                  />
+                  <!-- Year label -->
+                  <text
+                    x="100"
+                    y="160"
+                    text-anchor="middle"
+                    font-size="13"
+                    fill="#47577c"
+                    font-weight="700"
+                  >
+                    1980s
+                  </text>
+                  <!-- Card above -->
+                  <g class="afp-tl-card">
+                    <rect
+                      class="afp-tl-card-bg"
+                      x="45"
+                      y="38"
+                      width="110"
+                      height="68"
+                      rx="8"
+                      fill="#f8f9fb"
+                      stroke="#e2e8f0"
+                      stroke-width="1"
+                      filter="url(#afpTlShadow)"
+                    />
+                    <text
+                      x="100"
+                      y="60"
+                      text-anchor="middle"
+                      font-size="11"
+                      fill="#47577c"
+                      font-weight="700"
+                    >
+                      First AFP
+                    </text>
+                    <text
+                      x="100"
+                      y="75"
+                      text-anchor="middle"
+                      font-size="11"
+                      fill="#47577c"
+                      font-weight="700"
+                    >
+                      Gantries
+                    </text>
+                    <text
+                      x="100"
+                      y="95"
+                      text-anchor="middle"
+                      font-size="10"
+                      fill="#9d9d9c"
+                      font-weight="600"
+                    >
+                      $1–5M systems
+                    </text>
+                  </g>
+                </g>
+
+                <!-- ============ MILESTONE 2: 1990s ============ -->
+                <g class="afp-tl-milestone" data-afp-tl-tip="m1990">
+                  <line
+                    x1="235"
+                    y1="118"
+                    x2="235"
+                    y2="142"
+                    stroke="#47577c"
+                    stroke-width="2"
+                  />
+                  <circle
+                    class="afp-tl-dot-outer"
+                    cx="235"
+                    cy="130"
+                    r="14"
+                    fill="#47577c"
+                    opacity="0.1"
+                  />
+                  <circle
+                    class="afp-tl-dot-inner"
+                    cx="235"
+                    cy="130"
+                    r="7"
+                    fill="#47577c"
+                    style="animation-delay: 0.25s"
+                  />
+                  <text
+                    x="235"
+                    y="160"
+                    text-anchor="middle"
+                    font-size="13"
+                    fill="#47577c"
+                    font-weight="700"
+                  >
+                    1990s
+                  </text>
+                  <g class="afp-tl-card">
+                    <rect
+                      class="afp-tl-card-bg"
+                      x="175"
+                      y="38"
+                      width="120"
+                      height="68"
+                      rx="8"
+                      fill="#f8f9fb"
+                      stroke="#e2e8f0"
+                      stroke-width="1"
+                      filter="url(#afpTlShadow)"
+                    />
+                    <text
+                      x="235"
+                      y="60"
+                      text-anchor="middle"
+                      font-size="11"
+                      fill="#47577c"
+                      font-weight="700"
+                    >
+                      787 / A350
+                    </text>
+                    <text
+                      x="235"
+                      y="75"
+                      text-anchor="middle"
+                      font-size="11"
+                      fill="#47577c"
+                      font-weight="700"
+                    >
+                      Programs
+                    </text>
+                    <text
+                      x="235"
+                      y="95"
+                      text-anchor="middle"
+                      font-size="10"
+                      fill="#9d9d9c"
+                      font-weight="600"
+                    >
+                      Aerospace flagships
+                    </text>
+                  </g>
+                </g>
+
+                <!-- ============ MILESTONE 3: 2000s ============ -->
+                <g class="afp-tl-milestone" data-afp-tl-tip="m2000">
+                  <line
+                    x1="375"
+                    y1="118"
+                    x2="375"
+                    y2="142"
+                    stroke="#47577c"
+                    stroke-width="2"
+                  />
+                  <circle
+                    class="afp-tl-dot-outer"
+                    cx="375"
+                    cy="130"
+                    r="14"
+                    fill="#47577c"
+                    opacity="0.1"
+                  />
+                  <circle
+                    class="afp-tl-dot-inner"
+                    cx="375"
+                    cy="130"
+                    r="7"
+                    fill="#47577c"
+                    style="animation-delay: 0.4s"
+                  />
+                  <text
+                    x="375"
+                    y="160"
+                    text-anchor="middle"
+                    font-size="13"
+                    fill="#47577c"
+                    font-weight="700"
+                  >
+                    2000s
+                  </text>
+                  <g class="afp-tl-card">
+                    <rect
+                      class="afp-tl-card-bg"
+                      x="315"
+                      y="38"
+                      width="120"
+                      height="68"
+                      rx="8"
+                      fill="#f8f9fb"
+                      stroke="#e2e8f0"
+                      stroke-width="1"
+                      filter="url(#afpTlShadow)"
+                    />
+                    <text
+                      x="375"
+                      y="60"
+                      text-anchor="middle"
+                      font-size="11"
+                      fill="#47577c"
+                      font-weight="700"
+                    >
+                      AFP Standard
+                    </text>
+                    <text
+                      x="375"
+                      y="75"
+                      text-anchor="middle"
+                      font-size="11"
+                      fill="#47577c"
+                      font-weight="700"
+                    >
+                      in Aero
+                    </text>
+                    <text
+                      x="375"
+                      y="95"
+                      text-anchor="middle"
+                      font-size="10"
+                      fill="#9d9d9c"
+                      font-weight="600"
+                    >
+                      Massive scale
+                    </text>
+                  </g>
+                </g>
+
+                <!-- ============ MILESTONE 4: 2010s ============ -->
+                <g class="afp-tl-milestone" data-afp-tl-tip="m2010">
+                  <line
+                    x1="520"
+                    y1="118"
+                    x2="520"
+                    y2="142"
+                    stroke="#47577c"
+                    stroke-width="2"
+                  />
+                  <circle
+                    class="afp-tl-dot-outer"
+                    cx="520"
+                    cy="130"
+                    r="14"
+                    fill="#47577c"
+                    opacity="0.1"
+                  />
+                  <circle
+                    class="afp-tl-dot-inner"
+                    cx="520"
+                    cy="130"
+                    r="7"
+                    fill="#47577c"
+                    style="animation-delay: 0.55s"
+                  />
+                  <text
+                    x="520"
+                    y="160"
+                    text-anchor="middle"
+                    font-size="13"
+                    fill="#47577c"
+                    font-weight="700"
+                  >
+                    2010s
+                  </text>
+                  <g class="afp-tl-card">
+                    <rect
+                      class="afp-tl-card-bg"
+                      x="460"
+                      y="38"
+                      width="120"
+                      height="68"
+                      rx="8"
+                      fill="#f8f9fb"
+                      stroke="#e2e8f0"
+                      stroke-width="1"
+                      filter="url(#afpTlShadow)"
+                    />
+                    <text
+                      x="520"
+                      y="60"
+                      text-anchor="middle"
+                      font-size="11"
+                      fill="#47577c"
+                      font-weight="700"
+                    >
+                      Robot AFP
+                    </text>
+                    <text
+                      x="520"
+                      y="75"
+                      text-anchor="middle"
+                      font-size="11"
+                      fill="#47577c"
+                      font-weight="700"
+                    >
+                      Systems
+                    </text>
+                    <text
+                      x="520"
+                      y="95"
+                      text-anchor="middle"
+                      font-size="10"
+                      fill="#9d9d9c"
+                      font-weight="600"
+                    >
+                      Emerging platforms
+                    </text>
+                  </g>
+                </g>
+
+                <!-- ============ MILESTONE 5: 2020s–2026 ============ -->
+                <g class="afp-tl-milestone" data-afp-tl-tip="m2026">
+                  <line
+                    x1="690"
+                    y1="118"
+                    x2="690"
+                    y2="142"
+                    stroke="#bf3425"
+                    stroke-width="2.5"
+                  />
+                  <circle
+                    class="afp-tl-dot-outer"
+                    cx="690"
+                    cy="130"
+                    r="14"
+                    fill="#bf3425"
+                    opacity="0.12"
+                  />
+                  <circle
+                    class="afp-tl-dot-inner"
+                    cx="690"
+                    cy="130"
+                    r="7"
+                    fill="#bf3425"
+                    style="animation-delay: 0.7s"
+                  />
+                  <text
+                    x="690"
+                    y="160"
+                    text-anchor="middle"
+                    font-size="13"
+                    fill="#bf3425"
+                    font-weight="700"
+                  >
+                    2020s–2026
+                  </text>
+                  <g class="afp-tl-card">
+                    <rect
+                      class="afp-tl-card-bg"
+                      x="625"
+                      y="38"
+                      width="130"
+                      height="68"
+                      rx="8"
+                      fill="#fef7f6"
+                      stroke="#f0c4bf"
+                      stroke-width="1"
+                      filter="url(#afpTlShadow)"
+                    />
+                    <text
+                      x="690"
+                      y="60"
+                      text-anchor="middle"
+                      font-size="11"
+                      fill="#bf3425"
+                      font-weight="700"
+                    >
+                      Accessible AFP
+                    </text>
+                    <text
+                      x="690"
+                      y="75"
+                      text-anchor="middle"
+                      font-size="11"
+                      fill="#bf3425"
+                      font-weight="700"
+                    >
+                      for All
+                    </text>
+                    <text
+                      x="690"
+                      y="95"
+                      text-anchor="middle"
+                      font-size="10"
+                      fill="#9d9d9c"
+                      font-weight="600"
+                    >
+                      SMEs &amp; new sectors
+                    </text>
+                  </g>
+                </g>
+
+                <!-- Cost bar (bottom section) -->
+                <text
+                  x="60"
+                  y="200"
+                  font-size="12"
+                  fill="#47577c"
+                  font-weight="700"
+                >
+                  System Cost Trend
+                </text>
+
+                <!-- Cost gradient bar -->
+                <defs>
+                  <linearGradient
+                    id="afpTlCostGrad"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop offset="0%" stop-color="#47577c" />
+                    <stop offset="60%" stop-color="#9d9d9c" />
+                    <stop offset="100%" stop-color="#bf3425" />
+                  </linearGradient>
+                </defs>
+                <rect
+                  x="60"
+                  y="215"
+                  width="700"
+                  height="18"
+                  rx="9"
+                  fill="#f1f5f9"
+                />
+                <rect
+                  x="60"
+                  y="215"
+                  width="700"
+                  height="18"
+                  rx="9"
+                  fill="url(#afpTlCostGrad)"
+                  opacity="0.2"
+                />
+
+                <!-- Cost labels -->
+                <text
+                  x="100"
+                  y="250"
+                  text-anchor="middle"
+                  font-size="11"
+                  fill="#47577c"
+                  font-weight="700"
+                >
+                  $1–5M
+                </text>
+                <text
+                  x="100"
+                  y="265"
+                  text-anchor="middle"
+                  font-size="9"
+                  fill="#94a3b8"
+                >
+                  Capital-heavy
+                </text>
+
+                <text
+                  x="375"
+                  y="250"
+                  text-anchor="middle"
+                  font-size="11"
+                  fill="#9d9d9c"
+                  font-weight="700"
+                >
+                  $250K–1M
+                </text>
+                <text
+                  x="375"
+                  y="265"
+                  text-anchor="middle"
+                  font-size="9"
+                  fill="#94a3b8"
+                >
+                  Decreasing
+                </text>
+
+                <text
+                  x="690"
+                  y="250"
+                  text-anchor="middle"
+                  font-size="11"
+                  fill="#bf3425"
+                  font-weight="700"
+                >
+                  ~€3,500/mo
+                </text>
+                <text
+                  x="690"
+                  y="265"
+                  text-anchor="middle"
+                  font-size="9"
+                  fill="#94a3b8"
+                >
+                  Rental / modular
+                </text>
+
+                <!-- Audience labels -->
+                <text
+                  x="60"
+                  y="295"
+                  font-size="12"
+                  fill="#47577c"
+                  font-weight="700"
+                >
+                  Target Audience
+                </text>
+
+                <rect
+                  x="80"
+                  y="302"
+                  width="120"
+                  height="22"
+                  rx="11"
+                  fill="#47577c"
+                  opacity="0.1"
+                />
+                <text
+                  x="140"
+                  y="317"
+                  text-anchor="middle"
+                  font-size="10"
+                  fill="#47577c"
+                  font-weight="600"
+                >
+                  Tier-1 OEMs
+                </text>
+
+                <rect
+                  x="280"
+                  y="302"
+                  width="120"
+                  height="22"
+                  rx="11"
+                  fill="#9d9d9c"
+                  opacity="0.15"
+                />
+                <text
+                  x="340"
+                  y="317"
+                  text-anchor="middle"
+                  font-size="10"
+                  fill="#64748b"
+                  font-weight="600"
+                >
+                  Large Suppliers
+                </text>
+
+                <rect
+                  x="480"
+                  y="302"
+                  width="120"
+                  height="22"
+                  rx="11"
+                  fill="#9d9d9c"
+                  opacity="0.15"
+                />
+                <text
+                  x="540"
+                  y="317"
+                  text-anchor="middle"
+                  font-size="10"
+                  fill="#64748b"
+                  font-weight="600"
+                >
+                  Emerging Cos.
+                </text>
+
+                <rect
+                  x="650"
+                  y="302"
+                  width="100"
+                  height="22"
+                  rx="11"
+                  fill="#bf3425"
+                  opacity="0.1"
+                />
+                <text
+                  x="700"
+                  y="317"
+                  text-anchor="middle"
+                  font-size="10"
+                  fill="#bf3425"
+                  font-weight="600"
+                >
+                  SMEs &amp; All
+                </text>
+              </svg>
+
+              <!-- Tooltip -->
+              <div class="afp-tl-tooltip" id="afpTlTooltip">
+                <div class="afp-tl-tooltip-title" id="afpTlTooltipTitle"></div>
+                <div id="afpTlTooltipBody"></div>
+              </div>
+            </div>
+
+            <div class="afp-tl-source">
+              Source: CompositesWorld AFP history; Addcomposites technology
+              timeline
+            </div>
+          </div>
 
           <p>
             The robot-mounted AFP approach unlocks several fundamental shifts:
@@ -1304,41 +2579,569 @@
           </div>
 
           <!-- Infographic Placeholder 4 -->
-          <!-- INFOGRAPHIC PLACEHOLDER: Digital Manufacturing Workflow for Automated Composites
-               Flowchart showing the complete digital manufacturing chain. Left to right:
-               (1) Structural Design (FEA) → (2) Fiber Path Planning (AddPath / Additive3D)
-               → (3) Simulation & Defect Prediction → (4) Robot Program Generation
-               → (5) AFP / Winding / LFAM Execution → (6) In-Process Inspection
-               → (7) Post-Processing & Quality Record → (8) Digital Product Passport.
-               Show feedback loops from inspection back to path planning.
-               Source: Addcomposites AddPath documentation; Thermwood/Purdue Additive3D collaboration [3][12] -->
+
+          <div class="afp-workflow-container">
+            <h4 class="afp-workflow-title">
+              Digital Thread Workflow — Design to Quality Assurance Loop
+            </h4>
+
+            <div class="afp-workflow-svg-wrap" id="afpWfWrap">
+              <svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient
+                    id="afpWfNavy"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#5a6d96" />
+                    <stop offset="100%" stop-color="#47577c" />
+                  </linearGradient>
+                  <linearGradient
+                    id="afpWfRed"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#d94a3a" />
+                    <stop offset="100%" stop-color="#bf3425" />
+                  </linearGradient>
+                  <linearGradient
+                    id="afpWfGray"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#b0b0af" />
+                    <stop offset="100%" stop-color="#9d9d9c" />
+                  </linearGradient>
+                  <filter id="afpWfShadow">
+                    <feDropShadow
+                      dx="0"
+                      dy="2"
+                      stdDeviation="3"
+                      flood-color="#000"
+                      flood-opacity="0.08"
+                    />
+                  </filter>
+                  <marker
+                    id="afpWfArrowNavy"
+                    markerWidth="8"
+                    markerHeight="6"
+                    refX="8"
+                    refY="3"
+                    orient="auto"
+                  >
+                    <polygon points="0 0, 8 3, 0 6" fill="#47577c" />
+                  </marker>
+                  <marker
+                    id="afpWfArrowRed"
+                    markerWidth="8"
+                    markerHeight="6"
+                    refX="8"
+                    refY="3"
+                    orient="auto"
+                  >
+                    <polygon points="0 0, 8 3, 0 6" fill="#bf3425" />
+                  </marker>
+                  <marker
+                    id="afpWfArrowGray"
+                    markerWidth="8"
+                    markerHeight="6"
+                    refX="8"
+                    refY="3"
+                    orient="auto"
+                  >
+                    <polygon points="0 0, 8 3, 0 6" fill="#9d9d9c" />
+                  </marker>
+                </defs>
+
+                <!-- ====== TOP ROW ARROWS (left to right) ====== -->
+                <!-- DESIGN → PATH PLAN -->
+                <line
+                  class="afp-wf-arrow-fwd"
+                  x1="155"
+                  y1="75"
+                  x2="198"
+                  y2="75"
+                  stroke="#47577c"
+                  stroke-width="2.5"
+                  marker-end="url(#afpWfArrowNavy)"
+                />
+                <!-- PATH PLAN → SIMULATE -->
+                <line
+                  class="afp-wf-arrow-fwd"
+                  x1="355"
+                  y1="75"
+                  x2="398"
+                  y2="75"
+                  stroke="#47577c"
+                  stroke-width="2.5"
+                  marker-end="url(#afpWfArrowNavy)"
+                  style="animation-delay: 0.15s"
+                />
+                <!-- SIMULATE → ROBOT PROG -->
+                <line
+                  class="afp-wf-arrow-fwd"
+                  x1="555"
+                  y1="75"
+                  x2="598"
+                  y2="75"
+                  stroke="#47577c"
+                  stroke-width="2.5"
+                  marker-end="url(#afpWfArrowNavy)"
+                  style="animation-delay: 0.3s"
+                />
+
+                <!-- ====== RIGHT SIDE ARROW (down) ====== -->
+                <line
+                  class="afp-wf-arrow-fwd"
+                  x1="710"
+                  y1="100"
+                  x2="710"
+                  y2="195"
+                  stroke="#bf3425"
+                  stroke-width="2.5"
+                  marker-end="url(#afpWfArrowRed)"
+                  style="animation-delay: 0.45s"
+                />
+
+                <!-- ====== BOTTOM ROW ARROWS (right to left) ====== -->
+                <!-- EXECUTE → MANUFACTURE -->
+                <line
+                  class="afp-wf-arrow-back"
+                  x1="604"
+                  y1="230"
+                  x2="561"
+                  y2="230"
+                  stroke="#bf3425"
+                  stroke-width="2.5"
+                  marker-end="url(#afpWfArrowRed)"
+                  style="animation-delay: 0.15s"
+                />
+                <!-- MANUFACTURE → INSPECTION -->
+                <line
+                  class="afp-wf-arrow-back"
+                  x1="404"
+                  y1="230"
+                  x2="361"
+                  y2="230"
+                  stroke="#bf3425"
+                  stroke-width="2.5"
+                  marker-end="url(#afpWfArrowRed)"
+                  style="animation-delay: 0.3s"
+                />
+                <!-- INSPECTION → DPP/QA -->
+                <line
+                  class="afp-wf-arrow-back"
+                  x1="204"
+                  y1="230"
+                  x2="161"
+                  y2="230"
+                  stroke="#bf3425"
+                  stroke-width="2.5"
+                  marker-end="url(#afpWfArrowRed)"
+                  style="animation-delay: 0.45s"
+                />
+
+                <!-- ====== LEFT SIDE ARROW (up) ====== -->
+                <line
+                  class="afp-wf-arrow-back"
+                  x1="100"
+                  y1="205"
+                  x2="100"
+                  y2="103"
+                  stroke="#47577c"
+                  stroke-width="2.5"
+                  marker-end="url(#afpWfArrowNavy)"
+                  style="animation-delay: 0.6s"
+                />
+
+                <!-- ====== FEEDBACK LOOP ARROW ====== -->
+                <path
+                  class="afp-wf-arrow-fwd"
+                  d="M 305 255 C 305 300, 305 300, 305 300 C 305 315, 280 315, 245 315 C 120 315, 100 315, 100 280 L 100 258"
+                  stroke="#9d9d9c"
+                  stroke-width="2"
+                  fill="none"
+                  marker-end="url(#afpWfArrowGray)"
+                  style="animation-delay: 0.2s"
+                />
+                <text
+                  class="afp-wf-feedback-label"
+                  x="220"
+                  y="310"
+                  text-anchor="middle"
+                  font-size="11"
+                  fill="#9d9d9c"
+                  font-weight="700"
+                >
+                  Feedback Loop
+                </text>
+
+                <!-- ====== TOP ROW: DESIGN PHASE NODES ====== -->
+
+                <!-- DESIGN -->
+                <g class="afp-wf-node" data-afp-wf-tip="design">
+                  <rect
+                    class="afp-wf-node-bg"
+                    x="40"
+                    y="50"
+                    width="120"
+                    height="50"
+                    rx="10"
+                    fill="url(#afpWfNavy)"
+                    filter="url(#afpWfShadow)"
+                  />
+                  <text
+                    x="100"
+                    y="72"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#c8d0e0"
+                    font-weight="600"
+                  >
+                    01
+                  </text>
+                  <text
+                    x="100"
+                    y="88"
+                    text-anchor="middle"
+                    font-size="13"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    DESIGN
+                  </text>
+                </g>
+
+                <!-- PATH PLAN -->
+                <g class="afp-wf-node" data-afp-wf-tip="pathplan">
+                  <rect
+                    class="afp-wf-node-bg"
+                    x="205"
+                    y="50"
+                    width="145"
+                    height="50"
+                    rx="10"
+                    fill="url(#afpWfNavy)"
+                    filter="url(#afpWfShadow)"
+                  />
+                  <text
+                    x="277"
+                    y="72"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#c8d0e0"
+                    font-weight="600"
+                  >
+                    02
+                  </text>
+                  <text
+                    x="277"
+                    y="88"
+                    text-anchor="middle"
+                    font-size="13"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    PATH PLAN
+                  </text>
+                </g>
+
+                <!-- SIMULATE -->
+                <g class="afp-wf-node" data-afp-wf-tip="simulate">
+                  <rect
+                    class="afp-wf-node-bg"
+                    x="405"
+                    y="50"
+                    width="145"
+                    height="50"
+                    rx="10"
+                    fill="url(#afpWfNavy)"
+                    filter="url(#afpWfShadow)"
+                  />
+                  <text
+                    x="477"
+                    y="72"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#c8d0e0"
+                    font-weight="600"
+                  >
+                    03
+                  </text>
+                  <text
+                    x="477"
+                    y="88"
+                    text-anchor="middle"
+                    font-size="13"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    SIMULATE
+                  </text>
+                </g>
+
+                <!-- ROBOT PROG -->
+                <g class="afp-wf-node" data-afp-wf-tip="robotprog">
+                  <rect
+                    class="afp-wf-node-bg"
+                    x="605"
+                    y="50"
+                    width="145"
+                    height="50"
+                    rx="10"
+                    fill="url(#afpWfNavy)"
+                    filter="url(#afpWfShadow)"
+                  />
+                  <text
+                    x="677"
+                    y="72"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#c8d0e0"
+                    font-weight="600"
+                  >
+                    04
+                  </text>
+                  <text
+                    x="677"
+                    y="88"
+                    text-anchor="middle"
+                    font-size="13"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    ROBOT PROG
+                  </text>
+                </g>
+
+                <!-- ====== BOTTOM ROW: EXECUTION PHASE NODES ====== -->
+
+                <!-- EXECUTE -->
+                <g class="afp-wf-node" data-afp-wf-tip="execute">
+                  <rect
+                    class="afp-wf-node-bg"
+                    x="610"
+                    y="205"
+                    width="140"
+                    height="50"
+                    rx="10"
+                    fill="url(#afpWfRed)"
+                    filter="url(#afpWfShadow)"
+                  />
+                  <text
+                    x="680"
+                    y="227"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#f0c4bf"
+                    font-weight="600"
+                  >
+                    05
+                  </text>
+                  <text
+                    x="680"
+                    y="243"
+                    text-anchor="middle"
+                    font-size="13"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    EXECUTE
+                  </text>
+                </g>
+
+                <!-- MANUFACTURE -->
+                <g class="afp-wf-node" data-afp-wf-tip="manufacture">
+                  <rect
+                    class="afp-wf-node-bg"
+                    x="405"
+                    y="205"
+                    width="155"
+                    height="50"
+                    rx="10"
+                    fill="url(#afpWfRed)"
+                    filter="url(#afpWfShadow)"
+                  />
+                  <text
+                    x="482"
+                    y="227"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#f0c4bf"
+                    font-weight="600"
+                  >
+                    06
+                  </text>
+                  <text
+                    x="482"
+                    y="243"
+                    text-anchor="middle"
+                    font-size="13"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    MANUFACTURE
+                  </text>
+                </g>
+
+                <!-- INSPECTION -->
+                <g class="afp-wf-node" data-afp-wf-tip="inspection">
+                  <rect
+                    class="afp-wf-node-bg"
+                    x="210"
+                    y="205"
+                    width="145"
+                    height="50"
+                    rx="10"
+                    fill="url(#afpWfRed)"
+                    filter="url(#afpWfShadow)"
+                  />
+                  <text
+                    x="282"
+                    y="227"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#f0c4bf"
+                    font-weight="600"
+                  >
+                    07
+                  </text>
+                  <text
+                    x="282"
+                    y="243"
+                    text-anchor="middle"
+                    font-size="13"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    INSPECTION
+                  </text>
+                </g>
+
+                <!-- DPP/QA -->
+                <g class="afp-wf-node" data-afp-wf-tip="dppqa">
+                  <rect
+                    class="afp-wf-node-bg"
+                    x="40"
+                    y="205"
+                    width="120"
+                    height="50"
+                    rx="10"
+                    fill="url(#afpWfGray)"
+                    filter="url(#afpWfShadow)"
+                  />
+                  <text
+                    x="100"
+                    y="227"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#e8e8e8"
+                    font-weight="600"
+                  >
+                    08
+                  </text>
+                  <text
+                    x="100"
+                    y="243"
+                    text-anchor="middle"
+                    font-size="13"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    DPP / QA
+                  </text>
+                </g>
+
+                <!-- Phase labels -->
+                <text
+                  x="40"
+                  y="35"
+                  font-size="11"
+                  fill="#47577c"
+                  font-weight="700"
+                  opacity="0.6"
+                  letter-spacing="1"
+                >
+                  DIGITAL PLANNING
+                </text>
+                <text
+                  x="40"
+                  y="195"
+                  font-size="11"
+                  fill="#bf3425"
+                  font-weight="700"
+                  opacity="0.6"
+                  letter-spacing="1"
+                >
+                  PHYSICAL EXECUTION
+                </text>
+              </svg>
+
+              <!-- Tooltip -->
+              <div class="afp-wf-tooltip" id="afpWfTooltip">
+                <div class="afp-wf-tooltip-title" id="afpWfTooltipTitle"></div>
+                <div id="afpWfTooltipBody"></div>
+              </div>
+            </div>
+
+            <div class="afp-wf-legend">
+              <div class="afp-wf-legend-item">
+                <div
+                  class="afp-wf-legend-swatch"
+                  style="background: #47577c"
+                ></div>
+                Digital / Planning
+              </div>
+              <div class="afp-wf-legend-item">
+                <div
+                  class="afp-wf-legend-swatch"
+                  style="background: #bf3425"
+                ></div>
+                Physical / Execution
+              </div>
+              <div class="afp-wf-legend-item">
+                <div
+                  class="afp-wf-legend-swatch"
+                  style="background: #9d9d9c"
+                ></div>
+                Quality / Feedback
+              </div>
+            </div>
+
+            <div class="afp-wf-source">
+              Source: Addcomposites AddPath documentation; Thermwood / Purdue
+              Additive3D collaboration
+            </div>
+          </div>
         </section>
 
         <!-- The SAUBER4.0 Connection -->
         <section id="sauber">
           <h2>The SAUBER4.0 Connection</h2>
 
-          <div class="split-layout">
-            <div class="split-image">
-              <img
-                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69a6b644633d7df4596621b1_16.png"
-                alt="SAUBER4.0 JEC Innovation Award Winner"
-              />
-            </div>
-            <div class="split-content">
-              <p>
-                No discussion of automation at JEC 2026 would be complete
-                without addressing the SAUBER4.0 project — the winner of the JEC
-                Composites Innovation Award in the Aerospace – Process category.
-                SAUBER4.0 is not a Live Demo Area demonstration, but it
-                represents the most complete vision of what an automated,
-                digitized composite factory can look like.
-              </p>
-              <p class="image-caption" style="text-align: left; margin-top: 0">
-                Source: JEC
-              </p>
-            </div>
-          </div>
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69a6b644633d7df4596621b1_16.png"
+            alt="SAUBER4.0 JEC Innovation Award Winner"
+            class="full-width-image"
+          />
+
+          <p>
+            No discussion of automation at JEC 2026 would be complete without
+            addressing the SAUBER4.0 project — the winner of the JEC Composites
+            Innovation Award in the Aerospace – Process category. SAUBER4.0 is
+            not a Live Demo Area demonstration, but it represents the most
+            complete vision of what an automated, digitized composite factory
+            can look like.
+          </p>
+          <p class="image-caption" style="text-align: left; margin-top: 0">
+            Source: JEC
+          </p>
 
           <h3>What SAUBER4.0 Is</h3>
 
@@ -1420,14 +3223,471 @@
           </p>
 
           <!-- Infographic Placeholder 5 -->
-          <!-- INFOGRAPHIC PLACEHOLDER: SAUBER4.0 Integrated Manufacturing Architecture
-               System architecture diagram for the SAUBER4.0 networked RTM manufacturing cell.
-               Show connected stations: (1) Preform Design (digital twin) → (2) Automated Preforming
-               → (3) Smart Mold System → (4) RTM Infusion → (5) Automated Cure Monitoring
-               → (6) In-Mold Inspection → (7) Part Release and Digital Record.
-               Show data network connecting all stations.
-               Partners: CTC/Airbus, DLR, Fraunhofer, KraussMaffei, Siemens, Teijin Carbon, Testia.
-               Source: JEC Composites Innovation Awards 2026; CompositesWorld [13][14] -->
+
+          <div class="sauber-arch-container">
+            <h4 class="sauber-arch-title">
+              SAUBER 4.0 — Digital Backbone Architecture
+            </h4>
+
+            <div class="sauber-arch-svg-wrap" id="sauberWrap">
+              <svg viewBox="0 0 780 420" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient
+                    id="sauberNavyGrad"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#5a6d96" />
+                    <stop offset="100%" stop-color="#47577c" />
+                  </linearGradient>
+                  <linearGradient
+                    id="sauberRedGrad"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#d94a3a" />
+                    <stop offset="100%" stop-color="#bf3425" />
+                  </linearGradient>
+                  <linearGradient
+                    id="sauberGrayGrad"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#b0b0af" />
+                    <stop offset="100%" stop-color="#9d9d9c" />
+                  </linearGradient>
+                  <linearGradient
+                    id="sauberBackboneGrad"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop offset="0%" stop-color="#47577c" />
+                    <stop offset="50%" stop-color="#3a4866" />
+                    <stop offset="100%" stop-color="#47577c" />
+                  </linearGradient>
+                  <filter id="sauberShadow">
+                    <feDropShadow
+                      dx="0"
+                      dy="2"
+                      stdDeviation="4"
+                      flood-color="#000"
+                      flood-opacity="0.08"
+                    />
+                  </filter>
+                  <filter id="sauberShadowLg">
+                    <feDropShadow
+                      dx="0"
+                      dy="4"
+                      stdDeviation="6"
+                      flood-color="#000"
+                      flood-opacity="0.1"
+                    />
+                  </filter>
+                </defs>
+
+                <!-- ====== DIGITAL BACKBONE (top block) ====== -->
+                <g class="sauber-node" data-sauber-tip="backbone">
+                  <!-- Glow pulse behind -->
+                  <rect
+                    class="sauber-backbone-glow"
+                    x="90"
+                    y="35"
+                    width="600"
+                    height="110"
+                    rx="16"
+                    fill="#47577c"
+                  />
+                  <!-- Main block -->
+                  <rect
+                    class="sauber-node-bg"
+                    x="95"
+                    y="40"
+                    width="590"
+                    height="100"
+                    rx="14"
+                    fill="url(#sauberBackboneGrad)"
+                    filter="url(#sauberShadowLg)"
+                  />
+                  <!-- Inner border accent -->
+                  <rect
+                    x="105"
+                    y="50"
+                    width="570"
+                    height="80"
+                    rx="10"
+                    fill="none"
+                    stroke="#5a6d96"
+                    stroke-width="1"
+                    opacity="0.4"
+                  />
+                  <!-- Text -->
+                  <text
+                    x="390"
+                    y="80"
+                    text-anchor="middle"
+                    font-size="18"
+                    font-weight="800"
+                    fill="#ffffff"
+                    letter-spacing="1"
+                  >
+                    SAUBER 4.0 DIGITAL BACKBONE
+                  </text>
+                  <text
+                    x="390"
+                    y="105"
+                    text-anchor="middle"
+                    font-size="12"
+                    fill="#c8d0e0"
+                    font-weight="500"
+                  >
+                    Siemens / DLR / Fraunhofer data layer
+                  </text>
+                  <!-- Small data icons -->
+                  <circle cx="150" cy="90" r="4" fill="#8a9bc2" opacity="0.4" />
+                  <circle cx="165" cy="85" r="3" fill="#8a9bc2" opacity="0.3" />
+                  <circle cx="610" cy="88" r="4" fill="#8a9bc2" opacity="0.4" />
+                  <circle cx="625" cy="93" r="3" fill="#8a9bc2" opacity="0.3" />
+                </g>
+
+                <!-- ====== FLOW LINES from backbone to modules ====== -->
+                <!-- To Preform Auto -->
+                <line
+                  class="sauber-flow-line"
+                  x1="230"
+                  y1="140"
+                  x2="230"
+                  y2="210"
+                  stroke="#47577c"
+                  stroke-width="2.5"
+                />
+                <polygon points="223,207 230,220 237,207" fill="#47577c" />
+
+                <!-- To Smart Mold -->
+                <line
+                  class="sauber-flow-line"
+                  x1="390"
+                  y1="140"
+                  x2="390"
+                  y2="210"
+                  stroke="#bf3425"
+                  stroke-width="2.5"
+                  style="animation-delay: 0.2s"
+                />
+                <polygon points="383,207 390,220 397,207" fill="#bf3425" />
+
+                <!-- To Inspect & QA -->
+                <line
+                  class="sauber-flow-line"
+                  x1="550"
+                  y1="140"
+                  x2="550"
+                  y2="210"
+                  stroke="#9d9d9c"
+                  stroke-width="2.5"
+                  style="animation-delay: 0.4s"
+                />
+                <polygon points="543,207 550,220 557,207" fill="#9d9d9c" />
+
+                <!-- ====== MODULE 1: PREFORM AUTO ====== -->
+                <g class="sauber-node" data-sauber-tip="preform">
+                  <rect
+                    class="sauber-node-bg"
+                    x="140"
+                    y="225"
+                    width="180"
+                    height="100"
+                    rx="12"
+                    fill="url(#sauberNavyGrad)"
+                    filter="url(#sauberShadow)"
+                  />
+                  <text
+                    x="230"
+                    y="255"
+                    text-anchor="middle"
+                    font-size="15"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    PREFORM AUTO
+                  </text>
+                  <line
+                    x1="175"
+                    y1="268"
+                    x2="285"
+                    y2="268"
+                    stroke="#5a6d96"
+                    stroke-width="1"
+                    opacity="0.5"
+                  />
+                  <text
+                    x="230"
+                    y="288"
+                    text-anchor="middle"
+                    font-size="12"
+                    fill="#c8d0e0"
+                    font-weight="600"
+                  >
+                    AFP / NCF
+                  </text>
+                  <text
+                    x="230"
+                    y="308"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#8a9bc2"
+                  >
+                    Automated fibre placement
+                  </text>
+                </g>
+
+                <!-- ====== MODULE 2: SMART MOLD ====== -->
+                <g class="sauber-node" data-sauber-tip="smartmold">
+                  <rect
+                    class="sauber-node-bg"
+                    x="340"
+                    y="225"
+                    width="180"
+                    height="100"
+                    rx="12"
+                    fill="url(#sauberRedGrad)"
+                    filter="url(#sauberShadow)"
+                  />
+                  <text
+                    x="430"
+                    y="255"
+                    text-anchor="middle"
+                    font-size="15"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    SMART MOLD
+                  </text>
+                  <line
+                    x1="375"
+                    y1="268"
+                    x2="485"
+                    y2="268"
+                    stroke="#d94a3a"
+                    stroke-width="1"
+                    opacity="0.5"
+                  />
+                  <text
+                    x="430"
+                    y="288"
+                    text-anchor="middle"
+                    font-size="12"
+                    fill="#f0c4bf"
+                    font-weight="600"
+                  >
+                    RTM + KM
+                  </text>
+                  <text
+                    x="430"
+                    y="308"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#e8a49d"
+                  >
+                    Resin transfer moulding
+                  </text>
+                </g>
+
+                <!-- ====== MODULE 3: INSPECT & QA ====== -->
+                <g class="sauber-node" data-sauber-tip="inspect">
+                  <rect
+                    class="sauber-node-bg"
+                    x="540"
+                    y="225"
+                    width="180"
+                    height="100"
+                    rx="12"
+                    fill="url(#sauberGrayGrad)"
+                    filter="url(#sauberShadow)"
+                  />
+                  <text
+                    x="630"
+                    y="255"
+                    text-anchor="middle"
+                    font-size="15"
+                    font-weight="700"
+                    fill="#ffffff"
+                  >
+                    INSPECT & QA
+                  </text>
+                  <line
+                    x1="575"
+                    y1="268"
+                    x2="685"
+                    y2="268"
+                    stroke="#b0b0af"
+                    stroke-width="1"
+                    opacity="0.5"
+                  />
+                  <text
+                    x="630"
+                    y="288"
+                    text-anchor="middle"
+                    font-size="12"
+                    fill="#e8e8e8"
+                    font-weight="600"
+                  >
+                    Testia
+                  </text>
+                  <text
+                    x="630"
+                    y="308"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#d0d0cf"
+                  >
+                    NDI & quality assurance
+                  </text>
+                </g>
+
+                <!-- ====== PARTNER BADGES ====== -->
+                <g class="sauber-partner-badge" data-sauber-tip="teijin">
+                  <rect
+                    x="170"
+                    y="345"
+                    width="120"
+                    height="36"
+                    rx="18"
+                    fill="#f8f9fb"
+                    stroke="#47577c"
+                    stroke-width="1.5"
+                  />
+                  <text
+                    x="230"
+                    y="368"
+                    text-anchor="middle"
+                    font-size="12"
+                    font-weight="700"
+                    fill="#47577c"
+                  >
+                    Teijin CF
+                  </text>
+                </g>
+                <!-- Connector line -->
+                <line
+                  x1="230"
+                  y1="325"
+                  x2="230"
+                  y2="345"
+                  stroke="#47577c"
+                  stroke-width="1"
+                  opacity="0.3"
+                />
+
+                <g class="sauber-partner-badge" data-sauber-tip="ctc">
+                  <rect
+                    x="370"
+                    y="345"
+                    width="120"
+                    height="36"
+                    rx="18"
+                    fill="#fef7f6"
+                    stroke="#bf3425"
+                    stroke-width="1.5"
+                  />
+                  <text
+                    x="430"
+                    y="368"
+                    text-anchor="middle"
+                    font-size="12"
+                    font-weight="700"
+                    fill="#bf3425"
+                  >
+                    CTC GmbH
+                  </text>
+                </g>
+                <line
+                  x1="430"
+                  y1="325"
+                  x2="430"
+                  y2="345"
+                  stroke="#bf3425"
+                  stroke-width="1"
+                  opacity="0.3"
+                />
+
+                <g class="sauber-partner-badge" data-sauber-tip="fraunhofer">
+                  <rect
+                    x="570"
+                    y="345"
+                    width="120"
+                    height="36"
+                    rx="18"
+                    fill="#f8f8f8"
+                    stroke="#9d9d9c"
+                    stroke-width="1.5"
+                  />
+                  <text
+                    x="630"
+                    y="368"
+                    text-anchor="middle"
+                    font-size="12"
+                    font-weight="700"
+                    fill="#64748b"
+                  >
+                    Fraunhofer
+                  </text>
+                </g>
+                <line
+                  x1="630"
+                  y1="325"
+                  x2="630"
+                  y2="345"
+                  stroke="#9d9d9c"
+                  stroke-width="1"
+                  opacity="0.3"
+                />
+
+                <!-- Award badge -->
+                <g transform="translate(55, 390)">
+                  <rect
+                    x="0"
+                    y="0"
+                    width="670"
+                    height="28"
+                    rx="14"
+                    fill="#f8f9fb"
+                    stroke="#e2e8f0"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="335"
+                    y="18"
+                    text-anchor="middle"
+                    font-size="11"
+                    fill="#64748b"
+                    font-weight="600"
+                  >
+                    🏆 JEC Composites Innovation Award 2026 — Aerospace Process
+                    Winner
+                  </text>
+                </g>
+              </svg>
+
+              <!-- Tooltip -->
+              <div class="sauber-tooltip" id="sauberTooltip">
+                <div class="sauber-tooltip-title" id="sauberTooltipTitle"></div>
+                <div id="sauberTooltipBody"></div>
+              </div>
+            </div>
+
+            <div class="sauber-source">
+              Source: JEC Composites Innovation Awards 2026 — Aerospace Process
+              Winner documentation; CompositesWorld
+            </div>
+          </div>
 
           <div class="key-question">
             <p>
