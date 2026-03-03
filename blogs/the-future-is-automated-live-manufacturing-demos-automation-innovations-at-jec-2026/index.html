@@ -3295,7 +3295,6 @@
 
                 <!-- ====== DIGITAL BACKBONE (top block) ====== -->
                 <g class="sauber-node" data-sauber-tip="backbone">
-                  <!-- Glow pulse behind -->
                   <rect
                     class="sauber-backbone-glow"
                     x="90"
@@ -3305,7 +3304,6 @@
                     rx="16"
                     fill="#47577c"
                   />
-                  <!-- Main block -->
                   <rect
                     class="sauber-node-bg"
                     x="95"
@@ -3316,7 +3314,6 @@
                     fill="url(#sauberBackboneGrad)"
                     filter="url(#sauberShadowLg)"
                   />
-                  <!-- Inner border accent -->
                   <rect
                     x="105"
                     y="50"
@@ -3328,7 +3325,6 @@
                     stroke-width="1"
                     opacity="0.4"
                   />
-                  <!-- Text -->
                   <text
                     x="390"
                     y="80"
@@ -3350,27 +3346,24 @@
                   >
                     Siemens / DLR / Fraunhofer data layer
                   </text>
-                  <!-- Small data icons -->
                   <circle cx="150" cy="90" r="4" fill="#8a9bc2" opacity="0.4" />
                   <circle cx="165" cy="85" r="3" fill="#8a9bc2" opacity="0.3" />
                   <circle cx="610" cy="88" r="4" fill="#8a9bc2" opacity="0.4" />
                   <circle cx="625" cy="93" r="3" fill="#8a9bc2" opacity="0.3" />
                 </g>
 
-                <!-- ====== FLOW LINES from backbone to modules ====== -->
-                <!-- To Preform Auto -->
+                <!-- ====== FLOW LINES (centered at 180, 390, 600) ====== -->
                 <line
                   class="sauber-flow-line"
-                  x1="230"
+                  x1="180"
                   y1="140"
-                  x2="230"
+                  x2="180"
                   y2="210"
                   stroke="#47577c"
                   stroke-width="2.5"
                 />
-                <polygon points="223,207 230,220 237,207" fill="#47577c" />
+                <polygon points="173,207 180,220 187,207" fill="#47577c" />
 
-                <!-- To Smart Mold -->
                 <line
                   class="sauber-flow-line"
                   x1="390"
@@ -3383,24 +3376,23 @@
                 />
                 <polygon points="383,207 390,220 397,207" fill="#bf3425" />
 
-                <!-- To Inspect & QA -->
                 <line
                   class="sauber-flow-line"
-                  x1="550"
+                  x1="600"
                   y1="140"
-                  x2="550"
+                  x2="600"
                   y2="210"
                   stroke="#9d9d9c"
                   stroke-width="2.5"
                   style="animation-delay: 0.4s"
                 />
-                <polygon points="543,207 550,220 557,207" fill="#9d9d9c" />
+                <polygon points="593,207 600,220 607,207" fill="#9d9d9c" />
 
-                <!-- ====== MODULE 1: PREFORM AUTO ====== -->
+                <!-- ====== MODULE 1: PREFORM AUTO (x=90, center=180) ====== -->
                 <g class="sauber-node" data-sauber-tip="preform">
                   <rect
                     class="sauber-node-bg"
-                    x="140"
+                    x="90"
                     y="225"
                     width="180"
                     height="100"
@@ -3409,7 +3401,7 @@
                     filter="url(#sauberShadow)"
                   />
                   <text
-                    x="230"
+                    x="180"
                     y="255"
                     text-anchor="middle"
                     font-size="15"
@@ -3419,16 +3411,16 @@
                     PREFORM AUTO
                   </text>
                   <line
-                    x1="175"
+                    x1="125"
                     y1="268"
-                    x2="285"
+                    x2="235"
                     y2="268"
                     stroke="#5a6d96"
                     stroke-width="1"
                     opacity="0.5"
                   />
                   <text
-                    x="230"
+                    x="180"
                     y="288"
                     text-anchor="middle"
                     font-size="12"
@@ -3438,7 +3430,7 @@
                     AFP / NCF
                   </text>
                   <text
-                    x="230"
+                    x="180"
                     y="308"
                     text-anchor="middle"
                     font-size="10"
@@ -3448,11 +3440,11 @@
                   </text>
                 </g>
 
-                <!-- ====== MODULE 2: SMART MOLD ====== -->
+                <!-- ====== MODULE 2: SMART MOLD (x=300, center=390) ====== -->
                 <g class="sauber-node" data-sauber-tip="smartmold">
                   <rect
                     class="sauber-node-bg"
-                    x="340"
+                    x="300"
                     y="225"
                     width="180"
                     height="100"
@@ -3461,7 +3453,7 @@
                     filter="url(#sauberShadow)"
                   />
                   <text
-                    x="430"
+                    x="390"
                     y="255"
                     text-anchor="middle"
                     font-size="15"
@@ -3471,16 +3463,16 @@
                     SMART MOLD
                   </text>
                   <line
-                    x1="375"
+                    x1="335"
                     y1="268"
-                    x2="485"
+                    x2="445"
                     y2="268"
                     stroke="#d94a3a"
                     stroke-width="1"
                     opacity="0.5"
                   />
                   <text
-                    x="430"
+                    x="390"
                     y="288"
                     text-anchor="middle"
                     font-size="12"
@@ -3490,7 +3482,7 @@
                     RTM + KM
                   </text>
                   <text
-                    x="430"
+                    x="390"
                     y="308"
                     text-anchor="middle"
                     font-size="10"
@@ -3500,11 +3492,11 @@
                   </text>
                 </g>
 
-                <!-- ====== MODULE 3: INSPECT & QA ====== -->
+                <!-- ====== MODULE 3: INSPECT & QA (x=510, center=600) ====== -->
                 <g class="sauber-node" data-sauber-tip="inspect">
                   <rect
                     class="sauber-node-bg"
-                    x="540"
+                    x="510"
                     y="225"
                     width="180"
                     height="100"
@@ -3513,7 +3505,7 @@
                     filter="url(#sauberShadow)"
                   />
                   <text
-                    x="630"
+                    x="600"
                     y="255"
                     text-anchor="middle"
                     font-size="15"
@@ -3523,16 +3515,16 @@
                     INSPECT & QA
                   </text>
                   <line
-                    x1="575"
+                    x1="545"
                     y1="268"
-                    x2="685"
+                    x2="655"
                     y2="268"
                     stroke="#b0b0af"
                     stroke-width="1"
                     opacity="0.5"
                   />
                   <text
-                    x="630"
+                    x="600"
                     y="288"
                     text-anchor="middle"
                     font-size="12"
@@ -3542,7 +3534,7 @@
                     Testia
                   </text>
                   <text
-                    x="630"
+                    x="600"
                     y="308"
                     text-anchor="middle"
                     font-size="10"
@@ -3552,10 +3544,10 @@
                   </text>
                 </g>
 
-                <!-- ====== PARTNER BADGES ====== -->
+                <!-- ====== PARTNER BADGES (centered under each module) ====== -->
                 <g class="sauber-partner-badge" data-sauber-tip="teijin">
                   <rect
-                    x="170"
+                    x="120"
                     y="345"
                     width="120"
                     height="36"
@@ -3565,7 +3557,7 @@
                     stroke-width="1.5"
                   />
                   <text
-                    x="230"
+                    x="180"
                     y="368"
                     text-anchor="middle"
                     font-size="12"
@@ -3575,11 +3567,10 @@
                     Teijin CF
                   </text>
                 </g>
-                <!-- Connector line -->
                 <line
-                  x1="230"
+                  x1="180"
                   y1="325"
-                  x2="230"
+                  x2="180"
                   y2="345"
                   stroke="#47577c"
                   stroke-width="1"
@@ -3588,7 +3579,7 @@
 
                 <g class="sauber-partner-badge" data-sauber-tip="ctc">
                   <rect
-                    x="370"
+                    x="330"
                     y="345"
                     width="120"
                     height="36"
@@ -3598,7 +3589,7 @@
                     stroke-width="1.5"
                   />
                   <text
-                    x="430"
+                    x="390"
                     y="368"
                     text-anchor="middle"
                     font-size="12"
@@ -3609,9 +3600,9 @@
                   </text>
                 </g>
                 <line
-                  x1="430"
+                  x1="390"
                   y1="325"
-                  x2="430"
+                  x2="390"
                   y2="345"
                   stroke="#bf3425"
                   stroke-width="1"
@@ -3620,7 +3611,7 @@
 
                 <g class="sauber-partner-badge" data-sauber-tip="fraunhofer">
                   <rect
-                    x="570"
+                    x="540"
                     y="345"
                     width="120"
                     height="36"
@@ -3630,7 +3621,7 @@
                     stroke-width="1.5"
                   />
                   <text
-                    x="630"
+                    x="600"
                     y="368"
                     text-anchor="middle"
                     font-size="12"
@@ -3641,9 +3632,9 @@
                   </text>
                 </g>
                 <line
-                  x1="630"
+                  x1="600"
                   y1="325"
-                  x2="630"
+                  x2="600"
                   y2="345"
                   stroke="#9d9d9c"
                   stroke-width="1"
