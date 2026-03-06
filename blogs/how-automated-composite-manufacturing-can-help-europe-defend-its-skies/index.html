@@ -3743,8 +3743,8 @@
                 stroke="#cbd5e1"
                 stroke-width="2"
                 id="apeCross"
-                stroke-dasharray="300"
-                stroke-dashoffset="300"
+                stroke-dasharray="620"
+                stroke-dashoffset="620"
               />
               <!-- Branch to AFP-XS -->
               <line
@@ -4146,7 +4146,6 @@
           </div>
 
           <!-- INFOGRAPHIC 11: Forward Manufacturing Deployment Concept -->
-
           <div class="fmd-container" id="fmdContainer">
             <h4 class="fmd-title">Forward Manufacturing Deployment Concept</h4>
             <p class="fmd-subtitle">
@@ -4154,8 +4153,8 @@
               Eastern Flank
             </p>
 
-            <!-- ── Top panel ── -->
-            <div class="fmd-top" id="fmdTop">
+            <!-- Top flow row -->
+            <div class="fmd-flow-row" id="fmdFlowRow">
               <!-- Design Hub -->
               <div class="fmd-hub">
                 <div>
@@ -4177,130 +4176,32 @@
                 </div>
               </div>
 
-              <!-- Flow arrows column (pure CSS) -->
-              <div
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  gap: 22px;
-                  padding: 0 14px;
-                  background: #f8fafc;
-                  border-top: 1px solid #e2e8f0;
-                  border-bottom: 1px solid #e2e8f0;
-                  min-width: 120px;
-                "
-              >
-                <div
-                  style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 4px;
-                  "
-                >
-                  <div
-                    style="
-                      font-size: 9px;
-                      font-weight: 700;
-                      color: #47577c;
-                      text-transform: uppercase;
-                      letter-spacing: 0.05em;
-                      text-align: center;
-                    "
-                  >
-                    Fibre /<br />Granulate
-                  </div>
-                  <div
-                    style="
-                      width: 100%;
-                      height: 2px;
-                      background: linear-gradient(to right, #47577c, #bf3425);
-                      position: relative;
-                      border-radius: 1px;
-                    "
-                  >
-                    <span
-                      style="
-                        position: absolute;
-                        right: -6px;
-                        top: -7px;
-                        font-size: 10px;
-                        color: #bf3425;
-                      "
-                      >▶</span
-                    >
-                  </div>
+              <!-- Flow arrows -->
+              <div class="fmd-mid-arrows">
+                <div class="fmd-arrow-item">
+                  <div class="fmd-arrow-label">Fibre /<br />Granulate</div>
+                  <div class="fmd-arrow-line"></div>
                 </div>
-                <div
-                  style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 4px;
-                  "
-                >
-                  <div
-                    style="
-                      font-size: 9px;
-                      font-weight: 700;
-                      color: #47577c;
-                      text-transform: uppercase;
-                      letter-spacing: 0.05em;
-                      text-align: center;
-                    "
-                  >
-                    AddPath<br />Programs
-                  </div>
-                  <div
-                    style="
-                      width: 100%;
-                      height: 2px;
-                      background: linear-gradient(to right, #47577c, #bf3425);
-                      position: relative;
-                      border-radius: 1px;
-                    "
-                  >
-                    <span
-                      style="
-                        position: absolute;
-                        right: -6px;
-                        top: -7px;
-                        font-size: 10px;
-                        color: #bf3425;
-                      "
-                      >▶</span
-                    >
-                  </div>
+                <div class="fmd-arrow-item">
+                  <div class="fmd-arrow-label">AddPath<br />Programs</div>
+                  <div class="fmd-arrow-line"></div>
                 </div>
               </div>
 
               <!-- Production Cell -->
               <div class="fmd-cell">
-                <div class="fmd-cell-title">⚡ Forward Production Cell</div>
+                <div class="fmd-cell-label">⚡ Forward Production Cell</div>
 
                 <div class="fmd-hw-row">
                   <div class="fmd-hw-box fmd-hw-robot">
                     <div class="fmd-hw-name">Industrial Robot Arm</div>
                     <div class="fmd-hw-sub">KUKA / ABB / Fanuc</div>
                   </div>
-                  <div class="fmd-hw-connector">◄</div>
+                  <div class="fmd-hw-plus">+</div>
                   <div class="fmd-hw-box fmd-hw-head">
                     <div class="fmd-hw-name">AFP-XS or ADDX Head</div>
                     <div class="fmd-hw-sub">Same-day install</div>
                   </div>
-                </div>
-
-                <div
-                  style="
-                    display: flex;
-                    justify-content: center;
-                    color: #47577c;
-                    font-weight: 700;
-                    font-size: 18px;
-                  "
-                >
-                  ↓
                 </div>
 
                 <div class="fmd-output-box">
@@ -4316,7 +4217,7 @@
                   </div>
                 </div>
 
-                <div class="fmd-location-tags">
+                <div class="fmd-loc-tags">
                   <span class="fmd-loc-tag">📦 Container</span>
                   <span class="fmd-loc-tag">🏭 Warehouse</span>
                   <span class="fmd-loc-tag">🪖 FOB</span>
@@ -4325,9 +4226,14 @@
               </div>
             </div>
 
-            <!-- Down arrow to launch -->
-            <div class="fmd-down-arrow" id="fmdDnArrow">
-              <svg width="20" height="28" viewBox="0 0 20 28">
+            <!-- Down arrow + launch -->
+            <div class="fmd-launch-row" id="fmdLaunchRow">
+              <svg
+                width="20"
+                height="28"
+                viewBox="0 0 20 28"
+                style="margin-bottom: 6px"
+              >
                 <line
                   x1="10"
                   y1="0"
@@ -4338,10 +4244,6 @@
                 />
                 <polygon points="10,28 3,16 17,16" fill="#47577c" />
               </svg>
-            </div>
-
-            <!-- Launch ready box -->
-            <div class="fmd-launch" id="fmdLaunch">
               <div class="fmd-launch-box">
                 <div class="fmd-launch-icon">🎯</div>
                 <div>
@@ -4357,8 +4259,8 @@
 
             <hr class="fmd-divider" />
 
-            <!-- ── Distributed Network ── -->
-            <div class="fmd-network-title">
+            <!-- Distributed network -->
+            <div class="fmd-network-label">
               Distributed Network — NATO Eastern Flank
             </div>
 
@@ -4374,7 +4276,6 @@
                   <div class="fmd-node-unit">drones / day</div>
                 </div>
               </div>
-
               <div class="fmd-node" id="fmdNodeB">
                 <div class="fmd-node-header">
                   <div class="fmd-node-flag">🇪🇪</div>
@@ -4386,7 +4287,6 @@
                   <div class="fmd-node-unit">drones / day</div>
                 </div>
               </div>
-
               <div class="fmd-node" id="fmdNodeC">
                 <div class="fmd-node-header">
                   <div class="fmd-node-flag">🇷🇴</div>
@@ -4398,7 +4298,6 @@
                   <div class="fmd-node-unit">drones / day</div>
                 </div>
               </div>
-
               <div class="fmd-node" id="fmdNodeD">
                 <div class="fmd-node-header">
                   <div class="fmd-node-flag">🇫🇮</div>
@@ -4412,9 +4311,9 @@
               </div>
             </div>
 
-            <!-- SVG converging lines -->
+            <!-- Converging lines SVG -->
             <svg
-              class="fmd-network-svg"
+              class="fmd-net-svg"
               id="fmdNetSvg"
               viewBox="0 0 900 44"
               preserveAspectRatio="none"
@@ -4426,8 +4325,8 @@
                 y2="44"
                 stroke="#47577c"
                 stroke-width="1.5"
-                stroke-dasharray="80"
-                stroke-dashoffset="80"
+                stroke-dasharray="90"
+                stroke-dashoffset="90"
                 id="fmdNL1"
               />
               <line
@@ -4437,8 +4336,8 @@
                 y2="44"
                 stroke="#47577c"
                 stroke-width="1.5"
-                stroke-dasharray="60"
-                stroke-dashoffset="60"
+                stroke-dasharray="65"
+                stroke-dashoffset="65"
                 id="fmdNL2"
               />
               <line
@@ -4448,8 +4347,8 @@
                 y2="44"
                 stroke="#47577c"
                 stroke-width="1.5"
-                stroke-dasharray="60"
-                stroke-dashoffset="60"
+                stroke-dasharray="65"
+                stroke-dashoffset="65"
                 id="fmdNL3"
               />
               <line
@@ -4459,8 +4358,8 @@
                 y2="44"
                 stroke="#47577c"
                 stroke-width="1.5"
-                stroke-dasharray="80"
-                stroke-dashoffset="80"
+                stroke-dasharray="90"
+                stroke-dashoffset="90"
                 id="fmdNL4"
               />
               <circle
@@ -4479,18 +4378,18 @@
                 <div class="fmd-combined-val" style="color: #47577c">
                   ~1,400+
                 </div>
-                <div class="fmd-combined-label">Combined network output</div>
+                <div class="fmd-combined-lbl">Combined network output</div>
                 <div class="fmd-combined-note">
                   Drones / day · 4-cell network
                 </div>
               </div>
-              <div class="fmd-combined-divider"></div>
+              <div class="fmd-combined-sep"></div>
               <div class="fmd-combined-stat">
-                <div class="fmd-vs">Current EU capacity</div>
+                <div class="fmd-vs-badge">Current EU capacity</div>
                 <div class="fmd-combined-val" style="color: #bf3425">
                   ~40 – 50
                 </div>
-                <div class="fmd-combined-label">
+                <div class="fmd-combined-lbl">
                   Estimated current European output
                 </div>
                 <div class="fmd-combined-note">
@@ -4533,6 +4432,7 @@
               based on published cell throughput figures
             </p>
           </div>
+
           <div class="split-layout reverse">
             <div class="split-image">
               <img

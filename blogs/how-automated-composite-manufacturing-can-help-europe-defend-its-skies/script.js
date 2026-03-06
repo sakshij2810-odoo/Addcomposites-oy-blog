@@ -989,34 +989,26 @@ document.addEventListener("DOMContentLoaded", function () {
     if (triggered) return;
     triggered = true;
 
-    // Top panel
     setTimeout(function () {
-      document.getElementById("fmdTop").classList.add("fmd-in");
+      document.getElementById("fmdFlowRow").classList.add("fmd-in");
     }, 100);
 
-    // Down arrow + launch
     setTimeout(function () {
-      document.getElementById("fmdDnArrow").classList.add("fmd-in");
-    }, 550);
+      document.getElementById("fmdLaunchRow").classList.add("fmd-in");
+    }, 600);
 
-    setTimeout(function () {
-      document.getElementById("fmdLaunch").classList.add("fmd-in");
-    }, 700);
-
-    // Network nodes staggered
     ["fmdNodeA", "fmdNodeB", "fmdNodeC", "fmdNodeD"].forEach(function (id, i) {
       setTimeout(
         function () {
           var el = document.getElementById(id);
           if (el) el.classList.add("fmd-in");
         },
-        950 + i * 120,
+        900 + i * 120,
       );
     });
 
-    // SVG converging lines
     ["fmdNL1", "fmdNL2", "fmdNL3", "fmdNL4"].forEach(function (id, i) {
-      animateDash(id, 1500 + i * 80);
+      animateDash(id, 1450 + i * 80);
     });
 
     setTimeout(function () {
@@ -1025,14 +1017,12 @@ document.addEventListener("DOMContentLoaded", function () {
         dot.style.transition = "opacity 0.3s ease";
         dot.style.opacity = "1";
       }
-    }, 1800);
+    }, 1780);
 
-    // Combined banner
     setTimeout(function () {
       document.getElementById("fmdCombined").classList.add("fmd-in");
     }, 1900);
 
-    // Model cards
     ["fmdMc1", "fmdMc2", "fmdMc3"].forEach(function (id, i) {
       setTimeout(
         function () {
