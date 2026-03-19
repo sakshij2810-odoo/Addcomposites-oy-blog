@@ -1,0 +1,473 @@
+<!-- Floor Space Cost by System Type -->
+<style>
+  .afp-fs-container {
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 28px 24px 24px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    max-width: 680px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+  .afp-fs-container.afp-fs-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-fs-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #47577c;
+    margin-bottom: 4px;
+  }
+  .afp-fs-subtitle {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 26px;
+  }
+
+  /* Card wrapper */
+  .afp-fs-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px 20px 16px;
+    margin-bottom: 16px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease,
+      box-shadow 0.2s ease;
+  }
+  .afp-fs-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px) !important;
+  }
+  .afp-fs-card.afp-fs-card-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-fs-card-legacy {
+    border-top: 4px solid #9d9d9c;
+    background: rgba(157, 157, 156, 0.03);
+  }
+  .afp-fs-card-xs {
+    border-top: 4px solid #47577c;
+    background: rgba(71, 87, 124, 0.03);
+  }
+
+  .afp-fs-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .afp-fs-card-name {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .afp-fs-card-spec {
+    font-size: 11.5px;
+    color: #94a3b8;
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  .afp-fs-card-annual {
+    font-size: 15px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .afp-fs-card-legacy .afp-fs-card-annual {
+    color: #9d9d9c;
+  }
+  .afp-fs-card-xs .afp-fs-card-annual {
+    color: #47577c;
+  }
+
+  /* Bar track */
+  .afp-fs-track {
+    height: 28px;
+    background: #f8fafc;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  .afp-fs-bar {
+    height: 100%;
+    border-radius: 6px;
+    width: 0;
+    transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+  }
+  .afp-fs-bar:hover {
+    filter: brightness(1.1);
+  }
+
+  .afp-fs-bar-label {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.75s;
+    white-space: nowrap;
+  }
+  .afp-fs-bar-label.afp-fs-lbl-visible {
+    opacity: 1;
+  }
+
+  /* Saving row */
+  .afp-fs-saving-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: linear-gradient(
+      135deg,
+      rgba(71, 87, 124, 0.07) 0%,
+      rgba(191, 52, 37, 0.04) 100%
+    );
+    border: 1px solid rgba(71, 87, 124, 0.16);
+    margin-bottom: 16px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
+  }
+  .afp-fs-saving-row.afp-fs-card-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .afp-fs-saving-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+  }
+  .afp-fs-saving-value {
+    font-size: 18px;
+    font-weight: 800;
+    color: #47577c;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Five-year callout */
+  .afp-fs-5yr {
+    padding: 16px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(191, 52, 37, 0.18);
+    background: rgba(191, 52, 37, 0.04);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 0.45s ease,
+      transform 0.45s ease;
+  }
+  .afp-fs-5yr.afp-fs-card-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-fs-5yr-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    line-height: 1.2;
+  }
+  .afp-fs-5yr-body {
+    flex: 1;
+  }
+  .afp-fs-5yr-headline {
+    font-size: 15px;
+    font-weight: 800;
+    color: #bf3425;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .afp-fs-5yr-text {
+    font-size: 13px;
+    color: #334155;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+  .afp-fs-5yr-text strong {
+    color: #47577c;
+    font-weight: 700;
+  }
+
+  /* Floor area visual chips */
+  .afp-fs-area-chips {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .afp-fs-chip {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  /* Tooltip */
+  .afp-fs-tooltip {
+    position: fixed;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: #1e293b;
+    pointer-events: none;
+    z-index: 100;
+    display: none;
+    min-width: 170px;
+  }
+  .afp-fs-tip-title {
+    font-weight: 700;
+    color: #bf3425;
+    margin-bottom: 4px;
+    font-size: 12.5px;
+  }
+  .afp-fs-tip-value {
+    font-size: 16px;
+    font-weight: 800;
+    color: #47577c;
+  }
+  .afp-fs-tip-note {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 2px;
+  }
+</style>
+
+<div class="afp-fs-container" id="afpFsContainer">
+  <div class="afp-fs-title">Floor Space Cost by System Type</div>
+  <div class="afp-fs-subtitle">
+    Annual facility cost based on €12/m²/month industrial floor rate
+  </div>
+
+  <!-- Legacy AFP card -->
+  <div class="afp-fs-card afp-fs-card-legacy" id="afpFsCardLegacy">
+    <div class="afp-fs-card-header">
+      <div>
+        <div class="afp-fs-card-name">Legacy AFP Cell</div>
+        <div class="afp-fs-card-spec">200 m² @ €12/m²/month</div>
+      </div>
+      <div class="afp-fs-card-annual">€28,800/yr</div>
+    </div>
+    <div class="afp-fs-track">
+      <div
+        class="afp-fs-bar"
+        id="afpFsBarLegacy"
+        data-target="92"
+        style="background: #9d9d9c; width: 0"
+      >
+        <span class="afp-fs-bar-label">200 m² — €28,800/yr</span>
+      </div>
+    </div>
+    <!-- Visual grid of 200 chips representing m² -->
+    <div class="afp-fs-area-chips" id="afpFsChipsLegacy"></div>
+  </div>
+
+  <!-- AFP-XS card -->
+  <div class="afp-fs-card afp-fs-card-xs" id="afpFsCardXs">
+    <div class="afp-fs-card-header">
+      <div>
+        <div class="afp-fs-card-name">AFP-XS</div>
+        <div class="afp-fs-card-spec">Standard bay, ~30 m²</div>
+      </div>
+      <div class="afp-fs-card-annual">€4,320/yr</div>
+    </div>
+    <div class="afp-fs-track">
+      <div
+        class="afp-fs-bar"
+        id="afpFsBarXs"
+        data-target="13.8"
+        style="background: #47577c; width: 0"
+      >
+        <span class="afp-fs-bar-label">30 m² — €4,320/yr</span>
+      </div>
+    </div>
+    <!-- Visual grid of 30 chips -->
+    <div class="afp-fs-area-chips" id="afpFsChipsXs"></div>
+  </div>
+
+  <!-- Annual saving -->
+  <div class="afp-fs-saving-row" id="afpFsSaving">
+    <span class="afp-fs-saving-label">Annual floor space saving</span>
+    <span class="afp-fs-saving-value">€24,480 / yr</span>
+  </div>
+
+  <!-- 5-year callout -->
+  <div class="afp-fs-5yr" id="afpFs5yr">
+    <div class="afp-fs-5yr-icon">🏭</div>
+    <div class="afp-fs-5yr-body">
+      <div class="afp-fs-5yr-headline">€122,400 avoided over 5 years</div>
+      <div class="afp-fs-5yr-text">
+        That floor space can generate <strong>revenue</strong> or house
+        <strong>additional production capacity</strong> — turning an overhead
+        cost into a strategic asset.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="afp-fs-tooltip" id="afpFsTooltip">
+  <div class="afp-fs-tip-title" id="afpFsTipTitle"></div>
+  <div class="afp-fs-tip-value" id="afpFsTipValue"></div>
+  <div class="afp-fs-tip-note" id="afpFsTipNote"></div>
+</div>
+
+<script>
+  (function () {
+    var tooltip = document.getElementById("afpFsTooltip");
+    var tipTitle = document.getElementById("afpFsTipTitle");
+    var tipValue = document.getElementById("afpFsTipValue");
+    var tipNote = document.getElementById("afpFsTipNote");
+
+    function addTooltip(bar, title, value, note) {
+      bar.addEventListener("mouseenter", function () {
+        tipTitle.textContent = title;
+        tipValue.textContent = value;
+        tipNote.textContent = note;
+        tooltip.style.display = "block";
+      });
+      bar.addEventListener("mousemove", function (e) {
+        tooltip.style.left = e.clientX + 14 + "px";
+        tooltip.style.top = e.clientY - 48 + "px";
+      });
+      bar.addEventListener("mouseleave", function () {
+        tooltip.style.display = "none";
+      });
+    }
+
+    addTooltip(
+      document.getElementById("afpFsBarLegacy"),
+      "Legacy AFP Cell",
+      "€28,800 / yr",
+      "200 m² × €12/m²/mo × 12 months",
+    );
+    addTooltip(
+      document.getElementById("afpFsBarXs"),
+      "AFP-XS (standard bay)",
+      "€4,320 / yr",
+      "30 m² × €12/m²/mo × 12 months",
+    );
+
+    // Build floor area chip grids
+    function buildChips(containerId, count, color, savedCount) {
+      var el = document.getElementById(containerId);
+      for (var i = 0; i < count; i++) {
+        var chip = document.createElement("div");
+        chip.className = "afp-fs-chip";
+        chip.style.background = i < savedCount ? "rgba(191,52,37,0.18)" : color;
+        chip.style.transitionDelay = i * 12 + "ms";
+        if (savedCount && i < savedCount) {
+          chip.title = "Wasted floor space";
+        }
+        el.appendChild(chip);
+      }
+    }
+
+    // Legacy: 200 chips — 170 "wasted vs AFP-XS" shown in faint red, 30 "used"
+    buildChips("afpFsChipsLegacy", 40, "#9d9d9c", 34); // 40 chips scaled: 34 = wasted, 6 = used
+    buildChips("afpFsChipsXs", 6, "#47577c", 0); // 6 chips, all "used"
+
+    // Intersection Observer
+    var container = document.getElementById("afpFsContainer");
+    var cardLegacy = document.getElementById("afpFsCardLegacy");
+    var cardXs = document.getElementById("afpFsCardXs");
+    var savingEl = document.getElementById("afpFsSaving");
+    var fiveyrEl = document.getElementById("afpFs5yr");
+    var barLegacy = document.getElementById("afpFsBarLegacy");
+    var barXs = document.getElementById("afpFsBarXs");
+
+    var obs = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          obs.unobserve(entry.target);
+          container.classList.add("afp-fs-visible");
+
+          // Legacy card
+          setTimeout(function () {
+            cardLegacy.classList.add("afp-fs-card-visible");
+            barLegacy.style.width = barLegacy.dataset.target + "%";
+            setTimeout(function () {
+              barLegacy
+                .querySelector(".afp-fs-bar-label")
+                .classList.add("afp-fs-lbl-visible");
+              // Animate chips
+              var chips = document.querySelectorAll(
+                "#afpFsChipsLegacy .afp-fs-chip",
+              );
+              chips.forEach(function (c, i) {
+                setTimeout(function () {
+                  c.style.opacity = "1";
+                }, i * 12);
+              });
+            }, 600);
+          }, 150);
+
+          // AFP-XS card
+          setTimeout(function () {
+            cardXs.classList.add("afp-fs-card-visible");
+            barXs.style.width = barXs.dataset.target + "%";
+            setTimeout(function () {
+              barXs
+                .querySelector(".afp-fs-bar-label")
+                .classList.add("afp-fs-lbl-visible");
+              var chips = document.querySelectorAll(
+                "#afpFsChipsXs .afp-fs-chip",
+              );
+              chips.forEach(function (c, i) {
+                setTimeout(function () {
+                  c.style.opacity = "1";
+                }, i * 40);
+              });
+            }, 600);
+          }, 340);
+
+          setTimeout(function () {
+            savingEl.classList.add("afp-fs-card-visible");
+          }, 640);
+          setTimeout(function () {
+            fiveyrEl.classList.add("afp-fs-card-visible");
+          }, 840);
+        });
+      },
+      { threshold: 0.12 },
+    );
+
+    obs.observe(container);
+  })();
+</script>

@@ -1,0 +1,453 @@
+<!-- Rework Cost Anatomy per NCR Event -->
+<style>
+  .afp-ncr-container {
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 28px 24px 24px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    max-width: 680px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+  .afp-ncr-container.afp-ncr-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-ncr-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #47577c;
+    margin-bottom: 4px;
+  }
+  .afp-ncr-subtitle {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 26px;
+  }
+
+  /* Each cost row */
+  .afp-ncr-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition:
+      opacity 0.38s ease,
+      transform 0.38s ease;
+  }
+  .afp-ncr-row.afp-ncr-row-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .afp-ncr-label-wrap {
+    width: 210px;
+    min-width: 210px;
+    padding-right: 14px;
+  }
+  .afp-ncr-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #334155;
+    line-height: 1.3;
+  }
+  .afp-ncr-label-note {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 1px;
+  }
+
+  .afp-ncr-track {
+    flex: 1;
+    height: 30px;
+    background: #f8fafc;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  .afp-ncr-bar {
+    height: 100%;
+    border-radius: 6px;
+    width: 0;
+    transition: width 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+  .afp-ncr-bar:hover {
+    filter: brightness(1.1);
+  }
+
+  /* % label inside bar */
+  .afp-ncr-bar-pct {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.8s;
+    white-space: nowrap;
+  }
+  .afp-ncr-bar-pct.afp-ncr-pct-visible {
+    opacity: 1;
+  }
+
+  .afp-ncr-value {
+    width: 56px;
+    min-width: 56px;
+    text-align: right;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1e293b;
+    font-variant-numeric: tabular-nums;
+    padding-left: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.7s;
+  }
+  .afp-ncr-value.afp-ncr-val-visible {
+    opacity: 1;
+  }
+
+  /* Divider */
+  .afp-ncr-divider {
+    height: 2px;
+    background: #47577c;
+    border-radius: 1px;
+    margin: 16px 0 14px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .afp-ncr-divider.afp-ncr-row-visible {
+    opacity: 1;
+  }
+
+  /* Total + multiplier block */
+  .afp-ncr-total-wrap {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 0.45s ease,
+      transform 0.45s ease;
+  }
+  .afp-ncr-total-wrap.afp-ncr-row-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-ncr-total-card {
+    flex: 1;
+    padding: 16px 18px;
+    border-radius: 12px;
+    background: linear-gradient(
+      135deg,
+      rgba(71, 87, 124, 0.07) 0%,
+      rgba(191, 52, 37, 0.04) 100%
+    );
+    border: 1px solid rgba(71, 87, 124, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .afp-ncr-total-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #64748b;
+    margin-bottom: 3px;
+  }
+  .afp-ncr-total-value {
+    font-size: 26px;
+    font-weight: 800;
+    color: #47577c;
+    letter-spacing: -0.02em;
+  }
+
+  .afp-ncr-multiplier {
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: rgba(191, 52, 37, 0.06);
+    border: 1px solid rgba(191, 52, 37, 0.18);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 140px;
+  }
+  .afp-ncr-mult-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #94a3b8;
+    margin-bottom: 3px;
+  }
+  .afp-ncr-mult-value {
+    font-size: 18px;
+    font-weight: 800;
+    color: #bf3425;
+    letter-spacing: -0.01em;
+  }
+  .afp-ncr-mult-note {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 2px;
+  }
+
+  /* Tooltip */
+  .afp-ncr-tooltip {
+    position: fixed;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: #1e293b;
+    pointer-events: none;
+    z-index: 100;
+    display: none;
+    min-width: 160px;
+  }
+  .afp-ncr-tip-title {
+    font-weight: 700;
+    color: #bf3425;
+    margin-bottom: 4px;
+    font-size: 12.5px;
+  }
+  .afp-ncr-tip-value {
+    font-size: 16px;
+    font-weight: 800;
+    color: #47577c;
+  }
+  .afp-ncr-tip-pct {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 2px;
+  }
+
+  @media (max-width: 500px) {
+    .afp-ncr-label-wrap {
+      width: 150px;
+      min-width: 150px;
+    }
+    .afp-ncr-total-wrap {
+      flex-direction: column;
+    }
+    .afp-ncr-multiplier {
+      min-width: unset;
+    }
+  }
+</style>
+
+<div class="afp-ncr-container" id="afpNcrContainer">
+  <div class="afp-ncr-title">Rework Cost Anatomy</div>
+  <div class="afp-ncr-subtitle">
+    Full cost breakdown per Non-Conformance Report (NCR) event
+  </div>
+  <div id="afpNcrChart"></div>
+  <div class="afp-ncr-divider" id="afpNcrDivider"></div>
+  <div class="afp-ncr-total-wrap" id="afpNcrTotal">
+    <div class="afp-ncr-total-card">
+      <div>
+        <div class="afp-ncr-total-label">Total cost per NCR</div>
+        <div class="afp-ncr-total-value">€1,240</div>
+      </div>
+    </div>
+    <div class="afp-ncr-multiplier">
+      <div class="afp-ncr-mult-label">Cost multiplier</div>
+      <div class="afp-ncr-mult-value">3.1×</div>
+      <div class="afp-ncr-mult-note">on a €400 part</div>
+    </div>
+  </div>
+</div>
+
+<div class="afp-ncr-tooltip" id="afpNcrTooltip">
+  <div class="afp-ncr-tip-title" id="afpNcrTipTitle"></div>
+  <div class="afp-ncr-tip-value" id="afpNcrTipValue"></div>
+  <div class="afp-ncr-tip-pct" id="afpNcrTipPct"></div>
+</div>
+
+<script>
+  (function () {
+    var TOTAL = 1240;
+
+    var items = [
+      {
+        label: "Defective part material",
+        note: "written off",
+        value: 400,
+        color: "#bf3425",
+      },
+      {
+        label: "Re-layup (repeat cycle)",
+        note: null,
+        value: 350,
+        color: "#47577c",
+      },
+      {
+        label: "Disassembly + analysis labour",
+        note: null,
+        value: 150,
+        color: "#7a8fb5",
+      },
+      {
+        label: "Schedule impact buffer",
+        note: "downstream delays",
+        value: 200,
+        color: "#d4614f",
+      },
+      {
+        label: "Re-kitting + preparation",
+        note: null,
+        value: 80,
+        color: "#9d9d9c",
+      },
+      {
+        label: "Re-inspection + sign-off",
+        note: null,
+        value: 60,
+        color: "#b8bec8",
+      },
+    ];
+
+    // Sort descending for visual impact
+    items.sort(function (a, b) {
+      return b.value - a.value;
+    });
+
+    var maxVal = items[0].value;
+    var MAX_PCT = 88;
+
+    function fmt(v) {
+      return "€" + v.toLocaleString("en-EU");
+    }
+
+    var chart = document.getElementById("afpNcrChart");
+    var tooltip = document.getElementById("afpNcrTooltip");
+    var tipTitle = document.getElementById("afpNcrTipTitle");
+    var tipValue = document.getElementById("afpNcrTipValue");
+    var tipPct = document.getElementById("afpNcrTipPct");
+
+    items.forEach(function (item, i) {
+      var pct = (item.value / maxVal) * MAX_PCT;
+
+      var row = document.createElement("div");
+      row.className = "afp-ncr-row";
+      row.style.transitionDelay = i * 75 + "ms";
+
+      var noteHtml = item.note
+        ? '<div class="afp-ncr-label-note">' + item.note + "</div>"
+        : "";
+
+      row.innerHTML =
+        '<div class="afp-ncr-label-wrap">' +
+        '<div class="afp-ncr-label">' +
+        item.label +
+        "</div>" +
+        noteHtml +
+        "</div>" +
+        '<div class="afp-ncr-track">' +
+        '<div class="afp-ncr-bar" data-target="' +
+        pct +
+        '" style="background:' +
+        item.color +
+        ';width:0">' +
+        "</div>" +
+        '<span class="afp-ncr-bar-pct">' +
+        Math.round((item.value / TOTAL) * 100) +
+        "%</span>" +
+        "</div>" +
+        '<div class="afp-ncr-value">' +
+        fmt(item.value) +
+        "</div>";
+
+      chart.appendChild(row);
+
+      var bar = row.querySelector(".afp-ncr-bar");
+      var valEl = row.querySelector(".afp-ncr-value");
+      var pctEl = row.querySelector(".afp-ncr-bar-pct");
+
+      bar._valEl = valEl;
+      bar._pctEl = pctEl;
+
+      bar.addEventListener("mouseenter", function () {
+        tipTitle.textContent = item.label;
+        tipValue.textContent = fmt(item.value);
+        tipPct.textContent =
+          ((item.value / TOTAL) * 100).toFixed(1) + "% of total NCR cost";
+        tooltip.style.display = "block";
+      });
+      bar.addEventListener("mousemove", function (e) {
+        tooltip.style.left = e.clientX + 14 + "px";
+        tooltip.style.top = e.clientY - 48 + "px";
+      });
+      bar.addEventListener("mouseleave", function () {
+        tooltip.style.display = "none";
+      });
+    });
+
+    // Intersection Observer
+    var container = document.getElementById("afpNcrContainer");
+    var dividerEl = document.getElementById("afpNcrDivider");
+    var totalEl = document.getElementById("afpNcrTotal");
+
+    var obs = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          obs.unobserve(entry.target);
+          container.classList.add("afp-ncr-visible");
+
+          var rows = chart.querySelectorAll(".afp-ncr-row");
+          rows.forEach(function (row, i) {
+            setTimeout(
+              function () {
+                row.classList.add("afp-ncr-row-visible");
+                var bar = row.querySelector(".afp-ncr-bar");
+                var valEl = row.querySelector(".afp-ncr-value");
+                var pctEl = row.querySelector(".afp-ncr-bar-pct");
+                if (bar) {
+                  bar.style.width = bar.dataset.target + "%";
+                  setTimeout(function () {
+                    if (valEl) valEl.classList.add("afp-ncr-val-visible");
+                    if (pctEl) pctEl.classList.add("afp-ncr-pct-visible");
+                  }, 540);
+                }
+              },
+              100 + i * 85,
+            );
+          });
+
+          var base = 100 + rows.length * 85 + 100;
+          setTimeout(function () {
+            dividerEl.classList.add("afp-ncr-row-visible");
+          }, base);
+          setTimeout(function () {
+            totalEl.classList.add("afp-ncr-row-visible");
+          }, base + 180);
+        });
+      },
+      { threshold: 0.12 },
+    );
+
+    obs.observe(container);
+  })();
+</script>

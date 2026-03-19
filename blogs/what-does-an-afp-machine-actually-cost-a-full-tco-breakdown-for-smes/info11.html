@@ -1,0 +1,495 @@
+<!-- Financial & Risk Profile: Payback, Balance Sheet, Risk -->
+<style>
+  .afp-frp-container {
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 28px 24px 24px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    max-width: 720px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+  .afp-frp-container.afp-frp-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-frp-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #47577c;
+    margin-bottom: 4px;
+  }
+  .afp-frp-subtitle {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 24px;
+  }
+
+  /* Section cards */
+  .afp-frp-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .afp-frp-section {
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease,
+      box-shadow 0.2s ease;
+  }
+  .afp-frp-section:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px) !important;
+  }
+  .afp-frp-section.afp-frp-sec-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Section header */
+  .afp-frp-sec-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px 12px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .afp-frp-sec-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    color: #fff;
+  }
+
+  .afp-frp-sec-title-wrap {
+    flex: 1;
+  }
+  .afp-frp-sec-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .afp-frp-sec-tagline {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 1px;
+    font-weight: 400;
+  }
+
+  .afp-frp-sec-kpi {
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  /* Section body */
+  .afp-frp-sec-body {
+    padding: 0 18px 16px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .afp-frp-bullet {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: #334155;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition:
+      opacity 0.32s ease,
+      transform 0.32s ease;
+  }
+  .afp-frp-bullet.afp-frp-blt-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .afp-frp-arrow {
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 1px;
+  }
+
+  .afp-frp-bullet-text {
+    line-height: 1.45;
+  }
+  .afp-frp-bullet-text strong {
+    font-weight: 700;
+  }
+
+  /* Colour themes per section */
+  .afp-frp-sec-1 {
+    border-top: 4px solid #bf3425;
+    background: rgba(191, 52, 37, 0.02);
+  }
+  .afp-frp-sec-1 .afp-frp-sec-num {
+    background: #bf3425;
+  }
+  .afp-frp-sec-1 .afp-frp-sec-title {
+    color: #bf3425;
+  }
+  .afp-frp-sec-1 .afp-frp-sec-kpi {
+    color: #bf3425;
+  }
+  .afp-frp-sec-1 .afp-frp-arrow {
+    color: #bf3425;
+  }
+
+  .afp-frp-sec-2 {
+    border-top: 4px solid #47577c;
+    background: rgba(71, 87, 124, 0.02);
+  }
+  .afp-frp-sec-2 .afp-frp-sec-num {
+    background: #47577c;
+  }
+  .afp-frp-sec-2 .afp-frp-sec-title {
+    color: #47577c;
+  }
+  .afp-frp-sec-2 .afp-frp-sec-kpi {
+    color: #47577c;
+  }
+  .afp-frp-sec-2 .afp-frp-arrow {
+    color: #47577c;
+  }
+
+  .afp-frp-sec-3 {
+    border-top: 4px solid #9d9d9c;
+    background: rgba(157, 157, 156, 0.02);
+  }
+  .afp-frp-sec-3 .afp-frp-sec-num {
+    background: #9d9d9c;
+  }
+  .afp-frp-sec-3 .afp-frp-sec-title {
+    color: #475569;
+  }
+  .afp-frp-sec-3 .afp-frp-sec-kpi {
+    color: #475569;
+  }
+  .afp-frp-sec-3 .afp-frp-arrow {
+    color: #9d9d9c;
+  }
+
+  /* Comparison pill for payback */
+  .afp-frp-compare {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 4px;
+    flex-wrap: wrap;
+  }
+  .afp-frp-pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11.5px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .afp-frp-pill-xs {
+    background: rgba(191, 52, 37, 0.1);
+    color: #bf3425;
+  }
+  .afp-frp-pill-legacy {
+    background: rgba(157, 157, 156, 0.15);
+    color: #6b7280;
+  }
+  .afp-frp-pill-vs {
+    font-size: 11px;
+    font-weight: 600;
+    color: #94a3b8;
+  }
+
+  /* Payback timeline mini-visual */
+  .afp-frp-payback-vis {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 6px 0 4px;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.2s;
+  }
+  .afp-frp-payback-vis.afp-frp-blt-visible {
+    opacity: 1;
+  }
+  .afp-frp-pb-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11.5px;
+  }
+  .afp-frp-pb-label {
+    width: 72px;
+    min-width: 72px;
+    font-weight: 600;
+    color: #64748b;
+  }
+  .afp-frp-pb-track {
+    flex: 1;
+    height: 14px;
+    background: #f1f5f9;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .afp-frp-pb-fill {
+    height: 100%;
+    border-radius: 4px;
+    width: 0;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+  }
+  .afp-frp-pb-val {
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    min-width: 72px;
+  }
+
+  @media (max-width: 480px) {
+    .afp-frp-sec-body {
+      padding-left: 18px;
+    }
+    .afp-frp-sec-kpi {
+      display: none;
+    }
+  }
+</style>
+
+<div class="afp-frp-container" id="afpFrpContainer">
+  <div class="afp-frp-title">AFP-XS Financial &amp; Risk Profile</div>
+  <div class="afp-frp-subtitle">
+    Three dimensions where the subscription model changes the financial equation
+  </div>
+
+  <div class="afp-frp-sections">
+    <!-- Section 1: Payback Period -->
+    <div class="afp-frp-section afp-frp-sec-1" id="afpFrpSec1">
+      <div class="afp-frp-sec-header">
+        <div class="afp-frp-sec-num">1</div>
+        <div class="afp-frp-sec-title-wrap">
+          <div class="afp-frp-sec-title">Payback Period</div>
+          <div class="afp-frp-sec-tagline">
+            Subscription offset by material + labour savings
+          </div>
+        </div>
+        <div class="afp-frp-sec-kpi">2 – 6 months</div>
+      </div>
+      <div class="afp-frp-sec-body">
+        <!-- Mini payback comparison visual -->
+        <div class="afp-frp-payback-vis" id="afpFrpPbVis">
+          <div class="afp-frp-pb-row">
+            <div class="afp-frp-pb-label">AFP-XS</div>
+            <div class="afp-frp-pb-track">
+              <div
+                class="afp-frp-pb-fill"
+                id="afpFrpPbXs"
+                style="background: #bf3425"
+                data-target="8"
+              ></div>
+            </div>
+            <div class="afp-frp-pb-val" style="color: #bf3425">
+              2 – 6 months
+            </div>
+          </div>
+          <div class="afp-frp-pb-row">
+            <div class="afp-frp-pb-label">Legacy AFP</div>
+            <div class="afp-frp-pb-track">
+              <div
+                class="afp-frp-pb-fill"
+                id="afpFrpPbLeg"
+                style="background: #9d9d9c"
+                data-target="100"
+              ></div>
+            </div>
+            <div class="afp-frp-pb-val" style="color: #9d9d9c">4 – 8 years</div>
+          </div>
+        </div>
+
+        <div class="afp-frp-bullet" id="afpFrpB1a">
+          <span class="afp-frp-arrow">→</span>
+          <span class="afp-frp-bullet-text"
+            >Typical payback: <strong>2 – 6 months</strong> from combined
+            material waste reduction and labour savings</span
+          >
+        </div>
+        <div class="afp-frp-bullet" id="afpFrpB1b">
+          <span class="afp-frp-arrow">→</span>
+          <span class="afp-frp-bullet-text"
+            >vs. Legacy AFP: <strong>4 – 8 years</strong> to recover capital
+            investment</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Balance Sheet -->
+    <div class="afp-frp-section afp-frp-sec-2" id="afpFrpSec2">
+      <div class="afp-frp-sec-header">
+        <div class="afp-frp-sec-num">2</div>
+        <div class="afp-frp-sec-title-wrap">
+          <div class="afp-frp-sec-title">Balance Sheet Impact</div>
+          <div class="afp-frp-sec-tagline">Subscription = fully OpEx</div>
+        </div>
+        <div class="afp-frp-sec-kpi">Zero CapEx</div>
+      </div>
+      <div class="afp-frp-sec-body">
+        <div class="afp-frp-bullet" id="afpFrpB2a">
+          <span class="afp-frp-arrow">→</span>
+          <span class="afp-frp-bullet-text"
+            ><strong>No asset on balance sheet</strong></span
+          >
+        </div>
+        <div class="afp-frp-bullet" id="afpFrpB2b">
+          <span class="afp-frp-arrow">→</span>
+          <span class="afp-frp-bullet-text"
+            ><strong>No depreciation schedule</strong></span
+          >
+        </div>
+        <div class="afp-frp-bullet" id="afpFrpB2c">
+          <span class="afp-frp-arrow">→</span>
+          <span class="afp-frp-bullet-text"
+            ><strong>No financing or working capital required</strong></span
+          >
+        </div>
+        <div class="afp-frp-bullet" id="afpFrpB2d">
+          <span class="afp-frp-arrow">→</span>
+          <span class="afp-frp-bullet-text"
+            ><strong>P&amp;L impact begins Month 1</strong> — savings visible
+            immediately</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Risk Profile -->
+    <div class="afp-frp-section afp-frp-sec-3" id="afpFrpSec3">
+      <div class="afp-frp-sec-header">
+        <div class="afp-frp-sec-num">3</div>
+        <div class="afp-frp-sec-title-wrap">
+          <div class="afp-frp-sec-title">Risk Profile</div>
+          <div class="afp-frp-sec-tagline">
+            If volume drops, subscription adjusts
+          </div>
+        </div>
+        <div class="afp-frp-sec-kpi">Fully flexible</div>
+      </div>
+      <div class="afp-frp-sec-body">
+        <div class="afp-frp-bullet" id="afpFrpB3a">
+          <span class="afp-frp-arrow">→</span>
+          <span class="afp-frp-bullet-text"
+            ><strong>No stranded asset</strong> if production volumes
+            change</span
+          >
+        </div>
+        <div class="afp-frp-bullet" id="afpFrpB3b">
+          <span class="afp-frp-arrow">→</span>
+          <span class="afp-frp-bullet-text"
+            ><strong>No impairment charge</strong> on unused equipment</span
+          >
+        </div>
+        <div class="afp-frp-bullet" id="afpFrpB3c">
+          <span class="afp-frp-arrow">→</span>
+          <span class="afp-frp-bullet-text"
+            ><strong>No covenant breach</strong> on debt financing
+            obligations</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var container = document.getElementById("afpFrpContainer");
+
+    var sec1 = document.getElementById("afpFrpSec1");
+    var sec2 = document.getElementById("afpFrpSec2");
+    var sec3 = document.getElementById("afpFrpSec3");
+
+    var pbVis = document.getElementById("afpFrpPbVis");
+    var pbXs = document.getElementById("afpFrpPbXs");
+    var pbLeg = document.getElementById("afpFrpPbLeg");
+
+    var bullets = [
+      ["afpFrpB1a", "afpFrpB1b"],
+      ["afpFrpB2a", "afpFrpB2b", "afpFrpB2c", "afpFrpB2d"],
+      ["afpFrpB3a", "afpFrpB3b", "afpFrpB3c"],
+    ];
+
+    function revealBullets(sectionBullets, baseDelay) {
+      sectionBullets.forEach(function (id, i) {
+        setTimeout(
+          function () {
+            var el = document.getElementById(id);
+            if (el) el.classList.add("afp-frp-blt-visible");
+          },
+          baseDelay + i * 80,
+        );
+      });
+    }
+
+    var obs = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          obs.unobserve(entry.target);
+          container.classList.add("afp-frp-visible");
+
+          // Sec 1
+          setTimeout(function () {
+            sec1.classList.add("afp-frp-sec-visible");
+            pbVis.classList.add("afp-frp-blt-visible");
+            pbXs.style.width = pbXs.dataset.target + "%";
+            pbLeg.style.width = pbLeg.dataset.target + "%";
+            revealBullets(bullets[0], 400);
+          }, 150);
+
+          // Sec 2
+          setTimeout(function () {
+            sec2.classList.add("afp-frp-sec-visible");
+            revealBullets(bullets[1], 300);
+          }, 380);
+
+          // Sec 3
+          setTimeout(function () {
+            sec3.classList.add("afp-frp-sec-visible");
+            revealBullets(bullets[2], 300);
+          }, 600);
+        });
+      },
+      { threshold: 0.1 },
+    );
+
+    obs.observe(container);
+  })();
+</script>

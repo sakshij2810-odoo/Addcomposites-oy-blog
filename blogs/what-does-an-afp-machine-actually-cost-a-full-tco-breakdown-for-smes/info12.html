@@ -1,0 +1,482 @@
+<!-- AFP Vendor Due Diligence Checklist -->
+<style>
+  .afp-ddq-container {
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 28px 24px 24px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    max-width: 760px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+  .afp-ddq-container.afp-ddq-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-ddq-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #47577c;
+    margin-bottom: 4px;
+  }
+  .afp-ddq-subtitle {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 24px;
+  }
+
+  /* Progress bar */
+  .afp-ddq-progress-wrap {
+    margin-bottom: 22px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .afp-ddq-progress-wrap.afp-ddq-visible-el {
+    opacity: 1;
+  }
+  .afp-ddq-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+  .afp-ddq-progress-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .afp-ddq-progress-count {
+    font-size: 13px;
+    font-weight: 700;
+    color: #47577c;
+  }
+  .afp-ddq-progress-track {
+    height: 8px;
+    background: #f1f5f9;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .afp-ddq-progress-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #47577c, #bf3425);
+    width: 0;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  }
+
+  /* Section */
+  .afp-ddq-section {
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    margin-bottom: 12px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
+  }
+  .afp-ddq-section.afp-ddq-sec-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-ddq-sec-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+  }
+
+  .afp-ddq-sec-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .afp-ddq-sec-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .afp-ddq-sec-name {
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+  .afp-ddq-sec-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+
+  /* Section 1 — TCO */
+  .afp-ddq-sec-tco {
+    border-top: 3px solid #bf3425;
+    background: rgba(191, 52, 37, 0.02);
+  }
+  .afp-ddq-sec-tco .afp-ddq-sec-icon {
+    background: rgba(191, 52, 37, 0.1);
+  }
+  .afp-ddq-sec-tco .afp-ddq-sec-name {
+    color: #bf3425;
+  }
+  .afp-ddq-sec-tco .afp-ddq-sec-badge {
+    background: rgba(191, 52, 37, 0.1);
+    color: #bf3425;
+  }
+
+  /* Section 2 — Capability */
+  .afp-ddq-sec-cap {
+    border-top: 3px solid #47577c;
+    background: rgba(71, 87, 124, 0.02);
+  }
+  .afp-ddq-sec-cap .afp-ddq-sec-icon {
+    background: rgba(71, 87, 124, 0.1);
+  }
+  .afp-ddq-sec-cap .afp-ddq-sec-name {
+    color: #47577c;
+  }
+  .afp-ddq-sec-cap .afp-ddq-sec-badge {
+    background: rgba(71, 87, 124, 0.1);
+    color: #47577c;
+  }
+
+  /* Section 3 — Vendor Risk */
+  .afp-ddq-sec-risk {
+    border-top: 3px solid #9d9d9c;
+    background: rgba(157, 157, 156, 0.02);
+  }
+  .afp-ddq-sec-risk .afp-ddq-sec-icon {
+    background: rgba(157, 157, 156, 0.12);
+  }
+  .afp-ddq-sec-risk .afp-ddq-sec-name {
+    color: #475569;
+  }
+  .afp-ddq-sec-risk .afp-ddq-sec-badge {
+    background: rgba(157, 157, 156, 0.15);
+    color: #475569;
+  }
+
+  /* Question items */
+  .afp-ddq-items {
+    padding: 4px 16px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .afp-ddq-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition:
+      opacity 0.32s ease,
+      transform 0.32s ease,
+      background-color 0.15s ease;
+  }
+  .afp-ddq-item:hover {
+    background: #f8fafc;
+  }
+  .afp-ddq-item.afp-ddq-item-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .afp-ddq-item.afp-ddq-checked .afp-ddq-checkbox {
+    background: currentColor;
+    border-color: currentColor;
+  }
+  .afp-ddq-item.afp-ddq-checked .afp-ddq-checkbox::after {
+    opacity: 1;
+  }
+  .afp-ddq-item.afp-ddq-checked .afp-ddq-item-text {
+    text-decoration: line-through;
+    color: #94a3b8;
+  }
+
+  /* Checkbox */
+  .afp-ddq-checkbox {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border-radius: 4px;
+    border: 2px solid #cbd5e1;
+    background: #fff;
+    position: relative;
+    flex-shrink: 0;
+    margin-top: 1px;
+    transition:
+      background 0.18s ease,
+      border-color 0.18s ease;
+    cursor: pointer;
+  }
+  .afp-ddq-checkbox::after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 0px;
+    width: 5px;
+    height: 9px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  .afp-ddq-item-text {
+    font-size: 13px;
+    color: #334155;
+    line-height: 1.5;
+    transition:
+      color 0.18s ease,
+      text-decoration 0.18s ease;
+  }
+
+  /* Checkbox colours per section */
+  .afp-ddq-sec-tco .afp-ddq-item.afp-ddq-checked .afp-ddq-checkbox {
+    background: #bf3425;
+    border-color: #bf3425;
+  }
+  .afp-ddq-sec-cap .afp-ddq-item.afp-ddq-checked .afp-ddq-checkbox {
+    background: #47577c;
+    border-color: #47577c;
+  }
+  .afp-ddq-sec-risk .afp-ddq-item.afp-ddq-checked .afp-ddq-checkbox {
+    background: #9d9d9c;
+    border-color: #9d9d9c;
+  }
+
+  /* Reset button */
+  .afp-ddq-reset {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    padding: 7px 14px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    transition:
+      background 0.15s ease,
+      border-color 0.15s ease;
+    font-family: inherit;
+  }
+  .afp-ddq-reset:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+  }
+</style>
+
+<div class="afp-ddq-container" id="afpDdqContainer">
+  <div class="afp-ddq-title">AFP Vendor Due Diligence Checklist</div>
+  <div class="afp-ddq-subtitle">
+    Questions to ask any AFP vendor before committing — tick each as you receive
+    a satisfactory answer
+  </div>
+
+  <!-- Progress -->
+  <div class="afp-ddq-progress-wrap" id="afpDdqProgressWrap">
+    <div class="afp-ddq-progress-header">
+      <span class="afp-ddq-progress-label">Questions answered</span>
+      <span class="afp-ddq-progress-count" id="afpDdqProgressCount"
+        >0 / 14</span
+      >
+    </div>
+    <div class="afp-ddq-progress-track">
+      <div class="afp-ddq-progress-fill" id="afpDdqProgressFill"></div>
+    </div>
+  </div>
+
+  <!-- TCO Section -->
+  <div class="afp-ddq-section afp-ddq-sec-tco" id="afpDdqSecTco">
+    <div class="afp-ddq-sec-header">
+      <div class="afp-ddq-sec-left">
+        <div class="afp-ddq-sec-icon">💰</div>
+        <div class="afp-ddq-sec-name">TCO Questions</div>
+      </div>
+      <div class="afp-ddq-sec-badge">5 questions</div>
+    </div>
+    <div class="afp-ddq-items" id="afpDdqItemsTco"></div>
+  </div>
+
+  <!-- Capability Section -->
+  <div class="afp-ddq-section afp-ddq-sec-cap" id="afpDdqSecCap">
+    <div class="afp-ddq-sec-header">
+      <div class="afp-ddq-sec-left">
+        <div class="afp-ddq-sec-icon">⚙️</div>
+        <div class="afp-ddq-sec-name">Capability Questions</div>
+      </div>
+      <div class="afp-ddq-sec-badge">5 questions</div>
+    </div>
+    <div class="afp-ddq-items" id="afpDdqItemsCap"></div>
+  </div>
+
+  <!-- Vendor Risk Section -->
+  <div class="afp-ddq-section afp-ddq-sec-risk" id="afpDdqSecRisk">
+    <div class="afp-ddq-sec-header">
+      <div class="afp-ddq-sec-left">
+        <div class="afp-ddq-sec-icon">🛡️</div>
+        <div class="afp-ddq-sec-name">Vendor Risk Questions</div>
+      </div>
+      <div class="afp-ddq-sec-badge">4 questions</div>
+    </div>
+    <div class="afp-ddq-items" id="afpDdqItemsRisk"></div>
+  </div>
+
+  <button class="afp-ddq-reset" id="afpDdqReset">↺ Reset checklist</button>
+</div>
+
+<script>
+  (function () {
+    var data = {
+      tco: [
+        "What is the all-in Year 1 cost (machine + install + training)?",
+        "What does the annual maintenance contract cost after Year 1?",
+        "What are the software licence and annual upgrade fees?",
+        "What is the published scrap/rework benchmark for my material type?",
+        "What is the typical material waste rate vs. my current process?",
+      ],
+      cap: [
+        "How long from PO to first production part?",
+        "What floor space and facility modifications are required?",
+        "Can the system handle multiple material types without re-tooling?",
+        "Is the programming software open or proprietary?",
+        "Who owns the process knowledge (tow paths, material databases)?",
+      ],
+      risk: [
+        "What happens to my process data if we change vendors?",
+        "What is your support response SLA for production-down situations?",
+        "What is the upgrade path if my production volumes change?",
+        "Who are your current reference customers at similar scale?",
+      ],
+    };
+
+    var TOTAL = data.tco.length + data.cap.length + data.risk.length;
+    var checked = 0;
+
+    function updateProgress() {
+      document.getElementById("afpDdqProgressCount").textContent =
+        checked + " / " + TOTAL;
+      var pct = (checked / TOTAL) * 100;
+      document.getElementById("afpDdqProgressFill").style.width = pct + "%";
+    }
+
+    function buildItems(items, containerId) {
+      var container = document.getElementById(containerId);
+      items.forEach(function (text, i) {
+        var item = document.createElement("div");
+        item.className = "afp-ddq-item";
+        item.style.transitionDelay = i * 60 + "ms";
+        item.innerHTML =
+          '<div class="afp-ddq-checkbox"></div>' +
+          '<div class="afp-ddq-item-text">' +
+          text +
+          "</div>";
+
+        item.addEventListener("click", function () {
+          if (item.classList.contains("afp-ddq-checked")) {
+            item.classList.remove("afp-ddq-checked");
+            checked = Math.max(0, checked - 1);
+          } else {
+            item.classList.add("afp-ddq-checked");
+            checked++;
+          }
+          updateProgress();
+        });
+
+        container.appendChild(item);
+      });
+    }
+
+    buildItems(data.tco, "afpDdqItemsTco");
+    buildItems(data.cap, "afpDdqItemsCap");
+    buildItems(data.risk, "afpDdqItemsRisk");
+
+    // Reset
+    document
+      .getElementById("afpDdqReset")
+      .addEventListener("click", function () {
+        document.querySelectorAll(".afp-ddq-item").forEach(function (el) {
+          el.classList.remove("afp-ddq-checked");
+        });
+        checked = 0;
+        updateProgress();
+      });
+
+    // IntersectionObserver
+    var container = document.getElementById("afpDdqContainer");
+    var progressEl = document.getElementById("afpDdqProgressWrap");
+    var sec1 = document.getElementById("afpDdqSecTco");
+    var sec2 = document.getElementById("afpDdqSecCap");
+    var sec3 = document.getElementById("afpDdqSecRisk");
+
+    var obs = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          obs.unobserve(entry.target);
+          container.classList.add("afp-ddq-visible");
+
+          setTimeout(function () {
+            progressEl.classList.add("afp-ddq-visible-el");
+          }, 150);
+
+          [
+            [sec1, "afpDdqItemsTco", 280],
+            [sec2, "afpDdqItemsCap", 460],
+            [sec3, "afpDdqItemsRisk", 620],
+          ].forEach(function (tuple) {
+            var sec = tuple[0],
+              itemsId = tuple[1],
+              delay = tuple[2];
+            setTimeout(function () {
+              sec.classList.add("afp-ddq-sec-visible");
+              var items = document.querySelectorAll(
+                "#" + itemsId + " .afp-ddq-item",
+              );
+              items.forEach(function (item, i) {
+                setTimeout(function () {
+                  item.classList.add("afp-ddq-item-visible");
+                }, i * 60);
+              });
+            }, delay);
+          });
+        });
+      },
+      { threshold: 0.08 },
+    );
+
+    obs.observe(container);
+  })();
+</script>

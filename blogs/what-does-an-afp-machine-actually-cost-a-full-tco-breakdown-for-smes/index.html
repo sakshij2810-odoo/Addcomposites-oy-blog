@@ -938,74 +938,14 @@
           </div>
 
           <!-- INFOGRAPHIC 6: 36-Month Cumulative Cost Comparison line chart. Three lines: Hand Layup (rising steeply from €0 to ~€1,164,000 over 36 months); AFP-XS gross no savings offset (rising slowly from €0 to ~€156,000); AFP-XS net with savings (dotted line, roughly flat near €0 or slightly positive). Table below: at 12 months — Hand Layup €388,000 / AFP-XS gross €72,000 / AFP-XS net ~€0 / Cumulative saving ~€316,000. At 24 months — €776,000 / €114,000 / ~€0 / ~€662,000. At 36 months — €1,164,000 / €156,000 / ~€0 / ~€1,008,000. Three-year net saving vs. hand layup: ~€1M. Payback period (gross subscription cost): <2 months. -->
-          <div class="afp-36m-container" id="afp36mContainer">
-            <div class="afp-36m-title">36-Month Cumulative Cost Comparison</div>
-            <div class="afp-36m-subtitle">
-              Hand Layup vs AFP-XS gross vs AFP-XS net (with material savings
-              offset)
-            </div>
-
-            <div class="afp-36m-chart-wrap">
-              <canvas id="afp36mChart"></canvas>
-            </div>
-
-            <table class="afp-36m-table" id="afp36mTable">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>12 Months</th>
-                  <th>24 Months</th>
-                  <th>36 Months</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="afp-36m-row-hl">
-                  <td>Hand Layup total</td>
-                  <td>€388,000</td>
-                  <td>€776,000</td>
-                  <td>€1,164,000</td>
-                </tr>
-                <tr class="afp-36m-row-gross">
-                  <td>AFP-XS gross</td>
-                  <td>€72,000</td>
-                  <td>€114,000</td>
-                  <td>€156,000</td>
-                </tr>
-                <tr class="afp-36m-row-net">
-                  <td>AFP-XS net (w/ savings)</td>
-                  <td>~€0</td>
-                  <td>~€0</td>
-                  <td>~€0</td>
-                </tr>
-                <tr class="afp-36m-row-saving">
-                  <td>Cumulative saving</td>
-                  <td>~€316,000</td>
-                  <td>~€662,000</td>
-                  <td>~€1,008,000</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div class="afp-36m-callouts" id="afp36mCallouts">
-              <div class="afp-36m-callout">
-                <div class="afp-36m-callout-label">
-                  3-Year Net Saving vs Hand Layup
-                </div>
-                <div class="afp-36m-callout-value">~€1,008,000</div>
-                <div class="afp-36m-callout-note">
-                  Cumulative advantage over 36 months
-                </div>
-              </div>
-              <div class="afp-36m-callout">
-                <div class="afp-36m-callout-label">
-                  Payback Period (gross subscription)
-                </div>
-                <div class="afp-36m-callout-value">&lt; 2 months</div>
-                <div class="afp-36m-callout-note">
-                  Material savings offset subscription from Month 1
-                </div>
-              </div>
-            </div>
+          <div class="iframe-fullwidth">
+            <iframe
+              src="./info6.html"
+              width="100%"
+              style="border: none; min-height: 850px"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
           </div>
           <div class="stats-grid">
             <div class="stat-card">
@@ -1065,26 +1005,14 @@
 
               <!-- INFOGRAPHIC 7: Rework Cost Anatomy per NCR event. Defective part material: €400 written off; Disassembly + analysis labour: €150; Re-kitting + preparation: €80; Re-layup repeat cycle: €350; Re-inspection + sign-off: €60; Schedule impact buffer: €200 downstream delays. Total cost per NCR: €1,240 on a €400 part. Stacked cost breakdown visual or cost anatomy diagram. -->
 
-              <div class="afp-ncr-container" id="afpNcrContainer">
-                <div class="afp-ncr-title">Rework Cost Anatomy</div>
-                <div class="afp-ncr-subtitle">
-                  Full cost breakdown per Non-Conformance Report (NCR) event
-                </div>
-                <div id="afpNcrChart"></div>
-                <div class="afp-ncr-divider" id="afpNcrDivider"></div>
-                <div class="afp-ncr-total-wrap" id="afpNcrTotal">
-                  <div class="afp-ncr-total-card">
-                    <div>
-                      <div class="afp-ncr-total-label">Total cost per NCR</div>
-                      <div class="afp-ncr-total-value">€1,240</div>
-                    </div>
-                  </div>
-                  <div class="afp-ncr-multiplier">
-                    <div class="afp-ncr-mult-label">Cost multiplier</div>
-                    <div class="afp-ncr-mult-value">3.1×</div>
-                    <div class="afp-ncr-mult-note">on a €400 part</div>
-                  </div>
-                </div>
+              <div class="iframe-fullwidth">
+                <iframe
+                  src="./info7.html"
+                  width="100%"
+                  style="border: none; min-height: 500px"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
               </div>
 
               <div class="afp-ncr-tooltip" id="afpNcrTooltip">
@@ -1116,29 +1044,14 @@
               </p>
 
               <!-- INFOGRAPHIC 8: Composites Labour Market Trend chart showing skill premium vs. general manufacturing worker over time: 2015 +12%, 2018 +15%, 2021 +19%, 2024 +23%, 2027 +28% projected. Line chart or bar chart showing the rising premium. Caption: AFP reduces required operator skill floor → decouples your headcount cost from the composites skills premium curve. -->
-              <div class="afp-lmt-container" id="afpLmtContainer">
-                <div class="afp-lmt-title">Composites Labour Market Trend</div>
-                <div class="afp-lmt-subtitle">
-                  Skill premium vs. general manufacturing worker — illustrative
-                  index
-                </div>
-
-                <div id="afpLmtChart"></div>
-                <div class="afp-lmt-axis" id="afpLmtAxis"></div>
-
-                <div class="afp-lmt-callout" id="afpLmtCallout">
-                  <div class="afp-lmt-callout-icon">⚡</div>
-                  <div class="afp-lmt-callout-body">
-                    <div class="afp-lmt-callout-text">
-                      <strong
-                        >AFP reduces the required operator skill floor</strong
-                      >
-                      — decoupling your headcount cost from the
-                      <em>composites skills premium curve</em> as it steepens
-                      toward 2027.
-                    </div>
-                  </div>
-                </div>
+              <div class="iframe-fullwidth">
+                <iframe
+                  src="./info8.html"
+                  width="100%"
+                  style="border: none; min-height: 500px"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
               </div>
 
               <div class="afp-lmt-tooltip" id="afpLmtTooltip">
@@ -1170,84 +1083,14 @@
 
               <!-- INFOGRAPHIC 9: Floor Space Cost by System Type. Legacy AFP Cell 200 m² @ €12/m²/month = €28,800/yr. AFP-XS standard bay ~30 m² = €4,320/yr. Annual floor space saving: €24,480. Over 5 years: €122,400 in avoided facility cost. Simple bar comparison or side-by-side floor plan cost cards. -->
 
-              <div class="afp-fs-container" id="afpFsContainer">
-                <div class="afp-fs-title">Floor Space Cost by System Type</div>
-                <div class="afp-fs-subtitle">
-                  Annual facility cost based on €12/m²/month industrial floor
-                  rate
-                </div>
-
-                <!-- Legacy AFP card -->
-                <div
-                  class="afp-fs-card afp-fs-card-legacy"
-                  id="afpFsCardLegacy"
-                >
-                  <div class="afp-fs-card-header">
-                    <div>
-                      <div class="afp-fs-card-name">Legacy AFP Cell</div>
-                      <div class="afp-fs-card-spec">200 m² @ €12/m²/month</div>
-                    </div>
-                    <div class="afp-fs-card-annual">€28,800/yr</div>
-                  </div>
-                  <div class="afp-fs-track">
-                    <div
-                      class="afp-fs-bar"
-                      id="afpFsBarLegacy"
-                      data-target="92"
-                      style="background: #9d9d9c; width: 0"
-                    >
-                      <span class="afp-fs-bar-label">200 m² — €28,800/yr</span>
-                    </div>
-                  </div>
-                  <!-- Visual grid of 200 chips representing m² -->
-                  <div class="afp-fs-area-chips" id="afpFsChipsLegacy"></div>
-                </div>
-
-                <!-- AFP-XS card -->
-                <div class="afp-fs-card afp-fs-card-xs" id="afpFsCardXs">
-                  <div class="afp-fs-card-header">
-                    <div>
-                      <div class="afp-fs-card-name">AFP-XS</div>
-                      <div class="afp-fs-card-spec">Standard bay, ~30 m²</div>
-                    </div>
-                    <div class="afp-fs-card-annual">€4,320/yr</div>
-                  </div>
-                  <div class="afp-fs-track">
-                    <div
-                      class="afp-fs-bar"
-                      id="afpFsBarXs"
-                      data-target="13.8"
-                      style="background: #47577c; width: 0"
-                    >
-                      <span class="afp-fs-bar-label">30 m² — €4,320/yr</span>
-                    </div>
-                  </div>
-                  <!-- Visual grid of 30 chips -->
-                  <div class="afp-fs-area-chips" id="afpFsChipsXs"></div>
-                </div>
-
-                <!-- Annual saving -->
-                <div class="afp-fs-saving-row" id="afpFsSaving">
-                  <span class="afp-fs-saving-label"
-                    >Annual floor space saving</span
-                  >
-                  <span class="afp-fs-saving-value">€24,480 / yr</span>
-                </div>
-
-                <!-- 5-year callout -->
-                <div class="afp-fs-5yr" id="afpFs5yr">
-                  <div class="afp-fs-5yr-icon">🏭</div>
-                  <div class="afp-fs-5yr-body">
-                    <div class="afp-fs-5yr-headline">
-                      €122,400 avoided over 5 years
-                    </div>
-                    <div class="afp-fs-5yr-text">
-                      That floor space can generate <strong>revenue</strong> or
-                      house <strong>additional production capacity</strong> —
-                      turning an overhead cost into a strategic asset.
-                    </div>
-                  </div>
-                </div>
+              <div class="iframe-fullwidth">
+                <iframe
+                  src="./info9.html"
+                  width="100%"
+                  style="border: none; min-height: 650px"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
               </div>
 
               <div class="afp-fs-tooltip" id="afpFsTooltip">
@@ -1322,98 +1165,14 @@
 
               <!-- INFOGRAPHIC 10: Time-to-Production Comparison. Legacy AFP: PO → 6 to 18 months → First part. AFP-XS: PO → 4–8 weeks → First part. Revenue and saving opportunity during gap at €25K/month saving: 6 months gap = €150,000 foregone; 12 months gap = €300,000 foregone; 18 months gap = €450,000 foregone. Caption: This cost never appears in the legacy vendor's proposal. Timeline/Gantt style diagram or arrow diagram. -->
 
-              <div class="afp-ttp-container" id="afpTtpContainer">
-                <div class="afp-ttp-title">Time-to-Production Comparison</div>
-                <div class="afp-ttp-subtitle">
-                  From purchase order to first qualified part
-                </div>
-
-                <div class="afp-ttp-timeline-wrap">
-                  <!-- Legacy AFP timeline -->
-                  <div
-                    class="afp-ttp-tl-row afp-ttp-legacy"
-                    id="afpTtpRowLegacy"
-                  >
-                    <div class="afp-ttp-tl-label">Legacy AFP</div>
-                    <div class="afp-ttp-tl-track">
-                      <div class="afp-ttp-po">
-                        <div class="afp-ttp-po-dot"></div>
-                        <div class="afp-ttp-po-label">PO</div>
-                      </div>
-                      <div class="afp-ttp-arrow-track" id="afpTtpTrackLegacy">
-                        <div
-                          class="afp-ttp-gap-shade"
-                          id="afpTtpGapShade"
-                        ></div>
-                        <div
-                          class="afp-ttp-arrow-line"
-                          id="afpTtpLineLegacy"
-                          data-target="85"
-                        ></div>
-                        <div
-                          class="afp-ttp-arrow-head"
-                          id="afpTtpHeadLegacy"
-                          style="border-left-width: 10px"
-                        ></div>
-                        <div
-                          class="afp-ttp-duration-label"
-                          id="afpTtpDurLegacy"
-                        >
-                          6 – 18 months
-                        </div>
-                      </div>
-                      <div class="afp-ttp-first-part" id="afpTtpFpLegacy">
-                        <div class="afp-ttp-first-part-line"></div>
-                        <div class="afp-ttp-first-part-label">First part</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- AFP-XS timeline -->
-                  <div class="afp-ttp-tl-row afp-ttp-xs" id="afpTtpRowXs">
-                    <div class="afp-ttp-tl-label">AFP-XS</div>
-                    <div class="afp-ttp-tl-track">
-                      <div class="afp-ttp-po">
-                        <div class="afp-ttp-po-dot"></div>
-                        <div class="afp-ttp-po-label">PO</div>
-                      </div>
-                      <div class="afp-ttp-arrow-track" id="afpTtpTrackXs">
-                        <div
-                          class="afp-ttp-arrow-line"
-                          id="afpTtpLineXs"
-                          data-target="22"
-                        ></div>
-                        <div
-                          class="afp-ttp-arrow-head"
-                          id="afpTtpHeadXs"
-                          style="border-left-width: 10px"
-                        ></div>
-                        <div class="afp-ttp-duration-label" id="afpTtpDurXs">
-                          4 – 8 weeks
-                        </div>
-                      </div>
-                      <div class="afp-ttp-first-part" id="afpTtpFpXs">
-                        <div class="afp-ttp-first-part-line"></div>
-                        <div class="afp-ttp-first-part-label">First part</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="afp-ttp-divider" id="afpTtpDivider"></div>
-
-                <div class="afp-ttp-foregone-label" id="afpTtpForeLabel">
-                  Revenue &amp; savings foregone during gap (at €25K/month)
-                </div>
-
-                <div class="afp-ttp-foregone-rows" id="afpTtpForeRows"></div>
-
-                <div class="afp-ttp-warning" id="afpTtpWarning">
-                  <div class="afp-ttp-warning-icon">⚠️</div>
-                  <div class="afp-ttp-warning-text">
-                    This cost never appears in the legacy vendor's proposal.
-                  </div>
-                </div>
+              <div class="iframe-fullwidth">
+                <iframe
+                  src="./info10.html"
+                  width="100%"
+                  style="border: none; min-height: 550px"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
               </div>
               <div class="stats-grid">
                 <div class="stat-card">
@@ -1447,156 +1206,14 @@
           <h3>The Three Numbers That Win Budget Approval</h3>
 
           <!-- INFOGRAPHIC 11: Three-box diagram. 1. PAYBACK PERIOD: AFP-XS subscription offset by material + labour savings → Typical payback 2–6 months (vs. legacy AFP 4–8 years). 2. BALANCE SHEET IMPACT: Subscription = fully OpEx → No asset on balance sheet, no depreciation schedule, no financing required, P&L impact begins Month 1. 3. RISK PROFILE: If volume drops subscription adjusts → No stranded asset, no impairment charge, no covenant breach on debt financing. Three-column card layout. -->
-          <div class="afp-frp-container" id="afpFrpContainer">
-            <div class="afp-frp-title">AFP-XS Financial &amp; Risk Profile</div>
-            <div class="afp-frp-subtitle">
-              Three dimensions where the subscription model changes the
-              financial equation
-            </div>
-
-            <div class="afp-frp-sections">
-              <!-- Section 1: Payback Period -->
-              <div class="afp-frp-section afp-frp-sec-1" id="afpFrpSec1">
-                <div class="afp-frp-sec-header">
-                  <div class="afp-frp-sec-num">1</div>
-                  <div class="afp-frp-sec-title-wrap">
-                    <div class="afp-frp-sec-title">Payback Period</div>
-                    <div class="afp-frp-sec-tagline">
-                      Subscription offset by material + labour savings
-                    </div>
-                  </div>
-                  <div class="afp-frp-sec-kpi">2 – 6 months</div>
-                </div>
-                <div class="afp-frp-sec-body">
-                  <!-- Mini payback comparison visual -->
-                  <div class="afp-frp-payback-vis" id="afpFrpPbVis">
-                    <div class="afp-frp-pb-row">
-                      <div class="afp-frp-pb-label">AFP-XS</div>
-                      <div class="afp-frp-pb-track">
-                        <div
-                          class="afp-frp-pb-fill"
-                          id="afpFrpPbXs"
-                          style="background: #bf3425"
-                          data-target="8"
-                        ></div>
-                      </div>
-                      <div class="afp-frp-pb-val" style="color: #bf3425">
-                        2 – 6 months
-                      </div>
-                    </div>
-                    <div class="afp-frp-pb-row">
-                      <div class="afp-frp-pb-label">Legacy AFP</div>
-                      <div class="afp-frp-pb-track">
-                        <div
-                          class="afp-frp-pb-fill"
-                          id="afpFrpPbLeg"
-                          style="background: #9d9d9c"
-                          data-target="100"
-                        ></div>
-                      </div>
-                      <div class="afp-frp-pb-val" style="color: #9d9d9c">
-                        4 – 8 years
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="afp-frp-bullet" id="afpFrpB1a">
-                    <span class="afp-frp-arrow">→</span>
-                    <span class="afp-frp-bullet-text"
-                      >Typical payback: <strong>2 – 6 months</strong> from
-                      combined material waste reduction and labour savings</span
-                    >
-                  </div>
-                  <div class="afp-frp-bullet" id="afpFrpB1b">
-                    <span class="afp-frp-arrow">→</span>
-                    <span class="afp-frp-bullet-text"
-                      >vs. Legacy AFP: <strong>4 – 8 years</strong> to recover
-                      capital investment</span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <!-- Section 2: Balance Sheet -->
-              <div class="afp-frp-section afp-frp-sec-2" id="afpFrpSec2">
-                <div class="afp-frp-sec-header">
-                  <div class="afp-frp-sec-num">2</div>
-                  <div class="afp-frp-sec-title-wrap">
-                    <div class="afp-frp-sec-title">Balance Sheet Impact</div>
-                    <div class="afp-frp-sec-tagline">
-                      Subscription = fully OpEx
-                    </div>
-                  </div>
-                  <div class="afp-frp-sec-kpi">Zero CapEx</div>
-                </div>
-                <div class="afp-frp-sec-body">
-                  <div class="afp-frp-bullet" id="afpFrpB2a">
-                    <span class="afp-frp-arrow">→</span>
-                    <span class="afp-frp-bullet-text"
-                      ><strong>No asset on balance sheet</strong></span
-                    >
-                  </div>
-                  <div class="afp-frp-bullet" id="afpFrpB2b">
-                    <span class="afp-frp-arrow">→</span>
-                    <span class="afp-frp-bullet-text"
-                      ><strong>No depreciation schedule</strong></span
-                    >
-                  </div>
-                  <div class="afp-frp-bullet" id="afpFrpB2c">
-                    <span class="afp-frp-arrow">→</span>
-                    <span class="afp-frp-bullet-text"
-                      ><strong
-                        >No financing or working capital required</strong
-                      ></span
-                    >
-                  </div>
-                  <div class="afp-frp-bullet" id="afpFrpB2d">
-                    <span class="afp-frp-arrow">→</span>
-                    <span class="afp-frp-bullet-text"
-                      ><strong>P&amp;L impact begins Month 1</strong> — savings
-                      visible immediately</span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <!-- Section 3: Risk Profile -->
-              <div class="afp-frp-section afp-frp-sec-3" id="afpFrpSec3">
-                <div class="afp-frp-sec-header">
-                  <div class="afp-frp-sec-num">3</div>
-                  <div class="afp-frp-sec-title-wrap">
-                    <div class="afp-frp-sec-title">Risk Profile</div>
-                    <div class="afp-frp-sec-tagline">
-                      If volume drops, subscription adjusts
-                    </div>
-                  </div>
-                  <div class="afp-frp-sec-kpi">Fully flexible</div>
-                </div>
-                <div class="afp-frp-sec-body">
-                  <div class="afp-frp-bullet" id="afpFrpB3a">
-                    <span class="afp-frp-arrow">→</span>
-                    <span class="afp-frp-bullet-text"
-                      ><strong>No stranded asset</strong> if production volumes
-                      change</span
-                    >
-                  </div>
-                  <div class="afp-frp-bullet" id="afpFrpB3b">
-                    <span class="afp-frp-arrow">→</span>
-                    <span class="afp-frp-bullet-text"
-                      ><strong>No impairment charge</strong> on unused
-                      equipment</span
-                    >
-                  </div>
-                  <div class="afp-frp-bullet" id="afpFrpB3c">
-                    <span class="afp-frp-arrow">→</span>
-                    <span class="afp-frp-bullet-text"
-                      ><strong>No covenant breach</strong> on debt financing
-                      obligations</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="iframe-fullwidth">
+            <iframe
+              src="./info11.html"
+              width="100%"
+              style="border: none; min-height: 700px"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
           </div>
           <div class="three-col-cards">
             <div class="col-card payback">
@@ -1662,68 +1279,14 @@
 
           <!-- INFOGRAPHIC 12: Three-section checklist. TCO Questions: all-in Year 1 cost, annual maintenance contract post Year 1, software licence and upgrade fees, published scrap/rework benchmark, typical material waste rate vs. current process. Capability Questions: time from PO to first production part, floor space and facility modifications required, handling multiple material types, programming software open or proprietary, ownership of process knowledge. Vendor Risk Questions: process data portability if vendor changes, support response SLA for production-down situations, upgrade path for volume changes, current reference customers at similar scale. Formatted as a checklist/table. -->
 
-          <div class="afp-ddq-container" id="afpDdqContainer">
-            <div class="afp-ddq-title">AFP Vendor Due Diligence Checklist</div>
-            <div class="afp-ddq-subtitle">
-              Questions to ask any AFP vendor before committing — tick each as
-              you receive a satisfactory answer
-            </div>
-
-            <!-- Progress -->
-            <div class="afp-ddq-progress-wrap" id="afpDdqProgressWrap">
-              <div class="afp-ddq-progress-header">
-                <span class="afp-ddq-progress-label">Questions answered</span>
-                <span class="afp-ddq-progress-count" id="afpDdqProgressCount"
-                  >0 / 14</span
-                >
-              </div>
-              <div class="afp-ddq-progress-track">
-                <div
-                  class="afp-ddq-progress-fill"
-                  id="afpDdqProgressFill"
-                ></div>
-              </div>
-            </div>
-
-            <!-- TCO Section -->
-            <div class="afp-ddq-section afp-ddq-sec-tco" id="afpDdqSecTco">
-              <div class="afp-ddq-sec-header">
-                <div class="afp-ddq-sec-left">
-                  <div class="afp-ddq-sec-icon">💰</div>
-                  <div class="afp-ddq-sec-name">TCO Questions</div>
-                </div>
-                <div class="afp-ddq-sec-badge">5 questions</div>
-              </div>
-              <div class="afp-ddq-items" id="afpDdqItemsTco"></div>
-            </div>
-
-            <!-- Capability Section -->
-            <div class="afp-ddq-section afp-ddq-sec-cap" id="afpDdqSecCap">
-              <div class="afp-ddq-sec-header">
-                <div class="afp-ddq-sec-left">
-                  <div class="afp-ddq-sec-icon">⚙️</div>
-                  <div class="afp-ddq-sec-name">Capability Questions</div>
-                </div>
-                <div class="afp-ddq-sec-badge">5 questions</div>
-              </div>
-              <div class="afp-ddq-items" id="afpDdqItemsCap"></div>
-            </div>
-
-            <!-- Vendor Risk Section -->
-            <div class="afp-ddq-section afp-ddq-sec-risk" id="afpDdqSecRisk">
-              <div class="afp-ddq-sec-header">
-                <div class="afp-ddq-sec-left">
-                  <div class="afp-ddq-sec-icon">🛡️</div>
-                  <div class="afp-ddq-sec-name">Vendor Risk Questions</div>
-                </div>
-                <div class="afp-ddq-sec-badge">4 questions</div>
-              </div>
-              <div class="afp-ddq-items" id="afpDdqItemsRisk"></div>
-            </div>
-
-            <button class="afp-ddq-reset" id="afpDdqReset">
-              ↺ Reset checklist
-            </button>
+          <div class="iframe-fullwidth">
+            <iframe
+              src="./info12.html"
+              width="100%"
+              style="border: none; min-height: 1100px"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
           </div>
 
           <div class="checklist-container">
@@ -1857,119 +1420,13 @@
 
           <!-- INFOGRAPHIC 13: Decision tree / framework. Primary branch: Annual composites production volume. Under 200 kg/yr → Hand layup is probably still optimal. AFP capex unlikely to justify at this scale. 200–2,000 kg/yr → AFP-XS on subscription is the primary candidate. ROI positive in Year 1 for most applications. 2,000–20,000 kg/yr → AFP-XS (potentially multiple cells) or evaluate small-footprint AFP with leasing. Over 20,000 kg/yr → Legacy AFP or high-throughput multi-tow systems may justify the CapEx. Evaluate with full TCO model. Secondary filters: Part complexity (Simple flat/cylindrical → AFP-XS handles well; Complex double-curvature → Evaluate tow-steering spec); Material type (Thermoset prepreg → AFP-XS ready; Thermoplastic → Check material compatibility; Dry fibre infusion → AFP-XS dry fibre option); Floor space (<50m² available → AFP-XS designed for this; >100m² dedicated → All options viable). Flowchart or decision tree visual. -->
 
-          <div class="afp-sg-container" id="afpSgContainer">
-            <div class="afp-sg-title">AFP System Selection Guide</div>
-            <div class="afp-sg-subtitle">
-              Answer the primary question, then refine with secondary filters
-            </div>
-
-            <!-- Step 1: Volume -->
-            <div class="afp-sg-vol-section">
-              <div class="afp-sg-step-label">
-                Step 1 — What is your annual composites production volume?
-              </div>
-              <div class="afp-sg-vol-grid" id="afpSgVolGrid"></div>
-            </div>
-
-            <!-- Result card (shown after selection) -->
-            <div class="afp-sg-result" id="afpSgResult">
-              <div class="afp-sg-result-header">
-                <div class="afp-sg-result-icon" id="afpSgResultIcon"></div>
-                <div class="afp-sg-result-title" id="afpSgResultTitle"></div>
-              </div>
-              <div class="afp-sg-result-body" id="afpSgResultBody"></div>
-            </div>
-
-            <!-- Secondary filters -->
-            <div class="afp-sg-filters" id="afpSgFilters">
-              <div class="afp-sg-filters-title">
-                Step 2 — Refine with secondary filters
-              </div>
-
-              <!-- Part complexity -->
-              <div class="afp-sg-filter-group" id="afpSgFg1">
-                <div class="afp-sg-filter-name">
-                  <span class="afp-sg-filter-name-icon">🔧</span> Part
-                  Complexity
-                </div>
-                <div class="afp-sg-filter-options">
-                  <div class="afp-sg-filter-opt">
-                    <span class="afp-sg-opt-label"
-                      >Simple flat / cylindrical geometry</span
-                    >
-                    <span class="afp-sg-opt-arrow">→</span>
-                    <span class="afp-sg-opt-result afp-sg-opt-result-xs"
-                      >AFP-XS handles well</span
-                    >
-                  </div>
-                  <div class="afp-sg-filter-opt">
-                    <span class="afp-sg-opt-label"
-                      >Complex double-curvature surfaces</span
-                    >
-                    <span class="afp-sg-opt-arrow">→</span>
-                    <span class="afp-sg-opt-result afp-sg-opt-result-eval"
-                      >Evaluate tow-steering spec</span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <!-- Material type -->
-              <div class="afp-sg-filter-group" id="afpSgFg2">
-                <div class="afp-sg-filter-name">
-                  <span class="afp-sg-filter-name-icon">🧵</span> Material Type
-                </div>
-                <div class="afp-sg-filter-options">
-                  <div class="afp-sg-filter-opt">
-                    <span class="afp-sg-opt-label">Thermoset prepreg</span>
-                    <span class="afp-sg-opt-arrow">→</span>
-                    <span class="afp-sg-opt-result afp-sg-opt-result-xs"
-                      >AFP-XS ready</span
-                    >
-                  </div>
-                  <div class="afp-sg-filter-opt">
-                    <span class="afp-sg-opt-label">Thermoplastic</span>
-                    <span class="afp-sg-opt-arrow">→</span>
-                    <span class="afp-sg-opt-result afp-sg-opt-result-eval"
-                      >Check material compatibility</span
-                    >
-                  </div>
-                  <div class="afp-sg-filter-opt">
-                    <span class="afp-sg-opt-label">Dry fibre (infusion)</span>
-                    <span class="afp-sg-opt-arrow">→</span>
-                    <span class="afp-sg-opt-result afp-sg-opt-result-xs"
-                      >AFP-XS dry fibre option</span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <!-- Floor space -->
-              <div class="afp-sg-filter-group" id="afpSgFg3">
-                <div class="afp-sg-filter-name">
-                  <span class="afp-sg-filter-name-icon">🏭</span> Available
-                  Floor Space
-                </div>
-                <div class="afp-sg-filter-options">
-                  <div class="afp-sg-filter-opt">
-                    <span class="afp-sg-opt-label">&lt; 50 m² available</span>
-                    <span class="afp-sg-opt-arrow">→</span>
-                    <span class="afp-sg-opt-result afp-sg-opt-result-xs"
-                      >AFP-XS designed for this</span
-                    >
-                  </div>
-                  <div class="afp-sg-filter-opt">
-                    <span class="afp-sg-opt-label"
-                      >&gt; 100 m² dedicated space</span
-                    >
-                    <span class="afp-sg-opt-arrow">→</span>
-                    <span class="afp-sg-opt-result afp-sg-opt-result-all"
-                      >All options viable</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="iframe-fullwidth">
+            <iframe
+              src="./info13.html"
+              width="100%"
+              style="border: none; min-height: 350px"
+              loading="lazy"
+            ></iframe>
           </div>
           <div class="decision-table-container">
             <table class="data-table">
@@ -2069,58 +1526,14 @@
 
           <!-- INFOGRAPHIC 14: Decision Summary comparison table. Columns: metric, Hand Layup, AFP-XS. Rows: 3-year total cost (~€1.16M vs ~€126K gross); 3-year net with savings (— vs ~€0 break-even or positive); CapEx required (None vs None); Balance sheet risk (None vs None); Scrap rate (15–30% vs 2–5%); Material waste (20–40% vs <6%); Operator skill floor (High vs Low-medium); Software lock-in (N/A vs None open); Time to first part (Today vs 4–8 weeks). Clean comparison table format. -->
 
-          <div class="afp-ds-container" id="afpDsContainer">
-            <div class="afp-ds-title">Decision Summary</div>
-            <div class="afp-ds-subtitle">
-              Head-to-head comparison across cost, quality, and operational
-              dimensions
-            </div>
-
-            <!-- Header -->
-            <div class="afp-ds-header">
-              <div class="afp-ds-hcell"></div>
-              <div class="afp-ds-hcell afp-ds-hcell-hl">Hand Layup</div>
-              <div class="afp-ds-hcell afp-ds-hcell-xs">
-                AFP-XS <span class="afp-ds-winner-tag">recommended</span>
-              </div>
-            </div>
-
-            <!-- Table body rendered by JS -->
-            <div id="afpDsBody"></div>
-
-            <!-- Advantage score bars -->
-            <div class="afp-ds-score-section" id="afpDsScore">
-              <div class="afp-ds-score-label">
-                Composite advantage score (9 criteria)
-              </div>
-              <div class="afp-ds-score-row afp-ds-score-hl">
-                <div class="afp-ds-score-name">Hand Layup</div>
-                <div class="afp-ds-score-track">
-                  <div
-                    class="afp-ds-score-fill"
-                    id="afpDsScoreHl"
-                    data-target="22"
-                  ></div>
-                </div>
-                <div class="afp-ds-score-val" style="color: #9d9d9c">2 / 9</div>
-              </div>
-              <div class="afp-ds-score-row afp-ds-score-xs">
-                <div class="afp-ds-score-name">AFP-XS</div>
-                <div class="afp-ds-score-track">
-                  <div
-                    class="afp-ds-score-fill"
-                    id="afpDsScoreXs"
-                    data-target="89"
-                  ></div>
-                </div>
-                <div class="afp-ds-score-val" style="color: #47577c">8 / 9</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="afp-ds-tooltip" id="afpDsTooltip">
-            <div class="afp-ds-tip-title" id="afpDsTipTitle"></div>
-            <div class="afp-ds-tip-body" id="afpDsTipBody"></div>
+          <div class="iframe-fullwidth">
+            <iframe
+              src="./info14.html"
+              width="100%"
+              style="border: none; min-height: 700px"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
           </div>
 
           <div class="data-table-container">

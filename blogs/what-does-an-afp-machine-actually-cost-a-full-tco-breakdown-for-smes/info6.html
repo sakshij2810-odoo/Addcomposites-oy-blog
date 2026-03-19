@@ -1,0 +1,421 @@
+<!-- 36-Month Cumulative Cost Comparison -->
+<style>
+  .afp-36m-container {
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 28px 24px 24px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    max-width: 860px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+  .afp-36m-container.afp-36m-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-36m-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #47577c;
+    margin-bottom: 4px;
+  }
+  .afp-36m-subtitle {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 24px;
+  }
+
+  .afp-36m-chart-wrap {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    margin-bottom: 24px;
+  }
+  @media (min-width: 640px) {
+    .afp-36m-chart-wrap {
+      height: 380px;
+    }
+  }
+
+  /* Summary table */
+  .afp-36m-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 18px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity 0.45s ease,
+      transform 0.45s ease;
+  }
+  .afp-36m-table.afp-36m-tbl-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-36m-table thead tr {
+    border-bottom: 2px solid #47577c;
+  }
+  .afp-36m-table thead th {
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #47577c;
+    white-space: nowrap;
+  }
+  .afp-36m-table thead th:first-child {
+    color: #1e293b;
+  }
+
+  .afp-36m-table tbody tr {
+    border-bottom: 1px solid #f1f5f9;
+    transition: background-color 0.18s ease;
+  }
+  .afp-36m-table tbody tr:hover {
+    background: #f8fafc;
+  }
+  .afp-36m-table tbody td {
+    padding: 9px 12px;
+    font-size: 13px;
+    color: #334155;
+    font-variant-numeric: tabular-nums;
+  }
+  .afp-36m-table tbody td:first-child {
+    font-weight: 600;
+    color: #1e293b;
+    white-space: nowrap;
+  }
+
+  /* Row color accents */
+  .afp-36m-row-hl td:first-child {
+    border-left: 3px solid #9d9d9c;
+    padding-left: 9px;
+  }
+  .afp-36m-row-gross td:first-child {
+    border-left: 3px solid #bf3425;
+    padding-left: 9px;
+  }
+  .afp-36m-row-net td:first-child {
+    border-left: 3px solid #47577c;
+    padding-left: 9px;
+  }
+  .afp-36m-row-saving td:first-child {
+    border-left: 3px solid #47577c;
+    padding-left: 9px;
+  }
+  .afp-36m-row-saving td {
+    font-weight: 700 !important;
+    color: #47577c !important;
+  }
+
+  /* Callout strip */
+  .afp-36m-callouts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity 0.45s ease 0.1s,
+      transform 0.45s ease 0.1s;
+  }
+  .afp-36m-callouts.afp-36m-tbl-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (max-width: 480px) {
+    .afp-36m-callouts {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .afp-36m-callout {
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(71, 87, 124, 0.15);
+    background: linear-gradient(
+      135deg,
+      rgba(71, 87, 124, 0.05) 0%,
+      rgba(191, 52, 37, 0.03) 100%
+    );
+  }
+  .afp-36m-callout-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #94a3b8;
+    margin-bottom: 4px;
+  }
+  .afp-36m-callout-value {
+    font-size: 22px;
+    font-weight: 800;
+    color: #47577c;
+    letter-spacing: -0.02em;
+  }
+  .afp-36m-callout-note {
+    font-size: 11.5px;
+    color: #64748b;
+    margin-top: 2px;
+  }
+</style>
+
+<div class="afp-36m-container" id="afp36mContainer">
+  <div class="afp-36m-title">36-Month Cumulative Cost Comparison</div>
+  <div class="afp-36m-subtitle">
+    Hand Layup vs AFP-XS gross vs AFP-XS net (with material savings offset)
+  </div>
+
+  <div class="afp-36m-chart-wrap">
+    <canvas id="afp36mChart"></canvas>
+  </div>
+
+  <table class="afp-36m-table" id="afp36mTable">
+    <thead>
+      <tr>
+        <th></th>
+        <th>12 Months</th>
+        <th>24 Months</th>
+        <th>36 Months</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="afp-36m-row-hl">
+        <td>Hand Layup total</td>
+        <td>€388,000</td>
+        <td>€776,000</td>
+        <td>€1,164,000</td>
+      </tr>
+      <tr class="afp-36m-row-gross">
+        <td>AFP-XS gross</td>
+        <td>€72,000</td>
+        <td>€114,000</td>
+        <td>€156,000</td>
+      </tr>
+      <tr class="afp-36m-row-net">
+        <td>AFP-XS net (w/ savings)</td>
+        <td>~€0</td>
+        <td>~€0</td>
+        <td>~€0</td>
+      </tr>
+      <tr class="afp-36m-row-saving">
+        <td>Cumulative saving</td>
+        <td>~€316,000</td>
+        <td>~€662,000</td>
+        <td>~€1,008,000</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="afp-36m-callouts" id="afp36mCallouts">
+    <div class="afp-36m-callout">
+      <div class="afp-36m-callout-label">3-Year Net Saving vs Hand Layup</div>
+      <div class="afp-36m-callout-value">~€1,008,000</div>
+      <div class="afp-36m-callout-note">
+        Cumulative advantage over 36 months
+      </div>
+    </div>
+    <div class="afp-36m-callout">
+      <div class="afp-36m-callout-label">
+        Payback Period (gross subscription)
+      </div>
+      <div class="afp-36m-callout-value">&lt; 2 months</div>
+      <div class="afp-36m-callout-note">
+        Material savings offset subscription from Month 1
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  (function () {
+    // Monthly data points: M1 through M36
+    var months = [];
+    for (var i = 1; i <= 36; i++) months.push("M" + i);
+
+    // Hand Layup: ~€32,333/mo (€388K / 12)
+    var hlMonthly = 388000 / 12;
+    // AFP-XS gross: €72K in Y1, then ~€42K/yr for Y2+Y3 (subscription only)
+    // Y1: 72K over 12 months
+    // Y2: 42K/yr → 3500/mo
+    // Y3: same
+    // AFP-XS net: ~€0 each month (savings offset)
+
+    var hlData = [],
+      xsGrossData = [],
+      xsNetData = [];
+    var hlCum = 0,
+      xsGrossCum = 0;
+
+    for (var m = 1; m <= 36; m++) {
+      hlCum += hlMonthly;
+      hlData.push(Math.round(hlCum));
+
+      // Y1: setup costs spread across first year + subscription
+      // Gross: 72K total Y1, then 3500/mo thereafter
+      if (m <= 12) {
+        xsGrossCum += 72000 / 12;
+      } else {
+        xsGrossCum += 3500;
+      }
+      xsGrossData.push(Math.round(xsGrossCum));
+
+      // Net: savings ~€6,400/mo offset (76,800/yr), so net ≈ 0
+      xsNetData.push(0);
+    }
+
+    var commonTooltip = {
+      backgroundColor: "#ffffff",
+      titleColor: "#bf3425",
+      bodyColor: "#1e293b",
+      borderColor: "#e2e8f0",
+      borderWidth: 1,
+      padding: 12,
+      displayColors: true,
+      callbacks: {
+        label: function (ctx) {
+          var v = ctx.parsed.y;
+          if (v === 0) return ctx.dataset.label + ": ~€0";
+          return ctx.dataset.label + ": €" + v.toLocaleString("en-EU");
+        },
+      },
+    };
+
+    var ctx = document.getElementById("afp36mChart").getContext("2d");
+
+    var chart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: months,
+        datasets: [
+          {
+            label: "Hand Layup",
+            data: hlData,
+            borderColor: "#9d9d9c",
+            backgroundColor: "rgba(157,157,156,0.06)",
+            borderWidth: 2.5,
+            pointRadius: 0,
+            pointHoverRadius: 5,
+            fill: false,
+            tension: 0.1,
+          },
+          {
+            label: "AFP-XS (gross)",
+            data: xsGrossData,
+            borderColor: "#bf3425",
+            backgroundColor: "rgba(191,52,37,0.05)",
+            borderWidth: 2,
+            pointRadius: 0,
+            pointHoverRadius: 5,
+            fill: false,
+            tension: 0.1,
+          },
+          {
+            label: "AFP-XS (net, w/ savings)",
+            data: xsNetData,
+            borderColor: "#47577c",
+            backgroundColor: "rgba(71,87,124,0.04)",
+            borderWidth: 2,
+            borderDash: [5, 4],
+            pointRadius: 0,
+            pointHoverRadius: 5,
+            fill: false,
+            tension: 0,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: {
+          duration: 1400,
+          easing: "easeInOutQuart",
+        },
+        interaction: {
+          mode: "index",
+          intersect: false,
+        },
+        scales: {
+          x: {
+            grid: { color: "#f1f5f9" },
+            ticks: {
+              color: "#94a3b8",
+              font: { size: 11 },
+              maxTicksLimit: 7,
+              callback: function (val, idx) {
+                var labels = ["M1", "M6", "M12", "M18", "M24", "M30", "M36"];
+                var indices = [0, 5, 11, 17, 23, 29, 35];
+                return indices.indexOf(idx) !== -1 ? months[idx] : "";
+              },
+            },
+          },
+          y: {
+            grid: { color: "#f1f5f9" },
+            ticks: {
+              color: "#94a3b8",
+              font: { size: 11 },
+              callback: function (v) {
+                if (v >= 1000000) return "€" + (v / 1000000).toFixed(1) + "M";
+                if (v >= 1000) return "€" + (v / 1000).toFixed(0) + "K";
+                return "€" + v;
+              },
+            },
+          },
+        },
+        plugins: {
+          legend: {
+            labels: {
+              color: "#475569",
+              font: { family: "Inter", size: 12, weight: "600" },
+              usePointStyle: true,
+              pointStyle: "line",
+              boxWidth: 24,
+            },
+          },
+          tooltip: commonTooltip,
+        },
+      },
+    });
+
+    // IntersectionObserver
+    var container = document.getElementById("afp36mContainer");
+    var tableEl = document.getElementById("afp36mTable");
+    var calloutsEl = document.getElementById("afp36mCallouts");
+
+    var obs = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          obs.unobserve(entry.target);
+          container.classList.add("afp-36m-visible");
+
+          setTimeout(function () {
+            tableEl.classList.add("afp-36m-tbl-visible");
+          }, 600);
+          setTimeout(function () {
+            calloutsEl.classList.add("afp-36m-tbl-visible");
+          }, 800);
+        });
+      },
+      { threshold: 0.1 },
+    );
+
+    obs.observe(container);
+  })();
+</script>

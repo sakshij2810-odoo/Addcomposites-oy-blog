@@ -1,0 +1,380 @@
+<!-- Composites Labour Market Trend -->
+<style>
+  .afp-lmt-container {
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 28px 24px 24px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    max-width: 680px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+  .afp-lmt-container.afp-lmt-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-lmt-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #47577c;
+    margin-bottom: 4px;
+  }
+  .afp-lmt-subtitle {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 28px;
+  }
+
+  /* Chart rows */
+  .afp-lmt-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
+  }
+  .afp-lmt-row.afp-lmt-row-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .afp-lmt-year {
+    width: 42px;
+    min-width: 42px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #475569;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .afp-lmt-track {
+    flex: 1;
+    height: 32px;
+    background: #f8fafc;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .afp-lmt-bar {
+    height: 100%;
+    border-radius: 6px;
+    width: 0;
+    transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    cursor: pointer;
+  }
+  .afp-lmt-bar:hover {
+    filter: brightness(1.1);
+  }
+
+  /* Projected bar gets a dashed overlay pattern */
+  .afp-lmt-bar-projected {
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 8px,
+      rgba(255, 255, 255, 0.25) 8px,
+      rgba(255, 255, 255, 0.25) 10px
+    );
+  }
+
+  .afp-lmt-pct-label {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    font-weight: 800;
+    color: #ffffff;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.75s;
+    white-space: nowrap;
+  }
+  .afp-lmt-pct-label.afp-lmt-lbl-visible {
+    opacity: 1;
+  }
+
+  .afp-lmt-projected-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: rgba(191, 52, 37, 0.12);
+    color: #bf3425;
+    margin-left: 4px;
+    vertical-align: middle;
+    letter-spacing: 0.04em;
+  }
+
+  /* Axis baseline */
+  .afp-lmt-axis {
+    height: 2px;
+    background: #e2e8f0;
+    border-radius: 1px;
+    margin: 4px 0 20px 42px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .afp-lmt-axis.afp-lmt-row-visible {
+    opacity: 1;
+  }
+
+  /* Insight callout */
+  .afp-lmt-callout {
+    padding: 16px 18px;
+    border-radius: 12px;
+    background: linear-gradient(
+      135deg,
+      rgba(71, 87, 124, 0.07) 0%,
+      rgba(191, 52, 37, 0.04) 100%
+    );
+    border: 1px solid rgba(71, 87, 124, 0.18);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity 0.45s ease,
+      transform 0.45s ease;
+  }
+  .afp-lmt-callout.afp-lmt-row-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-lmt-callout-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    line-height: 1.2;
+  }
+
+  .afp-lmt-callout-body {
+    flex: 1;
+  }
+
+  .afp-lmt-callout-text {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #1e293b;
+    line-height: 1.5;
+  }
+
+  .afp-lmt-callout-text strong {
+    color: #47577c;
+    font-weight: 700;
+  }
+
+  .afp-lmt-callout-text em {
+    color: #bf3425;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  /* Tooltip */
+  .afp-lmt-tooltip {
+    position: fixed;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: #1e293b;
+    pointer-events: none;
+    z-index: 100;
+    display: none;
+    min-width: 180px;
+  }
+  .afp-lmt-tip-title {
+    font-weight: 700;
+    color: #bf3425;
+    margin-bottom: 4px;
+    font-size: 12.5px;
+  }
+  .afp-lmt-tip-value {
+    font-size: 16px;
+    font-weight: 800;
+    color: #47577c;
+  }
+  .afp-lmt-tip-note {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 2px;
+  }
+
+  @media (max-width: 480px) {
+    .afp-lmt-year {
+      width: 34px;
+      min-width: 34px;
+      font-size: 11px;
+    }
+  }
+</style>
+
+<div class="afp-lmt-container" id="afpLmtContainer">
+  <div class="afp-lmt-title">Composites Labour Market Trend</div>
+  <div class="afp-lmt-subtitle">
+    Skill premium vs. general manufacturing worker — illustrative index
+  </div>
+
+  <div id="afpLmtChart"></div>
+  <div class="afp-lmt-axis" id="afpLmtAxis"></div>
+
+  <div class="afp-lmt-callout" id="afpLmtCallout">
+    <div class="afp-lmt-callout-icon">⚡</div>
+    <div class="afp-lmt-callout-body">
+      <div class="afp-lmt-callout-text">
+        <strong>AFP reduces the required operator skill floor</strong> —
+        decoupling your headcount cost from the
+        <em>composites skills premium curve</em> as it steepens toward 2027.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="afp-lmt-tooltip" id="afpLmtTooltip">
+  <div class="afp-lmt-tip-title" id="afpLmtTipTitle"></div>
+  <div class="afp-lmt-tip-value" id="afpLmtTipValue"></div>
+  <div class="afp-lmt-tip-note" id="afpLmtTipNote"></div>
+</div>
+
+<script>
+  (function () {
+    var items = [
+      { year: "2015", pct: 12, projected: false },
+      { year: "2018", pct: 15, projected: false },
+      { year: "2021", pct: 19, projected: false },
+      { year: "2024", pct: 23, projected: false },
+      { year: "2027", pct: 28, projected: true },
+    ];
+
+    var maxPct = 28;
+    var MAX_PCT = 90;
+
+    // Colour gradient: lighter navy → full navy → red tint for projected
+    var colors = ["#7a8fb5", "#5e72a0", "#47577c", "#3a4a6b", "#bf3425"];
+
+    var chart = document.getElementById("afpLmtChart");
+    var axisEl = document.getElementById("afpLmtAxis");
+    var callout = document.getElementById("afpLmtCallout");
+    var tooltip = document.getElementById("afpLmtTooltip");
+    var tipTitle = document.getElementById("afpLmtTipTitle");
+    var tipValue = document.getElementById("afpLmtTipValue");
+    var tipNote = document.getElementById("afpLmtTipNote");
+
+    items.forEach(function (item, i) {
+      var pct = (item.pct / maxPct) * MAX_PCT;
+      var color = colors[i];
+
+      var row = document.createElement("div");
+      row.className = "afp-lmt-row";
+      row.style.transitionDelay = i * 90 + "ms";
+
+      var projTag = item.projected
+        ? '<span class="afp-lmt-projected-tag">projected</span>'
+        : "";
+
+      row.innerHTML =
+        '<div class="afp-lmt-year">' +
+        item.year +
+        "</div>" +
+        '<div class="afp-lmt-track">' +
+        '<div class="afp-lmt-bar' +
+        (item.projected ? " afp-lmt-bar-projected" : "") +
+        '" ' +
+        'data-target="' +
+        pct +
+        '" style="background:' +
+        color +
+        ';width:0">' +
+        '<span class="afp-lmt-pct-label">+' +
+        item.pct +
+        "%" +
+        (item.projected ? " projected" : "") +
+        "</span>" +
+        "</div>" +
+        "</div>";
+
+      chart.appendChild(row);
+
+      var bar = row.querySelector(".afp-lmt-bar");
+      var label = row.querySelector(".afp-lmt-pct-label");
+
+      bar.addEventListener("mouseenter", function () {
+        tipTitle.textContent = item.year + " skill premium";
+        tipValue.textContent = "+" + item.pct + "%";
+        tipNote.textContent = item.projected
+          ? "Projected figure (illustrative)"
+          : "vs. general manufacturing worker wage";
+        tooltip.style.display = "block";
+      });
+      bar.addEventListener("mousemove", function (e) {
+        tooltip.style.left = e.clientX + 14 + "px";
+        tooltip.style.top = e.clientY - 48 + "px";
+      });
+      bar.addEventListener("mouseleave", function () {
+        tooltip.style.display = "none";
+      });
+    });
+
+    // IntersectionObserver
+    var container = document.getElementById("afpLmtContainer");
+
+    var obs = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          obs.unobserve(entry.target);
+          container.classList.add("afp-lmt-visible");
+
+          var rows = chart.querySelectorAll(".afp-lmt-row");
+          rows.forEach(function (row, i) {
+            setTimeout(
+              function () {
+                row.classList.add("afp-lmt-row-visible");
+                var bar = row.querySelector(".afp-lmt-bar");
+                var label = row.querySelector(".afp-lmt-pct-label");
+                if (bar) {
+                  bar.style.width = bar.dataset.target + "%";
+                  setTimeout(function () {
+                    if (label) label.classList.add("afp-lmt-lbl-visible");
+                  }, 560);
+                }
+              },
+              100 + i * 90,
+            );
+          });
+
+          var base = 100 + rows.length * 90 + 80;
+          setTimeout(function () {
+            axisEl.classList.add("afp-lmt-row-visible");
+          }, base);
+          setTimeout(function () {
+            callout.classList.add("afp-lmt-row-visible");
+          }, base + 180);
+        });
+      },
+      { threshold: 0.12 },
+    );
+
+    obs.observe(container);
+  })();
+</script>

@@ -1,0 +1,590 @@
+<!-- Time-to-Production Comparison -->
+<style>
+  .afp-ttp-container {
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 28px 24px 24px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    max-width: 720px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+  .afp-ttp-container.afp-ttp-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-ttp-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #47577c;
+    margin-bottom: 4px;
+  }
+  .afp-ttp-subtitle {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 28px;
+  }
+
+  /* Timeline rows */
+  .afp-ttp-timeline-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+
+  .afp-ttp-tl-row {
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
+  }
+  .afp-ttp-tl-row.afp-ttp-row-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-ttp-tl-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #64748b;
+    margin-bottom: 8px;
+  }
+
+  .afp-ttp-tl-track {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    position: relative;
+    height: 40px;
+  }
+
+  /* PO dot */
+  .afp-ttp-po {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: 8px;
+  }
+  .afp-ttp-po-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    background: #fff;
+    flex-shrink: 0;
+  }
+  .afp-ttp-po-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: inherit;
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+  }
+
+  /* Arrow bar */
+  .afp-ttp-arrow-track {
+    flex: 1;
+    position: relative;
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  .afp-ttp-arrow-line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 3px;
+    border-radius: 2px;
+    width: 0;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .afp-ttp-arrow-head {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(0);
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    left: 0;
+  }
+
+  .afp-ttp-duration-label {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11.5px;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.8s;
+  }
+  .afp-ttp-duration-label.afp-ttp-lbl-visible {
+    opacity: 1;
+  }
+
+  /* First part flag */
+  .afp-ttp-first-part {
+    flex-shrink: 0;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.9s;
+  }
+  .afp-ttp-first-part.afp-ttp-lbl-visible {
+    opacity: 1;
+  }
+  .afp-ttp-first-part-line {
+    width: 2px;
+    height: 18px;
+    border-radius: 1px;
+    margin-bottom: 4px;
+  }
+  .afp-ttp-first-part-label {
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  /* Legacy variant */
+  .afp-ttp-legacy .afp-ttp-po-dot,
+  .afp-ttp-legacy .afp-ttp-po-label {
+    color: #9d9d9c;
+  }
+  .afp-ttp-legacy .afp-ttp-arrow-line {
+    background: #9d9d9c;
+  }
+  .afp-ttp-legacy .afp-ttp-arrow-head {
+    border-left-color: #9d9d9c;
+  }
+  .afp-ttp-legacy .afp-ttp-duration-label {
+    color: #9d9d9c;
+  }
+  .afp-ttp-legacy .afp-ttp-first-part-line {
+    background: #9d9d9c;
+  }
+  .afp-ttp-legacy .afp-ttp-first-part-label {
+    color: #9d9d9c;
+  }
+
+  /* AFP-XS variant */
+  .afp-ttp-xs .afp-ttp-po-dot,
+  .afp-ttp-xs .afp-ttp-po-label {
+    color: #47577c;
+  }
+  .afp-ttp-xs .afp-ttp-arrow-line {
+    background: #47577c;
+  }
+  .afp-ttp-xs .afp-ttp-arrow-head {
+    border-left-color: #47577c;
+  }
+  .afp-ttp-xs .afp-ttp-duration-label {
+    color: #47577c;
+  }
+  .afp-ttp-xs .afp-ttp-first-part-line {
+    background: #47577c;
+  }
+  .afp-ttp-xs .afp-ttp-first-part-label {
+    color: #47577c;
+  }
+
+  /* Gap shading on legacy track */
+  .afp-ttp-gap-shade {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 6px,
+      rgba(191, 52, 37, 0.06) 6px,
+      rgba(191, 52, 37, 0.06) 12px
+    );
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease 1.1s;
+  }
+  .afp-ttp-gap-shade.afp-ttp-lbl-visible {
+    opacity: 1;
+  }
+
+  /* Divider */
+  .afp-ttp-divider {
+    height: 1px;
+    background: #e2e8f0;
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .afp-ttp-divider.afp-ttp-row-visible {
+    opacity: 1;
+  }
+
+  /* Foregone revenue table */
+  .afp-ttp-foregone-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #64748b;
+    margin-bottom: 12px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .afp-ttp-foregone-label.afp-ttp-row-visible {
+    opacity: 1;
+  }
+
+  .afp-ttp-foregone-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .afp-ttp-foregone-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease;
+  }
+  .afp-ttp-foregone-row.afp-ttp-row-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .afp-ttp-foregone-period {
+    width: 80px;
+    min-width: 80px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #475569;
+  }
+
+  .afp-ttp-foregone-track {
+    flex: 1;
+    height: 26px;
+    background: #f8fafc;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  .afp-ttp-foregone-bar {
+    height: 100%;
+    border-radius: 6px;
+    width: 0;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .afp-ttp-foregone-val {
+    width: 96px;
+    min-width: 96px;
+    text-align: right;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #bf3425;
+    font-variant-numeric: tabular-nums;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.7s;
+  }
+  .afp-ttp-foregone-val.afp-ttp-lbl-visible {
+    opacity: 1;
+  }
+
+  /* Bar label inside */
+  .afp-ttp-bar-inner-lbl {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.85s;
+    white-space: nowrap;
+  }
+  .afp-ttp-bar-inner-lbl.afp-ttp-lbl-visible {
+    opacity: 1;
+  }
+
+  /* Warning callout */
+  .afp-ttp-warning {
+    padding: 14px 16px;
+    border-radius: 10px;
+    background: rgba(191, 52, 37, 0.05);
+    border: 1px solid rgba(191, 52, 37, 0.2);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
+  }
+  .afp-ttp-warning.afp-ttp-row-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .afp-ttp-warning-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    line-height: 1.3;
+  }
+  .afp-ttp-warning-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: #bf3425;
+    line-height: 1.5;
+  }
+</style>
+
+<div class="afp-ttp-container" id="afpTtpContainer">
+  <div class="afp-ttp-title">Time-to-Production Comparison</div>
+  <div class="afp-ttp-subtitle">
+    From purchase order to first qualified part
+  </div>
+
+  <div class="afp-ttp-timeline-wrap">
+    <!-- Legacy AFP timeline -->
+    <div class="afp-ttp-tl-row afp-ttp-legacy" id="afpTtpRowLegacy">
+      <div class="afp-ttp-tl-label">Legacy AFP</div>
+      <div class="afp-ttp-tl-track">
+        <div class="afp-ttp-po">
+          <div class="afp-ttp-po-dot"></div>
+          <div class="afp-ttp-po-label">PO</div>
+        </div>
+        <div class="afp-ttp-arrow-track" id="afpTtpTrackLegacy">
+          <div class="afp-ttp-gap-shade" id="afpTtpGapShade"></div>
+          <div
+            class="afp-ttp-arrow-line"
+            id="afpTtpLineLegacy"
+            data-target="85"
+          ></div>
+          <div
+            class="afp-ttp-arrow-head"
+            id="afpTtpHeadLegacy"
+            style="border-left-width: 10px"
+          ></div>
+          <div class="afp-ttp-duration-label" id="afpTtpDurLegacy">
+            6 – 18 months
+          </div>
+        </div>
+        <div class="afp-ttp-first-part" id="afpTtpFpLegacy">
+          <div class="afp-ttp-first-part-line"></div>
+          <div class="afp-ttp-first-part-label">First part</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AFP-XS timeline -->
+    <div class="afp-ttp-tl-row afp-ttp-xs" id="afpTtpRowXs">
+      <div class="afp-ttp-tl-label">AFP-XS</div>
+      <div class="afp-ttp-tl-track">
+        <div class="afp-ttp-po">
+          <div class="afp-ttp-po-dot"></div>
+          <div class="afp-ttp-po-label">PO</div>
+        </div>
+        <div class="afp-ttp-arrow-track" id="afpTtpTrackXs">
+          <div
+            class="afp-ttp-arrow-line"
+            id="afpTtpLineXs"
+            data-target="22"
+          ></div>
+          <div
+            class="afp-ttp-arrow-head"
+            id="afpTtpHeadXs"
+            style="border-left-width: 10px"
+          ></div>
+          <div class="afp-ttp-duration-label" id="afpTtpDurXs">4 – 8 weeks</div>
+        </div>
+        <div class="afp-ttp-first-part" id="afpTtpFpXs">
+          <div class="afp-ttp-first-part-line"></div>
+          <div class="afp-ttp-first-part-label">First part</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="afp-ttp-divider" id="afpTtpDivider"></div>
+
+  <div class="afp-ttp-foregone-label" id="afpTtpForeLabel">
+    Revenue &amp; savings foregone during gap (at €25K/month)
+  </div>
+
+  <div class="afp-ttp-foregone-rows" id="afpTtpForeRows"></div>
+
+  <div class="afp-ttp-warning" id="afpTtpWarning">
+    <div class="afp-ttp-warning-icon">⚠️</div>
+    <div class="afp-ttp-warning-text">
+      This cost never appears in the legacy vendor's proposal.
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var foregoneItems = [
+      { period: "6 months", months: 6, value: 150000, pct: 33 },
+      { period: "12 months", months: 12, value: 300000, pct: 66 },
+      { period: "18 months", months: 18, value: 450000, pct: 100 },
+    ];
+
+    // Build foregone rows
+    var foreRows = document.getElementById("afpTtpForeRows");
+    foregoneItems.forEach(function (item, i) {
+      var row = document.createElement("div");
+      row.className = "afp-ttp-foregone-row";
+      row.style.transitionDelay = i * 80 + "ms";
+
+      var colors = ["rgba(191,52,37,0.45)", "rgba(191,52,37,0.65)", "#bf3425"];
+
+      row.innerHTML =
+        '<div class="afp-ttp-foregone-period">' +
+        item.period +
+        " gap</div>" +
+        '<div class="afp-ttp-foregone-track">' +
+        '<div class="afp-ttp-foregone-bar" data-target="' +
+        item.pct +
+        '" style="background:' +
+        colors[i] +
+        ';width:0">' +
+        '<span class="afp-ttp-bar-inner-lbl">' +
+        item.months +
+        " × €25K</span>" +
+        "</div>" +
+        "</div>" +
+        '<div class="afp-ttp-foregone-val">€' +
+        item.value / 1000 +
+        "K foregone</div>";
+
+      foreRows.appendChild(row);
+    });
+
+    // IntersectionObserver
+    var container = document.getElementById("afpTtpContainer");
+    var rowLegacy = document.getElementById("afpTtpRowLegacy");
+    var rowXs = document.getElementById("afpTtpRowXs");
+    var lineLegacy = document.getElementById("afpTtpLineLegacy");
+    var lineXs = document.getElementById("afpTtpLineXs");
+    var headLegacy = document.getElementById("afpTtpHeadLegacy");
+    var headXs = document.getElementById("afpTtpHeadXs");
+    var durLegacy = document.getElementById("afpTtpDurLegacy");
+    var durXs = document.getElementById("afpTtpDurXs");
+    var fpLegacy = document.getElementById("afpTtpFpLegacy");
+    var fpXs = document.getElementById("afpTtpFpXs");
+    var gapShade = document.getElementById("afpTtpGapShade");
+    var dividerEl = document.getElementById("afpTtpDivider");
+    var foreLabelEl = document.getElementById("afpTtpForeLabel");
+    var warningEl = document.getElementById("afpTtpWarning");
+    var trackLegacy = document.getElementById("afpTtpTrackLegacy");
+    var trackXs = document.getElementById("afpTtpTrackXs");
+
+    var obs = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          obs.unobserve(entry.target);
+          container.classList.add("afp-ttp-visible");
+
+          // Legacy row
+          setTimeout(function () {
+            rowLegacy.classList.add("afp-ttp-row-visible");
+            var trackW = trackLegacy.offsetWidth;
+            var targetPx = trackW * 0.85;
+            lineLegacy.style.width = targetPx + "px";
+            setTimeout(function () {
+              headLegacy.style.left = targetPx + "px";
+              headLegacy.style.opacity = "1";
+              durLegacy.classList.add("afp-ttp-lbl-visible");
+              fpLegacy.classList.add("afp-ttp-lbl-visible");
+              gapShade.classList.add("afp-ttp-lbl-visible");
+            }, 700);
+          }, 150);
+
+          // AFP-XS row
+          setTimeout(function () {
+            rowXs.classList.add("afp-ttp-row-visible");
+            var trackW = trackXs.offsetWidth;
+            var targetPx = trackW * 0.22;
+            lineXs.style.width = targetPx + "px";
+            setTimeout(function () {
+              headXs.style.left = targetPx + "px";
+              headXs.style.opacity = "1";
+              durXs.classList.add("afp-ttp-lbl-visible");
+              fpXs.classList.add("afp-ttp-lbl-visible");
+            }, 700);
+          }, 400);
+
+          // Divider + label
+          setTimeout(function () {
+            dividerEl.classList.add("afp-ttp-row-visible");
+          }, 900);
+          setTimeout(function () {
+            foreLabelEl.classList.add("afp-ttp-row-visible");
+          }, 1020);
+
+          // Foregone rows
+          var foreRowEls = foreRows.querySelectorAll(".afp-ttp-foregone-row");
+          foreRowEls.forEach(function (row, i) {
+            setTimeout(
+              function () {
+                row.classList.add("afp-ttp-row-visible");
+                var bar = row.querySelector(".afp-ttp-foregone-bar");
+                var valEl = row.querySelector(".afp-ttp-foregone-val");
+                var lbl = row.querySelector(".afp-ttp-bar-inner-lbl");
+                if (bar) {
+                  bar.style.width = bar.dataset.target + "%";
+                  setTimeout(function () {
+                    if (valEl) valEl.classList.add("afp-ttp-lbl-visible");
+                    if (lbl) lbl.classList.add("afp-ttp-lbl-visible");
+                  }, 520);
+                }
+              },
+              1100 + i * 100,
+            );
+          });
+
+          setTimeout(function () {
+            warningEl.classList.add("afp-ttp-row-visible");
+          }, 1500);
+        });
+      },
+      { threshold: 0.1 },
+    );
+
+    obs.observe(container);
+  })();
+</script>

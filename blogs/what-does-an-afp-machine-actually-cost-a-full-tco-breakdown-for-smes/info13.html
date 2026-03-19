@@ -1,0 +1,554 @@
+<!-- AFP System Selection Guide -->
+<style>
+  .afp-sg-container {
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 28px 24px 24px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    max-width: 760px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+  .afp-sg-container.afp-sg-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-sg-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #47577c;
+    margin-bottom: 4px;
+  }
+  .afp-sg-subtitle {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 26px;
+  }
+
+  /* ── PRIMARY VOLUME SELECTOR ── */
+  .afp-sg-vol-section {
+    margin-bottom: 24px;
+  }
+
+  .afp-sg-step-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #94a3b8;
+    margin-bottom: 10px;
+  }
+
+  .afp-sg-vol-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  @media (max-width: 520px) {
+    .afp-sg-vol-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .afp-sg-vol-btn {
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 2px solid #e2e8f0;
+    background: #fff;
+    cursor: pointer;
+    text-align: left;
+    transition:
+      border-color 0.18s,
+      background 0.18s,
+      box-shadow 0.18s,
+      transform 0.18s;
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease,
+      border-color 0.18s,
+      background 0.18s,
+      box-shadow 0.18s;
+  }
+  .afp-sg-vol-btn:hover {
+    border-color: #47577c;
+    box-shadow: 0 4px 12px rgba(71, 87, 124, 0.12);
+    transform: translateY(-2px) !important;
+  }
+  .afp-sg-vol-btn.afp-sg-btn-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .afp-sg-vol-btn.afp-sg-selected {
+    border-color: #47577c;
+    background: rgba(71, 87, 124, 0.04);
+    box-shadow: 0 4px 14px rgba(71, 87, 124, 0.14);
+  }
+
+  .afp-sg-vol-range {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 3px;
+  }
+  .afp-sg-vol-hint {
+    font-size: 11.5px;
+    color: #94a3b8;
+  }
+
+  /* ── RESULT CARD ── */
+  .afp-sg-result {
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    display: none;
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease;
+  }
+  .afp-sg-result.afp-sg-result-show {
+    display: block;
+  }
+  .afp-sg-result.afp-sg-result-anim {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-sg-result-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .afp-sg-result-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    line-height: 1.2;
+  }
+  .afp-sg-result-title {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .afp-sg-result-body {
+    font-size: 13px;
+    line-height: 1.55;
+    color: #334155;
+  }
+
+  .afp-sg-result-xs {
+    background: rgba(71, 87, 124, 0.05);
+    border-color: rgba(71, 87, 124, 0.2);
+  }
+  .afp-sg-result-xs .afp-sg-result-title {
+    color: #47577c;
+  }
+  .afp-sg-result-hand {
+    background: rgba(157, 157, 156, 0.06);
+    border-color: rgba(157, 157, 156, 0.25);
+  }
+  .afp-sg-result-hand .afp-sg-result-title {
+    color: #475569;
+  }
+  .afp-sg-result-multi {
+    background: rgba(71, 87, 124, 0.05);
+    border-color: rgba(71, 87, 124, 0.2);
+  }
+  .afp-sg-result-multi .afp-sg-result-title {
+    color: #47577c;
+  }
+  .afp-sg-result-legac {
+    background: rgba(157, 157, 156, 0.06);
+    border-color: rgba(157, 157, 156, 0.25);
+  }
+  .afp-sg-result-legac .afp-sg-result-title {
+    color: #475569;
+  }
+
+  /* ── SECONDARY FILTERS ── */
+  .afp-sg-filters {
+    display: none;
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
+  }
+  .afp-sg-filters.afp-sg-filters-show {
+    display: block;
+  }
+  .afp-sg-filters.afp-sg-filters-anim {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-sg-filters-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #94a3b8;
+    margin-bottom: 14px;
+  }
+
+  .afp-sg-filter-group {
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 10px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease;
+  }
+  .afp-sg-filter-group.afp-sg-fg-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .afp-sg-filter-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 12px;
+    font-weight: 700;
+    color: #1e293b;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .afp-sg-filter-name-icon {
+    font-size: 14px;
+  }
+
+  .afp-sg-filter-options {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .afp-sg-filter-opt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 14px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 13px;
+    color: #334155;
+    cursor: pointer;
+    transition: background 0.15s;
+    gap: 10px;
+  }
+  .afp-sg-filter-opt:last-child {
+    border-bottom: none;
+  }
+  .afp-sg-filter-opt:hover {
+    background: #f8fafc;
+  }
+  .afp-sg-filter-opt.afp-sg-opt-active {
+    background: rgba(71, 87, 124, 0.05);
+  }
+  .afp-sg-filter-opt.afp-sg-opt-active .afp-sg-opt-label {
+    color: #47577c;
+    font-weight: 600;
+  }
+
+  .afp-sg-opt-label {
+    flex: 1;
+  }
+  .afp-sg-opt-arrow {
+    color: #94a3b8;
+    font-size: 12px;
+    margin: 0 6px;
+    flex-shrink: 0;
+  }
+
+  .afp-sg-opt-result {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .afp-sg-opt-result-xs {
+    background: rgba(71, 87, 124, 0.1);
+    color: #47577c;
+  }
+  .afp-sg-opt-result-ok {
+    background: rgba(71, 87, 124, 0.07);
+    color: #47577c;
+  }
+  .afp-sg-opt-result-eval {
+    background: rgba(157, 157, 156, 0.12);
+    color: #475569;
+  }
+  .afp-sg-opt-result-good {
+    background: rgba(71, 87, 124, 0.1);
+    color: #47577c;
+  }
+  .afp-sg-opt-result-all {
+    background: rgba(157, 157, 156, 0.1);
+    color: #475569;
+  }
+</style>
+
+<div class="afp-sg-container" id="afpSgContainer">
+  <div class="afp-sg-title">AFP System Selection Guide</div>
+  <div class="afp-sg-subtitle">
+    Answer the primary question, then refine with secondary filters
+  </div>
+
+  <!-- Step 1: Volume -->
+  <div class="afp-sg-vol-section">
+    <div class="afp-sg-step-label">
+      Step 1 — What is your annual composites production volume?
+    </div>
+    <div class="afp-sg-vol-grid" id="afpSgVolGrid"></div>
+  </div>
+
+  <!-- Result card (shown after selection) -->
+  <div class="afp-sg-result" id="afpSgResult">
+    <div class="afp-sg-result-header">
+      <div class="afp-sg-result-icon" id="afpSgResultIcon"></div>
+      <div class="afp-sg-result-title" id="afpSgResultTitle"></div>
+    </div>
+    <div class="afp-sg-result-body" id="afpSgResultBody"></div>
+  </div>
+
+  <!-- Secondary filters -->
+  <div class="afp-sg-filters" id="afpSgFilters">
+    <div class="afp-sg-filters-title">
+      Step 2 — Refine with secondary filters
+    </div>
+
+    <!-- Part complexity -->
+    <div class="afp-sg-filter-group" id="afpSgFg1">
+      <div class="afp-sg-filter-name">
+        <span class="afp-sg-filter-name-icon">🔧</span> Part Complexity
+      </div>
+      <div class="afp-sg-filter-options">
+        <div class="afp-sg-filter-opt">
+          <span class="afp-sg-opt-label"
+            >Simple flat / cylindrical geometry</span
+          >
+          <span class="afp-sg-opt-arrow">→</span>
+          <span class="afp-sg-opt-result afp-sg-opt-result-xs"
+            >AFP-XS handles well</span
+          >
+        </div>
+        <div class="afp-sg-filter-opt">
+          <span class="afp-sg-opt-label"
+            >Complex double-curvature surfaces</span
+          >
+          <span class="afp-sg-opt-arrow">→</span>
+          <span class="afp-sg-opt-result afp-sg-opt-result-eval"
+            >Evaluate tow-steering spec</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Material type -->
+    <div class="afp-sg-filter-group" id="afpSgFg2">
+      <div class="afp-sg-filter-name">
+        <span class="afp-sg-filter-name-icon">🧵</span> Material Type
+      </div>
+      <div class="afp-sg-filter-options">
+        <div class="afp-sg-filter-opt">
+          <span class="afp-sg-opt-label">Thermoset prepreg</span>
+          <span class="afp-sg-opt-arrow">→</span>
+          <span class="afp-sg-opt-result afp-sg-opt-result-xs"
+            >AFP-XS ready</span
+          >
+        </div>
+        <div class="afp-sg-filter-opt">
+          <span class="afp-sg-opt-label">Thermoplastic</span>
+          <span class="afp-sg-opt-arrow">→</span>
+          <span class="afp-sg-opt-result afp-sg-opt-result-eval"
+            >Check material compatibility</span
+          >
+        </div>
+        <div class="afp-sg-filter-opt">
+          <span class="afp-sg-opt-label">Dry fibre (infusion)</span>
+          <span class="afp-sg-opt-arrow">→</span>
+          <span class="afp-sg-opt-result afp-sg-opt-result-xs"
+            >AFP-XS dry fibre option</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Floor space -->
+    <div class="afp-sg-filter-group" id="afpSgFg3">
+      <div class="afp-sg-filter-name">
+        <span class="afp-sg-filter-name-icon">🏭</span> Available Floor Space
+      </div>
+      <div class="afp-sg-filter-options">
+        <div class="afp-sg-filter-opt">
+          <span class="afp-sg-opt-label">&lt; 50 m² available</span>
+          <span class="afp-sg-opt-arrow">→</span>
+          <span class="afp-sg-opt-result afp-sg-opt-result-xs"
+            >AFP-XS designed for this</span
+          >
+        </div>
+        <div class="afp-sg-filter-opt">
+          <span class="afp-sg-opt-label">&gt; 100 m² dedicated space</span>
+          <span class="afp-sg-opt-arrow">→</span>
+          <span class="afp-sg-opt-result afp-sg-opt-result-all"
+            >All options viable</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var volumes = [
+      {
+        range: "Under 200 kg/yr",
+        hint: "Low-volume / prototyping",
+        theme: "hand",
+        icon: "🤚",
+        title: "Hand Layup likely optimal at this scale",
+        body: "AFP capital expenditure is difficult to justify below 200 kg/yr. Hand layup remains cost-effective. Revisit AFP when volumes grow or quality requirements tighten.",
+      },
+      {
+        range: "200 – 2,000 kg/yr",
+        hint: "Small-series / development",
+        theme: "xs",
+        icon: "✅",
+        title: "AFP-XS on subscription is the primary candidate",
+        body: "ROI typically positive in Year 1. Low entry cost, ~30 m² footprint, and open AddPath software make AFP-XS the natural fit for this volume band.",
+      },
+      {
+        range: "2,000 – 20,000 kg/yr",
+        hint: "Mid-volume production",
+        theme: "multi",
+        icon: "📈",
+        title: "AFP-XS (multiple cells) or small-footprint AFP with leasing",
+        body: "At this scale, consider deploying multiple AFP-XS cells in parallel, or evaluate compact gantry systems with leasing arrangements. Run a full TCO model before committing.",
+      },
+      {
+        range: "Over 20,000 kg/yr",
+        hint: "High-volume / industrial",
+        theme: "legac",
+        icon: "🏗️",
+        title: "Legacy AFP or high-throughput multi-tow systems",
+        body: "Throughput demands at this scale may justify legacy AFP or multi-tow gantry CapEx. Evaluate with a full 5-year TCO model including maintenance, floor space, and labour.",
+      },
+    ];
+
+    var grid = document.getElementById("afpSgVolGrid");
+    var resultEl = document.getElementById("afpSgResult");
+    var iconEl = document.getElementById("afpSgResultIcon");
+    var titleEl = document.getElementById("afpSgResultTitle");
+    var bodyEl = document.getElementById("afpSgResultBody");
+    var filtersEl = document.getElementById("afpSgFilters");
+    var btns = [];
+
+    volumes.forEach(function (vol, i) {
+      var btn = document.createElement("div");
+      btn.className = "afp-sg-vol-btn";
+      btn.style.transitionDelay = i * 70 + "ms";
+      btn.innerHTML =
+        '<div class="afp-sg-vol-range">' +
+        vol.range +
+        "</div>" +
+        '<div class="afp-sg-vol-hint">' +
+        vol.hint +
+        "</div>";
+
+      btn.addEventListener("click", function () {
+        btns.forEach(function (b) {
+          b.classList.remove("afp-sg-selected");
+        });
+        btn.classList.add("afp-sg-selected");
+        showResult(vol);
+      });
+
+      grid.appendChild(btn);
+      btns.push(btn);
+    });
+
+    function showResult(vol) {
+      // Hide then swap
+      resultEl.classList.remove("afp-sg-result-anim");
+      resultEl.className =
+        "afp-sg-result afp-sg-result-show afp-sg-result-" + vol.theme;
+
+      iconEl.textContent = vol.icon;
+      titleEl.textContent = vol.title;
+      bodyEl.textContent = vol.body;
+
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          resultEl.classList.add("afp-sg-result-anim");
+        });
+      });
+
+      // Show filters
+      filtersEl.classList.add("afp-sg-filters-show");
+      setTimeout(function () {
+        filtersEl.classList.add("afp-sg-filters-anim");
+        ["afpSgFg1", "afpSgFg2", "afpSgFg3"].forEach(function (id, i) {
+          setTimeout(function () {
+            document.getElementById(id).classList.add("afp-sg-fg-visible");
+          }, i * 100);
+        });
+      }, 80);
+    }
+
+    // Filter option hover activate
+    document.querySelectorAll(".afp-sg-filter-opt").forEach(function (opt) {
+      opt.addEventListener("click", function () {
+        var siblings = opt.parentNode.querySelectorAll(".afp-sg-filter-opt");
+        siblings.forEach(function (s) {
+          s.classList.remove("afp-sg-opt-active");
+        });
+        opt.classList.add("afp-sg-opt-active");
+      });
+    });
+
+    // IntersectionObserver
+    var container = document.getElementById("afpSgContainer");
+    var obs = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          obs.unobserve(entry.target);
+          container.classList.add("afp-sg-visible");
+          var buttons = grid.querySelectorAll(".afp-sg-vol-btn");
+          buttons.forEach(function (b, i) {
+            setTimeout(
+              function () {
+                b.classList.add("afp-sg-btn-visible");
+              },
+              150 + i * 70,
+            );
+          });
+        });
+      },
+      { threshold: 0.1 },
+    );
+    obs.observe(container);
+  })();
+</script>

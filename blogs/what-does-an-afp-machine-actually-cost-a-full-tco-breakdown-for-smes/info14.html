@@ -1,0 +1,494 @@
+<!-- Decision Summary: Hand Layup vs AFP-XS -->
+<style>
+  .afp-ds-container {
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 28px 24px 24px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    max-width: 720px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+  .afp-ds-container.afp-ds-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-ds-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #47577c;
+    margin-bottom: 4px;
+  }
+  .afp-ds-subtitle {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 24px;
+  }
+
+  /* Header row */
+  .afp-ds-header {
+    display: grid;
+    grid-template-columns: 38% 31% 31%;
+    border-bottom: 2px solid #47577c;
+    margin-bottom: 0;
+  }
+  .afp-ds-hcell {
+    padding: 10px 14px;
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .afp-ds-hcell:first-child {
+    color: #1e293b;
+  }
+  .afp-ds-hcell-hl {
+    color: #9d9d9c;
+    background: rgba(157, 157, 156, 0.04);
+    border-radius: 6px 6px 0 0;
+  }
+  .afp-ds-hcell-xs {
+    color: #47577c;
+    background: rgba(71, 87, 124, 0.05);
+    border-radius: 6px 6px 0 0;
+  }
+
+  /* Body rows */
+  .afp-ds-row {
+    display: grid;
+    grid-template-columns: 38% 31% 31%;
+    border-bottom: 1px solid #f1f5f9;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease,
+      background-color 0.16s ease;
+  }
+  .afp-ds-row:last-child {
+    border-bottom: none;
+  }
+  .afp-ds-row:hover {
+    background-color: #f8fafc;
+  }
+  .afp-ds-row.afp-ds-row-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Category group dividers */
+  .afp-ds-row-group-start {
+    border-top: 1px dashed #e2e8f0;
+    margin-top: 2px;
+  }
+
+  .afp-ds-cell {
+    padding: 11px 14px;
+    font-size: 13px;
+    color: #334155;
+    display: flex;
+    align-items: center;
+    line-height: 1.4;
+  }
+  .afp-ds-cell:first-child {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 12.5px;
+  }
+
+  /* Column tint */
+  .afp-ds-cell-hl {
+    background: rgba(157, 157, 156, 0.02);
+  }
+  .afp-ds-cell-xs {
+    background: rgba(71, 87, 124, 0.025);
+  }
+
+  /* Value badges */
+  .afp-ds-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 11.5px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .afp-ds-badge-good {
+    background: rgba(71, 87, 124, 0.1);
+    color: #47577c;
+  }
+  .afp-ds-badge-bad {
+    background: rgba(191, 52, 37, 0.09);
+    color: #bf3425;
+  }
+  .afp-ds-badge-neutral {
+    background: rgba(157, 157, 156, 0.13);
+    color: #6b7280;
+  }
+  .afp-ds-badge-ok {
+    background: rgba(71, 87, 124, 0.07);
+    color: #5a6e9c;
+  }
+
+  /* Checkmark / cross icons */
+  .afp-ds-icon-good {
+    color: #47577c;
+    font-size: 14px;
+  }
+  .afp-ds-icon-bad {
+    color: #bf3425;
+    font-size: 14px;
+  }
+
+  /* Winner ribbon on XS column header */
+  .afp-ds-winner-tag {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: #47577c;
+    color: #fff;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  /* Score bar at bottom */
+  .afp-ds-score-section {
+    margin-top: 20px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    background: linear-gradient(
+      135deg,
+      rgba(71, 87, 124, 0.06) 0%,
+      rgba(191, 52, 37, 0.04) 100%
+    );
+    border: 1px solid rgba(71, 87, 124, 0.15);
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 0.45s ease,
+      transform 0.45s ease;
+  }
+  .afp-ds-score-section.afp-ds-row-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .afp-ds-score-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #94a3b8;
+    margin-bottom: 12px;
+  }
+
+  .afp-ds-score-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .afp-ds-score-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .afp-ds-score-name {
+    width: 88px;
+    min-width: 88px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #475569;
+  }
+  .afp-ds-score-track {
+    flex: 1;
+    height: 14px;
+    background: #f1f5f9;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .afp-ds-score-fill {
+    height: 100%;
+    border-radius: 999px;
+    width: 0;
+    transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .afp-ds-score-val {
+    font-size: 12px;
+    font-weight: 800;
+    min-width: 36px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .afp-ds-score-hl .afp-ds-score-fill {
+    background: #9d9d9c;
+  }
+  .afp-ds-score-hl .afp-ds-score-val {
+    color: #9d9d9c;
+  }
+  .afp-ds-score-xs .afp-ds-score-fill {
+    background: #47577c;
+  }
+  .afp-ds-score-xs .afp-ds-score-val {
+    color: #47577c;
+  }
+
+  /* Tooltip */
+  .afp-ds-tooltip {
+    position: fixed;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.11);
+    border-radius: 10px;
+    padding: 9px 13px;
+    font-size: 12px;
+    color: #1e293b;
+    pointer-events: none;
+    z-index: 100;
+    display: none;
+    min-width: 160px;
+  }
+  .afp-ds-tip-title {
+    font-weight: 700;
+    color: #bf3425;
+    margin-bottom: 3px;
+    font-size: 12px;
+  }
+  .afp-ds-tip-body {
+    font-size: 12px;
+    color: #334155;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 500px) {
+    .afp-ds-header,
+    .afp-ds-row {
+      grid-template-columns: 36% 32% 32%;
+    }
+    .afp-ds-cell {
+      padding: 9px 10px;
+      font-size: 12px;
+    }
+  }
+</style>
+
+<div class="afp-ds-container" id="afpDsContainer">
+  <div class="afp-ds-title">Decision Summary</div>
+  <div class="afp-ds-subtitle">
+    Head-to-head comparison across cost, quality, and operational dimensions
+  </div>
+
+  <!-- Header -->
+  <div class="afp-ds-header">
+    <div class="afp-ds-hcell"></div>
+    <div class="afp-ds-hcell afp-ds-hcell-hl">Hand Layup</div>
+    <div class="afp-ds-hcell afp-ds-hcell-xs">
+      AFP-XS <span class="afp-ds-winner-tag">recommended</span>
+    </div>
+  </div>
+
+  <!-- Table body rendered by JS -->
+  <div id="afpDsBody"></div>
+
+  <!-- Advantage score bars -->
+  <div class="afp-ds-score-section" id="afpDsScore">
+    <div class="afp-ds-score-label">Composite advantage score (9 criteria)</div>
+    <div class="afp-ds-score-row afp-ds-score-hl">
+      <div class="afp-ds-score-name">Hand Layup</div>
+      <div class="afp-ds-score-track">
+        <div class="afp-ds-score-fill" id="afpDsScoreHl" data-target="22"></div>
+      </div>
+      <div class="afp-ds-score-val" style="color: #9d9d9c">2 / 9</div>
+    </div>
+    <div class="afp-ds-score-row afp-ds-score-xs">
+      <div class="afp-ds-score-name">AFP-XS</div>
+      <div class="afp-ds-score-track">
+        <div class="afp-ds-score-fill" id="afpDsScoreXs" data-target="89"></div>
+      </div>
+      <div class="afp-ds-score-val" style="color: #47577c">8 / 9</div>
+    </div>
+  </div>
+</div>
+
+<div class="afp-ds-tooltip" id="afpDsTooltip">
+  <div class="afp-ds-tip-title" id="afpDsTipTitle"></div>
+  <div class="afp-ds-tip-body" id="afpDsTipBody"></div>
+</div>
+
+<script>
+  (function () {
+    /* winner: 'xs' | 'hl' | 'tie' */
+    var rows = [
+      {
+        label: "3-year total cost",
+        hl: { text: "~€1.16M", type: "bad" },
+        xs: { text: "~€126K gross", type: "good" },
+        winner: "xs",
+        tip: "3-year gross cost difference: ~€1.03M in favour of AFP-XS",
+      },
+      {
+        label: "3-year net (w/ savings)",
+        hl: { text: "—", type: "neutral" },
+        xs: { text: "~€0 or better", type: "good" },
+        winner: "xs",
+        tip: "Material savings offset AFP-XS subscription from Month 1",
+      },
+      {
+        label: "CapEx required",
+        hl: { text: "None", type: "good" },
+        xs: { text: "None", type: "good" },
+        winner: "tie",
+        tip: "Both options require zero upfront capital expenditure",
+      },
+      {
+        label: "Balance sheet risk",
+        hl: { text: "None", type: "good" },
+        xs: { text: "None", type: "good" },
+        winner: "tie",
+        tip: "Neither option creates a depreciating asset on the balance sheet",
+      },
+      {
+        label: "Scrap rate",
+        hl: { text: "15 – 30%", type: "bad" },
+        xs: { text: "2 – 5%", type: "good" },
+        winner: "xs",
+        tip: "AFP-XS automated placement reduces scrap by up to 6×",
+      },
+      {
+        label: "Material waste",
+        hl: { text: "20 – 40%", type: "bad" },
+        xs: { text: "< 6%", type: "good" },
+        winner: "xs",
+        tip: "Precision deposition cuts fibre waste by up to 7× vs hand layup",
+      },
+      {
+        label: "Operator skill floor",
+        hl: { text: "High", type: "bad" },
+        xs: { text: "Low-medium", type: "good" },
+        winner: "xs",
+        tip: "AFP-XS requires lower operator skill, reducing training cost and churn risk",
+      },
+      {
+        label: "Software lock-in",
+        hl: { text: "N/A", type: "neutral" },
+        xs: { text: "None (open)", type: "good" },
+        winner: "xs",
+        tip: "AddPath is an open, vendor-agnostic software platform",
+      },
+      {
+        label: "Time to first part",
+        hl: { text: "Today", type: "good" },
+        xs: { text: "4 – 8 weeks", type: "ok" },
+        winner: "hl",
+        tip: "Hand layup requires no setup; AFP-XS typically 4–8 weeks from PO to first part",
+      },
+    ];
+
+    var body = document.getElementById("afpDsBody");
+    var tooltip = document.getElementById("afpDsTooltip");
+    var tipTitle = document.getElementById("afpDsTipTitle");
+    var tipBody = document.getElementById("afpDsTipBody");
+
+    rows.forEach(function (row, i) {
+      var el = document.createElement("div");
+      el.className = "afp-ds-row";
+      el.style.transitionDelay = i * 65 + "ms";
+
+      function badge(d) {
+        return (
+          '<span class="afp-ds-badge afp-ds-badge-' +
+          d.type +
+          '">' +
+          d.text +
+          "</span>"
+        );
+      }
+
+      // Winner dot indicator
+      var hlWin = row.winner === "hl" ? " ◀" : "";
+      var xsWin = row.winner === "xs" ? " ◀" : "";
+
+      el.innerHTML =
+        '<div class="afp-ds-cell">' +
+        row.label +
+        "</div>" +
+        '<div class="afp-ds-cell afp-ds-cell-hl">' +
+        badge(row.hl) +
+        "</div>" +
+        '<div class="afp-ds-cell afp-ds-cell-xs">' +
+        badge(row.xs) +
+        "</div>";
+
+      // Tooltip on row hover
+      el.addEventListener("mouseenter", function (e) {
+        tipTitle.textContent = row.label;
+        tipBody.textContent = row.tip;
+        tooltip.style.display = "block";
+      });
+      el.addEventListener("mousemove", function (e) {
+        tooltip.style.left = e.clientX + 14 + "px";
+        tooltip.style.top = e.clientY - 46 + "px";
+      });
+      el.addEventListener("mouseleave", function () {
+        tooltip.style.display = "none";
+      });
+
+      body.appendChild(el);
+    });
+
+    // IntersectionObserver
+    var container = document.getElementById("afpDsContainer");
+    var scoreEl = document.getElementById("afpDsScore");
+    var scoreHl = document.getElementById("afpDsScoreHl");
+    var scoreXs = document.getElementById("afpDsScoreXs");
+
+    var obs = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          obs.unobserve(entry.target);
+          container.classList.add("afp-ds-visible");
+
+          var rowEls = body.querySelectorAll(".afp-ds-row");
+          rowEls.forEach(function (r, i) {
+            setTimeout(
+              function () {
+                r.classList.add("afp-ds-row-visible");
+              },
+              120 + i * 65,
+            );
+          });
+
+          var scoreDelay = 120 + rowEls.length * 65 + 140;
+          setTimeout(function () {
+            scoreEl.classList.add("afp-ds-row-visible");
+            setTimeout(function () {
+              scoreHl.style.width = scoreHl.dataset.target + "%";
+              scoreXs.style.width = scoreXs.dataset.target + "%";
+            }, 200);
+          }, scoreDelay);
+        });
+      },
+      { threshold: 0.08 },
+    );
+
+    obs.observe(container);
+  })();
+</script>
