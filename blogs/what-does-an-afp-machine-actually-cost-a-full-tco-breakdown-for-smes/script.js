@@ -1,13 +1,12 @@
 /* ============================================
    AFP TCO BLOG - JAVASCRIPT
-   Sidebar Navigation, Progress Bar, Back to Top,
-   Mobile Toggle & Interactive Features
+   Sidebar Navigation & Interactive Features
    ============================================ */
 
 document.addEventListener("DOMContentLoaded", function () {
-  // ==========================================
-  // READING PROGRESS BAR
-  // ==========================================
+  /* ------------------------------------------
+     READING PROGRESS BAR
+  ------------------------------------------ */
   const progressBar = document.getElementById("readingProgress");
 
   function updateProgress() {
@@ -18,12 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (progressBar) progressBar.style.width = progress + "%";
   }
 
-  // ==========================================
-  // BACK TO TOP BUTTON
-  // ==========================================
+  /* ------------------------------------------
+     BACK TO TOP BUTTON
+  ------------------------------------------ */
   const backToTopBtn = document.getElementById("backToTop");
 
-  function toggleBackToTop() {
+  function updateBackToTop() {
     if (!backToTopBtn) return;
     if (window.pageYOffset > 500) {
       backToTopBtn.classList.add("visible");
@@ -38,9 +37,65 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ==========================================
-  // SIDEBAR ACTIVE SECTION HIGHLIGHTING
-  // ==========================================
+  /* ------------------------------------------
+     MOBILE NAVIGATION TOGGLE
+  ------------------------------------------ */
+  const mobileToggle = document.getElementById("mobileNavToggle");
+  const sidebar = document.getElementById("blogSidebar");
+  const overlay = document.getElementById("sidebarOverlay");
+  const closeBtn = document.getElementById("sidebarClose");
+
+  function openSidebar() {
+    if (!sidebar || !overlay) return;
+    sidebar.classList.add("active");
+    overlay.classList.add("active");
+    overlay.style.display = "block";
+    document.body.style.overflow = "hidden";
+    if (mobileToggle) mobileToggle.setAttribute("aria-expanded", "true");
+  }
+
+  function closeSidebar() {
+    if (!sidebar || !overlay) return;
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+    document.body.style.overflow = "";
+    if (mobileToggle) mobileToggle.setAttribute("aria-expanded", "false");
+    // Delay hiding overlay to allow transition
+    setTimeout(() => {
+      if (!sidebar.classList.contains("active")) {
+        overlay.style.display = "none";
+      }
+    }, 350);
+  }
+
+  if (mobileToggle) {
+    mobileToggle.addEventListener("click", function () {
+      if (sidebar && sidebar.classList.contains("active")) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeSidebar);
+  }
+
+  if (overlay) {
+    overlay.addEventListener("click", closeSidebar);
+  }
+
+  // Close sidebar on ESC key
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && sidebar && sidebar.classList.contains("active")) {
+      closeSidebar();
+    }
+  });
+
+  /* ------------------------------------------
+     SIDEBAR ACTIVE SECTION HIGHLIGHTING
+  ------------------------------------------ */
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".blog-sidebar-link");
 
@@ -66,29 +121,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ==========================================
-  // COMBINED SCROLL HANDLER (throttled)
-  // ==========================================
-  let scrollRAF;
-  window.addEventListener("scroll", function () {
-    if (scrollRAF) window.cancelAnimationFrame(scrollRAF);
-    scrollRAF = window.requestAnimationFrame(function () {
-      highlightActiveSection();
-      updateProgress();
-      toggleBackToTop();
-    });
-  });
-
-  // Initial calls
-  highlightActiveSection();
-  updateProgress();
-  toggleBackToTop();
-
-  // ==========================================
-  // SMOOTH SCROLL FOR SIDEBAR LINKS
-  // ==========================================
-  const sidebar = document.getElementById("blogSidebar");
-
+  /* ------------------------------------------
+     SMOOTH SCROLLING FOR SIDEBAR LINKS
+  ------------------------------------------ */
   navLinks.forEach((link) => {
     link.addEventListener("click", function (e) {
       e.preventDefault();
@@ -96,74 +131,55 @@ document.addEventListener("DOMContentLoaded", function () {
       const targetSection = document.getElementById(targetId);
 
       if (targetSection) {
-        const headerOffset = 40;
-        const elementPosition = targetSection.getBoundingClientRect().top;
-        const offsetPosition =
-          elementPosition + window.pageYOffset - headerOffset;
+        // Close mobile sidebar first
+        if (sidebar && sidebar.classList.contains("active")) {
+          closeSidebar();
+        }
 
-        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+        // Slight delay to let sidebar close before scrolling
+        setTimeout(
+          () => {
+            const headerOffset = 40;
+            const elementPosition = targetSection.getBoundingClientRect().top;
+            const offsetPosition =
+              elementPosition + window.pageYOffset - headerOffset;
 
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            });
+          },
+          sidebar && sidebar.classList.contains("active") ? 300 : 0,
+        );
+
+        // Update active state immediately
         navLinks.forEach((l) => l.classList.remove("active"));
         this.classList.add("active");
-
-        // Close mobile sidebar after click
-        if (sidebar && sidebar.classList.contains("active")) {
-          sidebar.classList.remove("active");
-          document.body.style.overflow = "";
-        }
       }
     });
   });
 
-  // ==========================================
-  // MOBILE NAVIGATION TOGGLE
-  // ==========================================
-  const mobileNavToggle = document.getElementById("mobileNavToggle");
-  const sidebarClose = document.getElementById("sidebarClose");
-
-  function openSidebar() {
-    if (sidebar) {
-      sidebar.classList.add("active");
-      document.body.style.overflow = "hidden";
-    }
-  }
-
-  function closeSidebar() {
-    if (sidebar) {
-      sidebar.classList.remove("active");
-      document.body.style.overflow = "";
-    }
-  }
-
-  if (mobileNavToggle) {
-    mobileNavToggle.addEventListener("click", openSidebar);
-  }
-
-  if (sidebarClose) {
-    sidebarClose.addEventListener("click", closeSidebar);
-  }
-
-  // Close sidebar when clicking outside (backdrop)
-  document.addEventListener("click", function (e) {
-    if (
-      sidebar &&
-      sidebar.classList.contains("active") &&
-      !sidebar.contains(e.target) &&
-      e.target !== mobileNavToggle &&
-      !mobileNavToggle.contains(e.target)
-    ) {
-      closeSidebar();
-    }
+  /* ------------------------------------------
+     THROTTLED SCROLL HANDLER
+  ------------------------------------------ */
+  let scrollTimeout;
+  window.addEventListener("scroll", function () {
+    if (scrollTimeout) window.cancelAnimationFrame(scrollTimeout);
+    scrollTimeout = window.requestAnimationFrame(function () {
+      highlightActiveSection();
+      updateProgress();
+      updateBackToTop();
+    });
   });
 
-  // Close sidebar on ESC key
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeSidebar();
-  });
+  // Initial calls
+  highlightActiveSection();
+  updateProgress();
+  updateBackToTop();
 
-  // ==========================================
-  // CARD ENTRANCE ANIMATIONS (IntersectionObserver)
-  // ==========================================
+  /* ------------------------------------------
+     INTERSECTION OBSERVER - CARD ANIMATIONS
+  ------------------------------------------ */
   const observerOptions = {
     root: null,
     rootMargin: "0px",
@@ -182,36 +198,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
+  // Elements to animate on scroll into view
   const animatedElements = document.querySelectorAll(
-    ".learn-more-card, .feature-item, .spec-card, .scenario-card, .infographic-placeholder",
+    ".stat-card, .learn-more-card, .feature-item, .cost-reveal-card, .col-card, .filter-card, .reference-item, .checklist-group",
   );
 
-  animatedElements.forEach((el) => {
+  animatedElements.forEach((el, index) => {
     el.style.opacity = "0";
     el.style.transform = "translateY(20px)";
-    el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    el.style.transition = `opacity 0.5s ease ${index * 0.04}s, transform 0.5s ease ${index * 0.04}s`;
     observer.observe(el);
   });
 
-  // ==========================================
-  // IMAGE HOVER EFFECTS
-  // ==========================================
-  const images = document.querySelectorAll(".split-image img");
+  /* ------------------------------------------
+     IMAGE HOVER ENHANCEMENT
+  ------------------------------------------ */
+  const images = document.querySelectorAll(
+    ".full-width-image, .split-image img",
+  );
   images.forEach((img) => {
     img.addEventListener("mouseenter", function () {
       this.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
-      this.style.transform = "scale(1.02)";
-      this.style.boxShadow = "0 20px 40px rgba(0, 0, 0, 0.14)";
+      this.style.transform = "scale(1.01)";
+      this.style.boxShadow = "0 20px 40px rgba(0, 0, 0, 0.15)";
     });
     img.addEventListener("mouseleave", function () {
       this.style.transform = "scale(1)";
-      this.style.boxShadow = "0 10px 25px -5px rgba(0, 0, 0, 0.10)";
+      this.style.boxShadow = "";
     });
   });
 
-  // ==========================================
-  // TABLE ROW HOVER
-  // ==========================================
+  /* ------------------------------------------
+     TABLE ROW HOVER HIGHLIGHT
+  ------------------------------------------ */
   const tableRows = document.querySelectorAll(".data-table tbody tr");
   tableRows.forEach((row) => {
     row.addEventListener("mouseenter", function () {
@@ -222,35 +241,76 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // ==========================================
-  // SPEC ITEMS STAGGERED ANIMATION
-  // ==========================================
-  const specObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const items = entry.target.querySelectorAll(".spec-item");
-          items.forEach((item, index) => {
-            item.style.opacity = "0";
-            item.style.transform = "translateX(-10px)";
-            item.style.transition = `opacity 0.4s ease ${index * 0.07}s, transform 0.4s ease ${index * 0.07}s`;
-            setTimeout(
-              () => {
-                item.style.opacity = "1";
-                item.style.transform = "translateX(0)";
-              },
-              50 + index * 70,
-            );
-          });
-          specObserver.unobserve(entry.target);
+  /* ------------------------------------------
+     INTERACTIVE CHECKLIST ITEMS
+  ------------------------------------------ */
+  const checkboxes = document.querySelectorAll(".check-box");
+  checkboxes.forEach((box) => {
+    box.addEventListener("click", function () {
+      const item = this.closest(".checklist-item");
+      if (item) {
+        const isChecked = item.dataset.checked === "true";
+        if (isChecked) {
+          item.dataset.checked = "false";
+          this.textContent = "☐";
+          this.style.color = "";
+          item.style.textDecoration = "";
+          item.style.opacity = "";
+        } else {
+          item.dataset.checked = "true";
+          this.textContent = "☑";
+          this.style.color = "#065f46";
+          item.style.textDecoration = "line-through";
+          item.style.opacity = "0.65";
         }
-      });
-    },
-    { threshold: 0.2 },
-  );
+      }
+    });
+  });
 
-  const scenarioCards = document.querySelectorAll(".scenario-card");
-  scenarioCards.forEach((card) => specObserver.observe(card));
+  /* ------------------------------------------
+     HANDLE WINDOW RESIZE
+     Close mobile sidebar if resized to desktop
+  ------------------------------------------ */
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 768) {
+      closeSidebar();
+    }
+  });
+
+  /* ------------------------------------------
+     SIDEBAR SCROLL SYNC
+     Keep active link visible in desktop sidebar
+  ------------------------------------------ */
+  function scrollSidebarToActive() {
+    if (window.innerWidth <= 768) return;
+    const activeLink = document.querySelector(".blog-sidebar-link.active");
+    if (activeLink && sidebar) {
+      const linkTop = activeLink.offsetTop;
+      const sidebarScrollTop = sidebar.scrollTop;
+      const sidebarHeight = sidebar.clientHeight;
+
+      if (
+        linkTop < sidebarScrollTop ||
+        linkTop > sidebarScrollTop + sidebarHeight - 60
+      ) {
+        sidebar.scrollTo({
+          top: linkTop - sidebarHeight / 2 + 30,
+          behavior: "smooth",
+        });
+      }
+    }
+  }
+
+  // Enhanced scroll handler with sidebar scroll sync
+  window.addEventListener("scroll", function () {
+    if (scrollTimeout) window.cancelAnimationFrame(scrollTimeout);
+    scrollTimeout = window.requestAnimationFrame(function () {
+      highlightActiveSection();
+      updateProgress();
+      updateBackToTop();
+      scrollSidebarToActive();
+    });
+  });
 });
 
 //   <!-- INFOGRAPHIC 1: Three-model comparison table -->

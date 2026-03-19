@@ -30,7 +30,7 @@
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="2"
+        stroke-width="2.5"
         stroke-linecap="round"
         stroke-linejoin="round"
       >
@@ -40,52 +40,63 @@
       </svg>
     </button>
 
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
     <div class="blog-layout">
-      <!-- Sidebar -->
+      <!-- Sidebar Navigation -->
       <nav class="blog-sidebar" id="blogSidebar" aria-label="Table of Contents">
-        <button
-          class="sidebar-close"
-          id="sidebarClose"
-          aria-label="Close navigation"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+        <div class="sidebar-header">
+          <h3 class="blog-sidebar-title">Contents</h3>
+          <button
+            class="sidebar-close"
+            id="sidebarClose"
+            aria-label="Close navigation"
           >
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-        <h3 class="blog-sidebar-title">Contents</h3>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
         <div class="blog-sidebar-nav">
-          <a href="#introduction" class="blog-sidebar-link active"
-            >Introduction</a
+          <a href="#conversation" class="blog-sidebar-link active"
+            >The Conversation That Kills AFP Projects</a
           >
-          <a href="#why-tco" class="blog-sidebar-link">Why TCO Matters</a>
-          <a href="#three-models" class="blog-sidebar-link"
-            >Three Models Overview</a
+          <a href="#why-tco" class="blog-sidebar-link"
+            >Why TCO Is the Only Number That Matters</a
           >
+          <a href="#three-models" class="blog-sidebar-link">The Three Models</a>
           <a href="#legacy-afp" class="blog-sidebar-link"
             >Model 1: Legacy AFP</a
           >
           <a href="#hand-layup" class="blog-sidebar-link"
             >Model 2: Hand Layup</a
           >
-          <a href="#afp-xs" class="blog-sidebar-link">Model 3: AFP-XS</a>
-          <a href="#cumulative-cost" class="blog-sidebar-link"
-            >36-Month Cost Model</a
+          <a href="#afp-xs" class="blog-sidebar-link"
+            >Model 3: AFP-XS Subscription</a
           >
-          <a href="#hidden-costs" class="blog-sidebar-link">5 Hidden Costs</a>
-          <a href="#business-case" class="blog-sidebar-link">Business Case</a>
+          <a href="#36-month" class="blog-sidebar-link"
+            >36-Month Cumulative Cost</a
+          >
+          <a href="#hidden-costs" class="blog-sidebar-link"
+            >5 Costs Legacy Vendors Don't Include</a
+          >
+          <a href="#business-case" class="blog-sidebar-link"
+            >Building the Business Case</a
+          >
           <a href="#buyer-checklist" class="blog-sidebar-link"
-            >Buyer's Checklist</a
+            >AFP Buyer's Checklist</a
           >
           <a href="#decision-framework" class="blog-sidebar-link"
             >Decision Framework</a
@@ -96,8 +107,8 @@
       </nav>
 
       <article class="blog-content">
-        <!-- Introduction -->
-        <section id="introduction">
+        <!-- Hero Section -->
+        <section id="conversation">
           <h1>
             What Does an AFP Machine Actually Cost? A Full TCO Breakdown for
             SMEs
@@ -134,19 +145,30 @@
               </svg>
               <span>12 min read</span>
             </span>
+            <span class="blog-meta-item tag-item">AFP</span>
+            <span class="blog-meta-item tag-item">TCO</span>
+            <span class="blog-meta-item tag-item">SME</span>
             <span class="blog-meta-item tag-item">Buyer's Guide</span>
           </div>
 
+          <p class="subtitle">
+            AFP machines range from €3,500/month to €5M+ upfront. Here's the
+            honest TCO breakdown — including what legacy vendors don't tell you
+            about rework, labour, scrap, and hidden integration costs.
+          </p>
+
           <img
             src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69bb96ab20eab935e281ce34_1.png"
-            alt="AFP machine cost breakdown for SMEs"
+            alt="AFP machine cost comparison overview"
             class="full-width-image"
           />
 
           <div class="intro-card">
-            <h2>The Conversation That Kills AFP Projects Before They Start</h2>
+            <h2 style="margin-top: 0; border-bottom: none; padding-bottom: 0">
+              The Conversation That Kills AFP Projects Before They Start
+            </h2>
 
-            <div class="split-layout">
+            <div class="split-layout" style="margin-top: 1.5rem">
               <div class="split-image">
                 <img
                   src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69a6b64584072b987a58e346_9.png"
@@ -163,23 +185,33 @@
                   conversation:
                 </p>
                 <div class="dialogue-box">
-                  <p>
-                    <strong>Engineer:</strong> "We should look at AFP. We're
-                    leaving a lot on the table with hand layup."
-                  </p>
-                  <p>
-                    <strong>Finance Director:</strong> "How much does it cost?"
-                  </p>
-                  <p>
-                    <strong>Engineer:</strong> "Well... the system alone starts
-                    at about €1.5 million."
-                  </p>
-                  <p><strong>Finance Director:</strong> "Next agenda item."</p>
+                  <div class="dialogue-line engineer">
+                    <span class="dialogue-role">Engineer:</span>
+                    <span
+                      >"We should look at AFP. We're leaving a lot on the table
+                      with hand layup."</span
+                    >
+                  </div>
+                  <div class="dialogue-line finance">
+                    <span class="dialogue-role">Finance Director:</span>
+                    <span>"How much does it cost?"</span>
+                  </div>
+                  <div class="dialogue-line engineer">
+                    <span class="dialogue-role">Engineer:</span>
+                    <span
+                      >"Well... the system alone starts at about €1.5
+                      million."</span
+                    >
+                  </div>
+                  <div class="dialogue-line finance">
+                    <span class="dialogue-role">Finance Director:</span>
+                    <span>"Next agenda item."</span>
+                  </div>
                 </div>
+                <p>And that's usually where it ends.</p>
               </div>
             </div>
 
-            <p>And that's usually where it ends.</p>
             <p>
               The tragedy is that this conversation is based on 20-year-old
               market data. The AFP market has fundamentally changed. The systems
@@ -192,13 +224,15 @@
               budget conversations armed with legacy pricing, and they lose
               before the argument starts.
             </p>
+          </div>
 
-            <img
-              src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69bb96ac745f0d73401c70f1_3.png"
-              alt="AFP cost comparison overview"
-              class="full-width-image"
-            />
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69bb96ac745f0d73401c70f1_3.png"
+            alt="AFP cost landscape overview"
+            class="full-width-image"
+          />
 
+          <div class="highlight-box">
             <p>
               This guide exists to fix that. We're going to break down the real
               total cost of ownership for three composites manufacturing
@@ -208,7 +242,7 @@
           </div>
         </section>
 
-        <!-- Why TCO -->
+        <!-- Why TCO Section -->
         <section id="why-tco">
           <h2>Why TCO Is the Only Number That Matters</h2>
           <p>
@@ -219,6 +253,7 @@
             your P&L as a result of your manufacturing approach.
           </p>
           <p>For composites, that means accounting for:</p>
+
           <div class="feature-grid">
             <div class="feature-item">
               <span class="feature-icon">💰</span>
@@ -257,7 +292,8 @@
               <p>Skills acquisition and retention</p>
             </div>
           </div>
-          <div class="highlight-box">
+
+          <div class="key-question">
             <p>
               Miss any of these and your model is wrong — and the decision you
               make based on it may cost you far more than the number you
@@ -266,12 +302,12 @@
           </div>
         </section>
 
-        <!-- Three Models -->
+        <!-- Three Models Section -->
         <section id="three-models">
           <h2>The Three Models: Side-by-Side Snapshot</h2>
 
-          <!-- INFOGRAPHIC 1: Three-model comparison table -->
-
+          <!-- INFOGRAPHIC 1: Three Models Comparison Table -->
+          <!-- INFOGRAPHIC 1: Side-by-side snapshot table comparing Legacy AFP, Hand Layup, and AFP-XS (Subscription) across all key cost elements: Upfront CapEx, monthly operational, annual maintenance, software licence, material waste rate, scrap/rework rate, throughput kg/hr, operator skill floor, floor space required, time to first part, and software openness. Legacy AFP: €1.5M–€5M+ CapEx, €12K–€40K/month, €80K–€120K maintenance, €20K–€60K software, 5–10% waste, 2–5% scrap, 10–50 kg/hr, specialist skills, 100–400m², 6–18 months, proprietary. Hand Layup: €50K–€200K, €18K–€55K/month, €10K–€30K maintenance, N/A software, 20–40% waste, 15–30% scrap, 0.5–2 kg/hr, medium-high skills, 50–200m², days, N/A. AFP-XS: €0 CapEx, €3,500/month, included maintenance, included software, <6% waste, 2–4% scrap, 2–8 kg/hr, low-medium skills, ~30m², 4–8 weeks, open AddPath. -->
           <div class="afp-cc-container" id="afpCcContainer">
             <div class="afp-cc-title">Total Cost of Ownership Comparison</div>
             <div class="afp-cc-subtitle">
@@ -498,20 +534,20 @@
               complexity, facility, and production volume.
             </div>
           </div>
-
           <p>
             At a glance, hand layup looks cheap. Legacy AFP looks expensive.
             AFP-XS on subscription looks almost implausibly affordable. Let's
             unpack each one properly.
           </p>
+
           <img
             src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69bb96ab068d3450e3ff6f82_4.png"
-            alt="AFP system comparison"
+            alt="Three AFP manufacturing models comparison"
             class="full-width-image"
           />
         </section>
 
-        <!-- Legacy AFP -->
+        <!-- Legacy AFP Section -->
         <section id="legacy-afp">
           <h2>Model 1: Legacy AFP (Traditional CapEx)</h2>
           <p>
@@ -523,8 +559,7 @@
 
           <h3>Year 1 Cost Breakdown (mid-range system, single cell)</h3>
 
-          <!-- INFOGRAPHIC 2: Year 1 Legacy AFP Cost Waterfall -->
-
+          <!-- INFOGRAPHIC 2: Year 1 Legacy AFP Cost Waterfall chart. Machine purchase €2.5M, Installation + commissioning €225K avg, Maintenance contract Year 1 €100K, Consumables + tooling €60K, Software licence + training €80K, Integration specialist €75K. TOTAL Year 1: ~€3.04M (before any production output). Visual style: horizontal waterfall bar chart with each cost element shown as a stacked bar in descending order. -->
           <div class="afp-wf-container" id="afpWfContainer">
             <div class="afp-wf-title">Year 1 Legacy AFP Cost Waterfall</div>
             <div class="afp-wf-subtitle">
@@ -553,26 +588,32 @@
             <div class="afp-wf-tooltip-value" id="afpWfTipValue"></div>
             <div class="afp-wf-tooltip-pct" id="afpWfTipPct"></div>
           </div>
-
           <p>
             Beyond Year 1, the annual run cost stabilises to €200–380K per year
             (maintenance, software, consumables, specialist labour). That's on
             top of the depreciated capital.
           </p>
 
-          <h3>The Lock-In Problem</h3>
-          <p>
-            Legacy AFP systems come with a software ecosystem that is typically
-            proprietary. Your path planning, your material parameters, your tow
-            steering recipes — all stored in vendor-specific formats. Changing
-            machine vendors means re-engineering your process from scratch. This
-            creates a switching cost that vendors understand very well, and it
-            affects everything from support contract pricing to upgrade
-            negotiation leverage.
-          </p>
+          <div class="numbered-cards">
+            <div class="numbered-card">
+              <div class="numbered-card-header">
+                <span class="numbered-card-num">The Lock-In Problem</span>
+              </div>
+              <p>
+                Legacy AFP systems come with a software ecosystem that is
+                typically proprietary. Your path planning, your material
+                parameters, your tow steering recipes — all stored in
+                vendor-specific formats. Changing machine vendors means
+                re-engineering your process from scratch. This creates a
+                switching cost that vendors understand very well, and it affects
+                everything from support contract pricing to upgrade negotiation
+                leverage.
+              </p>
+            </div>
+          </div>
         </section>
 
-        <!-- Hand Layup -->
+        <!-- Hand Layup Section -->
         <section id="hand-layup">
           <h2>Model 2: Manual Hand Layup (Your Real Baseline)</h2>
 
@@ -600,11 +641,10 @@
           </div>
 
           <h3>Annual Cost Breakdown for a Mid-Volume Operation</h3>
-          <p class="subtle-note">
-            (500 kg/month prepreg, €80/kg material cost)
-          </p>
+          <p><em>(500 kg/month prepreg, €80/kg material cost)</em></p>
 
-          <!-- INFOGRAPHIC 3: Annual Hand Layup Cost by Category -->
+          <!-- INFOGRAPHIC 3: Annual Hand Layup Cost by Category horizontal bar chart. Labour 4 operators @ €40K/yr each = €160,000; Material waste 25% avg on €480K spend = €120,000; Rework + NCR processing = €70,000; Quality inspection overhead = €40,000; Recruitment + training churn = €30,000; Tooling maintenance + consumables = €25,000; Supervision + planning overhead = €20,000. TOTAL: €465,000/year. Range: €320K–€860K depending on volume, material, and labour market. -->
+
           <div class="afp-hl-container" id="afpHlContainer">
             <div class="afp-hl-title">Annual Hand Layup Cost by Category</div>
             <div class="afp-hl-subtitle">
@@ -632,13 +672,14 @@
             <div class="afp-hl-tooltip-value" id="afpHlTipValue"></div>
             <div class="afp-hl-tooltip-pct" id="afpHlTipPct"></div>
           </div>
-
-          <p>
-            This number compounds. Every year you run hand layup, you pay it
-            again. And because composites labour costs are rising 4–8% per year
-            in most markets due to the skills shortage, it gets more expensive
-            with time — not less.
-          </p>
+          <div class="highlight-box">
+            <p>
+              This number compounds. Every year you run hand layup, you pay it
+              again. And because composites labour costs are rising 4–8% per
+              year in most markets due to the skills shortage, it gets more
+              expensive with time — not less.
+            </p>
+          </div>
 
           <h3>The Hidden Multiplier: Scrap Rate at Scale</h3>
 
@@ -646,7 +687,7 @@
             <div class="split-image">
               <img
                 src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69bb96acaf43d6579d07085a_6.png"
-                alt="Scrap rate impact at scale"
+                alt="Material scrap rate impact at scale"
               />
             </div>
             <div class="split-content">
@@ -661,7 +702,7 @@
             </div>
           </div>
 
-          <!-- INFOGRAPHIC 4: Material Waste Impact -->
+          <!-- INFOGRAPHIC 4: Material Waste Impact comparison. Hand Layup 22% waste: monthly spend €40,000, wasted material €8,800/month → €105,600/year. AFP-XS <6% waste: monthly spend €40,000, wasted material €2,400/month → €28,800/year. Annual material saving from AFP-XS: €76,800. Note: that saving alone covers >18 months of AFP-XS subscription fees. Side-by-side bar comparison or split info-card style. -->
 
           <div class="afp-mw-container" id="afpMwContainer">
             <div class="afp-mw-header">
@@ -765,17 +806,11 @@
           </div>
         </section>
 
-        <!-- AFP-XS -->
+        <!-- AFP-XS Section -->
         <section id="afp-xs">
           <h2>Model 3: AFP-XS on Subscription</h2>
 
           <div class="split-layout">
-            <div class="split-image">
-              <img
-                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/698092b4f74468983d8286a4_5.png"
-                alt="AFP-XS compact automated fiber placement system"
-              />
-            </div>
             <div class="split-content">
               <p>
                 AFP-XS was designed specifically to remove the barriers that
@@ -783,11 +818,17 @@
                 space, specialist skills, and proprietary software lock-in.
               </p>
             </div>
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/698092b4f74468983d8286a4_5.png"
+                alt="AFP-XS system for SME composites manufacturing"
+              />
+            </div>
           </div>
 
           <h3>Year 1 Cost Breakdown</h3>
 
-          <!-- INFOGRAPHIC 5: Year 1 AFP-XS Cost Waterfall -->
+          <!-- INFOGRAPHIC 5: Year 1 AFP-XS Cost Waterfall. Annual subscription €42,000; Installation + setup €8,000 avg; Operator training 1–2 weeks €5,000; Tooling adaptation €5,000 typical; Consumables Year 1 €12,000. TOTAL Year 1: ~€72,000 (gross). Offset: Material savings from waste reduction → -€50K to -€100K/yr. NET Year 1 cost: ~€0 to -€30,000 (positive ROI in Year 1 for most applications). Waterfall bar chart format similar to Infographic 2. -->
 
           <div class="afp-xswf-container" id="afpXswfContainer">
             <div class="afp-xswf-title">Year 1 AFP-XS Cost Waterfall</div>
@@ -835,12 +876,14 @@
             <div class="afp-xswf-tip-value" id="afpXswfTipValue"></div>
             <div class="afp-xswf-tip-pct" id="afpXswfTipPct"></div>
           </div>
+          <div class="highlight-box">
+            <p>
+              The economics work because the savings from reduced material waste
+              and reduced rework often exceed the subscription cost in the first
+              year — before you count any labour reallocation benefit.
+            </p>
+          </div>
 
-          <p>
-            The economics work because the savings from reduced material waste
-            and reduced rework often exceed the subscription cost in the first
-            year — before you count any labour reallocation benefit.
-          </p>
           <img
             src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6968c73f61f65945581b62d9_5.png"
             alt="AFP-XS in operation"
@@ -848,50 +891,53 @@
           />
         </section>
 
-        <!-- 36-Month Model -->
-        <section id="cumulative-cost">
+        <!-- 36-Month Section -->
+        <section id="36-month">
           <h2>The 36-Month Cumulative Cost Model</h2>
           <p>This is the model you need in front of your finance director.</p>
 
-          <div class="scenario-card">
-            <h4>
-              Scenario: Tier-2 aerospace supplier, structural brackets and
-              access panels
-            </h4>
+          <div class="scenario-box">
+            <h4>Scenario Parameters</h4>
             <div class="specs-list">
               <div class="spec-item">
-                <span class="spec-label">Volume</span
-                ><span class="spec-value">500 kg/month prepreg consumed</span>
+                <span class="spec-label">Application</span>
+                <span class="spec-value"
+                  >Tier-2 aerospace supplier, structural brackets and access
+                  panels</span
+                >
               </div>
               <div class="spec-item">
-                <span class="spec-label">Material cost</span
-                ><span class="spec-value"
+                <span class="spec-label">Volume</span>
+                <span class="spec-value">500 kg/month prepreg consumed</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Material cost</span>
+                <span class="spec-value"
                   >€80/kg (carbon-epoxy prepreg, standard grade)</span
                 >
               </div>
               <div class="spec-item">
-                <span class="spec-label">Current method</span
-                ><span class="spec-value">Manual hand layup, 4 operators</span>
+                <span class="spec-label">Current method</span>
+                <span class="spec-value">Manual hand layup, 4 operators</span>
               </div>
               <div class="spec-item">
-                <span class="spec-label">Current scrap/waste rate</span
-                ><span class="spec-value">22%</span>
+                <span class="spec-label">Current scrap/waste rate</span>
+                <span class="spec-value">22%</span>
               </div>
               <div class="spec-item">
-                <span class="spec-label">AFP-XS projected waste rate</span
-                ><span class="spec-value">5%</span>
+                <span class="spec-label">AFP-XS projected waste rate</span>
+                <span class="spec-value">5%</span>
               </div>
               <div class="spec-item">
-                <span class="spec-label">Labour redeployment</span
-                ><span class="spec-value"
+                <span class="spec-label">Labour redeployment</span>
+                <span class="spec-value"
                   >2 of 4 operators moved to higher-value work</span
                 >
               </div>
             </div>
           </div>
 
-          <!-- INFOGRAPHIC 6: 36-Month Cumulative Cost Comparison -->
-
+          <!-- INFOGRAPHIC 6: 36-Month Cumulative Cost Comparison line chart. Three lines: Hand Layup (rising steeply from €0 to ~€1,164,000 over 36 months); AFP-XS gross no savings offset (rising slowly from €0 to ~€156,000); AFP-XS net with savings (dotted line, roughly flat near €0 or slightly positive). Table below: at 12 months — Hand Layup €388,000 / AFP-XS gross €72,000 / AFP-XS net ~€0 / Cumulative saving ~€316,000. At 24 months — €776,000 / €114,000 / ~€0 / ~€662,000. At 36 months — €1,164,000 / €156,000 / ~€0 / ~€1,008,000. Three-year net saving vs. hand layup: ~€1M. Payback period (gross subscription cost): <2 months. -->
           <div class="afp-36m-container" id="afp36mContainer">
             <div class="afp-36m-title">36-Month Cumulative Cost Comparison</div>
             <div class="afp-36m-subtitle">
@@ -961,8 +1007,28 @@
               </div>
             </div>
           </div>
-
-          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-number">~€1M</span>
+              <span class="stat-label"
+                >Three-year net saving vs. hand layup</span
+              >
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">&lt;2 mo</span>
+              <span class="stat-label"
+                >Payback period (gross subscription cost)</span
+              >
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">€316K</span>
+              <span class="stat-label">Cumulative saving at 12 months</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">€662K</span>
+              <span class="stat-label">Cumulative saving at 24 months</span>
+            </div>
+          </div>
 
           <div class="highlight-box">
             <p>
@@ -974,7 +1040,7 @@
           </div>
         </section>
 
-        <!-- Hidden Costs -->
+        <!-- Hidden Costs Section -->
         <section id="hidden-costs">
           <h2>The 5 Costs Legacy Vendors Don't Include in Their Quotes</h2>
           <p>
@@ -983,330 +1049,393 @@
             Here's what they leave out.
           </p>
 
-          <h3>1. Rework Labour Cost (The Silent Multiplier)</h3>
-          <p>
-            At a 20% non-conformance rate in hand layup, you're paying
-            technicians to make parts that get rejected, then paying them again
-            (plus material) to make the replacement. The labour cost of rework
-            is typically 2–3x the material cost of the defective part — because
-            it involves disassembly time, root-cause investigation, re-kitting,
-            and re-layup.
-          </p>
-
-          <!-- INFOGRAPHIC 7: Rework Cost Anatomy -->
-
-          <div class="afp-ncr-container" id="afpNcrContainer">
-            <div class="afp-ncr-title">Rework Cost Anatomy</div>
-            <div class="afp-ncr-subtitle">
-              Full cost breakdown per Non-Conformance Report (NCR) event
-            </div>
-            <div id="afpNcrChart"></div>
-            <div class="afp-ncr-divider" id="afpNcrDivider"></div>
-            <div class="afp-ncr-total-wrap" id="afpNcrTotal">
-              <div class="afp-ncr-total-card">
-                <div>
-                  <div class="afp-ncr-total-label">Total cost per NCR</div>
-                  <div class="afp-ncr-total-value">€1,240</div>
-                </div>
-              </div>
-              <div class="afp-ncr-multiplier">
-                <div class="afp-ncr-mult-label">Cost multiplier</div>
-                <div class="afp-ncr-mult-value">3.1×</div>
-                <div class="afp-ncr-mult-note">on a €400 part</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="afp-ncr-tooltip" id="afpNcrTooltip">
-            <div class="afp-ncr-tip-title" id="afpNcrTipTitle"></div>
-            <div class="afp-ncr-tip-value" id="afpNcrTipValue"></div>
-            <div class="afp-ncr-tip-pct" id="afpNcrTipPct"></div>
-          </div>
-
-          <p>
-            Multiplied across 15–30% rework rates at volume, this number
-            dominates the real operational cost of manual layup.
-          </p>
-
-          <h3>
-            2. The Composites Skills Premium (Getting More Expensive Every Year)
-          </h3>
-          <p>
-            Skilled composites laminators command a 15–25% wage premium in most
-            markets and are increasingly difficult to hire and retain. Industry
-            reports (CompositesWorld, Composites UK) consistently flag the
-            composites skills shortage as the top operational constraint for
-            SMEs.
-          </p>
-
-          <!-- INFOGRAPHIC 8: Composites Labour Market Trend -->
-
-          <div class="afp-lmt-container" id="afpLmtContainer">
-            <div class="afp-lmt-title">Composites Labour Market Trend</div>
-            <div class="afp-lmt-subtitle">
-              Skill premium vs. general manufacturing worker — illustrative
-              index
-            </div>
-
-            <div id="afpLmtChart"></div>
-            <div class="afp-lmt-axis" id="afpLmtAxis"></div>
-
-            <div class="afp-lmt-callout" id="afpLmtCallout">
-              <div class="afp-lmt-callout-icon">⚡</div>
-              <div class="afp-lmt-callout-body">
-                <div class="afp-lmt-callout-text">
-                  <strong>AFP reduces the required operator skill floor</strong>
-                  — decoupling your headcount cost from the
-                  <em>composites skills premium curve</em> as it steepens toward
-                  2027.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="afp-lmt-tooltip" id="afpLmtTooltip">
-            <div class="afp-lmt-tip-title" id="afpLmtTipTitle"></div>
-            <div class="afp-lmt-tip-value" id="afpLmtTipValue"></div>
-            <div class="afp-lmt-tip-note" id="afpLmtTipNote"></div>
-          </div>
-
-          <p>
-            AFP-XS reduces the skill floor for routine layup operations.
-            Operators are retrained as AddPath programmers — a transferable,
-            less scarce skill set — rather than manual laminators who take years
-            to develop and are increasingly hard to replace.
-          </p>
-
-          <h3>3. Floor Space Opportunity Cost</h3>
-          <p>
-            Legacy AFP cells require 100–400 m² of dedicated,
-            temperature-controlled floor space. At Helsinki industrial rent
-            rates (€8–15/m²/month), a 200 m² AFP cell costs €19,200–36,000 per
-            year in floor space alone — before HVAC, utilities, and access
-            infrastructure.
-          </p>
-
-          <!-- INFOGRAPHIC 9: Floor Space Cost by System Type -->
-
-          <div class="afp-fs-container" id="afpFsContainer">
-            <div class="afp-fs-title">Floor Space Cost by System Type</div>
-            <div class="afp-fs-subtitle">
-              Annual facility cost based on €12/m²/month industrial floor rate
-            </div>
-
-            <!-- Legacy AFP card -->
-            <div class="afp-fs-card afp-fs-card-legacy" id="afpFsCardLegacy">
-              <div class="afp-fs-card-header">
-                <div>
-                  <div class="afp-fs-card-name">Legacy AFP Cell</div>
-                  <div class="afp-fs-card-spec">200 m² @ €12/m²/month</div>
-                </div>
-                <div class="afp-fs-card-annual">€28,800/yr</div>
-              </div>
-              <div class="afp-fs-track">
-                <div
-                  class="afp-fs-bar"
-                  id="afpFsBarLegacy"
-                  data-target="92"
-                  style="background: #9d9d9c; width: 0"
-                >
-                  <span class="afp-fs-bar-label">200 m² — €28,800/yr</span>
-                </div>
-              </div>
-              <!-- Visual grid of 200 chips representing m² -->
-              <div class="afp-fs-area-chips" id="afpFsChipsLegacy"></div>
-            </div>
-
-            <!-- AFP-XS card -->
-            <div class="afp-fs-card afp-fs-card-xs" id="afpFsCardXs">
-              <div class="afp-fs-card-header">
-                <div>
-                  <div class="afp-fs-card-name">AFP-XS</div>
-                  <div class="afp-fs-card-spec">Standard bay, ~30 m²</div>
-                </div>
-                <div class="afp-fs-card-annual">€4,320/yr</div>
-              </div>
-              <div class="afp-fs-track">
-                <div
-                  class="afp-fs-bar"
-                  id="afpFsBarXs"
-                  data-target="13.8"
-                  style="background: #47577c; width: 0"
-                >
-                  <span class="afp-fs-bar-label">30 m² — €4,320/yr</span>
-                </div>
-              </div>
-              <!-- Visual grid of 30 chips -->
-              <div class="afp-fs-area-chips" id="afpFsChipsXs"></div>
-            </div>
-
-            <!-- Annual saving -->
-            <div class="afp-fs-saving-row" id="afpFsSaving">
-              <span class="afp-fs-saving-label">Annual floor space saving</span>
-              <span class="afp-fs-saving-value">€24,480 / yr</span>
-            </div>
-
-            <!-- 5-year callout -->
-            <div class="afp-fs-5yr" id="afpFs5yr">
-              <div class="afp-fs-5yr-icon">🏭</div>
-              <div class="afp-fs-5yr-body">
-                <div class="afp-fs-5yr-headline">
-                  €122,400 avoided over 5 years
-                </div>
-                <div class="afp-fs-5yr-text">
-                  That floor space can generate <strong>revenue</strong> or
-                  house <strong>additional production capacity</strong> —
-                  turning an overhead cost into a strategic asset.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="afp-fs-tooltip" id="afpFsTooltip">
-            <div class="afp-fs-tip-title" id="afpFsTipTitle"></div>
-            <div class="afp-fs-tip-value" id="afpFsTipValue"></div>
-            <div class="afp-fs-tip-note" id="afpFsTipNote"></div>
-          </div>
-
-          <h3>4. Software Lock-In and Process Knowledge Ownership</h3>
-
-          <div class="split-layout reverse">
-            <div class="split-image">
-              <img
-                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69bb96ac1fec9ba2fedd839c_9.png"
-                alt="AddPath open software platform"
-              />
-            </div>
-            <div class="split-content">
+          <!-- Cost 1 -->
+          <div class="cost-reveal-card">
+            <div class="cost-number">1</div>
+            <div class="cost-content">
+              <h3>Rework Labour Cost (The Silent Multiplier)</h3>
               <p>
-                Most legacy AFP software stores your path planning, material
-                parameters, and tow steering recipes in proprietary formats. You
-                don't own your process — the vendor does. This has two
-                consequences:
+                At a 20% non-conformance rate in hand layup, you're paying
+                technicians to make parts that get rejected, then paying them
+                again (plus material) to make the replacement. The labour cost
+                of rework is typically 2–3x the material cost of the defective
+                part — because it involves disassembly time, root-cause
+                investigation, re-kitting, and re-layup.
               </p>
-              <ul>
-                <li>
-                  <strong>Switching cost:</strong> Moving to a different machine
-                  means re-engineering months or years of process development
-                </li>
-                <li>
-                  <strong>Maintenance leverage:</strong> The vendor knows you
-                  can't easily leave, which affects support pricing, upgrade
-                  terms, and response times
-                </li>
-              </ul>
+
+              <!-- INFOGRAPHIC 7: Rework Cost Anatomy per NCR event. Defective part material: €400 written off; Disassembly + analysis labour: €150; Re-kitting + preparation: €80; Re-layup repeat cycle: €350; Re-inspection + sign-off: €60; Schedule impact buffer: €200 downstream delays. Total cost per NCR: €1,240 on a €400 part. Stacked cost breakdown visual or cost anatomy diagram. -->
+
+              <div class="afp-ncr-container" id="afpNcrContainer">
+                <div class="afp-ncr-title">Rework Cost Anatomy</div>
+                <div class="afp-ncr-subtitle">
+                  Full cost breakdown per Non-Conformance Report (NCR) event
+                </div>
+                <div id="afpNcrChart"></div>
+                <div class="afp-ncr-divider" id="afpNcrDivider"></div>
+                <div class="afp-ncr-total-wrap" id="afpNcrTotal">
+                  <div class="afp-ncr-total-card">
+                    <div>
+                      <div class="afp-ncr-total-label">Total cost per NCR</div>
+                      <div class="afp-ncr-total-value">€1,240</div>
+                    </div>
+                  </div>
+                  <div class="afp-ncr-multiplier">
+                    <div class="afp-ncr-mult-label">Cost multiplier</div>
+                    <div class="afp-ncr-mult-value">3.1×</div>
+                    <div class="afp-ncr-mult-note">on a €400 part</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="afp-ncr-tooltip" id="afpNcrTooltip">
+                <div class="afp-ncr-tip-title" id="afpNcrTipTitle"></div>
+                <div class="afp-ncr-tip-value" id="afpNcrTipValue"></div>
+                <div class="afp-ncr-tip-pct" id="afpNcrTipPct"></div>
+              </div>
               <p>
-                AddPath is open. Your process knowledge, your material
-                databases, your tow paths — they're yours. You can export, back
-                up, and build on them regardless of what happens to the machine
-                vendor relationship.
+                Multiplied across 15–30% rework rates at volume, this number
+                dominates the real operational cost of manual layup.
               </p>
             </div>
           </div>
 
-          <h3>5. Time-to-First-Part (The Revenue Delay No One Models)</h3>
-          <p>
-            Legacy AFP installations typically take 6–18 months from purchase
-            order to first production part. That includes factory acceptance
-            testing, shipping, civil works, commissioning, and operator
-            training. During that entire period, you're either running hand
-            layup (with all its costs) or you're capacity-constrained.
-          </p>
-          <p>
-            AFP-XS is typically operational within 4–8 weeks. That 6–12 month
-            difference is real revenue and real operational saving that never
-            appears in a legacy vendor's TCO comparison.
-          </p>
+          <!-- Cost 2 -->
+          <div class="cost-reveal-card">
+            <div class="cost-number">2</div>
+            <div class="cost-content">
+              <h3>
+                The Composites Skills Premium (Getting More Expensive Every
+                Year)
+              </h3>
+              <p>
+                Skilled composites laminators command a 15–25% wage premium in
+                most markets and are increasingly difficult to hire and retain.
+                Industry reports (CompositesWorld, Composites UK) consistently
+                flag the composites skills shortage as the top operational
+                constraint for SMEs.
+              </p>
 
-          <!-- INFOGRAPHIC 10: Time-to-Production Comparison -->
+              <!-- INFOGRAPHIC 8: Composites Labour Market Trend chart showing skill premium vs. general manufacturing worker over time: 2015 +12%, 2018 +15%, 2021 +19%, 2024 +23%, 2027 +28% projected. Line chart or bar chart showing the rising premium. Caption: AFP reduces required operator skill floor → decouples your headcount cost from the composites skills premium curve. -->
+              <div class="afp-lmt-container" id="afpLmtContainer">
+                <div class="afp-lmt-title">Composites Labour Market Trend</div>
+                <div class="afp-lmt-subtitle">
+                  Skill premium vs. general manufacturing worker — illustrative
+                  index
+                </div>
 
-          <div class="afp-ttp-container" id="afpTtpContainer">
-            <div class="afp-ttp-title">Time-to-Production Comparison</div>
-            <div class="afp-ttp-subtitle">
-              From purchase order to first qualified part
-            </div>
+                <div id="afpLmtChart"></div>
+                <div class="afp-lmt-axis" id="afpLmtAxis"></div>
 
-            <div class="afp-ttp-timeline-wrap">
-              <!-- Legacy AFP timeline -->
-              <div class="afp-ttp-tl-row afp-ttp-legacy" id="afpTtpRowLegacy">
-                <div class="afp-ttp-tl-label">Legacy AFP</div>
-                <div class="afp-ttp-tl-track">
-                  <div class="afp-ttp-po">
-                    <div class="afp-ttp-po-dot"></div>
-                    <div class="afp-ttp-po-label">PO</div>
-                  </div>
-                  <div class="afp-ttp-arrow-track" id="afpTtpTrackLegacy">
-                    <div class="afp-ttp-gap-shade" id="afpTtpGapShade"></div>
-                    <div
-                      class="afp-ttp-arrow-line"
-                      id="afpTtpLineLegacy"
-                      data-target="85"
-                    ></div>
-                    <div
-                      class="afp-ttp-arrow-head"
-                      id="afpTtpHeadLegacy"
-                      style="border-left-width: 10px"
-                    ></div>
-                    <div class="afp-ttp-duration-label" id="afpTtpDurLegacy">
-                      6 – 18 months
+                <div class="afp-lmt-callout" id="afpLmtCallout">
+                  <div class="afp-lmt-callout-icon">⚡</div>
+                  <div class="afp-lmt-callout-body">
+                    <div class="afp-lmt-callout-text">
+                      <strong
+                        >AFP reduces the required operator skill floor</strong
+                      >
+                      — decoupling your headcount cost from the
+                      <em>composites skills premium curve</em> as it steepens
+                      toward 2027.
                     </div>
-                  </div>
-                  <div class="afp-ttp-first-part" id="afpTtpFpLegacy">
-                    <div class="afp-ttp-first-part-line"></div>
-                    <div class="afp-ttp-first-part-label">First part</div>
                   </div>
                 </div>
               </div>
 
-              <!-- AFP-XS timeline -->
-              <div class="afp-ttp-tl-row afp-ttp-xs" id="afpTtpRowXs">
-                <div class="afp-ttp-tl-label">AFP-XS</div>
-                <div class="afp-ttp-tl-track">
-                  <div class="afp-ttp-po">
-                    <div class="afp-ttp-po-dot"></div>
-                    <div class="afp-ttp-po-label">PO</div>
+              <div class="afp-lmt-tooltip" id="afpLmtTooltip">
+                <div class="afp-lmt-tip-title" id="afpLmtTipTitle"></div>
+                <div class="afp-lmt-tip-value" id="afpLmtTipValue"></div>
+                <div class="afp-lmt-tip-note" id="afpLmtTipNote"></div>
+              </div>
+              <p>
+                AFP-XS reduces the skill floor for routine layup operations.
+                Operators are retrained as AddPath programmers — a transferable,
+                less scarce skill set — rather than manual laminators who take
+                years to develop and are increasingly hard to replace.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cost 3 -->
+          <div class="cost-reveal-card">
+            <div class="cost-number">3</div>
+            <div class="cost-content">
+              <h3>Floor Space Opportunity Cost</h3>
+              <p>
+                Legacy AFP cells require 100–400 m² of dedicated,
+                temperature-controlled floor space. At Helsinki industrial rent
+                rates (€8–15/m²/month), a 200 m² AFP cell costs €19,200–36,000
+                per year in floor space alone — before HVAC, utilities, and
+                access infrastructure.
+              </p>
+
+              <!-- INFOGRAPHIC 9: Floor Space Cost by System Type. Legacy AFP Cell 200 m² @ €12/m²/month = €28,800/yr. AFP-XS standard bay ~30 m² = €4,320/yr. Annual floor space saving: €24,480. Over 5 years: €122,400 in avoided facility cost. Simple bar comparison or side-by-side floor plan cost cards. -->
+
+              <div class="afp-fs-container" id="afpFsContainer">
+                <div class="afp-fs-title">Floor Space Cost by System Type</div>
+                <div class="afp-fs-subtitle">
+                  Annual facility cost based on €12/m²/month industrial floor
+                  rate
+                </div>
+
+                <!-- Legacy AFP card -->
+                <div
+                  class="afp-fs-card afp-fs-card-legacy"
+                  id="afpFsCardLegacy"
+                >
+                  <div class="afp-fs-card-header">
+                    <div>
+                      <div class="afp-fs-card-name">Legacy AFP Cell</div>
+                      <div class="afp-fs-card-spec">200 m² @ €12/m²/month</div>
+                    </div>
+                    <div class="afp-fs-card-annual">€28,800/yr</div>
                   </div>
-                  <div class="afp-ttp-arrow-track" id="afpTtpTrackXs">
+                  <div class="afp-fs-track">
                     <div
-                      class="afp-ttp-arrow-line"
-                      id="afpTtpLineXs"
-                      data-target="22"
-                    ></div>
-                    <div
-                      class="afp-ttp-arrow-head"
-                      id="afpTtpHeadXs"
-                      style="border-left-width: 10px"
-                    ></div>
-                    <div class="afp-ttp-duration-label" id="afpTtpDurXs">
-                      4 – 8 weeks
+                      class="afp-fs-bar"
+                      id="afpFsBarLegacy"
+                      data-target="92"
+                      style="background: #9d9d9c; width: 0"
+                    >
+                      <span class="afp-fs-bar-label">200 m² — €28,800/yr</span>
                     </div>
                   </div>
-                  <div class="afp-ttp-first-part" id="afpTtpFpXs">
-                    <div class="afp-ttp-first-part-line"></div>
-                    <div class="afp-ttp-first-part-label">First part</div>
+                  <!-- Visual grid of 200 chips representing m² -->
+                  <div class="afp-fs-area-chips" id="afpFsChipsLegacy"></div>
+                </div>
+
+                <!-- AFP-XS card -->
+                <div class="afp-fs-card afp-fs-card-xs" id="afpFsCardXs">
+                  <div class="afp-fs-card-header">
+                    <div>
+                      <div class="afp-fs-card-name">AFP-XS</div>
+                      <div class="afp-fs-card-spec">Standard bay, ~30 m²</div>
+                    </div>
+                    <div class="afp-fs-card-annual">€4,320/yr</div>
+                  </div>
+                  <div class="afp-fs-track">
+                    <div
+                      class="afp-fs-bar"
+                      id="afpFsBarXs"
+                      data-target="13.8"
+                      style="background: #47577c; width: 0"
+                    >
+                      <span class="afp-fs-bar-label">30 m² — €4,320/yr</span>
+                    </div>
+                  </div>
+                  <!-- Visual grid of 30 chips -->
+                  <div class="afp-fs-area-chips" id="afpFsChipsXs"></div>
+                </div>
+
+                <!-- Annual saving -->
+                <div class="afp-fs-saving-row" id="afpFsSaving">
+                  <span class="afp-fs-saving-label"
+                    >Annual floor space saving</span
+                  >
+                  <span class="afp-fs-saving-value">€24,480 / yr</span>
+                </div>
+
+                <!-- 5-year callout -->
+                <div class="afp-fs-5yr" id="afpFs5yr">
+                  <div class="afp-fs-5yr-icon">🏭</div>
+                  <div class="afp-fs-5yr-body">
+                    <div class="afp-fs-5yr-headline">
+                      €122,400 avoided over 5 years
+                    </div>
+                    <div class="afp-fs-5yr-text">
+                      That floor space can generate <strong>revenue</strong> or
+                      house <strong>additional production capacity</strong> —
+                      turning an overhead cost into a strategic asset.
+                    </div>
                   </div>
                 </div>
               </div>
+
+              <div class="afp-fs-tooltip" id="afpFsTooltip">
+                <div class="afp-fs-tip-title" id="afpFsTipTitle"></div>
+                <div class="afp-fs-tip-value" id="afpFsTipValue"></div>
+                <div class="afp-fs-tip-note" id="afpFsTipNote"></div>
+              </div>
             </div>
+          </div>
 
-            <div class="afp-ttp-divider" id="afpTtpDivider"></div>
+          <!-- Cost 4 -->
+          <div class="cost-reveal-card">
+            <div class="cost-number">4</div>
+            <div class="cost-content">
+              <h3>Software Lock-In and Process Knowledge Ownership</h3>
 
-            <div class="afp-ttp-foregone-label" id="afpTtpForeLabel">
-              Revenue &amp; savings foregone during gap (at €25K/month)
+              <div class="split-layout">
+                <div class="split-content">
+                  <p>
+                    Most legacy AFP software stores your path planning, material
+                    parameters, and tow steering recipes in proprietary formats.
+                    You don't own your process — the vendor does. This has two
+                    consequences:
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Switching cost:</strong> Moving to a different
+                      machine means re-engineering months or years of process
+                      development
+                    </li>
+                    <li>
+                      <strong>Maintenance leverage:</strong> The vendor knows
+                      you can't easily leave, which affects support pricing,
+                      upgrade terms, and response times
+                    </li>
+                  </ul>
+                  <p>
+                    AddPath is open. Your process knowledge, your material
+                    databases, your tow paths — they're yours. You can export,
+                    back up, and build on them regardless of what happens to the
+                    machine vendor relationship.
+                  </p>
+                </div>
+                <div class="split-image">
+                  <img
+                    src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69bb96ac1fec9ba2fedd839c_9.png"
+                    alt="AddPath open software for AFP process knowledge ownership"
+                  />
+                </div>
+              </div>
             </div>
+          </div>
 
-            <div class="afp-ttp-foregone-rows" id="afpTtpForeRows"></div>
+          <!-- Cost 5 -->
+          <div class="cost-reveal-card">
+            <div class="cost-number">5</div>
+            <div class="cost-content">
+              <h3>Time-to-First-Part (The Revenue Delay No One Models)</h3>
+              <p>
+                Legacy AFP installations typically take 6–18 months from
+                purchase order to first production part. That includes factory
+                acceptance testing, shipping, civil works, commissioning, and
+                operator training. During that entire period, you're either
+                running hand layup (with all its costs) or you're
+                capacity-constrained.
+              </p>
+              <p>
+                AFP-XS is typically operational within 4–8 weeks. That 6–12
+                month difference is real revenue and real operational saving
+                that never appears in a legacy vendor's TCO comparison.
+              </p>
 
-            <div class="afp-ttp-warning" id="afpTtpWarning">
-              <div class="afp-ttp-warning-icon">⚠️</div>
-              <div class="afp-ttp-warning-text">
-                This cost never appears in the legacy vendor's proposal.
+              <!-- INFOGRAPHIC 10: Time-to-Production Comparison. Legacy AFP: PO → 6 to 18 months → First part. AFP-XS: PO → 4–8 weeks → First part. Revenue and saving opportunity during gap at €25K/month saving: 6 months gap = €150,000 foregone; 12 months gap = €300,000 foregone; 18 months gap = €450,000 foregone. Caption: This cost never appears in the legacy vendor's proposal. Timeline/Gantt style diagram or arrow diagram. -->
+
+              <div class="afp-ttp-container" id="afpTtpContainer">
+                <div class="afp-ttp-title">Time-to-Production Comparison</div>
+                <div class="afp-ttp-subtitle">
+                  From purchase order to first qualified part
+                </div>
+
+                <div class="afp-ttp-timeline-wrap">
+                  <!-- Legacy AFP timeline -->
+                  <div
+                    class="afp-ttp-tl-row afp-ttp-legacy"
+                    id="afpTtpRowLegacy"
+                  >
+                    <div class="afp-ttp-tl-label">Legacy AFP</div>
+                    <div class="afp-ttp-tl-track">
+                      <div class="afp-ttp-po">
+                        <div class="afp-ttp-po-dot"></div>
+                        <div class="afp-ttp-po-label">PO</div>
+                      </div>
+                      <div class="afp-ttp-arrow-track" id="afpTtpTrackLegacy">
+                        <div
+                          class="afp-ttp-gap-shade"
+                          id="afpTtpGapShade"
+                        ></div>
+                        <div
+                          class="afp-ttp-arrow-line"
+                          id="afpTtpLineLegacy"
+                          data-target="85"
+                        ></div>
+                        <div
+                          class="afp-ttp-arrow-head"
+                          id="afpTtpHeadLegacy"
+                          style="border-left-width: 10px"
+                        ></div>
+                        <div
+                          class="afp-ttp-duration-label"
+                          id="afpTtpDurLegacy"
+                        >
+                          6 – 18 months
+                        </div>
+                      </div>
+                      <div class="afp-ttp-first-part" id="afpTtpFpLegacy">
+                        <div class="afp-ttp-first-part-line"></div>
+                        <div class="afp-ttp-first-part-label">First part</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- AFP-XS timeline -->
+                  <div class="afp-ttp-tl-row afp-ttp-xs" id="afpTtpRowXs">
+                    <div class="afp-ttp-tl-label">AFP-XS</div>
+                    <div class="afp-ttp-tl-track">
+                      <div class="afp-ttp-po">
+                        <div class="afp-ttp-po-dot"></div>
+                        <div class="afp-ttp-po-label">PO</div>
+                      </div>
+                      <div class="afp-ttp-arrow-track" id="afpTtpTrackXs">
+                        <div
+                          class="afp-ttp-arrow-line"
+                          id="afpTtpLineXs"
+                          data-target="22"
+                        ></div>
+                        <div
+                          class="afp-ttp-arrow-head"
+                          id="afpTtpHeadXs"
+                          style="border-left-width: 10px"
+                        ></div>
+                        <div class="afp-ttp-duration-label" id="afpTtpDurXs">
+                          4 – 8 weeks
+                        </div>
+                      </div>
+                      <div class="afp-ttp-first-part" id="afpTtpFpXs">
+                        <div class="afp-ttp-first-part-line"></div>
+                        <div class="afp-ttp-first-part-label">First part</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="afp-ttp-divider" id="afpTtpDivider"></div>
+
+                <div class="afp-ttp-foregone-label" id="afpTtpForeLabel">
+                  Revenue &amp; savings foregone during gap (at €25K/month)
+                </div>
+
+                <div class="afp-ttp-foregone-rows" id="afpTtpForeRows"></div>
+
+                <div class="afp-ttp-warning" id="afpTtpWarning">
+                  <div class="afp-ttp-warning-icon">⚠️</div>
+                  <div class="afp-ttp-warning-text">
+                    This cost never appears in the legacy vendor's proposal.
+                  </div>
+                </div>
+              </div>
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <span class="stat-number">6–18 mo</span>
+                  <span class="stat-label">Legacy AFP time-to-first-part</span>
+                </div>
+                <div class="stat-card">
+                  <span class="stat-number">4–8 wk</span>
+                  <span class="stat-label">AFP-XS time-to-first-part</span>
+                </div>
+                <div class="stat-card">
+                  <span class="stat-number">€300K</span>
+                  <span class="stat-label"
+                    >Foregone savings over 12-month gap</span
+                  >
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- Business Case -->
+        <!-- Business Case Section -->
         <section id="business-case">
           <h2>How to Build the Business Case for Your Finance Director</h2>
           <p>
@@ -1317,7 +1446,7 @@
 
           <h3>The Three Numbers That Win Budget Approval</h3>
 
-          <!-- INFOGRAPHIC 11: Three Numbers -->
+          <!-- INFOGRAPHIC 11: Three-box diagram. 1. PAYBACK PERIOD: AFP-XS subscription offset by material + labour savings → Typical payback 2–6 months (vs. legacy AFP 4–8 years). 2. BALANCE SHEET IMPACT: Subscription = fully OpEx → No asset on balance sheet, no depreciation schedule, no financing required, P&L impact begins Month 1. 3. RISK PROFILE: If volume drops subscription adjusts → No stranded asset, no impairment charge, no covenant breach on debt financing. Three-column card layout. -->
           <div class="afp-frp-container" id="afpFrpContainer">
             <div class="afp-frp-title">AFP-XS Financial &amp; Risk Profile</div>
             <div class="afp-frp-subtitle">
@@ -1469,6 +1598,36 @@
               </div>
             </div>
           </div>
+          <div class="three-col-cards">
+            <div class="col-card payback">
+              <div class="col-card-icon">⏱️</div>
+              <h4>Payback Period</h4>
+              <p>AFP-XS subscription offset by material + labour savings</p>
+              <div class="col-card-stat">2–6 months</div>
+              <p class="col-card-note">vs. legacy AFP: 4–8 years</p>
+            </div>
+            <div class="col-card balance">
+              <div class="col-card-icon">📊</div>
+              <h4>Balance Sheet Impact</h4>
+              <p>Subscription = fully OpEx</p>
+              <ul class="col-card-list">
+                <li>No asset on balance sheet</li>
+                <li>No depreciation schedule</li>
+                <li>No financing required</li>
+                <li>P&L impact begins Month 1</li>
+              </ul>
+            </div>
+            <div class="col-card risk">
+              <div class="col-card-icon">🛡️</div>
+              <h4>Risk Profile</h4>
+              <p>If volume drops, subscription adjusts</p>
+              <ul class="col-card-list">
+                <li>No stranded asset</li>
+                <li>No impairment charge</li>
+                <li>No covenant breach on debt financing</li>
+              </ul>
+            </div>
+          </div>
 
           <h3>The Question Reframe</h3>
           <p>
@@ -1476,12 +1635,14 @@
             and it almost always loses the budget argument. The right question
             is:
           </p>
+
           <div class="key-question">
             <p>
               "What is manual layup costing us per year that we're treating as
               an unavoidable operating expense?"
             </p>
           </div>
+
           <p>
             When you answer that question honestly — material waste, rework,
             skills premium, inspection overhead — the cost of not automating
@@ -1491,7 +1652,7 @@
           </p>
         </section>
 
-        <!-- Buyer Checklist -->
+        <!-- Buyer Checklist Section -->
         <section id="buyer-checklist">
           <h2>The AFP Buyer's Checklist: Questions to Ask Every Vendor</h2>
           <p>
@@ -1499,7 +1660,7 @@
             answers will tell you more than any brochure.
           </p>
 
-          <!-- INFOGRAPHIC 12: Buyer's Checklist -->
+          <!-- INFOGRAPHIC 12: Three-section checklist. TCO Questions: all-in Year 1 cost, annual maintenance contract post Year 1, software licence and upgrade fees, published scrap/rework benchmark, typical material waste rate vs. current process. Capability Questions: time from PO to first production part, floor space and facility modifications required, handling multiple material types, programming software open or proprietary, ownership of process knowledge. Vendor Risk Questions: process data portability if vendor changes, support response SLA for production-down situations, upgrade path for volume changes, current reference customers at similar scale. Formatted as a checklist/table. -->
 
           <div class="afp-ddq-container" id="afpDdqContainer">
             <div class="afp-ddq-title">AFP Vendor Due Diligence Checklist</div>
@@ -1564,14 +1725,128 @@
               ↺ Reset checklist
             </button>
           </div>
+          <div class="checklist-container">
+            <div class="checklist-group">
+              <div class="checklist-group-header tco">TCO Questions</div>
+              <div class="checklist-items">
+                <div class="checklist-item">
+                  <span class="check-box">☐</span>
+                  <span
+                    >What is the all-in Year 1 cost (machine + install +
+                    training)?</span
+                  >
+                </div>
+                <div class="checklist-item">
+                  <span class="check-box">☐</span>
+                  <span
+                    >What does the annual maintenance contract cost after Year
+                    1?</span
+                  >
+                </div>
+                <div class="checklist-item">
+                  <span class="check-box">☐</span>
+                  <span
+                    >What are the software licence and annual upgrade
+                    fees?</span
+                  >
+                </div>
+                <div class="checklist-item">
+                  <span class="check-box">☐</span>
+                  <span
+                    >What is the published scrap/rework benchmark for my
+                    material type?</span
+                  >
+                </div>
+                <div class="checklist-item">
+                  <span class="check-box">☐</span>
+                  <span
+                    >What is the typical material waste rate vs. my current
+                    process?</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="checklist-group">
+              <div class="checklist-group-header capability">
+                Capability Questions
+              </div>
+              <div class="checklist-items">
+                <div class="checklist-item">
+                  <span class="check-box">☐</span>
+                  <span>How long from PO to first production part?</span>
+                </div>
+                <div class="checklist-item">
+                  <span class="check-box">☐</span>
+                  <span
+                    >What floor space and facility modifications are
+                    required?</span
+                  >
+                </div>
+                <div class="checklist-item">
+                  <span class="check-box">☐</span>
+                  <span
+                    >Can the system handle multiple material types without
+                    re-tooling?</span
+                  >
+                </div>
+                <div class="checklist-item">
+                  <span class="check-box">☐</span>
+                  <span>Is the programming software open or proprietary?</span>
+                </div>
+                <div class="checklist-item">
+                  <span class="check-box">☐</span>
+                  <span
+                    >Who owns the process knowledge (tow paths, material
+                    databases)?</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="checklist-group">
+              <div class="checklist-group-header vendor">
+                Vendor Risk Questions
+              </div>
+              <div class="checklist-items">
+                <div class="checklist-item">
+                  <span class="check-box">☐</span>
+                  <span
+                    >What happens to my process data if we change vendors?</span
+                  >
+                </div>
+                <div class="checklist-item">
+                  <span class="check-box">☐</span>
+                  <span
+                    >What is your support response SLA for production-down
+                    situations?</span
+                  >
+                </div>
+                <div class="checklist-item">
+                  <span class="check-box">☐</span>
+                  <span
+                    >What is the upgrade path if my production volumes
+                    change?</span
+                  >
+                </div>
+                <div class="checklist-item">
+                  <span class="check-box">☐</span>
+                  <span
+                    >Who are your current reference customers at similar
+                    scale?</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <p>
-            If a vendor can't answer these clearly, that tells you something
-            important about the relationship you'd be entering.
-          </p>
+          <div class="highlight-box">
+            <p>
+              If a vendor can't answer these clearly, that tells you something
+              important about the relationship you'd be entering.
+            </p>
+          </div>
         </section>
 
-        <!-- Decision Framework -->
+        <!-- Decision Framework Section -->
         <section id="decision-framework">
           <h2>Making the Right Decision for Your Application</h2>
           <p>
@@ -1579,7 +1854,7 @@
             decision framework:
           </p>
 
-          <!-- INFOGRAPHIC 13: Decision Framework -->
+          <!-- INFOGRAPHIC 13: Decision tree / framework. Primary branch: Annual composites production volume. Under 200 kg/yr → Hand layup is probably still optimal. AFP capex unlikely to justify at this scale. 200–2,000 kg/yr → AFP-XS on subscription is the primary candidate. ROI positive in Year 1 for most applications. 2,000–20,000 kg/yr → AFP-XS (potentially multiple cells) or evaluate small-footprint AFP with leasing. Over 20,000 kg/yr → Legacy AFP or high-throughput multi-tow systems may justify the CapEx. Evaluate with full TCO model. Secondary filters: Part complexity (Simple flat/cylindrical → AFP-XS handles well; Complex double-curvature → Evaluate tow-steering spec); Material type (Thermoset prepreg → AFP-XS ready; Thermoplastic → Check material compatibility; Dry fibre infusion → AFP-XS dry fibre option); Floor space (<50m² available → AFP-XS designed for this; >100m² dedicated → All options viable). Flowchart or decision tree visual. -->
 
           <div class="afp-sg-container" id="afpSgContainer">
             <div class="afp-sg-title">AFP System Selection Guide</div>
@@ -1695,9 +1970,87 @@
               </div>
             </div>
           </div>
+          <div class="decision-table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Annual Volume</th>
+                  <th>Recommended Approach</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Under 200 kg/yr</strong></td>
+                  <td>Hand layup</td>
+                  <td>AFP capex unlikely to justify at this scale</td>
+                </tr>
+                <tr>
+                  <td><strong>200 – 2,000 kg/yr</strong></td>
+                  <td>AFP-XS on subscription</td>
+                  <td>ROI positive in Year 1 for most applications</td>
+                </tr>
+                <tr>
+                  <td><strong>2,000 – 20,000 kg/yr</strong></td>
+                  <td>AFP-XS (multiple cells) or leasing</td>
+                  <td>Evaluate small-footprint AFP options</td>
+                </tr>
+                <tr>
+                  <td><strong>Over 20,000 kg/yr</strong></td>
+                  <td>Legacy AFP or multi-tow systems</td>
+                  <td>Evaluate with full TCO model</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Secondary Filters</h3>
+          <div class="filter-grid">
+            <div class="filter-card">
+              <h4>Part Complexity</h4>
+              <div class="filter-row">
+                <span class="filter-label">Simple flat/cylindrical</span>
+                <span class="filter-result good">AFP-XS handles well</span>
+              </div>
+              <div class="filter-row">
+                <span class="filter-label">Complex double-curvature</span>
+                <span class="filter-result check"
+                  >Evaluate tow-steering spec</span
+                >
+              </div>
+            </div>
+            <div class="filter-card">
+              <h4>Material Type</h4>
+              <div class="filter-row">
+                <span class="filter-label">Thermoset prepreg</span>
+                <span class="filter-result good">AFP-XS ready</span>
+              </div>
+              <div class="filter-row">
+                <span class="filter-label">Thermoplastic</span>
+                <span class="filter-result check"
+                  >Check material compatibility</span
+                >
+              </div>
+              <div class="filter-row">
+                <span class="filter-label">Dry fibre (infusion)</span>
+                <span class="filter-result good">AFP-XS dry fibre option</span>
+              </div>
+            </div>
+            <div class="filter-card">
+              <h4>Floor Space</h4>
+              <div class="filter-row">
+                <span class="filter-label">&lt;50 m² available</span>
+                <span class="filter-result good">AFP-XS designed for this</span>
+              </div>
+              <div class="filter-row">
+                <span class="filter-label">&gt;100 m² dedicated</span>
+                <span class="filter-result good">All options viable</span>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <!-- Summary -->
+        <!-- Summary Section -->
         <section id="summary">
           <h2>Summary: The Real Cost of the Status Quo</h2>
           <p>
@@ -1713,8 +2066,7 @@
             the cost of doing it.
           </p>
 
-          <!-- INFOGRAPHIC 14: Decision Summary -->
-
+          <!-- INFOGRAPHIC 14: Decision Summary comparison table. Columns: metric, Hand Layup, AFP-XS. Rows: 3-year total cost (~€1.16M vs ~€126K gross); 3-year net with savings (— vs ~€0 break-even or positive); CapEx required (None vs None); Balance sheet risk (None vs None); Scrap rate (15–30% vs 2–5%); Material waste (20–40% vs <6%); Operator skill floor (High vs Low-medium); Software lock-in (N/A vs None open); Time to first part (Today vs 4–8 weeks). Clean comparison table format. -->
           <div class="afp-ds-container" id="afpDsContainer">
             <div class="afp-ds-title">Decision Summary</div>
             <div class="afp-ds-subtitle">
@@ -1768,8 +2120,66 @@
             <div class="afp-ds-tip-title" id="afpDsTipTitle"></div>
             <div class="afp-ds-tip-body" id="afpDsTipBody"></div>
           </div>
+          <div class="data-table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Metric</th>
+                  <th>Hand Layup</th>
+                  <th>AFP-XS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>3-year total cost</td>
+                  <td>~€1.16M</td>
+                  <td>~€126K (gross)</td>
+                </tr>
+                <tr>
+                  <td>3-year net (w/ savings)</td>
+                  <td>—</td>
+                  <td>~€0 (break-even or positive)</td>
+                </tr>
+                <tr>
+                  <td>CapEx required</td>
+                  <td>None</td>
+                  <td>None</td>
+                </tr>
+                <tr>
+                  <td>Balance sheet risk</td>
+                  <td>None</td>
+                  <td>None</td>
+                </tr>
+                <tr>
+                  <td>Scrap rate</td>
+                  <td>15–30%</td>
+                  <td>2–5%</td>
+                </tr>
+                <tr>
+                  <td>Material waste</td>
+                  <td>20–40%</td>
+                  <td>&lt;6%</td>
+                </tr>
+                <tr>
+                  <td>Operator skill floor</td>
+                  <td>High</td>
+                  <td>Low-medium</td>
+                </tr>
+                <tr>
+                  <td>Software lock-in</td>
+                  <td>N/A</td>
+                  <td>None (open)</td>
+                </tr>
+                <tr>
+                  <td>Time to first part</td>
+                  <td>Today</td>
+                  <td>4–8 weeks</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-          <div class="final-statement">
+          <div class="key-question">
             <p>
               The question is no longer whether AFP is affordable. For most SME
               composites manufacturers, the question is how much longer you can
@@ -1779,7 +2189,7 @@
 
           <img
             src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69bb96ab17265756a9095453_10.jpeg"
-            alt="AFP-XS by Addcomposites in operation at Compositadour facility"
+            alt="AFP-XS by Addcomposites in operation at Compositadour"
             class="full-width-image"
           />
           <p class="image-caption">
@@ -1801,154 +2211,221 @@
 
           <img
             src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6978d40a3357ac7e5d9c9aa1_14.png"
-            alt="Book a TCO walkthrough"
+            alt="TCO walkthrough illustration"
             class="full-width-image"
           />
         </section>
 
-        <!-- References -->
+        <!-- References Section -->
         <section id="references">
           <h2>References</h2>
+
           <div class="references-list">
-            <p>
-              [1] 360iResearch —
-              <em>AFP/ATL Machines Market Report 2025–2032.</em> Market sizing,
-              CAGR projections (6–14%), and adoption trends for automated fibre
-              placement and automated tape laying systems globally.
-              <a
-                href="https://www.360iresearch.com/library/intelligence/afp-atl-machines"
-                target="_blank"
-                rel="noopener"
-                >https://www.360iresearch.com/library/intelligence/afp-atl-machines</a
-              >
-            </p>
-            <p>
-              [2] CompositesWorld —
-              <em>"Composites Trends to Watch in 2026."</em> Industry outlook
-              covering thermoplastic AFP adoption, skills shortages, and the
-              democratisation of composites automation for mid-tier
-              manufacturers.
-              <a
-                href="https://www.compositesworld.com/articles/composites-trends-to-watch"
-                target="_blank"
-                rel="noopener"
-                >https://www.compositesworld.com/articles/composites-trends-to-watch</a
-              >
-            </p>
-            <p>
-              [3] Plataine —
-              <em>"The Labor Shortage Is Killing Composites Manufacturing."</em>
-              Analysis of the composites workforce gap, retirement wave impacts,
-              and how automation is being used as a strategic response to skills
-              scarcity.
-              <a
-                href="https://www.plataine.com/blog/labor-shortage-composites-manufacturing"
-                target="_blank"
-                rel="noopener"
-                >https://www.plataine.com/blog/labor-shortage-composites-manufacturing</a
-              >
-            </p>
-            <p>
-              [4] Composites UK —
-              <em>Composites Workforce Survey 2024.</em> Survey data on
-              composites laminator wage premiums, recruitment difficulty, and
-              projected workforce shortfall in the UK and European composites
-              sector.
-              <a
-                href="https://compositesuk.co.uk/resources/workforce-survey"
-                target="_blank"
-                rel="noopener"
-                >https://compositesuk.co.uk/resources/workforce-survey</a
-              >
-            </p>
-            <p>
-              [5] JEC World 2025 —
-              <em
-                >Addcomposites: Largest Global Install Base for Compact AFP.</em
-              >
-              Conference presentation data on AFP-XS installation base, material
-              compatibility benchmarks, and waste rate comparisons vs. hand
-              layup.
-              <a
-                href="https://www.jeccomposites.com/jec-world/"
-                target="_blank"
-                rel="noopener"
-                >https://www.jeccomposites.com/jec-world/</a
-              >
-            </p>
-            <p>
-              [6] Airbus —
-              <em
-                >Thermoplastic Composite Press Installation, Broughton 2025.</em
-              >
-              Announcement of the world's largest thermoplastic composite press
-              installation at Airbus Broughton, signalling the industry's shift
-              toward thermoplastic AFP at scale.
-              <a
-                href="https://www.airbus.com/en/newsroom"
-                target="_blank"
-                rel="noopener"
-                >https://www.airbus.com/en/newsroom</a
-              >
-            </p>
-            <p>
-              [7] MarketsandMarkets —
-              <em>Thermoplastic Composites Market Report 2024.</em> Market
-              sizing for thermoplastic composites at USD 14.3B by 2031, driven
-              by aerospace structural applications and AFP process adoption.
-              <a
-                href="https://www.marketsandmarkets.com/Market-Reports/thermoplastic-composites-market"
-                target="_blank"
-                rel="noopener"
-                >https://www.marketsandmarkets.com/Market-Reports/thermoplastic-composites-market</a
-              >
-            </p>
-            <p>
-              [8] Addcomposites —
-              <em
-                >AFP-XS Product Documentation &amp; Technical
-                Specifications.</em
-              >
-              Internal technical benchmarks for AFP-XS including material waste
-              rates (&lt;6%), throughput ranges (2–8 kg/hr), installation
-              footprint, and AddPath software capabilities.
-              <a
-                href="https://www.addcomposites.com/afp-xs"
-                target="_blank"
-                rel="noopener"
-                >https://www.addcomposites.com/afp-xs</a
-              >
-            </p>
-            <p>
-              [9] European Composites Industry Association (EuCIA) —
-              <em>Sector Report 2024.</em> European composites market data
-              including production volumes, SME share of the supply chain, and
-              automation investment trends.
-              <a
-                href="https://eucia.eu/resources/sector-reports"
-                target="_blank"
-                rel="noopener"
-                >https://eucia.eu/resources/sector-reports</a
-              >
-            </p>
-            <p>
-              [10] National Institute of Standards and Technology (NIST) —
-              <em>Manufacturing Cost Guide: Composites Processes.</em> Benchmark
-              data on hand layup non-conformance rates, rework cost multipliers,
-              and inspection overhead as a percentage of part cost.
-              <a
-                href="https://www.nist.gov/manufacturing"
-                target="_blank"
-                rel="noopener"
-                >https://www.nist.gov/manufacturing</a
-              >
-            </p>
+            <div class="reference-item">
+              <span class="reference-number">1</span>
+              <div class="reference-content">
+                <strong
+                  >360iResearch — AFP/ATL Machines Market Report
+                  2025–2032</strong
+                >
+                <p>
+                  Market sizing, CAGR projections (6–14%), and adoption trends
+                  for automated fibre placement and automated tape laying
+                  systems globally.
+                </p>
+                <a
+                  href="https://www.360iresearch.com/library/intelligence/afp-atl-machines"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://www.360iresearch.com/library/intelligence/afp-atl-machines</a
+                >
+              </div>
+            </div>
+            <div class="reference-item">
+              <span class="reference-number">2</span>
+              <div class="reference-content">
+                <strong
+                  >CompositesWorld — "Composites Trends to Watch in
+                  2026"</strong
+                >
+                <p>
+                  Industry outlook covering thermoplastic AFP adoption, skills
+                  shortages, and the democratisation of composites automation
+                  for mid-tier manufacturers.
+                </p>
+                <a
+                  href="https://www.compositesworld.com/articles/composites-trends-to-watch"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://www.compositesworld.com/articles/composites-trends-to-watch</a
+                >
+              </div>
+            </div>
+            <div class="reference-item">
+              <span class="reference-number">3</span>
+              <div class="reference-content">
+                <strong
+                  >Plataine — "The Labor Shortage Is Killing Composites
+                  Manufacturing"</strong
+                >
+                <p>
+                  Analysis of the composites workforce gap, retirement wave
+                  impacts, and how automation is being used as a strategic
+                  response to skills scarcity.
+                </p>
+                <a
+                  href="https://www.plataine.com/blog/labor-shortage-composites-manufacturing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://www.plataine.com/blog/labor-shortage-composites-manufacturing</a
+                >
+              </div>
+            </div>
+            <div class="reference-item">
+              <span class="reference-number">4</span>
+              <div class="reference-content">
+                <strong
+                  >Composites UK — Composites Workforce Survey 2024</strong
+                >
+                <p>
+                  Survey data on composites laminator wage premiums, recruitment
+                  difficulty, and projected workforce shortfall in the UK and
+                  European composites sector.
+                </p>
+                <a
+                  href="https://compositesuk.co.uk/resources/workforce-survey"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://compositesuk.co.uk/resources/workforce-survey</a
+                >
+              </div>
+            </div>
+            <div class="reference-item">
+              <span class="reference-number">5</span>
+              <div class="reference-content">
+                <strong
+                  >JEC World 2025 — Addcomposites: Largest Global Install Base
+                  for Compact AFP</strong
+                >
+                <p>
+                  Conference presentation data on AFP-XS installation base,
+                  material compatibility benchmarks, and waste rate comparisons
+                  vs. hand layup.
+                </p>
+                <a
+                  href="https://www.jeccomposites.com/jec-world/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://www.jeccomposites.com/jec-world/</a
+                >
+              </div>
+            </div>
+            <div class="reference-item">
+              <span class="reference-number">6</span>
+              <div class="reference-content">
+                <strong
+                  >Airbus — Thermoplastic Composite Press Installation,
+                  Broughton 2025</strong
+                >
+                <p>
+                  Announcement of the world's largest thermoplastic composite
+                  press installation at Airbus Broughton, signalling the
+                  industry's shift toward thermoplastic AFP at scale.
+                </p>
+                <a
+                  href="https://www.airbus.com/en/newsroom"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://www.airbus.com/en/newsroom</a
+                >
+              </div>
+            </div>
+            <div class="reference-item">
+              <span class="reference-number">7</span>
+              <div class="reference-content">
+                <strong
+                  >MarketsandMarkets — Thermoplastic Composites Market Report
+                  2024</strong
+                >
+                <p>
+                  Market sizing for thermoplastic composites at USD 14.3B by
+                  2031, driven by aerospace structural applications and AFP
+                  process adoption.
+                </p>
+                <a
+                  href="https://www.marketsandmarkets.com/Market-Reports/thermoplastic-composites-market"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://www.marketsandmarkets.com/Market-Reports/thermoplastic-composites-market</a
+                >
+              </div>
+            </div>
+            <div class="reference-item">
+              <span class="reference-number">8</span>
+              <div class="reference-content">
+                <strong
+                  >Addcomposites — AFP-XS Product Documentation & Technical
+                  Specifications</strong
+                >
+                <p>
+                  Internal technical benchmarks for AFP-XS including material
+                  waste rates (&lt;6%), throughput ranges (2–8 kg/hr),
+                  installation footprint, and AddPath software capabilities.
+                </p>
+                <a
+                  href="https://www.addcomposites.com/afp-xs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://www.addcomposites.com/afp-xs</a
+                >
+              </div>
+            </div>
+            <div class="reference-item">
+              <span class="reference-number">9</span>
+              <div class="reference-content">
+                <strong
+                  >European Composites Industry Association (EuCIA) — Sector
+                  Report 2024</strong
+                >
+                <p>
+                  European composites market data including production volumes,
+                  SME share of the supply chain, and automation investment
+                  trends.
+                </p>
+                <a
+                  href="https://eucia.eu/resources/sector-reports"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://eucia.eu/resources/sector-reports</a
+                >
+              </div>
+            </div>
+            <div class="reference-item">
+              <span class="reference-number">10</span>
+              <div class="reference-content">
+                <strong
+                  >National Institute of Standards and Technology (NIST) —
+                  Manufacturing Cost Guide: Composites Processes</strong
+                >
+                <p>
+                  Benchmark data on hand layup non-conformance rates, rework
+                  cost multipliers, and inspection overhead as a percentage of
+                  part cost.
+                </p>
+                <a
+                  href="https://www.nist.gov/manufacturing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://www.nist.gov/manufacturing</a
+                >
+              </div>
+            </div>
           </div>
         </section>
 
         <!-- Learn More Section -->
-        <section class="learn-more-section">
-          <h3 class="learn-more-heading">Explore More from Addcomposites</h3>
+        <section id="learn-more">
+          <h2>Learn More</h2>
           <div class="learn-more-container">
             <a
               href="https://www.addcomposites.com/all-products/afp-xs"
@@ -2067,7 +2544,7 @@
 
           <div class="cta-section">
             <p>
-              Ready to run the numbers for your application? Book a free
+              Ready to run the real numbers for your application? Book a free
               30-minute TCO walkthrough with our team.
             </p>
             <a
