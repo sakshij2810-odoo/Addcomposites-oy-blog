@@ -1770,6 +1770,7 @@ section {
 
 .isc-flow-node {
   width: 100%;
+  box-sizing: border-box;
   border-radius: 10px;
   padding: 12px 14px;
   text-align: center;
@@ -1834,33 +1835,14 @@ section {
   color: #64748b;
 }
 
-/* callout pill beside node */
+/* flow row — always full width, centered */
 .isc-flow-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   width: 100%;
+  position: relative;
 }
+/* callout appears as a tooltip above the node on hover */
 .isc-callout {
-  font-size: 10px;
-  color: #64748b;
-  line-height: 1.4;
-  background: #f8fafc;
-  border-radius: 6px;
-  padding: 6px 8px;
-  border: 1px solid #e2e8f0;
-  min-width: 120px;
-  flex: 1;
-  opacity: 0;
-  transform: translateX(8px);
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
-}
-.isc-flow-node:hover ~ .isc-callout,
-.isc-flow-row:hover .isc-callout {
-  opacity: 1;
-  transform: translateX(0);
+  display: none; /* hidden — info is in node body already */
 }
 
 /* arrows between nodes */
