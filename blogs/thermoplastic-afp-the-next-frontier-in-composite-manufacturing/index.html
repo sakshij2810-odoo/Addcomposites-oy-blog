@@ -244,7 +244,190 @@
 
           <!-- INFOGRAPHIC 1: THERMOSET vs. THERMOPLASTIC — PHASE BEHAVIOUR -->
           <!-- INFOGRAPHIC 1: Thermoset vs. Thermoplastic — Phase Behaviour. Show side-by-side phase diagrams: Thermoset: uncured [epoxy+CF] → heat + time → cross-linked network (irreversible) → cannot be remelted, rewelded, end of life landfill/incineration. Thermoplastic: solid [PEEK+CF] → heat above Tm → viscous melt → cool → solid [PEEK+CF] (reversible) → re-weldable, reformable, recyclable, end of life: pelletise + reuse. -->
+          <div class="tpvts-container">
+            <div class="tpvts-title tpvts-reveal">
+              Thermoset vs. Thermoplastic — Phase Behaviour
+            </div>
 
+            <!-- ═══ THERMOSET SECTION ═══ -->
+            <div
+              class="tpvts-section tpvts-reveal"
+              style="transition-delay: 0.1s"
+            >
+              <div class="tpvts-section-label thermoset">Thermoset</div>
+
+              <div class="tpvts-flow">
+                <!-- Node 1 -->
+                <div class="tpvts-node start-ts">
+                  <div class="tpvts-node-label">Uncured</div>
+                  <div class="tpvts-node-sub">epoxy + CF</div>
+                </div>
+                <!-- Arrow -->
+                <div class="tpvts-arrow">
+                  <div style="display: flex; align-items: center; width: 100%">
+                    <div
+                      class="tpvts-arrow-line ts-color"
+                      style="flex: 1"
+                    ></div>
+                    <div class="tpvts-arrow-head ts-color"></div>
+                  </div>
+                  <div class="tpvts-arrow-caption">Heat + time</div>
+                </div>
+                <!-- Node 2 -->
+                <div class="tpvts-node end-ts">
+                  <div class="tpvts-node-label">Cured</div>
+                  <div class="tpvts-node-sub">cross-linked network</div>
+                </div>
+              </div>
+
+              <div
+                class="tpvts-outcome negative tpvts-reveal"
+                style="transition-delay: 0.2s"
+              >
+                <div class="tpvts-outcome-icon">🔒</div>
+                <div class="tpvts-outcome-body">
+                  <div class="tpvts-outcome-title">Irreversible Reaction</div>
+                  <div class="tpvts-outcome-text">
+                    Cannot be remelted, rewelded, or thermally reformed after
+                    cure.<br />
+                    <strong>End of life:</strong> landfill / incineration.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr class="tpvts-divider" />
+
+            <!-- ═══ THERMOPLASTIC SECTION ═══ -->
+            <div
+              class="tpvts-section tpvts-reveal"
+              style="transition-delay: 0.3s"
+            >
+              <div class="tpvts-section-label thermoplastic">Thermoplastic</div>
+
+              <div class="tpvts-flow">
+                <!-- Node 1 -->
+                <div class="tpvts-node start-tp">
+                  <div class="tpvts-node-label">Solid</div>
+                  <div class="tpvts-node-sub">PEEK + CF</div>
+                </div>
+                <!-- Arrow -->
+                <div class="tpvts-arrow">
+                  <div style="display: flex; align-items: center; width: 100%">
+                    <div
+                      class="tpvts-arrow-line tp-color"
+                      style="flex: 1"
+                    ></div>
+                    <div class="tpvts-arrow-head tp-color"></div>
+                  </div>
+                  <div class="tpvts-arrow-caption">
+                    Heat above T<sub>m</sub>
+                  </div>
+                </div>
+                <!-- Node 2 -->
+                <div class="tpvts-node mid-tp">
+                  <div class="tpvts-node-label">Melt</div>
+                  <div class="tpvts-node-sub">viscous</div>
+                </div>
+                <!-- Arrow -->
+                <div class="tpvts-arrow">
+                  <div style="display: flex; align-items: center; width: 100%">
+                    <div
+                      class="tpvts-arrow-line tp-color"
+                      style="flex: 1"
+                    ></div>
+                    <div class="tpvts-arrow-head tp-color"></div>
+                  </div>
+                  <div class="tpvts-arrow-caption">Cool</div>
+                </div>
+                <!-- Node 3 -->
+                <div class="tpvts-node end-tp">
+                  <div class="tpvts-node-label">Solid</div>
+                  <div class="tpvts-node-sub">PEEK + CF</div>
+                </div>
+              </div>
+
+              <!-- Reversible label -->
+              <div
+                style="
+                  font-size: 11px;
+                  color: #9d9d9c;
+                  font-style: italic;
+                  margin-bottom: 12px;
+                  padding-left: 4px;
+                "
+              >
+                ↺ Reversible phase change
+              </div>
+
+              <div
+                class="tpvts-outcome positive tpvts-reveal"
+                style="transition-delay: 0.4s"
+              >
+                <div class="tpvts-outcome-icon">♻️</div>
+                <div class="tpvts-outcome-body">
+                  <div class="tpvts-outcome-title">Reversible Phase Change</div>
+                  <div class="tpvts-outcome-text">
+                    Re-weldable, reformable, and fully recyclable.<br />
+                    <strong>End of life:</strong> pelletise + reuse.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ═══ COMPARISON FOOTER ═══ -->
+            <div
+              class="tpvts-compare tpvts-reveal"
+              style="transition-delay: 0.5s"
+            >
+              <div class="tpvts-compare-card ts">
+                <div class="tpvts-compare-card-title">Thermoset</div>
+                <div class="tpvts-compare-item">
+                  <span class="tpvts-compare-dot"></span>High fibre-volume
+                  fraction
+                </div>
+                <div class="tpvts-compare-item">
+                  <span class="tpvts-compare-dot"></span>Mature, established
+                  process
+                </div>
+                <div class="tpvts-compare-item">
+                  <span class="tpvts-compare-dot"></span>Long cure cycles
+                  (autoclave)
+                </div>
+                <div class="tpvts-compare-item">
+                  <span class="tpvts-compare-dot"></span>No rework or repair by
+                  heat
+                </div>
+                <div class="tpvts-compare-item">
+                  <span class="tpvts-compare-dot"></span>End-of-life: landfill /
+                  incineration
+                </div>
+              </div>
+              <div class="tpvts-compare-card tp">
+                <div class="tpvts-compare-card-title">Thermoplastic</div>
+                <div class="tpvts-compare-item">
+                  <span class="tpvts-compare-dot"></span>In-situ consolidation
+                  possible (AFP)
+                </div>
+                <div class="tpvts-compare-item">
+                  <span class="tpvts-compare-dot"></span>Short consolidation
+                  cycles
+                </div>
+                <div class="tpvts-compare-item">
+                  <span class="tpvts-compare-dot"></span>Weldable joints — no
+                  fasteners
+                </div>
+                <div class="tpvts-compare-item">
+                  <span class="tpvts-compare-dot"></span>Reformable / repairable
+                  by heat
+                </div>
+                <div class="tpvts-compare-item">
+                  <span class="tpvts-compare-dot"></span>End-of-life: pelletise
+                  + reuse
+                </div>
+              </div>
+            </div>
+          </div>
           <p>
             This reversibility is not a minor footnote. It is what enables
             fastener-free assembly via welding, field repair without an
@@ -264,6 +447,433 @@
 
           <!-- INFOGRAPHIC 2: Thermoplastic Matrix Comparison for AFP. Table comparing PA12, PA6, PPS, PEI (Ultem), PAEK, PEEK, PEKK by Tg (°C), Tm (°C), AFP process temperature, and key characteristic. Temperature range from 220°C (PA12) up to 420°C (PEEK/PEKK). Note amorphous polymers soften above Tg without distinct melt point. -->
 
+          <div class="tpmc-container">
+            <div class="tpmc-title tpmc-reveal">
+              Thermoplastic Matrix Comparison for AFP
+            </div>
+            <div
+              class="tpmc-subtitle tpmc-reveal"
+              style="transition-delay: 0.05s"
+            >
+              Ordered by increasing process temperature — hover each row for
+              details
+            </div>
+
+            <!-- Temperature axis hint -->
+            <div
+              class="tpmc-reveal"
+              style="
+                transition-delay: 0.1s;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 6px;
+                padding: 0 2px;
+              "
+            >
+              <div
+                style="
+                  min-width: 110px;
+                  font-size: 10px;
+                  color: #cbd5e1;
+                  font-weight: 600;
+                  letter-spacing: 0.6px;
+                  text-transform: uppercase;
+                "
+              >
+                Matrix
+              </div>
+              <div
+                style="
+                  flex: 1;
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 0 30px 0 30px;
+                "
+              >
+                <span style="font-size: 9px; color: #cbd5e1">0°C</span>
+                <span style="font-size: 9px; color: #cbd5e1">100°C</span>
+                <span style="font-size: 9px; color: #cbd5e1">200°C</span>
+                <span style="font-size: 9px; color: #cbd5e1">300°C</span>
+                <span style="font-size: 9px; color: #cbd5e1">420°C</span>
+              </div>
+              <div style="min-width: 200px; max-width: 220px"></div>
+            </div>
+
+            <!-- DATA ROWS -->
+            <!-- PA12 -->
+            <div
+              class="tpmc-row tpmc-reveal"
+              style="transition-delay: 0.12s"
+              data-matrix="PA12"
+            >
+              <div class="tpmc-row-left">
+                <div class="tpmc-matrix-name">PA12</div>
+                <div class="tpmc-matrix-temps">
+                  Tg ~50°C · Tm 178°C<br />AFP 220–260°C
+                </div>
+              </div>
+              <div class="tpmc-bar-zone">
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">Tg</div>
+                  <div class="tpmc-bar-track">
+                    <div class="tpmc-bar-fill tg" data-w="11.9"></div>
+                    <!-- 50/420 -->
+                  </div>
+                  <div class="tpmc-bar-val">~50°C</div>
+                </div>
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">Tm</div>
+                  <div class="tpmc-bar-track">
+                    <div class="tpmc-bar-fill tm" data-w="42.4"></div>
+                    <!-- 178/420 -->
+                  </div>
+                  <div class="tpmc-bar-val">178°C</div>
+                </div>
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">AFP</div>
+                  <div class="tpmc-bar-track">
+                    <div
+                      class="tpmc-bar-range afp"
+                      data-l="52.4"
+                      data-w="9.5"
+                    ></div>
+                    <!-- 220–260 -->
+                  </div>
+                  <div class="tpmc-bar-val">220–260°C</div>
+                </div>
+              </div>
+              <div class="tpmc-row-right">
+                <div>
+                  <div class="tpmc-char-badge auto">Automotive</div>
+                  <div class="tpmc-char-text">
+                    Low cost, automotive &amp; industrial applications
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PA6 -->
+            <div class="tpmc-row tpmc-reveal" style="transition-delay: 0.16s">
+              <div class="tpmc-row-left">
+                <div class="tpmc-matrix-name">PA6</div>
+                <div class="tpmc-matrix-temps">
+                  Tg ~75°C · Tm 220°C<br />AFP 250–290°C
+                </div>
+              </div>
+              <div class="tpmc-bar-zone">
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">Tg</div>
+                  <div class="tpmc-bar-track">
+                    <div class="tpmc-bar-fill tg" data-w="17.9"></div>
+                  </div>
+                  <div class="tpmc-bar-val">~75°C</div>
+                </div>
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">Tm</div>
+                  <div class="tpmc-bar-track">
+                    <div class="tpmc-bar-fill tm" data-w="52.4"></div>
+                  </div>
+                  <div class="tpmc-bar-val">220°C</div>
+                </div>
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">AFP</div>
+                  <div class="tpmc-bar-track">
+                    <div
+                      class="tpmc-bar-range afp"
+                      data-l="59.5"
+                      data-w="9.5"
+                    ></div>
+                  </div>
+                  <div class="tpmc-bar-val">250–290°C</div>
+                </div>
+              </div>
+              <div class="tpmc-row-right">
+                <div>
+                  <div class="tpmc-char-badge auto">Automotive</div>
+                  <div class="tpmc-char-text">
+                    High toughness, automotive structural
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PPS -->
+            <div class="tpmc-row tpmc-reveal" style="transition-delay: 0.2s">
+              <div class="tpmc-row-left">
+                <div class="tpmc-matrix-name">PPS</div>
+                <div class="tpmc-matrix-temps">
+                  Tg ~90°C · Tm 285°C<br />AFP 320–360°C
+                </div>
+              </div>
+              <div class="tpmc-bar-zone">
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">Tg</div>
+                  <div class="tpmc-bar-track">
+                    <div class="tpmc-bar-fill tg" data-w="21.4"></div>
+                  </div>
+                  <div class="tpmc-bar-val">~90°C</div>
+                </div>
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">Tm</div>
+                  <div class="tpmc-bar-track">
+                    <div class="tpmc-bar-fill tm" data-w="67.9"></div>
+                  </div>
+                  <div class="tpmc-bar-val">285°C</div>
+                </div>
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">AFP</div>
+                  <div class="tpmc-bar-track">
+                    <div
+                      class="tpmc-bar-range afp"
+                      data-l="76.2"
+                      data-w="9.5"
+                    ></div>
+                  </div>
+                  <div class="tpmc-bar-val">320–360°C</div>
+                </div>
+              </div>
+              <div class="tpmc-row-right">
+                <div>
+                  <div class="tpmc-char-badge struct">Industrial</div>
+                  <div class="tpmc-char-text">
+                    Chemical resistance, flame retardant
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PEI (Ultem) -->
+            <div class="tpmc-row tpmc-reveal" style="transition-delay: 0.24s">
+              <div class="tpmc-row-left">
+                <div class="tpmc-matrix-name">
+                  PEI<span
+                    style="font-size: 10px; font-weight: 400; color: #9d9d9c"
+                  >
+                    (Ultem)</span
+                  >
+                </div>
+                <div class="tpmc-matrix-temps">
+                  Tg 217°C · Tm N/A (am)<br />AFP 340–380°C
+                </div>
+              </div>
+              <div class="tpmc-bar-zone">
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">Tg</div>
+                  <div class="tpmc-bar-track">
+                    <div class="tpmc-bar-fill tg" data-w="51.7"></div>
+                  </div>
+                  <div class="tpmc-bar-val">217°C</div>
+                </div>
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">Tm</div>
+                  <div class="tpmc-bar-track">
+                    <div
+                      style="
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        padding-left: 8px;
+                        box-sizing: border-box;
+                      "
+                    >
+                      <span
+                        style="
+                          font-size: 9px;
+                          color: #cbd5e1;
+                          font-style: italic;
+                        "
+                        >Amorphous — no distinct melt</span
+                      >
+                    </div>
+                  </div>
+                  <div class="tpmc-bar-val">N/A (am)</div>
+                </div>
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">AFP</div>
+                  <div class="tpmc-bar-track">
+                    <div
+                      class="tpmc-bar-range afp"
+                      data-l="81.0"
+                      data-w="9.5"
+                    ></div>
+                  </div>
+                  <div class="tpmc-bar-val">340–380°C</div>
+                </div>
+              </div>
+              <div class="tpmc-row-right">
+                <div>
+                  <div class="tpmc-char-badge aero">Aerospace</div>
+                  <div class="tpmc-char-text">
+                    Semi-structural, aerospace interior
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PAEK -->
+            <div class="tpmc-row tpmc-reveal" style="transition-delay: 0.28s">
+              <div class="tpmc-row-left">
+                <div class="tpmc-matrix-name">PAEK</div>
+                <div class="tpmc-matrix-temps">
+                  Tg ~145°C · Tm ~380°C<br />AFP 360–420°C
+                </div>
+              </div>
+              <div class="tpmc-bar-zone">
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">Tg</div>
+                  <div class="tpmc-bar-track">
+                    <div class="tpmc-bar-fill tg" data-w="34.5"></div>
+                  </div>
+                  <div class="tpmc-bar-val">~145°C</div>
+                </div>
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">Tm</div>
+                  <div class="tpmc-bar-track">
+                    <div class="tpmc-bar-fill tm" data-w="90.5"></div>
+                  </div>
+                  <div class="tpmc-bar-val">~380°C</div>
+                </div>
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">AFP</div>
+                  <div class="tpmc-bar-track">
+                    <div
+                      class="tpmc-bar-range afp"
+                      data-l="85.7"
+                      data-w="14.3"
+                    ></div>
+                  </div>
+                  <div class="tpmc-bar-val">360–420°C</div>
+                </div>
+              </div>
+              <div class="tpmc-row-right">
+                <div>
+                  <div class="tpmc-char-badge aero">Primary Aero</div>
+                  <div class="tpmc-char-text">
+                    High Tg, primary aerostructure
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PEEK -->
+            <div class="tpmc-row tpmc-reveal" style="transition-delay: 0.32s">
+              <div class="tpmc-row-left">
+                <div class="tpmc-matrix-name" style="color: #bf3425">PEEK</div>
+                <div class="tpmc-matrix-temps">
+                  Tg ~143°C · Tm 343°C<br />AFP 370–420°C
+                </div>
+              </div>
+              <div class="tpmc-bar-zone">
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">Tg</div>
+                  <div class="tpmc-bar-track">
+                    <div class="tpmc-bar-fill tg" data-w="34.0"></div>
+                  </div>
+                  <div class="tpmc-bar-val">~143°C</div>
+                </div>
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">Tm</div>
+                  <div class="tpmc-bar-track">
+                    <div class="tpmc-bar-fill tm" data-w="81.7"></div>
+                  </div>
+                  <div class="tpmc-bar-val">343°C</div>
+                </div>
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">AFP</div>
+                  <div class="tpmc-bar-track">
+                    <div
+                      class="tpmc-bar-range afp"
+                      data-l="88.1"
+                      data-w="11.9"
+                    ></div>
+                  </div>
+                  <div class="tpmc-bar-val">370–420°C</div>
+                </div>
+              </div>
+              <div class="tpmc-row-right">
+                <div>
+                  <div class="tpmc-char-badge aero">Benchmark</div>
+                  <div class="tpmc-char-text">
+                    The aerospace benchmark for structural AFP
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PEKK -->
+            <div class="tpmc-row tpmc-reveal" style="transition-delay: 0.36s">
+              <div class="tpmc-row-left">
+                <div class="tpmc-matrix-name">PEKK</div>
+                <div class="tpmc-matrix-temps">
+                  Tg ~156°C · Tm ~340°C<br />AFP 350–420°C
+                </div>
+              </div>
+              <div class="tpmc-bar-zone">
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">Tg</div>
+                  <div class="tpmc-bar-track">
+                    <div class="tpmc-bar-fill tg" data-w="37.1"></div>
+                  </div>
+                  <div class="tpmc-bar-val">~156°C</div>
+                </div>
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">Tm</div>
+                  <div class="tpmc-bar-track">
+                    <div class="tpmc-bar-fill tm" data-w="81.0"></div>
+                  </div>
+                  <div class="tpmc-bar-val">~340°C</div>
+                </div>
+                <div class="tpmc-bar-row">
+                  <div class="tpmc-bar-tag">AFP</div>
+                  <div class="tpmc-bar-track">
+                    <div
+                      class="tpmc-bar-range afp"
+                      data-l="83.3"
+                      data-w="16.7"
+                    ></div>
+                  </div>
+                  <div class="tpmc-bar-val">350–420°C</div>
+                </div>
+              </div>
+              <div class="tpmc-row-right">
+                <div>
+                  <div class="tpmc-char-badge aero">Process Window</div>
+                  <div class="tpmc-char-text">
+                    Slower crystallisation — wider process window
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Legend -->
+            <div class="tpmc-legend tpmc-reveal" style="transition-delay: 0.4s">
+              <div class="tpmc-legend-item">
+                <div class="tpmc-legend-dot" style="background: #47577c"></div>
+                Glass Transition Temp (Tg)
+              </div>
+              <div class="tpmc-legend-item">
+                <div class="tpmc-legend-dot" style="background: #9d9d9c"></div>
+                Melt Temp (Tm)
+              </div>
+              <div class="tpmc-legend-item">
+                <div class="tpmc-legend-dot" style="background: #bf3425"></div>
+                AFP Process Temp Range
+              </div>
+            </div>
+
+            <!-- Footnote -->
+            <div class="tpmc-note tpmc-reveal" style="transition-delay: 0.44s">
+              Tg = glass transition temperature · Tm = melting temperature
+              (semi-crystalline only).<br />
+              Amorphous polymers (e.g. PEI) soften above Tg without a distinct
+              melt point. All bars scaled to 420°C maximum.
+            </div>
+          </div>
           <img
             src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69c0f684de5dd2da42ea8c9a_3.png"
             alt="CF/PEEK unidirectional tape"
@@ -376,7 +986,209 @@
           </p>
 
           <!-- INFOGRAPHIC 3: In-Situ Consolidation — The Nip Point in Detail. Diagram of the nip point showing: incoming thermoplastic tape → heat source (laser/hot gas/ultrasonic, 400–450°C) → NIP point → compaction roller (50–500 N force). Four interdependent variables: 1. Temperature (must reach Tm, too low = voids, too high = degradation), 2. Pressure (drives contact/void collapse), 3. Speed (controls dwell time), 4. Cooling Rate (determines crystalline morphology). -->
+          <div class="isc-container">
+            <div class="isc-title isc-reveal">
+              In-Situ Consolidation — The Nip Point in Detail
+            </div>
+            <div
+              class="isc-subtitle isc-reveal"
+              style="transition-delay: 0.05s"
+            >
+              Four interdependent process variables must be precisely controlled
+              simultaneously
+            </div>
 
+            <div class="isc-layout">
+              <!-- ══ LEFT: Process flow ══ -->
+              <div class="isc-flow isc-reveal" style="transition-delay: 0.1s">
+                <!-- Incoming tape -->
+                <div class="isc-flow-row">
+                  <div
+                    class="isc-flow-node isc-node-tape"
+                    style="text-align: center"
+                  >
+                    <div class="isc-node-title">
+                      Incoming Thermoplastic Tape
+                    </div>
+                    <div class="isc-node-temp">PEEK/CF · PEKK/CF · PAEK/CF</div>
+                  </div>
+                </div>
+
+                <div class="isc-arrow-down">
+                  <div class="isc-arrow-shaft"></div>
+                  <div class="isc-arrow-tip"></div>
+                </div>
+
+                <!-- Heat source -->
+                <div class="isc-flow-row">
+                  <div class="isc-flow-node isc-node-heat">
+                    <div class="isc-node-title">HEAT SOURCE</div>
+                    <div class="isc-node-temp">
+                      400–450°C at nip point<br />Heats tape + substrate above
+                      Tm<br />in milliseconds
+                    </div>
+                  </div>
+                  <div class="isc-callout">
+                    Laser / hot gas torch / ultrasonic. Rapid, localised heating
+                    of the nip zone only.
+                  </div>
+                </div>
+
+                <div class="isc-arrow-down">
+                  <div class="isc-arrow-shaft"></div>
+                  <div class="isc-arrow-tip"></div>
+                </div>
+
+                <!-- NIP -->
+                <div class="isc-nip-row">
+                  <div class="isc-nip-line"></div>
+                  <div class="isc-nip-badge">NIP</div>
+                  <div class="isc-nip-line"></div>
+                </div>
+                <div style="text-align: center; margin-bottom: 4px">
+                  <span class="isc-nip-dir">◄─── Direction of travel ───►</span>
+                </div>
+
+                <div class="isc-arrow-down">
+                  <div class="isc-arrow-shaft"></div>
+                  <div class="isc-arrow-tip"></div>
+                </div>
+
+                <!-- Compaction roller -->
+                <div class="isc-flow-row">
+                  <div class="isc-flow-node isc-node-roller">
+                    <div class="isc-node-title">COMPACTION ROLLER</div>
+                    <div class="isc-node-temp">
+                      50–500 N force · controlled temp<br />Drives out voids,
+                      ensures contact<br />Transfers heat to substrate
+                    </div>
+                  </div>
+                  <div class="isc-callout">
+                    Silicone or metallic roller. Force profile controls intimate
+                    contact at the ply interface.
+                  </div>
+                </div>
+
+                <div class="isc-arrow-down">
+                  <div class="isc-arrow-shaft"></div>
+                  <div class="isc-arrow-tip"></div>
+                </div>
+
+                <!-- Consolidated laminate -->
+                <div class="isc-flow-row">
+                  <div class="isc-flow-node isc-node-lam">
+                    <div class="isc-node-title">Consolidated Laminate</div>
+                    <div class="isc-node-temp">
+                      Bonds to previous ply as it cools<br />Target:
+                      semi-crystalline morphology
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ══ RIGHT: Four variables ══ -->
+              <div class="isc-vars">
+                <div
+                  class="isc-vars-header isc-reveal"
+                  style="transition-delay: 0.12s"
+                >
+                  The Four Interdependent Variables
+                </div>
+
+                <!-- 1. Temperature -->
+                <div
+                  class="isc-var-card v1 isc-reveal"
+                  style="transition-delay: 0.16s"
+                >
+                  <div class="isc-var-header">
+                    <div class="isc-var-num">1</div>
+                    <div class="isc-var-name">Temperature</div>
+                  </div>
+                  <div class="isc-var-desc">
+                    Must reach Tm at the nip point for bonding to occur.
+                  </div>
+                  <div class="isc-effect-row">
+                    <div class="isc-effect low">
+                      ↓ Too low → voids, incomplete consolidation
+                    </div>
+                    <div class="isc-effect high">
+                      ↑ Too high → matrix degradation, porosity
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2. Pressure -->
+                <div
+                  class="isc-var-card v2 isc-reveal"
+                  style="transition-delay: 0.22s"
+                >
+                  <div class="isc-var-header">
+                    <div class="isc-var-num">2</div>
+                    <div class="isc-var-name">Pressure</div>
+                  </div>
+                  <div class="isc-var-desc">
+                    Drives intimate contact and void collapse at the ply
+                    interface.
+                  </div>
+                  <div class="isc-effect-row">
+                    <div class="isc-effect low">
+                      ↓ Too low → voids, delamination risk
+                    </div>
+                    <div class="isc-effect high">
+                      ↑ Too high → fibre wash, geometry distortion
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3. Speed -->
+                <div
+                  class="isc-var-card v3 isc-reveal"
+                  style="transition-delay: 0.28s"
+                >
+                  <div class="isc-var-header">
+                    <div class="isc-var-num">3</div>
+                    <div class="isc-var-name">Speed</div>
+                  </div>
+                  <div class="isc-var-desc">
+                    Controls dwell time under the heat source at the nip zone.
+                  </div>
+                  <div class="isc-effect-row">
+                    <div class="isc-effect low">
+                      ↓ Too slow → excess crystallinity (PEEK)
+                    </div>
+                    <div class="isc-effect high">
+                      ↑ Too fast → insufficient melt depth
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 4. Cooling Rate -->
+                <div
+                  class="isc-var-card v4 isc-reveal"
+                  style="transition-delay: 0.34s"
+                >
+                  <div class="isc-var-header">
+                    <div class="isc-var-num">4</div>
+                    <div class="isc-var-name">Cooling Rate</div>
+                  </div>
+                  <div class="isc-var-desc">
+                    Determines the final crystalline morphology of the matrix.
+                  </div>
+                  <div class="isc-effect-row">
+                    <div class="isc-effect low">
+                      ↓ Slow cool → high crystallinity → brittle
+                    </div>
+                    <div class="isc-effect high">
+                      ↑ Fast cool → amorphous → reduced Tg
+                    </div>
+                    <div class="isc-effect target">
+                      ✓ Target: semi-crystalline, consistent
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="highlight-box dark">
             <h4>The Coupling Problem</h4>
             <p>
@@ -409,6 +1221,238 @@
 
           <!-- INFOGRAPHIC 4: Heat Source Comparison for In-Situ Consolidation. Three-column comparison table: Diode Laser (precise energy, fast response, narrow heat zone, high speeds, repeatable — vs high cost, CF absorbs >90% risk, safety interlocks, line-of-sight only), Hot Gas Torch (lower cost, good for complex geometries, mature — vs wider heat zone, slower response, less efficient), Ultrasonic (localised heating, no line-of-sight constraint — vs limited to semi-crystalline, complex head, not yet at production TRL). -->
 
+          <div class="hsc-container">
+            <div class="hsc-title hsc-reveal">
+              Heat Source Comparison for In-Situ Consolidation
+            </div>
+            <div
+              class="hsc-subtitle hsc-reveal"
+              style="transition-delay: 0.05s"
+            >
+              Three primary heat sources used in thermoplastic AFP — advantages
+              &amp; limitations
+            </div>
+
+            <!-- ── Cards ── -->
+            <div class="hsc-grid">
+              <!-- DIODE LASER -->
+              <div
+                class="hsc-card c-laser hsc-reveal"
+                style="transition-delay: 0.1s"
+              >
+                <div class="hsc-card-header">
+                  <div class="hsc-card-icon">🔆</div>
+                  <div class="hsc-card-name">Diode Laser</div>
+                </div>
+                <div class="hsc-card-body">
+                  <div class="hsc-section-label adv">Advantages</div>
+                  <ul class="hsc-list adv">
+                    <li>
+                      <span class="hsc-bullet"></span>Precise energy delivery
+                    </li>
+                    <li><span class="hsc-bullet"></span>Fast response time</li>
+                    <li>
+                      <span class="hsc-bullet"></span>Narrow heat-affected zone
+                    </li>
+                    <li>
+                      <span class="hsc-bullet"></span>Enables high layup speeds
+                    </li>
+                    <li><span class="hsc-bullet"></span>Highly repeatable</li>
+                  </ul>
+                  <div class="hsc-section-label lim">Limitations</div>
+                  <ul class="hsc-list lim">
+                    <li><span class="hsc-bullet"></span>High equipment cost</li>
+                    <li>
+                      <span class="hsc-bullet"></span>CF absorbs &gt;90% — fibre
+                      overheating risk
+                    </li>
+                    <li>
+                      <span class="hsc-bullet"></span>Requires safety interlocks
+                    </li>
+                    <li><span class="hsc-bullet"></span>Line-of-sight only</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- HOT GAS TORCH -->
+              <div
+                class="hsc-card c-hotgas hsc-reveal"
+                style="transition-delay: 0.16s"
+              >
+                <div class="hsc-card-header">
+                  <div class="hsc-card-icon">🔥</div>
+                  <div class="hsc-card-name">Hot Gas Torch</div>
+                </div>
+                <div class="hsc-card-body">
+                  <div class="hsc-section-label adv">Advantages</div>
+                  <ul class="hsc-list adv">
+                    <li>
+                      <span class="hsc-bullet"></span>Lower equipment cost
+                    </li>
+                    <li>
+                      <span class="hsc-bullet"></span>Good for complex
+                      geometries
+                    </li>
+                    <li>
+                      <span class="hsc-bullet"></span>Mature, established
+                      technology
+                    </li>
+                    <li><span class="hsc-bullet"></span>Low safety overhead</li>
+                  </ul>
+                  <div class="hsc-section-label lim">Limitations</div>
+                  <ul class="hsc-list lim">
+                    <li>
+                      <span class="hsc-bullet"></span>Wider heat-affected zone
+                    </li>
+                    <li>
+                      <span class="hsc-bullet"></span>Slower thermal response
+                    </li>
+                    <li>
+                      <span class="hsc-bullet"></span>Less energy-efficient
+                    </li>
+                    <li>
+                      <span class="hsc-bullet"></span>Convective → diffuse
+                      heating
+                    </li>
+                    <li>
+                      <span class="hsc-bullet"></span>Less suitable for high
+                      speed
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- ULTRASONIC -->
+              <div
+                class="hsc-card c-ultra hsc-reveal"
+                style="transition-delay: 0.22s"
+              >
+                <div class="hsc-card-header">
+                  <div class="hsc-card-icon">〰️</div>
+                  <div class="hsc-card-name">Ultrasonic</div>
+                </div>
+                <div class="hsc-card-body">
+                  <div class="hsc-section-label adv">Advantages</div>
+                  <ul class="hsc-list adv">
+                    <li><span class="hsc-bullet"></span>Localised heating</li>
+                    <li>
+                      <span class="hsc-bullet"></span>No line-of-sight
+                      constraint
+                    </li>
+                    <li>
+                      <span class="hsc-bullet"></span>Suitable for
+                      semi-crystalline TP
+                    </li>
+                    <li>
+                      <span class="hsc-bullet"></span>Enables welding
+                      applications
+                    </li>
+                  </ul>
+                  <div class="hsc-section-label lim">Limitations</div>
+                  <ul class="hsc-list lim">
+                    <li>
+                      <span class="hsc-bullet"></span>Limited to
+                      semi-crystalline materials
+                    </li>
+                    <li>
+                      <span class="hsc-bullet"></span>Complex head mechanics
+                    </li>
+                    <li>
+                      <span class="hsc-bullet"></span>Not yet at production TRL
+                      for AFP
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Comparative score bars ── -->
+            <div class="hsc-scores">
+              <div
+                class="hsc-score-card hsc-reveal"
+                style="transition-delay: 0.28s"
+              >
+                <div class="hsc-score-title">Precision &amp; Control</div>
+                <div class="hsc-score-row">
+                  <div class="hsc-score-name">Diode Laser</div>
+                  <div class="hsc-score-track">
+                    <div class="hsc-score-fill s-laser" data-w="93"></div>
+                  </div>
+                  <div class="hsc-score-val" style="color: #47577c">9.3</div>
+                </div>
+                <div class="hsc-score-row">
+                  <div class="hsc-score-name">Hot Gas Torch</div>
+                  <div class="hsc-score-track">
+                    <div class="hsc-score-fill s-hotgas" data-w="52"></div>
+                  </div>
+                  <div class="hsc-score-val" style="color: #bf3425">5.2</div>
+                </div>
+                <div class="hsc-score-row">
+                  <div class="hsc-score-name">Ultrasonic</div>
+                  <div class="hsc-score-track">
+                    <div class="hsc-score-fill s-ultra" data-w="70"></div>
+                  </div>
+                  <div class="hsc-score-val" style="color: #9d9d9c">7.0</div>
+                </div>
+              </div>
+
+              <div
+                class="hsc-score-card hsc-reveal"
+                style="transition-delay: 0.34s"
+              >
+                <div class="hsc-score-title">Accessibility &amp; Cost</div>
+                <div class="hsc-score-row">
+                  <div class="hsc-score-name">Diode Laser</div>
+                  <div class="hsc-score-track">
+                    <div class="hsc-score-fill s-laser" data-w="35"></div>
+                  </div>
+                  <div class="hsc-score-val" style="color: #47577c">3.5</div>
+                </div>
+                <div class="hsc-score-row">
+                  <div class="hsc-score-name">Hot Gas Torch</div>
+                  <div class="hsc-score-track">
+                    <div class="hsc-score-fill s-hotgas" data-w="85"></div>
+                  </div>
+                  <div class="hsc-score-val" style="color: #bf3425">8.5</div>
+                </div>
+                <div class="hsc-score-row">
+                  <div class="hsc-score-name">Ultrasonic</div>
+                  <div class="hsc-score-track">
+                    <div class="hsc-score-fill s-ultra" data-w="50"></div>
+                  </div>
+                  <div class="hsc-score-val" style="color: #9d9d9c">5.0</div>
+                </div>
+              </div>
+
+              <div
+                class="hsc-score-card hsc-reveal"
+                style="transition-delay: 0.4s"
+              >
+                <div class="hsc-score-title">Production Readiness (TRL)</div>
+                <div class="hsc-score-row">
+                  <div class="hsc-score-name">Diode Laser</div>
+                  <div class="hsc-score-track">
+                    <div class="hsc-score-fill s-laser" data-w="90"></div>
+                  </div>
+                  <div class="hsc-score-val" style="color: #47577c">9.0</div>
+                </div>
+                <div class="hsc-score-row">
+                  <div class="hsc-score-name">Hot Gas Torch</div>
+                  <div class="hsc-score-track">
+                    <div class="hsc-score-fill s-hotgas" data-w="80"></div>
+                  </div>
+                  <div class="hsc-score-val" style="color: #bf3425">8.0</div>
+                </div>
+                <div class="hsc-score-row">
+                  <div class="hsc-score-name">Ultrasonic</div>
+                  <div class="hsc-score-track">
+                    <div class="hsc-score-fill s-ultra" data-w="40"></div>
+                  </div>
+                  <div class="hsc-score-val" style="color: #9d9d9c">4.0</div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="stats-grid">
             <div class="stat-card">
               <div class="stat-value">85°C</div>
@@ -472,6 +1516,253 @@
 
           <!-- INFOGRAPHIC 5: Thermoplastic AFP Head — Key Design Requirements. Diagram showing: Material Feed System (tape guide + steering, 20°C in → 400°C at nip, thermal gradient management) → Heat Source Mount (laser optics or hot gas, high-temp ceramics/Inconel, water-cooled housing) → Compaction Roller (PTFE/SiC/metal alloy, servo-controlled, force feedback). Temperature requirements table: robot wrist <60°C, head body <150°C, nip point 380–450°C, gradient >300°C across ~50mm. -->
 
+          <div class="tah-container">
+            <div class="tah-title tah-reveal">
+              Thermoplastic AFP Head — Key Design Requirements
+            </div>
+            <div
+              class="tah-subtitle tah-reveal"
+              style="transition-delay: 0.05s"
+            >
+              Three integrated subsystems managing a &gt;300°C thermal gradient
+              across ~50 mm
+            </div>
+
+            <div class="tah-layout">
+              <!-- ══ LEFT: Component flow ══ -->
+              <div class="tah-flow">
+                <!-- 1. Material Feed -->
+                <div
+                  class="tah-feed-row tah-reveal"
+                  style="transition-delay: 0.1s"
+                >
+                  <div class="tah-feed-label">Spool (ambient)</div>
+                  <div class="tah-feed-arrow">
+                    <div class="tah-feed-arrow-line"></div>
+                    <div class="tah-feed-arrow-tip"></div>
+                  </div>
+                  <div class="tah-component c1">
+                    <div class="tah-comp-header">
+                      <div class="tah-comp-icon">🧵</div>
+                      <div class="tah-comp-name">Material Feed System</div>
+                    </div>
+                    <div class="tah-comp-body">
+                      <ul class="tah-bullet-list">
+                        <li>
+                          <span class="tah-dot"></span>Tape guide + steering
+                          mechanism
+                        </li>
+                        <li>
+                          <span class="tah-dot"></span>Receives tape at 20°C
+                          ambient from spool
+                        </li>
+                        <li>
+                          <span class="tah-dot"></span>Delivers tape to nip
+                          point at ~400°C
+                        </li>
+                        <li>
+                          <span class="tah-dot"></span>Thermal gradient
+                          management — insulation between feed path and heat
+                          zone
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="tah-arrow-down tah-reveal"
+                  style="transition-delay: 0.14s"
+                >
+                  <div class="tah-arr-shaft"></div>
+                  <div class="tah-arr-tip"></div>
+                </div>
+
+                <!-- 2. Heat Source Mount -->
+                <div
+                  class="tah-feed-row tah-reveal"
+                  style="transition-delay: 0.18s"
+                >
+                  <div class="tah-feed-label"></div>
+                  <div style="width: 26px; flex-shrink: 0"></div>
+                  <div class="tah-component c2">
+                    <div class="tah-comp-header">
+                      <div class="tah-comp-icon">🔆</div>
+                      <div class="tah-comp-name">Heat Source Mount</div>
+                    </div>
+                    <div class="tah-comp-body">
+                      <ul class="tah-bullet-list">
+                        <li>
+                          <span class="tah-dot"></span>Laser optics or hot gas
+                          nozzle
+                        </li>
+                        <li>
+                          <span class="tah-dot"></span>High-temp materials:
+                          ceramics, Inconel
+                        </li>
+                        <li>
+                          <span class="tah-dot"></span>Precisely positioned
+                          relative to nip point
+                        </li>
+                        <li>
+                          <span class="tah-dot"></span>Water-cooled housing to
+                          protect robot wrist
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="tah-arrow-down tah-reveal"
+                  style="transition-delay: 0.22s"
+                >
+                  <div class="tah-arr-shaft"></div>
+                  <div class="tah-arr-tip"></div>
+                </div>
+
+                <!-- 3. Compaction Roller -->
+                <div
+                  class="tah-feed-row tah-reveal"
+                  style="transition-delay: 0.26s"
+                >
+                  <div class="tah-feed-label"></div>
+                  <div style="width: 26px; flex-shrink: 0"></div>
+                  <div class="tah-component c3">
+                    <div class="tah-comp-header">
+                      <div class="tah-comp-icon">⚙️</div>
+                      <div class="tah-comp-name">Compaction Roller</div>
+                    </div>
+                    <div class="tah-comp-body">
+                      <ul class="tah-bullet-list">
+                        <li>
+                          <span class="tah-dot"></span>Material: PTFE, silicon
+                          carbide, or high-temp metal alloy
+                        </li>
+                        <li>
+                          <span class="tah-dot"></span>Spring-loaded or
+                          servo-controlled actuation
+                        </li>
+                        <li>
+                          <span class="tah-dot"></span>Force feedback for
+                          closed-loop process control
+                        </li>
+                        <li>
+                          <span class="tah-dot"></span>Must maintain consistent
+                          contact on curved geometry
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ══ RIGHT: Thermal gradient ══ -->
+              <div
+                class="tah-thermal tah-reveal"
+                style="transition-delay: 0.3s"
+              >
+                <div class="tah-thermal-title">
+                  Thermal Management Requirements
+                </div>
+
+                <!-- Gradient colour bar (decorative) -->
+                <div
+                  style="
+                    width: 100%;
+                    height: 12px;
+                    border-radius: 6px;
+                    background: linear-gradient(
+                      to right,
+                      #eef1f7,
+                      #9d9d9c,
+                      #e87060,
+                      #bf3425
+                    );
+                    margin-bottom: 14px;
+                  "
+                ></div>
+
+                <div class="tah-temp-stack">
+                  <!-- Nip point -->
+                  <div
+                    class="tah-temp-row tr-nip tah-reveal"
+                    style="transition-delay: 0.34s"
+                  >
+                    <div class="tah-temp-bar-wrap">
+                      <div class="tah-temp-bar-track">
+                        <div class="tah-temp-bar-fill" data-h="100"></div>
+                      </div>
+                    </div>
+                    <div class="tah-temp-body">
+                      <div class="tah-temp-zone">Nip Point</div>
+                      <div class="tah-temp-val">380–450°C</div>
+                      <div class="tah-temp-note">
+                        PEEK / PEKK processing window
+                      </div>
+                    </div>
+                    <div style="font-size: 18px">🔴</div>
+                  </div>
+
+                  <!-- Head body -->
+                  <div
+                    class="tah-temp-row tr-head tah-reveal"
+                    style="transition-delay: 0.38s"
+                  >
+                    <div class="tah-temp-bar-wrap">
+                      <div class="tah-temp-bar-track">
+                        <div class="tah-temp-bar-fill" data-h="33"></div>
+                      </div>
+                    </div>
+                    <div class="tah-temp-body">
+                      <div class="tah-temp-zone">Head Body</div>
+                      <div class="tah-temp-val">&lt; 150°C</div>
+                      <div class="tah-temp-note">
+                        Structural integrity of head assembly
+                      </div>
+                    </div>
+                    <div style="font-size: 18px">🟠</div>
+                  </div>
+
+                  <!-- Robot wrist -->
+                  <div
+                    class="tah-temp-row tr-robot tah-reveal"
+                    style="transition-delay: 0.42s"
+                  >
+                    <div class="tah-temp-bar-wrap">
+                      <div class="tah-temp-bar-track">
+                        <div class="tah-temp-bar-fill" data-h="13"></div>
+                      </div>
+                    </div>
+                    <div class="tah-temp-body">
+                      <div class="tah-temp-zone">Robot Wrist</div>
+                      <div class="tah-temp-val">&lt; 60°C</div>
+                      <div class="tah-temp-note">
+                        Standard robot flange limit
+                      </div>
+                    </div>
+                    <div style="font-size: 18px">⚪</div>
+                  </div>
+
+                  <!-- Gradient note -->
+                  <div
+                    class="tah-temp-row tr-grad tah-reveal"
+                    style="transition-delay: 0.46s"
+                  >
+                    <div style="font-size: 16px; flex-shrink: 0">↕️</div>
+                    <div class="tah-temp-body">
+                      <div class="tah-temp-zone">Temperature Gradient</div>
+                      <div class="tah-temp-val">&gt;300°C across ~50 mm</div>
+                      <div class="tah-temp-note">
+                        Requires insulation + active cooling of robot-side
+                        components
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <p>
             This thermal management challenge is why thermoplastic AFP heads are
             not trivially adapted from thermoset heads. The engineering of the
@@ -516,6 +1807,303 @@
 
           <!-- INFOGRAPHIC 6: Thermoplastic Welding Methods. Three welding processes shown as flow diagrams: Resistance Welding (Part A + B with resistive mesh at interface → current → interface heats above Tm → pressure → cool → welded joint. Cycle: 30 sec–5 min, bond strength 80–95% of parent). Induction Welding (susceptor at interface → induction coil → eddy currents heat susceptor → melt → roller pressure → continuous seam weld. Used for skin-stringer joints by Airbus). Ultrasonic Welding (sonotrode → 20–40 kHz vibration → frictional heat at interface. Fast <5 sec, for spot welds and brackets). -->
 
+          <div class="twm-container">
+            <div class="twm-title twm-reveal">
+              Thermoplastic Welding Methods
+            </div>
+            <div
+              class="twm-subtitle twm-reveal"
+              style="transition-delay: 0.05s"
+            >
+              Three techniques for joining TP-CFRP parts without adhesive or
+              mechanical fasteners
+            </div>
+
+            <div class="twm-grid">
+              <!-- ══ RESISTANCE WELDING ══ -->
+              <div
+                class="twm-card m1 twm-reveal"
+                style="transition-delay: 0.1s"
+              >
+                <div class="twm-card-header">
+                  <div class="twm-card-icon">⚡</div>
+                  <div class="twm-card-name">Resistance Welding</div>
+                </div>
+                <div class="twm-card-body">
+                  <div class="twm-interface">Resistive mesh at interface</div>
+                  <div class="twm-process">
+                    <div class="twm-step">
+                      <div class="twm-step-num">1</div>
+                      <div class="twm-step-text">
+                        Parts clamped with mesh at interface
+                      </div>
+                    </div>
+                    <div class="twm-step">
+                      <div class="twm-step-num">2</div>
+                      <div class="twm-step-text">
+                        Current applied → interface heats above Tm
+                      </div>
+                    </div>
+                    <div class="twm-step">
+                      <div class="twm-step-num">3</div>
+                      <div class="twm-step-text">
+                        Pressure applied, current removed
+                      </div>
+                    </div>
+                    <div class="twm-step">
+                      <div class="twm-step-num">4</div>
+                      <div class="twm-step-text">
+                        Cool under pressure → welded joint
+                      </div>
+                    </div>
+                  </div>
+                  <div class="twm-stats">
+                    <div class="twm-stat">
+                      <div class="twm-stat-val">30s–5m</div>
+                      <div class="twm-stat-label">Cycle Time</div>
+                    </div>
+                    <div class="twm-stat">
+                      <div class="twm-stat-val">80–95%</div>
+                      <div class="twm-stat-label">Parent Strength</div>
+                    </div>
+                  </div>
+                  <div class="twm-usecase">
+                    Suitable for: discrete joint locations, lap joints,
+                    reinforcement attachment
+                  </div>
+                </div>
+              </div>
+
+              <!-- ══ INDUCTION WELDING ══ -->
+              <div
+                class="twm-card m2 twm-reveal"
+                style="transition-delay: 0.18s"
+              >
+                <div class="twm-card-header">
+                  <div class="twm-card-icon">🌀</div>
+                  <div class="twm-card-name">Induction Welding</div>
+                </div>
+                <div class="twm-card-body">
+                  <div class="twm-interface">Susceptor at interface</div>
+                  <div class="twm-process">
+                    <div class="twm-step">
+                      <div class="twm-step-num">1</div>
+                      <div class="twm-step-text">
+                        Induction coil passes overhead along seam
+                      </div>
+                    </div>
+                    <div class="twm-step">
+                      <div class="twm-step-num">2</div>
+                      <div class="twm-step-text">
+                        Eddy currents heat susceptor; matrix melts at interface
+                      </div>
+                    </div>
+                    <div class="twm-step">
+                      <div class="twm-step-num">3</div>
+                      <div class="twm-step-text">
+                        Pressure from roller consolidates joint
+                      </div>
+                    </div>
+                    <div class="twm-step">
+                      <div class="twm-step-num">4</div>
+                      <div class="twm-step-text">
+                        Continuous seam weld — like a zip
+                      </div>
+                    </div>
+                  </div>
+                  <div class="twm-stats">
+                    <div class="twm-stat">
+                      <div class="twm-stat-val">Continuous</div>
+                      <div class="twm-stat-label">Weld Mode</div>
+                    </div>
+                    <div class="twm-stat">
+                      <div class="twm-stat-val">Full-scale</div>
+                      <div class="twm-stat-label">Demonstrated</div>
+                    </div>
+                  </div>
+                  <div class="twm-usecase">
+                    Long seam welds, skin-stringer joints. Demonstrated on
+                    full-scale TP fuselage panels (Airbus / Clean Sky 2)
+                  </div>
+                </div>
+              </div>
+
+              <!-- ══ ULTRASONIC WELDING ══ -->
+              <div
+                class="twm-card m3 twm-reveal"
+                style="transition-delay: 0.26s"
+              >
+                <div class="twm-card-header">
+                  <div class="twm-card-icon">〰️</div>
+                  <div class="twm-card-name">Ultrasonic Welding</div>
+                </div>
+                <div class="twm-card-body">
+                  <div class="twm-interface">Sonotrode at joint</div>
+                  <div class="twm-process">
+                    <div class="twm-step">
+                      <div class="twm-step-num">1</div>
+                      <div class="twm-step-text">
+                        Sonotrode pressed onto joint location
+                      </div>
+                    </div>
+                    <div class="twm-step">
+                      <div class="twm-step-num">2</div>
+                      <div class="twm-step-text">
+                        High-frequency vibration at 20–40 kHz
+                      </div>
+                    </div>
+                    <div class="twm-step">
+                      <div class="twm-step-num">3</div>
+                      <div class="twm-step-text">
+                        Frictional heat generated at interface
+                      </div>
+                    </div>
+                    <div class="twm-step">
+                      <div class="twm-step-num">4</div>
+                      <div class="twm-step-text">
+                        Rapid cool → spot weld complete
+                      </div>
+                    </div>
+                  </div>
+                  <div class="twm-stats">
+                    <div class="twm-stat">
+                      <div class="twm-stat-val">&lt; 5s</div>
+                      <div class="twm-stat-label">Cycle Time</div>
+                    </div>
+                    <div class="twm-stat">
+                      <div class="twm-stat-val">Spot</div>
+                      <div class="twm-stat-label">Weld Mode</div>
+                    </div>
+                  </div>
+                  <div class="twm-usecase">
+                    Spot welds, small bracket attachment, interior fittings
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ══ Comparison matrix ══ -->
+            <div class="twm-compare twm-reveal" style="transition-delay: 0.32s">
+              <div class="twm-compare-title">Comparative Performance</div>
+
+              <div class="twm-cmp-header">
+                <div></div>
+                <div class="twm-cmp-hcell h1">Resistance</div>
+                <div class="twm-cmp-hcell h2">Induction</div>
+                <div class="twm-cmp-hcell h3">Ultrasonic</div>
+              </div>
+
+              <div class="twm-cmp-row">
+                <div class="twm-cmp-label">Bond Strength</div>
+                <div class="twm-cmp-cell">
+                  <div class="twm-cmp-track">
+                    <div class="twm-cmp-fill cf1" data-w="90"></div>
+                  </div>
+                  <div class="twm-cmp-val">90%</div>
+                </div>
+                <div class="twm-cmp-cell">
+                  <div class="twm-cmp-track">
+                    <div class="twm-cmp-fill cf2" data-w="88"></div>
+                  </div>
+                  <div class="twm-cmp-val">88%</div>
+                </div>
+                <div class="twm-cmp-cell">
+                  <div class="twm-cmp-track">
+                    <div class="twm-cmp-fill cf3" data-w="75"></div>
+                  </div>
+                  <div class="twm-cmp-val">75%</div>
+                </div>
+              </div>
+
+              <div class="twm-cmp-row">
+                <div class="twm-cmp-label">Throughput Speed</div>
+                <div class="twm-cmp-cell">
+                  <div class="twm-cmp-track">
+                    <div class="twm-cmp-fill cf1" data-w="45"></div>
+                  </div>
+                  <div class="twm-cmp-val">Med</div>
+                </div>
+                <div class="twm-cmp-cell">
+                  <div class="twm-cmp-track">
+                    <div class="twm-cmp-fill cf2" data-w="85"></div>
+                  </div>
+                  <div class="twm-cmp-val">High</div>
+                </div>
+                <div class="twm-cmp-cell">
+                  <div class="twm-cmp-track">
+                    <div class="twm-cmp-fill cf3" data-w="90"></div>
+                  </div>
+                  <div class="twm-cmp-val">High</div>
+                </div>
+              </div>
+
+              <div class="twm-cmp-row">
+                <div class="twm-cmp-label">Process Maturity</div>
+                <div class="twm-cmp-cell">
+                  <div class="twm-cmp-track">
+                    <div class="twm-cmp-fill cf1" data-w="80"></div>
+                  </div>
+                  <div class="twm-cmp-val">TRL 7</div>
+                </div>
+                <div class="twm-cmp-cell">
+                  <div class="twm-cmp-track">
+                    <div class="twm-cmp-fill cf2" data-w="75"></div>
+                  </div>
+                  <div class="twm-cmp-val">TRL 6–7</div>
+                </div>
+                <div class="twm-cmp-cell">
+                  <div class="twm-cmp-track">
+                    <div class="twm-cmp-fill cf3" data-w="55"></div>
+                  </div>
+                  <div class="twm-cmp-val">TRL 5</div>
+                </div>
+              </div>
+
+              <div class="twm-cmp-row">
+                <div class="twm-cmp-label">Seam Length</div>
+                <div class="twm-cmp-cell">
+                  <div class="twm-cmp-track">
+                    <div class="twm-cmp-fill cf1" data-w="40"></div>
+                  </div>
+                  <div class="twm-cmp-val">Discrete</div>
+                </div>
+                <div class="twm-cmp-cell">
+                  <div class="twm-cmp-track">
+                    <div class="twm-cmp-fill cf2" data-w="95"></div>
+                  </div>
+                  <div class="twm-cmp-val">Long seam</div>
+                </div>
+                <div class="twm-cmp-cell">
+                  <div class="twm-cmp-track">
+                    <div class="twm-cmp-fill cf3" data-w="30"></div>
+                  </div>
+                  <div class="twm-cmp-val">Spot only</div>
+                </div>
+              </div>
+
+              <div class="twm-cmp-row">
+                <div class="twm-cmp-label">Equipment Cost</div>
+                <div class="twm-cmp-cell">
+                  <div class="twm-cmp-track">
+                    <div class="twm-cmp-fill cf1" data-w="55"></div>
+                  </div>
+                  <div class="twm-cmp-val">Med</div>
+                </div>
+                <div class="twm-cmp-cell">
+                  <div class="twm-cmp-track">
+                    <div class="twm-cmp-fill cf2" data-w="75"></div>
+                  </div>
+                  <div class="twm-cmp-val">Med-High</div>
+                </div>
+                <div class="twm-cmp-cell">
+                  <div class="twm-cmp-track">
+                    <div class="twm-cmp-fill cf3" data-w="40"></div>
+                  </div>
+                  <div class="twm-cmp-val">Low-Med</div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="image-grid-3">
             <div class="image-grid-item">
               <img
@@ -572,7 +2160,144 @@
           <h3>2. Re-Forming: From Flat to Shape Without Separate Layup</h3>
 
           <!-- INFOGRAPHIC 7: Thermoplastic Re-Forming Process. Flow: flat AFP laminate → heat above Tg (infrared/oven/direct contact) → press tool (matched metal or press) → final geometry. Advantage box: lay up flat, form to complex geometry later → simpler AFP trajectory, standard thermoforming tooling (less expensive), fast geometry iteration without re-programming AFP. Applicable geometries: L-angles, C-channels, Z-sections, hat stiffeners, simple doubly-curved panels. -->
+          <div class="trf-container">
+            <div class="trf-title trf-reveal">
+              Thermoplastic Re-forming Process
+            </div>
+            <div
+              class="trf-subtitle trf-reveal"
+              style="transition-delay: 0.05s"
+            >
+              Lay up flat via AFP — then form to complex geometry in a separate
+              thermoforming step
+            </div>
 
+            <!-- ── Stage flow ── -->
+            <div class="trf-flow trf-reveal" style="transition-delay: 0.1s">
+              <!-- Stage 1: Flat AFP laminate -->
+              <div class="trf-stage s1">
+                <div class="trf-stage-header">
+                  <div class="trf-stage-icon">🗂️</div>
+                  <div class="trf-stage-name">Flat AFP Laminate</div>
+                </div>
+                <div class="trf-stage-body">
+                  <div class="trf-stage-desc">
+                    Thermoplastic tape laid up on flat or low-curvature mandrel
+                    via AFP head
+                  </div>
+                  <div class="trf-stage-detail">
+                    Simplified trajectories · Standard consolidation parameters
+                    · In-situ or post-consolidation
+                  </div>
+                </div>
+              </div>
+
+              <!-- Arrow: heat -->
+              <div class="trf-arrow heat">
+                <div class="trf-arr-shaft"></div>
+                <div class="trf-arr-tip"></div>
+                <div class="trf-arrow-label">Heat<br />above Tg</div>
+              </div>
+
+              <!-- Stage 2: Press tool -->
+              <div class="trf-stage s2">
+                <div class="trf-stage-header">
+                  <div class="trf-stage-icon">🔧</div>
+                  <div class="trf-stage-name">Press Tool</div>
+                </div>
+                <div class="trf-stage-body">
+                  <div class="trf-stage-desc">
+                    Laminate heated uniformly above Tg using infrared, oven, or
+                    direct-contact heating
+                  </div>
+                  <div class="trf-stage-detail">
+                    Matched metal press · diaphragm forming · or bladder press
+                    tooling
+                  </div>
+                </div>
+              </div>
+
+              <!-- Arrow: pressure -->
+              <div class="trf-arrow press">
+                <div class="trf-arr-shaft"></div>
+                <div class="trf-arr-tip"></div>
+                <div class="trf-arrow-label">Pressure<br />+ cool</div>
+              </div>
+
+              <!-- Stage 3: Final geometry -->
+              <div class="trf-stage s3">
+                <div class="trf-stage-header">
+                  <div class="trf-stage-icon">✅</div>
+                  <div class="trf-stage-name">Final Geometry</div>
+                </div>
+                <div class="trf-stage-body">
+                  <div class="trf-stage-desc">
+                    Part cooled under pressure in tool — holds formed shape with
+                    precise dimensional accuracy
+                  </div>
+                  <div class="trf-stage-detail">
+                    No cure cycle · No autoclave · Net-shape or near-net-shape
+                    output
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Advantages ── -->
+            <div
+              class="trf-advantage trf-reveal"
+              style="transition-delay: 0.18s"
+            >
+              <div class="trf-adv-title">
+                Why Re-forming Changes the Economics
+              </div>
+              <div class="trf-adv-grid">
+                <div class="trf-adv-item">
+                  <span class="trf-adv-dot"></span>
+                  Lay up flat — far simpler AFP trajectory programming
+                </div>
+                <div class="trf-adv-item">
+                  <span class="trf-adv-dot"></span>
+                  Standard thermoforming tooling — significantly less expensive
+                  than complex layup mandrels
+                </div>
+                <div class="trf-adv-item">
+                  <span class="trf-adv-dot"></span>
+                  Fast geometry iteration without re-programming the AFP cell
+                </div>
+                <div class="trf-adv-item">
+                  <span class="trf-adv-dot"></span>
+                  Thermoset impossible — only thermoplastic enables this route
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Applicable geometries ── -->
+            <div
+              class="trf-geo-section trf-reveal"
+              style="transition-delay: 0.26s"
+            >
+              <div class="trf-geo-label">Applicable Geometries</div>
+              <div class="trf-geo-chips">
+                <div class="trf-chip">
+                  <span class="trf-chip-icon">📐</span> L-angle
+                </div>
+                <div class="trf-chip">
+                  <span class="trf-chip-icon">🔲</span> C-channel
+                </div>
+                <div class="trf-chip">
+                  <span class="trf-chip-icon">〽️</span> Z-section
+                </div>
+                <div class="trf-chip">
+                  <span class="trf-chip-icon">🎩</span> Hat stiffener
+                </div>
+                <div class="trf-chip">
+                  <span class="trf-chip-icon">🌐</span> Simple doubly-curved
+                  panel
+                </div>
+              </div>
+            </div>
+          </div>
           <p>
             The ability to lay up flat and re-form is particularly valuable in
             prototyping and low-volume production. Instead of programming
@@ -587,6 +2312,338 @@
 
           <!-- INFOGRAPHIC 8: Thermoset vs. Thermoplastic Repair Comparison. Two parallel flow diagrams: Thermoset Repair: detect → grind out damage → apply repair plies → vacuum bag + heat blanket → cure 60–180 min at 120–180°C → NDT. Total 4–24 hours, autoclave needed for full quality. Thermoplastic Repair: detect → clean damage zone → apply thermoplastic patch (same material) → local heating (heat gun/laser/resistive blanket) → apply pressure/cool → NDT. Total 30 min–4 hours, no autoclave, field-deployable, quality approaches parent material. -->
 
+          <div class="rpc-container">
+            <div class="rpc-title rpc-reveal">
+              Thermoset vs. Thermoplastic Repair Comparison
+            </div>
+            <div
+              class="rpc-subtitle rpc-reveal"
+              style="transition-delay: 0.05s"
+            >
+              Step-by-step repair workflows — time, access requirements, and
+              field viability
+            </div>
+
+            <div class="rpc-columns">
+              <!-- ══ THERMOSET COLUMN ══ -->
+              <div class="ts-col rpc-reveal" style="transition-delay: 0.1s">
+                <div class="rpc-col-header ts">
+                  <div class="rpc-col-icon">🔒</div>
+                  <div class="rpc-col-title">Thermoset Repair</div>
+                </div>
+
+                <div class="rpc-steps">
+                  <div class="rpc-step">
+                    <div class="rpc-step-left">
+                      <div class="rpc-step-circle">1</div>
+                      <div class="rpc-step-line"></div>
+                    </div>
+                    <div class="rpc-step-content">
+                      <div class="rpc-step-label">Damage Detected</div>
+                      <div class="rpc-step-detail">
+                        NDT inspection, visual assessment
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rpc-step">
+                    <div class="rpc-step-left">
+                      <div class="rpc-step-circle">2</div>
+                      <div class="rpc-step-line"></div>
+                    </div>
+                    <div class="rpc-step-content">
+                      <div class="rpc-step-label">Grind Out Damage</div>
+                      <div class="rpc-step-detail">
+                        Controlled scarfing to expose clean substrate
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rpc-step">
+                    <div class="rpc-step-left">
+                      <div class="rpc-step-circle">3</div>
+                      <div class="rpc-step-line"></div>
+                    </div>
+                    <div class="rpc-step-content">
+                      <div class="rpc-step-label">Apply Repair Plies</div>
+                      <div class="rpc-step-detail">
+                        Prepreg or wet layup matched to parent laminate
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rpc-step">
+                    <div class="rpc-step-left">
+                      <div class="rpc-step-circle">4</div>
+                      <div class="rpc-step-line"></div>
+                    </div>
+                    <div class="rpc-step-content">
+                      <div class="rpc-step-label">
+                        Vacuum Bag + Heat Blanket
+                      </div>
+                      <div class="rpc-step-detail">
+                        Out-of-autoclave on-part curing setup
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rpc-step">
+                    <div class="rpc-step-left">
+                      <div class="rpc-step-circle">5</div>
+                      <div class="rpc-step-line"></div>
+                    </div>
+                    <div class="rpc-step-content">
+                      <div class="rpc-step-label">Cure Cycle</div>
+                      <div class="rpc-step-detail">
+                        60–180 min at 120–180°C under vacuum pressure
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rpc-step">
+                    <div class="rpc-step-left">
+                      <div class="rpc-step-circle">6</div>
+                      <div class="rpc-step-line"></div>
+                    </div>
+                    <div class="rpc-step-content">
+                      <div class="rpc-step-label">NDT Verification</div>
+                      <div class="rpc-step-detail">
+                        Ultrasonic / thermography inspection
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rpc-summary">
+                  <div class="rpc-sum-row">
+                    <span class="rpc-sum-icon">⏱️</span
+                    ><span
+                      ><span class="rpc-sum-strong">Total time:</span> 4–24
+                      hours</span
+                    >
+                  </div>
+                  <div class="rpc-sum-row">
+                    <span class="rpc-sum-icon">🏭</span
+                    ><span
+                      >Autoclave-quality repair requires autoclave access</span
+                    >
+                  </div>
+                  <div class="rpc-sum-row">
+                    <span class="rpc-sum-icon">⚠️</span
+                    ><span
+                      >Field repair achievable — quality risk without
+                      autoclave</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- ══ THERMOPLASTIC COLUMN ══ -->
+              <div class="tp-col rpc-reveal" style="transition-delay: 0.18s">
+                <div class="rpc-col-header tp">
+                  <div class="rpc-col-icon">♻️</div>
+                  <div class="rpc-col-title">Thermoplastic Repair</div>
+                </div>
+
+                <div class="rpc-steps">
+                  <div class="rpc-step">
+                    <div class="rpc-step-left">
+                      <div class="rpc-step-circle">1</div>
+                      <div class="rpc-step-line"></div>
+                    </div>
+                    <div class="rpc-step-content">
+                      <div class="rpc-step-label">Damage Detected</div>
+                      <div class="rpc-step-detail">
+                        NDT inspection, visual assessment
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rpc-step">
+                    <div class="rpc-step-left">
+                      <div class="rpc-step-circle">2</div>
+                      <div class="rpc-step-line"></div>
+                    </div>
+                    <div class="rpc-step-content">
+                      <div class="rpc-step-label">Clean Damage Zone</div>
+                      <div class="rpc-step-detail">
+                        No scarfing required — surface preparation only
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rpc-step">
+                    <div class="rpc-step-left">
+                      <div class="rpc-step-circle">3</div>
+                      <div class="rpc-step-line"></div>
+                    </div>
+                    <div class="rpc-step-content">
+                      <div class="rpc-step-label">
+                        Apply Thermoplastic Patch
+                      </div>
+                      <div class="rpc-step-detail">
+                        Same material family — fully compatible interface
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rpc-step">
+                    <div class="rpc-step-left">
+                      <div class="rpc-step-circle">4</div>
+                      <div class="rpc-step-line"></div>
+                    </div>
+                    <div class="rpc-step-content">
+                      <div class="rpc-step-label">Local Heating</div>
+                      <div class="rpc-step-detail">
+                        Heat gun / laser / resistive blanket — portable
+                        equipment
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rpc-step">
+                    <div class="rpc-step-left">
+                      <div class="rpc-step-circle">5</div>
+                      <div class="rpc-step-line"></div>
+                    </div>
+                    <div class="rpc-step-content">
+                      <div class="rpc-step-label">Apply Pressure, Cool</div>
+                      <div class="rpc-step-detail">
+                        Manual or mechanical pressure during cool-down
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rpc-step">
+                    <div class="rpc-step-left">
+                      <div class="rpc-step-circle">6</div>
+                      <div class="rpc-step-line"></div>
+                    </div>
+                    <div class="rpc-step-content">
+                      <div class="rpc-step-label">NDT Verification</div>
+                      <div class="rpc-step-detail">
+                        Ultrasonic / thermography inspection
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rpc-summary">
+                  <div class="rpc-sum-row">
+                    <span class="rpc-sum-icon">⏱️</span
+                    ><span
+                      ><span class="rpc-sum-strong">Total time:</span> 30
+                      minutes – 4 hours</span
+                    >
+                  </div>
+                  <div class="rpc-sum-row">
+                    <span class="rpc-sum-icon">✅</span
+                    ><span
+                      >No autoclave required. Repair quality approaches parent
+                      material</span
+                    >
+                  </div>
+                  <div class="rpc-sum-row">
+                    <span class="rpc-sum-icon">🚁</span
+                    ><span>Fully field-deployable with portable equipment</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Comparison metrics ── -->
+            <div class="rpc-metrics rpc-reveal" style="transition-delay: 0.26s">
+              <div class="rpc-metrics-title">
+                Comparative Repair Performance
+              </div>
+
+              <div class="rpc-metric-header">
+                <div></div>
+                <div class="rpc-mh-cell ts">Thermoset</div>
+                <div class="rpc-mh-cell tp">Thermoplastic</div>
+              </div>
+
+              <div class="rpc-metric-row">
+                <div class="rpc-metric-label">Repair Time</div>
+                <div class="rpc-metric-cell mt">
+                  <div class="rpc-metric-track">
+                    <div class="rpc-metric-fill mf-ts" data-w="85"></div>
+                  </div>
+                  <div class="rpc-metric-val" style="color: #47577c">
+                    4–24 hrs
+                  </div>
+                </div>
+                <div class="rpc-metric-cell tp">
+                  <div class="rpc-metric-track">
+                    <div class="rpc-metric-fill mf-tp" data-w="25"></div>
+                  </div>
+                  <div class="rpc-metric-val" style="color: #bf3425">
+                    0.5–4 hrs
+                  </div>
+                </div>
+              </div>
+
+              <div class="rpc-metric-row">
+                <div class="rpc-metric-label">Equipment Need</div>
+                <div class="rpc-metric-cell mt">
+                  <div class="rpc-metric-track">
+                    <div class="rpc-metric-fill mf-ts" data-w="80"></div>
+                  </div>
+                  <div class="rpc-metric-val" style="color: #47577c">
+                    Heavy (autoclave)
+                  </div>
+                </div>
+                <div class="rpc-metric-cell tp">
+                  <div class="rpc-metric-track">
+                    <div class="rpc-metric-fill mf-tp" data-w="20"></div>
+                  </div>
+                  <div class="rpc-metric-val" style="color: #bf3425">
+                    Portable only
+                  </div>
+                </div>
+              </div>
+
+              <div class="rpc-metric-row">
+                <div class="rpc-metric-label">Bond Strength</div>
+                <div class="rpc-metric-cell mt">
+                  <div class="rpc-metric-track">
+                    <div class="rpc-metric-fill mf-ts" data-w="75"></div>
+                  </div>
+                  <div class="rpc-metric-val" style="color: #47577c">
+                    ~75% (field OOA)
+                  </div>
+                </div>
+                <div class="rpc-metric-cell tp">
+                  <div class="rpc-metric-track">
+                    <div class="rpc-metric-fill mf-tp" data-w="90"></div>
+                  </div>
+                  <div class="rpc-metric-val" style="color: #bf3425">
+                    ~90% parent
+                  </div>
+                </div>
+              </div>
+
+              <div class="rpc-metric-row">
+                <div class="rpc-metric-label">Field Viability</div>
+                <div class="rpc-metric-cell mt">
+                  <div class="rpc-metric-track">
+                    <div class="rpc-metric-fill mf-ts" data-w="40"></div>
+                  </div>
+                  <div class="rpc-metric-val" style="color: #47577c">
+                    Limited / risk
+                  </div>
+                </div>
+                <div class="rpc-metric-cell tp">
+                  <div class="rpc-metric-track">
+                    <div class="rpc-metric-fill mf-tp" data-w="95"></div>
+                  </div>
+                  <div class="rpc-metric-val" style="color: #bf3425">
+                    Fully deployable
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <p>
             For defence and space applications where field repair without
             depot-level equipment is a genuine operational requirement,
@@ -600,6 +2657,238 @@
 
           <!-- INFOGRAPHIC 9: Composite End-of-Life Pathways. Two paths from decommissioned part: Thermoset: → landfill (most common, increasingly regulated) → incineration for energy recovery → pyrolysis for CF (high cost, limited scale). Thermoplastic: → shred + melt → pellets → injection moulding feedstock (downcycled) → re-consolidation → reforming to new part geometry (near-equivalent properties) → fibre recovery via solvent process (emerging). -->
 
+          <div class="eol-container">
+            <div class="eol-title eol-reveal">
+              Composite End-of-Life Pathways
+            </div>
+            <div
+              class="eol-subtitle eol-reveal"
+              style="transition-delay: 0.05s"
+            >
+              Material recovery options for thermoset vs. thermoplastic
+              composites — current state vs. enabled future
+            </div>
+
+            <div class="eol-columns">
+              <!-- ══ THERMOSET ══ -->
+              <div class="ts-side eol-reveal" style="transition-delay: 0.1s">
+                <div class="eol-col-header ts">
+                  <div class="eol-col-icon">🔒</div>
+                  <div class="eol-col-label">Thermoset</div>
+                  <div class="eol-col-tag">Current State</div>
+                </div>
+
+                <div class="eol-source">
+                  <span style="font-size: 16px">📦</span> Decommissioned Part
+                </div>
+
+                <div class="eol-trunk">
+                  <div class="eol-trunk-line"></div>
+                  <div class="eol-branches">
+                    <!-- Landfill -->
+                    <div class="eol-pathway">
+                      <div class="eol-stub">
+                        <div class="eol-stub-h"></div>
+                        <div class="eol-stub-tip"></div>
+                      </div>
+                      <div class="eol-path-card">
+                        <div class="eol-path-header">
+                          <div class="eol-path-icon">🗑️</div>
+                          <div class="eol-path-name">Landfill</div>
+                        </div>
+                        <div class="eol-path-desc">
+                          Most common current route. Increasingly regulated in
+                          EU markets — CFRP waste bans emerging.
+                        </div>
+                        <div class="eol-badge badge-bad">
+                          ⚠ Regulated / Restricted
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Incineration -->
+                    <div class="eol-pathway">
+                      <div class="eol-stub">
+                        <div class="eol-stub-h"></div>
+                        <div class="eol-stub-tip"></div>
+                      </div>
+                      <div class="eol-path-card">
+                        <div class="eol-path-header">
+                          <div class="eol-path-icon">🔥</div>
+                          <div class="eol-path-name">Incineration</div>
+                        </div>
+                        <div class="eol-path-desc">
+                          Energy recovery in some EU markets. Carbon fibre
+                          destroyed — no material retention.
+                        </div>
+                        <div class="eol-badge badge-medium">◑ Energy only</div>
+                      </div>
+                    </div>
+
+                    <!-- Pyrolysis -->
+                    <div class="eol-pathway">
+                      <div class="eol-stub">
+                        <div class="eol-stub-h"></div>
+                        <div class="eol-stub-tip"></div>
+                      </div>
+                      <div class="eol-path-card">
+                        <div class="eol-path-header">
+                          <div class="eol-path-icon">⚗️</div>
+                          <div class="eol-path-name">Pyrolysis → rCF</div>
+                        </div>
+                        <div class="eol-path-desc">
+                          Burns off matrix to recover carbon fibre. High cost,
+                          limited infrastructure, not yet widely scaled.
+                        </div>
+                        <div class="eol-badge badge-medium">
+                          ◑ Partial recovery
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ══ THERMOPLASTIC ══ -->
+              <div class="tp-side eol-reveal" style="transition-delay: 0.18s">
+                <div class="eol-col-header tp">
+                  <div class="eol-col-icon">♻️</div>
+                  <div class="eol-col-label">Thermoplastic</div>
+                  <div class="eol-col-tag">Enabled Pathway</div>
+                </div>
+
+                <div class="eol-source">
+                  <span style="font-size: 16px">📦</span> Decommissioned Part
+                </div>
+
+                <div class="eol-trunk">
+                  <div class="eol-trunk-line"></div>
+                  <div class="eol-branches">
+                    <!-- Shred + melt -->
+                    <div class="eol-pathway">
+                      <div class="eol-stub">
+                        <div class="eol-stub-h"></div>
+                        <div class="eol-stub-tip"></div>
+                      </div>
+                      <div class="eol-path-card">
+                        <div class="eol-path-header">
+                          <div class="eol-path-icon">🔄</div>
+                          <div class="eol-path-name">
+                            Shred + Melt → Pellets
+                          </div>
+                        </div>
+                        <div class="eol-path-desc">
+                          Downcycled to injection moulding feedstock. Material
+                          retained in supply chain, shorter fibre lengths.
+                        </div>
+                        <div class="eol-badge badge-good">
+                          ✓ Material retained
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Re-consolidation -->
+                    <div class="eol-pathway">
+                      <div class="eol-stub">
+                        <div class="eol-stub-h"></div>
+                        <div class="eol-stub-tip"></div>
+                      </div>
+                      <div class="eol-path-card">
+                        <div class="eol-path-header">
+                          <div class="eol-path-icon">🔁</div>
+                          <div class="eol-path-name">
+                            Re-consolidation → New Part
+                          </div>
+                        </div>
+                        <div class="eol-path-desc">
+                          Reform to new geometry via thermoforming.
+                          Near-equivalent properties if matrix not thermally
+                          degraded.
+                        </div>
+                        <div class="eol-badge badge-best">
+                          ★ High value recovery
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Solvent recovery -->
+                    <div class="eol-pathway">
+                      <div class="eol-stub">
+                        <div class="eol-stub-h"></div>
+                        <div class="eol-stub-tip"></div>
+                      </div>
+                      <div class="eol-path-card">
+                        <div class="eol-path-header">
+                          <div class="eol-path-icon">🧪</div>
+                          <div class="eol-path-name">Solvent Process → rCF</div>
+                        </div>
+                        <div class="eol-path-desc">
+                          Emerging process dissolving matrix, recovering long
+                          continuous fibres. Higher value than pyrolysis route.
+                        </div>
+                        <div class="eol-badge badge-good">
+                          ✓ Higher value than pyrolysis
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Value retained comparison ── -->
+            <div
+              class="eol-value-section eol-reveal"
+              style="transition-delay: 0.28s"
+            >
+              <div class="eol-value-title">
+                Material Value Retained by Pathway
+              </div>
+
+              <div class="eol-value-row">
+                <div class="eol-value-name">🗑️ Landfill (TS)</div>
+                <div class="eol-value-track">
+                  <div class="eol-value-fill vf-bad" data-w="5"></div>
+                </div>
+                <div class="eol-value-pct" style="color: #e2e8f0">~0%</div>
+              </div>
+              <div class="eol-value-row">
+                <div class="eol-value-name">🔥 Incineration (TS)</div>
+                <div class="eol-value-track">
+                  <div class="eol-value-fill vf-medium" data-w="10"></div>
+                </div>
+                <div class="eol-value-pct" style="color: #9d9d9c">~5%</div>
+              </div>
+              <div class="eol-value-row">
+                <div class="eol-value-name">⚗️ Pyrolysis rCF (TS)</div>
+                <div class="eol-value-track">
+                  <div class="eol-value-fill vf-medium" data-w="35"></div>
+                </div>
+                <div class="eol-value-pct" style="color: #9d9d9c">~30%</div>
+              </div>
+              <div class="eol-value-row">
+                <div class="eol-value-name">🔄 Shred + Pellets (TP)</div>
+                <div class="eol-value-track">
+                  <div class="eol-value-fill vf-good" data-w="50"></div>
+                </div>
+                <div class="eol-value-pct" style="color: #47577c">~45%</div>
+              </div>
+              <div class="eol-value-row">
+                <div class="eol-value-name">🧪 Solvent rCF (TP)</div>
+                <div class="eol-value-track">
+                  <div class="eol-value-fill vf-good" data-w="70"></div>
+                </div>
+                <div class="eol-value-pct" style="color: #47577c">~65%</div>
+              </div>
+              <div class="eol-value-row">
+                <div class="eol-value-name">🔁 Re-consolidation (TP)</div>
+                <div class="eol-value-track">
+                  <div class="eol-value-fill vf-best" data-w="90"></div>
+                </div>
+                <div class="eol-value-pct" style="color: #bf3425">~85%</div>
+              </div>
+            </div>
+          </div>
           <img
             src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69c0f685f17cb5b3ac8eb29e_10.png"
             alt="Chopped CFRTP recyclate"
@@ -636,6 +2925,184 @@
 
           <!-- INFOGRAPHIC 10: Void Content Benchmarks. Table: Thermoset autoclave (prepreg) <1% / qualification threshold <2%, TP in-situ (early research) 3–5%, TP in-situ (2020 state) 1–3%, TP in-situ (2024 optimised) 0.5–1.5%, TP consolidation press (OOA) <1% / <2%. Gap to autoclave: ~0.5–1% remaining for best-in-class ISC systems. Status: engineerable, process-dependent — not a fundamental barrier. -->
 
+          <div class="vcb-container">
+            <div class="vcb-title vcb-reveal">Void Content Benchmarks</div>
+            <div
+              class="vcb-subtitle vcb-reveal"
+              style="transition-delay: 0.05s"
+            >
+              Typical void % by process — measured against the &lt;2% aerospace
+              qualification threshold
+            </div>
+
+            <!-- Scale ticks -->
+            <div
+              class="vcb-scale-wrap vcb-reveal"
+              style="transition-delay: 0.08s"
+            >
+              <div class="vcb-scale-tick">0%</div>
+              <div class="vcb-scale-tick">1%</div>
+              <div class="vcb-scale-tick">2%</div>
+              <div class="vcb-scale-tick">3%</div>
+              <div class="vcb-scale-tick">4%</div>
+              <div class="vcb-scale-tick">5%</div>
+            </div>
+
+            <!-- Chart area with threshold line -->
+            <div
+              class="vcb-chart-area vcb-reveal"
+              style="transition-delay: 0.1s"
+            >
+              <div class="vcb-threshold-label">&lt;2% threshold</div>
+              <div class="vcb-threshold-line"></div>
+
+              <!-- Row 1: Thermoset autoclave -->
+              <div class="vcb-row-card">
+                <div class="vcb-row-label">
+                  <div class="vcb-row-name">Thermoset Autoclave</div>
+                  <div class="vcb-row-year">Prepreg · benchmark</div>
+                </div>
+                <div class="vcb-type-badge">
+                  <div class="vcb-dot dot-ts"></div>
+                </div>
+                <div class="vcb-bar-wrap">
+                  <div class="vcb-bar-track">
+                    <!-- < 1%  → show as 0–20% width -->
+                    <div class="vcb-bar-single bar-ts" data-w="20"></div>
+                  </div>
+                  <div class="vcb-bar-val ts">&lt; 1%</div>
+                </div>
+                <div class="vcb-qual qual-met">✓ Qual met</div>
+              </div>
+
+              <!-- Row 2: TP ISC early research -->
+              <div class="vcb-row-card">
+                <div class="vcb-row-label">
+                  <div class="vcb-row-name">TP In-Situ (early research)</div>
+                  <div class="vcb-row-year">Pre-2018</div>
+                </div>
+                <div class="vcb-type-badge">
+                  <div class="vcb-dot dot-tp"></div>
+                </div>
+                <div class="vcb-bar-wrap">
+                  <div class="vcb-bar-track">
+                    <!-- 3–5% → left 60%, width 40% -->
+                    <div
+                      class="vcb-bar-range bar-tp-e"
+                      data-l="60"
+                      data-w="40"
+                    ></div>
+                  </div>
+                  <div class="vcb-bar-val tp-e">3–5%</div>
+                </div>
+                <div class="vcb-qual qual-none">— not tested</div>
+              </div>
+
+              <!-- Row 3: TP ISC 2020 -->
+              <div class="vcb-row-card">
+                <div class="vcb-row-label">
+                  <div class="vcb-row-name">TP In-Situ (2020 state)</div>
+                  <div class="vcb-row-year">~2020</div>
+                </div>
+                <div class="vcb-type-badge">
+                  <div class="vcb-dot dot-tp"></div>
+                </div>
+                <div class="vcb-bar-wrap">
+                  <div class="vcb-bar-track">
+                    <!-- 1–3% → left 20%, width 40% -->
+                    <div
+                      class="vcb-bar-range bar-tp-20"
+                      data-l="20"
+                      data-w="40"
+                    ></div>
+                  </div>
+                  <div class="vcb-bar-val tp-20">1–3%</div>
+                </div>
+                <div class="vcb-qual qual-none">— not tested</div>
+              </div>
+
+              <!-- Row 4: TP ISC 2024 optimised -->
+              <div class="vcb-row-card">
+                <div class="vcb-row-label">
+                  <div class="vcb-row-name">TP In-Situ (2024 optimised)</div>
+                  <div class="vcb-row-year">Best-in-class ISC · 2024</div>
+                </div>
+                <div class="vcb-type-badge">
+                  <div class="vcb-dot dot-tp-o"></div>
+                </div>
+                <div class="vcb-bar-wrap">
+                  <div class="vcb-bar-track">
+                    <!-- 0.5–1.5% → left 10%, width 20% -->
+                    <div
+                      class="vcb-bar-range bar-tp-24"
+                      data-l="10"
+                      data-w="20"
+                    ></div>
+                  </div>
+                  <div class="vcb-bar-val tp-24">0.5–1.5%</div>
+                </div>
+                <div class="vcb-qual qual-met">✓ Approaching</div>
+              </div>
+
+              <!-- Row 5: TP press OOA -->
+              <div class="vcb-row-card">
+                <div class="vcb-row-label">
+                  <div class="vcb-row-name">TP Press Consolidation</div>
+                  <div class="vcb-row-year">OOA · post-form press</div>
+                </div>
+                <div class="vcb-type-badge">
+                  <div class="vcb-dot dot-press"></div>
+                </div>
+                <div class="vcb-bar-wrap">
+                  <div class="vcb-bar-track">
+                    <!-- < 1% → 0–20% -->
+                    <div class="vcb-bar-single bar-press" data-w="20"></div>
+                  </div>
+                  <div class="vcb-bar-val press">&lt; 1%</div>
+                </div>
+                <div class="vcb-qual qual-met">✓ Qual met</div>
+              </div>
+            </div>
+
+            <!-- ── Progress timeline ── -->
+            <div
+              class="vcb-timeline vcb-reveal"
+              style="transition-delay: 0.18s"
+            >
+              <div class="vcb-tl-title">
+                TP In-Situ Consolidation — Void Reduction Progress
+              </div>
+              <div class="vcb-tl-track">
+                <div class="vcb-tl-fill" data-w="100"></div>
+              </div>
+              <div class="vcb-tl-nodes">
+                <div class="vcb-tl-node">
+                  <div class="vcb-tl-dot" style="background: #e2e8f0"></div>
+                  <div class="vcb-tl-node-year">Pre-2018</div>
+                  <div class="vcb-tl-node-val">3–5%</div>
+                </div>
+                <div class="vcb-tl-node">
+                  <div class="vcb-tl-dot" style="background: #9d9d9c"></div>
+                  <div class="vcb-tl-node-year">~2020</div>
+                  <div class="vcb-tl-node-val">1–3%</div>
+                </div>
+                <div class="vcb-tl-node">
+                  <div class="vcb-tl-dot"></div>
+                  <div class="vcb-tl-node-year">2024</div>
+                  <div class="vcb-tl-node-val">0.5–1.5%</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Status note ── -->
+            <div class="vcb-status vcb-reveal" style="transition-delay: 0.24s">
+              <strong>Gap to autoclave:</strong> ~0.5–1% remaining for
+              best-in-class ISC systems. Status:
+              <strong>engineerable, process-dependent</strong> — not a
+              fundamental material barrier. Press consolidation already meets
+              the &lt;2% qualification threshold without an autoclave.
+            </div>
+          </div>
           <p>
             Void content is the primary mechanical property differentiator
             between ISC-consolidated laminates and autoclave-consolidated
@@ -657,6 +3124,384 @@
 
           <!-- INFOGRAPHIC 11: Crystallinity vs. Cooling Rate (PEEK). Table with columns cooling rate, crystallinity %, Tg effect, mechanical behaviour: Very slow (<5°C/min) → 35–40% → elevated → high stiffness, brittle; Moderate (5–50°C/min) → 25–35% → target range → balanced stiffness/toughness; Fast (>100°C/min) → 10–20% → lower Tg → increased toughness, lower stiffness; Quench → <5% → much lower Tg → quasi-amorphous (not suitable for aerostructure). Challenge in AFP: cooling rate varies along tow path as geometry, robot speed, and prior ply thermal mass change. -->
 
+          <div class="crc-container">
+            <div class="crc-title crc-reveal">
+              Crystallinity vs. Cooling Rate — PEEK
+            </div>
+            <div
+              class="crc-subtitle crc-reveal"
+              style="transition-delay: 0.05s"
+            >
+              Four cooling regimes and their effect on crystallinity, Tg, and
+              mechanical behaviour
+            </div>
+
+            <!-- ── Four regime cards ── -->
+            <div class="crc-grid">
+              <!-- Very slow -->
+              <div
+                class="crc-card r1 crc-reveal"
+                style="transition-delay: 0.1s"
+              >
+                <div class="crc-card-header">
+                  <div class="crc-card-rate">Very Slow</div>
+                  <div class="crc-card-range">&lt; 5°C/min</div>
+                </div>
+                <div class="crc-card-body">
+                  <div class="crc-gauge-wrap">
+                    <div class="crc-gauge-label">Crystallinity</div>
+                    <div class="crc-gauge-track">
+                      <div class="crc-gauge-fill" data-w="90"></div>
+                    </div>
+                    <div class="crc-gauge-val">35–40%</div>
+                  </div>
+                  <div class="crc-tg-row">
+                    <div class="crc-tg-pill tg-high">Tg elevated</div>
+                  </div>
+                  <div class="crc-behaviour">
+                    High stiffness, more brittle — reduced impact resistance
+                  </div>
+                  <div class="crc-suit suit-ok">⚠ Over-crystallised</div>
+                </div>
+              </div>
+
+              <!-- Moderate — target -->
+              <div
+                class="crc-card r2 crc-reveal"
+                style="transition-delay: 0.16s"
+              >
+                <div class="crc-card-header">
+                  <div class="crc-card-rate">Moderate</div>
+                  <div class="crc-card-range">5–50°C/min</div>
+                </div>
+                <div class="crc-card-body">
+                  <div class="crc-gauge-wrap">
+                    <div class="crc-gauge-label">Crystallinity</div>
+                    <div class="crc-gauge-track">
+                      <div class="crc-gauge-fill" data-w="70"></div>
+                    </div>
+                    <div class="crc-gauge-val">25–35%</div>
+                  </div>
+                  <div class="crc-tg-row">
+                    <div class="crc-tg-pill tg-target">Tg target</div>
+                  </div>
+                  <div class="crc-behaviour">
+                    Balanced stiffness and toughness — target morphology for
+                    aerostructure
+                  </div>
+                  <div class="crc-suit suit-target">★ Target regime</div>
+                </div>
+              </div>
+
+              <!-- Fast -->
+              <div
+                class="crc-card r3 crc-reveal"
+                style="transition-delay: 0.22s"
+              >
+                <div class="crc-card-header">
+                  <div class="crc-card-rate">Fast</div>
+                  <div class="crc-card-range">&gt; 100°C/min</div>
+                </div>
+                <div class="crc-card-body">
+                  <div class="crc-gauge-wrap">
+                    <div class="crc-gauge-label">Crystallinity</div>
+                    <div class="crc-gauge-track">
+                      <div class="crc-gauge-fill" data-w="35"></div>
+                    </div>
+                    <div class="crc-gauge-val">10–20%</div>
+                  </div>
+                  <div class="crc-tg-row">
+                    <div class="crc-tg-pill tg-low">Tg lower</div>
+                  </div>
+                  <div class="crc-behaviour">
+                    Increased toughness, lower stiffness — may be acceptable for
+                    some applications
+                  </div>
+                  <div class="crc-suit suit-ok">◑ Application-specific</div>
+                </div>
+              </div>
+
+              <!-- Quench -->
+              <div
+                class="crc-card r4 crc-reveal"
+                style="transition-delay: 0.28s"
+              >
+                <div class="crc-card-header">
+                  <div class="crc-card-rate">Quench</div>
+                  <div class="crc-card-range">Very rapid</div>
+                </div>
+                <div class="crc-card-body">
+                  <div class="crc-gauge-wrap">
+                    <div class="crc-gauge-label">Crystallinity</div>
+                    <div class="crc-gauge-track">
+                      <div class="crc-gauge-fill" data-w="10"></div>
+                    </div>
+                    <div class="crc-gauge-val">&lt; 5%</div>
+                  </div>
+                  <div class="crc-tg-row">
+                    <div class="crc-tg-pill tg-vlow">Tg much lower</div>
+                  </div>
+                  <div class="crc-behaviour">
+                    Quasi-amorphous — inadequate service temperature resistance
+                    for aerostructure
+                  </div>
+                  <div class="crc-suit suit-no">✗ Not suitable</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Schematic crystallinity bar ── -->
+            <div
+              class="crc-chart-wrap crc-reveal"
+              style="transition-delay: 0.32s"
+            >
+              <div class="crc-chart-title">
+                Crystallinity Range Across Regimes
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  margin-bottom: 8px;
+                "
+              >
+                <div
+                  style="
+                    font-size: 10px;
+                    color: #94a3b8;
+                    min-width: 100px;
+                    text-align: right;
+                    padding-right: 8px;
+                  "
+                >
+                  Quench
+                </div>
+                <div
+                  style="
+                    flex: 1;
+                    height: 8px;
+                    background: #f1f5f9;
+                    border-radius: 4px;
+                    overflow: hidden;
+                  "
+                >
+                  <div
+                    style="
+                      width: 10%;
+                      height: 100%;
+                      background: #1e293b;
+                      border-radius: 4px;
+                      transition: width 0.9s ease;
+                    "
+                    class="crc-sch-bar"
+                    data-w="10"
+                  ></div>
+                </div>
+                <div
+                  style="
+                    font-size: 10px;
+                    font-weight: 700;
+                    color: #1e293b;
+                    min-width: 40px;
+                  "
+                >
+                  &lt;5%
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  margin-bottom: 8px;
+                "
+              >
+                <div
+                  style="
+                    font-size: 10px;
+                    color: #94a3b8;
+                    min-width: 100px;
+                    text-align: right;
+                    padding-right: 8px;
+                  "
+                >
+                  Fast
+                </div>
+                <div
+                  style="
+                    flex: 1;
+                    height: 8px;
+                    background: #f1f5f9;
+                    border-radius: 4px;
+                    overflow: hidden;
+                  "
+                >
+                  <div
+                    style="
+                      width: 0%;
+                      height: 100%;
+                      background: #bf3425;
+                      border-radius: 4px;
+                      transition: width 0.9s ease 0.1s;
+                    "
+                    class="crc-sch-bar"
+                    data-w="35"
+                  ></div>
+                </div>
+                <div
+                  style="
+                    font-size: 10px;
+                    font-weight: 700;
+                    color: #bf3425;
+                    min-width: 40px;
+                  "
+                >
+                  10–20%
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  margin-bottom: 8px;
+                "
+              >
+                <div
+                  style="
+                    font-size: 10px;
+                    color: #94a3b8;
+                    min-width: 100px;
+                    text-align: right;
+                    padding-right: 8px;
+                  "
+                >
+                  Moderate ★
+                </div>
+                <div
+                  style="
+                    flex: 1;
+                    height: 8px;
+                    background: #f1f5f9;
+                    border-radius: 4px;
+                    overflow: hidden;
+                  "
+                >
+                  <div
+                    style="
+                      width: 0%;
+                      height: 100%;
+                      background: #47577c;
+                      border-radius: 4px;
+                      transition: width 0.9s ease 0.2s;
+                    "
+                    class="crc-sch-bar"
+                    data-w="70"
+                  ></div>
+                </div>
+                <div
+                  style="
+                    font-size: 10px;
+                    font-weight: 700;
+                    color: #47577c;
+                    min-width: 40px;
+                  "
+                >
+                  25–35%
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px">
+                <div
+                  style="
+                    font-size: 10px;
+                    color: #94a3b8;
+                    min-width: 100px;
+                    text-align: right;
+                    padding-right: 8px;
+                  "
+                >
+                  Very Slow
+                </div>
+                <div
+                  style="
+                    flex: 1;
+                    height: 8px;
+                    background: #f1f5f9;
+                    border-radius: 4px;
+                    overflow: hidden;
+                  "
+                >
+                  <div
+                    style="
+                      width: 0%;
+                      height: 100%;
+                      background: #9d9d9c;
+                      border-radius: 4px;
+                      transition: width 0.9s ease 0.3s;
+                    "
+                    class="crc-sch-bar"
+                    data-w="90"
+                  ></div>
+                </div>
+                <div
+                  style="
+                    font-size: 10px;
+                    font-weight: 700;
+                    color: #9d9d9c;
+                    min-width: 40px;
+                  "
+                >
+                  35–40%
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  margin-top: 6px;
+                  padding: 0 4px;
+                "
+              >
+                <span style="font-size: 9px; color: #cbd5e1">0%</span>
+                <span style="font-size: 9px; color: #cbd5e1">10%</span>
+                <span style="font-size: 9px; color: #cbd5e1">20%</span>
+                <span style="font-size: 9px; color: #cbd5e1">30%</span>
+                <span style="font-size: 9px; color: #cbd5e1">40%</span>
+              </div>
+            </div>
+
+            <!-- ── AFP challenge ── -->
+            <div
+              class="crc-challenge crc-reveal"
+              style="transition-delay: 0.38s"
+            >
+              <div class="crc-challenge-title">The AFP Challenge</div>
+              <div class="crc-challenge-body">
+                Cooling rate varies continuously during AFP deposition — the
+                process control software must manage this variability actively
+                to maintain the target semi-crystalline morphology.
+              </div>
+              <div class="crc-challenge-items">
+                <div class="crc-ch-item">
+                  <span class="crc-ch-item-icon">📐</span> Geometry changes
+                  alter thermal contact
+                </div>
+                <div class="crc-ch-item">
+                  <span class="crc-ch-item-icon">🤖</span> Robot speed changes
+                  dwell time
+                </div>
+                <div class="crc-ch-item">
+                  <span class="crc-ch-item-icon">📦</span> Prior ply thermal
+                  mass varies
+                </div>
+                <div class="crc-ch-item">
+                  <span class="crc-ch-item-icon">⚙️</span> Closed-loop control
+                  essential
+                </div>
+              </div>
+            </div>
+          </div>
           <p>
             PEKK's slower crystallisation kinetics give it a wider process
             window than PEEK, which is one reason several aerospace programmes
@@ -668,6 +3513,232 @@
 
           <!-- INFOGRAPHIC 12: Thermoplastic Tape vs. Thermoset Prepreg — Cost Comparison. Table: Carbon-epoxy prepreg €30–80/kg, PPS-CF UD tape €60–100, PEI-CF UD tape €80–130, PAEK-CF UD tape €100–180, PEEK-CF UD tape €90–160, PEKK-CF UD tape €110–200. Premium vs thermoset: 1.5× to 4× depending on grade. Offset factors listed: no autoclave consumables, no autoclave energy, no cure-related scrap, weldable assembly (fastener reduction), recyclability value recovery. -->
 
+          <div class="tpc-container">
+            <div class="tpc-title tpc-reveal">
+              Thermoplastic Tape vs. Thermoset Prepreg — Cost Comparison
+            </div>
+            <div
+              class="tpc-subtitle tpc-reveal"
+              style="transition-delay: 0.05s"
+            >
+              Raw material cost per kg — thermoset baseline vs. thermoplastic
+              grades · scale: €0–200/kg
+            </div>
+
+            <!-- Scale -->
+            <div
+              class="tpc-scale-row tpc-reveal"
+              style="transition-delay: 0.08s"
+            >
+              <div></div>
+              <div></div>
+              <div class="tpc-scale-ticks">
+                <span class="tpc-scale-tick">€0</span>
+                <span class="tpc-scale-tick">€40</span>
+                <span class="tpc-scale-tick">€80</span>
+                <span class="tpc-scale-tick">€120</span>
+                <span class="tpc-scale-tick">€160</span>
+                <span class="tpc-scale-tick">€200</span>
+              </div>
+              <div></div>
+            </div>
+
+            <div class="tpc-chart tpc-reveal" style="transition-delay: 0.1s">
+              <div class="tpc-ref-label">Prepreg ceiling €80</div>
+              <div class="tpc-ref-line"></div>
+
+              <!-- Thermoset prepreg baseline -->
+              <div class="tpc-row-card">
+                <div class="tpc-row-label">
+                  <div class="tpc-row-name">Carbon-epoxy Prepreg</div>
+                  <div class="tpc-row-note">IMA / T700 · aerospace grade</div>
+                </div>
+                <div class="tpc-dot dot-ts"></div>
+                <div class="tpc-bar-wrap">
+                  <div class="tpc-bar-track">
+                    <div
+                      class="tpc-bar-range br-ts"
+                      data-l="15"
+                      data-w="25"
+                    ></div>
+                    <!-- 30–80 of 200 -->
+                  </div>
+                  <div class="tpc-bar-val">€30–80 /kg</div>
+                </div>
+              </div>
+
+              <div class="tpc-separator">
+                <div class="tpc-sep-line"></div>
+                <div class="tpc-sep-label">Thermoplastic tapes</div>
+                <div class="tpc-sep-line"></div>
+              </div>
+
+              <!-- PPS-CF -->
+              <div class="tpc-row-card">
+                <div class="tpc-row-label">
+                  <div class="tpc-row-name">PPS-CF UD Tape</div>
+                  <div class="tpc-row-note">Secondary structure grades</div>
+                </div>
+                <div class="tpc-dot dot-pps"></div>
+                <div class="tpc-bar-wrap">
+                  <div class="tpc-bar-track">
+                    <div
+                      class="tpc-bar-range br-pps"
+                      data-l="30"
+                      data-w="20"
+                    ></div>
+                    <!-- 60–100 of 200 -->
+                  </div>
+                  <div class="tpc-bar-val">€60–100 /kg</div>
+                </div>
+              </div>
+
+              <!-- PEI-CF -->
+              <div class="tpc-row-card">
+                <div class="tpc-row-label">
+                  <div class="tpc-row-name">PEI (Ultem)-CF UD Tape</div>
+                  <div class="tpc-row-note">Interior / semi-structural</div>
+                </div>
+                <div class="tpc-dot dot-pei"></div>
+                <div class="tpc-bar-wrap">
+                  <div class="tpc-bar-track">
+                    <div
+                      class="tpc-bar-range br-pei"
+                      data-l="40"
+                      data-w="25"
+                    ></div>
+                    <!-- 80–130 of 200 -->
+                  </div>
+                  <div class="tpc-bar-val">€80–130 /kg</div>
+                </div>
+              </div>
+
+              <!-- PAEK-CF -->
+              <div class="tpc-row-card">
+                <div class="tpc-row-label">
+                  <div class="tpc-row-name">PAEK-CF UD Tape</div>
+                  <div class="tpc-row-note">Intermediate performance</div>
+                </div>
+                <div class="tpc-dot dot-pk"></div>
+                <div class="tpc-bar-wrap">
+                  <div class="tpc-bar-track">
+                    <div
+                      class="tpc-bar-range br-paek"
+                      data-l="50"
+                      data-w="40"
+                    ></div>
+                    <!-- 100–180 of 200 -->
+                  </div>
+                  <div class="tpc-bar-val">€100–180 /kg</div>
+                </div>
+              </div>
+
+              <!-- PEEK-CF -->
+              <div class="tpc-row-card">
+                <div class="tpc-row-label">
+                  <div class="tpc-row-name">PEEK-CF UD Tape</div>
+                  <div class="tpc-row-note">Aerospace primary structure</div>
+                </div>
+                <div class="tpc-dot dot-peek"></div>
+                <div class="tpc-bar-wrap">
+                  <div class="tpc-bar-track">
+                    <div
+                      class="tpc-bar-range br-peek"
+                      data-l="45"
+                      data-w="35"
+                    ></div>
+                    <!-- 90–160 of 200 -->
+                  </div>
+                  <div class="tpc-bar-val">€90–160 /kg</div>
+                </div>
+              </div>
+
+              <!-- PEKK-CF -->
+              <div class="tpc-row-card">
+                <div class="tpc-row-label">
+                  <div class="tpc-row-name">PEKK-CF UD Tape</div>
+                  <div class="tpc-row-note">Wide process window premium</div>
+                </div>
+                <div class="tpc-dot dot-pekk"></div>
+                <div class="tpc-bar-wrap">
+                  <div class="tpc-bar-track">
+                    <div
+                      class="tpc-bar-range br-pekk"
+                      data-l="55"
+                      data-w="45"
+                    ></div>
+                    <!-- 110–200 of 200 -->
+                  </div>
+                  <div class="tpc-bar-val">€110–200 /kg</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Premium callout ── -->
+            <div
+              class="tpc-premium-row tpc-reveal"
+              style="transition-delay: 0.18s"
+            >
+              <div class="tpc-prem-icon">📈</div>
+              <div class="tpc-prem-text">
+                TP tape premium over thermoset prepreg —
+                <strong>1.5× to 4×</strong> depending on grade and volume.
+                Premium is offset by downstream savings across the production
+                system.
+              </div>
+              <div style="text-align: center; flex-shrink: 0">
+                <div class="tpc-prem-range">1.5×–4×</div>
+                <div class="tpc-prem-range-sub">material premium</div>
+              </div>
+            </div>
+
+            <!-- ── Offset factors ── -->
+            <div class="tpc-offsets tpc-reveal" style="transition-delay: 0.24s">
+              <div class="tpc-offsets-title">
+                Cost Offset Factors — Downstream Savings
+              </div>
+              <div class="tpc-offset-grid">
+                <div class="tpc-offset-item">
+                  <div class="tpc-offset-icon">🛍️</div>
+                  <div class="tpc-offset-text">
+                    No autoclave consumables — vacuum bags, bleeder, release
+                    film eliminated
+                  </div>
+                </div>
+                <div class="tpc-offset-item">
+                  <div class="tpc-offset-icon">⚡</div>
+                  <div class="tpc-offset-text">
+                    No autoclave energy cost per cycle
+                  </div>
+                </div>
+                <div class="tpc-offset-item">
+                  <div class="tpc-offset-icon">✂️</div>
+                  <div class="tpc-offset-text">
+                    No cure-related scrap — no exotherm, no void-induced
+                    rejection
+                  </div>
+                </div>
+                <div class="tpc-offset-item">
+                  <div class="tpc-offset-icon">🔩</div>
+                  <div class="tpc-offset-text">
+                    Weldable assembly — fastener count and cost reduction
+                  </div>
+                </div>
+                <div class="tpc-offset-item">
+                  <div class="tpc-offset-icon">♻️</div>
+                  <div class="tpc-offset-text">
+                    Recyclability — material value recovery at end of life
+                  </div>
+                </div>
+                <div class="tpc-offset-item">
+                  <div class="tpc-offset-icon">📦</div>
+                  <div class="tpc-offset-text">
+                    No cold storage or shelf-life handling costs
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="stats-grid">
             <div class="stat-card">
               <div class="stat-value">1.5×–4×</div>
@@ -714,6 +3785,413 @@
           </p>
 
           <!-- INFOGRAPHIC 13: Thermoplastic AFP Qualification Landscape (2025). Table with three columns Application Tier, Examples, Status: Secondary Structure (brackets, clips, floor attachment, drain masts, fairings) → Qualified, in production at several OEMs. Semi-Structural (pressure bulkheads, movables, spoilers, access panels) → Qualification in progress, Clean Sky 2 / Wing of Tomorrow. Primary Structure (fuselage skins, stringer + skin welded assemblies, empennage skins) → Advanced demonstrators, NLR/DLR/Airbus/STELIA. Space Launch Vehicles (payload fairings, inter-stage, satellite panels) → Qualified, thermoplastics dominate. Defence/UAV (primary structure, missile fins, drone frames) → Specification-driven, field repair requirement. -->
+          <div class="qls-container">
+            <div class="qls-title qls-reveal">
+              Thermoplastic AFP Qualification Landscape (2025)
+            </div>
+            <div
+              class="qls-subtitle qls-reveal"
+              style="transition-delay: 0.05s"
+            >
+              Readiness by application tier — from qualified production to
+              advanced demonstrators
+            </div>
+
+            <!-- Legend -->
+            <div class="qls-legend qls-reveal" style="transition-delay: 0.08s">
+              <div class="qls-legend-item">
+                <div class="qls-legend-dot" style="background: #47577c"></div>
+                Qualified / In Production
+              </div>
+              <div class="qls-legend-item">
+                <div class="qls-legend-dot" style="background: #9d9d9c"></div>
+                Qualification in Progress
+              </div>
+              <div class="qls-legend-item">
+                <div
+                  class="qls-legend-dot"
+                  style="background: #bf3425; border: 1px solid #f0b8b2"
+                ></div>
+                Advanced Demonstrators
+              </div>
+              <div class="qls-legend-item">
+                <div
+                  class="qls-legend-dot"
+                  style="background: #eef1f7; border: 1px solid #c5cde0"
+                ></div>
+                Specification-Driven
+              </div>
+            </div>
+
+            <!-- ══ SECONDARY STRUCTURE ══ -->
+            <div
+              class="qls-tier t-sec qls-reveal"
+              style="transition-delay: 0.12s"
+            >
+              <div class="qls-tier-header">
+                <div class="qls-tier-label-wrap">
+                  <div class="qls-tier-icon">🔵</div>
+                  <div>
+                    <div class="qls-tier-name">Secondary Structure</div>
+                    <div class="qls-tier-tagline">
+                      Non-structural panels, low primary load
+                    </div>
+                  </div>
+                </div>
+                <div class="qls-examples">
+                  Brackets, clips, floor attachment fittings, drain masts,
+                  fairings
+                </div>
+                <div class="qls-status">
+                  <div class="qls-status-badge s-qualified">✓ Qualified</div>
+                  <div
+                    style="
+                      font-size: 9px;
+                      color: #94a3b8;
+                      margin-top: 2px;
+                      text-align: right;
+                    "
+                  >
+                    Multiple OEM primes
+                  </div>
+                </div>
+              </div>
+              <div class="qls-tier-body">
+                <div class="qls-trl-row">
+                  <div class="qls-trl-label">TRL</div>
+                  <div class="qls-trl-pips" id="trl-sec">
+                    <div class="qls-trl-pip filled c-ts"></div>
+                    <div class="qls-trl-pip filled c-ts"></div>
+                    <div class="qls-trl-pip filled c-ts"></div>
+                    <div class="qls-trl-pip filled c-ts"></div>
+                    <div class="qls-trl-pip filled c-ts"></div>
+                    <div class="qls-trl-pip filled c-ts"></div>
+                    <div class="qls-trl-pip filled c-ts"></div>
+                    <div class="qls-trl-pip filled c-ts"></div>
+                    <div class="qls-trl-pip"></div>
+                  </div>
+                  <div class="qls-trl-val">8–9</div>
+                </div>
+                <div class="qls-programmes">
+                  <div class="qls-prog-chip">Airbus A350</div>
+                  <div class="qls-prog-chip">Fokker / GKN</div>
+                  <div class="qls-prog-chip">In production at several OEMs</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ══ SEMI-STRUCTURAL ══ -->
+            <div
+              class="qls-tier t-semi qls-reveal"
+              style="transition-delay: 0.18s"
+            >
+              <div class="qls-tier-header">
+                <div class="qls-tier-label-wrap">
+                  <div class="qls-tier-icon">⚪</div>
+                  <div>
+                    <div class="qls-tier-name">Semi-Structural</div>
+                    <div class="qls-tier-tagline">
+                      Loaded but not primary flight-critical
+                    </div>
+                  </div>
+                </div>
+                <div class="qls-examples">
+                  Pressure bulkheads, movables, spoilers, access panels
+                </div>
+                <div class="qls-status">
+                  <div class="qls-status-badge s-inprog">◑ In Progress</div>
+                  <div
+                    style="
+                      font-size: 9px;
+                      color: #94a3b8;
+                      margin-top: 2px;
+                      text-align: right;
+                    "
+                  >
+                    Programme-driven
+                  </div>
+                </div>
+              </div>
+              <div class="qls-tier-body">
+                <div class="qls-trl-row">
+                  <div class="qls-trl-label">TRL</div>
+                  <div class="qls-trl-pips">
+                    <div class="qls-trl-pip filled c-gray"></div>
+                    <div class="qls-trl-pip filled c-gray"></div>
+                    <div class="qls-trl-pip filled c-gray"></div>
+                    <div class="qls-trl-pip filled c-gray"></div>
+                    <div class="qls-trl-pip filled c-gray"></div>
+                    <div class="qls-trl-pip filled c-gray"></div>
+                    <div class="qls-trl-pip"></div>
+                    <div class="qls-trl-pip"></div>
+                    <div class="qls-trl-pip"></div>
+                  </div>
+                  <div class="qls-trl-val">6–7</div>
+                </div>
+                <div class="qls-programmes">
+                  <div class="qls-prog-chip">Clean Sky 2</div>
+                  <div class="qls-prog-chip">Wing of Tomorrow</div>
+                  <div class="qls-prog-chip">Airbus / NLR</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ══ PRIMARY STRUCTURE ══ -->
+            <div
+              class="qls-tier t-prim qls-reveal"
+              style="transition-delay: 0.24s"
+            >
+              <div class="qls-tier-header">
+                <div class="qls-tier-label-wrap">
+                  <div class="qls-tier-icon">🔴</div>
+                  <div>
+                    <div class="qls-tier-name">Primary Structure</div>
+                    <div class="qls-tier-tagline">
+                      Safety-critical, full certification required
+                    </div>
+                  </div>
+                </div>
+                <div class="qls-examples">
+                  Fuselage skin panels, welded stringer-skin assemblies,
+                  empennage skins
+                </div>
+                <div class="qls-status">
+                  <div class="qls-status-badge s-demo">▲ Demonstrators</div>
+                  <div
+                    style="
+                      font-size: 9px;
+                      color: #94a3b8;
+                      margin-top: 2px;
+                      text-align: right;
+                    "
+                  >
+                    Full-scale advanced
+                  </div>
+                </div>
+              </div>
+              <div class="qls-tier-body">
+                <div class="qls-trl-row">
+                  <div class="qls-trl-label">TRL</div>
+                  <div class="qls-trl-pips">
+                    <div class="qls-trl-pip filled c-red"></div>
+                    <div class="qls-trl-pip filled c-red"></div>
+                    <div class="qls-trl-pip filled c-red"></div>
+                    <div class="qls-trl-pip filled c-red"></div>
+                    <div class="qls-trl-pip filled c-red"></div>
+                    <div class="qls-trl-pip"></div>
+                    <div class="qls-trl-pip"></div>
+                    <div class="qls-trl-pip"></div>
+                    <div class="qls-trl-pip"></div>
+                  </div>
+                  <div class="qls-trl-val">5–6</div>
+                </div>
+                <div class="qls-programmes">
+                  <div class="qls-prog-chip">NLR</div>
+                  <div class="qls-prog-chip">DLR</div>
+                  <div class="qls-prog-chip">Airbus</div>
+                  <div class="qls-prog-chip">STELIA</div>
+                  <div class="qls-prog-chip">Full-scale demo panels</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ══ SPACE LAUNCH ══ -->
+            <div
+              class="qls-tier t-space qls-reveal"
+              style="transition-delay: 0.3s"
+            >
+              <div class="qls-tier-header">
+                <div class="qls-tier-label-wrap">
+                  <div class="qls-tier-icon">🚀</div>
+                  <div>
+                    <div class="qls-tier-name">Space Launch Vehicles</div>
+                    <div class="qls-tier-tagline">
+                      Non-reusable or single-use primary structures
+                    </div>
+                  </div>
+                </div>
+                <div class="qls-examples">
+                  Payload fairings, inter-stage structures, satellite panels
+                </div>
+                <div class="qls-status">
+                  <div class="qls-status-badge s-qualified">✓ Qualified</div>
+                  <div
+                    style="
+                      font-size: 9px;
+                      color: #94a3b8;
+                      margin-top: 2px;
+                      text-align: right;
+                    "
+                  >
+                    Thermoplastics dominate
+                  </div>
+                </div>
+              </div>
+              <div class="qls-tier-body">
+                <div class="qls-trl-row">
+                  <div class="qls-trl-label">TRL</div>
+                  <div class="qls-trl-pips">
+                    <div class="qls-trl-pip filled c-ts"></div>
+                    <div class="qls-trl-pip filled c-ts"></div>
+                    <div class="qls-trl-pip filled c-ts"></div>
+                    <div class="qls-trl-pip filled c-ts"></div>
+                    <div class="qls-trl-pip filled c-ts"></div>
+                    <div class="qls-trl-pip filled c-ts"></div>
+                    <div class="qls-trl-pip filled c-ts"></div>
+                    <div class="qls-trl-pip filled c-ts"></div>
+                    <div class="qls-trl-pip filled c-ts"></div>
+                  </div>
+                  <div class="qls-trl-val">9</div>
+                </div>
+                <div class="qls-programmes">
+                  <div class="qls-prog-chip">SpaceX</div>
+                  <div class="qls-prog-chip">Ariane Group</div>
+                  <div class="qls-prog-chip">New Space OEMs</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ══ DEFENCE / UAV ══ -->
+            <div
+              class="qls-tier t-def qls-reveal"
+              style="transition-delay: 0.36s"
+            >
+              <div class="qls-tier-header">
+                <div class="qls-tier-label-wrap">
+                  <div class="qls-tier-icon">🛡️</div>
+                  <div>
+                    <div class="qls-tier-name">Defence / UAV</div>
+                    <div class="qls-tier-tagline">
+                      Specification-driven, field repairability a key driver
+                    </div>
+                  </div>
+                </div>
+                <div class="qls-examples">
+                  UAV primary structure, missile fins, drone frames
+                </div>
+                <div class="qls-status">
+                  <div class="qls-status-badge s-specdriven">◈ Spec-Driven</div>
+                  <div
+                    style="
+                      font-size: 9px;
+                      color: #94a3b8;
+                      margin-top: 2px;
+                      text-align: right;
+                    "
+                  >
+                    Field repair requirement
+                  </div>
+                </div>
+              </div>
+              <div class="qls-tier-body">
+                <div class="qls-trl-row">
+                  <div class="qls-trl-label">TRL</div>
+                  <div class="qls-trl-pips">
+                    <div class="qls-trl-pip filled c-gray"></div>
+                    <div class="qls-trl-pip filled c-gray"></div>
+                    <div class="qls-trl-pip filled c-gray"></div>
+                    <div class="qls-trl-pip filled c-gray"></div>
+                    <div class="qls-trl-pip filled c-gray"></div>
+                    <div class="qls-trl-pip filled c-gray"></div>
+                    <div class="qls-trl-pip filled c-gray"></div>
+                    <div class="qls-trl-pip"></div>
+                    <div class="qls-trl-pip"></div>
+                  </div>
+                  <div class="qls-trl-val">7</div>
+                </div>
+                <div class="qls-programmes">
+                  <div class="qls-prog-chip">Various defence primes</div>
+                  <div class="qls-prog-chip">NATO requirements</div>
+                  <div class="qls-prog-chip">Loitering munitions</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Maturity bar summary ── -->
+            <div
+              class="qls-timeline qls-reveal"
+              style="transition-delay: 0.42s"
+            >
+              <div class="qls-tl-title">Qualification Maturity by Tier</div>
+
+              <div class="qls-tl-row">
+                <div class="qls-tl-name">🚀 Space Launch</div>
+                <div class="qls-tl-track">
+                  <div class="qls-tl-fill tf-space" data-w="100"></div>
+                </div>
+                <div
+                  class="qls-tl-badge"
+                  style="
+                    background: #eef1f7;
+                    color: #47577c;
+                    border: 1px solid #c5cde0;
+                  "
+                >
+                  TRL 9 — Production
+                </div>
+              </div>
+              <div class="qls-tl-row">
+                <div class="qls-tl-name">🔵 Secondary</div>
+                <div class="qls-tl-track">
+                  <div class="qls-tl-fill tf-sec" data-w="92"></div>
+                </div>
+                <div
+                  class="qls-tl-badge"
+                  style="background: #47577c; color: #fff"
+                >
+                  TRL 8–9 — Qualified
+                </div>
+              </div>
+              <div class="qls-tl-row">
+                <div class="qls-tl-name">🛡️ Defence / UAV</div>
+                <div class="qls-tl-track">
+                  <div class="qls-tl-fill tf-def" data-w="76"></div>
+                </div>
+                <div
+                  class="qls-tl-badge"
+                  style="
+                    background: #f5f5f5;
+                    color: #9d9d9c;
+                    border: 1px solid #d8d8d8;
+                  "
+                >
+                  TRL 7 — Spec-driven
+                </div>
+              </div>
+              <div class="qls-tl-row">
+                <div class="qls-tl-name">⚪ Semi-Structural</div>
+                <div class="qls-tl-track">
+                  <div class="qls-tl-fill tf-semi" data-w="65"></div>
+                </div>
+                <div
+                  class="qls-tl-badge"
+                  style="
+                    background: #f5f5f5;
+                    color: #9d9d9c;
+                    border: 1px solid #d8d8d8;
+                  "
+                >
+                  TRL 6–7 — In Progress
+                </div>
+              </div>
+              <div class="qls-tl-row">
+                <div class="qls-tl-name">🔴 Primary Structure</div>
+                <div class="qls-tl-track">
+                  <div class="qls-tl-fill tf-prim" data-w="52"></div>
+                </div>
+                <div
+                  class="qls-tl-badge"
+                  style="
+                    background: #fdf1f0;
+                    color: #bf3425;
+                    border: 1px solid #f0b8b2;
+                  "
+                >
+                  TRL 5–6 — Demonstrators
+                </div>
+              </div>
+            </div>
+          </div>
 
           <p>
             The Airbus Wing of Tomorrow programme — the most significant
@@ -755,6 +4233,258 @@
           </p>
 
           <!-- INFOGRAPHIC 14: Thermoplastic AFP — Full Process Chain. Six-stage sequential flow: [1] Material Preparation (TP UD tape QC, moisture conditioning for PPS, slit to width, climate-controlled creel, no shelf life issue) → [2] Tool Preparation (Invar/carbon-carbon tooling, high-temp release, thermal mass management, dimensional stability critical) → [3] AFP System — Robot + Head + Software (standard 6-axis robot, TP-capable head up to 450°C, CAM with thermal model, process parameters: speed/power/force/tension) → [4] Layup + In-Situ Consolidation (head traverses, real-time pyrometer, in-process camera inspection, no intermediate debulk) → [5] Post-Processing if any (optional press consolidation, welding for assembly, machining) → [6] NDT and Qualification (ultrasonic C-scan, CT scan, mechanical coupons, DSC for crystallinity). -->
+          <div class="fpc-container">
+            <div class="fpc-title fpc-reveal">
+              Thermoplastic AFP — Full Process Chain
+            </div>
+            <div
+              class="fpc-subtitle fpc-reveal"
+              style="transition-delay: 0.05s"
+            >
+              Six sequential stages from incoming tape to qualified part — no
+              autoclave at any step
+            </div>
+
+            <!-- ══ STEP 1: Material Preparation ══ -->
+            <div class="fpc-step s1 fpc-reveal" style="transition-delay: 0.1s">
+              <div class="fpc-step-left">
+                <div class="fpc-step-num n1">1</div>
+                <div class="fpc-connector"></div>
+              </div>
+              <div class="fpc-card">
+                <div class="fpc-card-header">
+                  <div class="fpc-card-icon">📦</div>
+                  <div class="fpc-card-title">Material Preparation</div>
+                </div>
+                <div class="fpc-card-body">
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>TP UD tape received from
+                    supplier (PEEK, PEKK, PPS, PEI)
+                  </div>
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>Incoming QC: thickness, width,
+                    fibre volume fraction
+                  </div>
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>Slit to required tow width if
+                    supplied wider
+                  </div>
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>Store on climate-controlled
+                    creel — no shelf-life issue
+                  </div>
+                  <div class="fpc-item note">
+                    <span class="fpc-dot"></span>Moisture conditioning critical
+                    for PPS: absorbed moisture converts to steam at process
+                    temperatures
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ══ STEP 2: Tool Preparation ══ -->
+            <div class="fpc-step s2 fpc-reveal" style="transition-delay: 0.16s">
+              <div class="fpc-step-left">
+                <div class="fpc-step-num n2">2</div>
+                <div class="fpc-connector"></div>
+              </div>
+              <div class="fpc-card">
+                <div class="fpc-card-header">
+                  <div class="fpc-card-icon">🔧</div>
+                  <div class="fpc-card-title">Tool Preparation</div>
+                </div>
+                <div class="fpc-card-body">
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>Tool material: Invar,
+                    carbon/carbon, or high-temp tooling composite
+                  </div>
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>Surface: high-temp release
+                    agent or PTFE film
+                  </div>
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>Thermal mass management — tool
+                    must survive repeated heating cycles
+                  </div>
+                  <div class="fpc-item note">
+                    <span class="fpc-dot"></span>Dimensional stability critical:
+                    TP has higher thermal residual stress than thermoset
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ══ STEP 3: AFP System ══ -->
+            <div class="fpc-step s3 fpc-reveal" style="transition-delay: 0.22s">
+              <div class="fpc-step-left">
+                <div class="fpc-step-num n3">3</div>
+                <div class="fpc-connector"></div>
+              </div>
+              <div class="fpc-card">
+                <div class="fpc-card-header">
+                  <div class="fpc-card-icon">🤖</div>
+                  <div class="fpc-card-title">
+                    AFP System — Robot + Head + Software
+                  </div>
+                </div>
+                <div class="fpc-card-body">
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>Robot: standard 6-axis
+                    industrial (KUKA, Fanuc, ABB, UR)
+                  </div>
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>Head: TP-capable — laser +
+                    compaction roller, up to 450°C
+                  </div>
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>CAM software: generates tow
+                    paths, embeds thermal model
+                  </div>
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>Process parameters: speed,
+                    power, roller force, tape tension
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ══ STEP 4: Layup + ISC ══ -->
+            <div class="fpc-step s4 fpc-reveal" style="transition-delay: 0.28s">
+              <div class="fpc-step-left">
+                <div class="fpc-step-num n4">4</div>
+                <div class="fpc-connector"></div>
+              </div>
+              <div class="fpc-card">
+                <div class="fpc-card-header">
+                  <div class="fpc-card-icon">⚡</div>
+                  <div class="fpc-card-title">
+                    Layup + In-Situ Consolidation
+                  </div>
+                </div>
+                <div class="fpc-card-body">
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>Head traverses tool surface,
+                    laying and consolidating each tow
+                  </div>
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>Real-time temperature
+                    monitoring via pyrometer at nip point
+                  </div>
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>In-process inspection:
+                    camera-based coverage and gap detection
+                  </div>
+                  <div class="fpc-item note">
+                    <span class="fpc-dot"></span>No intermediate debulk cycles
+                    required — key advantage over thermoset prepreg
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ══ STEP 5: Post-Processing ══ -->
+            <div class="fpc-step s5 fpc-reveal" style="transition-delay: 0.34s">
+              <div class="fpc-step-left">
+                <div class="fpc-step-num n5">5</div>
+                <div class="fpc-connector"></div>
+              </div>
+              <div class="fpc-card">
+                <div class="fpc-card-header">
+                  <div class="fpc-card-icon">⚙️</div>
+                  <div class="fpc-card-title">Post-Processing (if any)</div>
+                </div>
+                <div class="fpc-card-body">
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>ISC with good process control:
+                    no post-process typically required
+                  </div>
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>Optional press consolidation:
+                    further reduces voids if needed
+                  </div>
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>Welding: resistance, induction
+                    or ultrasonic for sub-assembly joining
+                  </div>
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>Machining: trim, drill —
+                    thermoplastics are easier to machine than thermoset
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ══ STEP 6: NDT + Qualification ══ -->
+            <div class="fpc-step s6 fpc-reveal" style="transition-delay: 0.4s">
+              <div class="fpc-step-left">
+                <div class="fpc-step-num n6">6</div>
+                <div class="fpc-connector"></div>
+              </div>
+              <div class="fpc-card">
+                <div class="fpc-card-header">
+                  <div class="fpc-card-icon">🔬</div>
+                  <div class="fpc-card-title">NDT and Qualification</div>
+                </div>
+                <div class="fpc-card-body">
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>Ultrasonic C-scan: void
+                    content, delamination detection
+                  </div>
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>CT scan: high-resolution void
+                    mapping for qualification coupons
+                  </div>
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>Mechanical coupons: ILSS, CAI,
+                    OHT, bearing strength
+                  </div>
+                  <div class="fpc-item">
+                    <span class="fpc-dot"></span>Crystallinity verification
+                    (DSC) for PEEK / PEKK applications
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Key process advantages summary ── -->
+            <div class="fpc-summary fpc-reveal" style="transition-delay: 0.46s">
+              <div
+                style="
+                  width: 100%;
+                  font-size: 10px;
+                  font-weight: 700;
+                  letter-spacing: 0.8px;
+                  text-transform: uppercase;
+                  color: #9d9d9c;
+                  margin-bottom: 4px;
+                "
+              >
+                Key Process Advantages vs. Thermoset
+              </div>
+              <div class="fpc-sum-item">
+                <span class="fpc-sum-icon">❌</span> No autoclave at any stage
+              </div>
+              <div class="fpc-sum-item">
+                <span class="fpc-sum-icon">❌</span> No debulk cycles
+              </div>
+              <div class="fpc-sum-item">
+                <span class="fpc-sum-icon">❌</span> No cold storage / shelf
+                life
+              </div>
+              <div class="fpc-sum-item">
+                <span class="fpc-sum-icon">✅</span> In-situ consolidation
+              </div>
+              <div class="fpc-sum-item">
+                <span class="fpc-sum-icon">✅</span> Weldable assembly
+              </div>
+              <div class="fpc-sum-item">
+                <span class="fpc-sum-icon">✅</span> Thermoplastic machinability
+              </div>
+              <div class="fpc-sum-item">
+                <span class="fpc-sum-icon">✅</span> Field-repairable
+              </div>
+            </div>
+          </div>
 
           <div class="highlight-box">
             <h4>The Most Underestimated Step</h4>
@@ -795,6 +4525,208 @@
           </p>
 
           <!-- INFOGRAPHIC 15: Thermoplastic AFP Hardware — Accessibility Evolution. Two-era comparison: Before (~2015–2020): bespoke gantry or large robot cell, €1.5M–€5M+, 200–500 m², 6–18 months integration, often <350°C cap, tier 1 primes and national labs only. Now (~2022–2025): robot-mounted AFP head on standard industrial robot, €50K–€300K, 30–80 m², 4–8 weeks integration, up to 450°C, tier 2/3 suppliers, research institutes, SMEs, startups. Conclusion: the accessibility barrier has been substantially removed. What remains is process knowledge — and that is transferable. -->
+
+          <div class="hae-container">
+            <div class="hae-title hae-reveal">
+              Thermoplastic AFP Hardware — Accessibility Evolution
+            </div>
+            <div
+              class="hae-subtitle hae-reveal"
+              style="transition-delay: 0.05s"
+            >
+              From bespoke Tier 1 capital equipment to accessible modular
+              systems — 2015–2025
+            </div>
+
+            <!-- ── Era columns ── -->
+            <div class="hae-columns">
+              <!-- BEFORE -->
+              <div
+                class="hae-era before hae-reveal"
+                style="transition-delay: 0.1s"
+              >
+                <div class="hae-era-header">
+                  <div class="hae-era-icon">🏭</div>
+                  <div class="hae-era-title">Before</div>
+                  <div class="hae-era-range">~2015–2020</div>
+                </div>
+                <div class="hae-era-body">
+                  <div class="hae-spec-row">
+                    <div class="hae-spec-label">Machine Type</div>
+                    <div class="hae-spec-val">
+                      Bespoke gantry or large industrial robot cell
+                    </div>
+                  </div>
+                  <div class="hae-spec-row">
+                    <div class="hae-spec-label">Capital Cost</div>
+                    <div class="hae-spec-val highlight-bad">€1.5M – €5M+</div>
+                  </div>
+                  <div class="hae-spec-row">
+                    <div class="hae-spec-label">Footprint</div>
+                    <div class="hae-spec-val highlight-bad">200–500 m²</div>
+                  </div>
+                  <div class="hae-spec-row">
+                    <div class="hae-spec-label">Integration</div>
+                    <div class="hae-spec-val highlight-bad">
+                      6–18 months, specialist integrator required
+                    </div>
+                  </div>
+                  <div class="hae-spec-row">
+                    <div class="hae-spec-label">Temp Cap</div>
+                    <div class="hae-spec-val highlight-bad">
+                      &lt; 350°C — limited to lower-Tg materials
+                    </div>
+                  </div>
+                  <div class="hae-spec-row">
+                    <div class="hae-spec-label">Access</div>
+                    <div class="hae-spec-val">
+                      Tier 1 primes and national labs only
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- NOW -->
+              <div
+                class="hae-era now hae-reveal"
+                style="transition-delay: 0.18s"
+              >
+                <div class="hae-era-header">
+                  <div class="hae-era-icon">🚀</div>
+                  <div class="hae-era-title">Now</div>
+                  <div class="hae-era-range">~2022–2025</div>
+                </div>
+                <div class="hae-era-body">
+                  <div class="hae-spec-row">
+                    <div class="hae-spec-label">Machine Type</div>
+                    <div class="hae-spec-val">
+                      Robot-mounted AFP head on standard industrial robot
+                    </div>
+                  </div>
+                  <div class="hae-spec-row">
+                    <div class="hae-spec-label">Capital Cost</div>
+                    <div class="hae-spec-val highlight-good">
+                      €50K – €300K (head + integration)
+                    </div>
+                  </div>
+                  <div class="hae-spec-row">
+                    <div class="hae-spec-label">Footprint</div>
+                    <div class="hae-spec-val highlight-good">
+                      30–80 m² (standard production bay)
+                    </div>
+                  </div>
+                  <div class="hae-spec-row">
+                    <div class="hae-spec-label">Integration</div>
+                    <div class="hae-spec-val highlight-good">4–8 weeks</div>
+                  </div>
+                  <div class="hae-spec-row">
+                    <div class="hae-spec-label">Temp Cap</div>
+                    <div class="hae-spec-val highlight-good">
+                      Up to 450°C — PEEK, PEKK, PAEK compatible
+                    </div>
+                  </div>
+                  <div class="hae-spec-row">
+                    <div class="hae-spec-label">Access</div>
+                    <div class="hae-spec-val">
+                      Tier 2/3 suppliers, research institutes, SMEs, startups
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Comparison bars ── -->
+            <div class="hae-compare hae-reveal" style="transition-delay: 0.26s">
+              <div class="hae-compare-title">
+                Quantified Reduction — Before vs. Now
+              </div>
+              <div class="hae-cmp-header">
+                <div class="hae-cmp-hcell hb">Before</div>
+                <div class="hae-cmp-hcell hn">Now</div>
+              </div>
+
+              <!-- Cost — before €3.25M midpoint vs €175K midpoint; scale to 5M -->
+              <div class="hae-cmp-row">
+                <div class="hae-cmp-label">Entry Cost</div>
+                <div class="hae-cmp-tracks">
+                  <div class="hae-cmp-track">
+                    <div class="hae-cmp-fill cf-before" data-w="65"></div>
+                  </div>
+                  <div class="hae-cmp-track">
+                    <div class="hae-cmp-fill cf-now" data-w="4"></div>
+                  </div>
+                </div>
+                <div class="hae-cmp-vals">
+                  <div class="hae-cmp-val v-before">€1.5M–€5M+</div>
+                  <div class="hae-cmp-val v-now">€50K–€300K</div>
+                </div>
+              </div>
+
+              <!-- Footprint — 350 m² vs 55 m²; scale to 500 -->
+              <div class="hae-cmp-row">
+                <div class="hae-cmp-label">Footprint</div>
+                <div class="hae-cmp-tracks">
+                  <div class="hae-cmp-track">
+                    <div class="hae-cmp-fill cf-before" data-w="70"></div>
+                  </div>
+                  <div class="hae-cmp-track">
+                    <div class="hae-cmp-fill cf-now" data-w="11"></div>
+                  </div>
+                </div>
+                <div class="hae-cmp-vals">
+                  <div class="hae-cmp-val v-before">200–500 m²</div>
+                  <div class="hae-cmp-val v-now">30–80 m²</div>
+                </div>
+              </div>
+
+              <!-- Integration — 12 months vs 6 weeks; scale 18 months -->
+              <div class="hae-cmp-row">
+                <div class="hae-cmp-label">Integration Time</div>
+                <div class="hae-cmp-tracks">
+                  <div class="hae-cmp-track">
+                    <div class="hae-cmp-fill cf-before" data-w="78"></div>
+                  </div>
+                  <div class="hae-cmp-track">
+                    <div class="hae-cmp-fill cf-now" data-w="8"></div>
+                  </div>
+                </div>
+                <div class="hae-cmp-vals">
+                  <div class="hae-cmp-val v-before">6–18 months</div>
+                  <div class="hae-cmp-val v-now">4–8 weeks</div>
+                </div>
+              </div>
+
+              <!-- Temp cap — 350°C vs 450°C; scale 500°C -->
+              <div class="hae-cmp-row">
+                <div class="hae-cmp-label">Temp Capability</div>
+                <div class="hae-cmp-tracks">
+                  <div class="hae-cmp-track">
+                    <div class="hae-cmp-fill cf-before" data-w="70"></div>
+                  </div>
+                  <div class="hae-cmp-track">
+                    <div class="hae-cmp-fill cf-now" data-w="90"></div>
+                  </div>
+                </div>
+                <div class="hae-cmp-vals">
+                  <div class="hae-cmp-val v-before">&lt; 350°C</div>
+                  <div class="hae-cmp-val v-now">Up to 450°C</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Closing statement ── -->
+            <div class="hae-closing hae-reveal" style="transition-delay: 0.32s">
+              <div class="hae-closing-main">
+                The accessibility barrier that kept thermoplastic AFP out of
+                mid-tier manufacturing has been
+                <strong>substantially removed</strong>.
+              </div>
+              <div class="hae-closing-sub">
+                What remains is process knowledge — and that is
+                <strong>transferable</strong>.
+              </div>
+            </div>
+          </div>
 
           <div class="stats-grid">
             <div class="stat-card">
@@ -854,6 +4786,67 @@
 
           <!-- INFOGRAPHIC 16: Thermoplastic AFP Adoption Trajectory. Line chart with time axis 2020–2035 and production volume axis. Curve starting near zero, stepping up at: 2020–2023 space/advanced demonstrators, 2023–2026 aerospace secondary + semi-structural series, 2026–2028 defence primary structure, 2028–2030 industrial/UAM/eVTOL, 2030–2035 automotive/high-rate EV. "We are here" marker at ~2026. -->
 
+          <div class="adt-container">
+            <div class="adt-title adt-reveal">
+              Thermoplastic AFP — Adoption Trajectory
+            </div>
+            <div
+              class="adt-subtitle adt-reveal"
+              style="transition-delay: 0.05s"
+            >
+              Indicative production volume ramp by sector — staggered wave
+              adoption 2020–2035
+            </div>
+
+            <div
+              class="adt-chart-wrap adt-reveal"
+              style="transition-delay: 0.1s; position: relative"
+            >
+              <canvas id="adtChart"></canvas>
+              <div class="adt-here-line"></div>
+              <div class="adt-here-label">↑ We are here (~2026)</div>
+            </div>
+
+            <div class="adt-legend adt-reveal" style="transition-delay: 0.2s">
+              <div class="adt-legend-item">
+                <div
+                  class="adt-legend-swatch"
+                  style="background: #47577c; opacity: 0.7"
+                ></div>
+                Space / Advanced Demonstrators
+              </div>
+              <div class="adt-legend-item">
+                <div
+                  class="adt-legend-swatch"
+                  style="background: #47577c"
+                ></div>
+                Aero Primary Structure
+              </div>
+              <div class="adt-legend-item">
+                <div
+                  class="adt-legend-swatch"
+                  style="background: #9d9d9c"
+                ></div>
+                Aero Secondary + Semi-Structural
+              </div>
+              <div class="adt-legend-item">
+                <div
+                  class="adt-legend-swatch"
+                  style="background: #bf3425; opacity: 0.7"
+                ></div>
+                Defence / UAM / eVTOL
+              </div>
+              <div class="adt-legend-item">
+                <div
+                  class="adt-legend-swatch"
+                  style="background: #bf3425"
+                ></div>
+                Automotive / High-rate EV
+              </div>
+            </div>
+          </div>
+
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
           <h3>Technology Milestones Most Likely to Accelerate the Curve</h3>
 
           <div class="feature-grid">
@@ -984,6 +4977,252 @@
           </p>
 
           <!-- INFOGRAPHIC 17: Thermoplastic AFP — Decision Summary (2025 State of the Art). Two-column comparison table Thermoset AFP vs Thermoplastic AFP across 11 dimensions: Autoclave required (Yes vs No), Post-cure step (Yes vs No), Weldable assembly (No vs Yes — induction/resistance), In-situ repair (Limited vs Yes), Recyclability (No practical vs Yes melt+reform), Shelf life (6–18 months frozen vs Unlimited), Process window (Wide vs Narrow for high-temp), Void content (< 1% vs 0.5–2% process-dependent), Material cost (€30–80/kg vs €80–200/kg), Qualification maturity (Fully mature vs Qualifying now — primary), Accessible hardware (Yes vs Yes since 2022). -->
+
+          <div class="ds25-container">
+            <div class="ds25-title ds25-reveal">
+              Thermoplastic AFP — Decision Summary (2025 State of the Art)
+            </div>
+            <div
+              class="ds25-subtitle ds25-reveal"
+              style="transition-delay: 0.05s"
+            >
+              Head-to-head comparison across 11 dimensions — thermoset AFP vs.
+              thermoplastic AFP
+            </div>
+
+            <!-- ── Column headers ── -->
+            <div class="ds25-header ds25-reveal" style="transition-delay: 0.1s">
+              <div class="ds25-hcell dim">Dimension</div>
+              <div class="ds25-hcell ts">🔵 Thermoset AFP</div>
+              <div class="ds25-hcell tp">🔴 Thermoplastic AFP</div>
+            </div>
+
+            <!-- ── Table rows ── -->
+            <div class="ds25-table ds25-reveal" style="transition-delay: 0.13s">
+              <!-- Autoclave -->
+              <div class="ds25-row">
+                <div class="ds25-cell dim-cell">Autoclave required</div>
+                <div class="ds25-cell ts-cell">
+                  <span class="ds25-icon">❌</span>
+                  <span class="ds25-chip chip-bad">Yes — most programs</span>
+                </div>
+                <div class="ds25-cell tp-cell">
+                  <span class="ds25-icon">✅</span>
+                  <span class="ds25-chip chip-tp">No</span>
+                </div>
+              </div>
+
+              <!-- Post-cure -->
+              <div class="ds25-row">
+                <div class="ds25-cell dim-cell">Post-cure step</div>
+                <div class="ds25-cell ts-cell">
+                  <span class="ds25-icon">❌</span>
+                  <span class="ds25-chip chip-bad">Yes — always</span>
+                </div>
+                <div class="ds25-cell tp-cell">
+                  <span class="ds25-icon">✅</span>
+                  <span class="ds25-chip chip-tp">No</span>
+                </div>
+              </div>
+
+              <!-- Weldable assembly -->
+              <div class="ds25-row">
+                <div class="ds25-cell dim-cell">Weldable assembly</div>
+                <div class="ds25-cell ts-cell">
+                  <span class="ds25-icon">✗</span> No
+                </div>
+                <div class="ds25-cell tp-cell">
+                  <span class="ds25-icon">✅</span>
+                  <span class="ds25-chip chip-tp"
+                    >Yes — induction, resistance</span
+                  >
+                </div>
+              </div>
+
+              <!-- In-situ repair -->
+              <div class="ds25-row">
+                <div class="ds25-cell dim-cell">In-situ repair</div>
+                <div class="ds25-cell ts-cell">
+                  <span class="ds25-chip chip-neut">Limited</span>
+                </div>
+                <div class="ds25-cell tp-cell">
+                  <span class="ds25-icon">✅</span>
+                  <span class="ds25-chip chip-tp">Yes</span>
+                </div>
+              </div>
+
+              <!-- Recyclability -->
+              <div class="ds25-row">
+                <div class="ds25-cell dim-cell">Recyclability</div>
+                <div class="ds25-cell ts-cell">
+                  <span class="ds25-chip chip-bad">No (practical)</span>
+                </div>
+                <div class="ds25-cell tp-cell">
+                  <span class="ds25-icon">♻️</span>
+                  <span class="ds25-chip chip-tp">Yes — melt + reform</span>
+                </div>
+              </div>
+
+              <!-- Shelf life -->
+              <div class="ds25-row">
+                <div class="ds25-cell dim-cell">Shelf life (material)</div>
+                <div class="ds25-cell ts-cell">
+                  <span class="ds25-chip chip-bad">6–18 months (frozen)</span>
+                </div>
+                <div class="ds25-cell tp-cell">
+                  <span class="ds25-icon">✅</span>
+                  <span class="ds25-chip chip-tp">Unlimited</span>
+                </div>
+              </div>
+
+              <!-- Process window -->
+              <div class="ds25-row">
+                <div class="ds25-cell dim-cell">Process window</div>
+                <div class="ds25-cell ts-cell">
+                  <span class="ds25-chip chip-good">Wide</span>
+                </div>
+                <div class="ds25-cell tp-cell">
+                  <span class="ds25-chip chip-neut"
+                    >Narrow (high-temp mats)</span
+                  >
+                </div>
+              </div>
+
+              <!-- Void content -->
+              <div class="ds25-row">
+                <div class="ds25-cell dim-cell">Void content (current ISC)</div>
+                <div class="ds25-cell ts-cell">
+                  <span class="ds25-chip chip-ts">&lt; 1%</span>
+                </div>
+                <div class="ds25-cell tp-cell">
+                  <span class="ds25-chip chip-neut">0.5–2% (process dep.)</span>
+                </div>
+              </div>
+
+              <!-- Material cost -->
+              <div class="ds25-row">
+                <div class="ds25-cell dim-cell">Material cost</div>
+                <div class="ds25-cell ts-cell">
+                  <span class="ds25-chip chip-good">€30–80 /kg</span>
+                </div>
+                <div class="ds25-cell tp-cell">
+                  <span class="ds25-chip chip-bad">€80–200 /kg</span>
+                </div>
+              </div>
+
+              <!-- Qualification maturity -->
+              <div class="ds25-row">
+                <div class="ds25-cell dim-cell">Qualification maturity</div>
+                <div class="ds25-cell ts-cell">
+                  <span class="ds25-chip chip-ts">Fully mature</span>
+                </div>
+                <div class="ds25-cell tp-cell">
+                  <span class="ds25-chip chip-neut"
+                    >Qualifying now (primary)</span
+                  >
+                </div>
+              </div>
+
+              <!-- Accessible hardware -->
+              <div class="ds25-row">
+                <div class="ds25-cell dim-cell">Accessible hardware</div>
+                <div class="ds25-cell ts-cell">
+                  <span class="ds25-icon">✅</span> Yes
+                </div>
+                <div class="ds25-cell tp-cell">
+                  <span class="ds25-icon">✅</span>
+                  <span class="ds25-chip chip-tp">Yes — 2022 onwards</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Score summary ── -->
+            <div class="ds25-scores">
+              <div
+                class="ds25-score-card ds25-reveal"
+                style="transition-delay: 0.2s"
+              >
+                <div class="ds25-score-title">Process Simplicity</div>
+                <div class="ds25-score-row">
+                  <div class="ds25-score-name">Thermoset AFP</div>
+                  <div class="ds25-score-track">
+                    <div class="ds25-score-fill sf-ts" data-w="42"></div>
+                  </div>
+                  <div class="ds25-score-val sv-ts">4.2</div>
+                </div>
+                <div class="ds25-score-row">
+                  <div class="ds25-score-name">Thermoplastic AFP</div>
+                  <div class="ds25-score-track">
+                    <div class="ds25-score-fill sf-tp" data-w="78"></div>
+                  </div>
+                  <div class="ds25-score-val sv-tp">7.8</div>
+                </div>
+              </div>
+
+              <div
+                class="ds25-score-card ds25-reveal"
+                style="transition-delay: 0.24s"
+              >
+                <div class="ds25-score-title">Lifecycle Sustainability</div>
+                <div class="ds25-score-row">
+                  <div class="ds25-score-name">Thermoset AFP</div>
+                  <div class="ds25-score-track">
+                    <div class="ds25-score-fill sf-ts" data-w="25"></div>
+                  </div>
+                  <div class="ds25-score-val sv-ts">2.5</div>
+                </div>
+                <div class="ds25-score-row">
+                  <div class="ds25-score-name">Thermoplastic AFP</div>
+                  <div class="ds25-score-track">
+                    <div class="ds25-score-fill sf-tp" data-w="85"></div>
+                  </div>
+                  <div class="ds25-score-val sv-tp">8.5</div>
+                </div>
+              </div>
+
+              <div
+                class="ds25-score-card ds25-reveal"
+                style="transition-delay: 0.28s"
+              >
+                <div class="ds25-score-title">Qualification Readiness</div>
+                <div class="ds25-score-row">
+                  <div class="ds25-score-name">Thermoset AFP</div>
+                  <div class="ds25-score-track">
+                    <div class="ds25-score-fill sf-ts" data-w="95"></div>
+                  </div>
+                  <div class="ds25-score-val sv-ts">9.5</div>
+                </div>
+                <div class="ds25-score-row">
+                  <div class="ds25-score-name">Thermoplastic AFP</div>
+                  <div class="ds25-score-track">
+                    <div class="ds25-score-fill sf-tp" data-w="55"></div>
+                  </div>
+                  <div class="ds25-score-val sv-tp">5.5</div>
+                </div>
+              </div>
+
+              <div
+                class="ds25-score-card ds25-reveal"
+                style="transition-delay: 0.32s"
+              >
+                <div class="ds25-score-title">Total Cost of Ownership</div>
+                <div class="ds25-score-row">
+                  <div class="ds25-score-name">Thermoset AFP</div>
+                  <div class="ds25-score-track">
+                    <div class="ds25-score-fill sf-ts" data-w="50"></div>
+                  </div>
+                  <div class="ds25-score-val sv-ts">5.0</div>
+                </div>
+                <div class="ds25-score-row">
+                  <div class="ds25-score-name">Thermoplastic AFP</div>
+                  <div class="ds25-score-track">
+                    <div class="ds25-score-fill sf-tp" data-w="72"></div>
+                  </div>
+                  <div class="ds25-score-val sv-tp">7.2</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div class="highlight-box">
             <p>

@@ -237,3 +237,622 @@ document.addEventListener("DOMContentLoaded", function () {
 
   createProgressBar();
 });
+//   <!-- INFOGRAPHIC 1: THERMOSET vs. THERMOPLASTIC — PHASE BEHAVIOUR -->
+(function () {
+  var els = document.querySelectorAll(".tpvts-reveal");
+  if (!els.length) return;
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 },
+  );
+  els.forEach(function (el) {
+    observer.observe(el);
+  });
+})();
+//    <!-- INFOGRAPHIC 2: Thermoplastic Matrix Comparison for AFP. Table comparing PA12, PA6, PPS, PEI (Ultem), PAEK, PEEK, PEKK by Tg (°C), Tm (°C), AFP process temperature, and key characteristic. Temperature range from 220°C (PA12) up to 420°C (PEEK/PEKK). Note amorphous polymers soften above Tg without distinct melt point. -->
+(function () {
+  /* ── Scroll-reveal ── */
+  var revealEls = document.querySelectorAll(".tpmc-reveal");
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+          /* Animate bars inside this element once visible */
+          entry.target
+            .querySelectorAll(".tpmc-bar-fill[data-w]")
+            .forEach(function (bar) {
+              setTimeout(function () {
+                bar.style.width = bar.getAttribute("data-w") + "%";
+              }, 80);
+            });
+          entry.target
+            .querySelectorAll(".tpmc-bar-range[data-l]")
+            .forEach(function (bar) {
+              setTimeout(function () {
+                bar.style.left = bar.getAttribute("data-l") + "%";
+                bar.style.width = bar.getAttribute("data-w") + "%";
+              }, 80);
+            });
+        }
+      });
+    },
+    { threshold: 0.15 },
+  );
+  revealEls.forEach(function (el) {
+    observer.observe(el);
+  });
+})();
+//  INFOGRAPHIC 3: In-Situ Consolidation
+(function () {
+  var els = document.querySelectorAll(".isc-reveal");
+  var obs = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          obs.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+  els.forEach(function (el) {
+    obs.observe(el);
+  });
+})();
+// INFOGRAPHIC 4
+(function () {
+  var els = document.querySelectorAll(".hsc-reveal");
+  var obs = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          obs.unobserve(e.target);
+          e.target
+            .querySelectorAll(".hsc-score-fill[data-w]")
+            .forEach(function (bar) {
+              setTimeout(function () {
+                bar.style.width = bar.getAttribute("data-w") + "%";
+              }, 100);
+            });
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+  els.forEach(function (el) {
+    obs.observe(el);
+  });
+})();
+// INFOGRAPHIC 5
+(function () {
+  var els = document.querySelectorAll(".tah-reveal");
+  var obs = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          obs.unobserve(e.target);
+          e.target
+            .querySelectorAll(".tah-temp-bar-fill[data-h]")
+            .forEach(function (bar) {
+              setTimeout(function () {
+                bar.style.height = bar.getAttribute("data-h") + "%";
+              }, 120);
+            });
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+  els.forEach(function (el) {
+    obs.observe(el);
+  });
+})();
+// INFOGRAPHIC 6
+(function () {
+  var els = document.querySelectorAll(".twm-reveal");
+  var obs = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          obs.unobserve(e.target);
+          e.target
+            .querySelectorAll(".twm-cmp-fill[data-w]")
+            .forEach(function (bar) {
+              setTimeout(function () {
+                bar.style.width = bar.getAttribute("data-w") + "%";
+              }, 120);
+            });
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+  els.forEach(function (el) {
+    obs.observe(el);
+  });
+})();
+// INFOGRAPHIC 7
+(function () {
+  var els = document.querySelectorAll(".trf-reveal");
+  var obs = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          obs.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+  els.forEach(function (el) {
+    obs.observe(el);
+  });
+})();
+// INFOGRAPHIC 8
+(function () {
+  var els = document.querySelectorAll(".rpc-reveal");
+  var obs = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          obs.unobserve(e.target);
+          e.target
+            .querySelectorAll(".rpc-metric-fill[data-w]")
+            .forEach(function (bar) {
+              setTimeout(function () {
+                bar.style.width = bar.getAttribute("data-w") + "%";
+              }, 120);
+            });
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+  els.forEach(function (el) {
+    obs.observe(el);
+  });
+})();
+// INFOGRAPHIC 9
+(function () {
+  var els = document.querySelectorAll(".eol-reveal");
+  var obs = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          obs.unobserve(e.target);
+          e.target
+            .querySelectorAll(".eol-value-fill[data-w]")
+            .forEach(function (bar) {
+              setTimeout(function () {
+                bar.style.width = bar.getAttribute("data-w") + "%";
+              }, 120);
+            });
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+  els.forEach(function (el) {
+    obs.observe(el);
+  });
+})();
+// INFOGRAPHIC 10
+(function () {
+  var els = document.querySelectorAll(".vcb-reveal");
+  var obs = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          obs.unobserve(e.target);
+          /* single bars */
+          e.target
+            .querySelectorAll(".vcb-bar-single[data-w]")
+            .forEach(function (bar) {
+              setTimeout(function () {
+                bar.style.width = bar.getAttribute("data-w") + "%";
+              }, 100);
+            });
+          /* range bars */
+          e.target
+            .querySelectorAll(".vcb-bar-range[data-l]")
+            .forEach(function (bar) {
+              setTimeout(function () {
+                bar.style.left = bar.getAttribute("data-l") + "%";
+                bar.style.width = bar.getAttribute("data-w") + "%";
+              }, 100);
+            });
+          /* timeline fill */
+          e.target
+            .querySelectorAll(".vcb-tl-fill[data-w]")
+            .forEach(function (bar) {
+              setTimeout(function () {
+                bar.style.width = bar.getAttribute("data-w") + "%";
+              }, 150);
+            });
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+  els.forEach(function (el) {
+    obs.observe(el);
+  });
+})();
+// INFOGRAPHIC 11
+(function () {
+  var els = document.querySelectorAll(".crc-reveal");
+  var obs = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          obs.unobserve(e.target);
+          e.target
+            .querySelectorAll(".crc-gauge-fill[data-w]")
+            .forEach(function (bar) {
+              setTimeout(function () {
+                bar.style.width = bar.getAttribute("data-w") + "%";
+              }, 100);
+            });
+          e.target
+            .querySelectorAll(".crc-sch-bar[data-w]")
+            .forEach(function (bar) {
+              setTimeout(function () {
+                bar.style.width = bar.getAttribute("data-w") + "%";
+              }, 100);
+            });
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+  els.forEach(function (el) {
+    obs.observe(el);
+  });
+})();
+// INFOGRAPHIC 12
+(function () {
+  /* Position the reference line at €80 = 40% along the first .tpc-bar-track */
+  function positionRefLine() {
+    var firstTrack = document.querySelector(".tpc-bar-track");
+    var refLine = document.querySelector(".tpc-ref-line");
+    var refLabel = document.querySelector(".tpc-ref-label");
+    if (!firstTrack || !refLine) return;
+    var rect = firstTrack.getBoundingClientRect();
+    var chartRect = document
+      .querySelector(".tpc-chart")
+      .getBoundingClientRect();
+    var leftPx = rect.left - chartRect.left + rect.width * 0.4;
+    refLine.style.left = leftPx + "px";
+    refLabel.style.left = leftPx + 4 + "px";
+  }
+  window.addEventListener("load", positionRefLine);
+  window.addEventListener("resize", positionRefLine);
+
+  /* Scroll-reveal + bar animation */
+  var els = document.querySelectorAll(".tpc-reveal");
+  var obs = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          obs.unobserve(e.target);
+          e.target
+            .querySelectorAll(".tpc-bar-range[data-l]")
+            .forEach(function (bar) {
+              setTimeout(function () {
+                bar.style.left = bar.getAttribute("data-l") + "%";
+                bar.style.width = bar.getAttribute("data-w") + "%";
+              }, 100);
+            });
+          /* also trigger bars in already-visible sibling chart block */
+          document
+            .querySelectorAll(".tpc-bar-range[data-l]")
+            .forEach(function (bar) {
+              if (!bar.style.width || bar.style.width === "0%") {
+                setTimeout(function () {
+                  bar.style.left = bar.getAttribute("data-l") + "%";
+                  bar.style.width = bar.getAttribute("data-w") + "%";
+                }, 100);
+              }
+            });
+          setTimeout(positionRefLine, 200);
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+  els.forEach(function (el) {
+    obs.observe(el);
+  });
+})();
+// INFOGRAPHIC 13
+(function () {
+  var els = document.querySelectorAll(".qls-reveal");
+  var obs = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          obs.unobserve(e.target);
+          e.target
+            .querySelectorAll(".qls-tl-fill[data-w]")
+            .forEach(function (bar) {
+              setTimeout(function () {
+                bar.style.width = bar.getAttribute("data-w") + "%";
+              }, 120);
+            });
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+  els.forEach(function (el) {
+    obs.observe(el);
+  });
+})();
+// INFOGRAPHIC 14
+(function () {
+  var els = document.querySelectorAll(".fpc-reveal");
+  var obs = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          obs.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.1 },
+  );
+  els.forEach(function (el) {
+    obs.observe(el);
+  });
+})();
+// INFOGRAPHIC 15
+(function () {
+  var els = document.querySelectorAll(".hae-reveal");
+  var obs = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          obs.unobserve(e.target);
+          e.target
+            .querySelectorAll(".hae-cmp-fill[data-w]")
+            .forEach(function (bar) {
+              setTimeout(function () {
+                bar.style.width = bar.getAttribute("data-w") + "%";
+              }, 120);
+            });
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+  els.forEach(function (el) {
+    obs.observe(el);
+  });
+})();
+// INFOGRAPHIC 16
+(function () {
+  /* ── Scroll reveal ── */
+  var els = document.querySelectorAll(".adt-reveal");
+  var obs = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          obs.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+  els.forEach(function (el) {
+    obs.observe(el);
+  });
+
+  /* ── Time axis: 2020 – 2035, step 0.5 yr ── */
+  var years = [];
+  for (var y = 2020; y <= 2035; y += 0.5) {
+    years.push(y);
+  }
+
+  /* Sigmoid helper: smooth S-curve ramp */
+  function sig(x, mid, slope, ceiling) {
+    return ceiling / (1 + Math.exp(-slope * (x - mid)));
+  }
+
+  /* Each sector: centre of ramp, steepness, eventual ceiling (0-100 scale) */
+  var sectors = [
+    {
+      label: "Space / Demonstrators",
+      color: "rgba(71,87,124,0.55)",
+      border: "rgba(71,87,124,0.7)",
+      mid: 2021.5,
+      slope: 2.2,
+      ceil: 18,
+    },
+    {
+      label: "Aero Primary Structure",
+      color: "rgba(71,87,124,0.85)",
+      border: "#47577c",
+      mid: 2028.5,
+      slope: 1.6,
+      ceil: 35,
+    },
+    {
+      label: "Aero Secondary + Semi",
+      color: "rgba(157,157,156,0.75)",
+      border: "#9d9d9c",
+      mid: 2025.5,
+      slope: 1.8,
+      ceil: 55,
+    },
+    {
+      label: "Defence / UAM / eVTOL",
+      color: "rgba(191,52,37,0.55)",
+      border: "rgba(191,52,37,0.75)",
+      mid: 2027.0,
+      slope: 1.7,
+      ceil: 48,
+    },
+    {
+      label: "Automotive / High-rate EV",
+      color: "rgba(191,52,37,0.85)",
+      border: "#bf3425",
+      mid: 2030.5,
+      slope: 2.0,
+      ceil: 95,
+    },
+  ];
+
+  var datasets = sectors.map(function (s) {
+    return {
+      label: s.label,
+      data: years.map(function (y) {
+        return sig(y, s.mid, s.slope, s.ceil);
+      }),
+      backgroundColor: s.color,
+      borderColor: s.border,
+      borderWidth: 2,
+      fill: true,
+      tension: 0.5,
+      pointRadius: 0,
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: s.border,
+    };
+  });
+
+  var commonTooltip = {
+    backgroundColor: "#ffffff",
+    titleColor: "#bf3425",
+    bodyColor: "#1e293b",
+    borderColor: "#e2e8f0",
+    borderWidth: 1,
+    padding: 12,
+    displayColors: true,
+    callbacks: {
+      title: function (items) {
+        var yr = parseFloat(items[0].label);
+        var m = Math.round((yr % 1) * 12);
+        return "Year " + Math.floor(yr) + (m > 0 ? " H2" : " H1");
+      },
+      label: function (item) {
+        return (
+          " " + item.dataset.label + ": " + Math.round(item.raw) + " (index)"
+        );
+      },
+    },
+  };
+
+  new Chart(document.getElementById("adtChart"), {
+    type: "line",
+    data: {
+      labels: years,
+      datasets: datasets,
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: "index", intersect: false },
+      scales: {
+        x: {
+          type: "linear",
+          min: 2020,
+          max: 2035,
+          ticks: {
+            stepSize: 1,
+            color: "#64748b",
+            font: { size: 11, weight: "600" },
+            callback: function (val) {
+              /* only show integer years */
+              return Number.isInteger(val) ? val : "";
+            },
+          },
+          grid: { color: "#f1f5f9" },
+          title: { display: false },
+        },
+        y: {
+          min: 0,
+          max: 100,
+          ticks: {
+            color: "#94a3b8",
+            font: { size: 10 },
+            callback: function (val) {
+              var labels = {
+                0: "Zero",
+                20: "Low",
+                40: "Medium",
+                60: "High",
+                80: "Very High",
+                100: "Mass",
+              };
+              return labels[val] !== undefined ? labels[val] : "";
+            },
+            stepSize: 20,
+          },
+          grid: { color: "#f1f5f9" },
+          title: {
+            display: true,
+            text: "Production Volume (indicative index)",
+            color: "#94a3b8",
+            font: { size: 10, weight: "600" },
+          },
+        },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: commonTooltip,
+        /* "We are here" vertical line via annotation-less approach — drawn via chartArea */
+      },
+      animation: {
+        duration: 1200,
+        easing: "easeInOutQuart",
+      },
+    },
+  });
+})();
+// INFOGRAPHIC 17
+(function () {
+  var els = document.querySelectorAll(".ds25-reveal");
+  var obs = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          obs.unobserve(e.target);
+          e.target
+            .querySelectorAll(".ds25-score-fill[data-w]")
+            .forEach(function (bar) {
+              setTimeout(function () {
+                bar.style.width = bar.getAttribute("data-w") + "%";
+              }, 120);
+            });
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+  els.forEach(function (el) {
+    obs.observe(el);
+  });
+})();
