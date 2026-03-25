@@ -2214,7 +2214,7 @@ section {
 .rsf-vert-line {
   width: 2px;
   flex: 1;
-  min-height: 20px;
+  min-height: 80px;
   background: #e2e8f0;
   margin-top: 0;
 }
