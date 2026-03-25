@@ -1,0 +1,978 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      How to Choose the Right Robot for AFP: A Buyer's Guide | Addcomposites
+    </title>
+    <meta
+      name="description"
+      content="A decision framework for AFP robot selection that starts where it should: with your composite part and process. Covers payload, wrist torque, part scale, accuracy, and hidden costs."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,600&family=Assistant:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Mobile Navigation Toggle Button -->
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="blog-layout">
+      <!-- Sidebar -->
+      <nav class="blog-sidebar" aria-label="Table of Contents">
+        <!-- Close button (mobile only) -->
+        <button class="sidebar-close" aria-label="Close navigation menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          Close Menu
+        </button>
+        <h3 class="blog-sidebar-title">Contents</h3>
+        <div class="blog-sidebar-nav">
+          <a href="#intro" class="blog-sidebar-link active">Introduction</a>
+          <a href="#process-envelope" class="blog-sidebar-link"
+            >Step One: Process Envelope</a
+          >
+          <a href="#payload" class="blog-sidebar-link">Payload</a>
+          <a href="#wrist-torque" class="blog-sidebar-link">Wrist Torque</a>
+          <a href="#part-size" class="blog-sidebar-link"
+            >Part Size & Architecture</a
+          >
+          <a href="#robot-brands" class="blog-sidebar-link">Robot Brands</a>
+          <a href="#path-accuracy" class="blog-sidebar-link">Path Accuracy</a>
+          <a href="#hidden-costs" class="blog-sidebar-link">Hidden Costs</a>
+          <a href="#spec-risk" class="blog-sidebar-link">Specification Risk</a>
+          <a href="#selection-flow" class="blog-sidebar-link">Selection Flow</a>
+          <a href="#checklist" class="blog-sidebar-link">Buyer Checklist</a>
+          <a href="#references" class="blog-sidebar-link">References</a>
+        </div>
+      </nav>
+
+      <article class="blog-content">
+        <!-- Hero / Intro Section -->
+        <section id="intro">
+          <h1>How to Choose the Right Robot for AFP: A Buyer's Guide</h1>
+
+          <div class="blog-meta">
+            <span class="blog-meta-item">
+              <svg
+                class="blog-meta-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>2026</span>
+            </span>
+            <span class="blog-meta-item">
+              <svg
+                class="blog-meta-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>18 min read</span>
+            </span>
+            <span class="blog-meta-item">
+              <svg
+                class="blog-meta-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+                ></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              </svg>
+              <span>AFP · robotics · composites · buyer guide</span>
+            </span>
+          </div>
+
+          <p class="subtitle">
+            Most buyers start with the wrong question. This guide is a decision
+            framework that starts where robot selection should start: with your
+            composite part and process.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69c3b50edf10b86cae25cb4a_1.png"
+            alt="AFP robot system overview"
+            class="full-width-image"
+          />
+
+          <p>
+            Most buyers start with the wrong question. "Which robot brand should
+            I use?" or "How much payload do I need?" are reasonable questions —
+            but they're the second question, not the first. The first question
+            is: what does your process actually demand?
+          </p>
+
+          <p>
+            This guide is built from real conversations with AFP system users
+            and the applications team at Addcomposites. It's not a spec sheet
+            comparison — it's a decision framework that starts where robot
+            selection should start: with your composite part and process.
+          </p>
+        </section>
+
+        <!-- Step One: Process Envelope -->
+        <section id="process-envelope">
+          <h2>Step One: Define Your Process Envelope</h2>
+
+          <p>
+            Before you open a robot datasheet, you need four things defined:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Part geometry</strong> — flat, single curvature, double
+              curvature, or complex
+            </li>
+            <li>
+              <strong>Minimum steering radius</strong> — this defines path
+              complexity and required wrist agility
+            </li>
+            <li>
+              <strong>Placement tolerance</strong> — typically ±0.25 to ±1 mm
+              depending on structural requirements
+            </li>
+            <li>
+              <strong>Layup speed target</strong> — 100 to 600 mm/s is the
+              typical AFP range
+            </li>
+          </ul>
+
+          <p>
+            These aren't robot specs. They're process specs. But they map
+            directly onto robot capability requirements: reach, payload, path
+            accuracy, and motion control quality. Until you have this
+            definition, any robot recommendation is guesswork.
+          </p>
+
+          <!-- INFOGRAPHIC 1: Process Envelope → Robot Requirements -->
+          <div id="infographic-1-placeholder">
+            <!-- INFOGRAPHIC 1: YOUR PROCESS ENVELOPE → ROBOT REQUIREMENTS
+                 Flow diagram showing 5 process inputs (Part Geometry, Steering Radius, Placement Tolerance, Layup Speed, Future Upgrades)
+                 mapping via arrows to 3 robot capability outputs (Reach + Wrist Agility, Path Accuracy, Payload + Torque + Payload Headroom).
+                 Brand colors: Navy #47577c for inputs, Red #bf3425 for outputs, Gray #9d9d9c for connectors.
+                 Scroll-reveal animation. Hover highlights each row. -->
+          </div>
+
+          <p>
+            Buyers who arrive with these defined move significantly faster
+            through robot selection and make better decisions. Buyers who arrive
+            without them aren't less capable — robot selection without process
+            definition is just premature.
+          </p>
+        </section>
+
+        <!-- Payload -->
+        <section id="payload">
+          <h2>Payload: The Number That Catches Everyone Off Guard</h2>
+
+          <p>
+            Payload is the most commonly misunderstood selection criterion in
+            AFP robot purchasing. Most buyers look at the AFP head weight and
+            add a small buffer. That's not enough.
+          </p>
+
+          <div class="split-layout">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69c3b50e024fd1ac4e576ebb_2.png"
+                alt="AFP-XS mounted on a KUKA robot at INEGI"
+              />
+            </div>
+            <div class="split-text">
+              <h3>The Real Payload Stack</h3>
+              <p>
+                AFP-XS mounted on a KUKA robot at INEGI — fiber spool, cable
+                management, and compaction assembly make up the real payload
+                stack.
+              </p>
+              <p>
+                The real payload is a stack. For an AFP-XS system, the effective
+                tool load at the wrist is approximately 36–51 kg before process
+                forces are considered. Adding compaction and fiber tension
+                forces (50–300 N compaction, process-dependent), the AFP-XS
+                minimum robot requirement is 70 kg. AFP-X minimum is 250–300 kg,
+                and AddX minimum is 70 kg.
+              </p>
+            </div>
+          </div>
+
+          <!-- INFOGRAPHIC 2: Real System Payload — AFP-XS Example -->
+          <div id="infographic-2-placeholder">
+            <!-- INFOGRAPHIC 2: REAL SYSTEM PAYLOAD — AFP-XS EXAMPLE
+                 Vertical stacked waterfall / breakdown diagram showing payload accumulation:
+                 AFP-XS head ~20 kg → Material spool (loaded) ~8–12 kg → Cable management ~3–4 kg →
+                 Future upgrade margin +5–15 kg → Effective tool load at wrist: ~36–51 kg before process forces →
+                 Add compaction + fiber tension forces (50–300 N) →
+                 Final recommendations box: AFP-XS minimum 70 kg, AFP-X minimum 250–300 kg, AddX minimum 70 kg.
+                 Animated bar/step chart. Brand colors. Hover tooltips. -->
+          </div>
+
+          <p>
+            The 70 kg minimum for AFP-XS isn't just about carrying the head —
+            it's about having enough wrist torque to apply compaction force at
+            the roller while maintaining path accuracy. A robot sized to carry
+            the head may still fail dynamically: vibrating, drifting on curved
+            paths, or running below target speed because it lacks torque margin.
+          </p>
+
+          <div class="highlight-box">
+            <h4>Rule of Thumb</h4>
+            <p>
+              Operate at ≤60–70% of rated payload for AFP applications. The
+              remainder isn't waste — it's your accuracy and reliability buffer.
+            </p>
+          </div>
+        </section>
+
+        <!-- Wrist Torque -->
+        <section id="wrist-torque">
+          <h2>The Wrist Torque Problem Most Buyers Miss</h2>
+
+          <p>
+            Here's what rarely appears in procurement conversations but matters
+            enormously in practice: the difference between static payload and
+            dynamic payload.
+          </p>
+
+          <p>
+            A robot rated for 70 kg can carry 70 kg in a static test. But during
+            AFP layup, the wrist is moving continuously, pressing a roller
+            against a surface at angles that change constantly. Two forces are
+            working against you simultaneously:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Compaction force</strong> — the roller pressing down on
+              the laminate (typically 50–300 N, depending on material and
+              process)
+            </li>
+            <li>
+              <strong>Fiber tension</strong> — the pull-back force from the tow
+              as it unspools from the creel
+            </li>
+          </ul>
+
+          <p>
+            Both forces act through the TCP offset — the distance from the wrist
+            flange to the roller contact point. The longer that offset, the
+            greater the moment arm, and the more torque the wrist must resist. A
+            600 mm TCP offset with 200 N of combined process force creates 120
+            Nm of torque at the wrist before you've even accounted for tool
+            inertia.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/698d810722e24fe925b4d7f9_2.png"
+            alt="AFP-XS compaction roller in contact with carbon fiber laminate"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            AFP-XS compaction roller in contact with carbon fiber laminate —
+            compaction force and fiber tension act simultaneously through the
+            TCP offset, loading the robot wrist with every pass.
+          </p>
+
+          <p>
+            This is why robots selected close to their payload limit regularly
+            underperform in AFP applications: they pass the carry test but fail
+            the process test. The symptom isn't a crash — it's subtle accuracy
+            drift on curved paths, reduced achievable speed, and vibration that
+            shows up as placement inconsistency.
+          </p>
+
+          <p>
+            Addcomposites systems are specifically designed to minimize this
+            problem: lightweight tooling, minimal TCP offset, and compact
+            geometry that reduces moment arm loads. This is what allows
+            mid-range robots to perform reliably rather than requiring
+            heavy-duty platforms.
+          </p>
+        </section>
+
+        <!-- Part Size & Architecture -->
+        <section id="part-size">
+          <h2>Part Size Drives Architecture</h2>
+
+          <p>
+            The size of your part determines which robot configuration makes
+            sense — not the robot model, but the entire physical arrangement of
+            the cell.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69c3b53449a29282d84722b1_4.png"
+            alt="KUKA AFP-X on a linear track"
+            class="full-width-image"
+          />
+
+          <h3>When Parts Outgrow Fixed Bases</h3>
+          <p>
+            KUKA AFP-X on a linear track — when parts outgrow a fixed base, the
+            robot travels to the part, not the other way around.
+          </p>
+          <p>
+            For parts up to 2 m, a standard 6-axis robot on a fixed base is the
+            most common and simplest starting point. As parts grow, the
+            architecture must adapt — adding positioners, 7th-axis tracks, or in
+            extreme cases, full gantry systems.
+          </p>
+
+          <!-- INFOGRAPHIC 3: Part Scale vs. System Architecture -->
+          <div id="infographic-3-placeholder">
+            <!-- INFOGRAPHIC 3: PART SCALE vs. SYSTEM ARCHITECTURE
+                 Horizontal comparison table / diagram with 4 rows:
+                 Row 1: ≤2 m → Standard 6-axis robot on fixed base → "Most common starting point"
+                 Row 2: 3–4 m → Robot + positioner or robot on 7th axis → "Part rotates to robot"
+                 Row 3: 5–20 m → Robot on linear track (rail illustration) → "Robot travels along part"
+                 Row 4: 30 m+ → Gantry system X/Y/Z motion only → "Large fixed parts only"
+                 Animated rows that highlight on hover. Scale bar on left. Notes on right. -->
+          </div>
+
+          <p>
+            A word on gantries: they appear in AFP literature frequently, but
+            they're often misapplied. A gantry is essentially a large 3D printer
+            — fixed base, linear motion in X, Y, and Z, no rotational freedom at
+            the tool. That makes it poorly suited for complex double-curved
+            geometries. For most AFP applications, a robot on a linear track is
+            both cheaper and more capable than a gantry.
+          </p>
+
+          <p>
+            Gantries make practical sense only when parts reach 30–50 m in
+            scale, where robot-on-track systems lose accuracy as the robot
+            travels extended distances. For anything smaller, the gantry's
+            rigidity becomes a limitation rather than an advantage.
+          </p>
+        </section>
+
+        <!-- Robot Brands -->
+        <section id="robot-brands">
+          <h2>Robot Brands: What Field Experience Shows</h2>
+
+          <p>
+            Addcomposites systems are robot-agnostic by design — the software
+            and tooling are built to work across platforms. That said, field
+            experience across multiple deployments has produced clear patterns.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69c3b50e3b6de497a85238ba_5.png"
+            alt="One AFP head, three robot brands — KUKA, ABB, and FANUC"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            One AFP head, three robot brands — KUKA, ABB, and FANUC all run the
+            same Addcomposites system without custom hardware.
+          </p>
+
+          <!-- INFOGRAPHIC 4: Robot Brand Landscape for AFP -->
+          <div id="infographic-4-placeholder">
+            <!-- INFOGRAPHIC 4: ROBOT BRAND LANDSCAPE FOR AFP
+                 4-row comparison table with brand name in left column and field notes in right column:
+                 KUKA: Most common in Addcomposites installs. Controller flexibility is the key reason: external axis sync, continuous path, customization options all work well. Strong ecosystem for offline programming.
+                 ABB: Fully compatible. Strong hardware. Slightly more restrictive on controller customization than KUKA in some configs.
+                 FANUC: Fully compatible. Widely available. Similar notes to ABB on controller flexibility.
+                 Other brands: Compatibility varies by platform. Some models may present challenges with controller integration for AFP-specific motion control requirements.
+                 Card-based layout, hover highlight, brand color accents. -->
+          </div>
+
+          <p>
+            KUKA's prevalence comes primarily from controller flexibility. AFP
+            requires continuous path interpolation — smooth, high-rate motion
+            control along programmed curves — and KUKA's controller architecture
+            gives more customization options than competitors in that specific
+            area. ABB and Fanuc are solid platforms and work well, but offer
+            slightly less flexibility on certain motion control configurations.
+          </p>
+
+          <p>
+            On lesser-known or emerging-market robot platforms: while the
+            purchase price can be attractive, some platforms present integration
+            challenges around controller flexibility and AFP-specific motion
+            control requirements. If a customer arrives with one of these
+            systems already installed, the practical path forward depends on the
+            specific platform — in some cases, pairing it with a gantry
+            architecture may be a more viable route than deep controller
+            integration work.
+          </p>
+        </section>
+
+        <!-- Path Accuracy -->
+        <section id="path-accuracy">
+          <h2>Path Accuracy: What the Datasheets Don't Tell You</h2>
+
+          <p>
+            AFP requires absolute accuracy — not just repeatability. The
+            distinction is critical and is consistently misunderstood in robot
+            selection conversations.
+          </p>
+
+          <!-- INFOGRAPHIC 5: Repeatability vs. Absolute Accuracy -->
+          <div id="infographic-5-placeholder">
+            <!-- INFOGRAPHIC 5: REPEATABILITY vs. ABSOLUTE ACCURACY
+                 Side-by-side comparison card layout:
+                 LEFT — Repeatability: "How precisely a robot returns to a previously taught point" | Typical value: ±0.05 mm (often quoted on datasheets)
+                 RIGHT — Absolute Accuracy: "How precisely it reaches a programmed coordinate in 3D space" | Uncalibrated: ±1–3 mm | Calibrated: ±0.2–0.5 mm
+                 Below both: AFP Placement Tolerance: ±0.25–1 mm
+                 Key insight callout: "Uncalibrated robots can be at or beyond tolerance limit before a single tow is placed"
+                 Animated entrance, brand color highlights for key values. -->
+          </div>
+
+          <p>
+            A robot with ±0.05 mm repeatability and ±2 mm absolute accuracy will
+            return to its taught position consistently — but if that taught
+            position drifts from your programmed path, you're placing tows in
+            the wrong location. For AFP, where tow gap and overlap tolerances
+            are typically measured in fractions of a millimeter, this matters.
+          </p>
+
+          <p>
+            Laser tracker calibration brings absolute accuracy into the ±0.2–0.5
+            mm range. It's not optional for precision work — but it's also an
+            additional cost, setup time, and recalibration schedule that most
+            buyers don't budget for in the initial purchase. Factor it in
+            upfront.
+          </p>
+        </section>
+
+        <!-- Hidden Costs -->
+        <section id="hidden-costs">
+          <h2>The Hidden Costs That Surprise Buyers</h2>
+
+          <p>
+            Robot cost is typically a minority of total AFP system investment.
+            Before finalizing a budget, account for the full stack:
+          </p>
+
+          <!-- INFOGRAPHIC 6: Total AFP System Cost — Iceberg View -->
+          <div id="infographic-6-placeholder">
+            <!-- INFOGRAPHIC 6: TOTAL AFP SYSTEM COST — ICEBERG VIEW
+                 Iceberg visual divided into two zones:
+                 ABOVE WATERLINE (visible): Robot purchase, AFP head
+                 BELOW WATERLINE (hidden costs, larger): Offline programming software, Laser tracker + calibration service, TCP calibration routines, Process validation + first-article runs, Scrap during tuning, Cycle time losses at conservative speeds
+                 Visual iceberg shape with navy blue water, white above-water portion, navy below.
+                 Animated reveal from top to bottom. Items below waterline revealed with stagger. -->
+          </div>
+
+          <p>
+            None of these are optional. They're the difference between a robot
+            that passes a demo and a cell that runs production reliably. Buyers
+            who budget only for the visible portion of this iceberg regularly
+            face scope expansion mid-project.
+          </p>
+
+          <div class="split-layout">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69c3b50e0071800f138a0e2c_6.png"
+                alt="First-article inspection of an AFP test panel"
+              />
+            </div>
+            <div class="split-text">
+              <h3>First Article Inspection</h3>
+              <p>
+                First-article inspection of an AFP test panel — gap, overlap,
+                and placement accuracy measured and logged before a production
+                cell is signed off.
+              </p>
+              <p>
+                Process validation and first-article runs are a mandatory step
+                that consumes both time and material. Budget for it explicitly —
+                it will happen regardless.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Specification Risk -->
+        <section id="spec-risk">
+          <h2>Avoiding Both Failure Modes: Under- and Over-Specifying</h2>
+
+          <p>
+            Under-specifying is the more common mistake. The clearest failure
+            pattern: selecting a robot near its payload limit with a long TCP
+            offset. The result is excessive wrist torque, path drift on curved
+            surfaces, and a process speed ceiling well below target. The outcome
+            is usually re-selection — which costs more than specifying correctly
+            upfront.
+          </p>
+
+          <p>
+            Over-specifying is also a real risk. A 350 kg robot for an AFP-XS
+            system is overkill in almost every case. Larger footprint, higher
+            cost, and not inherently more accurate. The one legitimate
+            exception: if the customer has concrete plans to upgrade to a larger
+            AFP head in the future, buying a bigger robot now allows
+            head-swapping without replacing the arm. If that's a realistic
+            roadmap item, it's worth accounting for in the initial purchase. If
+            it isn't, it's unnecessary capital spend.
+          </p>
+
+          <!-- INFOGRAPHIC 7: Specification Risk Spectrum -->
+          <div id="infographic-7-placeholder">
+            <!-- INFOGRAPHIC 7: SPECIFICATION RISK SPECTRUM
+                 Three-column layout (Under-spec | Correct Zone | Over-spec):
+                 UNDER-SPEC: Robot near payload limit → High wrist torque → Path drift, speed ceiling → Re-selection required
+                 CORRECT ZONE: 60–70% payload utilization → Torque margin for process forces → Reliable accuracy at full speed
+                 OVER-SPEC: Excess payload for tool size → Wasted cost + footprint (acceptable if upgrade path is planned)
+                 Middle column highlighted in light navy. Left column in light red. Right column in light gray.
+                 Animated entrance with staggered cards. -->
+          </div>
+        </section>
+
+        <!-- Selection Flow -->
+        <section id="selection-flow">
+          <h2>Making the Selection Decision</h2>
+
+          <p>
+            If you've worked through your process envelope, the practical
+            decision flow looks like this:
+          </p>
+
+          <!-- INFOGRAPHIC 8: AFP Robot Selection Flow -->
+          <div id="infographic-8-placeholder">
+            <!-- INFOGRAPHIC 8: AFP ROBOT SELECTION FLOW
+                 Vertical flowchart with 7 numbered decision steps:
+                 1. Define process envelope (geometry, speed, tolerance, forces)
+                 2. Part > 30 m? YES → Gantry architecture | NO → continue
+                 3. Part > 5 m? YES → Robot on linear track | NO → continue
+                 4. AFP system? AFP-XS/AddX → 70 kg class robot | AFP-X → 250–300 kg class robot
+                 5. Brand preference? KUKA/ABB/Fanuc → All compatible | Others → Verify controller compatibility first
+                 6. Run reach simulation vs. actual part. Validate wrist torque at max TCP offset.
+                 7. Confirm at ≤60–70% payload utilization
+                 Animated step-by-step reveal on scroll. Decision branches with YES/NO indicators in brand colors. -->
+          </div>
+
+          <p>
+            The most valuable step if you're still uncertain after working
+            through this flow is running an offline simulation against your
+            actual part geometry before committing to a robot purchase. It takes
+            more time upfront and saves significantly more downstream.
+          </p>
+        </section>
+
+        <!-- Buyer Checklist -->
+        <section id="checklist">
+          <h2>Buyer Readiness Checklist</h2>
+
+          <div class="split-layout">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69bb96ac1fec9ba2fedd839c_9.png"
+                alt="AFP cell simulation in AddPath"
+              />
+            </div>
+            <div class="split-text">
+              <h3>Simulate Before You Buy</h3>
+              <p>
+                AFP cell simulation in AddPath — reach, clearance, and wrist
+                torque validated before a purchase order is raised.
+              </p>
+              <p>
+                An offline simulation against your actual part geometry is the
+                most valuable step available before committing to a robot
+                purchase.
+              </p>
+            </div>
+          </div>
+
+          <p>
+            Before entering a robot selection conversation, a well-prepared
+            buyer has:
+          </p>
+
+          <div class="checklist-grid">
+            <div class="checklist-item">
+              <div class="checklist-check">&#10003;</div>
+              <span>Part CAD and layup definition complete</span>
+            </div>
+            <div class="checklist-item">
+              <div class="checklist-check">&#10003;</div>
+              <span>Minimum steering radius calculated from path geometry</span>
+            </div>
+            <div class="checklist-item">
+              <div class="checklist-check">&#10003;</div>
+              <span
+                >Compaction force estimated (material and
+                process-dependent)</span
+              >
+            </div>
+            <div class="checklist-item">
+              <div class="checklist-check">&#10003;</div>
+              <span>Fiber tension requirements understood</span>
+            </div>
+            <div class="checklist-item">
+              <div class="checklist-check">&#10003;</div>
+              <span>AFP system selected (AFP-XS, AFP-X, or AddX)</span>
+            </div>
+            <div class="checklist-item">
+              <div class="checklist-check">&#10003;</div>
+              <span>Reach simulation run against actual part envelope</span>
+            </div>
+            <div class="checklist-item">
+              <div class="checklist-check">&#10003;</div>
+              <span
+                >Placement tolerance specified from structural analysis</span
+              >
+            </div>
+            <div class="checklist-item">
+              <div class="checklist-check">&#10003;</div>
+              <span
+                >Budget includes calibration, software, and validation
+                costs</span
+              >
+            </div>
+            <div class="checklist-item">
+              <div class="checklist-check">&#10003;</div>
+              <span
+                >Future upgrade path considered (will you scale to a larger
+                head?)</span
+              >
+            </div>
+          </div>
+
+          <p>
+            Buyers who arrive without this list aren't less capable — they're
+            just earlier in the process. Robot selection before process
+            definition produces guesses, not decisions.
+          </p>
+
+          <!-- Learn More Section -->
+          <section id="learn-more">
+            <h2>Learn More</h2>
+            <div class="learn-more-container">
+              <a
+                target="_blank"
+                href="https://www.addcomposites.com/all-products/afp-xs"
+                class="learn-more-card"
+              >
+                <div class="learn-more-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                </div>
+                <div class="learn-more-text">
+                  <span class="learn-more-title">AFP-XS</span>
+                  <span class="learn-more-desc"
+                    >Entry-level automated fiber placement</span
+                  >
+                </div>
+              </a>
+              <a
+                target="_blank"
+                href="https://www.addcomposites.com/all-products/afp-x"
+                class="learn-more-card"
+              >
+                <div class="learn-more-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                </div>
+                <div class="learn-more-text">
+                  <span class="learn-more-title">AFP-X</span>
+                  <span class="learn-more-desc">Advanced multi-tow system</span>
+                </div>
+              </a>
+              <a
+                target="_blank"
+                href="https://www.addcomposites.com/addpath"
+                class="learn-more-card"
+              >
+                <div class="learn-more-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect
+                      x="3"
+                      y="3"
+                      width="18"
+                      height="18"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                    <line x1="9" y1="21" x2="9" y2="9"></line>
+                  </svg>
+                </div>
+                <div class="learn-more-text">
+                  <span class="learn-more-title">AddPath</span>
+                  <span class="learn-more-desc"
+                    >AI-powered path planning software</span
+                  >
+                </div>
+              </a>
+              <a
+                target="_blank"
+                href="https://www.addcomposites.com/post/afp-machines-and-components"
+                class="learn-more-card"
+              >
+                <div class="learn-more-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                  </svg>
+                </div>
+                <div class="learn-more-text">
+                  <span class="learn-more-title">Complete Guide</span>
+                  <span class="learn-more-desc"
+                    >The Complete Guide to AFP Machines</span
+                  >
+                </div>
+              </a>
+            </div>
+
+            <div class="cta-section">
+              <p>
+                Addcomposites builds AFP systems designed to work on standard
+                industrial robots — no custom hardware required. If you're at
+                the robot selection stage, the applications team has worked
+                through this decision across aerospace, automotive, and
+                industrial composites customers. Contact us to get a
+                recommendation specific to your part and process.
+              </p>
+              <a
+                target="_blank"
+                href="https://www.addcomposites.com/contact-us"
+                class="cta-button"
+                >Contact Us for a Consultation</a
+              >
+            </div>
+          </section>
+        </section>
+
+        <!-- References -->
+        <section id="references">
+          <h2>References</h2>
+          <ol class="references-list">
+            <li>
+              Addcomposites Sales &amp; Applications Team Interview —
+              Addcomposites Sales &amp; Applications (March 2026). Primary
+              source for field insights on buyer behavior, robot selection
+              patterns, and real-world failure modes in AFP installations.
+            </li>
+            <li>
+              Addcomposites Technical Specifications — AFP-XS, AFP-X, and AddX
+              product documentation. Payload ranges, TCP offset specifications,
+              and system weight data.
+            </li>
+            <li>
+              ISO 9283:1998 — Industrial robots – Procedure for the presentation
+              of specifications – Accuracy and repeatability. International
+              standard defining the distinction between repeatability and
+              absolute accuracy in robotic systems.
+            </li>
+            <li>
+              KUKA KR Quantec Series Specifications — Technical datasheet and
+              controller documentation. Reference for external axis
+              synchronization, continuous path interpolation, and motion control
+              flexibility.
+            </li>
+            <li>
+              ABB IRB 6700 and IRB 14000 Series — Robot specifications and
+              controller capabilities. Comparative reference for path accuracy
+              and motion control configurations.
+            </li>
+            <li>
+              FANUC M-20iD/35 and M-710iC/70 Series — Specifications and
+              collaborative robot motion control. Industry reference for
+              standard robot classes used in AFP applications.
+            </li>
+            <li>
+              Lukaszewicz, G., et al. (2012). "Automated Fiber Placement —
+              Mechanical Properties." Composites Part A: Applied Science and
+              Manufacturing, 43(10). Peer-reviewed validation of process
+              parameters and accuracy tolerances in AFP manufacturing.
+            </li>
+            <li>
+              Croft, E., Wierczynski, G., &amp; Benhabib, B. (2011). "Optimal
+              Force and Torque Estimation in Compliant Manipulation Tasks." IEEE
+              Transactions on Robotics and Automation. Technical reference for
+              understanding wrist torque in continuous path processes.
+            </li>
+            <li>
+              Boisse, P., et al. (2015). Composite Reinforcements for Optimum
+              Performance (2nd Edition). Woodhead Publishing. Comprehensive
+              reference on composite manufacturing processes, including fiber
+              tension and compaction forces in automated layup.
+            </li>
+            <li>
+              Addcomposites Internal Deployment Database (2024–2026) — Field
+              data from 50+ customer installations across aerospace, automotive,
+              and industrial composites. Source for robot brand prevalence,
+              failure pattern analysis, and cost breakdown observations.
+            </li>
+          </ol>
+        </section>
+
+        <img
+          src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6978d40a3357ac7e5d9c9aa1_14.png"
+          alt="Addcomposites AFP system"
+          class="full-width-image"
+        />
+
+        <!-- Author Section -->
+        <section class="author-section">
+          <div class="author-card">
+            <div class="author-image-wrapper">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/65dc93e2c8b30f7b6484e473_contact-lwr-img1.jpg"
+                alt="Pravin Luthada"
+                class="author-image"
+              />
+            </div>
+            <div class="author-info">
+              <h3 class="author-name">Pravin Luthada</h3>
+              <p class="author-title">CEO &amp; Co-founder, Addcomposites</p>
+              <div class="author-social">
+                <a
+                  href="https://www.linkedin.com/in/pravinluthada/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <svg viewBox="0 0 24 24" fill="#0A66C2">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                  </svg>
+                </a>
+                <a href="mailto:pravin@addcomposites.com" aria-label="Email">
+                  <svg viewBox="0 0 24 24" fill="#EA4335">
+                    <path
+                      d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.youtube.com/@addcomposites"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
+                  <svg viewBox="0 0 24 24" fill="#FF0000">
+                    <path
+                      d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <h4 class="about-author-label">About Author</h4>
+              <p class="author-bio">
+                As the author of the Addcomposites blog, Pravin Luthada's
+                insights are forged from a distinguished career in advanced
+                materials, beginning as a space scientist at the Indian Space
+                Research Organisation (ISRO). During his tenure, he gained
+                hands-on expertise in manufacturing composite components for
+                satellites and launch vehicles, where he witnessed firsthand the
+                prohibitive costs of traditional Automated Fiber Placement (AFP)
+                systems. This experience became the driving force behind his
+                entrepreneurial venture, Addcomposites Oy, which he co-founded
+                and now leads as CEO. The company is dedicated to democratizing
+                advanced manufacturing by developing patented, plug-and-play AFP
+                toolheads that make automation accessible and affordable. This
+                unique journey from designing space-grade hardware to leading a
+                disruptive technology company provides Pravin with a
+                comprehensive, real-world perspective that informs his writing
+                on the future of the composites industry.
+              </p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
