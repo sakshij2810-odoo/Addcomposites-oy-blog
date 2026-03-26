@@ -1828,180 +1828,246 @@ section {
    INFOGRAPHIC 6 — ICEBERG COST VIEW
    Namespace: icb-
    ============================================ */
-.icb-container {
+
+.icb2-outer {
   font-family: "Assistant", sans-serif;
   background: #ffffff;
   border-radius: 16px;
-  padding: 28px;
+  padding: 28px 28px 24px;
   border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
-  max-width: 900px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  max-width: 960px;
   margin: 0 auto;
-}
-
-.icb-title {
-  font-family: "Archivo", sans-serif;
-  font-size: 17px;
-  font-weight: 700;
-  color: #47577c;
-  margin-bottom: 4px;
-}
-
-.icb-subtitle {
-  font-size: 12px;
-  color: #9d9d9c;
-  margin-bottom: 24px;
-}
-
-.icb-visual {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.icb-zone {
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.icb-zone-header {
-  padding: 12px 16px;
-  font-family: "Archivo", sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.icb-zone.visible-zone .icb-zone-header {
-  background: #47577c;
-  color: #ffffff;
-}
-
-.icb-zone.hidden-zone .icb-zone-header {
-  background: #1e293b;
-  color: #ffffff;
-}
-
-.icb-zone-badge {
-  font-size: 10px;
-  padding: 2px 7px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.2);
-  font-weight: 600;
-}
-
-.icb-items {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.icb-item {
-  padding: 12px 16px;
-  font-size: 13.5px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border-top: 1px solid #f1f5f9;
-  cursor: default;
-  transition: all 0.25s ease;
   opacity: 0;
-  transform: translateX(-10px);
+  transform: translateY(14px);
   transition:
-    opacity 0.4s ease,
-    transform 0.4s ease,
-    background 0.2s ease;
+    opacity 0.55s ease,
+    transform 0.55s ease;
 }
-
-.icb-item.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.icb-zone.visible-zone .icb-item {
-  background: #eef1f7;
-  color: #47577c;
-}
-
-.icb-zone.hidden-zone .icb-item {
-  background: #f8fafc;
-  color: #334155;
-}
-
-.icb-zone.visible-zone .icb-item:hover {
-  background: #dde3f0;
-}
-
-.icb-zone.hidden-zone .icb-item:hover {
-  background: #fef7f6;
-  color: #bf3425;
-}
-
-.icb-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.icb-zone.visible-zone .icb-dot {
-  background: #47577c;
-}
-.icb-zone.hidden-zone .icb-dot {
-  background: #bf3425;
-}
-
-.icb-waterline {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 16px 0;
-  grid-column: 1 / -1;
-}
-
-.icb-wl-line {
-  flex: 1;
-  height: 2px;
-  background: linear-gradient(90deg, #47577c, #bf3425);
-  opacity: 0.5;
-}
-
-.icb-wl-text {
-  font-size: 11px;
-  font-weight: 700;
-  color: #64748b;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.icb-reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s ease;
-}
-
-.icb-reveal.visible {
+.icb2-outer.icb2-in {
   opacity: 1;
   transform: translateY(0);
 }
 
-@media (max-width: 600px) {
-  .icb-visual {
-    grid-template-columns: 1fr;
+.icb2-meta-title {
+  font-family: "Archivo", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #47577c;
+  letter-spacing: 0.3px;
+  margin-bottom: 4px;
+}
+.icb2-meta-sub {
+  font-size: 12px;
+  color: #9d9d9c;
+  margin-bottom: 18px;
+}
+
+/* ── SCENE ── */
+.icb2-scene {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  /* Full scene background: sky top → waterline → deep sea */
+  background: linear-gradient(
+    to bottom,
+    #c8e8f5 0%,
+    #a8d4ed 18%,
+    #7bbcdf 32%,
+    /* sky horizon */ #4a9ac4 33.5%,
+    /* waterline */ #2d6e9a 34%,
+    #1a4e75 55%,
+    #0d3355 78%,
+    #071e38 100%
+  );
+}
+
+/* ── ZONE LABELS (absolute, left side) ── */
+.icb2-zone-lbl {
+  position: absolute;
+  left: 18px;
+  font-family: "Archivo", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.icb2-zone-lbl-above {
+  top: 14px;
+  color: #47577c;
+}
+.icb2-zone-lbl-below {
+  color: rgba(255, 255, 255, 0.65);
+}
+.icb2-zone-lbl span {
+  font-size: 9px;
+  font-weight: 500;
+  opacity: 0.75;
+  letter-spacing: 0.5px;
+}
+
+/* ── WATERLINE RULE ── */
+.icb2-wl-rule {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.55) 15%,
+    rgba(255, 255, 255, 0.55) 85%,
+    transparent 100%
+  );
+  z-index: 15;
+}
+.icb2-wl-tag {
+  position: absolute;
+  left: 25%;
+  transform: translateX(-50%);
+  font-family: "Archivo", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(30, 90, 130, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 2px 10px;
+  border-radius: 20px;
+  z-index: 16;
+  white-space: nowrap;
+}
+
+/* ── RIGHT PANEL (labels) ── */
+.icb2-labels {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 42%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 16px 20px 16px 0;
+  z-index: 25;
+  pointer-events: none;
+}
+
+.icb2-label-item {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  opacity: 0;
+  transform: translateX(12px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+  pointer-events: all;
+}
+.icb2-label-item.icb2-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.icb2-connector-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  margin-right: 8px;
+}
+.icb2-label-item.above-item .icb2-connector-dot {
+  background: #ffffff;
+}
+.icb2-label-item.below-item .icb2-connector-dot {
+  background: #bf3425;
+  border-color: rgba(191, 52, 37, 0.6);
+}
+
+.icb2-label-text {
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  padding: 7px 11px;
+  border-radius: 8px;
+  cursor: default;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+  pointer-events: all;
+}
+.icb2-label-item.above-item .icb2-label-text {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.icb2-label-item.above-item .icb2-label-text:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(3px);
+}
+.icb2-label-item.below-item .icb2-label-text {
+  background: rgba(191, 52, 37, 0.18);
+  color: #ffffff;
+  border: 1px solid rgba(191, 52, 37, 0.4);
+}
+.icb2-label-item.below-item .icb2-label-text:hover {
+  background: rgba(191, 52, 37, 0.35);
+  transform: translateX(3px);
+}
+
+/* ── BUBBLES ── */
+.icb2-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: icb2-float linear infinite;
+}
+@keyframes icb2-float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
   }
-  .icb-waterline {
-    grid-column: 1;
+  50% {
+    transform: translateY(-18px) scale(1.1);
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateY(-36px) scale(0.9);
+    opacity: 0;
   }
 }
 
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  .icb2-labels {
+    width: 48%;
+    padding: 12px 12px 12px 0;
+  }
+  .icb2-label-text {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+  .icb2-zone-lbl {
+    display: none;
+  }
+}
+@media (max-width: 520px) {
+  .icb2-labels {
+    width: 52%;
+  }
+  .icb2-label-text {
+    font-size: 10px;
+    padding: 4px 7px;
+  }
+}
 /* ============================================
    INFOGRAPHIC 7 — SPECIFICATION RISK SPECTRUM
    Namespace: srs-

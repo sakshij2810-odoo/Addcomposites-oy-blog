@@ -499,12 +499,364 @@
 
           <!-- INFOGRAPHIC 6: Total AFP System Cost — Iceberg View -->
           <div id="infographic-6-placeholder">
-            <!-- INFOGRAPHIC 6: TOTAL AFP SYSTEM COST — ICEBERG VIEW
-                 Iceberg visual divided into two zones:
-                 ABOVE WATERLINE (visible): Robot purchase, AFP head
-                 BELOW WATERLINE (hidden costs, larger): Offline programming software, Laser tracker + calibration service, TCP calibration routines, Process validation + first-article runs, Scrap during tuning, Cycle time losses at conservative speeds
-                 Visual iceberg shape with navy blue water, white above-water portion, navy below.
-                 Animated reveal from top to bottom. Items below waterline revealed with stagger. -->
+            <div class="icb2-outer" id="icb2-outer">
+              <div class="icb2-meta-title">
+                TOTAL AFP SYSTEM COST — ICEBERG VIEW
+              </div>
+              <div class="icb2-meta-sub">
+                Robot cost is typically a minority of total AFP system
+                investment — most costs sit below the waterline
+              </div>
+
+              <div class="icb2-scene" id="icb2-scene">
+                <!-- ZONE LABELS LEFT -->
+                <div
+                  class="icb2-zone-lbl icb2-zone-lbl-above"
+                  id="lbl-above-pos"
+                >
+                  VISIBLE<br /><span>What you budget for</span>
+                </div>
+                <div
+                  class="icb2-zone-lbl icb2-zone-lbl-below"
+                  id="lbl-below-pos"
+                >
+                  HIDDEN COSTS<br /><span>What surprises buyers</span>
+                </div>
+
+                <!-- WATERLINE -->
+                <div class="icb2-wl-rule" id="icb2-wl-rule"></div>
+                <div class="icb2-wl-tag" id="icb2-wl-tag">— Waterline —</div>
+
+                <!-- ICEBERG SVG -->
+                <svg
+                  id="icb2-svg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  viewBox="0 0 960 680"
+                  style="display: block; position: relative; z-index: 10"
+                >
+                  <defs>
+                    <!-- Sky clip -->
+                    <clipPath id="sky-clip">
+                      <rect x="0" y="0" width="960" height="228" />
+                    </clipPath>
+                    <!-- Water clip -->
+                    <clipPath id="sea-clip">
+                      <rect x="0" y="228" width="960" height="452" />
+                    </clipPath>
+
+                    <!-- Above-water ice gradient: bright white-blue -->
+                    <linearGradient
+                      id="ice-above"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop
+                        offset="0%"
+                        stop-color="#f0f8ff"
+                        stop-opacity="0.97"
+                      />
+                      <stop
+                        offset="40%"
+                        stop-color="#cde8f5"
+                        stop-opacity="0.95"
+                      />
+                      <stop
+                        offset="100%"
+                        stop-color="#9dcce8"
+                        stop-opacity="0.9"
+                      />
+                    </linearGradient>
+
+                    <!-- Below-water ice gradient: deep blue -->
+                    <linearGradient
+                      id="ice-below"
+                      x1="0%"
+                      y1="0%"
+                      x2="30%"
+                      y2="100%"
+                    >
+                      <stop
+                        offset="0%"
+                        stop-color="#6baed6"
+                        stop-opacity="0.7"
+                      />
+                      <stop
+                        offset="40%"
+                        stop-color="#3182bd"
+                        stop-opacity="0.65"
+                      />
+                      <stop
+                        offset="100%"
+                        stop-color="#0d3a6e"
+                        stop-opacity="0.6"
+                      />
+                    </linearGradient>
+
+                    <!-- Facet shading -->
+                    <linearGradient
+                      id="facet1"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="0%"
+                    >
+                      <stop
+                        offset="0%"
+                        stop-color="#ffffff"
+                        stop-opacity="0.3"
+                      />
+                      <stop
+                        offset="100%"
+                        stop-color="#7ab8d8"
+                        stop-opacity="0.1"
+                      />
+                    </linearGradient>
+                    <linearGradient
+                      id="facet2"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop
+                        offset="0%"
+                        stop-color="#a8d4ea"
+                        stop-opacity="0.4"
+                      />
+                      <stop
+                        offset="100%"
+                        stop-color="#2d6e9a"
+                        stop-opacity="0.2"
+                      />
+                    </linearGradient>
+                  </defs>
+
+                  <!-- ═══ ABOVE WATERLINE ICE ═══ -->
+                  <!-- Main body above water: tall jagged peak, wide base at waterline -->
+                  <g clip-path="url(#sky-clip)">
+                    <!-- Main ice mass above water -->
+                    <polygon
+                      points="
+            390,228  395,210  388,195  375,175
+            370,155  365,130  368,108
+            372,88   378,68   385,48   390,30
+            395,10   400,2
+            405,10   412,28   418,52   422,72
+            428,92   432,115  430,138  435,158
+            440,178  445,200  448,218  450,228
+          "
+                      fill="url(#ice-above)"
+                      stroke="rgba(255,255,255,0.5)"
+                      stroke-width="0.8"
+                    />
+                    <!-- Left shoulder / secondary peak -->
+                    <polygon
+                      points="
+            320,228  325,210  318,190  308,168
+            312,148  318,128  322,108
+            328,90   333,72   338,58   342,45
+            347,35   350,28
+            356,38   362,56   367,76   370,95
+            373,115  374,135  372,155  370,175
+            365,196  360,210  355,220  350,228
+          "
+                      fill="url(#ice-above)"
+                      stroke="rgba(255,255,255,0.35)"
+                      stroke-width="0.5"
+                      opacity="0.85"
+                    />
+                    <!-- Right shoulder -->
+                    <polygon
+                      points="
+            450,228  455,215  460,200  462,182
+            465,162  468,142  465,122
+            460,102  455,82   452,62   448,44
+            445,30   442,20
+            448,18   455,30   462,48   468,66
+            474,86   478,108  478,130  478,152
+            476,172  475,192  475,212  474,228
+          "
+                      fill="url(#ice-above)"
+                      stroke="rgba(255,255,255,0.3)"
+                      stroke-width="0.5"
+                      opacity="0.8"
+                    />
+                    <!-- Ice facet highlights (left face) -->
+                    <polygon
+                      points="395,10  388,55  374,110  368,155  385,130  398,80  408,38"
+                      fill="url(#facet1)"
+                      stroke="none"
+                    />
+                    <!-- Ice facet right dark shadow -->
+                    <polygon
+                      points="412,28  422,72  432,115  430,138  440,178  448,218  450,228  440,228  438,195  430,160  422,130  415,90  410,50"
+                      fill="rgba(100,170,210,0.2)"
+                      stroke="none"
+                    />
+                    <!-- Snow highlight tip -->
+                    <ellipse
+                      cx="400"
+                      cy="8"
+                      rx="8"
+                      ry="4"
+                      fill="rgba(255,255,255,0.9)"
+                    />
+                  </g>
+
+                  <!-- ═══ BELOW WATERLINE ICE ═══ -->
+                  <g clip-path="url(#sea-clip)">
+                    <!-- Main submerged body: wide at top, tapers to narrow point at bottom -->
+                    <polygon
+                      points="
+            320,228  390,228  450,228  474,228
+            468,260  460,295  452,335
+            448,375  444,415  440,455
+            436,495  430,530  424,558
+            418,578  412,598  408,618
+            404,638  401,655  400,665
+            399,655  396,638  392,618
+            388,598  382,578  376,558
+            370,530  364,495  360,455
+            356,415  352,375  348,335
+            340,295  332,260  328,240
+          "
+                      fill="url(#ice-below)"
+                      stroke="rgba(130,190,230,0.4)"
+                      stroke-width="1"
+                    />
+                    <!-- Left dark facet underwater -->
+                    <polygon
+                      points="320,228 332,260 340,295 348,335 352,375 356,415 360,455 364,495 370,530 376,558 382,578 388,598 392,618 396,638 399,655 400,665 399,655 396,638  390,620  384,596 378,572  371,542  365,510  359,472  355,432  350,390  347,348  342,304  335,266  328,242"
+                      fill="rgba(20,60,110,0.35)"
+                      stroke="none"
+                    />
+                    <!-- Centre highlight streak -->
+                    <polygon
+                      points="400,665 401,655 404,635 406,610 408,580 409,545 408,505 406,460 404,415 402,370 400,325 398,370 396,415 394,460 392,505 391,545 392,580 394,610 396,635 399,655"
+                      fill="rgba(130,195,235,0.25)"
+                      stroke="none"
+                    />
+                    <!-- Right facet lighter -->
+                    <polygon
+                      points="450,228 468,260 460,295 452,335 448,375 444,415 440,455 436,495 430,530 424,558 418,578 412,598 408,618 404,638 401,655 400,665 402,650 406,630 410,608 416,582 422,554 428,524 434,490 438,450 442,410 446,368 450,328 456,288 462,256"
+                      fill="rgba(70,140,195,0.2)"
+                      stroke="none"
+                    />
+                    <!-- Subtle bubble circles in water -->
+                    <circle
+                      cx="290"
+                      cy="340"
+                      r="6"
+                      fill="rgba(255,255,255,0.1)"
+                      stroke="rgba(255,255,255,0.2)"
+                      stroke-width="1"
+                    />
+                    <circle
+                      cx="282"
+                      cy="390"
+                      r="4"
+                      fill="rgba(255,255,255,0.08)"
+                      stroke="rgba(255,255,255,0.15)"
+                      stroke-width="0.8"
+                    />
+                    <circle
+                      cx="300"
+                      cy="450"
+                      r="5"
+                      fill="rgba(255,255,255,0.09)"
+                      stroke="rgba(255,255,255,0.18)"
+                      stroke-width="0.8"
+                    />
+                    <circle
+                      cx="278"
+                      cy="500"
+                      r="3"
+                      fill="rgba(255,255,255,0.08)"
+                    />
+                    <circle
+                      cx="512"
+                      cy="360"
+                      r="5"
+                      fill="rgba(255,255,255,0.09)"
+                      stroke="rgba(255,255,255,0.15)"
+                      stroke-width="0.8"
+                    />
+                    <circle
+                      cx="525"
+                      cy="430"
+                      r="4"
+                      fill="rgba(255,255,255,0.07)"
+                    />
+                    <circle
+                      cx="505"
+                      cy="510"
+                      r="3"
+                      fill="rgba(255,255,255,0.08)"
+                    />
+                  </g>
+
+                  <!-- ═══ CONNECTOR LINES — drawn by JS ═══ -->
+                  <g id="icb2-connectors"></g>
+                </svg>
+
+                <!-- RIGHT SIDE LABEL PANEL (absolutely positioned over SVG) -->
+                <div class="icb2-labels" id="icb2-labels">
+                  <!-- ABOVE WATER: 2 items -->
+                  <div
+                    class="icb2-label-item above-item"
+                    data-delay="300"
+                    style="margin-top: 0"
+                  >
+                    <div class="icb2-connector-dot"></div>
+                    <div class="icb2-label-text">Robot purchase</div>
+                  </div>
+                  <div class="icb2-label-item above-item" data-delay="460">
+                    <div class="icb2-connector-dot"></div>
+                    <div class="icb2-label-text">AFP head</div>
+                  </div>
+
+                  <!-- BELOW WATER: 6 items -->
+                  <div class="icb2-label-item below-item" data-delay="620">
+                    <div class="icb2-connector-dot"></div>
+                    <div class="icb2-label-text">
+                      Offline programming software
+                    </div>
+                  </div>
+                  <div class="icb2-label-item below-item" data-delay="740">
+                    <div class="icb2-connector-dot"></div>
+                    <div class="icb2-label-text">
+                      Laser tracker + calibration service
+                    </div>
+                  </div>
+                  <div class="icb2-label-item below-item" data-delay="860">
+                    <div class="icb2-connector-dot"></div>
+                    <div class="icb2-label-text">TCP calibration routines</div>
+                  </div>
+                  <div class="icb2-label-item below-item" data-delay="980">
+                    <div class="icb2-connector-dot"></div>
+                    <div class="icb2-label-text">
+                      Process validation + first-article runs
+                    </div>
+                  </div>
+                  <div class="icb2-label-item below-item" data-delay="1100">
+                    <div class="icb2-connector-dot"></div>
+                    <div class="icb2-label-text">Scrap during tuning</div>
+                  </div>
+                  <div class="icb2-label-item below-item" data-delay="1220">
+                    <div class="icb2-connector-dot"></div>
+                    <div class="icb2-label-text">
+                      Cycle time losses at conservative speeds
+                    </div>
+                  </div>
+                </div>
+                <!-- /icb2-labels -->
+              </div>
+              <!-- /icb2-scene -->
+            </div>
+            <!-- /icb2-outer -->
           </div>
 
           <p>
