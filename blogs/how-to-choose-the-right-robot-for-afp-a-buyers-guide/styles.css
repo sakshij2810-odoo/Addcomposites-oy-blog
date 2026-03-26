@@ -2376,3 +2376,10 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* DEBUG ONLY — remove after fixing */
+.srs-reveal,
+.rsf-reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}

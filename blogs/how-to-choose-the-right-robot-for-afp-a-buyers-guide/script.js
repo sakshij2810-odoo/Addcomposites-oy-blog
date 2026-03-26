@@ -213,7 +213,6 @@ document.addEventListener("DOMContentLoaded", function () {
   buildInfographic3();
   buildInfographic4();
   buildInfographic5();
-  buildInfographic6();
   buildInfographic7();
   buildInfographic8();
 
@@ -633,146 +632,6 @@ function buildInfographic5() {
   placeholder.innerHTML = html;
 }
 
-// ─── INFOGRAPHIC 6: Iceberg Cost View ────────────────────────────────────────
-function buildInfographic6() {}
-
-(function () {
-  var WATERLINE_PCT = 33.5;
-
-  /* X positions (in SVG viewBox coords 0-960) where the dot
-     touches the iceberg edge for each of the 8 labels.
-     Order matches HTML label items top→bottom.
-     These are iceberg-edge X values; Y is computed from the real DOM. */
-  var ICEBERG_EDGE_X = [432, 452, 470, 462, 452, 442, 428, 412];
-
-  /* Whether each label is above(true) or below(false) waterline */
-  var IS_ABOVE = [true, true, false, false, false, false, false, false];
-
-  function positionWaterlineElements() {
-    var scene = document.getElementById("icb2-scene");
-    if (!scene) return;
-    var h = scene.offsetHeight;
-    var wlY = (WATERLINE_PCT / 100) * h;
-    var rule = document.getElementById("icb2-wl-rule");
-    var tag = document.getElementById("icb2-wl-tag");
-    var lblBelow = document.getElementById("lbl-below-pos");
-    if (rule) rule.style.top = wlY + "px";
-    if (tag) tag.style.top = wlY - 12 + "px";
-    if (lblBelow) lblBelow.style.top = wlY + 14 + "px";
-  }
-
-  function drawConnectors() {
-    var svg = document.getElementById("icb2-svg");
-    var scene = document.getElementById("icb2-scene");
-    var group = document.getElementById("icb2-connectors");
-    var items = document.querySelectorAll(".icb2-label-item");
-    if (!svg || !scene || !group || !items.length) return;
-
-    /* SVG viewBox dimensions */
-    var VB_W = 960,
-      VB_H = 680;
-
-    /* Scene bounding rect (used to convert DOM coords → SVG coords) */
-    var sceneRect = scene.getBoundingClientRect();
-    var sceneH = sceneRect.height;
-    var sceneW = sceneRect.width;
-
-    /* Scale factors: CSS pixels → SVG viewBox units */
-    var scaleX = VB_W / sceneW;
-    var scaleY = VB_H / sceneH;
-
-    group.innerHTML = "";
-
-    items.forEach(function (item, i) {
-      var edgeX = ICEBERG_EDGE_X[i] || 450;
-      var above = IS_ABOVE[i];
-
-      /* Mid-point of the label row in CSS pixels relative to scene top */
-      var itemRect = item.getBoundingClientRect();
-      var itemMidPx = itemRect.top + itemRect.height / 2 - sceneRect.top;
-
-      /* Convert to SVG Y */
-      var svgY = itemMidPx * scaleY;
-
-      /* Right end of line = left edge of label panel in SVG coords
-         Label panel is 42% from right → starts at 58% of scene width */
-      var lineEndX = VB_W * 0.575;
-
-      var stroke = above ? "rgba(255,255,255,0.55)" : "rgba(191,52,37,0.65)";
-      var dotFill = above ? "#ffffff" : "#bf3425";
-      var dotOpacity = above ? "0.8" : "0.9";
-
-      /* Dashed line */
-      var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-      line.setAttribute("x1", edgeX);
-      line.setAttribute("y1", svgY);
-      line.setAttribute("x2", lineEndX);
-      line.setAttribute("y2", svgY);
-      line.setAttribute("stroke", stroke);
-      line.setAttribute("stroke-width", "1.2");
-      line.setAttribute("stroke-dasharray", "4,3");
-      group.appendChild(line);
-
-      /* Dot on iceberg edge */
-      var dot = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "circle",
-      );
-      dot.setAttribute("cx", edgeX);
-      dot.setAttribute("cy", svgY);
-      dot.setAttribute("r", "3.5");
-      dot.setAttribute("fill", dotFill);
-      dot.setAttribute("opacity", dotOpacity);
-      group.appendChild(dot);
-    });
-  }
-
-  function startAnims() {
-    var outer = document.getElementById("icb2-outer");
-    if (outer) outer.classList.add("icb2-in");
-    var items = document.querySelectorAll(".icb2-label-item[data-delay]");
-    items.forEach(function (el) {
-      var d = parseInt(el.getAttribute("data-delay") || "0");
-      setTimeout(function () {
-        el.classList.add("icb2-in");
-      }, d);
-    });
-    /* Draw connectors after labels are visible so getBoundingClientRect is accurate */
-    setTimeout(drawConnectors, 50);
-  }
-
-  positionWaterlineElements();
-
-  /* Redraw on resize */
-  window.addEventListener("resize", function () {
-    positionWaterlineElements();
-    drawConnectors();
-  });
-
-  var outer = document.getElementById("icb2-outer");
-  if ("IntersectionObserver" in window) {
-    var obs = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            startAnims();
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 },
-    );
-    obs.observe(outer);
-  } else {
-    startAnims();
-  }
-
-  /* Fallback: also draw on load in case observer already fired */
-  window.addEventListener("load", function () {
-    setTimeout(drawConnectors, 120);
-  });
-})();
-
 // ─── INFOGRAPHIC 7: Specification Risk Spectrum ───────────────────────────────
 function buildInfographic7() {
   var placeholder = document.getElementById("infographic-7-placeholder");
@@ -992,3 +851,140 @@ function buildInfographic8() {
   html += "</div></div>";
   placeholder.innerHTML = html;
 }
+
+(function () {
+  var WATERLINE_PCT = 33.5;
+
+  /* X positions (in SVG viewBox coords 0-960) where the dot
+     touches the iceberg edge for each of the 8 labels.
+     Order matches HTML label items top→bottom.
+     These are iceberg-edge X values; Y is computed from the real DOM. */
+  var ICEBERG_EDGE_X = [432, 452, 470, 462, 452, 442, 428, 412];
+
+  /* Whether each label is above(true) or below(false) waterline */
+  var IS_ABOVE = [true, true, false, false, false, false, false, false];
+
+  function positionWaterlineElements() {
+    var scene = document.getElementById("icb2-scene");
+    if (!scene) return;
+    var h = scene.offsetHeight;
+    var wlY = (WATERLINE_PCT / 100) * h;
+    var rule = document.getElementById("icb2-wl-rule");
+    var tag = document.getElementById("icb2-wl-tag");
+    var lblBelow = document.getElementById("lbl-below-pos");
+    if (rule) rule.style.top = wlY + "px";
+    if (tag) tag.style.top = wlY - 12 + "px";
+    if (lblBelow) lblBelow.style.top = wlY + 14 + "px";
+  }
+
+  function drawConnectors() {
+    var svg = document.getElementById("icb2-svg");
+    var scene = document.getElementById("icb2-scene");
+    var group = document.getElementById("icb2-connectors");
+    var items = document.querySelectorAll(".icb2-label-item");
+    if (!svg || !scene || !group || !items.length) return;
+
+    /* SVG viewBox dimensions */
+    var VB_W = 960,
+      VB_H = 680;
+
+    /* Scene bounding rect (used to convert DOM coords → SVG coords) */
+    var sceneRect = scene.getBoundingClientRect();
+    var sceneH = sceneRect.height;
+    var sceneW = sceneRect.width;
+
+    /* Scale factors: CSS pixels → SVG viewBox units */
+    var scaleX = VB_W / sceneW;
+    var scaleY = VB_H / sceneH;
+
+    group.innerHTML = "";
+
+    items.forEach(function (item, i) {
+      var edgeX = ICEBERG_EDGE_X[i] || 450;
+      var above = IS_ABOVE[i];
+
+      /* Mid-point of the label row in CSS pixels relative to scene top */
+      var itemRect = item.getBoundingClientRect();
+      var itemMidPx = itemRect.top + itemRect.height / 2 - sceneRect.top;
+
+      /* Convert to SVG Y */
+      var svgY = itemMidPx * scaleY;
+
+      /* Right end of line = left edge of label panel in SVG coords
+         Label panel is 42% from right → starts at 58% of scene width */
+      var lineEndX = VB_W * 0.575;
+
+      var stroke = above ? "rgba(255,255,255,0.55)" : "rgba(191,52,37,0.65)";
+      var dotFill = above ? "#ffffff" : "#bf3425";
+      var dotOpacity = above ? "0.8" : "0.9";
+
+      /* Dashed line */
+      var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      line.setAttribute("x1", edgeX);
+      line.setAttribute("y1", svgY);
+      line.setAttribute("x2", lineEndX);
+      line.setAttribute("y2", svgY);
+      line.setAttribute("stroke", stroke);
+      line.setAttribute("stroke-width", "1.2");
+      line.setAttribute("stroke-dasharray", "4,3");
+      group.appendChild(line);
+
+      /* Dot on iceberg edge */
+      var dot = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "circle",
+      );
+      dot.setAttribute("cx", edgeX);
+      dot.setAttribute("cy", svgY);
+      dot.setAttribute("r", "3.5");
+      dot.setAttribute("fill", dotFill);
+      dot.setAttribute("opacity", dotOpacity);
+      group.appendChild(dot);
+    });
+  }
+
+  function startAnims() {
+    var outer = document.getElementById("icb2-outer");
+    if (outer) outer.classList.add("icb2-in");
+    var items = document.querySelectorAll(".icb2-label-item[data-delay]");
+    items.forEach(function (el) {
+      var d = parseInt(el.getAttribute("data-delay") || "0");
+      setTimeout(function () {
+        el.classList.add("icb2-in");
+      }, d);
+    });
+    /* Draw connectors after labels are visible so getBoundingClientRect is accurate */
+    setTimeout(drawConnectors, 50);
+  }
+
+  positionWaterlineElements();
+
+  /* Redraw on resize */
+  window.addEventListener("resize", function () {
+    positionWaterlineElements();
+    drawConnectors();
+  });
+
+  var outer = document.getElementById("icb2-outer");
+  if ("IntersectionObserver" in window) {
+    var obs = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            startAnims();
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+    obs.observe(outer);
+  } else {
+    startAnims();
+  }
+
+  /* Fallback: also draw on load in case observer already fired */
+  window.addEventListener("load", function () {
+    setTimeout(drawConnectors, 120);
+  });
+})();
