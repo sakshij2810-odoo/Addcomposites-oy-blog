@@ -1,0 +1,1452 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      AI and In-Situ Monitoring Are Converging in Composite Manufacturing |
+      Addcomposites
+    </title>
+    <meta
+      name="description"
+      content="A comprehensive review finds that AI/ML is now enabling real-time defect detection, closed-loop process control, and digital twin quality assurance in composite additive manufacturing."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,600&family=Assistant:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Mobile Navigation Toggle Button -->
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="blog-layout">
+      <!-- Sidebar -->
+      <nav class="blog-sidebar" aria-label="Table of Contents">
+        <button class="sidebar-close" aria-label="Close navigation menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          Close Menu
+        </button>
+        <h3 class="blog-sidebar-title">Contents</h3>
+        <div class="blog-sidebar-nav">
+          <a href="#introduction" class="blog-sidebar-link active"
+            >Introduction</a
+          >
+          <a href="#intelligent-stack" class="blog-sidebar-link"
+            >The Intelligent Stack</a
+          >
+          <a href="#layer1-material" class="blog-sidebar-link"
+            >Layer 1: Material &amp; Path Design</a
+          >
+          <a href="#layer2-monitoring" class="blog-sidebar-link"
+            >Layer 2: In-Situ Monitoring</a
+          >
+          <a href="#layer3-control" class="blog-sidebar-link"
+            >Layer 3: Closed-Loop Control</a
+          >
+          <a href="#layer4-digital-twin" class="blog-sidebar-link"
+            >Layer 4: Digital Twins</a
+          >
+          <a href="#afp-users-today" class="blog-sidebar-link"
+            >What This Means Today</a
+          >
+          <a href="#challenges" class="blog-sidebar-link"
+            >Challenges That Remain</a
+          >
+          <a href="#path-forward" class="blog-sidebar-link">The Path Forward</a>
+          <a href="#learn-more" class="blog-sidebar-link">Learn More</a>
+          <a href="#references" class="blog-sidebar-link">References</a>
+        </div>
+      </nav>
+
+      <article class="blog-content">
+        <!-- ── INTRODUCTION ── -->
+        <section id="introduction">
+          <h1>
+            AI and In-Situ Monitoring Are Converging in Composite Manufacturing
+            — Here's What That Means for AFP
+          </h1>
+
+          <div class="blog-meta">
+            <span class="blog-meta-item">
+              <svg
+                class="blog-meta-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>2026</span>
+            </span>
+            <span class="blog-meta-item">
+              <svg
+                class="blog-meta-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>18 min read</span>
+            </span>
+            <span class="blog-meta-item">
+              <svg
+                class="blog-meta-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+                ></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              </svg>
+              <span>AFP · AI/ML · in-situ monitoring · composites</span>
+            </span>
+          </div>
+
+          <p class="subtitle">
+            A comprehensive new review finds that AI/ML is now enabling
+            real-time defect detection, closed-loop process control, and digital
+            twin quality assurance in composite additive manufacturing. For
+            anyone operating or evaluating an AFP system, the implications are
+            enormous: the gap to fully autonomous layup is closing fast.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69d388cf7d64075a06bee86a_1.png"
+            alt="AI and In-Situ Monitoring in Composite Manufacturing"
+            class="full-width-image"
+          />
+
+          <p>
+            If you've been following the composites industry over the past few
+            years, you've probably noticed two parallel conversations happening
+            at every conference and in every technical journal. The first is
+            about sensors — thermal cameras, laser profilometers, acoustic
+            emission systems — and their growing role in watching the layup
+            process as it happens. The second is about artificial intelligence
+            and machine learning, and their ability to make sense of the
+            enormous volumes of data those sensors produce.
+          </p>
+
+          <div class="split-layout">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69d388f095189808ea03df50_2%20(2).png"
+                alt="AFP-X head with integrated thermal camera"
+              />
+            </div>
+            <div class="split-text">
+              <p>
+                AFP-X head with integrated thermal camera — in-situ monitoring
+                built into the placement process, not bolted on after.
+              </p>
+              <p>
+                A landmark narrative review published in
+                <em>Frontiers in Mechanical Engineering</em> in April 2026 by
+                Zaidi, Asif, Aljabri, and Khan brings these two conversations
+                together in a single, comprehensive framework. Titled
+                "Intelligent composite 3D printing: the role of artificial
+                intelligence, machine learning, and in-situ monitoring in
+                next-generation additive manufacturing," the paper synthesizes
+                the current state of AI-driven composite manufacturing across
+                the entire process lifecycle — from feedstock design to digital
+                twins — and makes a compelling case that these technologies are
+                no longer theoretical. They are production-ready building
+                blocks.
+              </p>
+            </div>
+          </div>
+
+          <p>
+            For those of us working in Automated Fiber Placement, this
+            convergence matters deeply. The question customers increasingly ask
+            — "How do I know the AFP system is making a good part?" — now has an
+            answer grounded in peer-reviewed research, not speculation. Let's
+            walk through what the review reveals and what it means for the
+            future of AFP.
+          </p>
+        </section>
+
+        <!-- ── THE INTELLIGENT MANUFACTURING STACK ── -->
+        <section id="intelligent-stack">
+          <h2>The Intelligent Manufacturing Stack</h2>
+
+          <p>
+            The Zaidi et al. review organizes the AI-composite intersection into
+            four layers that, when stacked together, form what we might call the
+            intelligent manufacturing stack. Here's how these layers relate to
+            an AFP workflow:
+          </p>
+
+          <!-- INFOGRAPHIC 1: Intelligent Manufacturing Stack -->
+          <div class="ims-container" style="opacity: 1">
+            <div class="ims-title ims-reveal">
+              The Intelligent Manufacturing Stack for AFP
+            </div>
+            <div class="ims-stack">
+              <div
+                class="ims-layer ims-layer--4 ims-reveal"
+                style="transition-delay: 0.05s"
+              >
+                <div class="ims-layer-number">4</div>
+                <div class="ims-layer-body">
+                  <div class="ims-layer-label">Digital Twin Layer</div>
+                  <div class="ims-layer-desc">
+                    Physics-informed models + ML surrogates running in parallel
+                    with the real process, predicting outcomes before they
+                    happen
+                  </div>
+                </div>
+                <div class="ims-layer-badge">Predictive</div>
+              </div>
+              <div
+                class="ims-connector ims-reveal"
+                style="transition-delay: 0.1s"
+              >
+                <div class="ims-connector-line"></div>
+              </div>
+              <div
+                class="ims-layer ims-layer--3 ims-reveal"
+                style="transition-delay: 0.15s"
+              >
+                <div class="ims-layer-number">3</div>
+                <div class="ims-layer-body">
+                  <div class="ims-layer-label">Closed-Loop Control Layer</div>
+                  <div class="ims-layer-desc">
+                    RL agents and adaptive controllers adjusting speed,
+                    temperature, and compaction in real time based on sensor
+                    feedback
+                  </div>
+                </div>
+                <div class="ims-layer-badge">Adaptive</div>
+              </div>
+              <div
+                class="ims-connector ims-reveal"
+                style="transition-delay: 0.2s"
+              >
+                <div class="ims-connector-line"></div>
+              </div>
+              <div
+                class="ims-layer ims-layer--2 ims-reveal"
+                style="transition-delay: 0.25s"
+              >
+                <div class="ims-layer-number">2</div>
+                <div class="ims-layer-body">
+                  <div class="ims-layer-label">In-Situ Monitoring Layer</div>
+                  <div class="ims-layer-desc">
+                    Vision + thermal + acoustic + force sensors feeding CNN/LSTM
+                    classifiers for real-time defect detection
+                  </div>
+                </div>
+                <div class="ims-layer-badge">Sensing</div>
+              </div>
+              <div
+                class="ims-connector ims-reveal"
+                style="transition-delay: 0.3s"
+              >
+                <div class="ims-connector-line"></div>
+              </div>
+              <div
+                class="ims-layer ims-layer--1 ims-reveal"
+                style="transition-delay: 0.35s"
+              >
+                <div class="ims-layer-number">1</div>
+                <div class="ims-layer-body">
+                  <div class="ims-layer-label">
+                    Material &amp; Path Design Layer
+                  </div>
+                  <div class="ims-layer-desc">
+                    ML-driven feedstock screening, fiber path optimization, and
+                    property prediction
+                  </div>
+                </div>
+                <div class="ims-layer-badge">Foundation</div>
+              </div>
+            </div>
+            <div class="ims-footer ims-reveal" style="transition-delay: 0.4s">
+              Each layer feeds into the next — material models predict,
+              monitoring systems verify, control systems intervene, and digital
+              twins learn from every layup.
+            </div>
+          </div>
+
+          <p>
+            Each layer feeds into the next. Material design models predict how a
+            feedstock will behave. Monitoring systems verify whether reality
+            matches prediction. Control systems intervene when it doesn't. And
+            digital twins tie it all together, learning from every layup to make
+            the next one better.
+          </p>
+
+          <div class="highlight-box">
+            <p>
+              This is the architecture the composites industry is converging
+              toward — and AFP, with its inherent sensor integration points and
+              process controllability, is uniquely positioned to benefit from
+              it.
+            </p>
+          </div>
+        </section>
+
+        <!-- ── LAYER 1 ── -->
+        <section id="layer1-material">
+          <h2>Layer 1: AI-Driven Material and Path Design</h2>
+
+          <p>
+            The review highlights how machine learning is accelerating the
+            traditionally slow process of composite feedstock development.
+            Instead of relying on trial-and-error experimentation to find the
+            right combination of fiber type, matrix resin, filler content, and
+            processing window, researchers are now training supervised learning
+            models — random forests, support vector machines, gradient-boosted
+            trees, and neural networks — to predict mechanical properties and
+            processability from compositional inputs.
+          </p>
+
+          <p>
+            Zaidi et al. document cases where models achieved R² values
+            exceeding 0.90 for predicting tensile strength, viscosity, and
+            dimensional accuracy across a range of fiber-reinforced systems. One
+            study using CatBoost (a gradient-boosted decision tree algorithm)
+            accurately predicted the tensile properties of continuous fiber
+            composites including Kevlar, carbon, and glass reinforcements — the
+            exact material families that AFP users work with daily.
+          </p>
+
+          <!-- INFOGRAPHIC 2: Predicted vs Actual Tensile Strength -->
+          <div class="pts-container" style="opacity: 1">
+            <div class="pts-title pts-reveal">
+              Predicted vs. Actual Tensile Strength — ML Model (CatBoost)
+            </div>
+            <div
+              class="pts-chart-wrap pts-reveal"
+              style="transition-delay: 0.1s"
+            >
+              <div class="pts-chart-area">
+                <canvas id="pts-chart" width="560" height="380"></canvas>
+              </div>
+              <div class="pts-legend">
+                <div class="pts-legend-item">
+                  <span class="pts-dot pts-dot--carbon"></span>Carbon fiber
+                </div>
+                <div class="pts-legend-item">
+                  <span class="pts-dot pts-dot--kevlar"></span>Kevlar
+                </div>
+                <div class="pts-legend-item">
+                  <span class="pts-dot pts-dot--glass"></span>Glass fiber
+                </div>
+                <div class="pts-legend-item">
+                  <span class="pts-line-icon"></span>Perfect prediction (R² =
+                  1.0)
+                </div>
+              </div>
+              <div class="pts-badge">
+                R² = 0.93 across all three fibre families
+              </div>
+            </div>
+            <div class="pts-note pts-reveal" style="transition-delay: 0.2s">
+              Deviation from the diagonal = prediction error. Tighter clustering
+              = higher model confidence.
+            </div>
+          </div>
+
+          <p>
+            For AFP specifically, this means faster qualification of new tow
+            materials. When a customer wants to switch from a thermoset carbon
+            prepreg to a thermoplastic PEEK tape, the traditional approach
+            involves weeks of coupon testing. An ML-assisted approach can narrow
+            the process window before a single tow is placed, predicting the
+            temperature-viscosity-speed envelope that will produce acceptable
+            consolidation.
+          </p>
+
+          <p>
+            The review also documents the growing role of active learning — a
+            strategy where the ML model itself selects which experiments to run
+            next, focusing on the regions of compositional space where
+            uncertainty is highest. Jain et al. (2024) used Gaussian Process
+            Regression with an active learning loop and discovered optimal
+            photopolymer resin compositions with roughly 38% higher modulus and
+            48% higher strength using fewer experiments than a conventional
+            design-of-experiments approach. Applied to AFP materials, this kind
+            of iterative, model-guided exploration could dramatically shorten
+            the time required to qualify new thermoplastic tapes or bio-based
+            prepregs for production.
+          </p>
+
+          <p>
+            Beyond materials, generative adversarial networks (GANs) are now
+            being applied to optimize fiber layup architectures themselves —
+            designing stacking sequences and steering paths that outperform
+            human-designed laminates for specific load cases.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69d388cf59b30b3073c7d5d1_3.jpeg"
+            alt="Multi-angle ply path planning on a curved mold, simulated in AddPath"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            Multi-angle ply path planning on a curved mold, simulated in
+            AddPath.
+          </p>
+
+          <p>
+            This is directly relevant to AFP path planning, where tools like
+            AddPath already optimize trajectories for complex geometries. The
+            combination of GAN-designed layups with ML-predicted processing
+            windows creates a design-to-manufacture pipeline that is
+            fundamentally more integrated than the traditional handoff between
+            structural analysis and manufacturing engineering.
+          </p>
+        </section>
+
+        <!-- ── LAYER 2 ── -->
+        <section id="layer2-monitoring">
+          <h2>Layer 2: In-Situ Monitoring and ML-Based Defect Detection</h2>
+
+          <p>
+            This is where the review becomes most directly relevant to AFP
+            operations. Zaidi et al. catalog the full spectrum of sensing
+            modalities now being deployed in composite additive manufacturing
+            and the ML architectures used to interpret their data:
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69d38970d09c1e8b8bec9b53_4%20(1).png"
+            alt="Micro-Epsilon scanCONTROL laser profilometer mounted on AFP-XS"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            Micro-Epsilon scanCONTROL laser profilometer mounted on AFP-XS —
+            surface topology capture at placement speed.
+          </p>
+
+          <!-- INFOGRAPHIC 3: Sensor Fusion in AFP Head -->
+          <div class="sfh-container" style="opacity: 1">
+            <div class="sfh-title sfh-reveal">Sensor Fusion in an AFP Head</div>
+            <div class="sfh-layout sfh-reveal" style="transition-delay: 0.1s">
+              <!-- Direction bar -->
+              <div class="sfh-direction">
+                <span class="sfh-direction-label">Direction of travel</span>
+                <div class="sfh-direction-arrow">
+                  <div class="sfh-direction-line"></div>
+                  <div class="sfh-direction-head"></div>
+                </div>
+              </div>
+              <!-- Sensors + Head -->
+              <div class="sfh-main">
+                <!-- IR Camera -->
+                <div
+                  class="sfh-sensor-row sfh-reveal"
+                  style="transition-delay: 0.15s"
+                >
+                  <div class="sfh-sensor-box sfh-sensor--ir">
+                    <div class="sfh-sensor-icon">&#x1F321;</div>
+                    <div class="sfh-sensor-name">IR Camera</div>
+                  </div>
+                  <div class="sfh-sensor-arrow"></div>
+                  <div class="sfh-sensor-output">
+                    Thermal field →
+                    <strong>CNN thermal anomaly classifier</strong>
+                  </div>
+                </div>
+                <!-- AFP Head -->
+                <div
+                  class="sfh-head-box sfh-reveal"
+                  style="transition-delay: 0.2s"
+                >
+                  <div class="sfh-head-label">AFP Placement Head</div>
+                  <div class="sfh-head-parts">
+                    <div class="sfh-head-part">Heater</div>
+                    <div class="sfh-head-part">Compaction Roller</div>
+                  </div>
+                </div>
+                <!-- Laser Profiler -->
+                <div
+                  class="sfh-sensor-row sfh-reveal"
+                  style="transition-delay: 0.25s"
+                >
+                  <div class="sfh-sensor-box sfh-sensor--laser">
+                    <div class="sfh-sensor-icon">&#x1F4CF;</div>
+                    <div class="sfh-sensor-name">Laser Profiler</div>
+                  </div>
+                  <div class="sfh-sensor-arrow"></div>
+                  <div class="sfh-sensor-output">
+                    Surface topology →
+                    <strong>PointNet++ 3D segmentation</strong>
+                  </div>
+                </div>
+                <!-- Vision Camera -->
+                <div
+                  class="sfh-sensor-row sfh-reveal"
+                  style="transition-delay: 0.3s"
+                >
+                  <div class="sfh-sensor-box sfh-sensor--vision">
+                    <div class="sfh-sensor-icon">&#x1F4F7;</div>
+                    <div class="sfh-sensor-name">Vision Camera</div>
+                  </div>
+                  <div class="sfh-sensor-arrow"></div>
+                  <div class="sfh-sensor-output">
+                    Layer images → <strong>YOLOv5/v7 defect detection</strong>
+                  </div>
+                </div>
+              </div>
+              <!-- Fusion Engine -->
+              <div
+                class="sfh-fusion sfh-reveal"
+                style="transition-delay: 0.35s"
+              >
+                <div class="sfh-fusion-icon">&#x26A1;</div>
+                <div class="sfh-fusion-label">Multimodal Fusion Engine</div>
+                <div class="sfh-fusion-desc">
+                  Combines all streams → Anomaly map + defect classification +
+                  severity scoring
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            The defect types that matter in AFP — gaps, overlaps, wrinkles,
+            bridging, tow twists, foreign objects, and porosity — are exactly
+            the defect categories that recent deep learning models have been
+            trained to detect. Tang et al. (2025) demonstrated a PointNet++
+            architecture that segments out-of-plane AFP defects from 3D point
+            cloud data captured by a structural light camera in under one second
+            per specimen. Zemzemoglu and Unel (2026) introduced ThermoRAFT-AFP,
+            a deep learning framework for real-time thermal motion estimation
+            that reconstructs full ply-level visualizations from infrared camera
+            footage — entirely independent of machine kinematics.
+          </p>
+
+          <p>
+            Meanwhile, the review documents CNN-based defect classifiers
+            achieving over 90% detection accuracy on AFP surface defects as
+            small as 0.5 mm, and an SVM-based hybrid framework that reached
+            96.4% defect detection accuracy with an F1-score of 96.43% on
+            thermal vision data from AFP processes. An improved YOLOv7 model
+            showed a 10.5% improvement in mean average precision over baseline,
+            with detection speeds supporting online inspection at 35 m/min —
+            well within typical AFP placement speeds.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69d388cf1bbf45a2221bb1bb_5.png"
+            alt="YOLO-based AFP defect detection"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            YOLO-based AFP defect detection — bounding boxes identifying
+            wrinkles, gaps, twists, and foreign objects with confidence scores
+            above 0.90. Source: Author et al., Applied Sciences 14, 5657 (2024),
+            CC BY 4.0
+          </p>
+
+          <p>
+            The critical insight from the review is that these are no longer
+            isolated lab demonstrations. The sensor hardware is commercially
+            available. The ML architectures are well-understood. What remains is
+            system integration — mounting the sensors, running the models, and
+            connecting the outputs to meaningful actions. And this is precisely
+            where an open-architecture AFP system has a decisive advantage.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69d388cf4867cb48db7b4a4a_6.jpeg"
+            alt="AFP-XS on a KUKA arm at Compositadour"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            AFP-XS on a KUKA arm at Compositadour — sensor-ready,
+            robot-agnostic, and built for integration.
+          </p>
+        </section>
+
+        <!-- ── LAYER 3 ── -->
+        <section id="layer3-control">
+          <h2>Layer 3: Closed-Loop Adaptive Control</h2>
+
+          <p>
+            Detection without correction is just expensive record-keeping. The
+            real value emerges when monitoring feeds directly into process
+            control. Zaidi et al. review several approaches to closing this
+            loop, from neural-network-augmented PID controllers to full
+            reinforcement learning (RL) agents.
+          </p>
+
+          <p>
+            The concept is straightforward in principle but profound in
+            practice:
+          </p>
+
+          <!-- INFOGRAPHIC 4: Closed-Loop AFP Quality Cycle -->
+          <div class="cla-container" style="opacity: 1">
+            <div class="cla-title cla-reveal">
+              The Closed-Loop AFP Quality Cycle
+            </div>
+            <div
+              class="cla-cycle-wrap cla-reveal"
+              style="transition-delay: 0.1s"
+            >
+              <div class="cla-cycle">
+                <div class="cla-node cla-node--sense">
+                  <div class="cla-node-icon">&#x1F50D;</div>
+                  <div class="cla-node-label">SENSE</div>
+                  <div class="cla-node-sub">IR + vision + profiler</div>
+                </div>
+                <div class="cla-arrow cla-arrow--right">
+                  <svg
+                    viewBox="0 0 60 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      x1="2"
+                      y1="10"
+                      x2="50"
+                      y2="10"
+                      stroke="#47577c"
+                      stroke-width="2"
+                      stroke-dasharray="4 3"
+                    />
+                    <polyline
+                      points="44,4 56,10 44,16"
+                      fill="none"
+                      stroke="#47577c"
+                      stroke-width="2"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="cla-node cla-node--interpret">
+                  <div class="cla-node-icon">&#x1F9E0;</div>
+                  <div class="cla-node-label">INTERPRET</div>
+                  <div class="cla-node-sub">ML defect classifier</div>
+                </div>
+                <div class="cla-arrow cla-arrow--down">
+                  <svg
+                    viewBox="0 0 20 60"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      x1="10"
+                      y1="2"
+                      x2="10"
+                      y2="50"
+                      stroke="#47577c"
+                      stroke-width="2"
+                      stroke-dasharray="4 3"
+                    />
+                    <polyline
+                      points="4,44 10,56 16,44"
+                      fill="none"
+                      stroke="#47577c"
+                      stroke-width="2"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="cla-spacer"></div>
+                <div class="cla-arrow cla-arrow--up">
+                  <svg
+                    viewBox="0 0 20 60"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      x1="10"
+                      y1="58"
+                      x2="10"
+                      y2="10"
+                      stroke="#bf3425"
+                      stroke-width="2"
+                      stroke-dasharray="4 3"
+                    />
+                    <polyline
+                      points="4,16 10,4 16,16"
+                      fill="none"
+                      stroke="#bf3425"
+                      stroke-width="2"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="cla-node cla-node--act">
+                  <div class="cla-node-icon">&#x2699;&#xFE0F;</div>
+                  <div class="cla-node-label">ACT</div>
+                  <div class="cla-node-sub">
+                    Adjust speed, temperature, compaction, feed rate
+                  </div>
+                </div>
+                <div class="cla-arrow cla-arrow--left">
+                  <svg
+                    viewBox="0 0 60 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      x1="58"
+                      y1="10"
+                      x2="10"
+                      y2="10"
+                      stroke="#bf3425"
+                      stroke-width="2"
+                      stroke-dasharray="4 3"
+                    />
+                    <polyline
+                      points="16,4 4,10 16,16"
+                      fill="none"
+                      stroke="#bf3425"
+                      stroke-width="2"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="cla-node cla-node--decide">
+                  <div class="cla-node-icon">&#x1F3AF;</div>
+                  <div class="cla-node-label">DECIDE</div>
+                  <div class="cla-node-sub">
+                    RL agent or adaptive controller
+                  </div>
+                </div>
+              </div>
+              <div class="cla-result-tags">
+                <div class="cla-tag">40% warping reduction (DQN agent)</div>
+                <div class="cla-tag">
+                  Real-time gap elimination (actor-critic)
+                </div>
+                <div class="cla-tag">50ms detection latency (edge AI)</div>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            In one demonstration cited by the review, a deep Q-network (DQN)
+            agent learned to reduce edge warping by 40% in a carbon fiber
+            composite process by dynamically adjusting feed rate and bed
+            temperature in response to sensor feedback. Another study
+            demonstrated an actor-critic RL model that learned to adjust
+            extrusion multiplier and speed to eliminate inter-layer gaps —
+            effectively "healing" the print in real time.
+          </p>
+
+          <p>
+            For AFP, the controllable process parameters — placement speed,
+            heater power (laser, IR, or flash lamp), compaction force, and feed
+            tension — are exactly the levers an adaptive controller needs. The
+            AFP-XS system, for instance, already provides closed-loop thermal
+            control and adjustable compaction. Adding an ML-driven
+            interpretation layer between the sensors and the existing control
+            interfaces is an engineering integration challenge, not a
+            fundamental research problem.
+          </p>
+
+          <p>
+            The review also highlights a practical consideration that matters
+            for industrial deployment: edge AI. Rather than streaming sensor
+            data to a remote server for processing (introducing latency and
+            network dependency), researchers are deploying lightweight neural
+            networks directly on embedded hardware — microcontrollers and
+            single-board computers mounted on the machine itself. One
+            demonstration achieved defect detection within 50 milliseconds using
+            an STM32 microcontroller with a compressed CNN. This matters for
+            AFP, where placement speeds can reach 1 m/s and a defect that goes
+            undetected for even a fraction of a second represents centimeters of
+            potentially defective layup.
+          </p>
+        </section>
+
+        <!-- ── LAYER 4 ── -->
+        <section id="layer4-digital-twin">
+          <h2>Layer 4: Digital Twins and Predictive Manufacturing</h2>
+
+          <p>
+            The top layer of the intelligent manufacturing stack is the digital
+            twin — a virtual replica of the physical AFP process that runs in
+            parallel, continuously updated by live sensor data, and capable of
+            predicting problems before they occur.
+          </p>
+
+          <p>
+            Zaidi et al. are careful to distinguish true digital twins from
+            static simulations. A real digital twin maintains a bidirectional,
+            real-time connection with the physical system. It ingests sensor
+            data, updates its internal state, and feeds predictions back to the
+            control system. The review documents how ML surrogates can replace
+            computationally expensive finite element models, enabling real-time
+            prediction of temperature distributions, residual stresses, and
+            crystallinity evolution during thermoplastic AFP.
+          </p>
+
+          <p>
+            One particularly relevant study trained an ANN-based surrogate model
+            on FEA simulation results for the AFP process, achieving a mean
+            absolute percentage error of just 1.56% while reducing computation
+            time by four orders of magnitude compared to the original
+            simulation. The predicted thermal profiles can then be compared with
+            real-time in-situ temperatures during manufacturing to predict layup
+            quality — essentially creating a digital twin of the AFP thermal
+            process.
+          </p>
+
+          <!-- INFOGRAPHIC 5: Digital Twin Architecture for AFP -->
+          <div class="dta-container" style="opacity: 1">
+            <div class="dta-title dta-reveal">
+              Digital Twin Architecture for AFP
+            </div>
+            <div class="dta-layout dta-reveal" style="transition-delay: 0.1s">
+              <!-- Physical World -->
+              <div class="dta-world dta-world--physical">
+                <div class="dta-world-header">
+                  <span class="dta-world-dot dta-dot--physical"></span>
+                  Physical World
+                </div>
+                <div class="dta-world-card">
+                  <div class="dta-world-icon">&#x1F916;</div>
+                  <div class="dta-world-title">AFP-XS on Robot Arm</div>
+                  <div class="dta-world-items">
+                    <div class="dta-item">Placing CF/PEEK tow @ 0.5 m/s</div>
+                    <div class="dta-item">Real-time thermal sensors</div>
+                    <div class="dta-item">Compaction force feedback</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Arrows -->
+              <div class="dta-arrows">
+                <div class="dta-arrow-pair">
+                  <div class="dta-arrow-label dta-arrow-label--top">
+                    Live sensor data feed →
+                  </div>
+                  <div class="dta-arrow dta-arrow--right">
+                    <svg
+                      viewBox="0 0 80 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <line
+                        x1="2"
+                        y1="8"
+                        x2="68"
+                        y2="8"
+                        stroke="#47577c"
+                        stroke-width="2"
+                        stroke-dasharray="5 3"
+                      />
+                      <polyline
+                        points="62,2 78,8 62,14"
+                        fill="none"
+                        stroke="#47577c"
+                        stroke-width="2.5"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <div class="dta-arrow dta-arrow--left">
+                    <svg
+                      viewBox="0 0 80 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <line
+                        x1="78"
+                        y1="8"
+                        x2="12"
+                        y2="8"
+                        stroke="#bf3425"
+                        stroke-width="2"
+                        stroke-dasharray="5 3"
+                      />
+                      <polyline
+                        points="18,2 2,8 18,14"
+                        fill="none"
+                        stroke="#bf3425"
+                        stroke-width="2.5"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <div class="dta-arrow-label dta-arrow-label--bottom">
+                    ← Predictive commands
+                  </div>
+                </div>
+              </div>
+
+              <!-- Virtual World -->
+              <div class="dta-world dta-world--virtual">
+                <div class="dta-world-header">
+                  <span class="dta-world-dot dta-dot--virtual"></span>
+                  Virtual World
+                </div>
+                <div class="dta-world-card">
+                  <div class="dta-world-icon">&#x1F4BB;</div>
+                  <div class="dta-world-title">ML Surrogate Model</div>
+                  <div class="dta-world-items">
+                    <div class="dta-item">Trained on FEA thermal model</div>
+                    <div class="dta-item">1.56% mean absolute error</div>
+                    <div class="dta-item">10,000× faster than FEA</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Decision Engine -->
+            <div class="dta-decision dta-reveal" style="transition-delay: 0.2s">
+              <div class="dta-decision-icon">&#x1F4A1;</div>
+              <div class="dta-decision-body">
+                <div class="dta-decision-label">Decision Engine</div>
+                <div class="dta-decision-text">
+                  "Slow down by 15% in 3 layers to avoid overheating at the ply
+                  drop-off" — predicted 10 layers ahead of actual placement
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            This predictive capability transforms quality assurance from
+            reactive to proactive. Instead of detecting a defect after it has
+            formed and deciding whether to scrap or repair, the system
+            anticipates where a defect is likely to form and adjusts the process
+            to prevent it entirely.
+          </p>
+        </section>
+
+        <!-- ── WHAT THIS MEANS TODAY ── -->
+        <section id="afp-users-today">
+          <h2>What This Means for AFP Users Today</h2>
+
+          <p>
+            The Zaidi et al. review makes clear that the individual components
+            of intelligent composite manufacturing — sensors, ML classifiers,
+            adaptive controllers, digital twins — have all been demonstrated at
+            accuracy levels that meet or exceed industrial requirements. The
+            remaining challenge is system-level integration: assembling these
+            components into a cohesive, reliable manufacturing workflow.
+          </p>
+
+          <p>
+            This is where architecture matters. Legacy AFP systems — the
+            monolithic, closed-box machines that have dominated aerospace
+            factories for decades — were not designed with third-party sensor
+            integration or ML-driven control loops in mind. Retrofitting
+            intelligence onto a system that wasn't built for it is expensive and
+            fragile.
+          </p>
+
+          <div class="split-layout reverse">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/698092b4f74468983d8286a4_5.png"
+                alt="AFP-XS on a KUKA arm — modular and designed for integration"
+              />
+            </div>
+            <div class="split-text">
+              <p>
+                AFP-XS on a KUKA arm — modular, robot-agnostic, and designed
+                from the ground up for integration.
+              </p>
+              <p>
+                The AFP-XS was designed differently. As a modular, robot-mounted
+                system with an open control architecture, it provides natural
+                integration points for exactly the kind of intelligent
+                monitoring stack the research community is building. The system
+                already supports multiple heating technologies (laser, IR, flash
+                lamp), closed-loop thermal control, and the AddPath software
+                ecosystem for path planning and simulation.
+              </p>
+            </div>
+          </div>
+
+          <p>
+            Adding a camera or profilometer to the placement head, running an ML
+            classifier on an edge device, and feeding the results back into the
+            existing control interfaces is a matter of engineering — not
+            reinvention.
+          </p>
+
+          <div class="highlight-box">
+            <p>
+              This is not a hypothetical future. Research groups at institutions
+              worldwide are already building these exact integrations on robotic
+              AFP platforms, and the AFP-XS's compatibility with major robot
+              brands (KUKA, ABB, Kawasaki, Yaskawa, Fanuc) means it inherits the
+              sensor mounting and communication infrastructure those ecosystems
+              provide.
+            </p>
+          </div>
+        </section>
+
+        <!-- ── CHALLENGES ── -->
+        <section id="challenges">
+          <h2>The Challenges That Remain</h2>
+
+          <p>
+            The review is refreshingly honest about the limitations, and any
+            responsible discussion of intelligent AFP must address them
+            directly.
+          </p>
+
+          <p>
+            Data scarcity is a persistent problem — training a CNN-based defect
+            classifier requires thousands of labeled images, and most AFP
+            operations don't produce enough defective samples to build a robust
+            dataset. This is especially acute in aerospace, where processes are
+            deliberately optimized to minimize defects, leaving very few "bad"
+            examples to learn from.
+          </p>
+
+          <!-- INFOGRAPHIC 6: Training Dataset Composition -->
+          <div class="tdc-container" style="opacity: 1">
+            <div class="tdc-title tdc-reveal">
+              Training Dataset Composition — Typical AFP Inspection
+            </div>
+            <div class="tdc-body tdc-reveal" style="transition-delay: 0.1s">
+              <div class="tdc-chart-wrap">
+                <canvas id="tdc-chart" width="520" height="300"></canvas>
+              </div>
+              <div class="tdc-stats">
+                <div class="tdc-stat tdc-stat--good">
+                  <div class="tdc-stat-value">9,500</div>
+                  <div class="tdc-stat-label">"Good" samples</div>
+                  <div class="tdc-stat-pct">95%</div>
+                </div>
+                <div class="tdc-stat tdc-stat--defect">
+                  <div class="tdc-stat-value">500</div>
+                  <div class="tdc-stat-label">Defective samples</div>
+                  <div class="tdc-stat-pct">5%</div>
+                </div>
+              </div>
+            </div>
+            <div class="tdc-note tdc-reveal" style="transition-delay: 0.2s">
+              The model sees ~19 good samples for every 1 defect. In aerospace,
+              that ratio is often worse. This imbalance — not algorithmic
+              complexity — is the primary barrier to robust AFP defect
+              classifiers.
+            </div>
+          </div>
+
+          <p>
+            Unsupervised and semi-supervised approaches (autoencoders trained
+            only on "good" samples, for instance) are emerging as practical
+            alternatives. One study documented in the review used an autoencoder
+            framework that leveraged AFP's inherent geometric symmetry to expand
+            limited datasets, achieving satisfactory detection accuracy with a
+            fraction of the labeled data that supervised approaches require. But
+            these methods aren't yet as consistently accurate as fully
+            supervised models, and the composites community is still developing
+            best practices for their deployment.
+          </p>
+
+          <p>
+            Model generalizability is another concern. A defect classifier
+            trained on one material system (say, thermoset carbon prepreg) may
+            not transfer cleanly to another (thermoplastic PEEK tape). The
+            surface appearance, thermal signature, and defect morphology differ
+            between material families, and a model that excels on one may
+            produce unacceptable false-positive rates on another. Transfer
+            learning — pre-training a model on a large dataset and then
+            fine-tuning on a smaller target dataset — offers a path forward.
+            Song et al. (2025), cited in the review, demonstrated that a deep
+            neural network pre-trained on one composite's stress-strain data
+            could successfully forecast the behavior of a different composite
+            with minimal additional training data.
+          </p>
+
+          <p>
+            And there is the question of trust and certification. Deploying an
+            AI-driven quality system in a research lab is one thing; certifying
+            it for aerospace production is quite another. Regulators need to
+            understand why the model flagged a particular region as defective,
+            not just that it did. The "black box" nature of deep neural networks
+            is a genuine barrier to certification. Physics-informed neural
+            networks, which embed known physical laws (heat transfer equations,
+            consolidation mechanics, crystallization kinetics) into the ML
+            architecture, are one promising approach to building models that are
+            both accurate and explainable. The review notes that hybrid
+            approaches — combining physics-based models with data-driven
+            corrections — consistently outperform either method alone while
+            maintaining a level of interpretability that pure deep learning
+            cannot offer.
+          </p>
+        </section>
+
+        <!-- ── PATH FORWARD ── -->
+        <section id="path-forward">
+          <h2>The Path Forward</h2>
+
+          <p>
+            The convergence of AI and in-situ monitoring in composite
+            manufacturing is not a question of if but when — and the Zaidi et
+            al. review makes a strong case that "when" is now. The sensors
+            exist. The algorithms work. The computational hardware is small
+            enough and fast enough to run on the machine itself.
+          </p>
+
+          <p>
+            What the industry needs is a platform that makes integration
+            straightforward rather than heroic. A system that doesn't lock users
+            into a proprietary monitoring stack but instead provides the open
+            interfaces, the process controllability, and the software
+            infrastructure to plug into the rapidly maturing ecosystem of
+            intelligent manufacturing tools.
+          </p>
+
+          <p>
+            That is exactly the design philosophy behind the AFP-XS and the
+            broader Addcomposites ecosystem. We built a platform, not a black
+            box — because we've always believed that the most important
+            innovations in composite manufacturing would come not from any
+            single company, but from the global community of researchers,
+            engineers, and manufacturers pushing the boundaries of what's
+            possible.
+          </p>
+
+          <p>
+            The research reviewed here proves that belief is well-founded. The
+            intelligent AFP cell isn't a concept sketch anymore. It's an
+            integration project — and the building blocks are ready.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6978d40a3357ac7e5d9c9aa1_14.png"
+            alt="Addcomposites AFP system"
+            class="full-width-image"
+          />
+
+          <p>
+            This blog post is part of our ongoing series exploring how emerging
+            research and technologies are shaping the future of automated
+            composite manufacturing. Interested in how the AFP-XS platform can
+            support your research into intelligent manufacturing? Get in touch
+            with us.
+          </p>
+
+          <p>
+            Discover the future of satisfying composite manufacturing with
+            Addcomposites! Here's how you can get involved:
+          </p>
+          <ul>
+            <li>
+              <strong>Stay Informed:</strong> Subscribe to our newsletter to
+              receive the latest updates, news, and developments in AFP systems
+              and services. Knowledge is power, and by staying informed, you'll
+              always have the upper hand.
+            </li>
+            <li>
+              <strong>Experience Our Technology:</strong> Try our cutting-edge
+              simulation software AddPath for a firsthand experience of the
+              versatility and capability of our AFP systems.
+            </li>
+            <li>
+              <strong>Connect With Us:</strong> Reach out to discuss your
+              specific needs and how our AFP systems can cater to your
+              production requirements.
+            </li>
+            <li>
+              <strong>Explore Our Blog:</strong> Dive into our collection of
+              blog posts for insights and stories from the world of AFP and
+              composites manufacturing.
+            </li>
+          </ul>
+        </section>
+
+        <!-- ── LEARN MORE ── -->
+        <section id="learn-more">
+          <h2>Learn More</h2>
+          <div class="learn-more-container">
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/all-products/afp-xs"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AFP-XS</span>
+                <span class="learn-more-desc"
+                  >Entry-level automated fiber placement</span
+                >
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/all-products/afp-x"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AFP-X</span>
+                <span class="learn-more-desc">Advanced multi-tow system</span>
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/addpath"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AddPath</span>
+                <span class="learn-more-desc"
+                  >AI-powered path planning software</span
+                >
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/post/afp-machines-and-components"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">Complete Guide</span>
+                <span class="learn-more-desc"
+                  >The Complete Guide to AFP Machines</span
+                >
+              </div>
+            </a>
+          </div>
+
+          <div class="cta-section">
+            <p>Get in touch to discuss your intelligent AFP application →</p>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/contact-us"
+              class="cta-button"
+              >Contact Us for a Consultation</a
+            >
+          </div>
+        </section>
+
+        <!-- ── REFERENCES ── -->
+        <section id="references">
+          <h2>References</h2>
+          <ol class="references-list">
+            <li>
+              Zaidi, A.A., Asif, M., Aljabri, A., &amp; Khan, S.Z. (2026).
+              "Intelligent composite 3D printing: the role of artificial
+              intelligence, machine learning, and in-situ monitoring in
+              next-generation additive manufacturing."
+              <em>Frontiers in Mechanical Engineering</em>, 12. doi:
+              <a
+                href="https://doi.org/10.3389/fmech.2026.1774757"
+                target="_blank"
+                rel="noopener noreferrer"
+                >10.3389/fmech.2026.1774757</a
+              >
+            </li>
+            <li>
+              Tang et al. (2025). "Lay-up defects inspection for automated fiber
+              placement with structural light scanning and deep learning."
+              <em>Polymer Composites</em>. doi:
+              <a
+                href="https://doi.org/10.1002/pc.29672"
+                target="_blank"
+                rel="noopener noreferrer"
+                >10.1002/pc.29672</a
+              >
+            </li>
+            <li>
+              Zemzemoglu, M. &amp; Unel, M. (2026). "Deep learning-based thermal
+              motion estimation and lay-up reconstruction framework towards
+              machine-independent real-time AFP process monitoring and
+              inspection." <em>Composites Part B</em>, 308, 112951.
+            </li>
+            <li>
+              Zubayer et al. (2024). YOLOv5-based AFP defect detection achieving
+              &gt;90% accuracy on sub-millimeter voids. Referenced in Zaidi et
+              al. (2026).
+            </li>
+            <li>
+              Piovarči et al. (2022). Actor-critic RL model for adaptive
+              extrusion control. Referenced in Zaidi et al. (2026).
+            </li>
+            <li>
+              Chung et al. (2022). Deep reinforcement learning for closed-loop
+              defect mitigation. Referenced in Zaidi et al. (2026).
+            </li>
+          </ol>
+        </section>
+
+        <!-- ── AUTHOR SECTION ── -->
+        <section class="author-section">
+          <div class="author-card">
+            <div class="author-image-wrapper">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/65dc93e2c8b30f7b6484e473_contact-lwr-img1.jpg"
+                alt="Pravin Luthada"
+                class="author-image"
+              />
+            </div>
+            <div class="author-info">
+              <h3 class="author-name">Pravin Luthada</h3>
+              <p class="author-title">CEO &amp; Co-founder, Addcomposites</p>
+              <div class="author-social">
+                <a
+                  href="https://www.linkedin.com/in/pravinluthada/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <svg viewBox="0 0 24 24" fill="#0A66C2">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                  </svg>
+                </a>
+                <a href="mailto:pravin@addcomposites.com" aria-label="Email">
+                  <svg viewBox="0 0 24 24" fill="#EA4335">
+                    <path
+                      d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.youtube.com/@addcomposites"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
+                  <svg viewBox="0 0 24 24" fill="#FF0000">
+                    <path
+                      d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <h4 class="about-author-label">About Author</h4>
+              <p class="author-bio">
+                As the author of the Addcomposites blog, Pravin Luthada's
+                insights are forged from a distinguished career in advanced
+                materials, beginning as a space scientist at the Indian Space
+                Research Organisation (ISRO). During his tenure, he gained
+                hands-on expertise in manufacturing composite components for
+                satellites and launch vehicles, where he witnessed firsthand the
+                prohibitive costs of traditional Automated Fiber Placement (AFP)
+                systems. This experience became the driving force behind his
+                entrepreneurial venture, Addcomposites Oy, which he co-founded
+                and now leads as CEO. The company is dedicated to democratizing
+                advanced manufacturing by developing patented, plug-and-play AFP
+                toolheads that make automation accessible and affordable. This
+                unique journey from designing space-grade hardware to leading a
+                disruptive technology company provides Pravin with a
+                comprehensive, real-world perspective that informs his writing
+                on the future of the composites industry.
+              </p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
