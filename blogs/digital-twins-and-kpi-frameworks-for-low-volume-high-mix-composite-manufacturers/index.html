@@ -1,0 +1,2786 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Digital Twins and KPI Frameworks for Low-Volume, High-Mix Composite
+      Manufacturers | Addcomposites
+    </title>
+    <meta
+      name="description"
+      content="What a systematic review of 42 research papers tells us about measuring what matters on an AFP shop floor — and why most composite manufacturers are flying blind."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,600&family=Assistant:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Mobile Navigation Toggle Button -->
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="blog-layout">
+      <!-- Sidebar -->
+      <nav class="blog-sidebar" aria-label="Table of Contents">
+        <button class="sidebar-close" aria-label="Close navigation menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          Close Menu
+        </button>
+        <h3 class="blog-sidebar-title">Contents</h3>
+        <div class="blog-sidebar-nav">
+          <a href="#measurement-problem" class="blog-sidebar-link active"
+            >The Measurement Problem</a
+          >
+          <a href="#lvhm-meaning" class="blog-sidebar-link">What LVHM Means</a>
+          <a href="#review-methodology" class="blog-sidebar-link"
+            >The Review Methodology</a
+          >
+          <a href="#finding-time" class="blog-sidebar-link"
+            >Finding 1: Time Is King</a
+          >
+          <a href="#finding-solutions" class="blog-sidebar-link"
+            >Finding 2: Four Solution Families</a
+          >
+          <a href="#finding-digital-twins" class="blog-sidebar-link"
+            >Finding 3: Digital Twins</a
+          >
+          <a href="#finding-startup-gap" class="blog-sidebar-link"
+            >Finding 4: The Startup Gap</a
+          >
+          <a href="#afp-shop-floor" class="blog-sidebar-link"
+            >What This Means for AFP</a
+          >
+          <a href="#addcomposites-customers" class="blog-sidebar-link"
+            >For Addcomposites Customers</a
+          >
+          <a href="#takeaways" class="blog-sidebar-link"
+            >Three Honest Takeaways</a
+          >
+          <a href="#learn-more" class="blog-sidebar-link">Learn More</a>
+          <a href="#references" class="blog-sidebar-link">References</a>
+        </div>
+      </nav>
+
+      <article class="blog-content">
+        <!-- Blog Meta -->
+        <div class="blog-meta">
+          <span class="blog-meta-item">
+            <svg
+              class="blog-meta-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            14 min read
+          </span>
+          <span class="blog-meta-item">
+            <svg
+              class="blog-meta-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            2026
+          </span>
+          <span class="blog-meta-item">
+            <svg
+              class="blog-meta-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Pravin Luthada
+          </span>
+        </div>
+
+        <!-- Title -->
+        <h1>
+          Digital Twins and KPI Frameworks for Low-Volume, High-Mix Composite
+          Manufacturers
+        </h1>
+        <p class="subtitle">
+          What a systematic review of 42 research papers tells us about
+          measuring what matters on an AFP shop floor — and why most composite
+          manufacturers are flying blind.
+        </p>
+
+        <!-- Hero Image -->
+        <img
+          src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69d62ca6798339fbbd4abd40_1.png"
+          alt="AFP shop floor digital twins and KPI overview"
+          class="full-width-image"
+        />
+
+        <!-- ─── Section 1: Measurement Problem ─────────────────────────── -->
+        <section id="measurement-problem">
+          <h2>The measurement problem nobody wants to talk about</h2>
+          <p class="drop-cap">
+            Walk into ten composite shops running Automated Fiber Placement, and
+            you will find ten different answers to a simple question: how is the
+            cell performing today?
+          </p>
+          <p>
+            One plant tracks kilograms of tow deposited per shift. Another
+            watches machine utilization. A third measures rework rate. A fourth
+            has a whiteboard with hand-written cycle times that was last updated
+            on Tuesday. The honest truth is that most low-volume, high-mix
+            (LVHM) composite manufacturers — which is to say, almost every
+            aerospace, space, wind, hydrogen, and defence composites shop on the
+            planet — do not have a shared language for performance at all.
+          </p>
+          <p>
+            This is not a complaint unique to composites. A new systematic
+            literature review by Wickramanayake, Matkó, Máté and Vveinhardt,
+            published in
+            <em
+              >Management Theory and Studies for Rural Business and
+              Infrastructure Development</em
+            >
+            in early 2026, put the entire LVHM manufacturing research field
+            under a PRISMA microscope — 42 peer-reviewed papers from Scopus and
+            Web of Science between 2021 and 2025 — and reached a conclusion that
+            ought to make every composites operations manager uncomfortable: the
+            field is obsessed with optimizing makespan and lead time, largely
+            ignores digital KPIs like data quality and decision speed, and has
+            produced almost nothing usable for early-stage manufacturers who are
+            still figuring out how to collect data in the first place.
+          </p>
+          <p>
+            If you run an AFP-XS cell, an AFP-X line, or an ADDX large-format
+            additive system, that finding should land close to home. LVHM is not
+            a niche — it is the composites business model. And the research
+            community has just admitted it doesn't yet have a framework for
+            people like you.
+          </p>
+          <p>
+            Let's unpack what the review actually found, and then talk honestly
+            about what it means for the way Addcomposites customers think about
+            performance.
+          </p>
+        </section>
+
+        <!-- ─── Section 2: What LVHM Means ────────────────────────────── -->
+        <section id="lvhm-meaning">
+          <h2>What LVHM actually means on an AFP shop floor</h2>
+          <p>
+            Before digging into the review, a quick grounding. "Low-volume,
+            high-mix" is the industrial shorthand for production environments
+            where you make many different parts in small quantities, often
+            engineer-to-order or make-to-order, with long setup times relative
+            to run times and a product catalogue that shifts constantly. A
+            serial automotive line is the opposite — high volume, low mix. A
+            composites shop building fuselage panels for a UAM prototype, a
+            satellite tank for a space startup, and a tooling pattern for a
+            wind-blade root insert, all in the same week, is LVHM in its purest
+            form.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69d62ca61a3dbbc0ae335196_2.png"
+            alt="AFP-enabled composite manufacturing across pressure vessels, aerostructures, and large-format panels"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            AFP-enabled composite manufacturing across pressure vessels,
+            aerostructures, and large-format panels — the product variety that
+            defines an LVHM shop floor.
+          </p>
+
+          <!-- INFOGRAPHIC 1: LVHM Position Matrix -->
+
+          <div class="pvmx-container">
+            <div class="pvmx-title">Production Volume vs. Part Complexity</div>
+            <div class="pvmx-subtitle">
+              Where AFP manufacturing fits across the volume–mix landscape
+            </div>
+
+            <div id="pvmx-wrap">
+              <svg
+                class="pvmx-svg"
+                id="pvmx-svg"
+                viewBox="0 0 700 430"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <!-- Hatching pattern for tier-1 zone -->
+                  <pattern
+                    id="pvmx-hatch"
+                    patternUnits="userSpaceOnUse"
+                    width="8"
+                    height="8"
+                    patternTransform="rotate(45)"
+                  >
+                    <line
+                      x1="0"
+                      y1="0"
+                      x2="0"
+                      y2="8"
+                      stroke="#9d9d9c"
+                      stroke-width="3"
+                      opacity="0.45"
+                    />
+                  </pattern>
+                  <!-- Grid pattern -->
+                  <pattern
+                    id="pvmx-grid"
+                    patternUnits="userSpaceOnUse"
+                    width="60"
+                    height="50"
+                  >
+                    <path
+                      d="M 60 0 L 0 0 0 50"
+                      fill="none"
+                      stroke="#f1f5f9"
+                      stroke-width="1"
+                    />
+                  </pattern>
+                  <!-- AFP zone gradient -->
+                  <linearGradient
+                    id="pvmx-afp-grad"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop
+                      offset="0%"
+                      stop-color="#47577c"
+                      stop-opacity="0.85"
+                    />
+                    <stop
+                      offset="100%"
+                      stop-color="#47577c"
+                      stop-opacity="0.95"
+                    />
+                  </linearGradient>
+                  <!-- Arrow marker -->
+                  <marker
+                    id="pvmx-arrow-r"
+                    markerWidth="8"
+                    markerHeight="8"
+                    refX="6"
+                    refY="3"
+                    orient="auto"
+                  >
+                    <path d="M0,0 L0,6 L8,3 z" fill="#bf3425" />
+                  </marker>
+                  <marker
+                    id="pvmx-arrow-l"
+                    markerWidth="8"
+                    markerHeight="8"
+                    refX="2"
+                    refY="3"
+                    orient="auto-start-reverse"
+                  >
+                    <path d="M8,0 L8,6 L0,3 z" fill="#bf3425" />
+                  </marker>
+                </defs>
+
+                <!-- ─── Chart area ─── -->
+                <!-- Axes region: left=80, top=30, right=680, bottom=380 -->
+                <!-- Grid background -->
+                <rect
+                  x="80"
+                  y="30"
+                  width="600"
+                  height="350"
+                  fill="url(#pvmx-grid)"
+                  rx="0"
+                />
+                <rect
+                  x="80"
+                  y="30"
+                  width="600"
+                  height="350"
+                  fill="none"
+                  stroke="#e2e8f0"
+                  stroke-width="1.5"
+                  rx="4"
+                />
+
+                <!-- Quadrant dividing lines (subtle) -->
+                <line
+                  x1="80"
+                  y1="205"
+                  x2="680"
+                  y2="205"
+                  stroke="#e2e8f0"
+                  stroke-width="1"
+                  stroke-dasharray="6 4"
+                />
+                <line
+                  x1="380"
+                  y1="30"
+                  x2="380"
+                  y2="380"
+                  stroke="#e2e8f0"
+                  stroke-width="1"
+                  stroke-dasharray="6 4"
+                />
+
+                <!-- ─── Y-axis labels ─── -->
+                <text
+                  x="52"
+                  y="50"
+                  text-anchor="end"
+                  fill="#1e293b"
+                  font-size="11.5"
+                  font-weight="700"
+                  font-family="Inter,sans-serif"
+                >
+                  HIGH
+                </text>
+                <text
+                  x="52"
+                  y="64"
+                  text-anchor="end"
+                  fill="#1e293b"
+                  font-size="11.5"
+                  font-weight="700"
+                  font-family="Inter,sans-serif"
+                >
+                  VOLUME
+                </text>
+                <text
+                  x="52"
+                  y="366"
+                  text-anchor="end"
+                  fill="#1e293b"
+                  font-size="11.5"
+                  font-weight="700"
+                  font-family="Inter,sans-serif"
+                >
+                  LOW
+                </text>
+                <text
+                  x="52"
+                  y="380"
+                  text-anchor="end"
+                  fill="#1e293b"
+                  font-size="11.5"
+                  font-weight="700"
+                  font-family="Inter,sans-serif"
+                >
+                  VOLUME
+                </text>
+
+                <!-- Y-axis title (rotated) -->
+                <text
+                  x="18"
+                  y="205"
+                  text-anchor="middle"
+                  fill="#64748b"
+                  font-size="12"
+                  font-weight="600"
+                  font-family="Inter,sans-serif"
+                  transform="rotate(-90, 18, 205)"
+                >
+                  PRODUCTION VOLUME
+                </text>
+
+                <!-- ─── X-axis labels ─── -->
+                <text
+                  x="130"
+                  y="406"
+                  text-anchor="middle"
+                  fill="#1e293b"
+                  font-size="11.5"
+                  font-weight="700"
+                  font-family="Inter,sans-serif"
+                >
+                  LOW MIX
+                </text>
+                <text
+                  x="620"
+                  y="406"
+                  text-anchor="middle"
+                  fill="#1e293b"
+                  font-size="11.5"
+                  font-weight="700"
+                  font-family="Inter,sans-serif"
+                >
+                  HIGH MIX
+                </text>
+                <text
+                  x="380"
+                  y="420"
+                  text-anchor="middle"
+                  fill="#64748b"
+                  font-size="12"
+                  font-weight="600"
+                  font-family="Inter,sans-serif"
+                >
+                  PART COMPLEXITY / MIX
+                </text>
+
+                <!-- X-axis arrow -->
+                <line
+                  x1="88"
+                  y1="394"
+                  x2="672"
+                  y2="394"
+                  stroke="#cbd5e1"
+                  stroke-width="1.5"
+                  marker-end="url(#pvmx-arrow-r)"
+                />
+                <!-- Y-axis arrow -->
+                <line
+                  x1="68"
+                  y1="372"
+                  x2="68"
+                  y2="38"
+                  stroke="#cbd5e1"
+                  stroke-width="1.5"
+                  marker-end="url(#pvmx-arrow-r)"
+                />
+
+                <!-- ════════════════════════════════ -->
+                <!-- ZONE 1: Automotive Stampings     -->
+                <!-- High Volume, Low Mix (top-left)  -->
+                <!-- ════════════════════════════════ -->
+                <g
+                  class="pvmx-zone"
+                  id="pvmx-z1"
+                  data-title="Automotive Stampings"
+                  data-body="High-volume, low-mix production. Stamped metal or commodity composite parts. AFP not cost-competitive here — volume favours dedicated tooling."
+                >
+                  <!-- Bar: wide, near top, left side -->
+                  <rect
+                    class="pvmx-zone-bar"
+                    x="92"
+                    y="52"
+                    width="235"
+                    height="48"
+                    rx="6"
+                    fill="#47577c"
+                    opacity="0.92"
+                  />
+                  <!-- Hatch overlay for texture -->
+                  <rect
+                    x="92"
+                    y="52"
+                    width="235"
+                    height="48"
+                    rx="6"
+                    fill="url(#pvmx-hatch)"
+                    opacity="0.18"
+                    pointer-events="none"
+                  />
+                  <!-- Label -->
+                  <text
+                    x="106"
+                    y="73"
+                    fill="#ffffff"
+                    font-size="12.5"
+                    font-weight="700"
+                    font-family="Inter,sans-serif"
+                  >
+                    Automotive
+                  </text>
+                  <text
+                    x="106"
+                    y="89"
+                    fill="#dde3f0"
+                    font-size="12"
+                    font-family="Inter,sans-serif"
+                  >
+                    Stampings
+                  </text>
+                </g>
+
+                <!-- ════════════════════════════════ -->
+                <!-- ZONE 2: Tier-1 Aero Components  -->
+                <!-- Mid volume, mid-high mix        -->
+                <!-- ════════════════════════════════ -->
+                <g
+                  class="pvmx-zone"
+                  id="pvmx-z2"
+                  data-title="Tier-1 Aero Components"
+                  data-body="Mid-volume, mid-high mix. Structural ribs, spars, skins. AFP starts to show advantages in consistency and repeatability at this level."
+                >
+                  <rect
+                    class="pvmx-zone-bar"
+                    x="370"
+                    y="155"
+                    width="160"
+                    height="46"
+                    rx="6"
+                    fill="#9d9d9c"
+                    opacity="0.55"
+                  />
+                  <rect
+                    x="370"
+                    y="155"
+                    width="160"
+                    height="46"
+                    rx="6"
+                    fill="url(#pvmx-hatch)"
+                    opacity="0.55"
+                    pointer-events="none"
+                  />
+                  <text
+                    x="384"
+                    y="175"
+                    fill="#1e293b"
+                    font-size="11.5"
+                    font-weight="700"
+                    font-family="Inter,sans-serif"
+                  >
+                    Some Tier-1
+                  </text>
+                  <text
+                    x="384"
+                    y="191"
+                    fill="#475569"
+                    font-size="11"
+                    font-family="Inter,sans-serif"
+                  >
+                    Aero Components
+                  </text>
+                </g>
+
+                <!-- ════════════════════════════════ -->
+                <!-- ZONE 3: Aerospace/Space/Defence  -->
+                <!-- Low Volume, High Mix — AFP zone  -->
+                <!-- ════════════════════════════════ -->
+                <g
+                  class="pvmx-zone"
+                  id="pvmx-z3"
+                  data-title="Aerospace · Space · Defence (LVHM)"
+                  data-body="Low-volume, high-mix — the natural home of AFP. Complex geometries, tight tolerances, premium materials. AFP delivers unmatched fibre steering and repeatability here."
+                >
+                  <rect
+                    class="pvmx-zone-bar"
+                    x="490"
+                    y="298"
+                    width="182"
+                    height="52"
+                    rx="6"
+                    fill="url(#pvmx-afp-grad)"
+                  />
+                  <text
+                    x="504"
+                    y="320"
+                    fill="#ffffff"
+                    font-size="12"
+                    font-weight="700"
+                    font-family="Inter,sans-serif"
+                  >
+                    Aerospace · Space
+                  </text>
+                  <text
+                    x="504"
+                    y="337"
+                    fill="#dde3f0"
+                    font-size="11.5"
+                    font-family="Inter,sans-serif"
+                  >
+                    Defence (LVHM)
+                  </text>
+                </g>
+
+                <!-- ════════════════════════════════ -->
+                <!-- AFP annotation with arrows       -->
+                <!-- ════════════════════════════════ -->
+                <!-- Bracket / annotation box -->
+                <rect
+                  x="410"
+                  y="258"
+                  width="240"
+                  height="30"
+                  rx="6"
+                  fill="#fff5f4"
+                  stroke="#bf3425"
+                  stroke-width="1.5"
+                  stroke-dasharray="0"
+                />
+                <text
+                  x="530"
+                  y="277"
+                  text-anchor="middle"
+                  fill="#bf3425"
+                  font-size="12"
+                  font-weight="700"
+                  font-family="Inter,sans-serif"
+                >
+                  ◄── AFP shops live here ──►
+                </text>
+
+                <!-- Connecting line from label to zone -->
+                <line
+                  x1="530"
+                  y1="288"
+                  x2="530"
+                  y2="298"
+                  stroke="#bf3425"
+                  stroke-width="1.5"
+                  stroke-dasharray="4 3"
+                />
+
+                <!-- ════════════════════════════════ -->
+                <!-- Quadrant soft-fill backgrounds  -->
+                <!-- ════════════════════════════════ -->
+                <!-- Top-left soft highlight (already occupied by automotive) -->
+                <rect
+                  x="81"
+                  y="31"
+                  width="298"
+                  height="173"
+                  fill="#47577c"
+                  opacity="0.03"
+                  pointer-events="none"
+                  rx="4"
+                />
+                <!-- Bottom-right soft highlight (AFP zone) -->
+                <rect
+                  x="381"
+                  y="206"
+                  width="298"
+                  height="173"
+                  fill="#bf3425"
+                  opacity="0.04"
+                  pointer-events="none"
+                  rx="4"
+                />
+              </svg>
+
+              <!-- Tooltip element -->
+              <div class="pvmx-tooltip" id="pvmx-tt">
+                <div class="pvmx-tooltip-title" id="pvmx-tt-title"></div>
+                <div class="pvmx-tooltip-body" id="pvmx-tt-body"></div>
+              </div>
+            </div>
+
+            <!-- Legend -->
+            <div class="pvmx-legend">
+              <div class="pvmx-legend-item">
+                <div class="pvmx-legend-swatch pvmx-navy"></div>
+                <span>High Volume / Low Mix</span>
+              </div>
+              <div class="pvmx-legend-item">
+                <div class="pvmx-legend-swatch pvmx-gray"></div>
+                <span>Mid Volume / Mid–High Mix</span>
+              </div>
+              <div class="pvmx-legend-item">
+                <div class="pvmx-legend-swatch pvmx-navy"></div>
+                <span>Low Volume / High Mix (LVHM) — AFP zone</span>
+              </div>
+              <div class="pvmx-legend-item" style="margin-left: auto">
+                <svg width="14" height="14" viewBox="0 0 14 14">
+                  <rect
+                    width="14"
+                    height="8"
+                    rx="2"
+                    fill="#bf3425"
+                    opacity="0.15"
+                    stroke="#bf3425"
+                    stroke-width="1.2"
+                    y="3"
+                  />
+                </svg>
+                <span style="color: #bf3425; font-weight: 600"
+                  >AFP shops live here</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <p>
+            Every characteristic that makes composites manufacturing hard —
+            programme-to-programme tool changes, ply book revisions mid-run,
+            thermoplastic vs thermoset campaigns on the same hardware,
+            qualification trials running alongside production — is amplified in
+            the LVHM corner. And every assumption built into the last century of
+            manufacturing performance measurement was built for the other
+            corner.
+          </p>
+        </section>
+
+        <!-- ─── Section 3: Review Methodology ────────────────────────── -->
+        <section id="review-methodology">
+          <h2>What the review actually looked at</h2>
+          <p>
+            The Wickramanayake team followed PRISMA methodology strictly. They
+            pulled 245 candidate papers from Scopus and Web of Science, removed
+            duplicates, screened titles and abstracts, checked introductions and
+            conclusions, verified full-text availability, and ended with 42
+            papers for final synthesis. Their search string deliberately
+            combined LVHM-flavoured terms ("job shop", "make to order",
+            "engineer to order", "high-mix low-volume", "nonrepetitive") with
+            data-and-measurement terms ("data-driven", "KPI", "performance
+            metric", "dashboard", "monitoring system").
+          </p>
+          <p>
+            In other words: they went looking for the intersection of how LVHM
+            shops measure themselves and what technologies they use to do it.
+            That intersection turns out to be small, uneven, and heavily biased
+            toward a few well-trodden paths.
+          </p>
+
+          <!-- INFOGRAPHIC 2: PRISMA Funnel -->
+          <div class="prisma-container" id="prisma-root">
+            <div class="prisma-header">
+              <div class="prisma-title">PRISMA Literature Review Funnel</div>
+              <div class="prisma-subtitle">
+                Systematic identification & screening of AFP research papers
+              </div>
+            </div>
+
+            <!-- Row 1: 245 -->
+            <div
+              class="prisma-row"
+              id="prisma-r1"
+              data-n="245"
+              data-of="245"
+              data-tt-title="Initial Identification"
+              data-tt-src="Scopus: 130 records"
+              data-tt-src2="Web of Science: 115 records"
+            >
+              <div class="prisma-num">245</div>
+              <div class="prisma-bar-track">
+                <div
+                  class="prisma-bar-fill prisma-c1"
+                  data-w="100"
+                  data-pct="100% · 245 papers"
+                ></div>
+              </div>
+              <div class="prisma-label">
+                <strong>Identified</strong>
+                <span>Scopus 130 + WoS 115</span>
+              </div>
+            </div>
+
+            <!-- Step: deduplicate -->
+            <div class="prisma-step">
+              <div class="prisma-step-spacer"></div>
+              <div class="prisma-step-line">
+                <div class="prisma-step-arrow-col">
+                  <div class="prisma-step-vline"></div>
+                  <div class="prisma-step-tri"></div>
+                </div>
+                <div class="prisma-step-pill">
+                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                    <circle
+                      cx="5.5"
+                      cy="5.5"
+                      r="5"
+                      stroke="#bf3425"
+                      stroke-width="1.2"
+                    />
+                    <line
+                      x1="3.5"
+                      y1="5.5"
+                      x2="7.5"
+                      y2="5.5"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  Deduplicate
+                </div>
+                <span class="prisma-step-excluded">−59 duplicates removed</span>
+              </div>
+            </div>
+
+            <!-- Row 2: 186 -->
+            <div
+              class="prisma-row"
+              id="prisma-r2"
+              data-n="186"
+              data-of="245"
+              data-tt-title="Unique Records"
+              data-tt-src="After deduplication"
+              data-tt-src2="75.9% of initial set"
+            >
+              <div class="prisma-num">186</div>
+              <div class="prisma-bar-track">
+                <div
+                  class="prisma-bar-fill prisma-c2"
+                  data-w="75.9"
+                  data-pct="75.9% · 186 papers"
+                ></div>
+              </div>
+              <div class="prisma-label">
+                <strong>Unique Records</strong>
+                <span>After deduplication</span>
+              </div>
+            </div>
+
+            <!-- Step: title + abstract screen -->
+            <div class="prisma-step">
+              <div class="prisma-step-spacer"></div>
+              <div class="prisma-step-line">
+                <div class="prisma-step-arrow-col">
+                  <div class="prisma-step-vline"></div>
+                  <div class="prisma-step-tri"></div>
+                </div>
+                <div class="prisma-step-pill">
+                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                    <rect
+                      x="1"
+                      y="2"
+                      width="9"
+                      height="7"
+                      rx="1"
+                      stroke="#bf3425"
+                      stroke-width="1.2"
+                    />
+                    <line
+                      x1="3"
+                      y1="5"
+                      x2="8"
+                      y2="5"
+                      stroke="#bf3425"
+                      stroke-width="1.2"
+                      stroke-linecap="round"
+                    />
+                    <line
+                      x1="3"
+                      y1="7"
+                      x2="6"
+                      y2="7"
+                      stroke="#bf3425"
+                      stroke-width="1.2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  Title + Abstract Screen
+                </div>
+                <span class="prisma-step-excluded">−133 excluded</span>
+              </div>
+            </div>
+
+            <!-- Row 3: 53 -->
+            <div
+              class="prisma-row"
+              id="prisma-r3"
+              data-n="53"
+              data-of="245"
+              data-tt-title="Pass Initial Screen"
+              data-tt-src="Title + abstract review"
+              data-tt-src2="21.6% of initial set"
+            >
+              <div class="prisma-num">53</div>
+              <div class="prisma-bar-track">
+                <div
+                  class="prisma-bar-fill prisma-c3"
+                  data-w="21.6"
+                  data-pct="21.6% · 53 papers"
+                ></div>
+              </div>
+              <div class="prisma-label">
+                <strong>Pass Initial Screen</strong>
+                <span>Title &amp; abstract review</span>
+              </div>
+            </div>
+
+            <!-- Step: intro + conclusion screen -->
+            <div class="prisma-step">
+              <div class="prisma-step-spacer"></div>
+              <div class="prisma-step-line">
+                <div class="prisma-step-arrow-col">
+                  <div class="prisma-step-vline"></div>
+                  <div class="prisma-step-tri"></div>
+                </div>
+                <div class="prisma-step-pill">
+                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                    <rect
+                      x="1"
+                      y="1.5"
+                      width="9"
+                      height="8"
+                      rx="1"
+                      stroke="#bf3425"
+                      stroke-width="1.2"
+                    />
+                    <line
+                      x1="3"
+                      y1="4"
+                      x2="8"
+                      y2="4"
+                      stroke="#bf3425"
+                      stroke-width="1.2"
+                      stroke-linecap="round"
+                    />
+                    <line
+                      x1="3"
+                      y1="6"
+                      x2="8"
+                      y2="6"
+                      stroke="#bf3425"
+                      stroke-width="1.2"
+                      stroke-linecap="round"
+                    />
+                    <line
+                      x1="3"
+                      y1="8"
+                      x2="5.5"
+                      y2="8"
+                      stroke="#bf3425"
+                      stroke-width="1.2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  Intro + Conclusion Screen
+                </div>
+                <span class="prisma-step-excluded">−6 excluded</span>
+              </div>
+            </div>
+
+            <!-- Row 4: 47 -->
+            <div
+              class="prisma-row"
+              id="prisma-r4"
+              data-n="47"
+              data-of="245"
+              data-tt-title="Relevant Papers"
+              data-tt-src="Intro + conclusion review"
+              data-tt-src2="19.2% of initial set"
+            >
+              <div class="prisma-num">47</div>
+              <div class="prisma-bar-track">
+                <div
+                  class="prisma-bar-fill prisma-c4"
+                  data-w="19.2"
+                  data-pct="19.2% · 47 papers"
+                ></div>
+              </div>
+              <div class="prisma-label">
+                <strong>Relevant</strong>
+                <span>Intro &amp; conclusion screen</span>
+              </div>
+            </div>
+
+            <!-- Step: full-text availability -->
+            <div class="prisma-step">
+              <div class="prisma-step-spacer"></div>
+              <div class="prisma-step-line">
+                <div class="prisma-step-arrow-col">
+                  <div class="prisma-step-vline"></div>
+                  <div class="prisma-step-tri"></div>
+                </div>
+                <div class="prisma-step-pill">
+                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                    <path
+                      d="M2 2h5l2 2v6H2V2z"
+                      stroke="#bf3425"
+                      stroke-width="1.2"
+                      stroke-linejoin="round"
+                    />
+                    <path d="M7 2v2h2" stroke="#bf3425" stroke-width="1.2" />
+                  </svg>
+                  Full-Text Availability
+                </div>
+                <span class="prisma-step-excluded">−5 unavailable</span>
+              </div>
+            </div>
+
+            <!-- Row 5: 42 — Final -->
+            <div
+              class="prisma-row"
+              id="prisma-r5"
+              data-n="42"
+              data-of="245"
+              data-tt-title="Final Synthesis"
+              data-tt-src="Full text retrieved &amp; reviewed"
+              data-tt-src2="17.1% of initial set"
+            >
+              <div class="prisma-num" style="color: #bf3425">42</div>
+              <div
+                class="prisma-bar-track"
+                style="box-shadow: 0 0 0 2px #fecaca"
+              >
+                <div
+                  class="prisma-bar-fill prisma-c5"
+                  data-w="17.1"
+                  data-pct="17.1% · 42 papers"
+                ></div>
+              </div>
+              <div class="prisma-label">
+                <strong style="color: #bf3425">Final Synthesis</strong>
+                <span>Included in review</span>
+              </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="prisma-footer">
+              <div class="prisma-footer-dot"></div>
+              PRISMA-compliant systematic review · 42 papers included from 245
+              identified (17.1% retention rate)
+            </div>
+
+            <!-- Tooltip (shared) -->
+            <div class="prisma-tooltip" id="prisma-tt">
+              <div class="prisma-tt-title" id="prisma-tt-ttl"></div>
+              <div class="prisma-tt-row">
+                <span id="prisma-tt-s1"></span
+                ><span class="prisma-tt-val" id="prisma-tt-v1"></span>
+              </div>
+              <div class="prisma-tt-row"><span id="prisma-tt-s2"></span></div>
+            </div>
+          </div>
+
+          <p>That final 42 is the evidence base for everything below.</p>
+        </section>
+
+        <!-- ─── Section 4: Finding 1 — Time Is King ──────────────────── -->
+        <section id="finding-time">
+          <h2>Finding 1: Time is king, everything else is rounding error</h2>
+          <p>
+            When the authors tallied which KPIs actually appeared across the 42
+            studies, they counted 96 KPI mentions — but only 46 distinct
+            metrics. Different papers call the same thing different names, which
+            by itself tells you the field lacks a shared vocabulary. More
+            striking is which metrics dominated.
+          </p>
+
+          <!-- INFOGRAPHIC 3: KPI Share -->
+
+          <div class="lvkpi-container" id="lvkpi-root">
+            <div class="lvkpi-title">
+              KPI Landscape in LVHM Manufacturing Research
+            </div>
+            <div class="lvkpi-subtitle">
+              Share of KPI mentions across 42 Low-Volume, High-Mix (LVHM)
+              studies
+            </div>
+
+            <div class="lvkpi-grid" id="lvkpi-grid">
+              <div
+                class="lvkpi-row"
+                data-kpi="Makespan"
+                data-pct="15"
+                data-n="~6–7 papers"
+                data-rank="#1 most cited KPI"
+              >
+                <div class="lvkpi-label">Makespan</div>
+                <div class="lvkpi-track">
+                  <div class="lvkpi-fill lvkpi-fill-top" data-w="93.75">
+                    <div class="lvkpi-fill-inner">
+                      <span class="lvkpi-rank">#1 — Most cited</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="lvkpi-pct">~15%</div>
+              </div>
+
+              <div
+                class="lvkpi-row"
+                data-kpi="Lead Time"
+                data-pct="10"
+                data-n="~4 papers"
+                data-rank="#2"
+              >
+                <div class="lvkpi-label">Lead Time</div>
+                <div class="lvkpi-track">
+                  <div class="lvkpi-fill lvkpi-fill-high" data-w="62.5">
+                    <div class="lvkpi-fill-inner">
+                      <span class="lvkpi-rank">#2</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="lvkpi-pct">~10%</div>
+              </div>
+
+              <div
+                class="lvkpi-row"
+                data-kpi="Tardiness"
+                data-pct="9"
+                data-n="~4 papers"
+                data-rank="#3"
+              >
+                <div class="lvkpi-label">Tardiness</div>
+                <div class="lvkpi-track">
+                  <div class="lvkpi-fill lvkpi-fill-high" data-w="56.25">
+                    <div class="lvkpi-fill-inner">
+                      <span class="lvkpi-rank">#3</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="lvkpi-pct">~9%</div>
+              </div>
+
+              <div
+                class="lvkpi-row"
+                data-kpi="Total Production Cost"
+                data-pct="7"
+                data-n="~3 papers"
+                data-rank="#4"
+              >
+                <div class="lvkpi-label">Total Production Cost</div>
+                <div class="lvkpi-track">
+                  <div class="lvkpi-fill lvkpi-fill-mid" data-w="43.75">
+                    <div class="lvkpi-fill-inner">
+                      <span class="lvkpi-rank">#4</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="lvkpi-pct">~7%</div>
+              </div>
+
+              <div
+                class="lvkpi-row"
+                data-kpi="Throughput"
+                data-pct="6"
+                data-n="~3 papers"
+                data-rank="#5"
+              >
+                <div class="lvkpi-label">Throughput</div>
+                <div class="lvkpi-track">
+                  <div class="lvkpi-fill lvkpi-fill-mid" data-w="37.5">
+                    <div class="lvkpi-fill-inner">
+                      <span class="lvkpi-rank">#5</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="lvkpi-pct">~6%</div>
+              </div>
+
+              <div
+                class="lvkpi-row"
+                data-kpi="Energy Consumption"
+                data-pct="6"
+                data-n="~3 papers"
+                data-rank="#6"
+              >
+                <div class="lvkpi-label">Energy Consumption</div>
+                <div class="lvkpi-track">
+                  <div class="lvkpi-fill lvkpi-fill-mid" data-w="37.5">
+                    <div class="lvkpi-fill-inner">
+                      <span class="lvkpi-rank">#6</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="lvkpi-pct">~6%</div>
+              </div>
+
+              <div
+                class="lvkpi-row"
+                data-kpi="Bottleneck"
+                data-pct="5"
+                data-n="~2 papers"
+                data-rank="#7"
+              >
+                <div class="lvkpi-label">Bottleneck</div>
+                <div class="lvkpi-track">
+                  <div class="lvkpi-fill lvkpi-fill-low" data-w="31.25">
+                    <div class="lvkpi-fill-inner">
+                      <span class="lvkpi-rank">#7</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="lvkpi-pct">~5%</div>
+              </div>
+
+              <div
+                class="lvkpi-row"
+                data-kpi="Machine Utilisation"
+                data-pct="4"
+                data-n="~2 papers"
+                data-rank="#8"
+              >
+                <div class="lvkpi-label">Machine Utilisation</div>
+                <div class="lvkpi-track">
+                  <div class="lvkpi-fill lvkpi-fill-low" data-w="25">
+                    <div class="lvkpi-fill-inner">
+                      <span class="lvkpi-rank">#8</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="lvkpi-pct">~4%</div>
+              </div>
+
+              <div
+                class="lvkpi-row"
+                data-kpi="Workload Distribution"
+                data-pct="4"
+                data-n="~2 papers"
+                data-rank="#9"
+              >
+                <div class="lvkpi-label">Workload Distribution</div>
+                <div class="lvkpi-track">
+                  <div class="lvkpi-fill lvkpi-fill-low" data-w="25">
+                    <div class="lvkpi-fill-inner">
+                      <span class="lvkpi-rank">#9</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="lvkpi-pct">~4%</div>
+              </div>
+            </div>
+
+            <!-- X-axis -->
+            <div class="lvkpi-xaxis">
+              <div class="lvkpi-xaxis-track">
+                <div class="lvkpi-xaxis-line"></div>
+                <div class="lvkpi-tick" style="left: 0%">
+                  <div class="lvkpi-tick-mark"></div>
+                  <span class="lvkpi-tick-lbl">0%</span>
+                </div>
+                <div class="lvkpi-tick" style="left: 25%">
+                  <div class="lvkpi-tick-mark"></div>
+                  <span class="lvkpi-tick-lbl">4%</span>
+                </div>
+                <div class="lvkpi-tick" style="left: 50%">
+                  <div class="lvkpi-tick-mark"></div>
+                  <span class="lvkpi-tick-lbl">8%</span>
+                </div>
+                <div class="lvkpi-tick" style="left: 75%">
+                  <div class="lvkpi-tick-mark"></div>
+                  <span class="lvkpi-tick-lbl">12%</span>
+                </div>
+                <div class="lvkpi-tick" style="left: 100%">
+                  <div class="lvkpi-tick-mark"></div>
+                  <span class="lvkpi-tick-lbl">16%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lvkpi-footer">
+              Based on systematic review of 42 LVHM manufacturing scheduling
+              studies · Percentages reflect relative mention frequency
+            </div>
+          </div>
+
+          <!-- Tooltip (outside container, fixed position) -->
+          <div class="lvkpi-tooltip" id="lvkpi-tt">
+            <div class="lvkpi-tt-title" id="lvkpi-tt-title"></div>
+            <div class="lvkpi-tt-line" id="lvkpi-tt-rank"></div>
+            <div class="lvkpi-tt-line" id="lvkpi-tt-share"></div>
+          </div>
+
+          <p>
+            Makespan and lead time together account for roughly a quarter of
+            every KPI mentioned in the entire literature. Throw in tardiness and
+            throughput and you have covered most of what researchers consider
+            "performance" in LVHM. Notice what is not in that chart:
+            first-time-yield, scrap rate, data quality, decision latency, OEE,
+            programme margin, or anything resembling a digital-era operational
+            metric.
+          </p>
+          <p>
+            The authors are blunt about this: "there is a significant disparity
+            between the operational and digital components of performance
+            monitoring." For an industry that spends its conference keynotes
+            talking about Industry 4.0, that is a damning sentence. And for
+            composites specifically — where a single scrapped skin can wipe out
+            a week of margin — the near-total absence of quality and cost KPIs
+            from the published research is not a rounding error. It is a blind
+            spot.
+          </p>
+        </section>
+
+        <!-- ─── Section 5: Finding 2 — Four Solution Families ────────── -->
+        <section id="finding-solutions">
+          <h2>Finding 2: Four solution families, very different ROI stories</h2>
+          <p>
+            The review clustered the solutions used in those 42 papers into four
+            technology families. The relative weight tells a story about where
+            academic effort is going versus where practical value actually
+            lives.
+          </p>
+
+          <!-- INFOGRAPHIC 4: Solution Families -->
+          <div class="sol-wrap sol-reveal">
+            <div class="sol-header">
+              <span class="sol-tag">Technology Distribution</span>
+              <h3 class="sol-title">
+                Where the 42 LVHM Papers Spend Their Effort
+              </h3>
+              <p class="sol-sub">
+                Academic investment vs. practical deployment reality
+              </p>
+            </div>
+            <div class="sol-grid">
+              <div class="sol-card sol-card-1">
+                <div class="sol-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="sol-pct">40.5%</div>
+                <div class="sol-count">17 papers</div>
+                <div class="sol-name">AI &amp; Machine Learning</div>
+                <div class="sol-desc">
+                  RL, deep Q-networks, graph attention networks, ensemble
+                  learners
+                </div>
+                <div class="sol-bar-track">
+                  <div class="sol-bar-fill" style="width: 40.5%"></div>
+                </div>
+                <div class="sol-tag-bottom sol-tag-hard">Hard to deploy</div>
+              </div>
+              <div class="sol-card sol-card-2">
+                <div class="sol-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline
+                      points="22 12 18 12 15 21 9 3 6 12 2 12"
+                    ></polyline>
+                  </svg>
+                </div>
+                <div class="sol-pct">23.8%</div>
+                <div class="sol-count">10 papers</div>
+                <div class="sol-name">Optimisation / Metaheuristics</div>
+                <div class="sol-desc">
+                  NSGA-II, particle swarm, genetic algorithms
+                </div>
+                <div class="sol-bar-track">
+                  <div class="sol-bar-fill" style="width: 23.8%"></div>
+                </div>
+                <div class="sol-tag-bottom sol-tag-hard">
+                  Specialist expertise required
+                </div>
+              </div>
+              <div class="sol-card sol-card-3">
+                <div class="sol-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect
+                      x="2"
+                      y="3"
+                      width="20"
+                      height="14"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <div class="sol-pct">21.4%</div>
+                <div class="sol-count">9 papers</div>
+                <div class="sol-name">Simulation &amp; Digital Twins</div>
+                <div class="sol-desc">
+                  Discrete-event simulation, DT production systems, DTPOS
+                </div>
+                <div class="sol-bar-track">
+                  <div class="sol-bar-fill" style="width: 21.4%"></div>
+                </div>
+                <div class="sol-tag-bottom sol-tag-roi">Best ROI story</div>
+              </div>
+              <div class="sol-card sol-card-4">
+                <div class="sol-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    ></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                </div>
+                <div class="sol-pct">14.3%</div>
+                <div class="sol-count">6 papers</div>
+                <div class="sol-name">Frameworks / Hybrid Tools</div>
+                <div class="sol-desc">
+                  Excel + Power BI, practical dashboards, accessible methods
+                </div>
+                <div class="sol-bar-track">
+                  <div class="sol-bar-fill" style="width: 14.3%"></div>
+                </div>
+                <div class="sol-tag-bottom sol-tag-best">Most accessible</div>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            Forty percent of the field is chasing reinforcement learning, deep Q
+            networks, graph attention networks and ensemble learners. Another
+            quarter is tuning NSGA-II, particle swarm and genetic algorithms.
+            Only fourteen percent of the literature looks at the thing that
+            actually helps a production supervisor on Monday morning: a
+            framework built on accessible tools that the team can run without a
+            data scientist.
+          </p>
+          <p>
+            The review drives this home with a specific contrast. On one end you
+            have work like Ding et al. (2025) using a hierarchical multi-policy
+            soft actor-critic reinforcement learning algorithm — scientifically
+            impressive, but requiring GPU-level compute, large training
+            datasets, and specialist ML expertise to deploy. On the other end
+            you have Patil et al. (2024), who built a production scheduling
+            system for a small manufacturer using nothing more than Microsoft
+            Excel and Power BI, and reported clearly improved decision-making
+            and lead-time visibility. Same problem domain. Radically different
+            accessibility.
+          </p>
+          <p>
+            The authors rated every paper for "startup applicability." The
+            result is one of the most honest diagrams in the review:
+          </p>
+
+          <!-- INFOGRAPHIC 5: Startup Applicability -->
+
+          <div class="rcap-container" id="rcap-root">
+            <div class="rcap-title">
+              Practical Applicability for Resource-Constrained Shops
+            </div>
+            <div class="rcap-question">
+              "Can a resource-constrained shop actually use this research?"
+            </div>
+
+            <!-- Verdict banner -->
+            <div class="rcap-verdict">
+              <div class="rcap-verdict-icon">
+                <!-- Warning icon -->
+                <svg
+                  viewBox="0 0 18 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 2L16.5 15H1.5L9 2Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linejoin="round"
+                  />
+                  <line
+                    x1="9"
+                    y1="7.5"
+                    x2="9"
+                    y2="11"
+                    stroke="white"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                  />
+                  <circle cx="9" cy="13" r="0.8" fill="white" />
+                </svg>
+              </div>
+              <div class="rcap-verdict-text">
+                <div class="rcap-verdict-headline">
+                  Most research is not directly applicable
+                </div>
+                <div class="rcap-verdict-sub">
+                  Only 13 of 42 papers offer methods a constrained shop could
+                  adopt or adapt — the majority assume resources unavailable in
+                  practice.
+                </div>
+              </div>
+              <div>
+                <div class="rcap-verdict-pct">69%</div>
+                <div class="rcap-verdict-pct-lbl">not realistic</div>
+              </div>
+            </div>
+
+            <!-- Bar rows -->
+            <div class="rcap-rows">
+              <!-- Row 1: Directly usable -->
+              <div
+                class="rcap-row"
+                style="--rcap-color: #47577c; --rcap-opacity: 0.9"
+                data-tip-title="Directly Usable"
+                data-tip-body="4 papers present methods deployable without significant infrastructure or expertise beyond what a typical LVHM shop would have."
+              >
+                <div class="rcap-label">Directly usable</div>
+
+                <div class="rcap-track">
+                  <div class="rcap-fill" data-w="13.8">
+                    <span class="rcap-fill-inner-lbl">9.5% </span>
+                  </div>
+                </div>
+                <div class="rcap-right">
+                  <span class="rcap-count">4</span>
+                  <span class="rcap-pct">9.5% · papers</span>
+                  <span class="rcap-tag">✓ Deploy now</span>
+                </div>
+              </div>
+
+              <div class="rcap-divider">
+                <div class="rcap-divider-line"></div>
+                <span class="rcap-divider-label">practical threshold</span>
+                <div class="rcap-divider-line"></div>
+              </div>
+
+              <!-- Row 2: Adaptable with work -->
+              <div
+                class="rcap-row"
+                style="--rcap-color: #9d9d9c; --rcap-opacity: 0.85"
+                data-tip-title="Adaptable With Work"
+                data-tip-body="9 papers require meaningful adaptation — simplification, re-parameterisation, or partial implementation — before a constrained shop could benefit."
+              >
+                <div class="rcap-label">Adaptable with work</div>
+
+                <div class="rcap-track">
+                  <div class="rcap-fill" data-w="31.0">
+                    <span class="rcap-fill-inner-lbl">21.4% of corpus</span>
+                  </div>
+                </div>
+                <div class="rcap-right">
+                  <span class="rcap-count">9</span>
+                  <span class="rcap-pct">21.4% · papers</span>
+                  <span class="rcap-tag">~ Needs effort</span>
+                </div>
+              </div>
+
+              <div class="rcap-divider">
+                <div class="rcap-divider-line"></div>
+                <span class="rcap-divider-label">applicability gap</span>
+                <div class="rcap-divider-line"></div>
+              </div>
+
+              <!-- Row 3: Not realistic -->
+              <div
+                class="rcap-row"
+                style="--rcap-color: #bf3425; --rcap-opacity: 0.88"
+                data-tip-title="Not Realistic"
+                data-tip-body="29 papers assume large datasets, full ERP integration, or computational resources that resource-constrained shops simply do not have in practice."
+              >
+                <div class="rcap-label">Not realistic</div>
+
+                <div class="rcap-track">
+                  <div class="rcap-fill" data-w="100">
+                    <span class="rcap-fill-inner-lbl">69.1% of corpus</span>
+                  </div>
+                </div>
+                <div class="rcap-right">
+                  <span class="rcap-count">29</span>
+                  <span class="rcap-pct">69.1% · papers</span>
+                  <span class="rcap-tag">✗ Not usable</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="rcap-footer">
+              <span class="rcap-footer-note"
+                >Systematic review · 42 LVHM studies · Applicability assessed
+                against resource-constrained shop profile</span
+              >
+              <span class="rcap-footer-stat">42 papers · 3 categories</span>
+            </div>
+          </div>
+
+          <!-- Tooltip -->
+          <div class="rcap-tooltip" id="rcap-tt">
+            <div class="rcap-tt-title" id="rcap-tt-ttl"></div>
+            <div class="rcap-tt-line" id="rcap-tt-body"></div>
+          </div>
+
+          <p>
+            Seven out of ten published solutions in this field cannot be
+            deployed by a manufacturer without deep pockets, mature data
+            infrastructure, and in-house ML or operations research talent. That
+            is the real gap.
+          </p>
+        </section>
+
+        <!-- Image: AMSL / AFP-XS research -->
+        <div class="split-layout">
+          <div class="split-image">
+            <img
+              src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69d62d4924d0b905dc14792e_3.png"
+              alt="AFP-XS at AMSL, University of Alabama"
+            />
+            <p class="image-caption" style="margin-top: 20px">
+              A university research team operating AFP-XS at AMSL, University of
+              Alabama — compact, portable, and capable of thermoset and
+              thermoplastic processing.
+            </p>
+          </div>
+          <div class="split-text">
+            <h3>AFP-XS in a University Research Setting</h3>
+
+            <p>
+              The system generates a continuous data stream — tow tension, head
+              speed, temperature, feed state — exactly the inputs that make a
+              KPI framework or digital twin possible. The question is never
+              whether the data exists; it's whether anyone is turning it into
+              decisions.
+            </p>
+          </div>
+        </div>
+
+        <!-- ─── Section 6: Finding 3 — Digital Twins ─────────────────── -->
+        <section id="finding-digital-twins">
+          <h2>Finding 3: Digital twins are crossing from hype to ROI</h2>
+          <p>
+            Here is where the composites story gets genuinely interesting. Among
+            the four solution families, simulation and digital twins are the
+            category that most cleanly links real shop-floor data to real KPI
+            outcomes — the thing the paper says we are otherwise missing.
+          </p>
+          <p>
+            The standout example in the review is Sit and Lee (2023), who built
+            a Digital Twin Production Optimisation System (DTPOS) specifically
+            for low-volume, high-mix job allocation and scheduling. The reported
+            result: average order processing time dropped from 19 days to 9.59
+            days, a 52.63% reduction, while maintaining on-time completion
+            performance. Miqueo et al. (2023) reported 24% and 22% improvements
+            in component stock and milkrun utilisation from discrete-event
+            simulation of multi-model assembly lines. Ghaleb et al. (2021)
+            showed average cost savings of approximately 27% from integrated
+            production-scheduling and maintenance-planning using a hybrid
+            genetic algorithm coupled to a real maintenance model.
+          </p>
+          <p>
+            These are not marginal wins. They are the kind of numbers that
+            change a business case.
+          </p>
+
+          <!-- Image: AddPath Digital Twin -->
+          <div class="split-layout reverse">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69d62ca604839f1239e8842c_4.png"
+                alt="The physical AFP cell and its AddPath digital twin"
+              />
+              <p class="image-caption" style="margin-top: 20px">
+                The physical AFP cell and its AddPath digital twin — side by
+                side. Credit: Addcomposites / AIMEN Technology Centre.
+              </p>
+            </div>
+            <div class="split-text">
+              <h3>The AFP Cell and Its Digital Twin</h3>
+
+              <p>
+                AddPath generates AFP toolpaths and logs every process
+                parameter, creating exactly the data infrastructure that a
+                digital twin requires. The physical cell and the virtual model
+                grow together.
+              </p>
+            </div>
+          </div>
+
+          <!-- INFOGRAPHIC 6: DT Reported Improvements -->
+          <div class="dtr-wrap dtr-reveal">
+            <div class="dtr-header">
+              <span class="dtr-tag">Simulation &amp; Digital Twin Results</span>
+              <h3 class="dtr-title">
+                Reported Improvements from the Simulation / DT Cluster
+              </h3>
+              <p class="dtr-sub">
+                Independent studies showing consistent, repeatable gains
+              </p>
+            </div>
+            <div class="dtr-chart">
+              <div class="dtr-row">
+                <div class="dtr-meta">
+                  <div class="dtr-study">Sit &amp; Lee (2023)</div>
+                  <div class="dtr-desc">
+                    Order processing time reduction (19 days → 9.59 days)
+                  </div>
+                </div>
+                <div class="dtr-track">
+                  <div class="dtr-fill dtr-fill-1" data-w="53">
+                    <span class="dtr-pct">≈53%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="dtr-row">
+                <div class="dtr-meta">
+                  <div class="dtr-study">Ghaleb et al. (2021)</div>
+                  <div class="dtr-desc">
+                    Cost savings from integrated schedule + maintenance
+                  </div>
+                </div>
+                <div class="dtr-track">
+                  <div class="dtr-fill dtr-fill-2" data-w="27">
+                    <span class="dtr-pct">≈27%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="dtr-row">
+                <div class="dtr-meta">
+                  <div class="dtr-study">Miqueo et al. (2023)</div>
+                  <div class="dtr-desc">
+                    Milkrun utilisation improvement (multi-model assembly)
+                  </div>
+                </div>
+                <div class="dtr-track">
+                  <div class="dtr-fill dtr-fill-3" data-w="22">
+                    <span class="dtr-pct">≈22%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="dtr-row">
+                <div class="dtr-meta">
+                  <div class="dtr-study">Yang (2025)</div>
+                  <div class="dtr-desc">Average flow time reduction</div>
+                </div>
+                <div class="dtr-track">
+                  <div class="dtr-fill dtr-fill-4" data-w="22">
+                    <span class="dtr-pct">≈22%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="dtr-note">
+              The critical insight: digital twins start from data infrastructure
+              and layer decision support on top. RL, by contrast, needs clean
+              abundant historical data before it can say anything useful — the
+              thing you don't have.
+            </p>
+          </div>
+
+          <p>
+            The critical insight from the review is why digital twins work where
+            pure ML does not. A digital twin starts from the data infrastructure
+            — the shop floor, the machine, the process — and layers decision
+            support on top of it. Reinforcement learning, by contrast, treats
+            the KPI as an optimization target and needs clean, abundant
+            historical data before it can say anything useful. In LVHM
+            composites, clean abundant historical data is the thing you do not
+            have.
+          </p>
+        </section>
+
+        <!-- ─── Section 7: Finding 4 — The Startup Gap ───────────────── -->
+        <section id="finding-startup-gap">
+          <h2>Finding 4: The startup gap is the biggest gap</h2>
+          <p>
+            The most uncomfortable finding in the review is this: across 42
+            papers, not one study explicitly addresses LVHM performance
+            measurement for manufacturers in the early stage of operations.
+            Every single piece of research assumes a developed, operationally
+            established context with built-in data infrastructure, structured
+            process documentation, and an existing performance measurement
+            culture.
+          </p>
+
+          <div class="split-layout">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69d62ca65ee0b008f7bb21b1_5.png"
+                alt="Carbon fibre pressure vessel layup with AFP-XS"
+              />
+              <p class="image-caption" style="margin-top: 20px">
+                AFP-XS Pressure Vessel Production
+              </p>
+            </div>
+            <div class="split-text">
+              <p>
+                Carbon fibre pressure vessel layup with AFP-XS — a typical
+                early-stage LVHM application where the team is simultaneously
+                learning the process, qualifying the material, and trying to
+                measure performance with limited infrastructure.
+              </p>
+            </div>
+          </div>
+
+          <p>
+            That assumption quietly excludes an enormous share of the real
+            composites industry — including most of the customers Addcomposites
+            works with. A space startup building its first cryo tank. A drone
+            manufacturer scaling from 10 to 100 airframes a year. A new entrant
+            qualifying a thermoplastic workflow. A research centre standing up a
+            hydrogen pressure vessel line. None of them fit the profile of the
+            "mature shop" the literature silently assumes.
+          </p>
+
+          <!-- INFOGRAPHIC 7: Literature Gap -->
+
+          <div class="lvhm-container" id="lvhm-root">
+            <div class="lvhm-header">
+              <h4>Literature Assumptions vs. LVHM Composite Reality</h4>
+              <p>
+                What 42 papers assume — and what the factory floor actually
+                looks like
+              </p>
+            </div>
+
+            <div class="lvhm-columns">
+              <!-- LEFT: Literature -->
+              <div class="lvhm-col lvhm-col--literature" id="lvhm-col-left">
+                <span class="lvhm-col-label">What the Literature Assumes</span>
+
+                <div class="lvhm-card">
+                  <ul class="lvhm-bullet-list">
+                    <li class="lvhm-bullet-item">
+                      <span class="lvhm-bullet-icon">
+                        <svg viewBox="0 0 10 10" fill="currentColor">
+                          <circle cx="5" cy="5" r="4" />
+                        </svg>
+                      </span>
+                      Clean historical data
+                    </li>
+                    <li class="lvhm-bullet-item">
+                      <span class="lvhm-bullet-icon">
+                        <svg viewBox="0 0 10 10" fill="currentColor">
+                          <circle cx="5" cy="5" r="4" />
+                        </svg>
+                      </span>
+                      Stable SOPs
+                    </li>
+                    <li class="lvhm-bullet-item">
+                      <span class="lvhm-bullet-icon">
+                        <svg viewBox="0 0 10 10" fill="currentColor">
+                          <circle cx="5" cy="5" r="4" />
+                        </svg>
+                      </span>
+                      Dedicated ML team
+                    </li>
+                    <li class="lvhm-bullet-item">
+                      <span class="lvhm-bullet-icon">
+                        <svg viewBox="0 0 10 10" fill="currentColor">
+                          <circle cx="5" cy="5" r="4" />
+                        </svg>
+                      </span>
+                      Cyber-physical infrastructure
+                    </li>
+                    <li class="lvhm-bullet-item">
+                      <span class="lvhm-bullet-icon">
+                        <svg viewBox="0 0 10 10" fill="currentColor">
+                          <circle cx="5" cy="5" r="4" />
+                        </svg>
+                      </span>
+                      Stable product mix
+                    </li>
+                    <li class="lvhm-bullet-item">
+                      <span class="lvhm-bullet-icon">
+                        <svg viewBox="0 0 10 10" fill="currentColor">
+                          <circle cx="5" cy="5" r="4" />
+                        </svg>
+                      </span>
+                      Reliable takt time
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="lvhm-arrow">
+                  <div class="lvhm-arrow-line"></div>
+                  <div class="lvhm-arrow-head"></div>
+                </div>
+
+                <div class="lvhm-outcome">
+                  <div class="lvhm-outcome-title">Recommended Tooling</div>
+                  <div class="lvhm-outcome-tags">
+                    <span class="lvhm-tag">RL / DRL</span>
+                    <span class="lvhm-tag">NSGA-II</span>
+                    <span class="lvhm-tag">Deep Q-Networks</span>
+                    <span class="lvhm-tag">Multi-Agent DT</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RIGHT: Reality -->
+              <div class="lvhm-col lvhm-col--reality" id="lvhm-col-right">
+                <span class="lvhm-col-label">LVHM Composite Reality</span>
+
+                <div class="lvhm-card">
+                  <ul class="lvhm-bullet-list">
+                    <li class="lvhm-bullet-item">
+                      <span class="lvhm-bullet-icon">
+                        <svg viewBox="0 0 10 10" fill="currentColor">
+                          <circle cx="5" cy="5" r="4" />
+                        </svg>
+                      </span>
+                      Sparse, noisy data
+                    </li>
+                    <li class="lvhm-bullet-item">
+                      <span class="lvhm-bullet-icon">
+                        <svg viewBox="0 0 10 10" fill="currentColor">
+                          <circle cx="5" cy="5" r="4" />
+                        </svg>
+                      </span>
+                      SOPs still forming
+                    </li>
+                    <li class="lvhm-bullet-item">
+                      <span class="lvhm-bullet-icon">
+                        <svg viewBox="0 0 10 10" fill="currentColor">
+                          <circle cx="5" cy="5" r="4" />
+                        </svg>
+                      </span>
+                      1–3 process engineers
+                    </li>
+                    <li class="lvhm-bullet-item">
+                      <span class="lvhm-bullet-icon">
+                        <svg viewBox="0 0 10 10" fill="currentColor">
+                          <circle cx="5" cy="5" r="4" />
+                        </svg>
+                      </span>
+                      Laptop + MES if lucky
+                    </li>
+                    <li class="lvhm-bullet-item">
+                      <span class="lvhm-bullet-icon">
+                        <svg viewBox="0 0 10 10" fill="currentColor">
+                          <circle cx="5" cy="5" r="4" />
+                        </svg>
+                      </span>
+                      Mix changes monthly
+                    </li>
+                    <li class="lvhm-bullet-item">
+                      <span class="lvhm-bullet-icon">
+                        <svg viewBox="0 0 10 10" fill="currentColor">
+                          <circle cx="5" cy="5" r="4" />
+                        </svg>
+                      </span>
+                      Programme-driven takt
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="lvhm-arrow">
+                  <div class="lvhm-arrow-line"></div>
+                  <div class="lvhm-arrow-head"></div>
+                </div>
+
+                <div class="lvhm-outcome">
+                  <div class="lvhm-outcome-title">Practical Tooling</div>
+                  <div class="lvhm-outcome-tags">
+                    <span class="lvhm-tag">Excel</span>
+                    <span class="lvhm-tag">Power BI</span>
+                    <span class="lvhm-tag">Lightweight Dashboards</span>
+                    <span class="lvhm-tag">Incremental DT</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.lvhm-columns -->
+
+            <div class="lvhm-footnote">
+              *LVHM = Low-Volume High-Mix composite manufacturing environment
+            </div>
+          </div>
+          <!-- /.lvhm-container -->
+
+          <p>
+            The review explicitly calls out the need for "measurement models
+            tailored for early-stage firms" and argues that new enterprises
+            should not defer performance evaluation while waiting for better
+            tools. The research-backed conclusion is uncomfortably simple: start
+            with a small set of essential indicators measurable with basic
+            instruments, and grow the framework as your data infrastructure
+            matures.
+          </p>
+        </section>
+
+        <!-- ─── Section 8: What This Means for AFP ───────────────────── -->
+        <section id="afp-shop-floor">
+          <h2>What this means for an AFP shop floor</h2>
+          <p>
+            Here is where the review stops and where practical composite
+            manufacturing starts. AFP systems — whether an AFP-XS running
+            thermoset prepreg, an AFP-X depositing thermoplastic tape, or an
+            ADDX extruding polymer and fibre in parallel for large-format
+            additive — generate data continuously. Tow tension, head speed,
+            compaction force, heating zone temperatures, tape feed state, layup
+            path progress, machine alarms, ply completion events. Every one of
+            these is a candidate input to a digital twin or a KPI dashboard.
+          </p>
+          <p>
+            The question is not whether the data exists. It is whether anyone is
+            turning it into decisions.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69846a019c65c95a092284bd_10.jpeg"
+            alt="AddPath generating AFP toolpaths"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            AddPath generating AFP toolpaths — process data converting directly
+            into layup decisions.
+          </p>
+
+          <p>
+            Map the review's findings onto a composites cell and a practical
+            picture emerges:
+          </p>
+
+          <!-- INFOGRAPHIC 8: AFP KPI Stack -->
+
+          <div class="afpkpi-container" id="afpkpi-root">
+            <div class="afpkpi-header">
+              <h4>The Accessible LVHM KPI Stack for an AFP Cell</h4>
+              <p>What the research says actually works</p>
+            </div>
+
+            <div class="afpkpi-stack">
+              <!-- LAYER 4 — top -->
+              <div class="afpkpi-layer afpkpi-layer--4" id="afpkpi-l4">
+                <div class="afpkpi-layer-header">
+                  <span class="afpkpi-layer-badge">Layer 4</span>
+                  <span class="afpkpi-layer-title">Decision Support</span>
+                </div>
+                <div class="afpkpi-tags">
+                  <span class="afpkpi-tag">Dashboards</span>
+                  <span class="afpkpi-tag">What-If Scheduling</span>
+                  <span class="afpkpi-tag">DT Simulation</span>
+                </div>
+                <div class="afpkpi-layer-desc">
+                  Actionable outputs for planners and cell leaders — translate
+                  KPIs into schedule decisions and scenario planning.
+                </div>
+              </div>
+
+              <div class="afpkpi-connector" id="afpkpi-c34">
+                <div class="afpkpi-connector-inner">
+                  <div class="afpkpi-arrow-tip"></div>
+                  <div class="afpkpi-arrow-shaft"></div>
+                </div>
+              </div>
+
+              <!-- LAYER 3 -->
+              <div class="afpkpi-layer afpkpi-layer--3" id="afpkpi-l3">
+                <div class="afpkpi-layer-header">
+                  <span class="afpkpi-layer-badge">Layer 3</span>
+                  <span class="afpkpi-layer-title">KPI Framework</span>
+                </div>
+                <div class="afpkpi-tags">
+                  <span class="afpkpi-tag afpkpi-tag--metric">Lead Time</span>
+                  <span class="afpkpi-tag afpkpi-tag--metric">Makespan</span>
+                  <span class="afpkpi-tag afpkpi-tag--metric"
+                    >First-Time-Yield</span
+                  >
+                  <span class="afpkpi-tag afpkpi-tag--metric">kg / hr</span>
+                  <span class="afpkpi-tag afpkpi-tag--metric">Scrap Rate</span>
+                  <span class="afpkpi-tag afpkpi-tag--metric">OEE</span>
+                </div>
+                <div class="afpkpi-layer-desc">
+                  Core measurables proven in LVHM composites research — balance
+                  throughput, quality, and utilisation.
+                </div>
+              </div>
+
+              <div class="afpkpi-connector" id="afpkpi-c23">
+                <div class="afpkpi-connector-inner">
+                  <div class="afpkpi-arrow-tip"></div>
+                  <div class="afpkpi-arrow-shaft"></div>
+                </div>
+              </div>
+
+              <!-- LAYER 2 -->
+              <div class="afpkpi-layer afpkpi-layer--2" id="afpkpi-l2">
+                <div class="afpkpi-layer-header">
+                  <span class="afpkpi-layer-badge">Layer 2</span>
+                  <span class="afpkpi-layer-title">Data Plumbing</span>
+                </div>
+                <div class="afpkpi-tags">
+                  <span class="afpkpi-tag">AddPath Logs</span>
+                  <span class="afpkpi-tag">AFP-XS / AFP-X Controller Data</span>
+                  <span class="afpkpi-tag">MES / ERP Hooks</span>
+                  <span class="afpkpi-tag">Manual Quality Captures</span>
+                </div>
+                <div class="afpkpi-layer-desc">
+                  Data ingestion from the cell — structured and unstructured
+                  sources combined to feed the KPI layer.
+                </div>
+              </div>
+
+              <div class="afpkpi-connector" id="afpkpi-c12">
+                <div class="afpkpi-connector-inner">
+                  <div class="afpkpi-arrow-tip"></div>
+                  <div class="afpkpi-arrow-shaft"></div>
+                </div>
+              </div>
+
+              <!-- LAYER 1 — base -->
+              <div class="afpkpi-layer afpkpi-layer--1" id="afpkpi-l1">
+                <div class="afpkpi-layer-header">
+                  <span class="afpkpi-layer-badge">Layer 1</span>
+                  <span class="afpkpi-layer-title">The Process</span>
+                </div>
+                <div class="afpkpi-tags">
+                  <span class="afpkpi-tag">AFP Head</span>
+                  <span class="afpkpi-tag">Tooling</span>
+                  <span class="afpkpi-tag">Operator</span>
+                  <span class="afpkpi-tag">Material Lot</span>
+                </div>
+                <div class="afpkpi-layer-desc">
+                  Physical reality of the AFP cell — the ground-truth inputs
+                  that every layer above depends on.
+                </div>
+              </div>
+            </div>
+            <!-- /.afpkpi-stack -->
+
+            <div class="afpkpi-footnote">
+              Hover each layer to reveal its role · LVHM = Low-Volume High-Mix
+            </div>
+          </div>
+          <!-- /.afpkpi-container -->
+
+          <p>
+            Layer 1 is the physical reality, and it is the same in every
+            composite shop. Layer 2 is where most LVHM manufacturers get stuck —
+            data is being produced, but it is trapped in controllers,
+            spreadsheets, and people's heads. Layer 3 is where the
+            Wickramanayake review tells us the biggest opportunity lives: a
+            small, well-chosen set of KPIs that survive the leap from lab paper
+            to shop floor. Layer 4 is the payoff — not a speculative RL agent,
+            but practical decision support that a production manager can
+            actually run.
+          </p>
+          <p>
+            The research is also clear about which path gets you there fastest.
+            Patil et al.'s Excel-plus-Power-BI approach is rated "directly
+            usable" by the review. A full cyber-physical digital twin deployment
+            is rated "medium — requires investment but high ROI." Reinforcement
+            learning scheduling is rated "low — not realistic for
+            resource-constrained environments." The ranking does not mean you
+            should never build a digital twin. It means you should build the KPI
+            framework first, then layer the twin on top of data you are already
+            collecting.
+          </p>
+        </section>
+
+        <!-- ─── Section 9: Addcomposites Customers ───────────────────── -->
+        <section id="addcomposites-customers">
+          <h2>Why this matters specifically for Addcomposites customers</h2>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69ca6bb045e88bbb64b867ba_6.jpeg"
+            alt="Addcomposites AFP-XS installation"
+            class="full-width-image"
+          />
+
+          <p>
+            Addcomposites has spent eight years making AFP accessible to
+            manufacturers who never thought they could afford it. Fifty-plus
+            installations of AFP-XS around the world, a subscription model that
+            keeps capital barriers low, AddPath running on Rhino and Grasshopper
+            so that the software feels familiar to anyone already working in
+            CAD. The whole product philosophy has been: democratize composites,
+            start with what the customer actually has, grow the capability from
+            there.
+          </p>
+          <p>
+            The Wickramanayake review, without knowing it, is making the exact
+            same argument for performance measurement. Start with accessible
+            KPIs. Use the tools you already own. Instrument the cell
+            incrementally. Layer in simulation and eventual digital twin
+            capability as the data matures. Do not wait for a perfect Industry
+            4.0 stack before you start measuring, because the research evidence
+            says the perfect stack never arrives and the companies that wait for
+            it fall behind the ones that ship a Power BI dashboard on a Friday
+            afternoon.
+          </p>
+          <p>
+            Every AFP-XS customer is already sitting on a data stream that could
+            feed a lead-time KPI within a week. Every AFP-X customer running
+            thermoplastic campaigns has the inputs to compute a meaningful kg/hr
+            deposition rate and a first-time-yield trend. Every ADDX user
+            printing large-format parts can track build time variance,
+            nozzle-hour utilization, and energy per kilogram. None of this
+            requires reinforcement learning. All of it is what the review says
+            the industry is missing.
+          </p>
+
+          <!-- INFOGRAPHIC 9: Accessibility Ladder -->
+
+          <div class="afpkpi-container acldr-container" id="acldr-root">
+            <div class="acldr-header">
+              <h4>The Accessibility Ladder the Research Validates</h4>
+            </div>
+
+            <div class="acldr-ladder">
+              <!-- Stage 4 — top -->
+              <div class="acldr-stage acldr-stage--4" id="acldr-s4">
+                <div class="acldr-bubble-col">
+                  <div class="acldr-bubble">4</div>
+                </div>
+                <div class="acldr-card">
+                  <div class="acldr-card-stage-label">Stage 4</div>
+                  <div class="acldr-card-title">
+                    Full Digital Twin + Simulation
+                  </div>
+                  <div class="acldr-card-desc">
+                    What-if scheduling, DT dashboards
+                  </div>
+                  <div class="acldr-tags">
+                    <span class="acldr-tag">DT Simulation</span>
+                    <span class="acldr-tag">What-If Scheduling</span>
+                    <span class="acldr-tag">Predictive Analytics</span>
+                  </div>
+                </div>
+                <div class="acldr-time-col">
+                  <span class="acldr-time-pill">← 12–24 mo</span>
+                </div>
+              </div>
+
+              <!-- Stage 3 -->
+              <div class="acldr-stage acldr-stage--3" id="acldr-s3">
+                <div class="acldr-bubble-col">
+                  <div class="acldr-bubble">3</div>
+                </div>
+                <div class="acldr-card">
+                  <div class="acldr-card-stage-label">Stage 3</div>
+                  <div class="acldr-card-title">
+                    Connected Shop Floor + MES Hooks
+                  </div>
+                  <div class="acldr-card-desc">Automated data capture</div>
+                  <div class="acldr-tags">
+                    <span class="acldr-tag">MES Integration</span>
+                    <span class="acldr-tag">Automated Capture</span>
+                    <span class="acldr-tag">ERP Hooks</span>
+                  </div>
+                </div>
+                <div class="acldr-time-col">
+                  <span class="acldr-time-pill">← 6–12 mo</span>
+                </div>
+              </div>
+
+              <!-- Stage 2 -->
+              <div class="acldr-stage acldr-stage--2" id="acldr-s2">
+                <div class="acldr-bubble-col">
+                  <div class="acldr-bubble">2</div>
+                </div>
+                <div class="acldr-card">
+                  <div class="acldr-card-stage-label">Stage 2</div>
+                  <div class="acldr-card-title">
+                    KPI Dashboard (Power BI / Excel)
+                  </div>
+                  <div class="acldr-card-desc">
+                    Lead time, OEE, yield, kg/hr
+                  </div>
+                  <div class="acldr-tags">
+                    <span class="acldr-tag">Power BI</span>
+                    <span class="acldr-tag">Excel</span>
+                    <span class="acldr-tag">OEE</span>
+                    <span class="acldr-tag">Yield</span>
+                    <span class="acldr-tag">kg/hr</span>
+                  </div>
+                </div>
+                <div class="acldr-time-col">
+                  <span class="acldr-time-pill">← 1–3 mo</span>
+                </div>
+              </div>
+
+              <!-- Stage 1 — bottom / start -->
+              <div class="acldr-stage acldr-stage--1" id="acldr-s1">
+                <div class="acldr-bubble-col">
+                  <div class="acldr-bubble">1</div>
+                </div>
+                <div class="acldr-card">
+                  <div class="acldr-card-stage-label">Stage 1 — Start Here</div>
+                  <div class="acldr-card-title">
+                    Pick 4–6 KPIs, Define Them Clearly
+                  </div>
+                  <div class="acldr-card-desc">
+                    Assign an owner, start measuring
+                  </div>
+                  <div class="acldr-tags">
+                    <span class="acldr-tag">Define KPIs</span>
+                    <span class="acldr-tag">Assign Owner</span>
+                    <span class="acldr-tag">Start Measuring</span>
+                  </div>
+                </div>
+                <div class="acldr-time-col">
+                  <span class="acldr-time-pill">← Week 1</span>
+                </div>
+              </div>
+            </div>
+            <!-- /.acldr-ladder -->
+
+            <div class="acldr-footer" id="acldr-footer">
+              <p>
+                <strong>Where the research says most shops should start</strong>
+                — not where most shops actually start.
+              </p>
+            </div>
+          </div>
+          <!-- /.acldr-container -->
+
+          <p>
+            The research says Stage 1 is where the real gains live, because most
+            LVHM manufacturers skip it entirely and then wonder why their Stage
+            4 projects fail.
+          </p>
+        </section>
+
+        <!-- ─── Section 10: Three Honest Takeaways ───────────────────── -->
+        <section id="takeaways">
+          <h2>Three honest takeaways</h2>
+
+          <div class="feature-grid">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4>Start with what you have</h4>
+                <p>
+                  The academic literature is not going to hand you a framework.
+                  Start with lead time, makespan, first-time-yield, deposition
+                  rate, scrap cost — define them for your context, and measure
+                  them with whatever tools you already own.
+                </p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <div>
+                <h4>Digital twins have a clean ROI story</h4>
+                <p>
+                  A 53% reduction in order processing time, 27% cost savings
+                  from integrated scheduling, 22% improvements in flow time —
+                  repeatable results across multiple independent studies. When
+                  the AFP cell already generates process data, a digital twin is
+                  the natural next step.
+                </p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <h4>The gap is the opportunity</h4>
+                <p>
+                  The review explicitly identifies early-stage LVHM
+                  manufacturers as the most underserved segment in performance
+                  measurement research. That segment is exactly who
+                  Addcomposites has been building for since 2016.
+                </p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="12" y1="20" x2="12" y2="10"></line>
+                  <line x1="18" y1="20" x2="18" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="16"></line>
+                </svg>
+              </div>
+              <div>
+                <h4>Boring is achievable</h4>
+                <p>
+                  You do not need a reinforcement learning agent. You need a
+                  Monday morning KPI review, a dashboard you trust, and the
+                  discipline to let it grow with your data. That is an Industry
+                  4.0 story worth telling.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            The measurement problem on the composites shop floor is real, the
+            research community has just confirmed how real it is, and the path
+            forward is more boring and more achievable than most people think.
+            You do not need a reinforcement learning agent. You need a Monday
+            morning KPI review, a dashboard you trust, and the discipline to let
+            it grow with your data.
+          </p>
+          <p>That is an Industry 4.0 story worth telling.</p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6978d40a3357ac7e5d9c9aa1_14.png"
+            alt="AFP manufacturing operations"
+            class="full-width-image"
+          />
+        </section>
+
+        <!-- ─── Learn More ─────────────────────────────────────────────── -->
+        <section id="learn-more">
+          <h2>Learn More</h2>
+          <div class="learn-more-container">
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/all-products/afp-xs"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AFP-XS</span>
+                <span class="learn-more-desc"
+                  >Entry-level automated fiber placement</span
+                >
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/all-products/afp-x"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AFP-X</span>
+                <span class="learn-more-desc">Advanced multi-tow system</span>
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/addpath"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AddPath</span>
+                <span class="learn-more-desc"
+                  >AI-powered path planning software</span
+                >
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/post/afp-machines-and-components"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">Complete Guide</span>
+                <span class="learn-more-desc"
+                  >The Complete Guide to AFP Machines</span
+                >
+              </div>
+            </a>
+          </div>
+          <div class="cta-section">
+            <p>
+              Get in touch to discuss your AFP digital twin and KPI framework
+              application →
+            </p>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/contact-us"
+              class="cta-button"
+              >Contact Us for a Consultation</a
+            >
+          </div>
+        </section>
+
+        <!-- ─── References ─────────────────────────────────────────────── -->
+        <section id="references">
+          <h2>References</h2>
+          <ol class="references-list">
+            <li>
+              Wickramanayake P. S. D., Matkó A., Máté D., Vveinhardt J. (2026).
+              Performance Measurement in LVHM Manufacturing: KPIs, Technologies,
+              and Startup Gaps.
+              <em
+                >Management Theory and Studies for Rural Business and
+                Infrastructure Development</em
+              >, Vol. 48, No. 1, pp. 51–66. DOI:
+              <a
+                href="https://doi.org/10.15544/mts.2026.06"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://doi.org/10.15544/mts.2026.06</a
+              >. Open access under CC BY-NC 4.0.
+            </li>
+            <li>
+              Sit, M. &amp; Lee, C. K. M. (2023). Digital Twin Production
+              Optimisation System (DTPOS) for LVHM job allocation and
+              scheduling. Reported 52.63% reduction in average order processing
+              time (19 days to 9.59 days). Cited in Wickramanayake et al.
+              (2026).
+            </li>
+            <li>
+              Ghaleb, M., et al. (2021). Integrated production-scheduling and
+              maintenance-planning using a hybrid genetic algorithm. Reported
+              approximately 27% average cost savings. Cited in Wickramanayake et
+              al. (2026).
+            </li>
+            <li>
+              Miqueo, A., et al. (2023). Discrete-event simulation of
+              multi-model assembly lines. Reported 24% and 22% improvements in
+              component stock and milkrun utilisation. Cited in Wickramanayake
+              et al. (2026).
+            </li>
+            <li>
+              Patil, R., et al. (2024). Production scheduling for small
+              manufacturers using Microsoft Excel and Power BI. Rated "directly
+              usable" by Wickramanayake et al. (2026) for resource-constrained
+              environments.
+            </li>
+            <li>
+              Ding, Y., et al. (2025). Hierarchical multi-policy soft
+              actor-critic reinforcement learning algorithm for LVHM scheduling.
+              Rated "not realistic for resource-constrained environments" by
+              Wickramanayake et al. (2026).
+            </li>
+            <li>
+              Yang, Z. (2025). Average flow time reduction study in LVHM
+              manufacturing context. Cited in Wickramanayake et al. (2026).
+            </li>
+            <li>
+              Addcomposites — AFP-XS, AFP-X, ADDX, and AddPath product
+              documentation.
+              <a
+                href="https://www.addcomposites.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://www.addcomposites.com</a
+              >
+            </li>
+          </ol>
+        </section>
+
+        <!-- ─── Author Section ─────────────────────────────────────────── -->
+        <section class="author-section">
+          <div class="author-card">
+            <div class="author-image-wrapper">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/65dc93e2c8b30f7b6484e473_contact-lwr-img1.jpg"
+                alt="Pravin Luthada"
+                class="author-image"
+              />
+            </div>
+            <div class="author-info">
+              <h3 class="author-name">Pravin Luthada</h3>
+              <p class="author-title">CEO &amp; Co-founder, Addcomposites</p>
+              <div class="author-social">
+                <a
+                  href="https://www.linkedin.com/in/pravinluthada/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <svg viewBox="0 0 24 24" fill="#0A66C2">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                  </svg>
+                </a>
+                <a href="mailto:pravin@addcomposites.com" aria-label="Email">
+                  <svg viewBox="0 0 24 24" fill="#EA4335">
+                    <path
+                      d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.youtube.com/@addcomposites"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
+                  <svg viewBox="0 0 24 24" fill="#FF0000">
+                    <path
+                      d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <h4 class="about-author-label">About Author</h4>
+              <p class="author-bio">
+                As the author of the Addcomposites blog, Pravin Luthada's
+                insights are forged from a distinguished career in advanced
+                materials, beginning as a space scientist at the Indian Space
+                Research Organisation (ISRO). During his tenure, he gained
+                hands-on expertise in manufacturing composite components for
+                satellites and launch vehicles, where he witnessed firsthand the
+                prohibitive costs of traditional Automated Fiber Placement (AFP)
+                systems. This experience became the driving force behind his
+                entrepreneurial venture, Addcomposites Oy, which he co-founded
+                and now leads as CEO. The company is dedicated to democratizing
+                advanced manufacturing by developing patented, plug-and-play AFP
+                toolheads that make automation accessible and affordable. This
+                unique journey from designing space-grade hardware to leading a
+                disruptive technology company provides Pravin with a
+                comprehensive, real-world perspective that informs his writing
+                on the future of the composites industry.
+              </p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
