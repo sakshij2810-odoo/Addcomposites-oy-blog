@@ -1,0 +1,3564 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      From Design to Cost Estimate in Minutes: What a New CFRP Framework Tells
+      Us About the Future of AFP | Addcomposites
+    </title>
+    <meta
+      name="description"
+      content="A March 2026 paper from University of Stuttgart, Fraunhofer IGCV, and Airbus Helicopters Deutschland demonstrates a graph-based design language that connects structural design to AFP manufacturing cost estimates — automatically, in under a minute."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,600&family=Assistant:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Mobile Navigation Toggle Button -->
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="blog-layout">
+      <!-- Sidebar -->
+      <nav class="blog-sidebar" aria-label="Table of Contents">
+        <!-- Close button (mobile only) -->
+        <button class="sidebar-close" aria-label="Close navigation menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          Close Menu
+        </button>
+        <h3 class="blog-sidebar-title">Contents</h3>
+        <div class="blog-sidebar-nav">
+          <a href="#the-problem" class="blog-sidebar-link active"
+            >The Problem</a
+          >
+          <a href="#gbdl" class="blog-sidebar-link"
+            >Graph-Based Design Language</a
+          >
+          <a href="#helicopter-case-study" class="blog-sidebar-link"
+            >Helicopter Case Study</a
+          >
+          <a href="#two-manufacturing-paths" class="blog-sidebar-link"
+            >Two Manufacturing Paths</a
+          >
+          <a href="#hand-layup" class="blog-sidebar-link">Hand Lay-Up Module</a>
+          <a href="#afp-module" class="blog-sidebar-link">AFP Module</a>
+          <a href="#why-it-matters" class="blog-sidebar-link"
+            >Why This Matters</a
+          >
+          <a href="#limitations" class="blog-sidebar-link"
+            >What Still Needs Work</a
+          >
+          <a href="#bigger-picture" class="blog-sidebar-link"
+            >The Bigger Picture</a
+          >
+          <a href="#reading-the-research" class="blog-sidebar-link"
+            >Reading the Research</a
+          >
+          <a href="#learn-more" class="blog-sidebar-link">Learn More</a>
+          <a href="#references" class="blog-sidebar-link">References</a>
+        </div>
+      </nav>
+
+      <article class="blog-content">
+        <!-- Title -->
+        <h1>
+          From Design to Cost Estimate in Minutes: What a New CFRP Framework
+          Tells Us About the Future of AFP
+        </h1>
+
+        <!-- Blog Meta -->
+        <div class="blog-meta">
+          <span class="blog-meta-item">
+            <svg
+              class="blog-meta-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            April 2026
+          </span>
+          <span class="blog-meta-item">
+            <svg
+              class="blog-meta-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Pravin Luthada
+          </span>
+          <span class="blog-meta-item">
+            <svg
+              class="blog-meta-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+            Research Spotlight | Manufacturing Intelligence
+          </span>
+        </div>
+
+        <!-- Hero Image -->
+        <img
+          src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69e5fc5890f0cd5f7c32a496_1.png"
+          alt="CFRP helicopter frame design to manufacturing workflow"
+          class="full-width-image"
+        />
+
+        <!-- Intro -->
+        <section id="the-problem">
+          <p class="drop-cap">
+            There's a problem that anyone who has ever quoted an aerospace
+            composite job knows intimately: the structural engineer changes a
+            ply orientation on Thursday, and by Friday, the manufacturing cost
+            estimate is already wrong. Not slightly wrong — potentially
+            thousands of euros wrong — because no one has had the time to re-run
+            the lay-up sequence, recalculate draping time, re-estimate autoclave
+            cycles, or reprice material waste.
+          </p>
+          <p>
+            This is not an AFP problem or a hand lay-up problem. It is a data
+            architecture problem. Design and manufacturing have been living in
+            separate silos, speaking different languages, for decades.
+          </p>
+          <p>
+            A paper published in March 2026 in <em>Aerospace</em> (MDPI) by
+            Claudia Schopper, Dominik Schopper, Maximilian Holland, Julian
+            Dinkelacker, Julian Schuster, and Stephan Rudolph — titled
+            "Model-Based Engineering Process Automation from Design to
+            Manufacturing of Fiber Composite Helicopter Structures Using
+            Graph-Based Design Languages" — proposes a concrete, working answer.
+            And its implications for how AFP operators plan, quote, and sell are
+            worth unpacking carefully.
+          </p>
+
+          <h2>The Problem They Set Out to Solve</h2>
+          <p>
+            The paper, which comes out of the COBAIN research project, a
+            collaboration between the University of Stuttgart, IILS mbH,
+            Fraunhofer IGCV, and Airbus Helicopters Deutschland (AHD), begins
+            with a description of the situation most composites engineers will
+            recognize: CFRP production still poses significant challenges
+            because the highly customized and often complex geometries of
+            components can lead to process-related defects and quality
+            variations. Consequently, many manufacturing steps still rely
+            heavily on manual labor, making cost estimation and reproducibility
+            difficult.
+          </p>
+          <p>
+            The diagnosis cuts deeper, though. It isn't just that manufacturing
+            is hard. It's that the data flow between design and manufacturing is
+            broken. Fragmented toolchains and isolated disciplines often lead to
+            breaks in data flow and hinder the evaluation of how design choices
+            affect manufacturing effort, recurring costs, or material
+            efficiency.
+          </p>
+
+          <div class="highlight-box">
+            <h4>The Core Issue</h4>
+            <p>
+              Every time a design changes — a frame profile shifts from an
+              I-section to a C-section, a ply stack is reordered, an autoclave
+              curing cycle is revised — someone on the manufacturing planning
+              side has to rebuild their estimate from scratch. At large
+              programs, this means specialized cost engineers. At smaller shops,
+              it often just doesn't happen. Quotes go out on stale assumptions.
+              Margins erode. Schedules slip.
+            </p>
+          </div>
+        </section>
+
+        <!-- Image 2 -->
+        <img
+          src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69e5fcdd6c367812f35dc3f9_2.png"
+          alt="Fragmented design-to-manufacturing data flow in CFRP programs"
+          class="full-width-image"
+        />
+
+        <!-- GBDL Section -->
+        <section id="gbdl">
+          <h2>What a Graph-Based Design Language (GBDL) Actually Does</h2>
+          <p>
+            The research team's solution is built around a concept called a
+            Graph-Based Design Language (GBDL). If you haven't encountered the
+            idea before, it's worth spending a moment on, because it's more
+            intuitive than the name suggests.
+          </p>
+          <p>
+            Think of a conventional CAD model: it stores geometry. Think of a
+            conventional FEM file: it stores loads and material properties.
+            Think of a manufacturing planning spreadsheet: it stores process
+            times and costs. Each of these lives in its own file format, on its
+            own software, managed by its own specialist. Moving data between
+            them involves exports, imports, manual re-entry, and — inevitably —
+            errors and version conflicts.
+          </p>
+          <p>
+            A GBDL replaces this with a design graph: a single, unified data
+            model where geometry, material, tooling, and process parameters are
+            all nodes and edges in the same connected structure. The graph is
+            not just a storage format; it is an executable one. Rules encoded in
+            the graph can automatically derive new information from existing
+            nodes — for example, computing draping time from a ply's surface
+            area and curvature, or generating a robot trajectory from a set of
+            guide curves.
+          </p>
+          <!-- Image 3 with caption -->
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69e5fc57f5e1391b78e58a64_3.png"
+            alt="Inside the design graph: every ply, zone, and surface as connected, executable nodes"
+            class="full-width-image"
+          />
+          <p class="image-caption" style="margin: 0; text-align: left">
+            Inside the design graph: every ply, zone, and surface as connected,
+            executable nodes. (Schopper et al.,
+            <em>Aerospace</em> 2026, CC BY 4.0)
+          </p>
+
+          <!-- INFOGRAPHIC 1 PLACEHOLDER -->
+          <div class="udg2-outer" id="udg2-root">
+            <div class="udg2-eyebrow">AFP Frame Design · Digital Thread</div>
+            <h3 class="udg2-title">Unified Design Graph</h3>
+            <div class="udg2-rule"></div>
+            <p class="udg2-subtitle">
+              Integrated pipeline linking geometry, structural analysis &amp;
+              manufacturing planning to automated cost evaluation
+            </p>
+
+            <div class="udg2-pipeline">
+              <!-- Stage 1: Geometry (Navy) -->
+              <div class="udg2-stage" id="udg2-s1">
+                <div class="udg2-stage-head udg2-stage-head-geo">
+                  <div class="udg2-stage-num">Stage 01</div>
+                  <div class="udg2-stage-name">Geometry</div>
+                </div>
+                <div class="udg2-stage-body">
+                  <div class="udg2-item">
+                    <div class="udg2-dot udg2-dot-geo"></div>
+                    <span class="udg2-item-text"
+                      >Installation Space (STEP)</span
+                    >
+                  </div>
+                  <div class="udg2-item">
+                    <div class="udg2-dot udg2-dot-geo"></div>
+                    <span class="udg2-item-text">Frame Shape</span>
+                  </div>
+                  <div class="udg2-item">
+                    <div class="udg2-dot udg2-dot-geo"></div>
+                    <span class="udg2-item-text">Profile Type</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="udg2-arrow-col" id="udg2-a1">
+                <svg
+                  class="udg2-arrow-svg"
+                  width="48"
+                  height="20"
+                  viewBox="0 0 48 20"
+                >
+                  <path
+                    stroke="#e2e8f0"
+                    stroke-width="2"
+                    fill="none"
+                    d="M4,10 L40,10"
+                  />
+                  <path class="udg2-arrow-flow" d="M4,10 L40,10" />
+                  <polygon points="38,5 48,10 38,15" fill="#bf3425" />
+                </svg>
+              </div>
+
+              <!-- Stage 2: Structure (Gray) -->
+              <div class="udg2-stage" id="udg2-s2">
+                <div class="udg2-stage-head udg2-stage-head-str">
+                  <div class="udg2-stage-num">Stage 02</div>
+                  <div class="udg2-stage-name">Structure</div>
+                </div>
+                <div class="udg2-stage-body">
+                  <div class="udg2-item">
+                    <div class="udg2-dot udg2-dot-str"></div>
+                    <span class="udg2-item-text">FEM / CPACS Analysis</span>
+                  </div>
+                  <div class="udg2-item">
+                    <div class="udg2-dot udg2-dot-str"></div>
+                    <span class="udg2-item-text">PANDORA Solver</span>
+                  </div>
+                  <div class="udg2-item">
+                    <div class="udg2-dot udg2-dot-str"></div>
+                    <span class="udg2-item-text">Ply Thickness</span>
+                  </div>
+                  <div class="udg2-item">
+                    <div class="udg2-dot udg2-dot-str"></div>
+                    <span class="udg2-item-text">Layer Orientation</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="udg2-arrow-col" id="udg2-a2">
+                <svg
+                  class="udg2-arrow-svg"
+                  width="48"
+                  height="20"
+                  viewBox="0 0 48 20"
+                >
+                  <path
+                    stroke="#e2e8f0"
+                    stroke-width="2"
+                    fill="none"
+                    d="M4,10 L40,10"
+                  />
+                  <path
+                    class="udg2-arrow-flow"
+                    d="M4,10 L40,10"
+                    style="animation-delay: 0.5s"
+                  />
+                  <polygon points="38,5 48,10 38,15" fill="#bf3425" />
+                </svg>
+              </div>
+
+              <!-- Stage 3: Manufacturing (Red) -->
+              <div class="udg2-stage" id="udg2-s3">
+                <div class="udg2-stage-head udg2-stage-head-mfg">
+                  <div class="udg2-stage-num">Stage 03</div>
+                  <div class="udg2-stage-name">Manufacturing</div>
+                </div>
+                <div class="udg2-stage-body">
+                  <div class="udg2-item">
+                    <div class="udg2-dot udg2-dot-mfg"></div>
+                    <span class="udg2-item-text">Hand Lay-Up</span>
+                  </div>
+                  <div class="udg2-item">
+                    <div class="udg2-dot udg2-dot-mfg"></div>
+                    <span class="udg2-item-text">AFP Process</span>
+                  </div>
+                  <div class="udg2-item">
+                    <div class="udg2-dot udg2-dot-mfg"></div>
+                    <span class="udg2-item-text">Process Planning</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Down arrows -->
+            <div class="udg2-down-row" id="udg2-down">
+              <div class="udg2-down-cell">
+                <div class="udg2-down-arrow">
+                  <div class="udg2-vline udg2-vline-geo"></div>
+                  <div class="udg2-vtip udg2-vtip-geo"></div>
+                </div>
+              </div>
+              <div class="udg2-down-spacer"></div>
+              <div class="udg2-down-cell">
+                <div class="udg2-down-arrow">
+                  <div class="udg2-vline udg2-vline-str"></div>
+                  <div class="udg2-vtip udg2-vtip-str"></div>
+                </div>
+              </div>
+              <div class="udg2-down-spacer"></div>
+              <div class="udg2-down-cell">
+                <div class="udg2-down-arrow">
+                  <div class="udg2-vline udg2-vline-mfg"></div>
+                  <div class="udg2-vtip udg2-vtip-mfg"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Output panel -->
+            <div class="udg2-output" id="udg2-out">
+              <div class="udg2-output-eyebrow">Converges into</div>
+              <div class="udg2-output-title">Automated Evaluation Outputs</div>
+              <div class="udg2-metrics">
+                <div class="udg2-metric">
+                  <span class="udg2-metric-icon">⏱</span
+                  ><span class="udg2-metric-name">Lead Time</span
+                  ><span class="udg2-metric-desc"
+                    >End-to-end schedule prediction</span
+                  >
+                  <div class="udg2-tip">
+                    Design freeze → part delivery timeline
+                  </div>
+                </div>
+                <div class="udg2-metric">
+                  <span class="udg2-metric-icon">👷</span
+                  ><span class="udg2-metric-name">Labor Hours</span
+                  ><span class="udg2-metric-desc"
+                    >Workforce per process route</span
+                  >
+                  <div class="udg2-tip">
+                    Direct + indirect hours by operation
+                  </div>
+                </div>
+                <div class="udg2-metric">
+                  <span class="udg2-metric-icon">🔁</span
+                  ><span class="udg2-metric-name">Recurring Cost</span
+                  ><span class="udg2-metric-desc"
+                    >Per-unit variable manufacturing</span
+                  >
+                  <div class="udg2-tip">Material + labor + scrap per unit</div>
+                </div>
+                <div class="udg2-metric">
+                  <span class="udg2-metric-icon">⚡</span
+                  ><span class="udg2-metric-name">Energy Use</span
+                  ><span class="udg2-metric-desc"
+                    >Process energy consumption</span
+                  >
+                  <div class="udg2-tip">kWh/cycle: cure, AFP, tooling</div>
+                </div>
+                <div class="udg2-metric">
+                  <span class="udg2-metric-icon">♻️</span
+                  ><span class="udg2-metric-name">Material Waste</span
+                  ><span class="udg2-metric-desc"
+                    >Off-cut &amp; scrap rate</span
+                  >
+                  <div class="udg2-tip">
+                    Buy-to-fly ratio across lay-up strategies
+                  </div>
+                </div>
+                <div class="udg2-metric">
+                  <span class="udg2-metric-icon">💰</span
+                  ><span class="udg2-metric-name">Investment Cost</span
+                  ><span class="udg2-metric-desc"
+                    >Non-recurring capital + tooling</span
+                  >
+                  <div class="udg2-tip">NRC: tooling + equipment + setup</div>
+                </div>
+              </div>
+            </div>
+
+            <p class="udg2-footer">
+              Hover output tiles for details · All three pipeline stages
+              converge into a single automated evaluation
+            </p>
+          </div>
+        </section>
+
+        <!-- Helicopter Case Study -->
+        <section id="helicopter-case-study">
+          <h2>The Helicopter Frame Case Study</h2>
+          <p>
+            The research team demonstrated the approach on a CFRP helicopter
+            fuselage frame — exactly the kind of component that makes manual
+            cost estimation painful: curved, structurally critical, available in
+            multiple profile variants (I, C, and Ω cross-sections), and subject
+            to revision throughout the design cycle.
+          </p>
+
+          <!-- Image 4 with caption -->
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69e5fc576f9eecf528f9f04b_4.png"
+            alt="Three frame variants — I, Ω, and C profiles — auto-generated at different fuselage positions"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            Three frame variants — I, Ω, and C profiles — auto-generated at
+            different fuselage positions from a single design run. (Schopper et
+            al., <em>Aerospace</em> 2026, CC BY 4.0)
+          </p>
+
+          <p>
+            The three profile types they modeled each have their own geometric
+            parameters, but share a common parent class and general design
+            logic. In plain terms: the system knows the rules for all three, and
+            can generate a fully detailed CAD model for any of them —
+            automatically — from just a frame position along the fuselage x-axis
+            and a chosen profile type.
+          </p>
+
+          <!-- INFOGRAPHIC 2 PLACEHOLDER -->
+
+          <div class="fpt2-wrap" id="fpt2-root">
+            <div class="fpt2-eyebrow">
+              AFP Frame Design Language · Parametric Geometry
+            </div>
+            <h3 class="fpt2-title">Frame Profile Types</h3>
+            <div class="fpt2-rule"></div>
+            <p class="fpt2-subtitle">
+              Parametric cross-section geometries used in AFP frame path
+              planning — hover parameter chips to highlight dimensions
+            </p>
+
+            <!-- Tabs -->
+            <div class="fpt2-tabs">
+              <button
+                class="fpt2-tab fpt2-active-geo"
+                id="fpt2-tab-I"
+                onclick="fpt2Switch('I', this)"
+              >
+                I Profile
+              </button>
+              <button
+                class="fpt2-tab"
+                id="fpt2-tab-C"
+                onclick="fpt2Switch('C', this)"
+              >
+                C Profile
+              </button>
+              <button
+                class="fpt2-tab"
+                id="fpt2-tab-O"
+                onclick="fpt2Switch('O', this)"
+              >
+                Ω Profile
+              </button>
+            </div>
+
+            <div class="fpt2-main">
+              <!-- ── SVG panel ── -->
+              <div class="fpt2-svg-panel">
+                <div
+                  class="fpt2-panel-label"
+                  id="fpt2-panel-label"
+                  style="background: #47577c"
+                >
+                  I-Beam Profile
+                </div>
+
+                <!-- ══ I-PROFILE SVG ══ -->
+                <svg
+                  id="fpt2-I"
+                  class="fpt2-profile-svg fpt2-svg-active"
+                  viewBox="0 0 280 290"
+                  width="280"
+                  height="290"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- Grid -->
+                  <line
+                    x1="140"
+                    y1="10"
+                    x2="140"
+                    y2="270"
+                    stroke="#e8eef6"
+                    stroke-width="0.8"
+                    stroke-dasharray="3 5"
+                  />
+                  <line
+                    x1="20"
+                    y1="140"
+                    x2="260"
+                    y2="140"
+                    stroke="#e8eef6"
+                    stroke-width="0.8"
+                    stroke-dasharray="3 5"
+                  />
+                  <!-- Top flange -->
+                  <rect
+                    x="70"
+                    y="44"
+                    width="140"
+                    height="24"
+                    rx="2"
+                    fill="#dce6f5"
+                    stroke="#47577c"
+                    stroke-width="2.2"
+                  />
+                  <!-- Web -->
+                  <rect
+                    x="119"
+                    y="68"
+                    width="42"
+                    height="136"
+                    fill="#edf2fb"
+                    stroke="#47577c"
+                    stroke-width="2.2"
+                  />
+                  <!-- Bottom flange -->
+                  <rect
+                    x="70"
+                    y="204"
+                    width="140"
+                    height="24"
+                    rx="2"
+                    fill="#dce6f5"
+                    stroke="#47577c"
+                    stroke-width="2.2"
+                  />
+                  <!-- Center axis dashed -->
+                  <line
+                    x1="140"
+                    y1="68"
+                    x2="140"
+                    y2="204"
+                    stroke="#9d9d9c"
+                    stroke-width="1"
+                    stroke-dasharray="4 3"
+                    opacity="0.5"
+                  />
+
+                  <!-- Labels -->
+                  <text
+                    x="140"
+                    y="60"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#47577c"
+                    font-weight="600"
+                    font-family="Inter,sans-serif"
+                  >
+                    Top Flange
+                  </text>
+                  <text
+                    x="140"
+                    y="138"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#47577c"
+                    font-weight="500"
+                    font-family="Inter,sans-serif"
+                  >
+                    Web
+                  </text>
+                  <text
+                    x="140"
+                    y="219"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#47577c"
+                    font-weight="600"
+                    font-family="Inter,sans-serif"
+                  >
+                    Bottom Flange
+                  </text>
+
+                  <!-- ─── ANNOTATIONS ─── -->
+                  <!-- w (width) -->
+                  <g id="I-aw" class="fpt2-annot">
+                    <line
+                      x1="70"
+                      y1="32"
+                      x2="210"
+                      y2="32"
+                      stroke="#bf3425"
+                      stroke-width="1.2"
+                      stroke-dasharray="3 3"
+                    />
+                    <line
+                      x1="70"
+                      y1="27"
+                      x2="70"
+                      y2="37"
+                      stroke="#bf3425"
+                      stroke-width="1.8"
+                    />
+                    <line
+                      x1="210"
+                      y1="27"
+                      x2="210"
+                      y2="37"
+                      stroke="#bf3425"
+                      stroke-width="1.8"
+                    />
+                    <text
+                      x="140"
+                      y="26"
+                      text-anchor="middle"
+                      font-size="11"
+                      font-weight="800"
+                      fill="#bf3425"
+                      font-family="Inter,sans-serif"
+                    >
+                      w
+                    </text>
+                  </g>
+                  <!-- h (height) -->
+                  <g id="I-ah" class="fpt2-annot">
+                    <line
+                      x1="57"
+                      y1="44"
+                      x2="57"
+                      y2="228"
+                      stroke="#bf3425"
+                      stroke-width="1.2"
+                      stroke-dasharray="3 3"
+                    />
+                    <line
+                      x1="52"
+                      y1="44"
+                      x2="62"
+                      y2="44"
+                      stroke="#bf3425"
+                      stroke-width="1.8"
+                    />
+                    <line
+                      x1="52"
+                      y1="228"
+                      x2="62"
+                      y2="228"
+                      stroke="#bf3425"
+                      stroke-width="1.8"
+                    />
+                    <text
+                      x="44"
+                      y="142"
+                      text-anchor="middle"
+                      font-size="11"
+                      font-weight="800"
+                      fill="#bf3425"
+                      font-family="Inter,sans-serif"
+                    >
+                      h
+                    </text>
+                  </g>
+                  <!-- t1 top flange -->
+                  <g id="I-at1" class="fpt2-annot">
+                    <rect
+                      x="68"
+                      y="42"
+                      width="144"
+                      height="28"
+                      rx="3"
+                      fill="rgba(191,52,37,0.12)"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="5 2"
+                    />
+                    <text
+                      x="220"
+                      y="59"
+                      font-size="10"
+                      font-weight="800"
+                      fill="#bf3425"
+                      font-family="Inter,sans-serif"
+                    >
+                      t1
+                    </text>
+                  </g>
+                  <!-- t2 bottom flange -->
+                  <g id="I-at2" class="fpt2-annot">
+                    <rect
+                      x="68"
+                      y="202"
+                      width="144"
+                      height="28"
+                      rx="3"
+                      fill="rgba(191,52,37,0.12)"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="5 2"
+                    />
+                    <text
+                      x="220"
+                      y="218"
+                      font-size="10"
+                      font-weight="800"
+                      fill="#bf3425"
+                      font-family="Inter,sans-serif"
+                    >
+                      t2
+                    </text>
+                  </g>
+                  <!-- t3 web -->
+                  <g id="I-at3" class="fpt2-annot">
+                    <rect
+                      x="117"
+                      y="66"
+                      width="46"
+                      height="140"
+                      rx="3"
+                      fill="rgba(191,52,37,0.12)"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="5 2"
+                    />
+                    <text
+                      x="170"
+                      y="138"
+                      font-size="10"
+                      font-weight="800"
+                      fill="#bf3425"
+                      font-family="Inter,sans-serif"
+                    >
+                      t3
+                    </text>
+                  </g>
+                  <!-- r1/r2 radii -->
+                  <g id="I-ar" class="fpt2-annot">
+                    <circle
+                      cx="119"
+                      cy="68"
+                      r="12"
+                      fill="none"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="3 2"
+                    />
+                    <circle
+                      cx="161"
+                      cy="68"
+                      r="12"
+                      fill="none"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="3 2"
+                    />
+                    <circle
+                      cx="119"
+                      cy="204"
+                      r="12"
+                      fill="none"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="3 2"
+                    />
+                    <circle
+                      cx="161"
+                      cy="204"
+                      r="12"
+                      fill="none"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="3 2"
+                    />
+                    <text
+                      x="180"
+                      y="76"
+                      font-size="10"
+                      font-weight="800"
+                      fill="#bf3425"
+                      font-family="Inter,sans-serif"
+                    >
+                      r1/r2
+                    </text>
+                  </g>
+
+                  <!-- Profile watermark -->
+                  <text
+                    x="140"
+                    y="258"
+                    text-anchor="middle"
+                    font-size="26"
+                    font-weight="900"
+                    fill="#47577c"
+                    opacity="0.12"
+                    font-family="Georgia,serif"
+                  >
+                    I
+                  </text>
+                  <text
+                    x="140"
+                    y="276"
+                    text-anchor="middle"
+                    font-size="10.5"
+                    fill="#9d9d9c"
+                    font-family="Inter,sans-serif"
+                  >
+                    I-Beam Cross-Section
+                  </text>
+                </svg>
+
+                <!-- ══ C-PROFILE SVG ══ -->
+                <svg
+                  id="fpt2-C"
+                  class="fpt2-profile-svg"
+                  viewBox="0 0 280 290"
+                  width="280"
+                  height="290"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line
+                    x1="110"
+                    y1="10"
+                    x2="110"
+                    y2="270"
+                    stroke="#e8eef6"
+                    stroke-width="0.8"
+                    stroke-dasharray="3 5"
+                  />
+                  <line
+                    x1="20"
+                    y1="136"
+                    x2="260"
+                    y2="136"
+                    stroke="#e8eef6"
+                    stroke-width="0.8"
+                    stroke-dasharray="3 5"
+                  />
+                  <!-- Top flange -->
+                  <rect
+                    x="86"
+                    y="44"
+                    width="120"
+                    height="24"
+                    rx="2"
+                    fill="#e8edf5"
+                    stroke="#9d9d9c"
+                    stroke-width="2.2"
+                  />
+                  <!-- Web (left) -->
+                  <rect
+                    x="86"
+                    y="68"
+                    width="28"
+                    height="136"
+                    fill="#f2f2f2"
+                    stroke="#9d9d9c"
+                    stroke-width="2.2"
+                  />
+                  <!-- Bottom flange -->
+                  <rect
+                    x="86"
+                    y="204"
+                    width="120"
+                    height="24"
+                    rx="2"
+                    fill="#e8edf5"
+                    stroke="#9d9d9c"
+                    stroke-width="2.2"
+                  />
+                  <!-- Open end dashed -->
+                  <line
+                    x1="206"
+                    y1="68"
+                    x2="206"
+                    y2="204"
+                    stroke="#9d9d9c"
+                    stroke-width="1.5"
+                    stroke-dasharray="5 4"
+                    opacity="0.7"
+                  />
+                  <!-- Open label -->
+                  <text
+                    x="214"
+                    y="138"
+                    font-size="9"
+                    fill="#9d9d9c"
+                    font-family="Inter,sans-serif"
+                    font-style="italic"
+                  >
+                    open
+                  </text>
+
+                  <!-- Labels -->
+                  <text
+                    x="160"
+                    y="60"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#64748b"
+                    font-weight="600"
+                    font-family="Inter,sans-serif"
+                  >
+                    Flange
+                  </text>
+                  <text
+                    x="100"
+                    y="138"
+                    text-anchor="middle"
+                    font-size="9"
+                    fill="#64748b"
+                    font-weight="500"
+                    font-family="Inter,sans-serif"
+                  >
+                    Web
+                  </text>
+                  <text
+                    x="160"
+                    y="219"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#64748b"
+                    font-weight="600"
+                    font-family="Inter,sans-serif"
+                  >
+                    Flange
+                  </text>
+
+                  <!-- ANNOTATIONS -->
+                  <g id="C-aw" class="fpt2-annot">
+                    <line
+                      x1="86"
+                      y1="32"
+                      x2="206"
+                      y2="32"
+                      stroke="#bf3425"
+                      stroke-width="1.2"
+                      stroke-dasharray="3 3"
+                    />
+                    <line
+                      x1="86"
+                      y1="27"
+                      x2="86"
+                      y2="37"
+                      stroke="#bf3425"
+                      stroke-width="1.8"
+                    />
+                    <line
+                      x1="206"
+                      y1="27"
+                      x2="206"
+                      y2="37"
+                      stroke="#bf3425"
+                      stroke-width="1.8"
+                    />
+                    <text
+                      x="146"
+                      y="26"
+                      text-anchor="middle"
+                      font-size="11"
+                      font-weight="800"
+                      fill="#bf3425"
+                      font-family="Inter,sans-serif"
+                    >
+                      w
+                    </text>
+                  </g>
+                  <g id="C-ah" class="fpt2-annot">
+                    <line
+                      x1="72"
+                      y1="44"
+                      x2="72"
+                      y2="228"
+                      stroke="#bf3425"
+                      stroke-width="1.2"
+                      stroke-dasharray="3 3"
+                    />
+                    <line
+                      x1="67"
+                      y1="44"
+                      x2="77"
+                      y2="44"
+                      stroke="#bf3425"
+                      stroke-width="1.8"
+                    />
+                    <line
+                      x1="67"
+                      y1="228"
+                      x2="77"
+                      y2="228"
+                      stroke="#bf3425"
+                      stroke-width="1.8"
+                    />
+                    <text
+                      x="59"
+                      y="142"
+                      text-anchor="middle"
+                      font-size="11"
+                      font-weight="800"
+                      fill="#bf3425"
+                      font-family="Inter,sans-serif"
+                    >
+                      h
+                    </text>
+                  </g>
+                  <g id="C-at1" class="fpt2-annot">
+                    <rect
+                      x="84"
+                      y="42"
+                      width="124"
+                      height="28"
+                      rx="3"
+                      fill="rgba(191,52,37,0.12)"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="5 2"
+                    />
+                    <rect
+                      x="84"
+                      y="202"
+                      width="124"
+                      height="28"
+                      rx="3"
+                      fill="rgba(191,52,37,0.12)"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="5 2"
+                    />
+                    <text
+                      x="217"
+                      y="59"
+                      font-size="10"
+                      font-weight="800"
+                      fill="#bf3425"
+                      font-family="Inter,sans-serif"
+                    >
+                      t1
+                    </text>
+                    <text
+                      x="217"
+                      y="219"
+                      font-size="10"
+                      font-weight="800"
+                      fill="#bf3425"
+                      font-family="Inter,sans-serif"
+                    >
+                      t1
+                    </text>
+                  </g>
+                  <g id="C-at2" class="fpt2-annot">
+                    <rect
+                      x="84"
+                      y="66"
+                      width="32"
+                      height="140"
+                      rx="3"
+                      fill="rgba(191,52,37,0.12)"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="5 2"
+                    />
+                    <text
+                      x="123"
+                      y="138"
+                      font-size="10"
+                      font-weight="800"
+                      fill="#bf3425"
+                      font-family="Inter,sans-serif"
+                    >
+                      t2
+                    </text>
+                  </g>
+                  <g id="C-ar" class="fpt2-annot">
+                    <circle
+                      cx="114"
+                      cy="68"
+                      r="12"
+                      fill="none"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="3 2"
+                    />
+                    <circle
+                      cx="114"
+                      cy="204"
+                      r="12"
+                      fill="none"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="3 2"
+                    />
+                    <text
+                      x="130"
+                      y="76"
+                      font-size="10"
+                      font-weight="800"
+                      fill="#bf3425"
+                      font-family="Inter,sans-serif"
+                    >
+                      r1/r2
+                    </text>
+                  </g>
+
+                  <text
+                    x="140"
+                    y="258"
+                    text-anchor="middle"
+                    font-size="26"
+                    font-weight="900"
+                    fill="#9d9d9c"
+                    opacity="0.18"
+                    font-family="Georgia,serif"
+                  >
+                    C
+                  </text>
+                  <text
+                    x="140"
+                    y="276"
+                    text-anchor="middle"
+                    font-size="10.5"
+                    fill="#9d9d9c"
+                    font-family="Inter,sans-serif"
+                  >
+                    C-Channel Cross-Section
+                  </text>
+                </svg>
+
+                <!-- ══ OMEGA-PROFILE SVG ══ -->
+                <svg
+                  id="fpt2-O"
+                  class="fpt2-profile-svg"
+                  viewBox="0 0 280 290"
+                  width="280"
+                  height="290"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line
+                    x1="140"
+                    y1="10"
+                    x2="140"
+                    y2="270"
+                    stroke="#e8eef6"
+                    stroke-width="0.8"
+                    stroke-dasharray="3 5"
+                  />
+                  <!-- Outer (base) belt -->
+                  <rect
+                    x="52"
+                    y="196"
+                    width="176"
+                    height="22"
+                    rx="2"
+                    fill="#fde8e6"
+                    stroke="#bf3425"
+                    stroke-width="2.2"
+                  />
+                  <!-- Left web -->
+                  <rect
+                    x="52"
+                    y="104"
+                    width="28"
+                    height="92"
+                    fill="#fef2f1"
+                    stroke="#bf3425"
+                    stroke-width="2.2"
+                  />
+                  <!-- Right web -->
+                  <rect
+                    x="200"
+                    y="104"
+                    width="28"
+                    height="92"
+                    fill="#fef2f1"
+                    stroke="#bf3425"
+                    stroke-width="2.2"
+                  />
+                  <!-- Inner (top) belt / cap -->
+                  <rect
+                    x="80"
+                    y="82"
+                    width="120"
+                    height="22"
+                    rx="2"
+                    fill="#fde8e6"
+                    stroke="#bf3425"
+                    stroke-width="2.2"
+                  />
+                  <!-- Cavity fill -->
+                  <rect
+                    x="80"
+                    y="104"
+                    width="120"
+                    height="92"
+                    fill="rgba(191,52,37,0.04)"
+                    stroke="none"
+                  />
+                  <!-- Cavity border dashed -->
+                  <rect
+                    x="80"
+                    y="104"
+                    width="120"
+                    height="92"
+                    fill="none"
+                    stroke="#bf3425"
+                    stroke-width="1"
+                    stroke-dasharray="4 3"
+                    opacity="0.3"
+                  />
+
+                  <!-- Labels -->
+                  <text
+                    x="140"
+                    y="97"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#bf3425"
+                    font-weight="600"
+                    font-family="Inter,sans-serif"
+                  >
+                    Inner Belt
+                  </text>
+                  <text
+                    x="140"
+                    y="152"
+                    text-anchor="middle"
+                    font-size="9.5"
+                    fill="#bf3425"
+                    font-weight="400"
+                    opacity="0.6"
+                    font-family="Inter,sans-serif"
+                  >
+                    enclosed cavity
+                  </text>
+                  <text
+                    x="140"
+                    y="212"
+                    text-anchor="middle"
+                    font-size="10"
+                    fill="#bf3425"
+                    font-weight="600"
+                    font-family="Inter,sans-serif"
+                  >
+                    Outer Belt
+                  </text>
+
+                  <!-- ANNOTATIONS -->
+                  <g id="O-aout" class="fpt2-annot">
+                    <rect
+                      x="50"
+                      y="194"
+                      width="180"
+                      height="26"
+                      rx="3"
+                      fill="rgba(191,52,37,0.14)"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="5 2"
+                    />
+                    <text
+                      x="140"
+                      y="228"
+                      text-anchor="middle"
+                      font-size="10"
+                      font-weight="800"
+                      fill="#bf3425"
+                      font-family="Inter,sans-serif"
+                    >
+                      outer belt width
+                    </text>
+                  </g>
+                  <g id="O-ain" class="fpt2-annot">
+                    <rect
+                      x="78"
+                      y="80"
+                      width="124"
+                      height="26"
+                      rx="3"
+                      fill="rgba(191,52,37,0.14)"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="5 2"
+                    />
+                    <text
+                      x="140"
+                      y="74"
+                      text-anchor="middle"
+                      font-size="10"
+                      font-weight="800"
+                      fill="#bf3425"
+                      font-family="Inter,sans-serif"
+                    >
+                      inner belt width
+                    </text>
+                  </g>
+                  <g id="O-ah" class="fpt2-annot">
+                    <line
+                      x1="38"
+                      y1="82"
+                      x2="38"
+                      y2="218"
+                      stroke="#bf3425"
+                      stroke-width="1.2"
+                      stroke-dasharray="3 3"
+                    />
+                    <line
+                      x1="33"
+                      y1="82"
+                      x2="43"
+                      y2="82"
+                      stroke="#bf3425"
+                      stroke-width="1.8"
+                    />
+                    <line
+                      x1="33"
+                      y1="218"
+                      x2="43"
+                      y2="218"
+                      stroke="#bf3425"
+                      stroke-width="1.8"
+                    />
+                    <text
+                      x="26"
+                      y="154"
+                      text-anchor="middle"
+                      font-size="11"
+                      font-weight="800"
+                      fill="#bf3425"
+                      font-family="Inter,sans-serif"
+                    >
+                      h
+                    </text>
+                  </g>
+                  <g id="O-at1" class="fpt2-annot">
+                    <line
+                      x1="235"
+                      y1="82"
+                      x2="235"
+                      y2="104"
+                      stroke="#bf3425"
+                      stroke-width="1.2"
+                      stroke-dasharray="3 3"
+                    />
+                    <line
+                      x1="230"
+                      y1="82"
+                      x2="240"
+                      y2="82"
+                      stroke="#bf3425"
+                      stroke-width="1.8"
+                    />
+                    <line
+                      x1="230"
+                      y1="104"
+                      x2="240"
+                      y2="104"
+                      stroke="#bf3425"
+                      stroke-width="1.8"
+                    />
+                    <text
+                      x="249"
+                      y="96"
+                      font-size="10"
+                      font-weight="800"
+                      fill="#bf3425"
+                      font-family="Inter,sans-serif"
+                    >
+                      t1
+                    </text>
+                  </g>
+                  <g id="O-at2" class="fpt2-annot">
+                    <line
+                      x1="235"
+                      y1="196"
+                      x2="235"
+                      y2="218"
+                      stroke="#bf3425"
+                      stroke-width="1.2"
+                      stroke-dasharray="3 3"
+                    />
+                    <line
+                      x1="230"
+                      y1="196"
+                      x2="240"
+                      y2="196"
+                      stroke="#bf3425"
+                      stroke-width="1.8"
+                    />
+                    <line
+                      x1="230"
+                      y1="218"
+                      x2="240"
+                      y2="218"
+                      stroke="#bf3425"
+                      stroke-width="1.8"
+                    />
+                    <text
+                      x="249"
+                      y="210"
+                      font-size="10"
+                      font-weight="800"
+                      fill="#bf3425"
+                      font-family="Inter,sans-serif"
+                    >
+                      t2
+                    </text>
+                  </g>
+                  <g id="O-ar" class="fpt2-annot">
+                    <circle
+                      cx="80"
+                      cy="104"
+                      r="12"
+                      fill="none"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="3 2"
+                    />
+                    <circle
+                      cx="200"
+                      cy="104"
+                      r="12"
+                      fill="none"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="3 2"
+                    />
+                    <circle
+                      cx="80"
+                      cy="196"
+                      r="12"
+                      fill="none"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="3 2"
+                    />
+                    <circle
+                      cx="200"
+                      cy="196"
+                      r="12"
+                      fill="none"
+                      stroke="#bf3425"
+                      stroke-width="1.5"
+                      stroke-dasharray="3 2"
+                    />
+                    <text
+                      x="140"
+                      y="152"
+                      text-anchor="middle"
+                      font-size="10"
+                      font-weight="800"
+                      fill="#bf3425"
+                      font-family="Inter,sans-serif"
+                    >
+                      r (4 corners)
+                    </text>
+                  </g>
+
+                  <text
+                    x="140"
+                    y="258"
+                    text-anchor="middle"
+                    font-size="26"
+                    font-weight="900"
+                    fill="#bf3425"
+                    opacity="0.12"
+                    font-family="Georgia,serif"
+                  >
+                    Ω
+                  </text>
+                  <text
+                    x="140"
+                    y="276"
+                    text-anchor="middle"
+                    font-size="10.5"
+                    fill="#9d9d9c"
+                    font-family="Inter,sans-serif"
+                  >
+                    Omega / Hat Cross-Section
+                  </text>
+                </svg>
+              </div>
+              <!-- /svg-panel -->
+
+              <!-- ── Info panel ── -->
+              <div class="fpt2-info-panel" id="fpt2-info">
+                <!-- filled by JS -->
+              </div>
+            </div>
+            <!-- /main -->
+
+            <!-- Shared parameters banner -->
+            <div class="fpt2-shared">
+              <div class="fpt2-shared-title">
+                ⟷ Shared across all three profiles
+              </div>
+              <div class="fpt2-shared-pills">
+                <span class="fpt2-shared-pill">Width (w) inheritance</span>
+                <span class="fpt2-shared-pill">Height (h)</span>
+                <span class="fpt2-shared-pill">Thickness chain</span>
+                <span class="fpt2-shared-pill"
+                  >Centre elements adapt to installation space</span
+                >
+                <span class="fpt2-shared-pill"
+                  >Dashed elements = space-driven</span
+                >
+              </div>
+            </div>
+
+            <p class="fpt2-footer">
+              Click tabs to switch profile · Hover parameter chips to highlight
+              dimensions on the drawing
+            </p>
+          </div>
+
+          <!-- Image 5 -->
+          <div class="split-layout reverse">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69e5fc57d41522b69e55d6dc_5.png"
+                alt="Full design-to-manufacturing chain — from a single user selection to machine-ready NC code"
+              />
+              <p class="image-caption" style="margin-top: 20px">
+                The full design-to-manufacturing chain — from a single user
+                selection in DC43 to machine-ready NC code — runs automatically
+                with no manual data re-entry between steps.
+              </p>
+            </div>
+            <div class="split-text">
+              <h3>From Selection to NC Code — Automatically</h3>
+              <p>
+                How fast does this run? According to the paper, the automated
+                generation sequence for one complete frame — any of the three
+                profile types — takes
+                <strong
+                  >less than one minute on a standard mobile workstation</strong
+                >. For comparison, generating the same geometry manually in CAD
+                software would typically take hours, and then separately
+                estimating manufacturing costs would take more hours still.
+              </p>
+              <p>
+                The design language's structural output is exported via CPACS to
+                PANDORA, DLR's structural optimization tool, which returns
+                optimized ply thicknesses and layer orientations. These results
+                are automatically re-imported into the design graph, which then
+                feeds the manufacturing planning modules.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Two Manufacturing Paths -->
+        <section id="two-manufacturing-paths">
+          <h2>Two Manufacturing Paths, One Integrated Model</h2>
+          <p>
+            What makes this research particularly relevant for AFP operators is
+            that the team explicitly models both prepreg hand lay-up and
+            automated fiber placement as parallel planning paths within the same
+            framework — and treats them as genuine alternatives to be compared
+            on cost, lead time, waste, and energy grounds.
+          </p>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-value">&lt;1 min</div>
+              <div class="stat-label">
+                To generate a complete frame model on a standard laptop
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">2</div>
+              <div class="stat-label">
+                First-class manufacturing paths modeled: hand lay-up and AFP
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">3</div>
+              <div class="stat-label">
+                Profile variants (I, C, Ω) auto-generated from one design run
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Hand Lay-Up Section -->
+        <section id="hand-layup">
+          <h2>Prepreg Hand Lay-Up: Embedding the Expert</h2>
+          <p>
+            The hand lay-up module represents something genuinely difficult:
+            encoding tacit expert knowledge into a machine-executable form. The
+            model decomposes the process into main steps (cutting, laminating,
+            compacting, curing, demolding) and sub-steps (positioning the cut
+            piece, draping, manual cutting within laminating), and assigns
+            empirical equations to each.
+          </p>
+
+          <!-- Image 6 -->
+          <div class="split-layout">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69e5fcddced284c9f63a3a6b_6.png"
+                alt="Manual prepreg layup on a curved mold tool"
+              />
+            </div>
+            <div class="split-text">
+              <h3>Encoding Tacit Knowledge</h3>
+              <p>
+                Manual prepreg layup on a curved mold tool — the process
+                knowledge the COBAIN model encodes as empirical equations.
+              </p>
+              <p>
+                The draping time equation is a good illustration of how far this
+                granularity goes: draping time is a function of a base time
+                constant, the cut piece surface area, the worker's draping
+                speed, and a complexity factor derived from the proportion of
+                the ply that covers strongly curved areas (above 0.11/m
+                curvature).
+              </p>
+              <p>
+                The system knows, automatically, that a curved ply takes longer
+                per unit area than a flat one.
+              </p>
+            </div>
+          </div>
+
+          <!-- INFOGRAPHIC 3 PLACEHOLDER -->
+
+          <div class="hlup-wrap" id="hlup-root">
+            <div class="hlup-eyebrow">
+              Manufacturing Process Model · Labour Estimation
+            </div>
+            <h3 class="hlup-title">Hand Lay-Up Process Decomposition</h3>
+            <div class="hlup-rule"></div>
+            <p class="hlup-sub">
+              Hierarchical process structure feeding automated lead time, labour
+              &amp; cost evaluation — click any step to expand
+            </p>
+
+            <div class="hlup-timeline">
+              <!-- ── STEP 1: Cutting ── -->
+              <div class="hlup-step hlup-in" style="transition-delay: 0.05s">
+                <div class="hlup-num hlup-num-n">
+                  <div class="hlup-num-digit">01</div>
+                  <div class="hlup-num-label">Cut</div>
+                </div>
+                <div class="hlup-arm"></div>
+                <div class="hlup-card" onclick="hlupToggle(this)">
+                  <div class="hlup-card-head hlup-head-n">
+                    <div class="hlup-card-head-left">
+                      <span class="hlup-card-process">Cutting</span>
+                      <span class="hlup-card-tag">per cut piece</span>
+                    </div>
+                    <span class="hlup-card-chevron">▼</span>
+                  </div>
+                  <div class="hlup-card-body">
+                    <div class="hlup-card-inner">
+                      <div class="hlup-sub-grid">
+                        <div class="hlup-sub-item">
+                          <div class="hlup-sub-name">Ply dimensions</div>
+                          <div class="hlup-sub-val">
+                            Width, length, contour geometry of each prepreg ply
+                          </div>
+                        </div>
+                        <div class="hlup-sub-item">
+                          <div class="hlup-sub-name">Material type</div>
+                          <div class="hlup-sub-val">
+                            Prepreg grade, areal weight, fibre orientation
+                          </div>
+                        </div>
+                        <div class="hlup-sub-item">
+                          <div class="hlup-sub-name">Cut table spec</div>
+                          <div class="hlup-sub-val">
+                            Nesting efficiency, cutter speed, setup overhead
+                          </div>
+                        </div>
+                        <div class="hlup-sub-item">
+                          <div class="hlup-sub-name">Output</div>
+                          <div class="hlup-sub-val">
+                            Cut piece count, scrap area, cutting time per ply
+                          </div>
+                        </div>
+                      </div>
+                      <div class="hlup-params">
+                        <span class="hlup-param-pill">Ply dimensions</span>
+                        <span class="hlup-param-pill">Material type</span>
+                        <span class="hlup-param-pill">Cut table spec</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ── STEP 2: Laminating ── -->
+              <div class="hlup-step hlup-in" style="transition-delay: 0.15s">
+                <div class="hlup-num hlup-num-lm">
+                  <div class="hlup-num-digit">02</div>
+                  <div class="hlup-num-label">Lam</div>
+                </div>
+                <div class="hlup-arm"></div>
+                <div class="hlup-card" onclick="hlupToggle(this)">
+                  <div class="hlup-card-head hlup-head-lm">
+                    <div class="hlup-card-head-left">
+                      <span class="hlup-card-process">Laminating</span>
+                      <span class="hlup-card-tag">3 sub-processes</span>
+                    </div>
+                    <span class="hlup-card-chevron">▼</span>
+                  </div>
+                  <div class="hlup-card-body">
+                    <div class="hlup-card-inner">
+                      <div class="hlup-sub-grid">
+                        <div class="hlup-sub-item">
+                          <div class="hlup-sub-name">① Positioning</div>
+                          <div class="hlup-sub-val">
+                            Aligning cut ply to tool surface; based on worker
+                            speed v_drap
+                          </div>
+                        </div>
+                        <div class="hlup-sub-item">
+                          <div class="hlup-sub-name">② Draping</div>
+                          <div class="hlup-sub-val">
+                            Conforming ply to curvature — governed by draping
+                            time formula
+                          </div>
+                        </div>
+                        <div class="hlup-sub-item" style="grid-column: span 2">
+                          <div class="hlup-sub-name">
+                            ③ Manual Cutting (in-situ)
+                          </div>
+                          <div class="hlup-sub-val">
+                            Trimming overlaps / bridging at doublers — adds
+                            per-cut overhead
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="hlup-formula">
+                        <div class="hlup-formula-label">
+                          Draping Time Formula
+                        </div>
+                        <div class="hlup-formula-eq">
+                          t_drap = <span>K_cut</span> × ( b_drap +
+                          <span>A_cut</span> × v_drap )
+                        </div>
+                        <div class="hlup-formula-vars">
+                          <div class="hlup-fvar">
+                            <b>K_cut</b> — curvature complexity factor
+                          </div>
+                          <div class="hlup-fvar">
+                            <b>b_drap</b> — base draping time
+                          </div>
+                          <div class="hlup-fvar">
+                            <b>A_cut</b> — cut piece surface area
+                          </div>
+                          <div class="hlup-fvar">
+                            <b>v_drap</b> — worker draping speed
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="hlup-params">
+                        <span class="hlup-param-pill"
+                          >Worker speed (v_drap)</span
+                        >
+                        <span class="hlup-param-pill"
+                          >Curvature factor (K_cut)</span
+                        >
+                        <span class="hlup-param-pill">Ply area (A_cut)</span>
+                        <span class="hlup-param-pill">Base time (b_drap)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ── STEP 3: Compacting ── -->
+              <div class="hlup-step hlup-in" style="transition-delay: 0.25s">
+                <div class="hlup-num hlup-num-cp">
+                  <div class="hlup-num-digit">03</div>
+                  <div class="hlup-num-label">Comp</div>
+                </div>
+                <div class="hlup-arm"></div>
+                <div class="hlup-card" onclick="hlupToggle(this)">
+                  <div class="hlup-card-head hlup-head-cp">
+                    <div class="hlup-card-head-left">
+                      <span class="hlup-card-process">Compacting</span>
+                      <span class="hlup-card-tag">dynamic trigger</span>
+                    </div>
+                    <span class="hlup-card-chevron">▼</span>
+                  </div>
+                  <div class="hlup-card-body">
+                    <div class="hlup-card-inner">
+                      <div class="hlup-trigger">⚡ Triggered every 5th ply</div>
+                      <div class="hlup-sub-grid">
+                        <div class="hlup-sub-item">
+                          <div class="hlup-sub-name">Vacuum hood</div>
+                          <div class="hlup-sub-val">
+                            Fast setup, lower conformity — for flat or
+                            low-curvature regions
+                          </div>
+                        </div>
+                        <div class="hlup-sub-item">
+                          <div class="hlup-sub-name">Vacuum bag</div>
+                          <div class="hlup-sub-val">
+                            Full conformity — required for complex doubly-curved
+                            geometry
+                          </div>
+                        </div>
+                        <div class="hlup-sub-item" style="grid-column: span 2">
+                          <div class="hlup-sub-name">Optional QC step</div>
+                          <div class="hlup-sub-val">
+                            Visual / NDI inspection inserted as an additional
+                            subprocess; adds time when flagged
+                          </div>
+                        </div>
+                      </div>
+                      <div class="hlup-params">
+                        <span class="hlup-param-pill">Vacuum hood vs. bag</span>
+                        <span class="hlup-param-pill"
+                          >Ply interval trigger</span
+                        >
+                        <span class="hlup-param-pill">QC flag (optional)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ── STEP 4: Curing ── -->
+              <div class="hlup-step hlup-in" style="transition-delay: 0.35s">
+                <div class="hlup-num hlup-num-cu" style="background: #7a6060">
+                  <div class="hlup-num-digit">04</div>
+                  <div class="hlup-num-label">Cure</div>
+                </div>
+                <div class="hlup-arm"></div>
+                <div class="hlup-card" onclick="hlupToggle(this)">
+                  <div class="hlup-card-head hlup-head-cu">
+                    <div class="hlup-card-head-left">
+                      <span class="hlup-card-process">Curing</span>
+                      <span class="hlup-card-tag">autoclave cycle</span>
+                    </div>
+                    <span class="hlup-card-chevron">▼</span>
+                  </div>
+                  <div class="hlup-card-body">
+                    <div class="hlup-card-inner">
+                      <div class="hlup-sub-grid">
+                        <div class="hlup-sub-item">
+                          <div class="hlup-sub-name">Heating rate</div>
+                          <div class="hlup-sub-val">
+                            °C/min — defined by material supplier spec sheet
+                          </div>
+                        </div>
+                        <div class="hlup-sub-item">
+                          <div class="hlup-sub-name">Dwell time</div>
+                          <div class="hlup-sub-val">
+                            Hold duration at cure temperature — part-thickness
+                            dependent
+                          </div>
+                        </div>
+                        <div class="hlup-sub-item">
+                          <div class="hlup-sub-name">Cooling rate</div>
+                          <div class="hlup-sub-val">
+                            Controlled ramp-down to avoid residual stress /
+                            warping
+                          </div>
+                        </div>
+                        <div class="hlup-sub-item">
+                          <div class="hlup-sub-name">Temperatures</div>
+                          <div class="hlup-sub-val">
+                            Primary + post-cure temperatures per supplier data
+                            sheet
+                          </div>
+                        </div>
+                      </div>
+                      <div class="hlup-params">
+                        <span class="hlup-param-pill"
+                          >Heating / cooling rates</span
+                        >
+                        <span class="hlup-param-pill">Dwell times</span>
+                        <span class="hlup-param-pill">Cure temperatures</span>
+                        <span class="hlup-param-pill">Supplier spec</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ── STEP 5: Demolding ── -->
+              <div class="hlup-step hlup-in" style="transition-delay: 0.45s">
+                <div class="hlup-num hlup-num-dm">
+                  <div class="hlup-num-digit">05</div>
+                  <div class="hlup-num-label">Demo</div>
+                </div>
+                <div class="hlup-arm"></div>
+                <div class="hlup-card" onclick="hlupToggle(this)">
+                  <div class="hlup-card-head hlup-head-dm">
+                    <div class="hlup-card-head-left">
+                      <span class="hlup-card-process">Demolding</span>
+                      <span class="hlup-card-tag">per component</span>
+                    </div>
+                    <span class="hlup-card-chevron">▼</span>
+                  </div>
+                  <div class="hlup-card-body">
+                    <div class="hlup-card-inner">
+                      <div class="hlup-sub-grid">
+                        <div class="hlup-sub-item">
+                          <div class="hlup-sub-name">Tool geometry</div>
+                          <div class="hlup-sub-val">
+                            Draft angles, undercuts &amp; release agent type
+                            drive demold time
+                          </div>
+                        </div>
+                        <div class="hlup-sub-item">
+                          <div class="hlup-sub-name">Part extraction</div>
+                          <div class="hlup-sub-val">
+                            Manual or assisted — scales with component size
+                            &amp; complexity
+                          </div>
+                        </div>
+                        <div class="hlup-sub-item" style="grid-column: span 2">
+                          <div class="hlup-sub-name">Post-demold handling</div>
+                          <div class="hlup-sub-val">
+                            Trimming flash, cleaning tool surface, preparing for
+                            next cycle
+                          </div>
+                        </div>
+                      </div>
+                      <div class="hlup-params">
+                        <span class="hlup-param-pill">Tool geometry</span>
+                        <span class="hlup-param-pill">Draft angles</span>
+                        <span class="hlup-param-pill">Release agent</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /timeline -->
+
+            <!-- ── Output bar ── -->
+            <div class="hlup-output" id="hlup-out">
+              <div class="hlup-output-title">
+                Automated Evaluation Outputs — generated at subprocess &amp;
+                component level
+              </div>
+              <div class="hlup-output-grid">
+                <div class="hlup-out-tile">
+                  <span class="hlup-out-tile-icon">⏱</span>
+                  <span class="hlup-out-tile-name">Lead Time</span>
+                  <span class="hlup-out-tile-scope">per step &amp; total</span>
+                </div>
+                <div class="hlup-out-tile">
+                  <span class="hlup-out-tile-icon">👷</span>
+                  <span class="hlup-out-tile-name">Labor Hours</span>
+                  <span class="hlup-out-tile-scope">direct &amp; indirect</span>
+                </div>
+                <div class="hlup-out-tile">
+                  <span class="hlup-out-tile-icon">💰</span>
+                  <span class="hlup-out-tile-name">Cost</span>
+                  <span class="hlup-out-tile-scope">recurring per unit</span>
+                </div>
+                <div class="hlup-out-tile">
+                  <span class="hlup-out-tile-icon">♻️</span>
+                  <span class="hlup-out-tile-name">Waste</span>
+                  <span class="hlup-out-tile-scope">material scrap %</span>
+                </div>
+                <div class="hlup-out-tile">
+                  <span class="hlup-out-tile-icon">⚡</span>
+                  <span class="hlup-out-tile-name">Energy</span>
+                  <span class="hlup-out-tile-scope">kWh per cycle</span>
+                </div>
+              </div>
+              <div class="hlup-output-levels">
+                <span class="hlup-lvl-badge">📦 Subprocess level</span>
+                <span class="hlup-lvl-badge">🔩 Component level</span>
+              </div>
+            </div>
+
+            <p class="hlup-footer">
+              Click any process step to expand parameters &amp; sub-processes
+            </p>
+          </div>
+          <!-- Image 7 -->
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69e5fcdd3dc7784e0cacb932_7.png"
+            alt="Vacuum-bagged composite layup ready for compaction and cure"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            Vacuum-bagged composite layup ready for compaction and cure — the
+            production reality the model was validated against.
+          </p>
+
+          <p>
+            The model was validated against real production data from AHD. The
+            paper notes the predictions were qualitatively close to real-world
+            values, with quantitative details withheld under NDA.
+          </p>
+        </section>
+
+        <!-- AFP Module Section -->
+        <section id="afp-module">
+          <h2>AFP: From Design Graph to NC Code</h2>
+
+          <!-- Image 8 -->
+          <div class="split-layout reverse">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69e5fc57ec138ca36ffb0618_8.png"
+                alt="AFP-XS depositing carbon fiber tow on a curved mold"
+              />
+
+              <p style="margin-top: 20px" class="image-caption">
+                AFP-XS depositing carbon fiber tow on a curved mold — from
+                design graph to machine execution.
+              </p>
+            </div>
+            <div class="split-text">
+              <p>
+                The AFP module goes a step further — not just estimating
+                manufacturing cost, but generating the actual machine control
+                program.
+              </p>
+              <p>
+                The workflow moves from the design graph (DC43/GBDL) through AFP
+                component model, sectorization and guide curve construction, and
+                NC code generation — all the way to physical lay-up on the
+                Coriolis C1.2 at Fraunhofer IGCV in Augsburg.
+              </p>
+            </div>
+          </div>
+
+          <!-- INFOGRAPHIC 4 PLACEHOLDER -->
+
+          <div class="adpc-wrap" id="adpc-root">
+            <div class="adpc-eyebrow">AFP Programming · Digital Thread</div>
+            <h3 class="adpc-title">AFP Digital Process Chain</h3>
+            <div class="adpc-rule"></div>
+            <p class="adpc-subtitle">
+              From parametric design graph to verified NC code — three
+              integrated stages bridging CAD, path planning &amp; machine floor
+            </p>
+
+            <!-- Endpoints banner -->
+            <div class="adpc-endpoints">
+              <div class="adpc-endpoint">
+                <div
+                  class="adpc-endpoint-dot"
+                  style="background: #47577c"
+                ></div>
+                <div>
+                  <span class="adpc-endpoint-label">Input Source</span>
+                  <span class="adpc-endpoint-name"
+                    >Design Graph — DC43 / GBDL</span
+                  >
+                </div>
+              </div>
+              <div class="adpc-endpoint-arrow">→</div>
+              <div class="adpc-endpoint">
+                <div
+                  class="adpc-endpoint-dot"
+                  style="background: #bf3425"
+                ></div>
+                <div>
+                  <span class="adpc-endpoint-label">Output Target</span>
+                  <span class="adpc-endpoint-name"
+                    >Machine Floor — Coriolis C1.2, IGCV</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- ══ Chain ══ -->
+            <div class="adpc-chain">
+              <!-- ── BLOCK 1: AFP Component Model ── -->
+              <div class="adpc-block" id="adpc-b1">
+                <div class="adpc-card">
+                  <div class="adpc-card-head adpc-head-1">
+                    <div class="adpc-block-num">1</div>
+                    <span class="adpc-card-title">AFP Component Model</span>
+                    <span class="adpc-card-badge">AfpComponent</span>
+                  </div>
+                  <div class="adpc-card-body">
+                    <div class="adpc-source-ref">
+                      Source:
+                      <span class="adpc-source-tag"
+                        >Design Graph (DC43 / GBDL)</span
+                      >
+                      &nbsp;→ defines laminate stackup &amp; zone geometry
+                    </div>
+
+                    <!-- Ply stack -->
+                    <div
+                      style="
+                        font-size: 10.5px;
+                        font-weight: 700;
+                        letter-spacing: 0.09em;
+                        text-transform: uppercase;
+                        color: #9d9d9c;
+                        margin-bottom: 8px;
+                      "
+                    >
+                      Ply Stackup — click a ply to inspect
+                    </div>
+                    <div class="adpc-ply-stack" id="adpc-plies">
+                      <div
+                        class="adpc-ply-row adpc-ply-0"
+                        onclick="adpcTogglePly(this)"
+                      >
+                        <div class="adpc-ply-bar adpc-ply-0">
+                          <span class="adpc-ply-angle">0°</span>
+                          <span class="adpc-ply-desc"
+                            >Primary load direction</span
+                          >
+                          <span class="adpc-ply-t">t = 0.125mm</span>
+                        </div>
+                      </div>
+                      <div class="adpc-ply-detail">
+                        <div class="adpc-ply-detail-inner">
+                          <span>orientation:</span><i>0°</i>
+                          <span>thickness:</span><i>0.125 mm</i>
+                          <span>zone:</span><i>boundary wire on tool surface</i>
+                          <span>ref curve:</span><i>0° fiber direction</i>
+                        </div>
+                      </div>
+
+                      <div
+                        class="adpc-ply-row adpc-ply-45"
+                        onclick="adpcTogglePly(this)"
+                      >
+                        <div class="adpc-ply-bar adpc-ply-45">
+                          <span class="adpc-ply-angle">45°</span>
+                          <span class="adpc-ply-desc">Shear transfer ply</span>
+                          <span class="adpc-ply-t">t = 0.125mm</span>
+                        </div>
+                      </div>
+                      <div class="adpc-ply-detail">
+                        <div class="adpc-ply-detail-inner">
+                          <span>orientation:</span><i>+45°</i>
+                          <span>thickness:</span><i>0.125 mm</i>
+                          <span>zone:</span><i>boundary wire on tool surface</i>
+                          <span>ref curve:</span><i>0° fiber direction</i>
+                        </div>
+                      </div>
+
+                      <div
+                        class="adpc-ply-row adpc-ply-90"
+                        onclick="adpcTogglePly(this)"
+                      >
+                        <div class="adpc-ply-bar adpc-ply-90">
+                          <span class="adpc-ply-angle">90°</span>
+                          <span class="adpc-ply-desc"
+                            >Transverse stiffness</span
+                          >
+                          <span class="adpc-ply-t">t = 0.125mm</span>
+                        </div>
+                      </div>
+                      <div class="adpc-ply-detail">
+                        <div class="adpc-ply-detail-inner">
+                          <span>orientation:</span><i>90°</i>
+                          <span>thickness:</span><i>0.125 mm</i>
+                          <span>zone:</span><i>boundary wire on tool surface</i>
+                          <span>ref curve:</span><i>0° fiber direction</i>
+                        </div>
+                      </div>
+
+                      <div
+                        class="adpc-ply-row adpc-ply-n45"
+                        onclick="adpcTogglePly(this)"
+                      >
+                        <div class="adpc-ply-bar adpc-ply-n45">
+                          <span class="adpc-ply-angle">−45°</span>
+                          <span class="adpc-ply-desc">Balanced shear ply</span>
+                          <span class="adpc-ply-t">t = 0.125mm</span>
+                        </div>
+                      </div>
+                      <div class="adpc-ply-detail">
+                        <div class="adpc-ply-detail-inner">
+                          <span>orientation:</span><i>−45°</i>
+                          <span>thickness:</span><i>0.125 mm</i>
+                          <span>zone:</span><i>boundary wire on tool surface</i>
+                          <span>ref curve:</span><i>0° fiber direction</i>
+                        </div>
+                      </div>
+
+                      <div
+                        class="adpc-ply-row adpc-ply-0"
+                        onclick="adpcTogglePly(this)"
+                      >
+                        <div class="adpc-ply-bar adpc-ply-0">
+                          <span class="adpc-ply-angle">0°</span>
+                          <span class="adpc-ply-desc">Closing primary ply</span>
+                          <span class="adpc-ply-t">t = 0.125mm</span>
+                        </div>
+                      </div>
+                      <div class="adpc-ply-detail">
+                        <div class="adpc-ply-detail-inner">
+                          <span>orientation:</span><i>0°</i>
+                          <span>thickness:</span><i>0.125 mm</i>
+                          <span>zone:</span><i>boundary wire on tool surface</i>
+                          <span>ref curve:</span><i>0° fiber direction</i>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /ply-stack -->
+
+                    <!-- Object model tree -->
+                    <div class="adpc-tree">
+                      <span class="adpc-tc">AfpComponent</span><br />
+                      &nbsp;&nbsp;└── <span class="adpc-tp">Plies</span> [<span
+                        class="adpc-tv"
+                        >0°, 45°, 90°, −45°, 0°</span
+                      >]<br />
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="adpc-tg"
+                        >├── orientation (deg)</span
+                      ><br />
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="adpc-tg"
+                        >├── thickness t = </span
+                      ><span class="adpc-tv">0.125 mm</span><br />
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="adpc-tg"
+                        >└── zone → boundary wire on tool surface</span
+                      ><br />
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="adpc-tg"
+                        >+ reference curve (0° fiber dir)</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Connector 1 -->
+              <div class="adpc-connector" id="adpc-c1">
+                <div class="adpc-connector-vline adpc-vline-1"></div>
+                <div class="adpc-connector-badge adpc-badge-1">
+                  Export to CATIA V5 (STEP + annotation)
+                </div>
+                <div class="adpc-connector-vline adpc-vline-1"></div>
+                <div class="adpc-vtip-down adpc-vtip-1"></div>
+              </div>
+
+              <!-- ── BLOCK 2: Sectorization ── -->
+              <div class="adpc-block" id="adpc-b2">
+                <div class="adpc-card">
+                  <div class="adpc-card-head adpc-head-2">
+                    <div class="adpc-block-num">2</div>
+                    <span class="adpc-card-title"
+                      >Sectorization &amp; Guide Curve Construction</span
+                    >
+                    <span class="adpc-card-badge">CATfiber</span>
+                  </div>
+                  <div class="adpc-card-body">
+                    <div class="adpc-sector-row">
+                      <!-- SVG sector diagram -->
+                      <div class="adpc-sector-svg-wrap">
+                        <svg
+                          width="150"
+                          height="160"
+                          viewBox="0 0 150 160"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <!-- S-shaped tool surface with 11 sectors -->
+                          <defs>
+                            <linearGradient
+                              id="adpc-sg"
+                              x1="0"
+                              y1="0"
+                              x2="0"
+                              y2="1"
+                            >
+                              <stop
+                                offset="0%"
+                                stop-color="#47577c"
+                                stop-opacity="0.9"
+                              />
+                              <stop
+                                offset="100%"
+                                stop-color="#bf3425"
+                                stop-opacity="0.9"
+                              />
+                            </linearGradient>
+                          </defs>
+                          <!-- Tool surface outline (S-shape) -->
+                          <path
+                            d="M30,20 Q80,20 120,50 Q160,80 100,120 Q60,145 30,140"
+                            fill="none"
+                            stroke="#334155"
+                            stroke-width="1.5"
+                            stroke-dasharray="4 3"
+                          />
+                          <!-- 11 sectors as stacked arcs -->
+                          <path
+                            d="M35,25 Q75,25 112,52"
+                            fill="none"
+                            stroke="#4a6fa5"
+                            stroke-width="14"
+                            stroke-linecap="round"
+                            opacity="0.75"
+                          />
+                          <path
+                            d="M40,38 Q78,38 114,62"
+                            fill="none"
+                            stroke="#5c7fb8"
+                            stroke-width="14"
+                            stroke-linecap="round"
+                            opacity="0.72"
+                          />
+                          <path
+                            d="M36,52 Q72,50 112,72"
+                            fill="none"
+                            stroke="#6e8fca"
+                            stroke-width="14"
+                            stroke-linecap="round"
+                            opacity="0.70"
+                          />
+                          <path
+                            d="M30,65 Q65,62 106,81"
+                            fill="none"
+                            stroke="#9d9d9c"
+                            stroke-width="14"
+                            stroke-linecap="round"
+                            opacity="0.68"
+                          />
+                          <path
+                            d="M28,78 Q60,74 100,90"
+                            fill="none"
+                            stroke="#8a8a8a"
+                            stroke-width="14"
+                            stroke-linecap="round"
+                            opacity="0.66"
+                          />
+                          <path
+                            d="M30,90 Q58,86 96,99"
+                            fill="none"
+                            stroke="#777777"
+                            stroke-width="14"
+                            stroke-linecap="round"
+                            opacity="0.64"
+                          />
+                          <path
+                            d="M34,101 Q57,97 95,107"
+                            fill="none"
+                            stroke="#a06060"
+                            stroke-width="14"
+                            stroke-linecap="round"
+                            opacity="0.66"
+                          />
+                          <path
+                            d="M38,111 Q57,108 93,115"
+                            fill="none"
+                            stroke="#b05050"
+                            stroke-width="14"
+                            stroke-linecap="round"
+                            opacity="0.68"
+                          />
+                          <path
+                            d="M39,120 Q55,118 89,123"
+                            fill="none"
+                            stroke="#b84040"
+                            stroke-width="14"
+                            stroke-linecap="round"
+                            opacity="0.70"
+                          />
+                          <path
+                            d="M38,128 Q52,127 82,131"
+                            fill="none"
+                            stroke="#bf3425"
+                            stroke-width="14"
+                            stroke-linecap="round"
+                            opacity="0.75"
+                          />
+                          <path
+                            d="M36,136 Q48,136 72,138"
+                            fill="none"
+                            stroke="#bf3425"
+                            stroke-width="12"
+                            stroke-linecap="round"
+                            opacity="0.8"
+                          />
+                          <!-- Sector count label -->
+                          <text
+                            x="75"
+                            y="155"
+                            text-anchor="middle"
+                            font-size="10"
+                            fill="#9d9d9c"
+                            font-family="Inter,sans-serif"
+                            font-weight="600"
+                          >
+                            11 sectors
+                          </text>
+                          <!-- Guide curve arrow -->
+                          <path
+                            d="M120,50 L136,50"
+                            stroke="#bf3425"
+                            stroke-width="1.5"
+                            fill="none"
+                            stroke-dasharray="3 2"
+                          />
+                          <polygon
+                            points="134,47 140,50 134,53"
+                            fill="#bf3425"
+                          />
+                          <text
+                            x="143"
+                            y="53"
+                            font-size="8"
+                            fill="#bf3425"
+                            font-family="Inter,sans-serif"
+                            font-weight="700"
+                          >
+                            GC
+                          </text>
+                        </svg>
+                      </div>
+
+                      <div class="adpc-sector-info">
+                        <div class="adpc-sector-stat">
+                          <div class="adpc-sector-stat-label">Tool example</div>
+                          <div class="adpc-sector-stat-val">
+                            S-shaped trial tool → 11 sectors
+                          </div>
+                        </div>
+                        <div class="adpc-sector-stat">
+                          <div class="adpc-sector-stat-label">
+                            Guide curves per sector
+                          </div>
+                          <div class="adpc-sector-stat-val">
+                            1 guide curve × 4 orientations
+                          </div>
+                        </div>
+                        <div class="adpc-sector-stat">
+                          <div class="adpc-sector-stat-label">
+                            Orientations covered
+                          </div>
+                          <div class="adpc-sector-stat-val">
+                            0° / +45° / −45° / 90°
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Trade-off table -->
+                    <div class="adpc-tradeoff">
+                      <div class="adpc-tradeoff-title">
+                        Sectorization trade-off
+                      </div>
+                      <div class="adpc-tradeoff-row">
+                        <span class="adpc-tradeoff-dir adpc-dir-fewer"
+                          >Fewer sectors</span
+                        >
+                        <span class="adpc-tradeoff-arrow">→</span>
+                        <span class="adpc-tradeoff-effect"
+                          >More fiber angle deviation from nominal</span
+                        >
+                      </div>
+                      <div class="adpc-tradeoff-row">
+                        <span class="adpc-tradeoff-dir adpc-dir-more"
+                          >More sectors</span
+                        >
+                        <span class="adpc-tradeoff-arrow">→</span>
+                        <span class="adpc-tradeoff-effect"
+                          >More gap / overlap at sector boundaries</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Connector 2 -->
+              <div class="adpc-connector" id="adpc-c2">
+                <div class="adpc-connector-vline adpc-vline-2"></div>
+                <div class="adpc-connector-badge adpc-badge-2">
+                  Coriolis CATfiber platform
+                </div>
+                <div class="adpc-connector-vline adpc-vline-2"></div>
+                <div class="adpc-vtip-down adpc-vtip-2"></div>
+              </div>
+
+              <!-- ── BLOCK 3: NC Code Generation ── -->
+              <div class="adpc-block" id="adpc-b3">
+                <div class="adpc-card">
+                  <div class="adpc-card-head adpc-head-3">
+                    <div class="adpc-block-num">3</div>
+                    <span class="adpc-card-title"
+                      >NC Code Generation &amp; Verification</span
+                    >
+                    <span class="adpc-card-badge">Verified lay-up</span>
+                  </div>
+                  <div class="adpc-card-body">
+                    <!-- 3-step NC flow -->
+                    <div class="adpc-nc-flow">
+                      <div class="adpc-nc-step">
+                        <span class="adpc-nc-icon">🔀</span>
+                        <div class="adpc-nc-name">Tow Paths</div>
+                        <div class="adpc-nc-desc">
+                          Generated from guide curves &amp; sector boundaries
+                        </div>
+                      </div>
+
+                      <div class="adpc-nc-arrow">
+                        <svg
+                          width="32"
+                          height="16"
+                          viewBox="0 0 32 16"
+                          overflow="visible"
+                        >
+                          <path class="adpc-nc-flow-path" d="M2,8 L26,8" />
+                          <polygon points="24,4 32,8 24,12" fill="#bf3425" />
+                        </svg>
+                      </div>
+
+                      <div class="adpc-nc-step">
+                        <span class="adpc-nc-icon">🖥️</span>
+                        <div class="adpc-nc-name">Machine Simulation</div>
+                        <div class="adpc-nc-desc">
+                          Off-line verification of reachability &amp; collision
+                        </div>
+                      </div>
+
+                      <div class="adpc-nc-arrow">
+                        <svg
+                          width="32"
+                          height="16"
+                          viewBox="0 0 32 16"
+                          overflow="visible"
+                        >
+                          <path
+                            class="adpc-nc-flow-path"
+                            d="M2,8 L26,8"
+                            style="animation-delay: 0.4s"
+                          />
+                          <polygon points="24,4 32,8 24,12" fill="#bf3425" />
+                        </svg>
+                      </div>
+
+                      <div class="adpc-nc-step">
+                        <span class="adpc-nc-icon">🤖</span>
+                        <div class="adpc-nc-name">Real Lay-Up</div>
+                        <div class="adpc-nc-desc">
+                          Physical execution on Coriolis C1.2 at IGCV
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /nc-flow -->
+
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        margin-top: 6px;
+                        flex-wrap: wrap;
+                      "
+                    >
+                      <div class="adpc-nc-tag">🏭 Coriolis C1.2</div>
+                      <div class="adpc-nc-tag">🔬 IGCV validation</div>
+                      <div
+                        class="adpc-nc-tag"
+                        style="
+                          background: #edf2fb;
+                          border-color: #c8d4e8;
+                          color: #47577c;
+                        "
+                      >
+                        Full digital thread closed
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /chain -->
+
+            <p class="adpc-footer">
+              Click any ply in Block 1 to inspect orientation &amp; zone
+              parameters
+            </p>
+          </div>
+          <p>
+            The trial runs at Fraunhofer IGCV in Augsburg confirmed what the
+            model predicted: it is possible to automatically generate
+            machine-executable NC code from a design graph, including for
+            multi-sector, multi-orientation lay-ups on doubly curved surfaces.
+            This closed the loop from digital model to physical laminate without
+            manual programming at the machine level.
+          </p>
+
+          <!-- Image 9 -->
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69e5fc57fccc0a4a631c040c_9.png"
+            alt="AddPath simulating AFP-XS tow paths on a curved mold — digital verification before physical layup"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            AddPath simulating AFP-XS tow paths on a curved mold — digital
+            verification before physical layup.
+          </p>
+        </section>
+
+        <!-- Why This Matters -->
+        <section id="why-it-matters">
+          <h2>Why This Matters for AFP Operators Right Now</h2>
+          <p>
+            The COBAIN research is primarily methodological — the authors are
+            candid that large-scale empirical validation and detailed
+            benchmarking lie outside this paper's scope. But the implications
+            for the composites manufacturing market are already clear.
+          </p>
+
+          <div class="feature-grid">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4>The Quoting Problem Is Solvable</h4>
+                <p>
+                  Manufacturing cost, lead time, waste, and energy estimates can
+                  be computed automatically from the same data model used for
+                  structural design — provided the underlying ontology is
+                  correctly structured. This runs in under a minute on a laptop.
+                </p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4>AFP Is the Forward Path</h4>
+                <p>
+                  In the framework, AFP is not an afterthought — it is one of
+                  two first-class manufacturing methods modeled at equal depth,
+                  with its own design language producing machine code that can
+                  be sent directly to a robot.
+                </p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                  ></path>
+                  <path
+                    d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Design Changes Become Cheap</h4>
+                <p>
+                  The design graph retains all intermediate values.
+                  Recalculating with a different material, tooling concept, or
+                  operator speed requires no model reconstruction — only
+                  parameter modification.
+                </p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <div>
+                <h4>The Workflow AFP-XS Users Need</h4>
+                <p>
+                  The structural customer changes a frame profile from I to Ω;
+                  the AFP operator needs to know within minutes what that means
+                  for lay-up time, tow waste, and quote price. The COBAIN
+                  framework shows exactly how to build that capability.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 10 -->
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69e5fcdd4105dfea71deace3_10.png"
+            alt="AFP-XS and AddPath in operation — the path planning and deposition tools the COBAIN framework connects to"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            AFP-XS and AddPath in operation — the path planning and deposition
+            tools the COBAIN framework connects to.
+          </p>
+        </section>
+
+        <!-- Limitations -->
+        <section id="limitations">
+          <h2>What Still Needs Work</h2>
+          <p>
+            The paper is honest about current limitations, and it is worth being
+            equally direct here.
+          </p>
+          <p>
+            The translation of component geometry into the preforming structure
+            (preforms, subpreforms, ply stacks) is currently still performed
+            manually for the hand lay-up module. Automated ply derivation
+            approaches were developed in the project but are not published. This
+            is a significant gap: if the ply book still requires manual
+            interpretation, the time savings are partially offset.
+          </p>
+          <p>
+            For AFP specifically, the sectorization rules — deciding how to
+            partition a curved surface into lay-up sectors — are implemented as
+            fixed algorithms. The trade-off between fiber angle deviation and
+            gap/overlap is managed by rule, not optimized per component. More
+            sophisticated optimization here (variable angle tow steering, for
+            example) would require extending the design language with additional
+            rules and, likely, integration with path planning tools like
+            AddPath.
+          </p>
+          <p>
+            The framework also currently handles only monolithic structures in
+            the structural design loop. Sandwich structures are supported in the
+            manufacturing planning module but not yet fully connected back to
+            the geometry and structural design languages. The authors
+            acknowledge this and note that extension is architecturally
+            straightforward — it requires additional ontology classes and rules,
+            not a redesign.
+          </p>
+        </section>
+
+        <!-- Bigger Picture -->
+        <section id="bigger-picture">
+          <h2>The Bigger Picture</h2>
+          <p>
+            What the COBAIN project has built is a working prototype of
+            something the composites industry has wanted for a long time: a
+            single model of truth that spans design and manufacturing, that
+            propagates changes automatically, and that produces actionable
+            outputs — including machine code — without manual re-entry.
+          </p>
+          <p>
+            The data architecture is the innovation here, not the manufacturing
+            process or the structural analysis method. Graph-based design
+            languages are the plumbing. The payoff is that AFP — already the
+            highest-performance deposition technology accessible to smaller
+            manufacturers through systems like AFP-XS — becomes not just a
+            production tool but a design evaluation tool. You can explore ten
+            frame variants, compare their AFP manufacturing costs automatically,
+            and select the best one before cutting a single piece of prepreg.
+          </p>
+
+          <!-- Image - AFP-XS and finished component -->
+          <div class="split-layout">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69df40c613e25ae82369c1ba_6%20(1).png"
+                alt="AFP-XS and a finished CFRP component — design graph to physical laminate"
+              />
+              <p class="image-caption" style="margin-top: 20px">
+                AFP-XS and a finished CFRP component represent the full chain
+                the COBAIN framework is designed to automate — from installation
+                space extraction to physical deposition.
+              </p>
+            </div>
+            <div class="split-text">
+              <p>
+                For AFP operators competing on aerospace programs — whether as
+                Tier 1 suppliers or as job shops quoting against hand lay-up
+                incumbents — this direction of travel is significant.
+              </p>
+
+              <p>
+                The tools to implement the manufacturing side of this framework
+                already exist: AddPath handles path planning and trajectory
+                generation; AFP-XS handles deposition. What the COBAIN research
+                adds is the upstream architecture that makes the full chain —
+                from installation space to NC code — coherent and automated.
+              </p>
+            </div>
+          </div>
+
+          <!-- INFOGRAPHIC 5 PLACEHOLDER -->
+
+          <div class="wfcmp-wrap" id="wfcmp-root">
+            <div class="wfcmp-eyebrow">
+              COBAIN Framework · Digital Thread Comparison
+            </div>
+            <h3 class="wfcmp-title">
+              Traditional Workflow vs. GBDL-Integrated Workflow
+            </h3>
+            <div class="wfcmp-rule"></div>
+            <p class="wfcmp-subtitle">
+              From siloed manual handoffs taking days — to a unified design
+              graph that propagates changes in under a minute
+            </p>
+
+            <!-- ── VS divider ── -->
+            <div class="wfcmp-vs-divider" id="wfcmp-vs">
+              <div class="wfcmp-vs-line"></div>
+              <div class="wfcmp-vs-badge">TRADITIONAL &nbsp;vs&nbsp; GBDL</div>
+              <div class="wfcmp-vs-line"></div>
+            </div>
+
+            <!-- ── Two columns ── -->
+            <div class="wfcmp-cols">
+              <!-- LEFT: Traditional -->
+              <div class="wfcmp-col" id="wfcmp-c1">
+                <div class="wfcmp-col-head wfcmp-head-trad">
+                  <span class="wfcmp-head-icon">🔧</span>
+                  <div>
+                    <span class="wfcmp-head-label-top">Legacy approach</span>
+                    <span class="wfcmp-head-label-name"
+                      >Traditional Workflow</span
+                    >
+                    <span class="wfcmp-head-sub"
+                      >Siloed · Manual handoffs · Slow iteration</span
+                    >
+                  </div>
+                </div>
+                <div class="wfcmp-col-body">
+                  <!-- Flow -->
+                  <div class="wfcmp-flow">
+                    <div class="wfcmp-node wfcmp-node-trad">
+                      <span class="wfcmp-node-name">Design (CAD)</span>
+                      <span class="wfcmp-node-sub">geometry only</span>
+                    </div>
+                    <div class="wfcmp-flow-arrow">
+                      <svg
+                        class="wfcmp-arrow-svg"
+                        width="28"
+                        height="12"
+                        viewBox="0 0 28 12"
+                      >
+                        <path class="wfcmp-arr-trad" d="M2,6 L22,6" />
+                        <polygon points="20,3 28,6 20,9" fill="#9d9d9c" />
+                      </svg>
+                      <span class="wfcmp-arr-label wfcmp-arr-label-trad"
+                        >weeks<br />manual</span
+                      >
+                    </div>
+                    <div class="wfcmp-node wfcmp-node-trad">
+                      <span class="wfcmp-node-name">Structural Analysis</span>
+                      <span class="wfcmp-node-sub">FEM / CPACS</span>
+                    </div>
+                    <div class="wfcmp-flow-arrow">
+                      <svg
+                        class="wfcmp-arrow-svg"
+                        width="28"
+                        height="12"
+                        viewBox="0 0 28 12"
+                      >
+                        <path class="wfcmp-arr-trad" d="M2,6 L22,6" />
+                        <polygon points="20,3 28,6 20,9" fill="#9d9d9c" />
+                      </svg>
+                      <span class="wfcmp-arr-label wfcmp-arr-label-trad"
+                        >days<br />manual</span
+                      >
+                    </div>
+                    <div class="wfcmp-node wfcmp-node-trad">
+                      <span class="wfcmp-node-name">Mfg. Planning</span>
+                      <span class="wfcmp-node-sub">spreadsheet</span>
+                    </div>
+                  </div>
+
+                  <!-- Change chips -->
+                  <div
+                    style="
+                      font-size: 10px;
+                      font-weight: 700;
+                      letter-spacing: 0.09em;
+                      text-transform: uppercase;
+                      color: #9d9d9c;
+                      margin-bottom: 7px;
+                    "
+                  >
+                    Change → requires manual update of:
+                  </div>
+                  <div class="wfcmp-change-row">
+                    <div class="wfcmp-change-chip wfcmp-chip-trad">
+                      <span class="wfcmp-chip-what">CAD file</span>
+                      <span class="wfcmp-chip-how"
+                        >Edit geometry,<br />re-export</span
+                      >
+                      <span class="wfcmp-chip-time wfcmp-chip-time-trad"
+                        >hours</span
+                      >
+                    </div>
+                    <div class="wfcmp-change-chip wfcmp-chip-trad">
+                      <span class="wfcmp-chip-what">FEM file</span>
+                      <span class="wfcmp-chip-how">Re-mesh,<br />re-run</span>
+                      <span class="wfcmp-chip-time wfcmp-chip-time-trad"
+                        >hours</span
+                      >
+                    </div>
+                    <div class="wfcmp-change-chip wfcmp-chip-trad">
+                      <span class="wfcmp-chip-what">Spreadsheet</span>
+                      <span class="wfcmp-chip-how">Manual<br />re-entry</span>
+                      <span class="wfcmp-chip-time wfcmp-chip-time-trad"
+                        >hours</span
+                      >
+                    </div>
+                  </div>
+
+                  <!-- KPIs -->
+                  <div class="wfcmp-kpi-row">
+                    <div class="wfcmp-kpi">
+                      <span class="wfcmp-kpi-label">⏱ Each iteration</span>
+                      <span class="wfcmp-kpi-val wfcmp-kpi-val-trad"
+                        >Days – Weeks</span
+                      >
+                    </div>
+                    <div class="wfcmp-kpi">
+                      <span class="wfcmp-kpi-label">🔀 Design variants</span>
+                      <span class="wfcmp-kpi-val wfcmp-kpi-val-trad">Few</span>
+                    </div>
+                    <div class="wfcmp-kpi">
+                      <span class="wfcmp-kpi-label">📊 Cost accuracy</span>
+                      <span class="wfcmp-kpi-val wfcmp-kpi-val-trad"
+                        >±20–40%</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /col trad -->
+
+              <!-- RIGHT: GBDL -->
+              <div class="wfcmp-col" id="wfcmp-c2">
+                <div class="wfcmp-col-head wfcmp-head-gbdl">
+                  <span class="wfcmp-head-icon">⚡</span>
+                  <div>
+                    <span class="wfcmp-head-label-top">COBAIN framework</span>
+                    <span class="wfcmp-head-label-name"
+                      >GBDL-Integrated Workflow</span
+                    >
+                    <span class="wfcmp-head-sub"
+                      >Unified graph · Auto-propagation · Fast iteration</span
+                    >
+                  </div>
+                </div>
+                <div class="wfcmp-col-body">
+                  <!-- Unified graph flow — bidirectional -->
+                  <div
+                    style="
+                      background: #edf2fb;
+                      border: 2px solid #c8d4e8;
+                      border-radius: 10px;
+                      padding: 12px 10px 14px;
+                      margin-bottom: 14px;
+                      text-align: center;
+                    "
+                  >
+                    <div
+                      style="
+                        font-size: 10px;
+                        font-weight: 700;
+                        letter-spacing: 0.1em;
+                        text-transform: uppercase;
+                        color: #9d9d9c;
+                        margin-bottom: 10px;
+                      "
+                    >
+                      Unified Design Graph
+                    </div>
+                    <div class="wfcmp-flow" style="margin-bottom: 0">
+                      <div class="wfcmp-node wfcmp-node-gbdl">
+                        <span class="wfcmp-node-name">Design<br />(nodes)</span>
+                      </div>
+                      <div class="wfcmp-flow-arrow">
+                        <svg
+                          class="wfcmp-arrow-svg"
+                          width="28"
+                          height="22"
+                          viewBox="0 0 28 22"
+                        >
+                          <path class="wfcmp-arr-gbdl-fwd" d="M2,7 L22,7" />
+                          <polygon points="20,4 28,7 20,10" fill="#47577c" />
+                          <path
+                            class="wfcmp-arr-gbdl-rev"
+                            d="M26,15 L6,15"
+                            style="animation-delay: 0.55s"
+                          />
+                          <polygon points="8,12 0,15 8,18" fill="#bf3425" />
+                        </svg>
+                      </div>
+                      <div class="wfcmp-node wfcmp-node-gbdl">
+                        <span class="wfcmp-node-name"
+                          >Structural<br />Analysis</span
+                        >
+                      </div>
+                      <div class="wfcmp-flow-arrow">
+                        <svg
+                          class="wfcmp-arrow-svg"
+                          width="28"
+                          height="22"
+                          viewBox="0 0 28 22"
+                        >
+                          <path
+                            class="wfcmp-arr-gbdl-fwd"
+                            d="M2,7 L22,7"
+                            style="animation-delay: 0.3s"
+                          />
+                          <polygon points="20,4 28,7 20,10" fill="#47577c" />
+                          <path
+                            class="wfcmp-arr-gbdl-rev"
+                            d="M26,15 L6,15"
+                            style="animation-delay: 0.85s"
+                          />
+                          <polygon points="8,12 0,15 8,18" fill="#bf3425" />
+                        </svg>
+                      </div>
+                      <div class="wfcmp-node wfcmp-node-gbdl">
+                        <span class="wfcmp-node-name">Mfg.<br />Planning</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Change chips -->
+                  <div
+                    style="
+                      font-size: 10px;
+                      font-weight: 700;
+                      letter-spacing: 0.09em;
+                      text-transform: uppercase;
+                      color: #9d9d9c;
+                      margin-bottom: 7px;
+                    "
+                  >
+                    Change → automatically propagates to:
+                  </div>
+                  <div class="wfcmp-change-row">
+                    <div class="wfcmp-change-chip wfcmp-chip-gbdl">
+                      <span class="wfcmp-chip-what">Design</span>
+                      <span class="wfcmp-chip-how"
+                        >Graph node<br />updates</span
+                      >
+                      <span class="wfcmp-chip-time wfcmp-chip-time-gbdl"
+                        >&lt;1 min</span
+                      >
+                    </div>
+                    <div class="wfcmp-change-chip wfcmp-chip-gbdl">
+                      <span class="wfcmp-chip-what">Structure</span>
+                      <span class="wfcmp-chip-how">Auto<br />re-evaluated</span>
+                      <span class="wfcmp-chip-time wfcmp-chip-time-gbdl"
+                        >&lt;1 min</span
+                      >
+                    </div>
+                    <div class="wfcmp-change-chip wfcmp-chip-gbdl">
+                      <span class="wfcmp-chip-what">Mfg. Cost</span>
+                      <span class="wfcmp-chip-how">Auto<br />re-computed</span>
+                      <span class="wfcmp-chip-time wfcmp-chip-time-gbdl"
+                        >&lt;1 min</span
+                      >
+                    </div>
+                  </div>
+
+                  <!-- KPIs -->
+                  <div class="wfcmp-kpi-row">
+                    <div
+                      class="wfcmp-kpi"
+                      style="background: #edf2fb; border-color: #c8d4e8"
+                    >
+                      <span class="wfcmp-kpi-label">⏱ Each iteration</span>
+                      <span class="wfcmp-kpi-val wfcmp-kpi-val-gbdl"
+                        >Minutes</span
+                      >
+                    </div>
+                    <div
+                      class="wfcmp-kpi"
+                      style="background: #edf2fb; border-color: #c8d4e8"
+                    >
+                      <span class="wfcmp-kpi-label">🔀 Design variants</span>
+                      <span class="wfcmp-kpi-val wfcmp-kpi-val-gbdl">Many</span>
+                    </div>
+                    <div
+                      class="wfcmp-kpi"
+                      style="background: #edf2fb; border-color: #c8d4e8"
+                    >
+                      <span class="wfcmp-kpi-label">📊 Cost accuracy</span>
+                      <span class="wfcmp-kpi-val wfcmp-kpi-val-gbdl"
+                        >Validated vs AHD</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /col gbdl -->
+            </div>
+            <!-- /cols -->
+
+            <!-- ── Delta summary panel ── -->
+            <div class="wfcmp-delta" id="wfcmp-delta">
+              <div class="wfcmp-delta-title">
+                Quantified improvement — GBDL vs. Traditional
+              </div>
+              <div class="wfcmp-delta-grid">
+                <div class="wfcmp-delta-tile wfcmp-dt-1">
+                  <span class="wfcmp-dt-label">Iteration speed</span>
+                  <span class="wfcmp-dt-trad">Days – weeks</span>
+                  <span class="wfcmp-dt-gbdl">Minutes</span>
+                  <span class="wfcmp-dt-arrow">🚀</span>
+                </div>
+
+                <div class="wfcmp-delta-tile wfcmp-dt-2">
+                  <span class="wfcmp-dt-label">Design variants</span>
+                  <span class="wfcmp-dt-trad">Few explored</span>
+                  <span class="wfcmp-dt-gbdl">Many explored</span>
+                  <span class="wfcmp-dt-arrow">📐</span>
+                </div>
+
+                <div class="wfcmp-delta-tile wfcmp-dt-3">
+                  <span class="wfcmp-dt-label">Cost accuracy</span>
+                  <span class="wfcmp-dt-trad">±20–40%</span>
+                  <span class="wfcmp-dt-gbdl">Validated</span>
+                  <span class="wfcmp-dt-arrow">✅</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="wfcmp-footer">
+              Bidirectional arrows in GBDL column show live two-way coupling
+              between all three domains
+            </p>
+          </div>
+
+          <!-- Final image -->
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69df3f134e33fe3e76584724_8.png"
+            alt="AFP-XS system in operation"
+            class="full-width-image"
+          />
+        </section>
+
+        <!-- Reading the Research -->
+        <section id="reading-the-research">
+          <h2>Reading the Research</h2>
+          <p>The full paper is open access and available at:</p>
+          <div class="highlight-box">
+            <p>
+              Schopper, C.; Schopper, D.; Holland, M.; Dinkelacker, J.;
+              Schuster, J.; Rudolph, S. Model-Based Engineering Process
+              Automation from Design to Manufacturing of Fiber Composite
+              Helicopter Structures Using Graph-Based Design Languages.
+              <em>Aerospace</em> 2026, 13, 311.
+              <a
+                href="https://doi.org/10.3390/aerospace13040311"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://doi.org/10.3390/aerospace13040311</a
+              >
+            </p>
+          </div>
+          <p>
+            The research was funded by the German Federal Ministry for Economic
+            Affairs and Climate Action (BMWK) under the LuFo program, grant
+            numbers 20W1908B, 20W1908D, and 20W1908E. Data are not publicly
+            available due to confidentiality agreements with Airbus Helicopters
+            Deutschland.
+          </p>
+          <p>
+            Addcomposites provides the AFP-XS fiber placement system, AddPath
+            path planning software, and AddCell robotic cells — the
+            manufacturing execution layer that frameworks like COBAIN are
+            designed to connect to. If you're working on design-to-manufacture
+            integration for CFRP aerospace components and want to understand how
+            AFP-XS fits into a model-based engineering workflow, get in touch.
+          </p>
+        </section>
+
+        <!-- Learn More Section -->
+        <section id="learn-more">
+          <h2>Learn More</h2>
+          <div class="learn-more-container">
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/all-products/afp-xs"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AFP-XS</span>
+                <span class="learn-more-desc"
+                  >Entry-level automated fiber placement</span
+                >
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/all-products/afp-x"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AFP-X</span>
+                <span class="learn-more-desc">Advanced multi-tow system</span>
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/addpath"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AddPath</span>
+                <span class="learn-more-desc"
+                  >AI-powered path planning software</span
+                >
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/post/afp-machines-and-components"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">Complete Guide</span>
+                <span class="learn-more-desc"
+                  >The Complete Guide to AFP Machines</span
+                >
+              </div>
+            </a>
+          </div>
+
+          <div class="cta-section">
+            <p>
+              Working on design-to-manufacture integration for CFRP aerospace
+              components? Get in touch to discuss how AFP-XS fits into a
+              model-based engineering workflow →
+            </p>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/contact-us"
+              class="cta-button"
+              >Contact Us for a Consultation</a
+            >
+          </div>
+        </section>
+
+        <!-- References Section -->
+        <section id="references">
+          <h2>References</h2>
+          <ol class="references-list">
+            <li>
+              Schopper, C.; Schopper, D.; Holland, M.; Dinkelacker, J.;
+              Schuster, J.; Rudolph, S. Model-Based Engineering Process
+              Automation from Design to Manufacturing of Fiber Composite
+              Helicopter Structures Using Graph-Based Design Languages.
+              <em>Aerospace</em> 2026, 13, 311.
+              <a
+                href="https://doi.org/10.3390/aerospace13040311"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://doi.org/10.3390/aerospace13040311</a
+              >
+            </li>
+            <li>
+              Addcomposites. AFP-XS Automated Fiber Placement System.
+              <a
+                href="https://www.addcomposites.com/all-products/afp-xs"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://www.addcomposites.com/all-products/afp-xs</a
+              >
+            </li>
+            <li>
+              Addcomposites. AddPath Path Planning Software.
+              <a
+                href="https://www.addcomposites.com/addpath"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://www.addcomposites.com/addpath</a
+              >
+            </li>
+          </ol>
+
+          <p style="font-size: 0.9375rem; color: #475569; margin-top: 1.5rem">
+            This post was prepared by the Addcomposites team. Addcomposites
+            develops the AFP-XS automated fiber placement platform. For
+            questions about AFP process development and model-based engineering
+            integration, contact us at
+            <a
+              href="https://www.addcomposites.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >addcomposites.com</a
+            >.
+          </p>
+        </section>
+
+        <!-- Author Section -->
+        <section class="author-section">
+          <div class="author-card">
+            <div class="author-image-wrapper">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/65dc93e2c8b30f7b6484e473_contact-lwr-img1.jpg"
+                alt="Pravin Luthada"
+                class="author-image"
+              />
+            </div>
+            <div class="author-info">
+              <h3 class="author-name">Pravin Luthada</h3>
+              <p class="author-title">CEO &amp; Co-founder, Addcomposites</p>
+              <div class="author-social">
+                <a
+                  href="https://www.linkedin.com/in/pravinluthada/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <svg viewBox="0 0 24 24" fill="#0A66C2">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                  </svg>
+                </a>
+                <a href="mailto:pravin@addcomposites.com" aria-label="Email">
+                  <svg viewBox="0 0 24 24" fill="#EA4335">
+                    <path
+                      d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.youtube.com/@addcomposites"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
+                  <svg viewBox="0 0 24 24" fill="#FF0000">
+                    <path
+                      d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <h4 class="about-author-label">About Author</h4>
+              <p class="author-bio">
+                As the author of the Addcomposites blog, Pravin Luthada's
+                insights are forged from a distinguished career in advanced
+                materials, beginning as a space scientist at the Indian Space
+                Research Organisation (ISRO). During his tenure, he gained
+                hands-on expertise in manufacturing composite components for
+                satellites and launch vehicles, where he witnessed firsthand the
+                prohibitive costs of traditional Automated Fiber Placement (AFP)
+                systems. This experience became the driving force behind his
+                entrepreneurial venture, Addcomposites Oy, which he co-founded
+                and now leads as CEO. The company is dedicated to democratizing
+                advanced manufacturing by developing patented, plug-and-play AFP
+                toolheads that make automation accessible and affordable. This
+                unique journey from designing space-grade hardware to leading a
+                disruptive technology company provides Pravin with a
+                comprehensive, real-world perspective that informs his writing
+                on the future of the composites industry.
+              </p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
