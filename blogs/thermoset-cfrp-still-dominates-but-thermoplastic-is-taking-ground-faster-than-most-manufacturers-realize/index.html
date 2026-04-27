@@ -1,0 +1,2397 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Thermoset CFRP Still Dominates But Thermoplastic Is Taking Ground Faster
+      Than Most Manufacturers Realize
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Assistant:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Reading Progress Bar (injected by JS) -->
+
+    <!-- Mobile Nav Toggle -->
+    <button class="mobile-nav-toggle" aria-label="Open navigation menu">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
+
+    <!-- Blog Layout -->
+    <div class="blog-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="blog-sidebar">
+        <button class="sidebar-close" aria-label="Close navigation">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+          Close Menu
+        </button>
+        <p class="blog-sidebar-title">Contents</p>
+        <nav class="blog-sidebar-nav">
+          <a href="#thermoset-problem" class="blog-sidebar-link active"
+            >The Problem With Thermosets</a
+          >
+          <a href="#history" class="blog-sidebar-link">A Brief History</a>
+          <a href="#polymer-landscape" class="blog-sidebar-link"
+            >The Polymer Landscape</a
+          >
+          <a href="#fiber-forms" class="blog-sidebar-link">Fiber Forms</a>
+          <a href="#processing-routes" class="blog-sidebar-link"
+            >Processing Routes</a
+          >
+          <a href="#welding" class="blog-sidebar-link">Welding</a>
+          <a href="#pressure-vessels" class="blog-sidebar-link"
+            >Pressure Vessels</a
+          >
+          <a href="#recycling" class="blog-sidebar-link"
+            >The Recycling Imperative</a
+          >
+          <a href="#addcomposites" class="blog-sidebar-link"
+            >Where Addcomposites Sits</a
+          >
+          <a href="#roadmap" class="blog-sidebar-link">The Roadmap Ahead</a>
+          <a href="#conclusion" class="blog-sidebar-link">What This Means</a>
+          <a href="#references" class="blog-sidebar-link">References</a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="blog-content">
+        <!-- Hero -->
+        <h1>
+          Thermoset CFRP Still Dominates But Thermoplastic Is Taking Ground
+          Faster Than Most Manufacturers Realize
+        </h1>
+
+        <!-- Blog Meta -->
+        <div class="blog-meta">
+          <span class="blog-meta-item">
+            <svg
+              class="blog-meta-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            2026
+          </span>
+          <span class="blog-meta-item">
+            <svg
+              class="blog-meta-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            Pravin Luthada
+          </span>
+          <span class="blog-meta-item">
+            <svg
+              class="blog-meta-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            15 min read
+          </span>
+        </div>
+        <p class="subtitle">
+          Based on: Wang et al., "Carbon Fiber Reinforced Thermoplastics: From
+          Materials to Manufacturing and Applications,"
+          <em>Advanced Materials</em>, 2025. DOI: 10.1002/adma.202418709
+        </p>
+        <img
+          src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69ef57f10ad652834ed35839_1.png"
+          alt="CFRP component locations in a commercial aircraft"
+          class="full-width-image"
+        />
+
+        <!-- Intro -->
+        <section id="intro">
+          <p class="drop-cap">
+            Over the past five decades, carbon fiber reinforced polymers (CFRPs)
+            rewrote what was possible in aerospace structures. Boeing's 787
+            Dreamliner reached 50 wt% CFRP. Airbus's A350 pushed to 53 wt%,
+            realizing 50% lower structural maintenance costs over its
+            predecessor. Light aircraft are now approaching 70–80 wt% CFRP. This
+            first wave of adoption — aerospace-led, autoclave-cured,
+            thermoset-dominated — is well understood.
+          </p>
+          <p>
+            What is less understood is that a second, more disruptive transition
+            is already underway.
+          </p>
+          <p>
+            A landmark 2025 review published in <em>Advanced Materials</em> by
+            Wang, Huo, Chevali, Hall, Offringa, Song, and Wang provides the most
+            comprehensive current mapping of carbon fiber reinforced
+            thermoplastics (CFRTs): where they stand today, where they
+            outperform thermosets, and where the manufacturing gaps remain. For
+            anyone making platform-level material system decisions — or building
+            the automated fiber placement tools that serve those decisions —
+            this paper is required reading.
+          </p>
+          <p>
+            This post draws directly from that review to build an honest picture
+            of the thermoplastic transition, its constraints, and what it means
+            for high-rate manufacturing strategy.
+          </p>
+        </section>
+
+        <!-- Section 1: The Problem With Thermosets -->
+        <section id="thermoset-problem">
+          <h2>The Problem With Thermosets at Scale</h2>
+          <p>
+            Thermoset CFRPs dominate the current market, with epoxies leading.
+            Their three-dimensional cross-linked networks deliver excellent
+            mechanical properties, chemical resistance, and dimensional
+            stability. But those same cross-links are the source of their most
+            serious limitation: they cannot be melted, reformed, or welded.
+          </p>
+          <p>
+            At the end of service life, thermoset CFRP parts can only be
+            landfilled or mechanically ground. Constructing "covalent adaptable
+            networks" (CANs) within thermosets using dynamic covalent bonds —
+            imine bonds, ester bonds, disulfide bonds — is an active research
+            area, but as the review notes, CAN-based thermosets are still far
+            from commercialization, with mechanical properties and stability
+            remaining in question.
+          </p>
+          <p>
+            The second problem is production rate. Autoclave-cure thermosets
+            require long cycle times, high capital infrastructure, and cannot be
+            welded — meaning every joint in a structure requires mechanical
+            fasteners. In a single fuselage section, this can mean thousands of
+            titanium fastener installations, each adding weight, labor time, and
+            a potential fatigue initiation site.
+          </p>
+
+          <!-- INFOGRAPHIC 1 PLACEHOLDER -->
+
+          <div class="tvtp-root" id="tvtp-root">
+            <p class="tvtp-eyebrow">Material Systems · Process Comparison</p>
+            <h2 class="tvtp-title">
+              Thermoset vs. Thermoplastic: Where They Diverge
+            </h2>
+            <p class="tvtp-subtitle">
+              Six dimensions that define the manufacturing and lifecycle gap
+            </p>
+
+            <!-- Column headers -->
+            <div class="tvtp-col-headers">
+              <div class="tvtp-col-header-spacer"></div>
+              <div class="tvtp-col-header ts">Thermoset</div>
+              <div class="tvtp-col-header tp">Thermoplastic</div>
+            </div>
+
+            <!-- Rows -->
+            <div class="tvtp-rows" id="tvtp-rows">
+              <!-- Row 1: Processing -->
+              <div class="tvtp-row">
+                <div class="tvtp-row-label">Processing Path</div>
+                <div class="tvtp-cell ts">
+                  <div class="tvtp-cell-main">Autoclave Required</div>
+                  <div class="tvtp-cell-sub">
+                    High-pressure consolidation needed
+                  </div>
+                  <div class="tvtp-badge warn">⚠ Capital Intensive</div>
+                </div>
+                <div class="tvtp-cell tp">
+                  <div class="tvtp-cell-main">OOA Capable</div>
+                  <div class="tvtp-cell-sub">Out-of-autoclave processing</div>
+                  <div class="tvtp-badge good">✓ No Autoclave</div>
+                </div>
+              </div>
+
+              <!-- Row 2: Cycle Time -->
+              <div class="tvtp-row">
+                <div class="tvtp-row-label">Cycle Time</div>
+                <div class="tvtp-cell ts">
+                  <div class="tvtp-cell-main">Hours → Days</div>
+                  <div class="tvtp-bar-wrap">
+                    <div class="tvtp-bar-track">
+                      <div class="tvtp-bar-fill ts" data-w="85"></div>
+                    </div>
+                    <div class="tvtp-bar-label">Long cure cycles</div>
+                  </div>
+                </div>
+                <div class="tvtp-cell tp">
+                  <div class="tvtp-cell-main">Minutes → Seconds</div>
+                  <div class="tvtp-bar-wrap">
+                    <div class="tvtp-bar-track">
+                      <div class="tvtp-bar-fill tp" data-w="28"></div>
+                    </div>
+                    <div class="tvtp-bar-label">
+                      In-situ consolidation achievable
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 3: Toughness -->
+              <div class="tvtp-row">
+                <div class="tvtp-row-label">Toughness</div>
+                <div class="tvtp-cell ts">
+                  <div class="tvtp-cell-main">Moderate</div>
+                  <div class="tvtp-bar-wrap">
+                    <div class="tvtp-bar-track">
+                      <div class="tvtp-bar-fill ts" data-w="42"></div>
+                    </div>
+                    <div class="tvtp-bar-label">Baseline</div>
+                  </div>
+                </div>
+                <div class="tvtp-cell tp">
+                  <div class="tvtp-cell-main">HIGH</div>
+                  <div class="tvtp-bar-wrap">
+                    <div class="tvtp-bar-track">
+                      <div class="tvtp-bar-fill tp" data-w="92"></div>
+                    </div>
+                    <div class="tvtp-bar-label">
+                      Up to 4× fatigue endurance vs. metals
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 4: Joining -->
+              <div class="tvtp-row">
+                <div class="tvtp-row-label">Joining</div>
+                <div class="tvtp-cell ts">
+                  <div class="tvtp-cell-main">Bolted / Bonded</div>
+                  <div class="tvtp-cell-sub">Mechanical fasteners</div>
+                  <div class="tvtp-badge warn">+ Weight penalty</div>
+                </div>
+                <div class="tvtp-cell tp">
+                  <div class="tvtp-cell-main">WELDABLE</div>
+                  <div class="tvtp-tags">
+                    <span class="tvtp-tag">UW</span>
+                    <span class="tvtp-tag">IW</span>
+                    <span class="tvtp-tag">RW</span>
+                    <span class="tvtp-tag">LW</span>
+                  </div>
+                  <div class="tvtp-badge good">Fastener-free assembly</div>
+                </div>
+              </div>
+
+              <!-- Row 5: End of Life -->
+              <div class="tvtp-row">
+                <div class="tvtp-row-label">End of Life</div>
+                <div class="tvtp-cell ts">
+                  <div class="tvtp-cell-main">✗ Landfill / Grinding</div>
+                  <div class="tvtp-cell-sub">
+                    No closed-loop recovery pathway
+                  </div>
+                  <div class="tvtp-badge warn">Non-recyclable</div>
+                </div>
+                <div class="tvtp-cell tp">
+                  <div class="tvtp-cell-main">✓ Remelt / Reform / Recycle</div>
+                  <div class="tvtp-cell-sub">
+                    In-plant scrap reuse demonstrated
+                  </div>
+                  <div class="tvtp-badge good">♻ Circular loop</div>
+                </div>
+              </div>
+
+              <!-- Row 6: Storage -->
+              <div class="tvtp-row">
+                <div class="tvtp-row-label">Storage</div>
+                <div class="tvtp-cell ts">
+                  <div class="tvtp-cell-main">Frozen Prepreg</div>
+                  <div class="tvtp-cell-sub">
+                    Limited shelf life · Cold chain required
+                  </div>
+                  <div class="tvtp-badge warn">⚠ OPEX overhead</div>
+                </div>
+                <div class="tvtp-cell tp">
+                  <div class="tvtp-cell-main">Room Temperature</div>
+                  <div class="tvtp-cell-sub">
+                    Indefinite shelf life · No cold chain
+                  </div>
+                  <div class="tvtp-badge good">✓ Stable storage</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Weight savings highlight -->
+            <div class="tvtp-weight-highlight" id="tvtp-wh">
+              <p class="tvtp-weight-title">
+                Thermoplastic CFRT — Performance vs. Metals
+              </p>
+              <div class="tvtp-weight-metrics">
+                <div class="tvtp-metric">
+                  <div class="tvtp-metric-val">60%</div>
+                  <div class="tvtp-metric-label">Weight savings vs. metals</div>
+                </div>
+                <div class="tvtp-metric">
+                  <div class="tvtp-metric-val">5×</div>
+                  <div class="tvtp-metric-label">Specific strength</div>
+                </div>
+                <div class="tvtp-metric">
+                  <div class="tvtp-metric-val">2×</div>
+                  <div class="tvtp-metric-label">Specific stiffness</div>
+                </div>
+                <div class="tvtp-metric">
+                  <div class="tvtp-metric-val">4×</div>
+                  <div class="tvtp-metric-label">
+                    Fatigue endurance vs. metals
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            The review quantifies these differences directly: CFRTs replace
+            metals with approximately 60% weight savings, five-fold increase in
+            specific strength, two-fold increase in specific stiffness, and
+            four-fold improvement in fatigue endurance. Out-of-autoclave
+            processing alone changes the economics of large-structure
+            manufacturing.
+          </p>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-value">60%</div>
+              <div class="stat-label">Weight savings vs. metals</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">5×</div>
+              <div class="stat-label">Specific strength increase</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">4×</div>
+              <div class="stat-label">Fatigue endurance improvement</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2: History -->
+        <section id="history">
+          <h2>
+            A Brief History of Why Thermoplastics Stalled — And Why They're Back
+          </h2>
+          <p>
+            Thermoplastic composites were not a recent invention. The earliest
+            work traces to the 1960s and 1970s, primarily in military and
+            defense. DuPont, Phillips Petroleum, and Exxon all developed
+            high-performance thermoplastics — PEEK was first patented in 1978.
+            But through the 1990s, major chemical companies shifted focus back
+            to thermoset composites. PEEK and its relatives were technically
+            superior in many respects but commercially marginal.
+          </p>
+
+          <!-- INFOGRAPHIC 2 PLACEHOLDER -->
+
+          <div class="cfrt-tl-root" id="cfrt-tl-root">
+            <p class="cfrt-tl-eyebrow">CFRT History · Adoption Dynamics</p>
+            <h2 class="cfrt-tl-title">
+              CFRT Adoption: A Timeline of Stalls and Revivals
+            </h2>
+            <p class="cfrt-tl-subtitle">
+              Eight decades from first patents to the thermoplastic renaissance
+            </p>
+
+            <div class="cfrt-tl-legend">
+              <div class="cfrt-tl-legend-item">
+                <div
+                  class="cfrt-tl-legend-dot"
+                  style="background: #47577c; border: 2px solid #47577c"
+                ></div>
+                Incremental development
+              </div>
+              <div class="cfrt-tl-legend-item">
+                <div class="cfrt-tl-legend-star">★</div>
+                Inflection point
+              </div>
+              <div class="cfrt-tl-legend-item">
+                <div
+                  class="cfrt-tl-legend-dot"
+                  style="background: #e8e8e8; border: 2px dashed #9d9d9c"
+                ></div>
+                Stall period
+              </div>
+            </div>
+
+            <div class="cfrt-tl-events" id="cfrt-tl-events">
+              <!-- 1940s -->
+              <div class="cfrt-tl-event" data-delay="0">
+                <div class="cfrt-tl-spine-cell">
+                  <div class="cfrt-tl-line-seg"></div>
+                  <div class="cfrt-tl-node regular">●</div>
+                  <div class="cfrt-tl-year">1940s</div>
+                </div>
+                <div class="cfrt-tl-card regular">
+                  <div class="cfrt-tl-card-title">First Composites Patents</div>
+                  <div class="cfrt-tl-card-body">
+                    Thermoset epoxies established as the default matrix.
+                    Thermoplastics largely absent from structural composites.
+                  </div>
+                  <span class="cfrt-tl-tag navy">Thermoset default</span>
+                </div>
+              </div>
+
+              <!-- 1960s -->
+              <div class="cfrt-tl-event" data-delay="80">
+                <div class="cfrt-tl-spine-cell">
+                  <div class="cfrt-tl-line-seg"></div>
+                  <div class="cfrt-tl-node regular">●</div>
+                  <div class="cfrt-tl-year">1960s</div>
+                </div>
+                <div class="cfrt-tl-card regular">
+                  <div class="cfrt-tl-card-title">
+                    Military / Defense Adoption Begins
+                  </div>
+                  <div class="cfrt-tl-card-body">
+                    Defense programs begin using thermoplastics. Limited to
+                    niche, non-structural roles.
+                  </div>
+                  <span class="cfrt-tl-tag navy">Non-structural only</span>
+                </div>
+              </div>
+
+              <!-- 1970s -->
+              <div class="cfrt-tl-event" data-delay="160">
+                <div class="cfrt-tl-spine-cell">
+                  <div class="cfrt-tl-line-seg"></div>
+                  <div class="cfrt-tl-node regular">●</div>
+                  <div class="cfrt-tl-year">1970s</div>
+                </div>
+                <div class="cfrt-tl-card regular">
+                  <div class="cfrt-tl-card-title">
+                    CFRP Wave 1 — Aerospace Leads
+                  </div>
+                  <div class="cfrt-tl-card-body">
+                    Composite use in aircraft: ~4% of structure. CFRP wave 1
+                    begins — aerospace leads with thermosets.
+                  </div>
+                  <span class="cfrt-tl-tag navy">~4% structural use</span>
+                </div>
+              </div>
+
+              <!-- 1978 inflection -->
+              <div class="cfrt-tl-event" data-delay="240">
+                <div class="cfrt-tl-spine-cell">
+                  <div
+                    class="cfrt-tl-line-seg"
+                    style="background: #bf3425; opacity: 0.4"
+                  ></div>
+                  <div class="cfrt-tl-node inflection">★</div>
+                  <div class="cfrt-tl-year" style="color: #bf3425">1978</div>
+                </div>
+                <div class="cfrt-tl-card inflection">
+                  <div class="cfrt-tl-card-title">
+                    PEEK Patented — A Technical Threshold
+                  </div>
+                  <div class="cfrt-tl-card-body">
+                    High-performance thermoplastics now technically viable.
+                    Market interest remains limited.
+                  </div>
+                  <span class="cfrt-tl-tag red">★ Inflection point</span>
+                </div>
+              </div>
+
+              <!-- 1990s STALL -->
+              <div class="cfrt-tl-event stall-zone" data-delay="320">
+                <div class="cfrt-tl-spine-cell">
+                  <div class="cfrt-tl-line-seg"></div>
+                  <div class="cfrt-tl-node stall">●</div>
+                  <div class="cfrt-tl-year">1990s</div>
+                </div>
+                <div class="cfrt-tl-card stall-card">
+                  <div class="cfrt-tl-card-title">
+                    ↓ STALL — Industry Pivots Back
+                  </div>
+                  <div class="cfrt-tl-card-body">
+                    DuPont, Phillips, Exxon briefly pursue thermoplastics, then
+                    pivot back to thermosets. Cost and processability barriers
+                    win. CFRT development slows.
+                  </div>
+                  <span class="cfrt-tl-tag gray">Cost barrier</span>
+                  <span class="cfrt-tl-tag gray">Processability barrier</span>
+                </div>
+              </div>
+
+              <!-- 2000s -->
+              <div class="cfrt-tl-event" data-delay="400">
+                <div class="cfrt-tl-spine-cell">
+                  <div class="cfrt-tl-line-seg"></div>
+                  <div class="cfrt-tl-node regular">●</div>
+                  <div class="cfrt-tl-year">2000s</div>
+                </div>
+                <div class="cfrt-tl-card regular">
+                  <div class="cfrt-tl-card-title">
+                    B787 & A350 Validate Thermoset CFRP at Scale
+                  </div>
+                  <div class="cfrt-tl-card-body">
+                    B787 (50 wt% CFRP) and A350 (53 wt%) validate thermoset CFRP
+                    at scale. Composite use surpasses 50% in aircraft. Wind
+                    energy overtakes aerospace in carbon fiber volume.
+                  </div>
+                  <span class="cfrt-tl-tag navy">50%+ structural CFRP</span>
+                  <span class="cfrt-tl-tag navy">Wind overtakes aerospace</span>
+                </div>
+              </div>
+
+              <!-- 2010s -->
+              <div class="cfrt-tl-event" data-delay="480">
+                <div class="cfrt-tl-spine-cell">
+                  <div class="cfrt-tl-line-seg"></div>
+                  <div class="cfrt-tl-node regular">●</div>
+                  <div class="cfrt-tl-year">2010s</div>
+                </div>
+                <div class="cfrt-tl-card regular">
+                  <div class="cfrt-tl-card-title">
+                    Fokker, DLR, GKN — Thermoplastic AFP Demos Begin
+                  </div>
+                  <div class="cfrt-tl-card-body">
+                    Thermoplastic AFP + welding demonstrations launch. CFRT wave
+                    begins in secondary aerospace structures. Automotive
+                    discovers CFRT for EV lightweighting.
+                  </div>
+                  <span class="cfrt-tl-tag navy">Secondary structures</span>
+                  <span class="cfrt-tl-tag navy">EV lightweighting</span>
+                </div>
+              </div>
+
+              <!-- 2020s REVIVAL -->
+              <div class="cfrt-tl-event revival-zone" data-delay="560">
+                <div class="cfrt-tl-spine-cell">
+                  <div class="cfrt-tl-line-seg"></div>
+                  <div class="cfrt-tl-node revival">★</div>
+                  <div class="cfrt-tl-year">2020s</div>
+                </div>
+                <div class="cfrt-tl-card revival-card">
+                  <div class="cfrt-tl-card-title">
+                    ★ REVIVAL — MFFD & Net-Zero Mandates Converge
+                  </div>
+                  <div class="cfrt-tl-card-body">
+                    MFFD: first fully thermoplastic fuselage demonstrator.
+                    Net-zero mandates + H₂ storage + 100 aircraft/month targets
+                    make thermoset limitations commercially acute. CFRT now in
+                    nacelles, ribs, floors, pressure vessels, automotive
+                    body-in-white, and UAV primary structure.
+                  </div>
+                  <span class="cfrt-tl-tag red">MFFD demonstrator</span>
+                  <span class="cfrt-tl-tag red">H₂ storage</span>
+                  <span class="cfrt-tl-tag red">100 aircraft/month</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Now / Revival summary banner -->
+            <div class="cfrt-tl-revival-banner" id="cfrt-tl-rvbanner">
+              <div class="cfrt-tl-revival-banner-title">
+                CFRT Is Now Active In
+              </div>
+              <div class="cfrt-tl-revival-tags">
+                <span class="cfrt-tl-revival-tag">Nacelles</span>
+                <span class="cfrt-tl-revival-tag">Ribs &amp; Floors</span>
+                <span class="cfrt-tl-revival-tag">Pressure Vessels</span>
+                <span class="cfrt-tl-revival-tag"
+                  >Automotive Body-in-White</span
+                >
+                <span class="cfrt-tl-revival-tag">UAV Primary Structure</span>
+              </div>
+            </div>
+          </div>
+
+          <p>Two forces have changed that calculus in the current revival:</p>
+
+          <div class="feature-grid">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" />
+                  <path d="M8 12l2 2 4-4" />
+                </svg>
+              </div>
+              <div>
+                <h4>Net-Zero Mandates</h4>
+                <p>
+                  The "audacious net zero goals" cited in the review are forcing
+                  aerospace and automotive OEMs to account for end-of-life
+                  recyclability in material system selection. CFRTs can be
+                  remelted, reformed, and recycled. Thermosets cannot.
+                </p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </div>
+              <div>
+                <h4>Production Rate Pressure</h4>
+                <p>
+                  Airbus and Boeing have publicly committed to production rates
+                  of 70–100 aircraft per month for single-aisle platforms. The
+                  Multifunctional Fuselage Demonstrator (MFFD) was designed
+                  explicitly to answer whether thermoplastic AFP plus welding
+                  could unlock those production rates.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CFRP aircraft image -->
+          <figure>
+            <img
+              src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69ef57f02cbcbb1ad0c65c62_2.jpeg"
+              alt="CFRP component locations in a commercial aircraft"
+              class="full-width-image"
+            />
+            <figcaption class="image-caption">
+              CFRP component locations in a commercial aircraft.
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- Section 3: Polymer Landscape -->
+        <section id="polymer-landscape">
+          <h2>The Polymer Landscape: Choosing Your Matrix</h2>
+          <p>
+            One of the clearest contributions of the Wang et al. review is its
+            systematic treatment of the thermoplastic matrix options. The
+            hierarchy runs from commodity plastics to ultra-high-performance
+            polymers, with cost and processing temperature moving in the same
+            direction.
+          </p>
+
+          <!-- Hierarchy image -->
+          <figure>
+            <img
+              src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69ef57f0a690c1ee1f148105_3.png"
+              alt="The hierarchy of amorphous and semicrystalline thermoplastics"
+              class="full-width-image"
+            />
+            <figcaption class="image-caption">
+              The hierarchy of amorphous and semicrystalline thermoplastics.
+              Wang et al., <em>Advanced Materials</em>, 2025, 37, 2418709. CC-BY
+              4.0.
+            </figcaption>
+          </figure>
+
+          <!-- INFOGRAPHIC 3 PLACEHOLDER -->
+
+          <div class="tms-root" id="tms-root">
+            <p class="tms-eyebrow">Material Engineering · Selection Guide</p>
+            <h2 class="tms-title">
+              Thermoplastic Matrix Selection: Performance vs. Processing
+              Temperature
+            </h2>
+            <p class="tms-subtitle">
+              Hover any material node to explore specs and applications
+            </p>
+
+            <div class="tms-chart-wrap" id="tms-chart-wrap">
+              <canvas id="tms-canvas"></canvas>
+              <div class="tms-tooltip" id="tms-tooltip">
+                <div class="tms-tt-name" id="tms-tt-name"></div>
+                <div class="tms-tt-row">
+                  <span class="tms-tt-key">Process Temp</span
+                  ><span class="tms-tt-val" id="tms-tt-temp"></span>
+                </div>
+                <div class="tms-tt-row">
+                  <span class="tms-tt-key">Tg / Tm</span
+                  ><span class="tms-tt-val" id="tms-tt-tg"></span>
+                </div>
+                <div class="tms-tt-row">
+                  <span class="tms-tt-key">Cost</span
+                  ><span class="tms-tt-val" id="tms-tt-cost"></span>
+                </div>
+                <div class="tms-tt-row">
+                  <span class="tms-tt-key">Performance Tier</span
+                  ><span class="tms-tt-val" id="tms-tt-tier"></span>
+                </div>
+                <div class="tms-tt-apps">
+                  <strong>Applications:</strong> <span id="tms-tt-apps"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tms-apps" id="tms-apps">
+              <div class="tms-apps-title">Key Applications by Matrix</div>
+              <div class="tms-apps-grid">
+                <div class="tms-app-row">
+                  <div class="tms-app-sector">
+                    Aerospace primary / secondary structures
+                  </div>
+                  <div class="tms-app-materials">
+                    <span class="tms-mat-tag">PEEK</span>
+                    <span class="tms-mat-tag">PEKK</span>
+                    <span class="tms-mat-tag">LMPAEK</span>
+                    <span class="tms-mat-tag">PPS</span>
+                  </div>
+                </div>
+                <div class="tms-app-row">
+                  <div class="tms-app-sector">
+                    Aerospace interiors (flame / smoke / toxicity)
+                  </div>
+                  <div class="tms-app-materials">
+                    <span class="tms-mat-tag">PEI</span>
+                  </div>
+                </div>
+                <div class="tms-app-row">
+                  <div class="tms-app-sector">
+                    Automotive exteriors / structures
+                  </div>
+                  <div class="tms-app-materials">
+                    <span class="tms-mat-tag">PA6</span>
+                    <span class="tms-mat-tag">PP</span>
+                  </div>
+                </div>
+                <div class="tms-app-row">
+                  <div class="tms-app-sector">
+                    Pressure vessels (H₂ storage)
+                  </div>
+                  <div class="tms-app-materials">
+                    <span class="tms-mat-tag">PA12</span>
+                    <span class="tms-mat-tag">PAEK systems</span>
+                  </div>
+                </div>
+                <div class="tms-app-row">
+                  <div class="tms-app-sector">Orthopedic</div>
+                  <div class="tms-app-materials">
+                    <span class="tms-mat-tag">PP</span>
+                    <span class="tms-mat-tag">PE</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+          <p>
+            LMPAEK deserves special attention. This "low-melt" poly(aryl ether
+            ketone) offers much of PEEK's performance at a melting temperature
+            50–70°C lower. That difference is not cosmetic — it directly reduces
+            infrastructure costs, energy consumption, and processing time. Cetex
+            TC1225 and TC1320 (CF/LMPAEK tapes from Toray/TenCate) are
+            processable in the 305–340°C window and have been validated in
+            fuselage demonstrators. As the review notes, LMPAEK is often thought
+            of as the fastest-manufacturing PAEK option — effective for
+            automated fiber placement, stamp forming, and welding.
+          </p>
+          <p>
+            PPS is the cost-competitive workhorse. At $5–15/kg versus PEEK's
+            $100–150/kg, PPS has found broad application across Airbus A330/A340
+            rudder nose ribs, aileron ribs, fixed-wing leading-edge assemblies,
+            and Fokker 50/70/100 structural floor panels. Its brittleness is a
+            real limitation, but for secondary structures it remains highly
+            competitive.
+          </p>
+          <p>
+            PEI (Ultem) dominates aerospace interiors. Its 220°C glass
+            transition, exceptional flame-smoke-toxicity properties, and large
+            100°C+ processing window make it the default for seat shells,
+            ducting, galleys, and trolleys across Boeing 737/747/757/767 and
+            Airbus A320 platforms.
+          </p>
+
+          <!-- Matrix comparison table -->
+          <div class="data-table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Matrix</th>
+                  <th>Tm / Tg</th>
+                  <th>Cost ($/kg)</th>
+                  <th>Key Applications</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>PEEK</strong></td>
+                  <td>Tm: 343°C</td>
+                  <td>$100–150</td>
+                  <td>Aerospace primary/secondary structures</td>
+                </tr>
+                <tr>
+                  <td><strong>PEKK</strong></td>
+                  <td>Tm: 305–360°C</td>
+                  <td>&gt;$200</td>
+                  <td>Aerospace primary structures</td>
+                </tr>
+                <tr>
+                  <td><strong>LMPAEK</strong></td>
+                  <td>Tm: 270–290°C</td>
+                  <td>$150–200</td>
+                  <td>Fuselage demonstrators, AFP, stamp forming</td>
+                </tr>
+                <tr>
+                  <td><strong>PPS</strong></td>
+                  <td>Tm: 280–290°C</td>
+                  <td>$5–15</td>
+                  <td>Airbus ribs, floor panels, secondary structures</td>
+                </tr>
+                <tr>
+                  <td><strong>PEI (Ultem)</strong></td>
+                  <td>Tg: ~220°C</td>
+                  <td>$15–25</td>
+                  <td>Aerospace interiors, seat shells, ducting</td>
+                </tr>
+                <tr>
+                  <td><strong>PA6 / PA12</strong></td>
+                  <td>Tm: 210–270°C</td>
+                  <td>$2–5</td>
+                  <td>Automotive structures, pressure vessels</td>
+                </tr>
+                <tr>
+                  <td><strong>PP</strong></td>
+                  <td>Tm: 160–180°C</td>
+                  <td>$2–5</td>
+                  <td>Automotive, orthopedic</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Section 4: Fiber Forms -->
+        <section id="fiber-forms">
+          <h2>Fiber Forms: Continuous vs. Discontinuous</h2>
+          <p>
+            The choice of polymer matrix is only half the equation. The fiber
+            architecture determines both mechanical performance and the viable
+            processing routes.
+          </p>
+
+          <!-- INFOGRAPHIC 4 PLACEHOLDER -->
+
+          <div class="cfam-root" id="cfam-root">
+            <p class="cfam-eyebrow">Composite Materials · Architecture Guide</p>
+            <h2 class="cfam-title">Carbon Fiber Architecture Map</h2>
+            <p class="cfam-subtitle">
+              Six fiber forms — from UD tape to nonwoven mat — mapped by
+              structure, processability and performance
+            </p>
+
+            <div class="cfam-columns">
+              <!-- LEFT: Continuous -->
+              <div>
+                <div class="cfam-col-header continuous">
+                  <div class="cfam-col-header-dot"></div>
+                  Continuous Fiber
+                </div>
+                <div class="cfam-cards" id="cfam-left">
+                  <div class="cfam-card continuous" data-delay="0">
+                    <div class="cfam-pattern">═══════════════</div>
+                    <div class="cfam-card-name">UD Tape</div>
+                    <ul class="cfam-bullets">
+                      <li>Thickness: 0.13–0.25 mm</li>
+                      <li>FVF: 50–60 wt%</li>
+                      <li>AFP / ATL / TTW processable</li>
+                      <li>Best mechanical properties</li>
+                    </ul>
+                  </div>
+
+                  <div class="cfam-card continuous" data-delay="80">
+                    <div class="cfam-pattern">▦▦▦▦▦▦▦▦▦▦▦▦</div>
+                    <div class="cfam-card-name">Organosheet</div>
+                    <ul class="cfam-bullets">
+                      <li>Fabric-based, fully impregnated</li>
+                      <li>~60s cycle time</li>
+                      <li>Stamp forming + overmolding</li>
+                      <li>Automotive / industrial</li>
+                    </ul>
+                  </div>
+
+                  <div class="cfam-card continuous" data-delay="160">
+                    <div class="cfam-pattern">▪▪▪ ▪▪ ▪▪▪</div>
+                    <div class="cfam-card-name">Chopped Tape (CTT)</div>
+                    <ul class="cfam-bullets">
+                      <li>From manufacturing offcuts</li>
+                      <li>Papermaking dispersal</li>
+                      <li>10× faster resin impregnation</li>
+                      <li>Complex geometries at scale</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cfam-divider"></div>
+
+              <!-- RIGHT: Discontinuous -->
+              <div>
+                <div class="cfam-col-header discontinuous">
+                  <div class="cfam-col-header-dot"></div>
+                  Discontinuous Fiber
+                </div>
+                <div class="cfam-cards right" id="cfam-right">
+                  <div class="cfam-card discontinuous" data-delay="40">
+                    <div class="cfam-pattern">· · · · · ·</div>
+                    <div class="cfam-card-name">Short Fiber</div>
+                    <ul class="cfam-bullets">
+                      <li>Pellet length: 3–4 mm</li>
+                      <li>Fiber in part: 0.2–0.4 mm</li>
+                      <li>Injection molding</li>
+                      <li>High volume, complex shapes</li>
+                      <li>Lower structural performance</li>
+                    </ul>
+                  </div>
+
+                  <div class="cfam-card discontinuous" data-delay="120">
+                    <div class="cfam-pattern">──────── ──────</div>
+                    <div class="cfam-card-name">Long Fiber (LCFT)</div>
+                    <ul class="cfam-bullets">
+                      <li>Injection / compression molded</li>
+                      <li>Better than short fiber</li>
+                      <li>Network structure → toughness</li>
+                      <li>Replacing metals in auto</li>
+                    </ul>
+                  </div>
+
+                  <div class="cfam-card discontinuous" data-delay="200">
+                    <div class="cfam-pattern">~≈≈~≈~≈≈~≈~</div>
+                    <div class="cfam-card-name">Nonwoven Mat</div>
+                    <ul class="cfam-bullets">
+                      <li>Recycled fiber feedstock</li>
+                      <li>Embodied energy reuse</li>
+                      <li>50% lower cost vs. virgin CF</li>
+                      <li>Competes on affordability</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Performance / Formability spectrum -->
+            <div class="cfam-spectrum" id="cfam-spectrum">
+              <div class="cfam-spectrum-title">
+                Performance &amp; Formability Spectrum
+              </div>
+
+              <div class="cfam-spec-row">
+                <div class="cfam-spec-label-left">Performance</div>
+                <div class="cfam-bar-track">
+                  <div class="cfam-bar-perf" id="cfam-perf-bar"></div>
+                </div>
+                <div class="cfam-spec-label-right"></div>
+              </div>
+
+              <div class="cfam-spec-row">
+                <div class="cfam-spec-label-left"></div>
+                <div class="cfam-bar-track">
+                  <div class="cfam-bar-form-wrap">
+                    <div class="cfam-bar-form" id="cfam-form-bar"></div>
+                  </div>
+                </div>
+                <div class="cfam-spec-label-right">Formability</div>
+              </div>
+
+              <div class="cfam-spec-axis">
+                <div></div>
+                <div class="cfam-spec-axis-inner">
+                  <span style="color: #47577c; font-weight: 700"
+                    >UD Tape (highest)</span
+                  >
+                  <span style="color: #bf3425; font-weight: 700"
+                    >Short Fiber (highest)</span
+                  >
+                </div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            The chopped tape (CTT) architecture is worth highlighting for its
+            strategic importance to the recycling economy. CTTs can be produced
+            from manufacturing waste — the review specifically cites Gulfstream
+            G650 elevator and rudder offcuts from GKN Fokker being reprocessed
+            into access door panels with stiffening ribs and variable wall
+            thickness. A part that would otherwise be landfilled becomes
+            structural feedstock. For manufacturers under ESG pressure, this is
+            a compelling circular economy story.
+          </p>
+
+          <!-- CTT papermaking image -->
+          <figure>
+            <img
+              src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69ef57f0490dc0de323cb11a_4.jpeg"
+              alt="The papermaking process for chopped carbon fiber tape (CTT) composites"
+              class="full-width-image"
+            />
+            <figcaption class="image-caption">
+              The papermaking process for chopped carbon fiber tape (CTT)
+              composites: raw CTT offcuts (top left) are dispersed in water
+              within a closed mold, then drained as the mold opens to deposit a
+              uniformly distributed CTT preform sheet (bottom left). This
+              process enables resin impregnation up to 10× faster than
+              conventional tape methods and allows complex geometries to be
+              formed from manufacturing scrap. Source: Wang et al., "Carbon
+              Fiber Reinforced Thermoplastics: From Materials to Manufacturing
+              and Applications," <em>Advanced Materials</em>, 2025, 37, 2418709.
+              DOI: 10.1002/adma.202418709. CC-BY 4.0.
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- Section 5: Processing Routes -->
+        <section id="processing-routes">
+          <h2>Processing Routes: Where the Decisions Get Made</h2>
+          <p>
+            Seven core processing methods are reviewed, each with distinct cost,
+            rate, and geometry tradeoffs:
+          </p>
+
+          <!-- Laser AFP image -->
+          <div class="split-layout">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69ef5839b02c8796a971678c_5.png"
+                alt="Laser-assisted tape placement: NIR laser heats the thermoplastic tape at the nip point"
+              />
+              <p class="image-caption">
+                NIR laser heats the thermoplastic tape at the nip point while
+                the consolidation roller bonds it to the substrate in a single
+                pass.
+              </p>
+            </div>
+
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69ef57f133971e58d272323a_6.png"
+                alt="AFP-XS head mid-laydown: laser heating zone visible at the nip point"
+                style="min-height: 290px"
+              />
+              <p class="image-caption">
+                AFP-XS head mid-laydown: laser heating zone visible at the nip
+                point during in-situ consolidation of carbon fiber thermoplastic
+                tape. Image: Addcomposites.
+              </p>
+            </div>
+          </div>
+
+          <!-- INFOGRAPHIC 5 PLACEHOLDER -->
+
+          <div class="cfdt-root" id="cfdt-root">
+            <p class="cfdt-eyebrow">Process Engineering · Selection Logic</p>
+            <h2 class="cfdt-title">CFRT Processing Decision Tree</h2>
+            <p class="cfdt-subtitle">
+              Select the right process by geometry — hover each card for specs
+            </p>
+
+            <!-- Root question -->
+            <div class="cfdt-root-q" id="cfdt-rq">
+              <div class="cfdt-root-q-pill">What is your part geometry?</div>
+            </div>
+
+            <!-- SVG connector lines: root → 4 branches -->
+            <svg
+              width="100%"
+              height="36"
+              viewBox="0 0 900 36"
+              preserveAspectRatio="none"
+              style="
+                display: block;
+                margin-bottom: 0;
+                opacity: 0;
+                transition: opacity 0.4s ease 0.15s;
+              "
+              id="cfdt-connector-svg"
+            >
+              <!-- vertical drop from centre -->
+              <line
+                x1="450"
+                y1="0"
+                x2="450"
+                y2="18"
+                stroke="#d3d9e8"
+                stroke-width="1.5"
+              />
+              <!-- horizontal bar -->
+              <line
+                x1="112"
+                y1="18"
+                x2="788"
+                y2="18"
+                stroke="#d3d9e8"
+                stroke-width="1.5"
+              />
+              <!-- drops to each of 4 columns -->
+              <line
+                x1="112"
+                y1="18"
+                x2="112"
+                y2="36"
+                stroke="#d3d9e8"
+                stroke-width="1.5"
+              />
+              <line
+                x1="337"
+                y1="18"
+                x2="337"
+                y2="36"
+                stroke="#d3d9e8"
+                stroke-width="1.5"
+              />
+              <line
+                x1="562"
+                y1="18"
+                x2="562"
+                y2="36"
+                stroke="#d3d9e8"
+                stroke-width="1.5"
+              />
+              <line
+                x1="788"
+                y1="18"
+                x2="788"
+                y2="36"
+                stroke="#d3d9e8"
+                stroke-width="1.5"
+              />
+            </svg>
+
+            <!-- Four branch columns -->
+            <div class="cfdt-branches">
+              <!-- Branch A: Flat / Mildly Curved -->
+              <div class="cfdt-branch" id="cfdt-b0" data-delay="200">
+                <div class="cfdt-branch-label geo-a">
+                  Flat / Mildly Curved Panels
+                </div>
+
+                <div class="cfdt-card navy">
+                  <div class="cfdt-card-name">AFP / ATL</div>
+                  <ul class="cfdt-card-bullets">
+                    <li>In-situ or post-consolidation (OOA)</li>
+                    <li>Laydown: 0.5–2 m/s</li>
+                    <li>Resolution: ±0.30 mm</li>
+                  </ul>
+                  <span class="cfdt-card-tag">High volume · Precision</span>
+                </div>
+
+                <div class="cfdt-card navy">
+                  <div class="cfdt-card-name">CCM</div>
+                  <ul class="cfdt-card-bullets">
+                    <li>Pressure: 2.5 MPa</li>
+                    <li>Feed: 30–80 m/h</li>
+                    <li>L-, U-, T-, J-, I-profiles</li>
+                    <li>Airbus + Boeing qualified</li>
+                  </ul>
+                  <span class="cfdt-card-tag">Constant cross-section</span>
+                </div>
+              </div>
+
+              <!-- Branch B: Cylinders / Pressure Vessels -->
+              <div class="cfdt-branch" id="cfdt-b1" data-delay="310">
+                <div class="cfdt-branch-label geo-b">
+                  Cylinders / Pressure Vessels
+                </div>
+
+                <div class="cfdt-card navy">
+                  <div class="cfdt-card-name">
+                    Thermoplastic Tape Winding (TTW)
+                  </div>
+                  <ul class="cfdt-card-bullets">
+                    <li>No post-processing required</li>
+                    <li>In-situ consolidation at nip point</li>
+                    <li>H₂ storage: Type III–V vessels</li>
+                    <li>70 MPa working pressure demonstrated</li>
+                  </ul>
+                  <span class="cfdt-card-tag">H₂ storage · OOA</span>
+                </div>
+              </div>
+
+              <!-- Branch C: 3D / Complex Shapes -->
+              <div class="cfdt-branch" id="cfdt-b2" data-delay="420">
+                <div class="cfdt-branch-label geo-c">3D / Complex Shapes</div>
+
+                <div class="cfdt-card red">
+                  <div class="cfdt-card-name">Stamp Forming</div>
+                  <ul class="cfdt-card-bullets">
+                    <li>Cycle time: minutes</li>
+                    <li>Heat above Tm / Tg → quench in tool</li>
+                    <li>Floor beams, brackets, ribs</li>
+                  </ul>
+                  <span class="cfdt-card-tag">Continuous fiber</span>
+                </div>
+
+                <div class="cfdt-card red">
+                  <div class="cfdt-card-name">Injection Overmolding</div>
+                  <ul class="cfdt-card-bullets">
+                    <li>Organosheet + short fiber injection</li>
+                    <li>Cycle time: ~60 s</li>
+                    <li>Automotive body-in-white</li>
+                  </ul>
+                  <span class="cfdt-card-tag">Local reinforcement</span>
+                </div>
+
+                <div class="cfdt-card gray">
+                  <div class="cfdt-card-name">3D Printing (FDM / SLS)</div>
+                  <ul class="cfdt-card-bullets">
+                    <li>CF cap: ~20 wt%</li>
+                    <li>Continuous fiber: in-situ or ex-situ fusion</li>
+                  </ul>
+                  <span class="cfdt-card-tag">Prototypes · Tooling</span>
+                </div>
+              </div>
+
+              <!-- Branch D: Discontinuous / High Volume -->
+              <div class="cfdt-branch" id="cfdt-b3" data-delay="530">
+                <div class="cfdt-branch-label geo-d">
+                  Discontinuous / High Volume
+                </div>
+
+                <div class="cfdt-card gray">
+                  <div class="cfdt-card-name">
+                    Compression / Injection Molding
+                  </div>
+                  <ul class="cfdt-card-bullets">
+                    <li>LCFT pellets, short fiber compounds</li>
+                    <li>Complex geometries, thin walls</li>
+                    <li>Automotive exterior / interior trim</li>
+                  </ul>
+                  <span class="cfdt-card-tag">High volume</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stamp forming image -->
+          <figure>
+            <img
+              src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69ef57f08e9eaeacbc352b20_7.png"
+              alt="Stamp forming process: heating, transfer, forming, removal"
+              class="full-width-image"
+            />
+            <figcaption class="image-caption">
+              Stamp forming process: (a) heating, (b) transfer, (c) forming, (d)
+              removal. Wang et al., <em>Advanced Materials</em>, 2025, 37,
+              2418709. CC-BY 4.0.
+            </figcaption>
+          </figure>
+
+          <!-- Injection overmolding image -->
+          <figure>
+            <img
+              src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69ef57f02700d4ea417a7895_8.png"
+              alt="CFRT injection overmolding process and shell-shaped CFRT rib structure"
+              class="full-width-image"
+            />
+            <figcaption class="image-caption">
+              (a) CFRT injection overmolding process. (b) Shell-shaped CFRT rib
+              structure overview and cross-section. Wang et al.,
+              <em>Advanced Materials</em>, 2025, 37, 2418709. CC-BY 4.0.
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- Section 6: Welding -->
+        <section id="welding">
+          <h2>Welding: The Capability That Changes Everything</h2>
+          <p>
+            This is the section of the review that most directly disrupts
+            conventional CFRP program economics — and the section that receives
+            the least attention in standard composite training.
+          </p>
+          <p>
+            Thermoset CFRP structures are joined with mechanical fasteners.
+            Every fastener is a hole in the laminate (stress concentration), a
+            metallic insert (weight penalty), a labor operation (cost), and a
+            maintenance point. A typical commercial aircraft fuselage section
+            uses tens of thousands of fasteners.
+          </p>
+          <p>
+            Thermoplastic welding eliminates the fastener. The thermoplastic
+            matrix, when heated above its melting point under pressure, achieves
+            molecular chain entanglement across the interface — producing a
+            joint indistinguishable from the bulk material. The review surveys
+            four industrially relevant techniques:
+          </p>
+
+          <!-- INFOGRAPHIC 6 PLACEHOLDER -->
+
+          <div class="wmc-root" id="wmc-root">
+            <p class="wmc-eyebrow">
+              Thermoplastic Joining · Process Comparison
+            </p>
+            <h2 class="wmc-title">Welding Method Comparison</h2>
+            <p class="wmc-subtitle">
+              Four thermoplastic welding technologies — heat source, capability,
+              and MFFD deployment
+            </p>
+
+            <div class="wmc-grid">
+              <!-- UW -->
+              <div class="wmc-card uw" data-delay="0">
+                <div class="wmc-card-header">
+                  <span class="wmc-card-icon">〰</span>
+                  <div class="wmc-card-abbr">UW</div>
+                  <div class="wmc-card-fullname">Ultrasonic Welding</div>
+                  <div class="wmc-mffd-badge">★ MFFD: Stringers</div>
+                </div>
+                <div class="wmc-card-body">
+                  <div class="wmc-row">
+                    <div class="wmc-row-label">Heat Source</div>
+                    <div class="wmc-row-val">
+                      Mechanical vibration (20–50 kHz)
+                    </div>
+                  </div>
+                  <div class="wmc-body-sep"></div>
+                  <div class="wmc-row">
+                    <div class="wmc-row-label">Weld Time</div>
+                    <div class="wmc-row-val">Seconds</div>
+                  </div>
+                  <div class="wmc-body-sep"></div>
+                  <div class="wmc-row">
+                    <div class="wmc-row-label">Large Structure</div>
+                    <div class="wmc-struct-val wmc-struct-note">
+                      Continuous UW possible
+                    </div>
+                  </div>
+                  <div class="wmc-body-sep"></div>
+                  <div class="wmc-row">
+                    <div class="wmc-row-label">Conductive Element</div>
+                    <div class="wmc-row-val">None required</div>
+                  </div>
+                  <div class="wmc-body-sep"></div>
+                  <div class="wmc-pill-row">
+                    <div class="wmc-pill strength">↑ Speed, automation</div>
+                    <div class="wmc-pill limit">
+                      ↓ Seamless welds for large struct.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- IW -->
+              <div class="wmc-card iw" data-delay="100">
+                <div class="wmc-card-header">
+                  <span class="wmc-card-icon">⌁</span>
+                  <div class="wmc-card-abbr">IW</div>
+                  <div class="wmc-card-fullname">Induction Welding</div>
+                  <div class="wmc-mffd-badge hidden">—</div>
+                </div>
+                <div class="wmc-card-body">
+                  <div class="wmc-row">
+                    <div class="wmc-row-label">Heat Source</div>
+                    <div class="wmc-row-val">Eddy currents (CF conducts)</div>
+                  </div>
+                  <div class="wmc-body-sep"></div>
+                  <div class="wmc-row">
+                    <div class="wmc-row-label">Weld Time</div>
+                    <div class="wmc-row-val">Seconds – minutes</div>
+                  </div>
+                  <div class="wmc-body-sep"></div>
+                  <div class="wmc-row">
+                    <div class="wmc-row-label">Large Structure</div>
+                    <div class="wmc-struct-val wmc-struct-note">
+                      Challenging (temp uniformity)
+                    </div>
+                  </div>
+                  <div class="wmc-body-sep"></div>
+                  <div class="wmc-row">
+                    <div class="wmc-row-label">Conductive Element</div>
+                    <div class="wmc-row-val">Coil only</div>
+                  </div>
+                  <div class="wmc-body-sep"></div>
+                  <div class="wmc-pill-row">
+                    <div class="wmc-pill strength">↑ Scalable heating</div>
+                    <div class="wmc-pill limit">↓ Temp uniformity at edges</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RW -->
+              <div class="wmc-card rw" data-delay="200">
+                <div class="wmc-card-header">
+                  <span class="wmc-card-icon">⚡</span>
+                  <div class="wmc-card-abbr">RW</div>
+                  <div class="wmc-card-fullname">Resistance Welding</div>
+                  <div class="wmc-mffd-badge">★ MFFD: Frames + Cleats</div>
+                </div>
+                <div class="wmc-card-body">
+                  <div class="wmc-row">
+                    <div class="wmc-row-label">Heat Source</div>
+                    <div class="wmc-row-val">
+                      Electrical element (CF / metal mesh)
+                    </div>
+                  </div>
+                  <div class="wmc-body-sep"></div>
+                  <div class="wmc-row">
+                    <div class="wmc-row-label">Weld Time</div>
+                    <div class="wmc-row-val">1–4 minutes</div>
+                  </div>
+                  <div class="wmc-body-sep"></div>
+                  <div class="wmc-row">
+                    <div class="wmc-row-label">Large Structure</div>
+                    <div class="wmc-struct-val wmc-struct-yes">
+                      ✓ Yes (proven)
+                    </div>
+                  </div>
+                  <div class="wmc-body-sep"></div>
+                  <div class="wmc-row">
+                    <div class="wmc-row-label">Conductive Element</div>
+                    <div class="wmc-row-val">Required (CF / metal)</div>
+                  </div>
+                  <div class="wmc-body-sep"></div>
+                  <div class="wmc-pill-row">
+                    <div class="wmc-pill strength">
+                      ↑ Large area, reproducible
+                    </div>
+                    <div class="wmc-pill limit">
+                      ↓ Element compatibility vs. matrix
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LW -->
+              <div class="wmc-card lw" data-delay="300">
+                <div class="wmc-card-header">
+                  <span class="wmc-card-icon">✦</span>
+                  <div class="wmc-card-abbr">LW</div>
+                  <div class="wmc-card-fullname">Laser Welding</div>
+                  <div class="wmc-mffd-badge">★ MFFD: AFP (CO₂, 10.6μm)</div>
+                </div>
+                <div class="wmc-card-body">
+                  <div class="wmc-row">
+                    <div class="wmc-row-label">Heat Source</div>
+                    <div class="wmc-row-val">
+                      Laser beam (transmission welding)
+                    </div>
+                  </div>
+                  <div class="wmc-body-sep"></div>
+                  <div class="wmc-row">
+                    <div class="wmc-row-label">Weld Time</div>
+                    <div class="wmc-row-val">Seconds</div>
+                  </div>
+                  <div class="wmc-body-sep"></div>
+                  <div class="wmc-row">
+                    <div class="wmc-row-label">Large Structure</div>
+                    <div class="wmc-struct-val wmc-struct-yes">✓ Yes</div>
+                  </div>
+                  <div class="wmc-body-sep"></div>
+                  <div class="wmc-row">
+                    <div class="wmc-row-label">Conductive Element</div>
+                    <div class="wmc-row-val">None required</div>
+                  </div>
+                  <div class="wmc-body-sep"></div>
+                  <div class="wmc-pill-row">
+                    <div class="wmc-pill strength">
+                      ↑ No element, low stress
+                    </div>
+                    <div class="wmc-pill limit">
+                      ↓ CF reflects / absorbs laser
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick-compare strip -->
+            <div class="wmc-compare" id="wmc-compare">
+              <div class="wmc-compare-title">At-a-Glance Comparison</div>
+
+              <div class="wmc-compare-row">
+                <div class="wmc-compare-key"></div>
+                <div class="wmc-compare-cell nav-bg">UW</div>
+                <div class="wmc-compare-cell nav-bg">IW</div>
+                <div class="wmc-compare-cell red-bg">RW</div>
+                <div class="wmc-compare-cell red-bg">LW</div>
+              </div>
+
+              <div class="wmc-compare-row">
+                <div class="wmc-compare-key">Weld Time</div>
+                <div class="wmc-compare-cell nav-bg">Seconds</div>
+                <div class="wmc-compare-cell">Sec – min</div>
+                <div class="wmc-compare-cell">1–4 min</div>
+                <div class="wmc-compare-cell nav-bg">Seconds</div>
+              </div>
+
+              <div class="wmc-compare-row">
+                <div class="wmc-compare-key">Element Needed</div>
+                <div class="wmc-compare-cell nav-bg">None</div>
+                <div class="wmc-compare-cell">Coil only</div>
+                <div class="wmc-compare-cell red-bg">Required</div>
+                <div class="wmc-compare-cell nav-bg">None</div>
+              </div>
+
+              <div class="wmc-compare-row">
+                <div class="wmc-compare-key">Large Structure</div>
+                <div class="wmc-compare-cell gray-bg">Possible</div>
+                <div class="wmc-compare-cell red-bg">Challenging</div>
+                <div class="wmc-compare-cell nav-bg">✓ Proven</div>
+                <div class="wmc-compare-cell nav-bg">✓ Yes</div>
+              </div>
+
+              <div class="wmc-compare-row">
+                <div class="wmc-compare-key">MFFD Role</div>
+                <div class="wmc-compare-cell nav-bg">Stringers</div>
+                <div class="wmc-compare-cell gray-bg">—</div>
+                <div class="wmc-compare-cell nav-bg">Frames + Cleats</div>
+                <div class="wmc-compare-cell nav-bg">AFP in-situ</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <h4>The MFFD Proof-of-Concept</h4>
+            <p>
+              The Multifunctional Fuselage Demonstrator upper shell was produced
+              by DLR using AFP for skin lay-up, robotic ultrasonic welding for
+              stringer integration, and resistance welding for frame and cleat
+              attachment. The target: 70–100 aircraft per month, €1 million
+              per-fuselage cost reduction, 1,000 kg weight reduction versus the
+              A321 ACF. GKN Fokker led the lower shell under the STUNNING
+              project.
+            </p>
+          </div>
+
+          <!-- MFFD image -->
+          <figure>
+            <img
+              src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69ef57f1ea4719e677134128_9.png"
+              alt="MFFD production steps: AFP skin lay-up, ultrasonic welding of stringers, resistance welding of frames"
+              class="full-width-image"
+            />
+            <figcaption class="image-caption">
+              MFFD production steps: (a) AFP skin lay-up, (b) continuous
+              ultrasonic welding of stringers, (c–d) resistance welding of
+              frames, (e) cleat integration, (f) completed upper-shell
+              demonstrator. Wang et al., <em>Advanced Materials</em>, 2025, 37,
+              2418709. CC-BY 4.0.
+            </figcaption>
+          </figure>
+
+          <p>
+            The assembly of the fuselage halves used a butt-strap longitudinal
+            joint on one side and ultrasonic welding on the opposing side —
+            fastener-free, continuous, and automated.
+          </p>
+        </section>
+
+        <!-- Section 7: Pressure Vessels -->
+        <section id="pressure-vessels">
+          <h2>Pressure Vessels: The Hydrogen Economy Opens a New Front</h2>
+          <p>
+            The review dedicates substantial treatment to CFRT composite
+            pressure vessels (CPVs) for hydrogen storage — a market driven by
+            fuel cell electric vehicles and single-aisle aircraft using liquid
+            or cryo-compressed hydrogen.
+          </p>
+          <p>
+            The CPV market for gas and liquid storage represents 8% of global
+            CFRP demand, with carbon fiber production capacity targeted to grow
+            by more than 20%. The hierarchy of CPV types (I through V) tracks a
+            clear progression from full-metal to full-composite construction,
+            with weight, fatigue resistance, and volumetric capacity all
+            improving as composite content increases.
+          </p>
+
+          <!-- CPV types image -->
+          <figure>
+            <img
+              src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69ef57f0e5d20c3e2f342f99_10.png"
+              alt="CPV design types I–V, hydrogen storage density, and H2 permeation mechanisms"
+              class="full-width-image"
+            />
+            <figcaption class="image-caption">
+              (a) CPV design types I–V. (b) Hydrogen storage density vs.
+              temperature. (c) H₂ permeation mechanisms in composite walls. Wang
+              et al., <em>Advanced Materials</em>, 2025, 37, 2418709. CC-BY 4.0.
+            </figcaption>
+          </figure>
+
+          <p>
+            Type IV vessels (plastic liner, full composite overwrap) already
+            power the Toyota Mirai and Honda Clarity at 70 MPa. Type V — no
+            liner at all, composite as both structure and gas barrier —
+            represents the next frontier, eliminating liner-composite strain
+            incompatibility and reducing weight by a further 10–20%.
+          </p>
+          <p>
+            CFRT tape winding (TTW) is the primary manufacturing route for CPVs,
+            processing CF-PA12 tape for ground transport and CF-PAEK systems for
+            higher-performance aviation applications. The in-situ consolidation
+            achieved during winding means no secondary autoclave step — a
+            significant cycle time and cost advantage over thermoset filament
+            winding.
+          </p>
+
+          <!-- TTW schematic image -->
+          <div class="split-layout">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69ef57f02a943291913805d3_11.png"
+                alt="Schematic of the thermoplastic tape winding (TTW) process"
+                style="min-height: 240px"
+              />
+              <p class="image-caption">
+                Schematic of the thermoplastic tape winding (TTW) process. Wang
+                et al., <em>Advanced Materials</em>, 2025, 37, 2418709. CC-BY
+                4.0.
+              </p>
+            </div>
+
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69ef583916c5c958a21560d8_12.png"
+                alt="AFP-XS winding thermoplastic carbon fiber tape onto a cylindrical mandrel"
+              />
+              <p class="image-caption">
+                AFP-XS winding thermoplastic carbon fiber tape onto a
+                cylindrical mandrel with in-situ consolidation — no autoclave
+                step required. Image: Addcomposites.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 8: Recycling -->
+        <section id="recycling">
+          <h2>The Recycling Imperative</h2>
+          <p>
+            One of the clearest strategic arguments for CFRTs over thermosets is
+            also one of the least discussed: what happens at end of life.
+          </p>
+          <p>
+            The review maps the European waste hierarchy — prevention, reuse,
+            repurposing, recycling, recovery, disposal — against the actual
+            options available to CFRP operators. Thermosets offer only the lower
+            tiers: mechanical grinding, energy recovery, or landfill.
+            Thermoplastics can be remelted, reformed, and reused in structural
+            applications.
+          </p>
+
+          <!-- Waste hierarchy image -->
+          <figure>
+            <img
+              src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69ef57f060481169260d73bc_13.png"
+              alt="European waste hierarchy with CFRT recycling routes, offcut carbon fiber, recycled carbon fiber"
+              class="full-width-image"
+            />
+            <figcaption class="image-caption">
+              (a) European waste hierarchy with CFRT recycling routes. (b)
+              Offcut carbon fiber. (c) Recycled carbon fiber. Wang et al.,
+              <em>Advanced Materials</em>, 2025, 37, 2418709. CC-BY 4.0.
+            </figcaption>
+          </figure>
+
+          <p>
+            The commercial precedent already exists. TenCate and GKN Fokker
+            demonstrated this in 2016: scrap from Gulfstream G650 elevator and
+            rudder production (Cetex TC1100 CF/PPS) was reprocessed into access
+            door panels with integral stiffening ribs, bosses, and variable
+            thickness. Less virgin material, thinner and lighter parts, at lower
+            cost.
+          </p>
+
+          <!-- Circular economy image -->
+          <figure>
+            <img
+              src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69ef57ef4f3f3981a8d38715_14.jpeg"
+              alt="Circular economy pathways for carbon fiber reinforced thermoplastics"
+              class="full-width-image"
+            />
+            <figcaption class="image-caption">
+              Circular economy pathways for carbon fiber reinforced
+              thermoplastics: market waste (left, green) and recycled CF are
+              redirected back into productive use as continuous CFRT, chopped
+              tape (CTT), carbon fiber mat (CMT), or injection/LFT-D feedstock,
+              rather than going to waste (bottom right, purple). In-plant
+              manufacturing waste (blue) similarly feeds back into the
+              production loop. This is the model demonstrated by GKN Fokker and
+              TenCate in 2016, where Gulfstream G650 production scrap (Cetex
+              TC1100 CF/PPS) was reprocessed into structural access door panels
+              — achieving thinner, lighter, and more cost-effective parts than
+              virgin material alone. Source: Wang et al., "Carbon Fiber
+              Reinforced Thermoplastics: From Materials to Manufacturing and
+              Applications," <em>Advanced Materials</em>, 2025, 37, 2418709.
+              DOI: 10.1002/adma.202418709. CC-BY 4.0.
+            </figcaption>
+          </figure>
+
+          <div class="highlight-box">
+            <h4>The Economics of Recycled Carbon Fiber</h4>
+            <p>
+              Recycled carbon fiber costs approximately 50% less than virgin
+              fiber — a compelling economics argument even before considering
+              regulatory pressure toward circular manufacturing.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 9: Where Addcomposites Sits -->
+        <section id="addcomposites">
+          <h2>Where Addcomposites Sits in This Transition</h2>
+
+          <!-- AFP-XS product image -->
+          <figure>
+            <img
+              src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6968c73f61f65945581b62d9_5.png"
+              alt="AFP-XS system"
+              class="full-width-image"
+            />
+          </figure>
+
+          <!-- Nip-point temperature image -->
+          <div class="split-layout">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69ef57ef82001269315e04f2_16.jpeg"
+                alt="Nip-point temperature distribution and void/crystallinity gradient"
+              />
+              <p class="image-caption">
+                Nip-point temperature distribution (top) and resulting
+                void/crystallinity gradient through the laminate thickness
+                (bottom) during thermoplastic AFP — the key process variables
+                that determine in-situ consolidation quality without autoclave
+                post-processing. Wang et al., <em>Advanced Materials</em>, 2025,
+                37, 2418709. CC-BY 4.0.
+              </p>
+            </div>
+            <div class="split-text">
+              <p>
+                The AFP-XS system is designed precisely for the manufacturing
+                inflection point this review describes. Thermoplastic AFP is not
+                an incremental upgrade to thermoset AFP — it is a fundamentally
+                different process, requiring tighter control of nip-point
+                temperature, compaction force, and laydown speed to achieve
+                in-situ consolidation without secondary autoclave steps.
+              </p>
+              <p>
+                The review's data on LATP (laser-assisted tape placement) is
+                directly relevant: temperature, pressure, and speed are all
+                adjustable to achieve in-situ consolidation, and CO₂ lasers
+                (10.6 μm wavelength) are specifically suited to LMPAEK because
+                standard fiber lasers at 1,060 nm are not efficiently absorbed
+                by the polymer matrix. The MFFD's lower shell AFP used exactly
+                this configuration.
+              </p>
+              <p>
+                At current ISC speeds of 60–100 mm/s, thermoplastic AFP is
+                competitive for fuselage structures without secondary processing
+                steps. Larger, thicker structures (wings) still benefit from
+                post-consolidation, but the trajectory is clearly toward full
+                in-situ consolidation as process robustness improves.
+              </p>
+            </div>
+          </div>
+
+          <!-- INFOGRAPHIC 7 PLACEHOLDER -->
+
+          <div class="isc-root" id="isc-root">
+            <p class="isc-eyebrow">Thermoplastic AFP · Process Readiness</p>
+            <h2 class="isc-title">
+              Where In-Situ Consolidation Is Competitive Today
+            </h2>
+            <p class="isc-subtitle">
+              Current ISC capability boundaries for thermoplastic AFP — fuselage
+              geometries vs. thick primary structure
+            </p>
+
+            <!-- Two-column ready / not-yet -->
+            <div class="isc-split">
+              <!-- Ready -->
+              <div class="isc-col ready" id="isc-ready" data-delay="0">
+                <div class="isc-col-header">
+                  <span class="isc-col-header-icon">✓</span>
+                  <span class="isc-col-header-text"
+                    >Suitable for ISC Today</span
+                  >
+                </div>
+                <div class="isc-items" id="isc-ready-items">
+                  <div class="isc-item" data-item-delay="100">
+                    <div class="isc-item-dot"></div>
+                    <div class="isc-item-text">Fuselage skins (thin)</div>
+                  </div>
+                  <div class="isc-item" data-item-delay="170">
+                    <div class="isc-item-dot"></div>
+                    <div class="isc-item-text">Ribs and brackets</div>
+                  </div>
+                  <div class="isc-item" data-item-delay="240">
+                    <div class="isc-item-dot"></div>
+                    <div class="isc-item-text">Floor beams</div>
+                  </div>
+                  <div class="isc-item" data-item-delay="310">
+                    <div class="isc-item-dot"></div>
+                    <div class="isc-item-text">Pressure vessel domes</div>
+                  </div>
+                  <div class="isc-item" data-item-delay="380">
+                    <div class="isc-item-dot"></div>
+                    <div class="isc-item-text">
+                      UAV / light aircraft structures
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Not Yet -->
+              <div class="isc-col notyet" id="isc-notyet" data-delay="120">
+                <div class="isc-col-header">
+                  <span class="isc-col-header-icon">⚠</span>
+                  <span class="isc-col-header-text"
+                    >Not Yet Fully ISC-Competitive</span
+                  >
+                </div>
+                <div class="isc-items" id="isc-notyet-items">
+                  <div class="isc-item" data-item-delay="180">
+                    <div class="isc-item-dot"></div>
+                    <div class="isc-item-text">Thick wing structures</div>
+                  </div>
+                  <div class="isc-item" data-item-delay="250">
+                    <div class="isc-item-dot"></div>
+                    <div class="isc-item-text">Complex double-curvature</div>
+                  </div>
+                  <div class="isc-item" data-item-delay="320">
+                    <div class="isc-item-dot"></div>
+                    <div class="isc-item-text">Highly loaded primary spars</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Spec cards -->
+            <div class="isc-specs" id="isc-specs">
+              <div class="isc-spec-card">
+                <div class="isc-spec-label">ISC Speed Range</div>
+                <div>
+                  <span class="isc-spec-val">60–100</span>
+                  <span class="isc-spec-unit"> mm/s</span>
+                </div>
+                <div class="isc-gauge-wrap">
+                  <div class="isc-gauge-track">
+                    <div
+                      class="isc-gauge-fill"
+                      id="isc-speed-bar"
+                      data-w="62"
+                    ></div>
+                  </div>
+                  <div class="isc-gauge-ticks">
+                    <span>0</span><span>50</span><span>100</span
+                    ><span>160 mm/s</span>
+                  </div>
+                </div>
+                <div class="isc-spec-note">
+                  LMPAEK tapes · post-consolidation still used for PEEK at
+                  higher speeds
+                </div>
+              </div>
+
+              <div class="isc-spec-card">
+                <div class="isc-spec-label">Laydown Accuracy</div>
+                <div>
+                  <span class="isc-spec-val">±0.30</span>
+                  <span class="isc-spec-unit"> mm</span>
+                </div>
+                <div class="isc-gauge-wrap">
+                  <div class="isc-gauge-track">
+                    <div
+                      class="isc-gauge-fill"
+                      id="isc-acc-bar"
+                      data-w="88"
+                      style="
+                        background: linear-gradient(to right, #47577c, #9aacca);
+                      "
+                    ></div>
+                  </div>
+                  <div class="isc-gauge-ticks">
+                    <span>±1.0 mm</span><span></span><span>Aerospace spec</span>
+                  </div>
+                </div>
+                <div class="isc-spec-note">
+                  Aerospace specification compliant
+                </div>
+              </div>
+            </div>
+
+            <div class="isc-footnote" id="isc-footnote">
+              ISC = In-Situ Consolidation · OOA = Out-of-Autoclave · LMPAEK =
+              Low-Melt PAEK
+            </div>
+          </div>
+
+          <p>
+            For programs where cycle time and fastener elimination are the
+            primary drivers — short-range aircraft, UAVs, pressure vessels,
+            automotive structural inserts — thermoplastic AFP with in-situ
+            consolidation is not a future capability. It is available now.
+          </p>
+        </section>
+
+        <!-- Section 10: Roadmap -->
+        <section id="roadmap">
+          <h2>The Roadmap Ahead</h2>
+          <p>
+            The review's conclusion section identifies several clear vectors for
+            thermoplastic CFRT development over the next decade:
+          </p>
+
+          <div class="feature-grid">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="3" />
+                  <path
+                    d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4>Materials</h4>
+                <p>
+                  Thicker tapes (up to 0.18 mm) are in demand. Hybrid
+                  semicrystalline/amorphous polymer architectures are being
+                  developed to maintain processing flexibility without
+                  sacrificing final crystallinity. Surface treatment of carbon
+                  fiber for thermoplastic compatibility remains an underinvested
+                  area — epoxy sizings designed for thermosets are still the
+                  default, limiting interface quality in CFRT applications.
+                </p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+              </div>
+              <div>
+                <h4>Processing</h4>
+                <p>
+                  Fiber steering in AFP — optimizing fiber orientation for
+                  complex shapes beyond standard 0°/45°/90° layups — is an
+                  active development area. OOA forming and coconsolidation are
+                  being extended to complex spars, beams, and integrally
+                  stiffened skins. In-situ process monitoring and control are
+                  critical to reducing the current reliance on coupon-level
+                  process development before scaling to production.
+                </p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4>Joining</h4>
+                <p>
+                  Current leakage issues in resistance welding need systematic
+                  resolution. Continuous ultrasonic welding for large structures
+                  requires further optimization of velocity and energy
+                  parameters. Laser welding of CFRT-to-CFRT remains a challenge
+                  due to carbon fiber's absorption and reflection of laser
+                  energy.
+                </p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="23 4 23 10 17 10" />
+                  <polyline points="1 20 1 14 7 14" />
+                  <path
+                    d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4>Recycling</h4>
+                <p>
+                  Large-scale commercial recycling of CFRT manufacturing waste —
+                  beyond the proof-of-concept level demonstrated by GKN Fokker —
+                  is the next frontier. The MFFD project's use of
+                  injection-molded short fiber blends from production scrap
+                  points toward a closed-loop model that will become
+                  increasingly important as regulatory requirements tighten.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 11: Conclusion -->
+        <section id="conclusion">
+          <h2>What This Means for Your Program</h2>
+          <p>
+            The Wang et al. review does not argue that thermoset CFRP is
+            finished — for highly loaded primary structures with complex
+            geometry and no production rate pressure, autoclave-cured thermoset
+            remains the performance-per-cost optimum today. What the review
+            makes clear is the trajectory: thermoplastic CFRTs are gaining
+            ground in every sector where production rate, recyclability,
+            weldability, or room-temperature storage matter — which is most of
+            the growth in the CFRP market over the next two decades.
+          </p>
+          <p>
+            Wind energy already consumes more carbon fiber than aerospace.
+            Electric vehicles are driving automotive CFRP demand into territory
+            that thermoset cycle times cannot serve. Hydrogen storage is an
+            entirely new market with no incumbent thermoset position. And even
+            in aerospace, the MFFD project has demonstrated that fully
+            thermoplastic fuselage structures are not hypothetical.
+          </p>
+          <p>
+            The manufacturers who commit to thermoplastic AFP infrastructure now
+            will have the process knowledge, the certified material databases,
+            and the weld-joining capabilities that will define competitive
+            advantage as these markets mature.
+          </p>
+
+          <!-- Concluding image -->
+          <figure>
+            <img
+              src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69df3f134e33fe3e76584724_8.png"
+              alt="Addcomposites AFP system"
+              class="full-width-image"
+            />
+          </figure>
+
+          <div class="highlight-box">
+            <h4>Source Note</h4>
+            <p>
+              This post is based on: Wang H.H., Huo S., Chevali V., Hall W.,
+              Offringa A., Song P., Wang H. "Carbon Fiber Reinforced
+              Thermoplastics: From Materials to Manufacturing and Applications."
+              <em>Advanced Materials</em>, 2025, 37, 2418709. DOI:
+              10.1002/adma.202418709. Open Access under CC-BY 4.0. Data on
+              specific properties, processing parameters, and application
+              examples cited throughout this post are drawn directly from the
+              above publication. Additional context on AFP-XS capabilities
+              reflects Addcomposites' product documentation.
+            </p>
+          </div>
+        </section>
+
+        <!-- Learn More Cards -->
+        <section id="learn-more">
+          <h2>Learn More</h2>
+          <div class="learn-more-container">
+            <a
+              href="https://www.addcomposites.com/afp-xs"
+              class="learn-more-card"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5" />
+                  <path d="M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AFP-XS</span>
+                <span class="learn-more-desc"
+                  >Compact AFP head for research and low-rate production</span
+                >
+              </div>
+            </a>
+            <a
+              href="https://www.addcomposites.com/afp-x"
+              class="learn-more-card"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AFP-X</span>
+                <span class="learn-more-desc"
+                  >Industrial-grade AFP system for high-rate production</span
+                >
+              </div>
+            </a>
+            <a
+              href="https://www.addcomposites.com/addpath"
+              class="learn-more-card"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AddPath</span>
+                <span class="learn-more-desc"
+                  >Offline programming and simulation software for AFP</span
+                >
+              </div>
+            </a>
+            <a
+              href="https://www.addcomposites.com/complete-guide"
+              class="learn-more-card"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">Complete Guide</span>
+                <span class="learn-more-desc"
+                  >Everything you need to know about AFP technology</span
+                >
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+          <p>
+            Ready to explore thermoplastic AFP for your program? The AFP-XS is
+            available now for in-situ consolidation of PEEK, PEKK, LMPAEK, and
+            PPS tapes — no autoclave required.
+          </p>
+          <a
+            href="https://www.addcomposites.com/contact"
+            class="cta-button"
+            target="_blank"
+            rel="noopener"
+            >Get in Touch</a
+          >
+        </div>
+
+        <!-- References -->
+        <section id="references">
+          <h2>References</h2>
+          <ol class="references-list">
+            <li>
+              Wang H.H., Huo S., Chevali V., Hall W., Offringa A., Song P., Wang
+              H. "Carbon Fiber Reinforced Thermoplastics: From Materials to
+              Manufacturing and Applications." <em>Advanced Materials</em>,
+              2025, 37, 2418709. DOI:
+              <a
+                href="https://doi.org/10.1002/adma.202418709"
+                target="_blank"
+                rel="noopener"
+                >10.1002/adma.202418709</a
+              >. Open Access under CC-BY 4.0.
+            </li>
+          </ol>
+        </section>
+
+        <!-- Author Section -->
+        <section class="author-section">
+          <div class="author-card">
+            <div class="author-image-wrapper">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/65dc93e2c8b30f7b6484e473_contact-lwr-img1.jpg"
+                alt="Pravin Luthada"
+                class="author-image"
+              />
+            </div>
+            <div class="author-info">
+              <h3 class="author-name">Pravin Luthada</h3>
+              <p class="author-title">CEO &amp; Co-founder, Addcomposites</p>
+              <div class="author-social">
+                <a
+                  href="https://www.linkedin.com/in/pravinluthada/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <svg viewBox="0 0 24 24" fill="#0A66C2">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                  </svg>
+                </a>
+                <a href="mailto:pravin@addcomposites.com" aria-label="Email">
+                  <svg viewBox="0 0 24 24" fill="#EA4335">
+                    <path
+                      d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.youtube.com/@addcomposites"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
+                  <svg viewBox="0 0 24 24" fill="#FF0000">
+                    <path
+                      d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <h4 class="about-author-label">About Author</h4>
+              <p class="author-bio">
+                As the author of the Addcomposites blog, Pravin Luthada's
+                insights are forged from a distinguished career in advanced
+                materials, beginning as a space scientist at the Indian Space
+                Research Organisation (ISRO). During his tenure, he gained
+                hands-on expertise in manufacturing composite components for
+                satellites and launch vehicles, where he witnessed firsthand the
+                prohibitive costs of traditional Automated Fiber Placement (AFP)
+                systems. This experience became the driving force behind his
+                entrepreneurial venture, Addcomposites Oy, which he co-founded
+                and now leads as CEO. The company is dedicated to democratizing
+                advanced manufacturing by developing patented, plug-and-play AFP
+                toolheads that make automation accessible and affordable. This
+                unique journey from designing space-grade hardware to leading a
+                disruptive technology company provides Pravin with a
+                comprehensive, real-world perspective that informs his writing
+                on the future of the composites industry.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Back to Top (injected by JS) -->
+    <script src="script.js"></script>
+  </body>
+</html>
