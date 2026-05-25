@@ -1,0 +1,2605 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Every CFRP Application in Automotive Lightweighting Mapped | Addcomposites
+    </title>
+    <meta
+      name="description"
+      content="A 2025 open-access review maps every CFRP automotive application — where it's already delivering, how OEMs are pushing through cost and process barriers, and what the pipeline looks like heading into 2030."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,600&family=Assistant:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Mobile Navigation Toggle Button -->
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="blog-layout">
+      <!-- Sidebar -->
+      <nav class="blog-sidebar" aria-label="Table of Contents">
+        <!-- Close button (mobile only) -->
+        <button class="sidebar-close" aria-label="Close navigation menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          Close Menu
+        </button>
+        <h3 class="blog-sidebar-title">Contents</h3>
+        <div class="blog-sidebar-nav">
+          <a href="#weight-penalty" class="blog-sidebar-link active"
+            >Weight Penalty</a
+          >
+          <a href="#property-stack" class="blog-sidebar-link"
+            >CFRP Property Stack</a
+          >
+          <a href="#application-map" class="blog-sidebar-link"
+            >Application Map</a
+          >
+          <a href="#manufacturing-processes" class="blog-sidebar-link"
+            >Manufacturing Processes</a
+          >
+          <a href="#barriers" class="blog-sidebar-link">Barriers to Adoption</a>
+          <a href="#research-pipeline" class="blog-sidebar-link"
+            >Research Pipeline</a
+          >
+          <a href="#afp-perspective" class="blog-sidebar-link"
+            >AFP Perspective</a
+          >
+          <a href="#structural-summary" class="blog-sidebar-link"
+            >Structural Summary</a
+          >
+          <a href="#conclusion" class="blog-sidebar-link">Conclusion</a>
+          <a href="#learn-more" class="blog-sidebar-link">Learn More</a>
+          <a href="#references" class="blog-sidebar-link">References</a>
+        </div>
+      </nav>
+
+      <article class="blog-content">
+        <!-- Title -->
+        <h1>
+          Every CFRP Application in Automotive Lightweighting Mapped: Where the
+          Biggest Untapped Gains Still Lie
+        </h1>
+
+        <!-- Blog Meta -->
+        <div class="blog-meta">
+          <span class="blog-meta-item">
+            <svg
+              class="blog-meta-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            2025
+          </span>
+          <span class="blog-meta-item">
+            <svg
+              class="blog-meta-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Addcomposites
+          </span>
+          <span class="blog-meta-item">
+            <svg
+              class="blog-meta-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            ~12 min read
+          </span>
+        </div>
+
+        <!-- Hero Image -->
+        <img
+          src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a13cbdc577aa0229b40ebe9_1.png"
+          alt="CFRP automotive lightweighting overview"
+          class="full-width-image"
+        />
+
+        <!-- Introduction -->
+        <section id="introduction">
+          <p class="drop-cap">
+            Every automotive program conversation eventually reaches the same
+            wall: "Why not CFRP everywhere?" Behind that wall sit three
+            objections — raw material cost, process complexity, and an
+            essentially non-existent recycling infrastructure. A 2025
+            open-access review published in MATEC Web of Conferences by Haifeng
+            Tang of Tianjin University of Commerce maps the entire current
+            landscape: where CFRP is already delivering, how leading OEMs are
+            pushing through those three barriers, and what the research pipeline
+            looks like heading into 2030. This post unpacks that map, adds our
+            own perspective on where automated fiber placement fits, and gives
+            AFP-XS customers a single-document reference for their next OEM
+            conversation.
+          </p>
+          <div class="highlight-box">
+            <h4>Paper Credit</h4>
+            <p>
+              All data, figures, and findings described below come from: Haifeng
+              Tang. "Research Progress of Carbon Fiber Composite Materials in
+              Automobile Body Lightweight." MATEC Web of Conferences 410, 03011
+              (2025).
+              <a
+                href="https://doi.org/10.1051/matecconf/202541003011"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://doi.org/10.1051/matecconf/202541003011</a
+              >
+              — © 2025 by the authors. Licensed under
+              <a
+                href="https://creativecommons.org/licenses/by/4.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CC BY 4.0</a
+              >. The authors make no endorsement of Addcomposites or its
+              products.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 1 -->
+        <section id="weight-penalty">
+          <h2>1. The Weight Penalty Has a Price Tag</h2>
+          <p>
+            Before any discussion of CFRP makes sense, it helps to understand
+            just how expensive vehicle mass actually is. The paper quantifies
+            the stakes clearly: trimming 100 kg from kerb weight translates to
+            roughly 8–11 fewer grams of CO₂ per kilometre, and stretches usable
+            range by somewhere between 5% and 8%. Those numbers translate
+            directly into regulatory risk for OEMs and into operating cost for
+            fleet buyers. The "dual carbon" climate framework — net-peak
+            emissions before 2030, net neutrality before 2060 in the Chinese
+            market, mirrored by Euro 7 in Europe — has turned lightweighting
+            from an engineering aspiration into a compliance obligation.
+          </p>
+          <p>
+            The paper walks through the historical trajectory of automotive
+            materials before CFRP. Conventional steel (density ~7.8 g/cm³)
+            dominated for decades on the strength of its stamping formability
+            and well-understood crash behavior, but carries an inherent weight
+            penalty. Aluminum alloy, broadly adopted after 2000, cut density by
+            roughly 65% relative to steel — but introduced its own tradeoffs:
+            more complex cold-forming, galvanic corrosion at steel joints, and a
+            recycling energy bill that can exceed the cost of primary smelting.
+            Magnesium (density ~1.74 g/cm³) saw niche deployment in seat frames
+            and similar secondary structures, but intergranular corrosion in
+            humid environments and poor high-temperature creep resistance
+            limited its structural role. Engineering plastics work for
+            non-load-bearing trim but lack the modulus — typically under 3 GPa —
+            needed anywhere structural stiffness matters.
+          </p>
+          <p>The paper characterizes this as a three-way paradox:</p>
+
+          <!-- INFOGRAPHIC 1 PLACEHOLDER -->
+
+          <div class="tri-wrap" id="triWrap">
+            <div class="tri-title">The Lightweight Design Tradeoff</div>
+            <div class="tri-subtitle">
+              Hover each vertex to explore the tension
+            </div>
+
+            <svg
+              class="tri-svg-area"
+              viewBox="0 -20 480 360"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <!-- Triangle fill -->
+              <polygon
+                points="240,28 68,272 412,272"
+                fill="rgba(71,87,124,0.05)"
+                stroke="#47577c"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+              />
+
+              <!-- Inner tension lines (medians, subtle) -->
+              <line
+                x1="240"
+                y1="28"
+                x2="240"
+                y2="272"
+                stroke="#e2e8f0"
+                stroke-width="1"
+                stroke-dasharray="4 4"
+              />
+              <line
+                x1="68"
+                y1="272"
+                x2="326"
+                y2="150"
+                stroke="#e2e8f0"
+                stroke-width="1"
+                stroke-dasharray="4 4"
+              />
+              <line
+                x1="412"
+                y1="272"
+                x2="154"
+                y2="150"
+                stroke="#e2e8f0"
+                stroke-width="1"
+                stroke-dasharray="4 4"
+              />
+
+              <!-- Centroid dot -->
+              <circle cx="240" cy="190" r="5" fill="#9d9d9c" opacity="0.5" />
+
+              <!-- ── LIGHTWEIGHT vertex (top) ── -->
+              <g
+                class="tri-node"
+                id="nodeTop"
+                onmouseenter="showTip('tipTop')"
+                onmouseleave="hideTip('tipTop')"
+              >
+                <circle cx="240" cy="28" r="36" fill="#47577c" />
+                <text
+                  x="240"
+                  y="22"
+                  text-anchor="middle"
+                  fill="white"
+                  font-family="Inter,sans-serif"
+                  font-size="10"
+                  font-weight="700"
+                  letter-spacing="0.04em"
+                >
+                  LIGHT
+                </text>
+                <text
+                  x="240"
+                  y="35"
+                  text-anchor="middle"
+                  fill="white"
+                  font-family="Inter,sans-serif"
+                  font-size="10"
+                  font-weight="700"
+                  letter-spacing="0.04em"
+                >
+                  WEIGHT
+                </text>
+              </g>
+
+              <!-- ── COST vertex (bottom-left) ── -->
+              <g
+                class="tri-node"
+                id="nodeLeft"
+                onmouseenter="showTip('tipLeft')"
+                onmouseleave="hideTip('tipLeft')"
+              >
+                <circle cx="68" cy="272" r="36" fill="#bf3425" />
+                <text
+                  x="68"
+                  y="276"
+                  text-anchor="middle"
+                  fill="white"
+                  font-family="Inter,sans-serif"
+                  font-size="11"
+                  font-weight="700"
+                  letter-spacing="0.04em"
+                >
+                  COST
+                </text>
+              </g>
+
+              <!-- ── PERFORMANCE vertex (bottom-right) ── -->
+              <g
+                class="tri-node"
+                id="nodeRight"
+                onmouseenter="showTip('tipRight')"
+                onmouseleave="hideTip('tipRight')"
+              >
+                <circle cx="412" cy="272" r="36" fill="#9d9d9c" />
+                <text
+                  x="412"
+                  y="268"
+                  text-anchor="middle"
+                  fill="white"
+                  font-family="Inter,sans-serif"
+                  font-size="10"
+                  font-weight="700"
+                  letter-spacing="0.04em"
+                >
+                  PERFOR
+                </text>
+                <text
+                  x="412"
+                  y="281"
+                  text-anchor="middle"
+                  fill="white"
+                  font-family="Inter,sans-serif"
+                  font-size="10"
+                  font-weight="700"
+                  letter-spacing="0.04em"
+                >
+                  MANCE
+                </text>
+              </g>
+
+              <!-- Edge labels -->
+              <text
+                x="148"
+                y="148"
+                text-anchor="middle"
+                fill="#bf3425"
+                font-family="Inter,sans-serif"
+                font-size="10"
+                font-weight="600"
+                transform="rotate(-58,148,148)"
+              >
+                Mass Reduction
+              </text>
+              <text
+                x="334"
+                y="148"
+                text-anchor="middle"
+                fill="#47577c"
+                font-family="Inter,sans-serif"
+                font-size="10"
+                font-weight="600"
+                transform="rotate(58,334,148)"
+              >
+                Structural Gain
+              </text>
+              <text
+                x="240"
+                y="293"
+                text-anchor="middle"
+                fill="#9d9d9c"
+                font-family="Inter,sans-serif"
+                font-size="10"
+                font-weight="600"
+              >
+                Cost–Performance Tradeoff
+              </text>
+
+              <!-- ── Tooltip: LIGHTWEIGHT ── -->
+              <g class="tri-tooltip" id="tipTop">
+                <rect
+                  x="152"
+                  y="72"
+                  width="176"
+                  height="52"
+                  rx="8"
+                  ry="8"
+                  fill="#47577c"
+                  filter="url(#shadow)"
+                />
+                <polygon points="240,68 233,72 247,72" fill="#47577c" />
+                <text
+                  x="240"
+                  y="92"
+                  text-anchor="middle"
+                  fill="white"
+                  font-family="Inter,sans-serif"
+                  font-size="10"
+                  font-weight="700"
+                >
+                  Primary design objective
+                </text>
+                <text
+                  x="240"
+                  y="107"
+                  text-anchor="middle"
+                  fill="rgba(255,255,255,0.75)"
+                  font-family="Inter,sans-serif"
+                  font-size="9.5"
+                >
+                  Minimise structural mass
+                </text>
+              </g>
+
+              <!-- ── Tooltip: COST ── -->
+              <g class="tri-tooltip" id="tipLeft">
+                <rect
+                  x="58"
+                  y="186"
+                  width="172"
+                  height="52"
+                  rx="8"
+                  ry="8"
+                  fill="#bf3425"
+                  filter="url(#shadow)"
+                />
+                <polygon points="88,238 82,248 95,248" fill="#bf3425" />
+                <text
+                  x="144"
+                  y="206"
+                  text-anchor="middle"
+                  fill="white"
+                  font-family="Inter,sans-serif"
+                  font-size="10"
+                  font-weight="700"
+                >
+                  −10% mass ≈ +30% cost
+                </text>
+                <text
+                  x="144"
+                  y="222"
+                  text-anchor="middle"
+                  fill="rgba(255,255,255,0.8)"
+                  font-family="Inter,sans-serif"
+                  font-size="9.5"
+                >
+                  Traditional material substitution
+                </text>
+              </g>
+
+              <!-- ── Tooltip: PERFORMANCE ── -->
+              <g class="tri-tooltip" id="tipRight">
+                <rect
+                  x="250"
+                  y="186"
+                  width="172"
+                  height="52"
+                  rx="8"
+                  ry="8"
+                  fill="#555e72"
+                  filter="url(#shadow)"
+                />
+                <polygon points="393,238 387,248 400,248" fill="#555e72" />
+                <text
+                  x="336"
+                  y="206"
+                  text-anchor="middle"
+                  fill="white"
+                  font-family="Inter,sans-serif"
+                  font-size="10"
+                  font-weight="700"
+                >
+                  Stiffness / strength retention
+                </text>
+                <text
+                  x="336"
+                  y="222"
+                  text-anchor="middle"
+                  fill="rgba(255,255,255,0.8)"
+                  font-family="Inter,sans-serif"
+                  font-size="9.5"
+                >
+                  Key structural requirement
+                </text>
+              </g>
+
+              <!-- Drop shadow filter -->
+              <defs>
+                <filter
+                  id="shadow"
+                  x="-10%"
+                  y="-10%"
+                  width="120%"
+                  height="130%"
+                >
+                  <feDropShadow
+                    dx="0"
+                    dy="3"
+                    stdDeviation="4"
+                    flood-color="rgba(0,0,0,0.18)"
+                  />
+                </filter>
+              </defs>
+            </svg>
+
+            <!-- Stat banner -->
+            <div class="tri-stat-banner" id="triBanner">
+              <div class="tri-stat-icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 22 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 3L4 19H18L11 3Z"
+                    fill="white"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </div>
+              <div class="tri-stat-text">
+                <div class="tri-stat-main">Achieving −10% mass ≈ +30% cost</div>
+                <div class="tri-stat-sub">
+                  with traditional material substitution
+                </div>
+              </div>
+            </div>
+
+            <!-- Progress bar visualising the cost penalty -->
+            <div class="tri-bar-row" id="triBar">
+              <div class="tri-bar-labels">
+                <span>Mass reduction target (−10%)</span>
+                <span style="color: #bf3425">Cost increase (+30%)</span>
+              </div>
+              <div class="tri-bar-track">
+                <div class="tri-bar-fill" id="triBarFill"></div>
+              </div>
+              <div class="tri-bar-caption">
+                Cost penalty relative to baseline
+              </div>
+            </div>
+          </div>
+          <!-- END INFOGRAPHIC 1 -->
+
+          <p>
+            CFRP disrupts that triangle — but doesn't dissolve it. Understanding
+            where it disrupts it most, and where the residual tension remains,
+            is what the rest of the paper — and this post — is about.
+          </p>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="property-stack">
+          <h2>2. What CFRP Actually Delivers: The Property Stack</h2>
+          <p>
+            The mechanical case for carbon fiber reinforced polymer is well
+            established in aerospace. The automotive translation is less
+            obvious, so the paper lays it out in concrete terms.
+          </p>
+          <p>
+            CFRP's strength-to-density ratio outpaces both aluminum and steel by
+            roughly an order of magnitude, according to the paper. The specific
+            modulus (stiffness-to-density) ratio is roughly five times that of
+            steel. Under cyclic loading, CFRP retains a much larger share of its
+            static tensile capacity than steel does — where steel's fatigue
+            performance typically falls into the 30–50% range, CFRP consistently
+            holds 70–80%, a gap that compounds across millions of road-load
+            cycles.
+          </p>
+          <p>
+            The collision behavior is also distinctive. Rather than plastically
+            deforming and absorbing energy through yield (the steel mechanism),
+            CFRP progressively fragments under crush loading. The paper notes
+            that this fragmentation mechanism stores approximately double the
+            collision energy per kilogram compared to steel — meaning a CFRP
+            crash structure dissipates more impact load before it reaches the
+            occupant cell.
+          </p>
+
+          <!-- INFOGRAPHIC 2 PLACEHOLDER -->
+
+          <div class="cfrp-wrap" id="cfrpWrap">
+            <div class="cfrp-header">
+              <div>
+                <div class="cfrp-title">
+                  Specific Property Comparison — CFRP vs. Steel
+                </div>
+                <div class="cfrp-source">
+                  Source: Tang, MATEC Web of Conferences 410, 03011 (2025)
+                </div>
+              </div>
+              <div class="cfrp-legend">
+                <div class="cfrp-legend-item">
+                  <div
+                    class="cfrp-legend-dot"
+                    style="background: #47577c"
+                  ></div>
+                  <span style="color: #47577c">Steel</span>
+                </div>
+                <div class="cfrp-legend-item">
+                  <div
+                    class="cfrp-legend-dot"
+                    style="background: #bf3425"
+                  ></div>
+                  <span style="color: #bf3425">CFRP</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cfrp-rows" id="cfrpRows">
+              <!-- Row 1: Density -->
+              <div class="cfrp-row" data-delay="0">
+                <div class="cfrp-row-top">
+                  <div>
+                    <span class="cfrp-prop-name">Density</span>
+                    <span class="cfrp-prop-unit">g/cm³</span>
+                  </div>
+                  <div class="cfrp-ratio-badge">~0.22x</div>
+                </div>
+                <div class="cfrp-bars">
+                  <div class="cfrp-bar-row">
+                    <div class="cfrp-bar-label">Steel</div>
+                    <div class="cfrp-bar-track">
+                      <div class="cfrp-bar-fill steel" data-width="100"></div>
+                    </div>
+                    <div class="cfrp-bar-val">7.8</div>
+                  </div>
+                  <div class="cfrp-bar-row">
+                    <div class="cfrp-bar-label">CFRP</div>
+                    <div class="cfrp-bar-track">
+                      <div class="cfrp-bar-fill cfrp" data-width="21"></div>
+                    </div>
+                    <div class="cfrp-bar-val">1.5–1.8</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 2: Specific Strength -->
+              <div class="cfrp-row" data-delay="80">
+                <div class="cfrp-row-top">
+                  <div>
+                    <span class="cfrp-prop-name">Specific Strength</span>
+                    <span class="cfrp-prop-unit">MPa·cm³/g</span>
+                  </div>
+                  <div class="cfrp-ratio-badge">~11x</div>
+                </div>
+                <div class="cfrp-bars">
+                  <div class="cfrp-bar-row">
+                    <div class="cfrp-bar-label">Steel</div>
+                    <div class="cfrp-bar-track">
+                      <div class="cfrp-bar-fill steel" data-width="9"></div>
+                    </div>
+                    <div class="cfrp-bar-val">18</div>
+                  </div>
+                  <div class="cfrp-bar-row">
+                    <div class="cfrp-bar-label">CFRP</div>
+                    <div class="cfrp-bar-track">
+                      <div class="cfrp-bar-fill cfrp" data-width="100"></div>
+                    </div>
+                    <div class="cfrp-bar-val">200</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 3: Specific Modulus -->
+              <div class="cfrp-row" data-delay="160">
+                <div class="cfrp-row-top">
+                  <div>
+                    <span class="cfrp-prop-name">Specific Modulus</span>
+                    <span class="cfrp-prop-unit">GPa·cm³/g</span>
+                  </div>
+                  <div class="cfrp-ratio-badge">~5x</div>
+                </div>
+                <div class="cfrp-bars">
+                  <div class="cfrp-bar-row">
+                    <div class="cfrp-bar-label">Steel</div>
+                    <div class="cfrp-bar-track">
+                      <div class="cfrp-bar-fill steel" data-width="20"></div>
+                    </div>
+                    <div class="cfrp-bar-val">26</div>
+                  </div>
+                  <div class="cfrp-bar-row">
+                    <div class="cfrp-bar-label">CFRP</div>
+                    <div class="cfrp-bar-track">
+                      <div class="cfrp-bar-fill cfrp" data-width="100"></div>
+                    </div>
+                    <div class="cfrp-bar-val">131</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 4: Fatigue / Tensile -->
+              <div class="cfrp-row" data-delay="240">
+                <div class="cfrp-row-top">
+                  <div>
+                    <span class="cfrp-prop-name">Fatigue / Tensile Limit</span>
+                    <span class="cfrp-prop-unit">%</span>
+                  </div>
+                  <div class="cfrp-ratio-badge">~1.9x</div>
+                </div>
+                <div class="cfrp-bars">
+                  <div class="cfrp-bar-row">
+                    <div class="cfrp-bar-label">Steel</div>
+                    <div class="cfrp-bar-track">
+                      <div class="cfrp-bar-fill steel" data-width="50"></div>
+                    </div>
+                    <div class="cfrp-bar-val">30–50%</div>
+                  </div>
+                  <div class="cfrp-bar-row">
+                    <div class="cfrp-bar-label">CFRP</div>
+                    <div class="cfrp-bar-track">
+                      <div class="cfrp-bar-fill cfrp" data-width="95"></div>
+                    </div>
+                    <div class="cfrp-bar-val">70–80%</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 5: Specific Energy Absorption -->
+              <div class="cfrp-row" data-delay="320">
+                <div class="cfrp-row-top">
+                  <div>
+                    <span class="cfrp-prop-name"
+                      >Specific Energy Absorption</span
+                    >
+                    <span class="cfrp-prop-unit">crash</span>
+                  </div>
+                  <div class="cfrp-ratio-badge">2x</div>
+                </div>
+                <div class="cfrp-bars">
+                  <div class="cfrp-bar-row">
+                    <div class="cfrp-bar-label">Steel</div>
+                    <div class="cfrp-bar-track">
+                      <div class="cfrp-bar-fill steel" data-width="50"></div>
+                    </div>
+                    <div class="cfrp-bar-val">1×</div>
+                  </div>
+                  <div class="cfrp-bar-row">
+                    <div class="cfrp-bar-label">CFRP</div>
+                    <div class="cfrp-bar-track">
+                      <div class="cfrp-bar-fill cfrp" data-width="100"></div>
+                    </div>
+                    <div class="cfrp-bar-val">2×</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- END INFOGRAPHIC 2 -->
+
+          <p>
+            The paper also highlights a manufacturing degree of freedom that
+            metals cannot match: CFRP can be formed into compound-curve
+            geometries impossible to stamp from sheet metal. Integrated molding
+            — producing a structural assembly as a single part rather than a
+            welded sub-assembly — directly reduces part count, joint count, and
+            the tolerance stack-ups that accumulate at every interface.
+          </p>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="application-map">
+          <h2>3. The Application Map: Where CFRP Is Actually Being Used</h2>
+          <p>
+            The paper documents a clear stratification in how CFRP is currently
+            deployed across vehicle architectures, moving from high-end
+            proof-of-concept toward production volume.
+          </p>
+
+          <h3>3.1 Body Structure (the primary target)</h3>
+          <p>
+            The most complete structural deployment the paper cites is the
+            Lamborghini LB744, whose carbon fiber monolithic body achieves a 25%
+            increase in torsional rigidity versus a conventional multi-piece
+            construction — without a mass penalty — while doubling the energy
+            absorption capacity of the occupant cell. The integration is enabled
+            by closed-mold resin transfer molding (RTM) at a scale not
+            previously attempted in series production.
+          </p>
+
+          <div class="split-layout">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a13cbdbb6e65cc6a3bfe872_2.png"
+                alt="Lamborghini LB744 carbon fiber monocoque body structure"
+              />
+              <p class="image-caption">
+                The exposed carbon fiber monocoque tub and body structure of the
+                Lamborghini LB744, showing the fully integrated chassis produced
+                as a single molded assembly — the construction responsible for
+                the 25% torsional rigidity gain and doubled energy absorption
+                capacity reported in the paper. Figure 1 from: Haifeng Tang.
+                "Research Progress of Carbon Fiber Composite Materials in
+                Automobile Body Lightweight." MATEC Web of Conferences 410,
+                03011 (2025).
+                <a
+                  href="https://doi.org/10.1051/matecconf/202541003011"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://doi.org/10.1051/matecconf/202541003011</a
+                >
+                — © 2025 by the authors. Licensed under
+                <a
+                  href="https://creativecommons.org/licenses/by/4.0/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >CC BY 4.0</a
+                >.
+              </p>
+            </div>
+            <div class="split-text">
+              <h3>BMW i3: Volume Production Counterpoint</h3>
+              <p>
+                BMW's i3 offers the volume production counterpoint. The paper
+                reports a 50% weight reduction in the full carbon fiber body
+                shell — achieved not through exotic tooling but through a design
+                philosophy that reconceived the entire assembly: a fully modular
+                approach that let engineers cut the component tally to roughly
+                one third of what an equivalent steel shell would require.
+              </p>
+              <p>
+                That reduction in part count is as commercially significant as
+                the mass saving: fewer parts means fewer joins, fewer fixtures,
+                and a shorter assembly line.
+              </p>
+            </div>
+          </div>
+
+          <!-- INFOGRAPHIC 3 PLACEHOLDER -->
+
+          <div class="biw-wrap" id="biwWrap">
+            <div class="biw-header">
+              <div class="biw-title">
+                Body-in-White Mass Reduction — Selected OEM Examples
+              </div>
+              <div class="biw-legend">
+                <div class="biw-legend-item">
+                  <div
+                    class="biw-legend-swatch"
+                    style="background: #9d9d9c"
+                  ></div>
+                  Steel baseline (100%)
+                </div>
+                <div class="biw-legend-item">
+                  <div
+                    class="biw-legend-swatch"
+                    style="background: #bf3425"
+                  ></div>
+                  CFRP result
+                </div>
+              </div>
+              <div class="biw-source">
+                Source: Tang, MATEC Web of Conferences 410, 03011 (2025)
+              </div>
+            </div>
+
+            <div class="biw-cards">
+              <!-- BMW i3 -->
+              <div class="biw-card" data-delay="0">
+                <div class="biw-card-header">
+                  <div>
+                    <div class="biw-car-name">BMW i3</div>
+                    <div class="biw-car-scope">Full CF passenger cabin</div>
+                  </div>
+                  <div class="biw-outcome-badge saving">−50% mass</div>
+                </div>
+                <div class="biw-bar-section">
+                  <div class="biw-bar-row">
+                    <div class="biw-bar-label">Steel</div>
+                    <div class="biw-track">
+                      <div class="biw-fill steel-fill" data-width="80"></div>
+                    </div>
+                    <div class="biw-pct steel-pct">100%</div>
+                  </div>
+                  <div class="biw-bar-row">
+                    <div class="biw-bar-label">CFRP</div>
+                    <div class="biw-track">
+                      <div class="biw-fill cfrp-fill" data-width="40"></div>
+                    </div>
+                    <div class="biw-pct cfrp-pct">50%</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Lamborghini LB744 -->
+              <div class="biw-card" data-delay="100">
+                <div class="biw-card-header">
+                  <div>
+                    <div class="biw-car-name">Lamborghini LB744</div>
+                    <div class="biw-car-scope">
+                      Torsional rigidity — not a weight reduction case
+                    </div>
+                  </div>
+                  <div class="biw-outcome-badge gain">+25% rigidity</div>
+                </div>
+                <div class="biw-bar-section">
+                  <div class="biw-bar-row">
+                    <div class="biw-bar-label">Steel</div>
+                    <div class="biw-track">
+                      <div class="biw-fill steel-fill" data-width="64"></div>
+                    </div>
+                    <div class="biw-pct steel-pct">100%</div>
+                  </div>
+                  <div class="biw-bar-row">
+                    <div class="biw-bar-label">CFRP</div>
+                    <div class="biw-track">
+                      <div class="biw-fill cfrp-gain" data-width="80"></div>
+                    </div>
+                    <div class="biw-pct gain-pct">125%</div>
+                  </div>
+                </div>
+                <div class="biw-sub-note">
+                  2× specific energy absorption in crash
+                </div>
+              </div>
+
+              <!-- NIO ES6 -->
+              <div class="biw-card" data-delay="200">
+                <div class="biw-card-header">
+                  <div>
+                    <div class="biw-car-name">NIO ES6</div>
+                    <div class="biw-car-scope">Rear floor module</div>
+                  </div>
+                  <div class="biw-outcome-badge saving">−48.3% mass</div>
+                </div>
+                <div class="biw-bar-section">
+                  <div class="biw-bar-row">
+                    <div class="biw-bar-label">Steel</div>
+                    <div class="biw-track">
+                      <div class="biw-fill steel-fill" data-width="80"></div>
+                    </div>
+                    <div class="biw-pct steel-pct">100%</div>
+                  </div>
+                  <div class="biw-bar-row">
+                    <div class="biw-bar-label">CFRP</div>
+                    <div class="biw-track">
+                      <div class="biw-fill cfrp-fill" data-width="41.4"></div>
+                    </div>
+                    <div class="biw-pct cfrp-pct">51.7%</div>
+                  </div>
+                </div>
+                <div class="biw-sub-note">
+                  +6% driving range gained from weight saving
+                </div>
+              </div>
+
+              <!-- BAIC BJ40 -->
+              <div class="biw-card" data-delay="300">
+                <div class="biw-card-header">
+                  <div>
+                    <div class="biw-car-name">BAIC BJ40</div>
+                    <div class="biw-car-scope">Hood panel</div>
+                  </div>
+                  <div class="biw-outcome-badge saving">−50% mass</div>
+                </div>
+                <div class="biw-bar-section">
+                  <div class="biw-bar-row">
+                    <div class="biw-bar-label">Steel</div>
+                    <div class="biw-track">
+                      <div class="biw-fill steel-fill" data-width="80"></div>
+                    </div>
+                    <div class="biw-pct steel-pct">100%</div>
+                  </div>
+                  <div class="biw-bar-row">
+                    <div class="biw-bar-label">CFRP</div>
+                    <div class="biw-track">
+                      <div class="biw-fill cfrp-fill" data-width="40"></div>
+                    </div>
+                    <div class="biw-pct cfrp-pct">50%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END INFOGRAPHIC 3 -->
+
+          <h3>3.2 Underbody and Battery Enclosure</h3>
+
+          <div class="split-layout reverse">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a13cc0aef532a5e2f486dcc_3.png"
+                alt="CFRP rear floor module with integrated ribs and honeycomb core"
+              />
+              <p class="image-caption">
+                A CFRP rear floor module showing integrated structural ribs and
+                honeycomb core infill — the combined rib-and-core architecture
+                replaces multiple separate steel stampings, contributing
+                directly to the 48.3% mass reduction demonstrated on production
+                vehicles like the NIO ES6. AI-generated illustration.
+              </p>
+            </div>
+            <div class="split-text">
+              <p>
+                The paper gives particular attention to CFRP flooring. According
+                to the paper, CFRP floor panels are structurally superior to
+                multi-piece steel equivalents and allow stiffening ribs to be
+                integrated directly into the laminate, eliminating the separate
+                stampings that steel floor assemblies require. The floor panel
+                presents a particular challenge for aluminum substitution
+                because it must carry battery pack load paths directly in BEV
+                architectures — which is part of why CFRP's structural
+                integration advantage is especially valuable here.
+              </p>
+              <p>
+                The NIO ES6 case extends this logic to the rear floor
+                specifically: replacing a steel rear floor module with a CFRP
+                equivalent reduced that assembly's mass by 48.3% and, because
+                the weight saving changed the vehicle's battery pack layout,
+                directly contributed a 6% range improvement on the production
+                vehicle.
+              </p>
+              <p>
+                The NIO ES6 result is particularly instructive: a structural
+                weight saving in the floor module translated directly to a 6%
+                range improvement on a production BEV. This illustrates how
+                CFRP's value in electrified architectures goes beyond simple
+                mass reduction — the structural integration it enables reshapes
+                system-level packaging constraints.
+              </p>
+            </div>
+          </div>
+
+          <h3>3.3 Powertrain Surroundings</h3>
+
+          <div class="split-layout">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a13cbdb77f832e5f9d25274_4.png"
+                alt="Carbon fiber engine support bracket in Audi R8 engine bay"
+              />
+              <p class="image-caption">
+                The carbon fiber engine support bracket installed in situ in the
+                Audi R8 engine bay, positioned between the V10 powertrain and
+                body structure — the component that achieved a 15% mass
+                reduction while maintaining the stiffness needed to isolate
+                powertrain vibration from the cabin. Figure 2 from: Haifeng
+                Tang. "Research Progress of Carbon Fiber Composite Materials in
+                Automobile Body Lightweight." MATEC Web of Conferences 410,
+                03011 (2025).
+                <a
+                  href="https://doi.org/10.1051/matecconf/202541003011"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://doi.org/10.1051/matecconf/202541003011</a
+                >
+                — © 2025 by the authors. Licensed under
+                <a
+                  href="https://creativecommons.org/licenses/by/4.0/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >CC BY 4.0</a
+                >.
+              </p>
+            </div>
+            <div class="split-text">
+              <p>
+                The Audi R8 engine mount documented in the paper shows a
+                different use case: CFRP's stiffness-to-mass ratio allowing a
+                15% mass reduction in a component whose primary function is
+                managing NVH transmission between the powertrain and body
+                structure. High stiffness at low mass is precisely what an
+                engine mount needs — and precisely what CFRP provides.
+              </p>
+              <p>
+                Engine mounts occupy a different design envelope than body
+                panels: the primary requirement is stiffness at low mass, not
+                mass reduction per se. CFRP's specific modulus advantage —
+                roughly five times that of steel — delivers both simultaneously.
+              </p>
+              <p>
+                The 15% mass saving on the Audi R8 component demonstrates that
+                CFRP's structural efficiency is accessible even in compact,
+                load-path-critical components where the geometry constrains
+                material choice more than in panels.
+              </p>
+            </div>
+          </div>
+
+          <h3>3.4 The Application Pyramid</h3>
+
+          <!-- INFOGRAPHIC 4 PLACEHOLDER -->
+          <div class="pyr-wrap" id="pyrWrap">
+            <div class="pyr-title">
+              Application Deployment Pyramid — by Current Volume
+            </div>
+            <div class="pyr-source">
+              Source: Addcomposites editorial interpretation of Tang, MATEC Web
+              of Conferences 410, 03011 (2025)
+            </div>
+
+            <div style="display: flex; gap: 16px; align-items: stretch">
+              <!-- Left axis: Mass Saving -->
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  width: 52px;
+                  flex-shrink: 0;
+                  gap: 4px;
+                  padding: 4px 0;
+                "
+              >
+                <div
+                  style="
+                    font-size: 10px;
+                    font-weight: 700;
+                    letter-spacing: 0.05em;
+                    text-transform: uppercase;
+                    color: #bf3425;
+                    text-align: center;
+                    line-height: 1.3;
+                  "
+                >
+                  High<br />Mass<br />Saving
+                </div>
+                <div
+                  style="
+                    flex: 1;
+                    width: 2px;
+                    background: linear-gradient(
+                      to bottom,
+                      #bf3425 0%,
+                      #e2e8f0 100%
+                    );
+                    border-radius: 99px;
+                  "
+                ></div>
+                <div
+                  style="
+                    font-size: 10px;
+                    font-weight: 700;
+                    letter-spacing: 0.05em;
+                    text-transform: uppercase;
+                    color: #9d9d9c;
+                    text-align: center;
+                    line-height: 1.3;
+                  "
+                >
+                  Low<br />Mass<br />Saving
+                </div>
+              </div>
+
+              <!-- Pyramid tiers -->
+              <div class="pyr-tiers" id="pyrTiers">
+                <!-- Tier 1 – top: Motorsport / Supercar (narrowest) -->
+                <div
+                  class="pyr-tier"
+                  data-delay="0"
+                  style="justify-content: center"
+                >
+                  <div
+                    class="pyr-tier-bar"
+                    style="width: 12%; background: #47577c"
+                  >
+                    <div class="pyr-tooltip">Motorsport / Supercar</div>
+                  </div>
+                </div>
+                <div
+                  class="pyr-tier"
+                  data-delay="40"
+                  style="justify-content: center"
+                >
+                  <div
+                    class="pyr-tier-bar"
+                    style="width: 22%; background: #52648e"
+                  >
+                    <div class="pyr-tier-label" style="font-size: 10px">
+                      Full CF body shells
+                    </div>
+                    <div class="pyr-tooltip">
+                      Full CF body shells — BMW i3, LB744
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="pyr-tier"
+                  data-delay="80"
+                  style="justify-content: center"
+                >
+                  <div
+                    class="pyr-tier-bar"
+                    style="width: 34%; background: #5d71a1"
+                  >
+                    <div class="pyr-tier-label">Hood, roof, tailgate</div>
+                    <div class="pyr-tooltip">Hood, roof, tailgate panels</div>
+                  </div>
+                </div>
+                <div
+                  class="pyr-tier"
+                  data-delay="120"
+                  style="justify-content: center"
+                >
+                  <div
+                    class="pyr-tier-bar"
+                    style="width: 46%; background: #6a7faf"
+                  >
+                    <div class="pyr-tier-label">
+                      Floor modules, battery enclosures
+                    </div>
+                    <div class="pyr-tooltip">
+                      Floor modules, battery enclosures
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="pyr-tier"
+                  data-delay="160"
+                  style="justify-content: center"
+                >
+                  <div
+                    class="pyr-tier-bar"
+                    style="width: 58%; background: #7b8fb8"
+                  >
+                    <div class="pyr-tier-label">Bumper beams, crash boxes</div>
+                    <div class="pyr-tooltip">Bumper beams, crash boxes</div>
+                  </div>
+                </div>
+                <div
+                  class="pyr-tier"
+                  data-delay="200"
+                  style="justify-content: center"
+                >
+                  <div
+                    class="pyr-tier-bar"
+                    style="width: 70%; background: #8d9fc1"
+                  >
+                    <div class="pyr-tier-label">Engine mounts, brackets</div>
+                    <div class="pyr-tooltip">Engine mounts, brackets</div>
+                  </div>
+                </div>
+                <div
+                  class="pyr-tier"
+                  data-delay="240"
+                  style="justify-content: center"
+                >
+                  <div
+                    class="pyr-tier-bar"
+                    style="width: 82%; background: #9fafca"
+                  >
+                    <div class="pyr-tier-label">
+                      Interior trim, decorative elements
+                    </div>
+                    <div class="pyr-tooltip">
+                      Interior trim, decorative elements
+                    </div>
+                  </div>
+                </div>
+                <!-- Tier 8 – base: widest -->
+                <div
+                  class="pyr-tier"
+                  data-delay="280"
+                  style="justify-content: center"
+                >
+                  <div
+                    class="pyr-tier-bar"
+                    style="width: 94%; background: #b0bfd3"
+                  >
+                    <div class="pyr-tier-label">
+                      Seat structures, pedal boxes
+                    </div>
+                    <div class="pyr-tooltip">
+                      Seat structures, pedal boxes — highest volume
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right axis: Production Volume -->
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  width: 52px;
+                  flex-shrink: 0;
+                  gap: 4px;
+                  padding: 4px 0;
+                "
+              >
+                <div
+                  style="
+                    font-size: 10px;
+                    font-weight: 700;
+                    letter-spacing: 0.05em;
+                    text-transform: uppercase;
+                    color: #9d9d9c;
+                    text-align: center;
+                    line-height: 1.3;
+                  "
+                >
+                  Low<br />Volume
+                </div>
+                <div
+                  style="
+                    flex: 1;
+                    width: 2px;
+                    background: linear-gradient(
+                      to bottom,
+                      #e2e8f0 0%,
+                      #47577c 100%
+                    );
+                    border-radius: 99px;
+                  "
+                ></div>
+                <div
+                  style="
+                    font-size: 10px;
+                    font-weight: 700;
+                    letter-spacing: 0.05em;
+                    text-transform: uppercase;
+                    color: #47577c;
+                    text-align: center;
+                    line-height: 1.3;
+                  "
+                >
+                  High<br />Volume
+                </div>
+              </div>
+            </div>
+
+            <div class="pyr-caption">
+              Upper tiers = highest mass savings per application, lower
+              production scale<br />
+              Lower tiers = higher current deployment volume
+            </div>
+          </div>
+          <!-- END INFOGRAPHIC 4 -->
+
+          <p>
+            <em
+              >Note: the pyramid above reflects our editorial interpretation of
+              the deployment landscape described in the paper. The paper itself
+              does not present this as a ranked hierarchy.</em
+            >
+          </p>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="manufacturing-processes">
+          <h2>4. Manufacturing Processes: The Enabling Layer</h2>
+          <p>
+            Mass deployment of CFRP in automotive bodies is not primarily a
+            materials problem — it is a manufacturing throughput problem. The
+            paper covers four process families relevant to body applications.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a045f03abfb9cba6e959984_4.png"
+            alt="Addcomposites AFP-XS end-effector depositing carbon fiber tow"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            The Addcomposites AFP-XS end-effector depositing carbon fiber tow
+            onto a curved mold surface mid-layup — the laid courses show the
+            directional fiber orientation control that manual layup cannot
+            replicate at production volume.
+          </p>
+
+          <div class="feature-grid">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M8 12h8"></path>
+                  <path d="M12 8v8"></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Resin Transfer Molding (RTM)</h4>
+                <p>
+                  Places dry fiber preforms into a closed mold, injects resin
+                  under pressure, and cures the part in the tool. Appealing for
+                  medium-volume production: tight dimensional control,
+                  consistent resin distribution, and strong suitability for
+                  complex geometry. Active research challenge: multi-gate
+                  injection creates void-rich weld lines that process simulation
+                  is actively addressing.
+                </p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <div>
+                <h4>Compression Molding</h4>
+                <p>
+                  Suits large, relatively simple panels — hoods, roofs,
+                  spoilers, body skins — where cycle time and part size are
+                  dominant variables. Sheet molding compound (SMC) and glass-mat
+                  thermoplastic (GMT) variants are already mainstream for
+                  exterior panels, and CF-reinforced versions are moving into
+                  semi-structural roles.
+                </p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4>AFP &amp; ATL</h4>
+                <p>
+                  Robotic systems that deposit continuous fiber tows or wide
+                  unidirectional tape onto a mold surface under computer control
+                  — the key advantage being fiber orientation accuracy and
+                  run-to-run repeatability that manual layup cannot sustain at
+                  production volume. AFP and ATL achieve their full advantage
+                  when programs combine high production volumes with
+                  geometrically intricate parts.
+                </p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Multi-Material Joining</h4>
+                <p>
+                  The enabling technology that allows CFRP to coexist with steel
+                  and aluminum in hybrid body architectures. The Audi A8 body
+                  relies on no fewer than fourteen different fastening and
+                  bonding methods — split between heat-based joining (MIG,
+                  remote laser welding) and mechanical cold processes (riveting,
+                  crimping) — because no single technique handles all material
+                  pairings adequately.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a13cbdb577aa0229b40e150_6.png"
+            alt="Self-piercing rivet cross-section joining CFRP to aluminium"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            Macro cross-section (a) showing a steel self-piercing rivet
+            mechanically interlocking a CFRP layer to an aluminium sheet, with
+            SEM close-ups (b) and (c) revealing how the rivet tip splays outward
+            to grip the aluminium while thin CFRP fragments remain trapped at
+            the interface — the physical mechanism that makes SPR viable for
+            dissimilar material joining without drilling or heat. Figure 2 from:
+            R. Beyene et al. "Self-Piercing Riveting of CFRP to Aluminium." IOP
+            Conference Series: Materials Science and Engineering 137, 012025
+            (2016).
+            <a
+              href="https://doi.org/10.1088/1757-899X/137/1/012025"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://doi.org/10.1088/1757-899X/137/1/012025</a
+            >
+            — © 2016 by the authors. Licensed under
+            <a
+              href="https://creativecommons.org/licenses/by/3.0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >CC BY 3.0</a
+            >.
+          </p>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="barriers">
+          <h2>5. The Three Barriers to Mass Market Adoption</h2>
+          <p>
+            The paper is candid about what is holding CFRP back from the volume
+            segment.
+          </p>
+
+          <h3>5.1 Cost</h3>
+          <p>
+            Carbon fiber raw material currently trades above $30/kg — roughly 30
+            times the cost of structural steel on a per-kg basis. Processing
+            overhead (autoclave energy, tooling amortization, skilled labor)
+            compounds that premium into a component cost that the paper
+            summarizes as prohibitive for mainstream programs. The BMW i3's
+            economics worked at its production volume and price point; the same
+            cost structure does not translate to a C-segment family hatchback.
+          </p>
+
+          <div class="split-layout">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a13cc0ae7d0227e0f32e8a4_7.png"
+                alt="Raw carbon fiber tow spools on industrial creel racks"
+              />
+              <p class="image-caption">
+                Rows of raw carbon fiber tow spools on industrial creel racks —
+                at over $30/kg, the material cost of PAN-based carbon fiber
+                precursor remains the single largest barrier to CFRP adoption
+                beyond the premium vehicle segment. AI-generated illustration.
+              </p>
+            </div>
+            <div class="split-text">
+              <h3>The $30/kg Barrier</h3>
+              <p>
+                At roughly 30× the cost of structural steel per kilogram, carbon
+                fiber precursor pricing is the dominant economic constraint on
+                CFRP penetration into volume automotive programs. The premium is
+                amplified by processing costs — autoclave energy, tooling
+                amortization, and skilled labor — making part-level costs
+                substantially higher than raw material cost alone would suggest.
+              </p>
+            </div>
+          </div>
+
+          <h3>5.2 Process Stability and Cycle Time</h3>
+          <p>
+            RTM and autoclave processing — the dominant routes for structural
+            CFRP — carry cure cycles measured in hours for large parts, while
+            the paper notes that complex moulding processes remain a significant
+            constraint on volume adoption. High-volume automotive stamping
+            operates in seconds, and closing that gap requires either
+            fundamentally faster cure chemistries, higher-pressure injection
+            equipment, or a shift to thermoplastic matrices with faster
+            consolidation cycles — all active areas of development, but none
+            fully production-proven at automotive scale.
+          </p>
+
+          <h3>5.3 Recycling Infrastructure</h3>
+          <p>
+            The paper documents the recycling problem precisely: pyrolysis — the
+            dominant commercial CF recycling route — degrades fiber tensile
+            strength by up to 20% during thermal processing. Solvent-based
+            chemical recycling preserves fiber performance better, but
+            introduces solvent handling and disposal hazards. Globally,
+            according to the paper, less than 10% of CFRP composite waste is
+            currently recycled by any route. For an industry under pressure to
+            document cradle-to-grave carbon footprints, that number is
+            increasingly untenable.
+          </p>
+
+          <div class="split-layout reverse">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a13cc0a8f34ca7e12294fe5_8.png"
+                alt="CFRP manufacturing scrap accumulating on a factory floor"
+              />
+              <p class="image-caption">
+                CFRP manufacturing scrap and off-cuts accumulating on a factory
+                floor — with the global recycling rate for carbon fiber
+                composites currently below 10%, the majority of this material
+                has no viable end-of-life pathway. AI-generated illustration.
+              </p>
+            </div>
+            <div class="split-text">
+              <h3>The Recycling Gap</h3>
+              <p>
+                Less than 10% of CFRP composite waste is currently recycled by
+                any route. Pyrolysis — the most commercially mature route —
+                degrades fiber tensile strength by up to 20%. Chemical recycling
+                preserves performance better but introduces solvent hazards. For
+                an industry documenting cradle-to-grave carbon footprints, this
+                gap is increasingly untenable.
+              </p>
+            </div>
+          </div>
+
+          <!-- INFOGRAPHIC 5 PLACEHOLDER -->
+
+          <div class="rcf-wrap" id="rcfWrap">
+            <div class="rcf-title">Current CFRP Recycling Landscape</div>
+            <div class="rcf-source">
+              Source: Tang, MATEC Web of Conferences 410, 03011 (2025)
+            </div>
+
+            <div class="rcf-cards">
+              <!-- Pyrolysis -->
+              <div class="rcf-card" data-delay="0">
+                <div class="rcf-card-name">
+                  <div
+                    class="rcf-method-icon"
+                    style="background: rgba(71, 87, 124, 0.1)"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                      <path
+                        d="M9 2C9 2 5 6 5 10a4 4 0 008 0c0-4-4-8-4-8z"
+                        fill="#47577c"
+                        opacity="0.7"
+                      />
+                      <path
+                        d="M9 7c0 0-2 2-2 4a2 2 0 004 0c0-2-2-4-2-4z"
+                        fill="#bf3425"
+                        opacity="0.8"
+                      />
+                    </svg>
+                  </div>
+                  Pyrolysis
+                </div>
+
+                <div class="rcf-gauge-section">
+                  <div class="rcf-gauge-label">Fiber Strength Retained</div>
+                  <div class="rcf-gauge-track">
+                    <div
+                      class="rcf-gauge-fill"
+                      data-width="80"
+                      style="background: #47577c"
+                    ></div>
+                  </div>
+                  <div class="rcf-gauge-val" style="color: #47577c">~80%</div>
+                  <div class="rcf-gauge-sub">
+                    up to 20% loss (thermal degradation)
+                  </div>
+                </div>
+
+                <div class="rcf-risk-row">
+                  <div class="rcf-risk-label">Env. Risk</div>
+                  <div class="rcf-risk-pill rcf-risk-low">
+                    Low — thermal only
+                  </div>
+                </div>
+              </div>
+
+              <!-- Chemical -->
+              <div class="rcf-card" data-delay="100">
+                <div class="rcf-card-name">
+                  <div
+                    class="rcf-method-icon"
+                    style="background: rgba(191, 52, 37, 0.08)"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                      <rect
+                        x="7"
+                        y="2"
+                        width="4"
+                        height="5"
+                        rx="1"
+                        fill="#bf3425"
+                        opacity="0.7"
+                      />
+                      <path
+                        d="M5 7h8l2 8H3L5 7z"
+                        fill="#bf3425"
+                        opacity="0.5"
+                      />
+                      <circle cx="9" cy="12" r="1.5" fill="#bf3425" />
+                    </svg>
+                  </div>
+                  Chemical
+                </div>
+
+                <div class="rcf-gauge-section">
+                  <div class="rcf-gauge-label">Fiber Strength Retained</div>
+                  <div class="rcf-gauge-track">
+                    <div
+                      class="rcf-gauge-fill"
+                      data-width="97"
+                      style="background: #bf3425"
+                    ></div>
+                  </div>
+                  <div class="rcf-gauge-val" style="color: #bf3425">
+                    95–100%
+                  </div>
+                  <div class="rcf-gauge-sub">
+                    near-full retention (solvolysis)
+                  </div>
+                </div>
+
+                <div class="rcf-risk-row">
+                  <div class="rcf-risk-label">Env. Risk</div>
+                  <div class="rcf-risk-pill rcf-risk-high">
+                    High — solvent waste
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mechanical -->
+              <div class="rcf-card" data-delay="200">
+                <div class="rcf-card-name">
+                  <div
+                    class="rcf-method-icon"
+                    style="background: rgba(157, 157, 156, 0.15)"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                      <rect
+                        x="3"
+                        y="8"
+                        width="12"
+                        height="3"
+                        rx="1.5"
+                        fill="#9d9d9c"
+                      />
+                      <rect
+                        x="6"
+                        y="4"
+                        width="6"
+                        height="3"
+                        rx="1.5"
+                        fill="#9d9d9c"
+                        opacity="0.7"
+                      />
+                      <rect
+                        x="5"
+                        y="11"
+                        width="8"
+                        height="3"
+                        rx="1.5"
+                        fill="#9d9d9c"
+                        opacity="0.5"
+                      />
+                    </svg>
+                  </div>
+                  Mechanical
+                </div>
+
+                <div class="rcf-gauge-section">
+                  <div class="rcf-gauge-label">Fiber Strength Retained</div>
+                  <div class="rcf-gauge-track">
+                    <div
+                      class="rcf-gauge-fill"
+                      data-width="65"
+                      style="background: #9d9d9c"
+                    ></div>
+                  </div>
+                  <div class="rcf-gauge-val" style="color: #9d9d9c">60–70%</div>
+                  <div class="rcf-gauge-sub">fibers shortened by grinding</div>
+                </div>
+
+                <div class="rcf-risk-row">
+                  <div class="rcf-risk-label">Env. Risk</div>
+                  <div class="rcf-risk-pill rcf-risk-low">Low</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Global rate banner -->
+            <div class="rcf-banner" id="rcfBanner">
+              <div class="rcf-donut-wrap">
+                <svg width="56" height="56" viewBox="0 0 56 56">
+                  <circle
+                    cx="28"
+                    cy="28"
+                    r="22"
+                    fill="none"
+                    stroke="rgba(255,255,255,0.15)"
+                    stroke-width="8"
+                  />
+                  <circle
+                    cx="28"
+                    cy="28"
+                    r="22"
+                    fill="none"
+                    stroke="#ffffff"
+                    stroke-width="8"
+                    stroke-dasharray="138.2"
+                    stroke-dashoffset="124.4"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                <div class="rcf-donut-label">&lt;10%</div>
+              </div>
+              <div class="rcf-banner-text">
+                <strong>Global recycling rate: &lt;10% of all CFRP waste</strong
+                ><br />
+                Across all three routes combined — pyrolysis, chemical, and
+                mechanical — less than one in ten tonnes of CFRP waste is
+                currently recovered.
+              </div>
+            </div>
+          </div>
+
+          <!-- END INFOGRAPHIC 5 -->
+        </section>
+
+        <!-- Section 6 -->
+        <section id="research-pipeline">
+          <h2>6. The Research Pipeline: What Changes Before 2030</h2>
+          <p>
+            The paper maps two converging development tracks that could
+            materially shift the economics by the end of the decade.
+          </p>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-value">−50%</div>
+              <div class="stat-label">
+                Projected raw material cost reduction from polyethylene-based CF
+                precursors
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">$15/kg</div>
+              <div class="stat-label">
+                Projected bio-based CF price by 2030 — within striking distance
+                of aluminum on structural efficiency
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">70 → 1</div>
+              <div class="stat-label">
+                Parts reduction in Tesla Model Y rear section via integrated
+                die-casting — the same logic applies to AFP-optimised CFRP
+                structures
+              </div>
+            </div>
+          </div>
+
+          <p>
+            <strong>Novel precursor materials.</strong> Polyethylene-based
+            carbon fiber precursors, processed via melt spinning rather than
+            conventional solution spinning, are projected to cut raw material
+            cost by 50% relative to current PAN-based fiber. Bio-derived
+            precursors — particularly lignin, which is produced in large
+            quantity as a pulp-and-paper by-product — are moving through
+            industrialization. The paper projects bio-based CF reaching $15/kg
+            by 2030, which would bring it within striking distance of aluminum
+            on a structural efficiency basis.
+          </p>
+
+          <p>
+            <strong>Intelligent manufacturing.</strong> AI-driven layup
+            optimization is beginning to reduce material waste and cure cycle
+            time by tailoring fiber paths to actual load distributions rather
+            than conservative blanket laminates. The paper cites Tesla's Model Y
+            rear section as a manufacturing-adjacent reference: integrated
+            die-casting reduced that subassembly from 70 discrete parts to one.
+            The CFRP equivalent — integrated AFP layup of a complex rear quarter
+            — follows the same logic, enabled by automation rather than casting
+            tooling.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a13cbda0a2225ab7ea0705a_9.png"
+            alt="Tesla Model Y rear underbody before and after manufacturing consolidation"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            Side-by-side comparison showing the Tesla Model Y rear underbody
+            before and after manufacturing consolidation — left shows the
+            original assembly of approximately 70 discrete stamped parts, right
+            shows the single integrated die-cast replacement, illustrating the
+            part-count reduction logic that AI-optimised AFP layup programs
+            apply equally to CFRP body structures. Figure 3 from: Haifeng Tang.
+            "Research Progress of Carbon Fiber Composite Materials in Automobile
+            Body Lightweight." MATEC Web of Conferences 410, 03011 (2025).
+            <a
+              href="https://doi.org/10.1051/matecconf/202541003011"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://doi.org/10.1051/matecconf/202541003011</a
+            >
+            — © 2025 by the authors. Licensed under
+            <a
+              href="https://creativecommons.org/licenses/by/4.0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >CC BY 4.0</a
+            >.
+          </p>
+        </section>
+
+        <!-- Section 7 -->
+        <section id="afp-perspective">
+          <h2>7. Our Perspective: Where AFP Fits in This Picture</h2>
+          <div class="highlight-box">
+            <h4>Editorial Note</h4>
+            <p>
+              The following section reflects Addcomposites' own analysis and is
+              not derived from the Tang paper.
+            </p>
+          </div>
+
+          <p>
+            The paper's application map points directly at the AFP opportunity.
+            Every high-value CFRP body application it documents — full body
+            shells, floor modules, crash structures, hood panels — shares two
+            characteristics: complex geometry and structural fiber orientation
+            requirements. Both characteristics are exactly what AFP addresses.
+          </p>
+
+          <div class="split-layout reverse">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a13cbdb726362a0fe5e49bd_10.png"
+                alt="AFP-XS end-effector laying carbon fiber tow on automotive roof geometry mold"
+              />
+              <p class="image-caption">
+                The AFP-XS end-effector laying carbon fiber tow on an automotive
+                roof geometry mold — the directional fiber course pattern
+                visible on the laminate surface is precisely the structural
+                orientation control that body shell, hood, and floor module
+                applications require. Source: Addcomposites.
+              </p>
+            </div>
+            <div class="split-text">
+              <h3>AFP-XS: Designed for the Next Deployment Wave</h3>
+              <p>
+                The AFP-XS system is designed for precisely the program profile
+                the paper describes as the next deployment wave: mid-volume,
+                complex-geometry structural parts where manual layup lacks the
+                repeatability to hit automotive quality gates and conventional
+                AFP capital cost excludes programs that aren't running hundreds
+                of thousands of parts per year.
+              </p>
+              <p>
+                The accessibility of compact AFP — lower footprint, lower
+                capital commitment, faster program setup — matches the
+                incremental adoption path the paper describes, where CFRP moves
+                from supercar body shells toward premium segment structural
+                components before reaching mass market.
+              </p>
+            </div>
+          </div>
+
+          <div class="split-layout">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a13cbdb73fbde0d8bd97f92_11.jpeg"
+                alt="AddPath toolpath generation sequence for AFP robot simulation"
+              />
+              <p class="image-caption">
+                A toolpath generation sequence running in AddPath — the software
+                plans ply-by-ply fiber deposition on the robot simulation before
+                any physical layup begins, reducing program setup time and
+                eliminating trial-and-error on the machine. Source:
+                Addcomposites.
+              </p>
+            </div>
+            <div class="split-text">
+              <h3>Hybrid Body Compatibility</h3>
+              <p>
+                The paper's multi-material joining discussion is also directly
+                relevant. Hybrid body programs — steel-aluminum-CFRP
+                combinations — are the paper's projected mainstream architecture
+                for 2030. AFP's ability to produce near-net-shape CFRP panels
+                and structural sections with precisely defined fiber angles
+                makes AFP-produced parts inherently compatible with downstream
+                hybrid assembly.
+              </p>
+              <p>
+                The dimensional stability of a well-controlled AFP layup
+                simplifies the adhesive bonding and self-piercing rivet joints
+                that hold hybrid structures together.
+              </p>
+            </div>
+          </div>
+
+          <p>
+            For Addcomposites customers building proposals for automotive OEMs
+            or Tier 1 suppliers, the Tang paper provides the citable evidence
+            base that the "why not CFRP everywhere?" conversation needs. It
+            documents real production weight savings (48.3% on the NIO ES6 floor
+            module), real rigidity improvements (25% on the LB744 body), and a
+            credible technology roadmap toward cost parity. AFP is the
+            manufacturing process that closes the gap between those outcomes and
+            the volume production requirements that make them commercially
+            viable.
+          </p>
+        </section>
+
+        <!-- Section 8 -->
+        <section id="structural-summary">
+          <h2>8. What This Means in Practice: A Structural Summary</h2>
+
+          <!-- INFOGRAPHIC 6 PLACEHOLDER -->
+
+          <div class="adopt-wrap" id="adoptWrap">
+            <div class="adopt-title">
+              CFRP Adoption Readiness by Application — 2025 State
+            </div>
+            <div class="adopt-source">
+              Source: Addcomposites editorial synthesis based on Tang, MATEC Web
+              of Conferences 410, 03011 (2025)
+            </div>
+
+            <div class="adopt-legend">
+              <div class="adopt-legend-group">
+                <div
+                  class="adopt-legend-swatch"
+                  style="background: #e2e8f0; border: 1.5px solid #cbd5e1"
+                ></div>
+                Mass saving: ● = 10%
+              </div>
+              <div style="width: 1px; height: 14px; background: #e2e8f0"></div>
+              <div class="adopt-legend-group">
+                <div
+                  class="adopt-badge niche"
+                  style="font-size: 10px; padding: 2px 8px"
+                >
+                  Niche
+                </div>
+                <div
+                  class="adopt-badge growing"
+                  style="font-size: 10px; padding: 2px 8px"
+                >
+                  Growing
+                </div>
+                <div
+                  class="adopt-badge proven"
+                  style="font-size: 10px; padding: 2px 8px"
+                >
+                  Proven
+                </div>
+                <div
+                  class="adopt-badge mainstream"
+                  style="font-size: 10px; padding: 2px 8px"
+                >
+                  Mainstream
+                </div>
+              </div>
+            </div>
+
+            <table class="adopt-table" id="adoptTable">
+              <thead>
+                <tr>
+                  <th>Application</th>
+                  <th>Mass Saving Potential</th>
+                  <th>Production Readiness</th>
+                  <th>AFP Relevance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-delay="0">
+                  <td>Full body shell</td>
+                  <td>
+                    <div class="adopt-dots">
+                      <div class="adopt-dot filled-high"></div>
+                      <div class="adopt-dot filled-high"></div>
+                      <div class="adopt-dot filled-high"></div>
+                      <div class="adopt-dot filled-high"></div>
+                      <div class="adopt-dot"></div>
+                      <span class="adopt-dot-label">40–50%</span>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="adopt-badge niche">Niche / Premium</span>
+                  </td>
+                  <td>
+                    <span class="adopt-afp high"
+                      ><span class="adopt-afp-bar"></span>HIGH</span
+                    >
+                  </td>
+                </tr>
+
+                <tr data-delay="70">
+                  <td>Hood / roof panel</td>
+                  <td>
+                    <div class="adopt-dots">
+                      <div class="adopt-dot filled-high"></div>
+                      <div class="adopt-dot filled-high"></div>
+                      <div class="adopt-dot filled-high"></div>
+                      <div class="adopt-dot filled-high"></div>
+                      <div class="adopt-dot"></div>
+                      <span class="adopt-dot-label">40–50%</span>
+                    </div>
+                  </td>
+                  <td><span class="adopt-badge growing">Growing</span></td>
+                  <td>
+                    <span class="adopt-afp high"
+                      ><span class="adopt-afp-bar"></span>HIGH</span
+                    >
+                  </td>
+                </tr>
+
+                <tr data-delay="140">
+                  <td>Floor module / battery enclosure</td>
+                  <td>
+                    <div class="adopt-dots">
+                      <div class="adopt-dot filled-high"></div>
+                      <div class="adopt-dot filled-high"></div>
+                      <div class="adopt-dot filled-high"></div>
+                      <div class="adopt-dot filled-high"></div>
+                      <div class="adopt-dot"></div>
+                      <span class="adopt-dot-label">40–50%</span>
+                    </div>
+                  </td>
+                  <td><span class="adopt-badge growing">Growing</span></td>
+                  <td>
+                    <span class="adopt-afp high"
+                      ><span class="adopt-afp-bar"></span>HIGH</span
+                    >
+                  </td>
+                </tr>
+
+                <tr data-delay="210">
+                  <td>Bumper / crash structure</td>
+                  <td>
+                    <div class="adopt-dots">
+                      <div class="adopt-dot filled-med"></div>
+                      <div class="adopt-dot filled-med"></div>
+                      <div class="adopt-dot filled-med"></div>
+                      <div class="adopt-dot"></div>
+                      <div class="adopt-dot"></div>
+                      <span class="adopt-dot-label">30–40%</span>
+                    </div>
+                  </td>
+                  <td><span class="adopt-badge proven">Proven</span></td>
+                  <td>
+                    <span class="adopt-afp med"
+                      ><span class="adopt-afp-bar"></span>MEDIUM</span
+                    >
+                  </td>
+                </tr>
+
+                <tr data-delay="280">
+                  <td>Engine mount / bracket</td>
+                  <td>
+                    <div class="adopt-dots">
+                      <div class="adopt-dot filled-low"></div>
+                      <div class="adopt-dot"></div>
+                      <div class="adopt-dot"></div>
+                      <div class="adopt-dot"></div>
+                      <div class="adopt-dot"></div>
+                      <span class="adopt-dot-label">15–20%</span>
+                    </div>
+                  </td>
+                  <td><span class="adopt-badge proven">Proven</span></td>
+                  <td>
+                    <span class="adopt-afp med"
+                      ><span class="adopt-afp-bar"></span>MEDIUM</span
+                    >
+                  </td>
+                </tr>
+
+                <tr data-delay="350">
+                  <td>Seat structure</td>
+                  <td>
+                    <div class="adopt-dots">
+                      <div class="adopt-dot filled-med"></div>
+                      <div class="adopt-dot filled-med"></div>
+                      <div class="adopt-dot"></div>
+                      <div class="adopt-dot"></div>
+                      <div class="adopt-dot"></div>
+                      <span class="adopt-dot-label">20–30%</span>
+                    </div>
+                  </td>
+                  <td><span class="adopt-badge growing">Growing</span></td>
+                  <td>
+                    <span class="adopt-afp high"
+                      ><span class="adopt-afp-bar"></span>HIGH</span
+                    >
+                  </td>
+                </tr>
+
+                <tr data-delay="420">
+                  <td>Interior trim</td>
+                  <td>
+                    <div class="adopt-dots">
+                      <div
+                        class="adopt-dot"
+                        style="
+                          border: 1.5px dashed #cbd5e1;
+                          background: transparent;
+                        "
+                      ></div>
+                      <div
+                        class="adopt-dot"
+                        style="
+                          border: 1.5px dashed #cbd5e1;
+                          background: transparent;
+                        "
+                      ></div>
+                      <div
+                        class="adopt-dot"
+                        style="
+                          border: 1.5px dashed #cbd5e1;
+                          background: transparent;
+                        "
+                      ></div>
+                      <div
+                        class="adopt-dot"
+                        style="
+                          border: 1.5px dashed #cbd5e1;
+                          background: transparent;
+                        "
+                      ></div>
+                      <div
+                        class="adopt-dot"
+                        style="
+                          border: 1.5px dashed #cbd5e1;
+                          background: transparent;
+                        "
+                      ></div>
+                      <span class="adopt-dot-label">N/A</span>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="adopt-badge mainstream">Mainstream</span>
+                  </td>
+                  <td>
+                    <span class="adopt-afp low"
+                      ><span class="adopt-afp-bar"></span>LOW</span
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- END INFOGRAPHIC 6 -->
+
+          <p>
+            The paper's conclusion is measured: CFRP holds an essentially
+            unmatched position in automotive lightweighting on structural
+            efficiency metrics, but the path to 15%+ vehicle penetration by 2030
+            runs through cost reduction, process automation, and recycling
+            infrastructure — not through further material performance gains,
+            which are already sufficient for most applications.
+          </p>
+        </section>
+
+        <!-- Conclusion -->
+        <section id="conclusion">
+          <h2>Conclusion</h2>
+          <p>
+            The Tang review does something useful for anyone selling CFRP
+            solutions into the automotive supply chain: it assembles the full
+            case in a single, peer-reviewed, open-access document. The weight
+            savings are real and documented in production vehicles. The process
+            technologies — RTM, compression molding, AFP, multi-material joining
+            — are mature enough for automotive quality requirements. The
+            barriers are cost, cycle time, and recyclability, and the research
+            pipeline is targeting all three with credible timelines.
+          </p>
+          <p>
+            For AFP-XS customers, that landscape describes a market in
+            transition: OEMs who established the proof of concept at the premium
+            end are now under regulatory and competitive pressure to push CFRP
+            into volume architectures. Automated fiber placement is the process
+            technology that makes that transition manufacturable. The data
+            documented in this review — production weight savings, rigidity
+            gains, and a credible roadmap to cost parity — gives AFP-XS
+            customers a peer-reviewed reference for conversations about the
+            structural value of CFRP automation.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69df3f134e33fe3e76584724_8.png"
+            alt="AFP automated fiber placement in action"
+            class="full-width-image"
+          />
+
+          <div class="highlight-box">
+            <h4>Read the Research</h4>
+            <p>
+              Full citation: Haifeng Tang. "Research Progress of Carbon Fiber
+              Composite Materials in Automobile Body Lightweight." MATEC Web of
+              Conferences 2025, 410, 03011.
+              <a
+                href="https://doi.org/10.1051/matecconf/202541003011"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://doi.org/10.1051/matecconf/202541003011</a
+              >
+              — © 2025 by the authors. Licensed under
+              <a
+                href="https://creativecommons.org/licenses/by/4.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >CC BY 4.0</a
+              >.
+            </p>
+          </div>
+        </section>
+
+        <!-- Learn More Section -->
+        <section id="learn-more">
+          <h2>Learn More</h2>
+          <div class="learn-more-container">
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/afp-xs"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path
+                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AFP-XS</span>
+                <span class="learn-more-desc"
+                  >Compact, plug-and-play AFP system</span
+                >
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/afp-x"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AFP-X</span>
+                <span class="learn-more-desc">Advanced multi-tow system</span>
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/addpath"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AddPath</span>
+                <span class="learn-more-desc"
+                  >AI-powered path planning software</span
+                >
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/post/afp-machines-and-components"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">Complete Guide</span>
+                <span class="learn-more-desc"
+                  >The Complete Guide to AFP Machines</span
+                >
+              </div>
+            </a>
+          </div>
+
+          <div class="cta-section">
+            <p>
+              Get in touch to discuss your CFRP automotive AFP application →
+            </p>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/contact-us"
+              class="cta-button"
+              >Contact Us for a Consultation</a
+            >
+          </div>
+        </section>
+
+        <!-- References Section -->
+        <section id="references">
+          <h2>References</h2>
+          <ol class="references-list">
+            <li>
+              Haifeng Tang. "Research Progress of Carbon Fiber Composite
+              Materials in Automobile Body Lightweight."
+              <em>MATEC Web of Conferences</em> 410, 03011 (2025).
+              <a
+                href="https://doi.org/10.1051/matecconf/202541003011"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://doi.org/10.1051/matecconf/202541003011</a
+              >
+              — © 2025 by the authors. Licensed under CC BY 4.0.
+            </li>
+            <li>
+              R. Beyene et al. "Self-Piercing Riveting of CFRP to Aluminium."
+              <em>IOP Conference Series: Materials Science and Engineering</em>
+              137, 012025 (2016).
+              <a
+                href="https://doi.org/10.1088/1757-899X/137/1/012025"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://doi.org/10.1088/1757-899X/137/1/012025</a
+              >
+              — © 2016 by the authors. Licensed under CC BY 3.0.
+            </li>
+            <li>
+              Addcomposites. AFP-XS Automated Fiber Placement System.
+              <a
+                href="https://www.addcomposites.com/afp-xs"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://www.addcomposites.com/afp-xs</a
+              >
+            </li>
+          </ol>
+          <p style="font-size: 0.9375rem; color: #475569; margin-top: 1.5rem">
+            This post was prepared by the Addcomposites team. Addcomposites
+            develops the AFP-XS automated fiber placement platform. For
+            questions about automotive CFRP AFP process development, contact us
+            at
+            <a
+              href="https://www.addcomposites.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >addcomposites.com</a
+            >.
+          </p>
+        </section>
+
+        <!-- Author Section -->
+        <section class="author-section">
+          <div class="author-card">
+            <div class="author-image-wrapper">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/65dc93e2c8b30f7b6484e473_contact-lwr-img1.jpg"
+                alt="Pravin Luthada"
+                class="author-image"
+              />
+            </div>
+            <div class="author-info">
+              <h3 class="author-name">Pravin Luthada</h3>
+              <p class="author-title">CEO &amp; Co-founder, Addcomposites</p>
+              <div class="author-social">
+                <a
+                  href="https://www.linkedin.com/in/pravinluthada/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <svg viewBox="0 0 24 24" fill="#0A66C2">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                  </svg>
+                </a>
+                <a href="mailto:pravin@addcomposites.com" aria-label="Email">
+                  <svg viewBox="0 0 24 24" fill="#EA4335">
+                    <path
+                      d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.youtube.com/@addcomposites"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
+                  <svg viewBox="0 0 24 24" fill="#FF0000">
+                    <path
+                      d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <h4 class="about-author-label">About Author</h4>
+              <p class="author-bio">
+                As the author of the Addcomposites blog, Pravin Luthada's
+                insights are forged from a distinguished career in advanced
+                materials, beginning as a space scientist at the Indian Space
+                Research Organisation (ISRO). During his tenure, he gained
+                hands-on expertise in manufacturing composite components for
+                satellites and launch vehicles, where he witnessed firsthand the
+                prohibitive costs of traditional Automated Fiber Placement (AFP)
+                systems. This experience became the driving force behind his
+                entrepreneurial venture, Addcomposites Oy, which he co-founded
+                and now leads as CEO. The company is dedicated to democratizing
+                advanced manufacturing by developing patented, plug-and-play AFP
+                toolheads that make automation accessible and affordable. This
+                unique journey from designing space-grade hardware to leading a
+                disruptive technology company provides Pravin with a
+                comprehensive, real-world perspective that informs his writing
+                on the future of the composites industry.
+              </p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
