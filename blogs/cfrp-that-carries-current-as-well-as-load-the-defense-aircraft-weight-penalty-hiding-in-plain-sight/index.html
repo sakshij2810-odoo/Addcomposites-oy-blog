@@ -1,0 +1,2031 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CFRP That Carries Current as Well as Load | Addcomposites</title>
+    <meta
+      name="description"
+      content="A December 2025 paper from the University of Strathclyde presents the first design-and-selection methodology for multifunctional CFRP that carries mechanical load and conducts current simultaneously."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,600&family=Assistant:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Mobile Navigation Toggle Button -->
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="blog-layout">
+      <!-- Sidebar -->
+      <nav class="blog-sidebar" aria-label="Table of Contents">
+        <!-- Close button (mobile only) -->
+        <button class="sidebar-close" aria-label="Close navigation menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          Close Menu
+        </button>
+        <h3 class="blog-sidebar-title">Contents</h3>
+        <div class="blog-sidebar-nav">
+          <a href="#weight-tax" class="blog-sidebar-link active"
+            >The Weight Tax</a
+          >
+          <a href="#anisotropy" class="blog-sidebar-link"
+            >Why CFRP Resists Conduct</a
+          >
+          <a href="#joule-heating" class="blog-sidebar-link"
+            >The Joule-Heating Trap</a
+          >
+          <a href="#five-phase" class="blog-sidebar-link"
+            >Five-Phase Methodology</a
+          >
+          <a href="#databases" class="blog-sidebar-link">Four Databases</a>
+          <a href="#case-study" class="blog-sidebar-link">Case Study</a>
+          <a href="#paper-limits" class="blog-sidebar-link">Paper Limits</a>
+          <a href="#afp-perspective" class="blog-sidebar-link"
+            >AFP Perspective</a
+          >
+          <a href="#read-research" class="blog-sidebar-link"
+            >Read the Research</a
+          >
+          <a href="#learn-more" class="blog-sidebar-link">Learn More</a>
+          <a href="#references" class="blog-sidebar-link">References</a>
+        </div>
+      </nav>
+
+      <article class="blog-content">
+        <!-- Title -->
+        <h1>
+          CFRP That Carries Current as Well as Load: The Defense Aircraft Weight
+          Penalty Hiding in Plain Sight
+        </h1>
+
+        <!-- Blog Meta -->
+        <div class="blog-meta">
+          <span class="blog-meta-item">
+            <svg
+              class="blog-meta-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            Published 5 June 2026
+          </span>
+          <span class="blog-meta-item">
+            <svg
+              class="blog-meta-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Addcomposites
+          </span>
+        </div>
+
+        <!-- Hero Image -->
+        <img
+          src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a266bd59c1d67e7d820ab26_1.png"
+          alt="CFRP aircraft structure with electrical system considerations"
+          class="full-width-image"
+        />
+
+        <!-- Intro -->
+        <p class="drop-cap">
+          A modern combat aircraft can be more than a third composite by weight,
+          yet almost none of that structure does any electrical work. The wiring
+          that powers avionics, sensors and actuators still travels through
+          dedicated metal — and that metal, plus the hardware needed to keep it
+          physically separated from the surrounding composite, is one of the
+          last large weight penalties that structural lightweighting has never
+          touched.
+        </p>
+
+        <p>
+          A December 2025 open-access paper in <em>Designs</em> (MDPI), authored
+          by Muhammad Hijaaj Tahir, Catherine E. Jones and Robert Ian Whitfield
+          of the University of Strathclyde, sets out to change that. It presents
+          what the authors describe as the first design-and-selection
+          methodology for multifunctional carbon fibre-reinforced polymer
+          (MF-CFRP) that carries mechanical load and conducts current at the
+          same time. In this post we walk through what the paper actually
+          proposes, where its boundaries lie, and — separately, as our own
+          editorial view — why automated fibre placement is the manufacturing
+          capability that turns this concept into hardware.
+        </p>
+
+        <p>
+          Throughout, we keep a clear line between what the paper shows and
+          Addcomposites' own analysis.
+        </p>
+
+        <!-- Section 1 -->
+        <section id="weight-tax">
+          <h2>The weight tax nobody budgets for</h2>
+
+          <p>
+            The paper opens from a familiar premise: composites already dominate
+            airframes. The authors note that more than half of a
+            state-of-the-art aircraft's structure is CFRP, and they put the case
+            for the material in blunt comparative terms — where aluminium offers
+            about 572 MPa at a density of 2.81 g/cm³, PAN-based CFRP delivers
+            roughly 2,572 MPa at a far lighter ~2.25 g/cm³. That gap, they note,
+            underpins savings on the order of a fifth of airframe mass against
+            an equivalent aluminium build.
+          </p>
+
+          <p>
+            The problem, the paper argues, is that this structure is
+            electrically dead. Because carbon fibres conduct but the surrounding
+            resin insulates, CFRP aerostructures are normally isolated from the
+            aircraft's electrical power system (EPS). Instead of letting the
+            structure double as a current path the way a metal fuselage can,
+            designers bolt on dedicated metallic bonding and grounding networks
+            plus separated cable harnesses. The authors quantify the cost from
+            the literature: on a Boeing 787-class aircraft, the added
+            current-return hardware runs to at least 340 kg, and the gear that
+            holds wiring clear of the composite can swell harness mass by
+            roughly a third.
+          </p>
+
+          <!-- Split image layout -->
+          <div class="split-layout">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a266c515f385abfe608792d_2.png"
+                alt="Aircraft wiring harnesses routed along CFRP fuselage panels"
+              />
+              <p class="image-caption">
+                Aircraft wiring harnesses routed along carbon fibre-reinforced
+                polymer fuselage panels, showing metallic separation brackets
+                and multi-loom cable bundles during assembly. AI-generated
+                illustration.
+              </p>
+            </div>
+            <div class="split-text">
+              <p>
+                That tax is most painful exactly where weight matters most.
+                Reviews in the wider literature put composite content of the
+                F-35 airframe at roughly 35% by weight (per a survey in
+                <em>Polymers</em>, PMC). And the conductivity problem already
+                forces a related compromise on the skin: since CFRP doesn't shed
+                a lightning strike the way aluminium does, carbon fibre aircraft
+                are typically given an extra conductive layer — often an
+                embedded metal mesh — purely for protection, adding mass that
+                again eats into the savings the composite was meant to deliver
+                (Sage Zander). For weight-critical military platforms and UAVs,
+                where every kilogram trades directly against range, endurance
+                and payload, the EPS budget is a target worth attacking.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="anisotropy">
+          <h2>Why CFRP refuses to conduct (in most directions)</h2>
+
+          <p>
+            The core technical obstacle is anisotropy. The paper explains that
+            current essentially follows the fibres: jumping from one fibre to
+            its neighbour within a layer, or from layer to layer, barely
+            happens. The numbers the authors gather make the scale of the
+            imbalance concrete.
+          </p>
+
+          <div class="highlight-box">
+            <h4>
+              Diagram A — Electrical anisotropy of unidirectional [0°] CFRP
+            </h4>
+            <p>
+              Original ASCII visualization by Addcomposites. Data values from:
+              Tahir, M.H.; Jones, C.E.; Whitfield, R.I. "A Methodology for the
+              Design and Selection of Multifunctional Carbon Fibre-Reinforced
+              Polymer for Aircraft Structures." <em>Designs</em> 2025, 9, 146,
+              p. 3.
+              <a
+                href="https://doi.org/10.3390/designs9060146"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://doi.org/10.3390/designs9060146</a
+              >
+              — © 2025 by the authors. Licensed under CC BY 4.0. This diagram is
+              an independent rendering, not a reproduction of any paper figure.
+            </p>
+          </div>
+
+          <!-- INFOGRAPHICS START 1 -->
+          <div class="cfca-wrap" id="cfcaRoot">
+            <div class="cfca-header">
+              <h4 class="cfca-title">
+                Carbon Fibre Electrical Conductivity — Directional Anisotropy
+              </h4>
+              <p class="cfca-subtitle">
+                Conductivity varies by up to ~30,000× depending on measurement
+                direction
+              </p>
+            </div>
+
+            <!-- Axis rows -->
+            <div class="cfca-axis-section" id="cfcaRows">
+              <div class="cfca-axis-row" data-delay="0">
+                <div class="cfca-axis-label">
+                  <span class="cfca-axis-name"
+                    ><span class="cfca-arrow-icon">→</span>Along Fibre</span
+                  >
+                  <span class="cfca-axis-desc">x-axis (longitudinal)</span>
+                </div>
+                <div class="cfca-bar-track">
+                  <div class="cfca-bar-fill cfca-bar-along" data-width="100">
+                    <span>~30,000 ×</span>
+                  </div>
+                </div>
+                <div class="cfca-value-tag">
+                  3–4 × 10⁴
+                  <span class="cfca-unit">S/m</span>
+                </div>
+              </div>
+
+              <div class="cfca-axis-row" data-delay="120">
+                <div class="cfca-axis-label">
+                  <span class="cfca-axis-name"
+                    ><span class="cfca-arrow-icon">↗</span>Transverse</span
+                  >
+                  <span class="cfca-axis-desc">in-plane</span>
+                </div>
+                <div class="cfca-bar-track">
+                  <div class="cfca-bar-fill cfca-bar-trans" data-width="30">
+                    <span>~100 ×</span>
+                  </div>
+                </div>
+                <div class="cfca-value-tag">
+                  ~10²
+                  <span class="cfca-unit">S/m</span>
+                </div>
+              </div>
+
+              <div class="cfca-axis-row" data-delay="240">
+                <div class="cfca-axis-label">
+                  <span class="cfca-axis-name"
+                    ><span class="cfca-arrow-icon">↓</span
+                    >Through-thickness</span
+                  >
+                  <span class="cfca-axis-desc">out-of-plane (z)</span>
+                </div>
+                <div class="cfca-bar-track">
+                  <div class="cfca-bar-fill cfca-bar-through" data-width="4">
+                    <span>baseline</span>
+                  </div>
+                </div>
+                <div class="cfca-value-tag">
+                  ~1
+                  <span class="cfca-unit">S/m</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ratio Band -->
+            <div class="cfca-ratio-band" id="cfcaRatio">
+              <div class="cfca-ratio-item">
+                <div class="cfca-ratio-dot" style="background: #47577c"></div>
+                <span class="cfca-ratio-text"
+                  >Along ÷ Through-thickness: <em>~30,000×</em> difference</span
+                >
+              </div>
+              <div class="cfca-ratio-item">
+                <div class="cfca-ratio-dot" style="background: #9d9d9c"></div>
+                <span class="cfca-ratio-text"
+                  >Transverse ÷ Through-thickness:
+                  <em>~100×</em> difference</span
+                >
+              </div>
+            </div>
+
+            <!-- Material Cards -->
+            <div class="cfca-materials" id="cfcaMats">
+              <div class="cfca-mat-card">
+                <div class="cfca-mat-label">CF Conductivity — PAN</div>
+                <div class="cfca-mat-value">10⁴ – 10⁵</div>
+                <div class="cfca-mat-sub">S/m · polyacrylonitrile-based</div>
+              </div>
+              <div class="cfca-mat-card">
+                <div class="cfca-mat-label">CF Conductivity — Pitch</div>
+                <div class="cfca-mat-value">up to 10⁶</div>
+                <div class="cfca-mat-sub">
+                  S/m · pitch-based (highest grade)
+                </div>
+              </div>
+              <div class="cfca-mat-card cfca-red">
+                <div class="cfca-mat-label">Epoxy Resin — Resistivity</div>
+                <div class="cfca-mat-value">10¹⁰ – 10¹³</div>
+                <div class="cfca-mat-sub">Ω·m · electrical insulator</div>
+              </div>
+            </div>
+
+            <p class="cfca-log-note">
+              Bar lengths are log-scaled for readability. Values span ~10 orders
+              of magnitude from fibre axis to epoxy matrix.
+            </p>
+          </div>
+
+          <!-- INFOGRAPHICS END 1 -->
+
+          <p>
+            In other words, a laminate can be an excellent conductor in one
+            direction and almost an insulator at right angles to it. According
+            to the authors, that behaviour can be steered: packing in more fibre
+            (a higher fibre volume fraction, V_f) squeezes out resin and opens
+            up fibre-to-fibre conduction paths — better electrically, but it can
+            cost the laminate the strength that relies on that resin. This is
+            the trade-off that sits at the heart of the whole paper, and the
+            reason the authors insist on treating mechanical, electrical and
+            thermal behaviour together rather than one at a time.
+          </p>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="joule-heating">
+          <h2>The Joule-heating trap</h2>
+
+          <p>
+            There is a second, less obvious constraint. Pushing current through
+            a resistive material generates heat, and CFRP heats unevenly. The
+            paper notes that even modest power — it cites an example as low as
+            30 W — can be enough to push a local hotspot past the resin's
+            glass-transition point (T_g); once a laminate crosses that line, its
+            mechanical properties begin to fall away. The hottest spots tend to
+            be at the electrode contacts, where current crowds into a small
+            cross-section.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a266bd4ec1827f781ef0b76_3.png"
+            alt="End-to-end electrode configuration for a CFRP sample"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            End-to-end electrode configuration for a CFRP sample, showing
+            current entry (+) at the left end and current exit (−) at the right,
+            with the x-axis marking sample length. Figure 7 from: Tahir, M.H.;
+            Jones, C.E.; Whitfield, R.I. "A Methodology for the Design and
+            Selection of Multifunctional Carbon Fibre-Reinforced Polymer for
+            Aircraft Structures." <em>Designs</em> 2025, 9, 146, p. 15.
+            <a
+              href="https://doi.org/10.3390/designs9060146"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://doi.org/10.3390/designs9060146</a
+            >
+            — © 2025 by the authors. Licensed under CC BY 4.0.
+          </p>
+
+          <p>
+            So a viable MF-CFRP component has to satisfy two ceilings at once: a
+            maximum allowable electrical resistance (set by the EPS voltage-drop
+            budget) and a thermal limit (the resin must stay comfortably below
+            T_g). The authors fold both into the methodology rather than
+            checking them in isolation — a point worth keeping in mind, because
+            the case study later runs straight into it.
+          </p>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="five-phase">
+          <h2>A five-phase methodology, with escape hatches</h2>
+
+          <p>
+            The heart of the paper is a structured workflow that moves from
+            system requirements down to a manufacturable laminate, backed by
+            four databases (ply orientations, stacking-sequence design rules,
+            measured electro-thermal response, and available commercial CFRP
+            options). What distinguishes it from classical material-selection
+            charts, the authors argue, is that it is built for a design space
+            where no first attempt is likely to work — so every phase has an
+            iteration loop that can either retune the laminate or push back on
+            the system-level requirements.
+          </p>
+
+          <div class="highlight-box">
+            <h4>Diagram B — The five-phase MF-CFRP methodology</h4>
+            <p>
+              Original ASCII schematic by Addcomposites, summarizing the phase
+              structure described in: Tahir, M.H.; Jones, C.E.; Whitfield, R.I.
+              "A Methodology for the Design and Selection of Multifunctional
+              Carbon Fibre-Reinforced Polymer for Aircraft Structures."
+              <em>Designs</em> 2025, 9, 146, pp. 6–23 (Figs. 1–15).
+              <a
+                href="https://doi.org/10.3390/designs9060146"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://doi.org/10.3390/designs9060146</a
+              >
+              — © 2025 by the authors. Licensed under CC BY 4.0. This diagram is
+              an independent rendering, not a reproduction of any paper figure.
+            </p>
+          </div>
+
+          <!-- INFOGRAPHICS START 2 -->
+
+          <div class="dm-wrap" id="dmRoot">
+            <div class="dm-header">
+              <h4 class="dm-title">
+                CFRP Multifunctional Design Methodology — 5-Phase Process
+              </h4>
+              <p class="dm-subtitle">
+                Forward flow with iterative feedback loops at each phase
+                transition
+              </p>
+            </div>
+
+            <div class="dm-layout">
+              <!-- ── LEFT: Phase flow ── -->
+              <div class="dm-flow">
+                <!-- Phase 1 -->
+                <div class="dm-phase" data-delay="0" id="dmP1">
+                  <div class="dm-phase-header">
+                    <div class="dm-phase-num">1</div>
+                    <div class="dm-phase-name">Capture Requirements</div>
+                  </div>
+                  <div class="dm-phase-body">
+                    Pick electrical equipment + structural component. Derive
+                    mechanical, electrical, thermal &amp; dimensional targets.
+                    Compute R<sub>allowable</sub>.
+                  </div>
+                </div>
+
+                <div class="dm-arrow-down"></div>
+
+                <!-- Phase 2 -->
+                <div class="dm-phase" data-delay="150" id="dmP2">
+                  <div class="dm-phase-header">
+                    <div class="dm-phase-num">2</div>
+                    <div class="dm-phase-name">Stacking Sequence</div>
+                  </div>
+                  <div class="dm-phase-body">
+                    Choose ply orientations + apply design rules. List candidate
+                    layups.
+                  </div>
+                  <div class="dm-db-tags">
+                    <span class="dm-db-tag">DB #1 — Ply orientations</span>
+                    <span class="dm-db-tag">DB #2 — Design rules</span>
+                  </div>
+                </div>
+
+                <div class="dm-arrow-down"></div>
+
+                <!-- Phase 3 -->
+                <div class="dm-phase" data-delay="300" id="dmP3">
+                  <div class="dm-phase-header">
+                    <div class="dm-phase-num">3</div>
+                    <div class="dm-phase-name">Electro-Thermal Assessment</div>
+                  </div>
+                  <div class="dm-phase-body">
+                    Compute R<sub>CFRP</sub> &amp; operating temperature. Check
+                    against R<sub>allowable</sub> AND thermal limit.
+                  </div>
+                  <div class="dm-db-tags">
+                    <span class="dm-db-tag">DB #3 — Thermal model</span>
+                  </div>
+                </div>
+
+                <div class="dm-arrow-down"></div>
+
+                <!-- Phase 4 -->
+                <div class="dm-phase" data-delay="450" id="dmP4">
+                  <div class="dm-phase-header">
+                    <div class="dm-phase-num">4</div>
+                    <div class="dm-phase-name">
+                      Identify &amp; Rank Solutions
+                    </div>
+                  </div>
+                  <div class="dm-phase-body">
+                    Match targets to real CFRP options, score, down-select the
+                    best candidate.
+                  </div>
+                  <div class="dm-db-tags">
+                    <span class="dm-db-tag">DB #4 — Material library</span>
+                    <span class="dm-db-tag">IFSS</span>
+                  </div>
+                </div>
+
+                <div class="dm-arrow-down"></div>
+
+                <!-- Phase 5 -->
+                <div class="dm-phase" data-delay="600" id="dmP5">
+                  <div class="dm-phase-header">
+                    <div class="dm-phase-num" style="background: #bf3425">
+                      5
+                    </div>
+                    <div class="dm-phase-name" style="color: #bf3425">
+                      Layup &amp; Curing Route
+                    </div>
+                  </div>
+                  <div class="dm-phase-body">
+                    Check manufacturability (V<sub>f</sub>, voids, geometry).
+                    Rank processes by Manufacturing Readiness Level.
+                  </div>
+                </div>
+              </div>
+              <!-- /dm-flow -->
+
+              <!-- ── RIGHT: Feedback pills ── -->
+              <div class="dm-feedback-col">
+                <!-- Aligned to gap between P1 and P2 -->
+                <div
+                  class="dm-fb-slot"
+                  data-delay="200"
+                  style="margin-top: 82px; margin-bottom: 0px"
+                >
+                  <div class="dm-fb-pill">
+                    Change component, relocate equipment, adjust EPS / structure
+                  </div>
+                </div>
+
+                <!-- Between P2 and P3 -->
+                <div
+                  class="dm-fb-slot"
+                  data-delay="350"
+                  style="margin-top: 58px; margin-bottom: 0px"
+                >
+                  <div class="dm-fb-pill">
+                    Refine ply, shrink R<sub>CFRP</sub>, or relax R<sub
+                      >allowable</sub
+                    >
+                  </div>
+                </div>
+
+                <!-- Between P3 and P4 -->
+                <div
+                  class="dm-fb-slot"
+                  data-delay="500"
+                  style="margin-top: 58px; margin-bottom: 0px"
+                >
+                  <div class="dm-fb-pill">
+                    Update DB #4, adjust design factors, test new fibre-resin
+                    compositions (IFSS)
+                  </div>
+                </div>
+
+                <!-- Between P4 and P5 -->
+                <div
+                  class="dm-fb-slot"
+                  data-delay="650"
+                  style="margin-top: 58px"
+                >
+                  <div class="dm-fb-pill">
+                    Pick alternative solution or revisit earlier phases
+                  </div>
+                </div>
+              </div>
+              <!-- /dm-feedback-col -->
+            </div>
+            <!-- /dm-layout -->
+
+            <!-- Legend -->
+            <div class="dm-legend" id="dmLegend">
+              <div class="dm-legend-item">
+                <div class="dm-legend-dot" style="background: #47577c"></div>
+                Forward progression
+              </div>
+              <div class="dm-legend-item">
+                <div class="dm-legend-dot" style="background: #bf3425"></div>
+                Feedback / iteration loop
+              </div>
+              <div class="dm-legend-item">
+                <div class="dm-legend-dot" style="background: #9d9d9c"></div>
+                Database reference (DB #1–4)
+              </div>
+            </div>
+          </div>
+
+          <!-- INFOGRAPHICS END 2 -->
+
+          <p>
+            A few of the equations the paper uses are worth surfacing, because
+            they show how the design ceilings get turned into numbers. The
+            maximum permissible resistance follows from the rated voltage, rated
+            current and the allowable voltage-drop percentage. The component's
+            actual resistance is modelled as a length term plus the entry/exit
+            contact resistance, written as R_CFRP = (m × l) + R_io. Steady-state
+            temperature against applied current is fitted as a quadratic, T_s =
+            a·I² + b·I + c, drawn from the authors' own experimental data. And
+            the required longitudinal conductivity comes from σ = l / (R_i × A).
+          </p>
+
+          <p>
+            The methodology was checked through a structured expert review
+            rather than a field trial. The authors report that two specialists
+            from the National Manufacturing Institute Scotland — one with around
+            15 years in composite materials, one with about 8 years in laminate
+            processing — assessed each phase via presentation and a Likert-scale
+            questionnaire, and that their feedback drove specific revisions (for
+            example, adding a symmetry guideline to reduce warping, and
+            rewording the stacking-sequence step to keep mechanical and
+            electrical properties in balance). The experts also suggested adding
+            cost, manufacturing rate and data-driven modelling; the paper notes
+            these were deferred because the supporting datasets don't yet exist.
+          </p>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="databases">
+          <h2>What the four databases actually hold</h2>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a266bd5c62c4449fd34b58c_4.png"
+            alt="High-level block diagram of the five-phase MF-CFRP design and selection methodology"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            High-level block diagram of the five-phase MF-CFRP design and
+            selection methodology, with four supporting databases (DB#1–DB#4)
+            shown on the left feeding into their respective phases, and five
+            iteration loops with triggering conditions and outcomes listed in
+            the adjacent columns. Figure 1 from: Tahir, M.H.; Jones, C.E.;
+            Whitfield, R.I. "A Methodology for the Design and Selection of
+            Multifunctional Carbon Fibre-Reinforced Polymer for Aircraft
+            Structures." <em>Designs</em> 2025, 9, 146, p. 7.
+            <a
+              href="https://doi.org/10.3390/designs9060146"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://doi.org/10.3390/designs9060146</a
+            >
+            — © 2025 by the authors. Licensed under CC BY 4.0.
+          </p>
+
+          <p>
+            The workflow only works if there's something to look things up in,
+            and the paper is unusually frank that those reference datasets are
+            both the engine and the bottleneck. It leans on four databases, each
+            feeding a different phase:
+          </p>
+
+          <div class="feature-grid">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+              </div>
+              <div>
+                <h4>Database #1 — Ply orientations for mechanical targets</h4>
+                <p>
+                  Maps component shapes to recommended fibre angles. For flat
+                  panels, the authors list 0° orientations for tensile,
+                  compressive and flexural strength and for interlaminar shear;
+                  for cylindrical tubes, different angle families for axial
+                  versus radial loading. It leans on non-woven fabric on purpose
+                  — woven cloth crimps the fibres, and that crimp bleeds away
+                  stiffness.
+                </p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4>Database #2 — Stacking-sequence design rules</h4>
+                <p>
+                  Drawn from the MIL-HDBK-17 handbook, this is the set of
+                  "design rules" that keep a laminate sane: the 10% rule for
+                  orientation diversity, symmetry and balance to avoid coupling,
+                  limits on consecutive same-angle plies, damage-tolerance
+                  placement, and a guideline capping the angle between adjacent
+                  plies.
+                </p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Database #3 — Measured electro-thermal response</h4>
+                <p>
+                  The heart of the method, and its weakest link. It links a
+                  laminate's makeup — fibres, matrix, additives, ply stacking,
+                  electrode setup — to two measured outputs: electrical
+                  resistance and operating temperature. The authors are explicit
+                  that this is experimentally populated and sparse — which is
+                  precisely why the case study had to stay on a [0/90] layup for
+                  which data existed.
+                </p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="3" y1="15" x2="21" y2="15"></line>
+                  <line x1="9" y1="3" x2="9" y2="21"></line>
+                  <line x1="15" y1="3" x2="15" y2="21"></line>
+                </svg>
+              </div>
+              <div>
+                <h4>Database #4 — Available CFRP options</h4>
+                <p>
+                  A catalogue of real prepregs and material systems with their
+                  mechanical, electrical and thermal properties, used in Phase 4
+                  to match requirements to something buyable. Tellingly, several
+                  cells in the published example carry a question mark — the
+                  electrical and thermal columns are frequently empty,
+                  reflecting how rarely suppliers publish those numbers.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            That last detail is, in our reading, the single most useful thing
+            the paper surfaces: the multifunctional design space is gated less
+            by physics than by missing measurements.
+          </p>
+        </section>
+
+        <!-- Section 6 -->
+        <section id="case-study">
+          <h2>The case study: a floor-beam that doubles as a cable</h2>
+
+          <p>
+            To show the workflow end to end, the paper presents a deliberately
+            illustrative case: take a wire — a 28 V DC line carrying 30 W to an
+            avionics system — and let a structural CFRP floor-beam in the
+            fuselage do the carrying instead. The authors are explicit that this
+            is a demonstration of decision-making, not an optimised production
+            part.
+          </p>
+
+          <p>
+            The setup, as described in the paper: a rated current of 1.07 A; a
+            beam sized from representative Boeing 787 geometry at 4.5 m × 0.05 m
+            × 0.004 m; and a 3.5% voltage-drop allowance defined by FAA AC
+            43.13-1B, which pins the resistance ceiling at 915 mΩ. Phase 2
+            produced a [0/90]₁₆ layup in PAN fibre and epoxy at 0.125 mm ply
+            thickness.
+          </p>
+
+          <p>
+            Then the thermal/electrical reality bit — and the iteration loop
+            earned its place:
+          </p>
+
+          <div class="highlight-box">
+            <h4>
+              Diagram C — Driving R_CFRP under the 915 mΩ ceiling (case-study
+              iteration)
+            </h4>
+            <p>
+              Original ASCII visualization by Addcomposites. Case-study values
+              from: Tahir, M.H.; Jones, C.E.; Whitfield, R.I. "A Methodology for
+              the Design and Selection of Multifunctional Carbon
+              Fibre-Reinforced Polymer for Aircraft Structures."
+              <em>Designs</em> 2025, 9, 146, pp. 24–26 (Section 5).
+              <a
+                href="https://doi.org/10.3390/designs9060146"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://doi.org/10.3390/designs9060146</a
+              >
+              — © 2025 by the authors. Licensed under CC BY 4.0. This diagram is
+              an independent rendering, not a reproduction of any paper figure.
+            </p>
+          </div>
+
+          <!-- INFOGRAPHICS START 3 -->
+          <div class="ropt-wrap" id="roptRoot">
+            <h4 class="ropt-title">
+              R<sub>CFRP</sub> Optimisation — Stepwise Reduction to Allowable
+              Ceiling
+            </h4>
+            <p class="ropt-subtitle">
+              Three design changes bring resistance from 3,300 mΩ down below the
+              915 mΩ limit
+            </p>
+
+            <!-- Limit banner -->
+            <div class="ropt-limit-banner" id="roptLimit">
+              <span class="ropt-limit-label"
+                >R<sub>allowable</sub> ceiling</span
+              >
+              <div class="ropt-limit-line"></div>
+              <span class="ropt-limit-val">915 mΩ</span>
+            </div>
+
+            <!-- Steps -->
+            <div class="ropt-steps">
+              <!-- Step 0 -->
+              <div class="ropt-step" data-delay="100" id="roptS0">
+                <div class="ropt-step-meta">
+                  <span class="ropt-step-badge ropt-badge-over">Baseline</span>
+                  <span class="ropt-step-label"
+                    >[0/90]₁₆ layup<br />5 × 4 mm electrodes<br />4.5 m
+                    path</span
+                  >
+                </div>
+                <div class="ropt-bar-track">
+                  <!-- limit tick at 915/3300 = 27.7% -->
+                  <div class="ropt-bar-limit-tick" style="left: 27.7%"></div>
+                  <div class="ropt-bar-fill ropt-bar-over" data-width="100">
+                    <span class="ropt-bar-inner-label"
+                      >3,300 mΩ — 3.6× over limit</span
+                    >
+                  </div>
+                </div>
+                <div class="ropt-val-tag">
+                  <span class="ropt-val-main over"
+                    >3,300 <span class="ropt-val-unit">mΩ</span></span
+                  >
+                  <span class="ropt-val-delta over">3.6× over</span>
+                </div>
+              </div>
+
+              <!-- Step 1 -->
+              <div class="ropt-step" data-delay="280" id="roptS1">
+                <div class="ropt-step-meta">
+                  <span class="ropt-step-badge ropt-badge-over">Step 1</span>
+                  <span class="ropt-step-label"
+                    >Widen electrode<br />5 mm → 50 mm</span
+                  >
+                  <span class="ropt-step-action">Laminate-only change</span>
+                </div>
+                <div class="ropt-bar-track">
+                  <div class="ropt-bar-limit-tick" style="left: 83.2%"></div>
+                  <div class="ropt-bar-fill ropt-bar-near" data-width="33.3">
+                    <span class="ropt-bar-inner-label">1,100 mΩ</span>
+                  </div>
+                </div>
+                <div class="ropt-val-tag">
+                  <span class="ropt-val-main over"
+                    >1,100 <span class="ropt-val-unit">mΩ</span></span
+                  >
+                  <span class="ropt-val-delta over">~1.2× over</span>
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="ropt-step" data-delay="460" id="roptS2">
+                <div class="ropt-step-meta">
+                  <span class="ropt-step-badge ropt-badge-ok">Step 2 ✓</span>
+                  <span class="ropt-step-label"
+                    >Reposition equipment<br />4.5 m → 2.75 m path</span
+                  >
+                  <span class="ropt-step-action">Active path reduction</span>
+                </div>
+                <div class="ropt-bar-track">
+                  <div class="ropt-bar-limit-tick" style="left: 100%"></div>
+                  <div class="ropt-bar-fill ropt-bar-ok" data-width="26.5">
+                    <span class="ropt-bar-inner-label">875 mΩ ✓</span>
+                  </div>
+                </div>
+                <div class="ropt-val-tag">
+                  <span class="ropt-val-main ok"
+                    >875 <span class="ropt-val-unit">mΩ</span></span
+                  >
+                  <span class="ropt-val-delta ok">Under ceiling</span>
+                </div>
+              </div>
+            </div>
+            <!-- /steps -->
+
+            <!-- Result cards -->
+            <div class="ropt-result" id="roptResult">
+              <div class="ropt-res-card">
+                <div class="ropt-res-label">Interface resistance</div>
+                <div class="ropt-res-val">R<sub>i</sub> = 7.5 mΩ</div>
+                <div class="ropt-res-sub">Contact contribution</div>
+              </div>
+              <div class="ropt-res-card">
+                <div class="ropt-res-label">Operating temperature</div>
+                <div class="ropt-res-val">T<sub>s</sub> = 38 °C</div>
+                <div class="ropt-res-sub">at 1.07 A supply current</div>
+              </div>
+              <div class="ropt-res-card">
+                <div class="ropt-res-label">Required conductivity</div>
+                <div class="ropt-res-val">σ = 16,500 S/m</div>
+                <div class="ropt-res-sub">
+                  Minimum fibre conductivity target
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- INFOGRAPHICS END 3 -->
+
+          <p>
+            What the sequence illustrates, in the authors' framing, is the
+            methodology's preference order: exhaust the low-disruption,
+            laminate-level moves first (here, enlarging the electrode contact
+            area), and only then reach into the wider system. Bumping the supply
+            to 45 V was on the table but discarded — it doesn't line up with
+            standard bus voltages; shortening the conduction path by relocating
+            equipment did the job instead. To protect the beam's structural
+            role, the authors describe keeping it as a single continuous member
+            and carving out a 2.75 m stretch as the live conducting zone, fed by
+            internal electrodes and isolated from the dormant section.
+          </p>
+
+          <div class="highlight-box">
+            <h4>
+              Diagram D — Continuous floor-beam with an embedded electrically
+              active region
+            </h4>
+            <p>
+              Original ASCII schematic by Addcomposites, redrawn to convey the
+              configuration in Figure 16 of: Tahir, M.H.; Jones, C.E.;
+              Whitfield, R.I. "A Methodology for the Design and Selection of
+              Multifunctional Carbon Fibre-Reinforced Polymer for Aircraft
+              Structures." <em>Designs</em> 2025, 9, 146, p. 26.
+              <a
+                href="https://doi.org/10.3390/designs9060146"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://doi.org/10.3390/designs9060146</a
+              >
+              — © 2025 by the authors. Licensed under CC BY 4.0. Redrawn and
+              simplified; not a reproduction of the original figure.
+            </p>
+          </div>
+
+          <!-- INFOGRAPHICS START 4 -->
+          <div class="cp-wrap" id="cpRoot">
+            <h4 class="cp-title">
+              Conduction Path Optimisation — Equipment Relocation Strategy
+            </h4>
+            <p class="cp-subtitle">
+              Reducing the active electrical path from 4.5 m to 2.75 m by
+              repositioning the power converter
+            </p>
+
+            <!-- (a) Original -->
+            <div class="cp-diagram-block" data-delay="0" id="cpBlockA">
+              <div class="cp-diagram-label">
+                <span class="cp-label-badge cp-badge-a">(a) Original</span>
+                <span class="cp-label-desc"
+                  >4.5 m full-beam conduction path — R<sub>CFRP</sub> = 1,100 mΩ
+                  (over limit)</span
+                >
+              </div>
+              <svg
+                class="cp-svg-wrap"
+                viewBox="0 0 780 150"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <!-- CFRP beam — full length, red (over limit) -->
+                <rect
+                  x="60"
+                  y="62"
+                  width="660"
+                  height="16"
+                  rx="5"
+                  fill="#fde8e4"
+                  stroke="#bf3425"
+                  stroke-width="1.5"
+                />
+
+                <!-- Active zone highlight — full beam -->
+                <rect
+                  x="60"
+                  y="62"
+                  width="660"
+                  height="16"
+                  rx="5"
+                  fill="none"
+                  stroke="#bf3425"
+                  stroke-width="2"
+                  stroke-dasharray="6,3"
+                  opacity="0.5"
+                />
+
+                <!-- Beam label -->
+                <text
+                  x="390"
+                  y="56"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="11"
+                  font-weight="700"
+                  fill="#bf3425"
+                >
+                  4.5 m CFRP beam — FULL PATH ACTIVE
+                </text>
+
+                <!-- Left box: Power converter -->
+                <rect
+                  x="2"
+                  y="44"
+                  width="58"
+                  height="40"
+                  rx="7"
+                  fill="#47577c"
+                />
+                <text
+                  x="31"
+                  y="62"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="9"
+                  font-weight="700"
+                  fill="#fff"
+                >
+                  Power
+                </text>
+                <text
+                  x="31"
+                  y="74"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="9"
+                  font-weight="700"
+                  fill="#fff"
+                >
+                  conv.
+                </text>
+
+                <!-- Right box: Avionics -->
+                <rect
+                  x="720"
+                  y="44"
+                  width="58"
+                  height="40"
+                  rx="7"
+                  fill="#47577c"
+                />
+                <text
+                  x="749"
+                  y="62"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="9"
+                  font-weight="700"
+                  fill="#fff"
+                >
+                  Avionics
+                </text>
+                <text
+                  x="749"
+                  y="74"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="9"
+                  font-weight="700"
+                  fill="#fff"
+                >
+                  system
+                </text>
+
+                <!-- Left electrode -->
+                <line
+                  x1="90"
+                  y1="78"
+                  x2="90"
+                  y2="110"
+                  stroke="#bf3425"
+                  stroke-width="2"
+                />
+                <polygon points="90,78 86,90 94,90" fill="#bf3425" />
+                <text
+                  x="90"
+                  y="124"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="9.5"
+                  fill="#bf3425"
+                  font-weight="600"
+                >
+                  electrode
+                </text>
+
+                <!-- Floor frame supports (3 internal) -->
+                <line
+                  x1="240"
+                  y1="78"
+                  x2="240"
+                  y2="108"
+                  stroke="#9d9d9c"
+                  stroke-width="1.5"
+                  stroke-dasharray="3,2"
+                />
+                <polygon points="240,78 236,89 244,89" fill="#9d9d9c" />
+                <text
+                  x="240"
+                  y="122"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="9"
+                  fill="#9d9d9c"
+                >
+                  floor frame
+                </text>
+
+                <line
+                  x1="390"
+                  y1="78"
+                  x2="390"
+                  y2="108"
+                  stroke="#9d9d9c"
+                  stroke-width="1.5"
+                  stroke-dasharray="3,2"
+                />
+                <polygon points="390,78 386,89 394,89" fill="#9d9d9c" />
+                <text
+                  x="390"
+                  y="122"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="9"
+                  fill="#9d9d9c"
+                >
+                  floor frame
+                </text>
+
+                <line
+                  x1="540"
+                  y1="78"
+                  x2="540"
+                  y2="108"
+                  stroke="#9d9d9c"
+                  stroke-width="1.5"
+                  stroke-dasharray="3,2"
+                />
+                <polygon points="540,78 536,89 544,89" fill="#9d9d9c" />
+                <text
+                  x="540"
+                  y="122"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="9"
+                  fill="#9d9d9c"
+                >
+                  floor frame
+                </text>
+
+                <!-- Right electrode -->
+                <line
+                  x1="690"
+                  y1="78"
+                  x2="690"
+                  y2="110"
+                  stroke="#bf3425"
+                  stroke-width="2"
+                />
+                <polygon points="690,78 686,90 694,90" fill="#bf3425" />
+                <text
+                  x="690"
+                  y="124"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="9.5"
+                  fill="#bf3425"
+                  font-weight="600"
+                >
+                  electrode
+                </text>
+
+                <!-- Resistance label pill -->
+                <rect
+                  x="300"
+                  y="8"
+                  width="180"
+                  height="22"
+                  rx="6"
+                  fill="#bf3425"
+                />
+                <text
+                  x="390"
+                  y="23"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="10"
+                  font-weight="700"
+                  fill="#fff"
+                >
+                  R_CFRP = 1,100 mΩ ✗ over limit
+                </text>
+              </svg>
+            </div>
+
+            <!-- (b) Relocated -->
+            <div class="cp-diagram-block" data-delay="280" id="cpBlockB">
+              <div class="cp-diagram-label">
+                <span class="cp-label-badge cp-badge-b">(b) Relocated</span>
+                <span class="cp-label-desc"
+                  >2.75 m active region only — R<sub>CFRP</sub> = 875 mΩ (under
+                  limit ✓)</span
+                >
+              </div>
+              <svg
+                class="cp-svg-wrap"
+                viewBox="0 0 780 160"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <!-- Inactive zone — left portion, gray -->
+                <rect
+                  x="60"
+                  y="62"
+                  width="390"
+                  height="16"
+                  rx="0"
+                  fill="#f1f5f9"
+                  stroke="#e2e8f0"
+                  stroke-width="1.5"
+                />
+                <text
+                  x="255"
+                  y="56"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="10"
+                  font-weight="600"
+                  fill="#9d9d9c"
+                >
+                  electrically INACTIVE region
+                </text>
+
+                <!-- Active zone — right portion, navy -->
+                <rect
+                  x="450"
+                  y="62"
+                  width="270"
+                  height="16"
+                  rx="0"
+                  fill="#e8ecf4"
+                  stroke="#47577c"
+                  stroke-width="2"
+                />
+                <text
+                  x="585"
+                  y="56"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="10"
+                  font-weight="700"
+                  fill="#47577c"
+                >
+                  ACTIVE 2.75 m
+                </text>
+
+                <!-- Rounded caps on full beam -->
+                <rect
+                  x="60"
+                  y="62"
+                  width="8"
+                  height="16"
+                  rx="4"
+                  fill="#9d9d9c"
+                />
+                <rect
+                  x="712"
+                  y="62"
+                  width="8"
+                  height="16"
+                  rx="4"
+                  fill="#47577c"
+                />
+
+                <!-- Divider line between inactive/active -->
+                <line
+                  x1="450"
+                  y1="55"
+                  x2="450"
+                  y2="88"
+                  stroke="#47577c"
+                  stroke-width="2"
+                />
+
+                <!-- Frame supports in inactive zone -->
+                <line
+                  x1="180"
+                  y1="78"
+                  x2="180"
+                  y2="108"
+                  stroke="#9d9d9c"
+                  stroke-width="1.5"
+                  stroke-dasharray="3,2"
+                />
+                <polygon points="180,78 176,89 184,89" fill="#9d9d9c" />
+                <text
+                  x="180"
+                  y="121"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="9"
+                  fill="#9d9d9c"
+                >
+                  frame
+                </text>
+
+                <line
+                  x1="330"
+                  y1="78"
+                  x2="330"
+                  y2="108"
+                  stroke="#9d9d9c"
+                  stroke-width="1.5"
+                  stroke-dasharray="3,2"
+                />
+                <polygon points="330,78 326,89 334,89" fill="#9d9d9c" />
+                <text
+                  x="330"
+                  y="121"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="9"
+                  fill="#9d9d9c"
+                >
+                  frame
+                </text>
+
+                <!-- Power converter — now relocated to middle-right -->
+                <rect
+                  x="450"
+                  y="94"
+                  width="66"
+                  height="40"
+                  rx="7"
+                  fill="#47577c"
+                />
+                <text
+                  x="483"
+                  y="112"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="9"
+                  font-weight="700"
+                  fill="#fff"
+                >
+                  Power
+                </text>
+                <text
+                  x="483"
+                  y="124"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="9"
+                  font-weight="700"
+                  fill="#fff"
+                >
+                  conv.
+                </text>
+
+                <!-- Connector from power conv to beam -->
+                <line
+                  x1="483"
+                  y1="94"
+                  x2="483"
+                  y2="78"
+                  stroke="#47577c"
+                  stroke-width="2"
+                />
+
+                <!-- Embedded electrode (left of active zone) -->
+                <line
+                  x1="510"
+                  y1="62"
+                  x2="510"
+                  y2="42"
+                  stroke="#47577c"
+                  stroke-width="2"
+                />
+                <polygon points="510,62 506,50 514,50" fill="#47577c" />
+                <text
+                  x="510"
+                  y="36"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="9"
+                  fill="#47577c"
+                  font-weight="600"
+                >
+                  embedded
+                </text>
+                <text
+                  x="510"
+                  y="26"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="9"
+                  fill="#47577c"
+                  font-weight="600"
+                >
+                  electrode
+                </text>
+                <text
+                  x="510"
+                  y="16"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="8.5"
+                  fill="#9d9d9c"
+                >
+                  (isolated from inactive)
+                </text>
+
+                <!-- Right: to avionics -->
+                <line
+                  x1="690"
+                  y1="62"
+                  x2="690"
+                  y2="42"
+                  stroke="#47577c"
+                  stroke-width="2"
+                />
+                <polygon points="690,62 686,50 694,50" fill="#47577c" />
+                <text
+                  x="710"
+                  y="36"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="9"
+                  fill="#47577c"
+                  font-weight="600"
+                >
+                  to avionics
+                </text>
+
+                <!-- Resistance label pill -->
+                <rect
+                  x="495"
+                  y="136"
+                  width="195"
+                  height="22"
+                  rx="6"
+                  fill="#47577c"
+                />
+                <text
+                  x="592"
+                  y="151"
+                  text-anchor="middle"
+                  font-family="Inter,sans-serif"
+                  font-size="10"
+                  font-weight="700"
+                  fill="#fff"
+                >
+                  R_CFRP = 875 mΩ ✓ under limit
+                </text>
+              </svg>
+            </div>
+
+            <!-- Comparison footer -->
+            <div class="cp-compare" id="cpCompare">
+              <div class="cp-cmp-card">
+                <div class="cp-cmp-label">Original path (a)</div>
+                <div class="cp-cmp-val" style="color: #bf3425">
+                  4.5 m — 1,100 mΩ
+                </div>
+                <div class="cp-cmp-sub">
+                  Full beam active · ~1.2× over R<sub>allowable</sub>
+                </div>
+              </div>
+              <div class="cp-cmp-card">
+                <div class="cp-cmp-label">Relocated path (b)</div>
+                <div class="cp-cmp-val" style="color: #47577c">
+                  2.75 m — 875 mΩ ✓
+                </div>
+                <div class="cp-cmp-sub">
+                  Active region only · within 915 mΩ ceiling
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- INFOGRAPHICS END 4 -->
+
+          <p>
+            Phase 4 matched the resulting targets to a real product, identifying
+            IM7-8552 prepreg as meeting the combined mechanical, electrical and
+            thermal requirements. And in Phase 5, the paper states, the case
+            study's manufacturing pick for a flat part that lives or dies on
+            orientation accuracy was automated fibre placement, chosen as the
+            route for both laying down and curing the laminate.
+          </p>
+        </section>
+
+        <!-- Section 7 -->
+        <section id="paper-limits">
+          <h2>Where the paper draws its own boundaries</h2>
+
+          <p>
+            A strength of this work is that the authors are candid about its
+            limits, and we think any honest summary has to carry those forward.
+            The paper acknowledges that its reach is gated by the data behind
+            Database #3 — the experimentally measured electro-thermal responses.
+            In practice that meant the case study used a [0/90] configuration to
+            stay on solid data, even though the design rules generally favour
+            keeping the angle between adjacent plies at or below 45°; the
+            electro-thermal datasets for ±45° layups simply aren't there yet.
+          </p>
+
+          <p>
+            The authors also note that the present version only holds where the
+            current is direct or low-frequency alternating — the regime in which
+            CFRP acts as a plain resistor — and does not yet handle the
+            high-switching-frequency power electronics where skin effect and
+            frequency-dependent impedance start to matter. EMI shielding,
+            lightning-strike protection, long-term durability (moisture, UV,
+            repairability), production rate, cost and certification timelines
+            are all named as out of scope for this early-stage, technically
+            focused version — and flagged as future work, including possible use
+            of FEA and machine learning to fill data gaps. Read fairly, the
+            contribution is a decision framework and a map of what's missing,
+            not a finished design tool.
+          </p>
+        </section>
+
+        <!-- Section 8 -->
+        <section id="afp-perspective">
+          <h2>Our perspective: why this lands on AFP</h2>
+
+          <div class="intro-card">
+            <p>
+              The following is Addcomposites' own analysis. The paper's authors
+              have not reviewed or endorsed this commentary, our products, or
+              our company.
+            </p>
+          </div>
+
+          <p>
+            Two things in this paper stand out from a manufacturing standpoint.
+          </p>
+
+          <p>
+            First, the design window the methodology defines is fundamentally a
+            stacking-sequence and fibre-volume-fraction window. The
+            methodology's whole premise is that electrical and thermal behaviour
+            are governed by ply orientation, ply count, V_f and electrode
+            geometry — the same variables that govern mechanical performance,
+            only now they have to be hit simultaneously. A laminate that meets a
+            915 mΩ ceiling at one electrode width and one path length is
+            sensitive to exactly the parameters that vary most with manual
+            layup. That sensitivity is, in our view, the practical case for
+            automated fibre placement: repeatable, ply-by-ply orientation and
+            consistent V_f are not a nice-to-have for multifunctional parts —
+            they are the difference between a laminate that conducts to spec and
+            one that doesn't.
+          </p>
+
+          <p>
+            Second, the paper's own demonstrator landed on AFP as the
+            manufacturing route. We read that as confirmation of where this
+            class of part naturally sits, not as any endorsement of a vendor.
+          </p>
+
+          <!-- AFP-X full-width image -->
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a266bd5b9176595d17af7db_5.png"
+            alt="Topology-optimized carbon fibre fuselage structure manufactured using Addcomposites AFP-X system"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            Topology-optimized carbon fibre fuselage structure manufactured on a
+            flat tool using Addcomposites' AFP-X system (left), the finished
+            structural part (centre), and a close-up of the AFP-X head during
+            active tow placement (right). Image credit: IFW, Leibniz Universität
+            Hannover.
+          </p>
+
+          <p>
+            This is the space our systems are built for. The AFP-XS, AFP-X and
+            ADDX platforms place fibre with the orientation and volume-fraction
+            control that a multifunctional laminate demands, and AddPath lets
+            teams plan and verify those stacking sequences before a single ply
+            is laid. For defense AFP users producing structural panels and beams
+            today — purely for mechanical performance — this methodology is a
+            prompt to open a conversation with OEM structural and electrical
+            teams about laminates that also carry power, and to start capturing
+            the electro-thermal data the paper identifies as the field's main
+            gap.
+          </p>
+
+          <!-- AddPath split layout - image right -->
+          <div class="split-layout reverse">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69e5fc57fccc0a4a631c040c_9.png"
+                alt="AddPath layup simulation interface"
+              />
+              <p class="image-caption">
+                AddPath's layup simulation interface showing ply-by-ply tape
+                sequencing and robot path verification on a flat panel geometry.
+              </p>
+            </div>
+            <div class="split-text">
+              <p>
+                There's a first-mover dimension here worth naming plainly.
+                Because Database #3 and Database #4 are so thin, whoever
+                generates trustworthy electro-thermal data for
+                production-representative layups effectively defines the usable
+                design space for everyone who follows. A defense supplier
+                already running AFP at production quality is in an unusual
+                position to do exactly that: the same machine that lays the
+                structural part can lay the characterization coupons, with the
+                orientation and V_f consistency that makes the resulting
+                measurements meaningful rather than noise. In a procurement
+                environment where weight, range and survivability are scored
+                hard, the ability to offer a structural panel that also retires
+                part of the EPS mass budget is not a marketing line — it's a
+                measurable trade against payload. The methodology gives that
+                conversation a defensible technical spine; AFP gives it a path
+                to repeatable hardware.
+              </p>
+            </div>
+          </div>
+
+          <p>
+            It's worth distinguishing this from the parallel structural-battery
+            thread in defense R&D — efforts like the DoD's structural
+            energy-and-power work and the EU's SOLIFLY project, where composites
+            store energy. There, the laminate is engineered to hold charge as
+            well as bear load (<a
+              href="https://www.compositesworld.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >CompositesWorld</a
+            >). The Strathclyde methodology is about conducting current, not
+            storing it — a nearer-term, lower-risk step on the same road toward
+            higher EPS power density. Both point the same way: structure that
+            does electrical work.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69df3f134e33fe3e76584724_8.png"
+            alt="AFP system manufacturing structural composite parts"
+            class="full-width-image"
+          />
+        </section>
+
+        <!-- Section 9 -->
+        <section id="read-research">
+          <h2>Read the research</h2>
+
+          <p>
+            This post summarizes and comments on the following open-access
+            article. We encourage reading the original in full.
+          </p>
+
+          <div class="highlight-box">
+            <p>
+              Tahir, M.H.; Jones, C.E.; Whitfield, R.I. "A Methodology for the
+              Design and Selection of Multifunctional Carbon Fibre-Reinforced
+              Polymer for Aircraft Structures." <em>Designs</em> 2025, 9, 146.
+              <a
+                href="https://doi.org/10.3390/designs9060146"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://doi.org/10.3390/designs9060146</a
+              >
+            </p>
+            <p>
+              © 2025 by the authors. Published by MDPI under the Creative
+              Commons Attribution (CC BY 4.0) license (<a
+                href="https://creativecommons.org/licenses/by/4.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://creativecommons.org/licenses/by/4.0/</a
+              >).
+            </p>
+            <p>
+              Supporting context drawn from external sources: composite content
+              of military airframes (PMC, "Practical Use of Composite Materials
+              Used in Military Aircraft"); lightning-protection mass penalty on
+              CFRP skins (Sage Zander); and the structural-battery comparison
+              (CompositesWorld coverage of the SOLIFLY project). These are cited
+              for background only and are independent of the Strathclyde paper.
+            </p>
+          </div>
+        </section>
+
+        <!-- Learn More -->
+        <section id="learn-more">
+          <h2>Learn More</h2>
+          <div class="learn-more-container">
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/all-products/afp-xs"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AFP-XS</span>
+                <span class="learn-more-desc"
+                  >Entry-level automated fiber placement</span
+                >
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/all-products/afp-x"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AFP-X</span>
+                <span class="learn-more-desc">Advanced multi-tow system</span>
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/addpath"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AddPath</span>
+                <span class="learn-more-desc"
+                  >AI-powered path planning software</span
+                >
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/post/afp-machines-and-components"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">Complete Guide</span>
+                <span class="learn-more-desc"
+                  >The Complete Guide to AFP Machines</span
+                >
+              </div>
+            </a>
+          </div>
+
+          <div class="cta-section">
+            <p>
+              Get in touch to discuss your multifunctional CFRP or AFP
+              manufacturing application →
+            </p>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/contact-us"
+              class="cta-button"
+              >Contact Us for a Consultation</a
+            >
+          </div>
+        </section>
+
+        <!-- References -->
+        <section id="references">
+          <h2>References</h2>
+          <ol class="references-list">
+            <li>
+              Tahir, M.H.; Jones, C.E.; Whitfield, R.I. "A Methodology for the
+              Design and Selection of Multifunctional Carbon Fibre-Reinforced
+              Polymer for Aircraft Structures." <em>Designs</em> 2025, 9, 146.
+              <a
+                href="https://doi.org/10.3390/designs9060146"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://doi.org/10.3390/designs9060146</a
+              >
+            </li>
+            <li>
+              PMC. "Practical Use of Composite Materials Used in Military
+              Aircraft." <em>Polymers</em> review series.
+            </li>
+            <li>
+              Sage Zander. Lightning-protection mass penalty on CFRP aircraft
+              skins. Industry reference.
+            </li>
+            <li>
+              CompositesWorld. Coverage of the SOLIFLY project
+              (structural-battery composites, EU defense R&D).
+              <a
+                href="https://www.compositesworld.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://www.compositesworld.com</a
+              >
+            </li>
+          </ol>
+        </section>
+
+        <!-- Author Section -->
+        <section class="author-section">
+          <div class="author-card">
+            <div class="author-image-wrapper">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/65dc93e2c8b30f7b6484e473_contact-lwr-img1.jpg"
+                alt="Pravin Luthada"
+                class="author-image"
+              />
+            </div>
+            <div class="author-info">
+              <h3 class="author-name">Pravin Luthada</h3>
+              <p class="author-title">CEO &amp; Co-founder, Addcomposites</p>
+              <div class="author-social">
+                <a
+                  href="https://www.linkedin.com/in/pravinluthada/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <svg viewBox="0 0 24 24" fill="#0A66C2">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                  </svg>
+                </a>
+                <a href="mailto:pravin@addcomposites.com" aria-label="Email">
+                  <svg viewBox="0 0 24 24" fill="#EA4335">
+                    <path
+                      d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.youtube.com/@addcomposites"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
+                  <svg viewBox="0 0 24 24" fill="#FF0000">
+                    <path
+                      d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <h4 class="about-author-label">About Author</h4>
+              <p class="author-bio">
+                As the author of the Addcomposites blog, Pravin Luthada's
+                insights are forged from a distinguished career in advanced
+                materials, beginning as a space scientist at the Indian Space
+                Research Organisation (ISRO). During his tenure, he gained
+                hands-on expertise in manufacturing composite components for
+                satellites and launch vehicles, where he witnessed firsthand the
+                prohibitive costs of traditional Automated Fiber Placement (AFP)
+                systems. This experience became the driving force behind his
+                entrepreneurial venture, Addcomposites Oy, which he co-founded
+                and now leads as CEO. The company is dedicated to democratizing
+                advanced manufacturing by developing patented, plug-and-play AFP
+                toolheads that make automation accessible and affordable. This
+                unique journey from designing space-grade hardware to leading a
+                disruptive technology company provides Pravin with a
+                comprehensive, real-world perspective that informs his writing
+                on the future of the composites industry.
+              </p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
