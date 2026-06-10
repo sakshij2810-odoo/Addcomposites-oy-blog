@@ -1,0 +1,1096 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Your Deep-Sea CFRP Shell Is Weaker Than Your Test Data Says —
+      Addcomposites
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Assistant:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Mobile Nav Toggle -->
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="blog-layout">
+      <!-- Sidebar -->
+      <nav class="blog-sidebar" aria-label="Table of Contents">
+        <!-- Close button (mobile only) -->
+        <button class="sidebar-close" aria-label="Close navigation menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          Close Menu
+        </button>
+        <h3 class="blog-sidebar-title">Contents</h3>
+        <div class="blog-sidebar-nav">
+          <a href="#intro" class="blog-sidebar-link active">Introduction</a>
+          <a href="#biaxial-world" class="blog-sidebar-link">A Biaxial World</a>
+          <a href="#what-was-tested" class="blog-sidebar-link"
+            >What Was Tested</a
+          >
+          <a href="#uniaxial-baseline" class="blog-sidebar-link"
+            >Uniaxial Baseline</a
+          >
+          <a href="#headline-result" class="blog-sidebar-link"
+            >Headline Result</a
+          >
+          <a href="#failure-criteria" class="blog-sidebar-link"
+            >Failure Criteria</a
+          >
+          <a href="#damage-progression" class="blog-sidebar-link"
+            >Damage Progression</a
+          >
+          <a href="#shell-test" class="blog-sidebar-link">Shell Test</a>
+          <a href="#our-perspective" class="blog-sidebar-link"
+            >Our Perspective</a
+          >
+          <a href="#learn-more" class="blog-sidebar-link">Learn More</a>
+          <a href="#references" class="blog-sidebar-link">References</a>
+        </div>
+      </nav>
+
+      <article class="blog-content">
+        <!-- Title -->
+        <h1>
+          Your Deep-Sea CFRP Shell Is Weaker Than Your Test Data Says: You're
+          Testing It in One Direction
+        </h1>
+
+        <!-- Blog Meta -->
+        <div class="blog-meta">
+          <span class="blog-meta-item">
+            <svg
+              class="blog-meta-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            June 2026
+          </span>
+          <span class="blog-meta-item">
+            <svg
+              class="blog-meta-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            12 min read
+          </span>
+          <span class="blog-meta-item">
+            <svg
+              class="blog-meta-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Pravin Luthada
+          </span>
+        </div>
+
+        <!-- Section: Introduction -->
+        <section id="intro">
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a2948b1cb6505a96e68d052_1.png"
+            alt="Deep-sea CFRP pressure hull"
+            class="full-width-image"
+          />
+
+          <p class="drop-cap">
+            A composite pressure hull on the seabed is never loaded in a single
+            direction. Hydrostatic pressure squeezes it from every side at once,
+            generating substantial compressive stresses in both the
+            circumferential (hoop) and axial directions simultaneously. Yet the
+            qualification data behind most CFRP shell designs comes from
+            uniaxial compression coupons — specimens crushed along one axis at a
+            time. A February 2026 open-access study in the Journal of Composites
+            Science makes the gap between those two worlds uncomfortably
+            concrete: measured biaxial compressive strength came in far below
+            the uniaxial value in the same direction, by roughly a third to
+            nearly two-thirds depending on the loading case.
+          </p>
+
+          <p>
+            For anyone manufacturing CFRP cylindrical shells for autonomous
+            underwater vehicles, manned submersibles, gliders, or deep-sea
+            instrument housings, that is not an academic footnote. It means a
+            laminate qualified against uniaxial data may carry less load at
+            depth than the test report implies.
+          </p>
+
+          <p>
+            This post walks through what the study tested, what it found, and
+            where precise layup control fits into designing for the stress state
+            that actually exists on the seafloor.
+          </p>
+
+          <div class="highlight-box">
+            <h4>A note on sourcing</h4>
+            <p>
+              Everything attributed to "the paper," "the study," or "the
+              authors" below is drawn from Zhou et al., Journal of Composites
+              Science 2026, cited in full at the end. Sections marked "Our
+              perspective" are Addcomposites' own commentary and are not claims
+              made by, or endorsed by, the paper's authors. The paper itself
+              does not use, mention, or evaluate Addcomposites or its products.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section: The problem -->
+        <section id="biaxial-world">
+          <h2>The problem: a hull lives in a biaxial world</h2>
+          <p>
+            The authors frame the engineering motivation clearly. A pressure
+            shell under external hydrostatic load does not see one dominant
+            stress; it sees a combined circumferential-and-axial compressive
+            field, with comparatively low radial stress. On a metal shell of the
+            same shape, pressure works the hoop direction about twice as hard as
+            the axial one. The study points out that uniaxial loading tests,
+            however well understood, cannot reliably predict how a composite
+            behaves once two compressive stresses act together.
+          </p>
+
+          <p>
+            That mismatch is the whole story. The authors observe that earlier
+            multiaxial work has leaned toward tension cases, which leaves the
+            all-compression loading a deep-sea shell actually sees comparatively
+            under-studied. The contribution of this work is to close part of
+            that gap with a two-pronged verification strategy: biaxial
+            compression tests on flat laminate coupons, paired with a
+            hydrostatic pressure test on a full cylindrical shell.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a2948b134ee85bce0a53310_2.png"
+            alt="Cruciform biaxial compression specimen and test rig"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            The cruciform biaxial compression specimen (schematic and
+            photograph), the Zwick Z050 biaxial test rig in operation, the
+            wet-wound composite cylindrical shell with steel end-cap assembly
+            (schematic and tooling photograph), and the sealed hydraulic
+            pressurization testbed used for the hydrostatic failure test. Figure
+            2 from: Zhou, C.; Tang, Z.; Deng, X.; Gao, Y.; Jiang, H. "Strength
+            and Failure Behavior of Carbon Fiber Composite Laminates Under
+            Biaxial Compression for Deep-Sea Application." Journal of Composites
+            Science 2026, 10, 130.
+            <a
+              href="https://doi.org/10.3390/jcs10030130"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://doi.org/10.3390/jcs10030130</a
+            >
+            — © 2026 by the authors. Licensed under
+            <a
+              href="https://creativecommons.org/licenses/by/4.0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >CC BY 4.0</a
+            >.
+          </p>
+        </section>
+
+        <!-- Section: What was tested -->
+        <section id="what-was-tested">
+          <h2>What was tested, and how it was built</h2>
+          <p>
+            The laminate in question uses a stacking sequence written as
+            [90°/90°/90°/20°/−20°] repeated and made symmetric about the
+            midplane. Here the 90° direction is the circumferential one. The
+            layup is deliberately lopsided: three hoop plies for every pair of
+            shallow off-axis plies. The authors' rationale is that if the hoop
+            direction carries about twice the stiffness of the axis, both
+            directions strain by similar amounts and the fiber pulls its weight
+            in each. For this stack, that lands at a hoop-to-axial modulus ratio
+            near 1.78.
+          </p>
+
+          <!-- INFOGRAPHIC SECTION 1: LAYUP AND STIFFNESS ASYMMETRY -->
+          <!-- Creative Brief: Visualize the [90/90/90/20/-20]ns stacking sequence as a layered stack diagram.
+               Show each ply as a horizontal band with fiber orientation indicated by directional lines or arrows:
+               - Plies 1–3: horizontal lines (90° = hoop/circumferential)
+               - Ply 4: diagonal lines at +20° (off-axis)
+               - Ply 5: diagonal lines at −20° (mirror off-axis)
+               Annotate with ply labels and repeat/symmetry notation.
+               Below the stack, show a side-by-side bar or ratio graphic:
+               E_hoop : E_axial ≈ 1.78 : 1
+               Use brand colors: navy #47577c for hoop plies, red #bf3425 for off-axis plies, gray for labels.
+               Clean, technical aesthetic. No decorative elements. -->
+
+          <p>
+            Both the coupons and the shell used a T700 carbon fiber/epoxy system
+            with a fiber volume fraction of about 60% and a nominal ply
+            thickness near 0.2 mm. The flat coupons were produced by prepreg
+            compression molding; the cylindrical shell was made by wet winding
+            carbon fiber and epoxy. The longitudinal modulus of the
+            unidirectional lamina is reported as 138 GPa, with a transverse
+            modulus of 8.55 GPa, an in-plane shear modulus of 4.46 GPa, and a
+            major Poisson's ratio of 0.31. On the strength side, the lamina
+            shows a longitudinal tensile strength of 2110 MPa against a
+            longitudinal compressive strength of 1337 MPa, and a stark
+            transverse asymmetry: 24.5 MPa in transverse tension versus 140 MPa
+            in transverse compression.
+          </p>
+
+          <p>
+            The test program covered three regimes: uniaxial compression along
+            each in-plane axis; biaxial compression in two flavors; and a
+            stepped hydrostatic pressure test on the shell. The biaxial coupons
+            were run on a cruciform biaxial rig under two protocols —
+            equal-displacement control (driving comparable strain in both
+            directions) and a 1:2 proportional-force protocol intended to mimic
+            the roughly 2:1 hoop-to-axial stress split of a real pressure shell.
+            Three valid specimens were tested per condition and the reported
+            numbers are the means.
+          </p>
+
+          <div class="split-layout">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a2948b1711ad36109c341a1_3.png"
+                alt="Uniaxial compression specimens and stress-strain curves"
+              />
+              <p class="image-caption">
+                Uniaxial compression specimens with tabbed ends (dimensions and
+                photograph), the wedge-grip compression testbed, and
+                stress–strain curves from three repeated tests in the 0° axial
+                direction (X1, peak ~371 MPa) and the 90° circumferential
+                direction (Y1, peak ~817 MPa), with inset photographs of the
+                respective failure modes. Figure 1 from: Zhou, C.; Tang, Z.;
+                Deng, X.; Gao, Y.; Jiang, H. "Strength and Failure Behavior of
+                Carbon Fiber Composite Laminates Under Biaxial Compression for
+                Deep-Sea Application." Journal of Composites Science 2026, 10,
+                130.
+                <a
+                  href="https://doi.org/10.3390/jcs10030130"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://doi.org/10.3390/jcs10030130</a
+                >
+                — © 2026 by the authors. Licensed under
+                <a
+                  href="https://creativecommons.org/licenses/by/4.0/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >CC BY 4.0</a
+                >.
+              </p>
+            </div>
+            <div class="split-text">
+              <h3>Material system overview</h3>
+              <p>
+                The T700 carbon fiber/epoxy system was chosen for its
+                representative properties in deep-sea applications. A fiber
+                volume fraction of 60% and nominal ply thickness of 0.2 mm are
+                typical of precision-wound pressure vessels.
+              </p>
+              <p>
+                The stark transverse asymmetry — 24.5 MPa in tension versus 140
+                MPa in compression — is a key driver of the layup strategy and
+                of the eventual failure mechanism under biaxial loading.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section: Uniaxial baseline -->
+        <section id="uniaxial-baseline">
+          <h2>The uniaxial baseline: direction matters a lot</h2>
+          <p>
+            Before the biaxial story, the uniaxial coupons set a reference.
+            Crushed along the axial (0°, x) direction, the laminate reached an
+            average peak stress of 371 MPa. Crushed along the circumferential
+            (90°, y) direction, it reached 817 MPa — about 2.2 times higher.
+          </p>
+
+          <!-- INFOGRAPHIC SECTION 2: UNIAXIAL COMPRESSIVE STRENGTH BAR CHART -->
+          <!-- Creative Brief: Horizontal bar chart showing uniaxial compressive strength (MPa) for two directions:
+               x = axial (0°): 371 MPa
+               y = hoop (90°): 817 MPa (~2.2× the axial value)
+               Label each bar with the value in MPa. Annotate the ratio "~2.2×" with a bracket or arrow.
+               Use navy #47577c for the hoop bar, lighter gray-blue for the axial bar.
+               X-axis: 0 to 900 MPa, gridlines at 200, 400, 600, 800.
+               Title: "Uniaxial Compressive Strength (MPa, mean of 3 specimens)"
+               Clean, minimal design. Source attribution at bottom. -->
+
+          <p>
+            The authors attribute the difference to the layup itself. The
+            y-direction is rich in 90° plies that are well aligned to carry that
+            load, so its response stays nearly linear up to failure. The
+            x-direction leans on the matrix and on the shallow ±20° plies, which
+            tend to shear and slide between layers when compressed, so it gives
+            way sooner and at a much lower stress. That asymmetry is intentional
+            and useful for a hoop-dominated shell — but it also means the two
+            directions behave by very different mechanisms, which becomes
+            important once both are loaded together.
+          </p>
+        </section>
+
+        <!-- Section: Headline result -->
+        <section id="headline-result">
+          <h2>The headline result: two directions at once is worse than one</h2>
+          <p>
+            Here is the finding that matters most for design. Under both biaxial
+            protocols, the ultimate compressive strength in a given direction
+            fell well below the uniaxial value in that same direction.
+          </p>
+
+          <!-- INFOGRAPHIC SECTION 3: UNIAXIAL VS BIAXIAL STRENGTH COMPARISON -->
+          <!-- Creative Brief: Grouped horizontal bar chart comparing compressive strength (MPa) across loading conditions for both directions.
+               Groups:
+               X-direction (axial):
+                 - Uniaxial: 371 MPa
+                 - Biaxial equal-displacement: 237 MPa (−36%)
+                 - Biaxial 1:2 force: 164 MPa (−56%)
+               Y-direction (hoop):
+                 - Uniaxial: 817 MPa
+                 - Biaxial equal-displacement: 295 MPa (−64%)
+                 - Biaxial 1:2 force: 326 MPa (−60%)
+               Annotate percentage reduction labels on each bar.
+               Color coding: darker shade for uniaxial, medium for equal-displacement, lighter for 1:2 force.
+               Use brand palette. Title: "Uniaxial vs. Biaxial Compressive Strength (MPa)"
+               Source attribution at bottom. -->
+
+          <p>
+            The reductions are not uniform — they range from about 36% in the
+            best case (axial direction, equal-displacement) to roughly 64% in
+            the worst (hoop direction, equal-displacement). The single "40%
+            weaker" figure that sometimes gets attached to this work is, at
+            best, a rough midpoint; the honest version is a band that depends
+            heavily on which direction and which loading path you care about.
+            The same downward trend showed up in failure strain as well as
+            strength.
+          </p>
+
+          <p>
+            The authors read it as a stress-state effect: two compressive axes
+            at once start matrix damage sooner and let it grow, so the fibers
+            never deliver their full strength before the laminate lets go. In
+            other words, the second axis of compression doesn't just add a bit
+            of stress; it changes when and how the laminate begins to come
+            apart.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a2948b14a31f7cf4a8b3318_4.png"
+            alt="Grouped bar charts showing compressive strength and failure strain"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            Grouped bar charts showing compressive strength (MPa) and failure
+            strain (µε) for both x- and y-directions under three loading
+            conditions — uniaxial, equal-displacement biaxial, and 1:2
+            proportional-force biaxial — with error bars at ±1 SD, making the
+            stepwise strength reduction from uniaxial to biaxial loading visible
+            in both axes simultaneously. Figure 4 (panels c and d) from: Zhou,
+            C.; Tang, Z.; Deng, X.; Gao, Y.; Jiang, H. "Strength and Failure
+            Behavior of Carbon Fiber Composite Laminates Under Biaxial
+            Compression for Deep-Sea Application." Journal of Composites Science
+            2026, 10, 130.
+            <a
+              href="https://doi.org/10.3390/jcs10030130"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://doi.org/10.3390/jcs10030130</a
+            >
+            — © 2026 by the authors. Licensed under
+            <a
+              href="https://creativecommons.org/licenses/by/4.0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >CC BY 4.0</a
+            >.
+          </p>
+
+          <div class="highlight-box">
+            <h4>Our perspective</h4>
+            <p>
+              The design implication is the part worth dwelling on. If a
+              deep-sea shell is qualified against uniaxial coupon data and a
+              knockdown factor that wasn't derived from biaxial testing, the
+              margin sitting in the design file may be smaller than it looks.
+              The study's value for a manufacturer is less "the number is X" and
+              more "the shape of the failure surface under compression is not
+              what a uniaxial test will tell you."
+            </p>
+          </div>
+        </section>
+
+        <!-- Section: Failure criteria -->
+        <section id="failure-criteria">
+          <h2>Which failure criterion should you actually trust?</h2>
+          <p>
+            Knowing biaxial strength is lower is only half the battle. To design
+            a shell, you need a failure criterion in your finite element model
+            that predicts that lower value accurately. The study implemented six
+            classical and enhanced criteria as three-dimensional user-material
+            subroutines (written in Fortran for Abaqus/Explicit) and benchmarked
+            each against the biaxial coupon data: maximum stress, maximum
+            strain, Tsai–Wu, Rationalized Tsai–Wu, Hashin, and Shokrieh.
+          </p>
+
+          <p>
+            The verdict was consistent across the program: Hashin tracked the
+            measurements most closely across the board.
+          </p>
+
+          <!-- INFOGRAPHIC SECTION 4: FAILURE CRITERIA ERROR COMPARISON -->
+          <!-- Creative Brief: Horizontal bar chart showing absolute % error vs experiment for 6 failure criteria,
+               for both y-direction (hoop) and x-direction (axial), equal-displacement biaxial protocol.
+               Y-direction errors (experiment 295.4 MPa):
+                 Hashin: 2.6% (best)
+                 Max stress: 4.0%
+                 Tsai-Wu: 4.8%
+                 Max strain: 6.3%
+                 R-Tsai-Wu: 9.2%
+                 Shokrieh: 23.5%
+               X-direction errors (experiment 236.8 MPa):
+                 Hashin: 15.1% (best)
+                 Max stress: 17.3%
+                 Tsai-Wu: 19.2%
+                 Max strain: 23.1%
+                 R-Tsai-Wu: 31.4%
+                 Shokrieh: 35.2%
+               Highlight the Hashin bar in red #bf3425 ("best" label), others in navy/gray.
+               Lower bar = better. Add a "best" annotation to Hashin in each panel.
+               Two-panel layout: one for each direction. Source at bottom. -->
+
+          <p>
+            A few things stand out. In the hoop direction, Hashin landed within
+            2.6% of the measured strength, and most criteria did reasonably well
+            there. The axial direction was harder for every criterion — even the
+            best result carried about 15% error — which tracks with the matrix-
+            and shear-driven failure mechanism that makes that direction messy
+            in the first place. The authors note that Tsai–Wu reads a little
+            high on strength, while the maximum-stress, maximum-strain,
+            R-Tsai–Wu, and Shokrieh criteria generally come in conservative.
+            Under the 1:2 proportional-force protocol, the failure-strain
+            comparison told the same story, with Hashin predicting the measured
+            strains to within roughly 1 to 2%.
+          </p>
+
+          <div class="highlight-box">
+            <h4>Our perspective</h4>
+            <p>
+              The practical takeaway is that criterion choice is not cosmetic.
+              Picking Shokrieh over Hashin for this layup could shift a
+              predicted strength by 20 percentage points or more, which is the
+              difference between a shell that passes review and one that
+              doesn't. For a design team, the study reads as an argument for
+              validating your chosen criterion against representative biaxial
+              data rather than inheriting a default from a uniaxial workflow.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section: Damage progression -->
+        <section id="damage-progression">
+          <h2>How the damage actually develops</h2>
+          <p>
+            Because Hashin came out ahead, the authors used it to trace how
+            damage evolves through an equal-displacement biaxial test. The
+            picture is a progression rather than a single event.
+          </p>
+
+          <!-- INFOGRAPHIC SECTION 5: DAMAGE PROGRESSION SEQUENCE -->
+          <!-- Creative Brief: Sequential diagram showing 5 stages of damage evolution under Hashin model (equal-displacement biaxial):
+               Stage 1: Hoop-surface damage starts (edges)
+               Stage 2: Axial-surface damage appears
+               Stage 3: Zones merge and grow
+               Stage 4: Through-thickness damage band forms
+               Stage 5: Collapse
+               Show as horizontal timeline with labeled nodes and brief descriptions.
+               Below, include a small bar/gauge panel showing damage-mode coefficients at first element deletion:
+                 Fiber compression: ~1.00 (dominant)
+                 Matrix compression: ~0.56
+                 Fiber tension: ~0.23 (not controlling)
+               Use red for fiber compression (dominant), navy for others.
+               Add note: "Damage initiates near specimen edges, propagates toward center."
+               Clean technical aesthetic. Source attribution at bottom. -->
+
+          <p>
+            Damage appeared first on the hoop-loaded surface, then at the
+            matching location on the axial-loaded surface; the two zones grew,
+            merged, and finally formed a band through the thickness. Crucially,
+            when the first element was removed in the simulation, the
+            fiber-tension damage coefficient sat at only 0.23 — so fiber tension
+            was not what drove failure. Fiber compression, concentrated in the
+            20° plies and their mirrored counterparts, was far more severe and
+            approached the limit. Matrix tension developed in those same plies
+            and reached its initiation criterion as displacement increased, but
+            because fiber-direction failure had not yet occurred, the coupon
+            kept carrying load rather than failing catastrophically right away.
+            The authors report that the model's failed-element map matched where
+            cracks actually appeared on the specimens, both beginning at the
+            edges and migrating toward the middle.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a2948b15d00cb3606d85ed5_5.png"
+            alt="FEM damage contour sequence and damage-mode coefficient maps"
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            Five-stage FEM damage contour sequence showing red failed elements
+            initiating at the specimen edges and merging into a
+            through-thickness band (panel a), a photograph of the physically
+            fractured cruciform specimen with the corresponding damage band
+            visible (panel b), and an 18-map grid tracking six individual
+            damage-mode coefficients — fiber tension, fiber compression, matrix
+            tension, matrix compression, in-plane shear, and out-of-plane shear
+            — across three successive load levels, with fiber compression the
+            dominant mode approaching its limit (panel c). Figure 5 from: Zhou,
+            C.; Tang, Z.; Deng, X.; Gao, Y.; Jiang, H. "Strength and Failure
+            Behavior of Carbon Fiber Composite Laminates Under Biaxial
+            Compression for Deep-Sea Application." Journal of Composites Science
+            2026, 10, 130.
+            <a
+              href="https://doi.org/10.3390/jcs10030130"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://doi.org/10.3390/jcs10030130</a
+            >
+            — © 2026 by the authors. Licensed under
+            <a
+              href="https://creativecommons.org/licenses/by/4.0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >CC BY 4.0</a
+            >.
+          </p>
+        </section>
+
+        <!-- Section: Shell test -->
+        <section id="shell-test">
+          <h2>Scaling up: the shell test</h2>
+          <p>
+            The flat-coupon results are only convincing if they carry over to a
+            real cylinder, so the authors built and pressurized a wet-wound
+            shell with the same family of layup (the hoop-heavy sequence
+            repeated four times and made symmetric). It was fitted with steel
+            end caps, sealed with O-rings, and pressurized in 2 MPa steps inside
+            a sealed hyperbaric vessel.
+          </p>
+
+          <div class="split-layout reverse">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/6a2948b132f4fabe1ca4b659_6.png"
+                alt="Carbon-fiber-wound cylindrical shell with strain gauge clusters"
+              />
+              <p class="image-caption">
+                The carbon-fiber-wound interior surface of the composite
+                cylindrical shell with four numbered strain-gauge clusters
+                bonded along the axial centerline, each carrying one
+                circumferential and one axial gauge, spaced from the shell
+                center outward at 0, 15, 30, and 45 mm. Figure 6 (panel a) from:
+                Zhou, C.; Tang, Z.; Deng, X.; Gao, Y.; Jiang, H. "Strength and
+                Failure Behavior of Carbon Fiber Composite Laminates Under
+                Biaxial Compression for Deep-Sea Application." Journal of
+                Composites Science 2026, 10, 130.
+                <a
+                  href="https://doi.org/10.3390/jcs10030130"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://doi.org/10.3390/jcs10030130</a
+                >
+                — © 2026 by the authors. Licensed under
+                <a
+                  href="https://creativecommons.org/licenses/by/4.0/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >CC BY 4.0</a
+                >.
+              </p>
+            </div>
+            <div class="split-text">
+              <h3>Instrumentation and pressurization protocol</h3>
+              <p>
+                Because the shell could not be observed directly inside the
+                vessel, failure was inferred from the pressure history and
+                strain gauges. Four strain-gauge clusters were bonded along the
+                axial centerline, each carrying one circumferential and one
+                axial gauge.
+              </p>
+              <p>
+                At 22 MPa, a loud report sounded inside the cabin and the
+                pressure began to fall — the shell had failed. The Hashin-based
+                simulation predicted collapse at 20.75 MPa, within 5.7% of the
+                test.
+              </p>
+            </div>
+          </div>
+
+          <!-- INFOGRAPHIC SECTION 6: SHELL FAILURE PRESSURE AND STRAIN COMPARISON -->
+          <!-- Creative Brief: Two-panel visual.
+               Panel 1 — Horizontal bar chart: Shell Failure Pressure (MPa)
+                 Experiment: 22.00 MPa
+                 Hashin simulation: 20.75 MPa (−5.7%)
+                 Annotate the −5.7% difference. Bars should be nearly equal, communicating close agreement.
+               Panel 2 — Grouped bar chart: Failure Strain Comparison (micro-strain)
+                 Axial: Shell 3,938 µε vs. Uniaxial laminate 12,311 µε (shell ~−68%)
+                 Hoop: Shell 3,039 µε vs. Uniaxial laminate 10,009 µε (shell ~−70%)
+                 Show shell strains in red, uniaxial in navy.
+                 Annotate percentage reductions prominently.
+               Title for panel 2: "In-service failure strain vs. uniaxial coupon"
+               Use brand colors. Source attribution at bottom.
+               Key message callout: "The strain a shell can actually tolerate is ~30% of what a one-directional coupon test suggests." -->
+
+          <p>
+            The simulated damage initiated on the outer surface near the
+            strain-gauge point about 30 mm off-center, close to the end cap, and
+            then spread to a global collapse — matching where post-test
+            inspection found the damage. The extracted failure strains at that
+            location were 3,938 µε axially and 3,039 µε circumferentially. Set
+            against the laminate's uniaxial failure strains of 12,311 µε and
+            10,009 µε, those in-service numbers are lower by roughly 68 to 70%.
+            That single comparison is, in many ways, the most vivid statement of
+            the paper's thesis: the strain a shell can actually tolerate in its
+            working stress state is a small fraction of what a one-directional
+            coupon test would suggest.
+          </p>
+
+          <p>
+            The authors are candid about the study's limits. The simulations are
+            macroscale, so they don't resolve individual constituent-level flaws
+            — porosity, off-angle fibers, patchy resin wet-out, uneven cure —
+            though those effects are folded into the measured material inputs.
+            And the criteria evaluated are existing formulations rather than new
+            ones; the authors flag refinement and further validation as future
+            work.
+          </p>
+        </section>
+
+        <!-- Section: Our perspective -->
+        <section id="our-perspective">
+          <h2>Our perspective: where layup control enters the picture</h2>
+          <p>
+            Everything above is the paper's. What follows is Addcomposites' own
+            reading, and it is worth restating that the authors did not use
+            Addcomposites equipment or software and make no claims about it.
+          </p>
+
+          <p>
+            The through-line of the study is that the laminate's behavior under
+            biaxial compression is governed by its architecture — the ratio of
+            hoop to off-axis plies, the precise off-axis angle, and the symmetry
+            of the stack. The hoop direction was strong because it was
+            deliberately fiber-rich; the axial direction was the weak link
+            precisely because it leaned on the matrix and on shallow off-axis
+            plies that shear and slide. Change those angles or that ratio and
+            you change both the stiffness split and where damage starts.
+          </p>
+
+          <div class="split-layout">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69ef583916c5c958a21560d8_12.png"
+                alt="Addcomposites AFP-XS head in winding configuration on a KUKA robotic arm"
+              />
+              <p class="image-caption">
+                The Addcomposites AFP-XS head in winding configuration on a KUKA
+                robotic arm, with the off-axis carbon fiber winding pattern
+                visible on the cylindrical mandrel below.
+              </p>
+            </div>
+            <div class="split-text">
+              <h3>AFP and filament winding: one platform</h3>
+              <p>
+                That is exactly the design variable that automated manufacturing
+                exists to control, and it maps onto the Addcomposites toolset
+                more directly than it might first appear. The shell in this
+                study was made by wet winding, which is a job our AFP-XS and
+                AFP-X heads are built to do: both are configurable either as
+                automated fiber placement systems or as filament winding
+                systems, running towpreg, thermoset, thermoplastic, or dry
+                fiber.
+              </p>
+              <p>
+                The same head that places tows ply by ply at programmed angles
+                for a flat or contoured laminate can also wind the cylindrical
+                shell at the center of this application, rather than these being
+                two separate machines or routes. In winding configuration the
+                system places fiber at any orientation from 0 to 90 degrees and
+                can run non-geodesic paths to hold a uniform wall thickness
+                instead of building up on the dome ends.
+              </p>
+            </div>
+          </div>
+
+          <div class="split-layout reverse">
+            <div class="split-image">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69e5fcdd4105dfea71deace3_10.png"
+                alt="AddPath toolpath simulation on a laptop alongside AFP head and wet-wound carbon fiber cylinder"
+              />
+              <p class="image-caption">
+                AddPath toolpath simulation displayed on a laptop alongside the
+                AFP head and a wet-wound carbon fiber cylinder — showing the
+                software environment used for path planning, layup simulation,
+                and robot-program generation for winding geometry.
+              </p>
+            </div>
+            <div class="split-text">
+              <h3>AddPath: path planning for both AFP and winding</h3>
+              <p>
+                Path planning, simulation, material and time estimation, and
+                robot-program generation for both AFP and winding are handled in
+                AddPath.
+              </p>
+              <p>
+                Why that matters here: the study's whole story is that strength
+                under a biaxial field depends heavily on the layup, namely the
+                ratio of hoop to off-axis plies, the exact off-axis angle, and
+                the symmetry of the stack. A hoop-heavy sequence with tightly
+                specified shallow plies, like the one the authors used, is only
+                as good as your ability to place those angles repeatably. No
+                process "solves" biaxial weakness, because the reduction is
+                physical. But the angle fidelity and repeatability of how the
+                fiber is laid down is a first-order design lever, not a
+                manufacturing afterthought, and being able to wind the shell and
+                lay up the coupons on one programmable platform keeps that lever
+                in the designer's hands across the whole part family.
+              </p>
+            </div>
+          </div>
+
+          <p>
+            The complementary lesson is about testing. A study like this is a
+            reminder that qualifying a deep-sea laminate against uniaxial
+            coupons and a generic knockdown factor can leave you holding a
+            smaller margin than the paperwork shows. Designing the layup
+            deliberately and validating the failure criterion against
+            representative biaxial or hydrostatic data is the more defensible
+            path — and it is a path that gets easier when your layup is precise
+            and repeatable to begin with.
+          </p>
+
+          <img
+            src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69df3f134e33fe3e76584724_8.png"
+            alt="Addcomposites AFP system"
+            class="full-width-image"
+          />
+        </section>
+
+        <!-- Read the Research box -->
+        <div class="highlight-box dark">
+          <h4>Read the Research</h4>
+          <p>
+            Zhou, C.; Tang, Z.; Deng, X.; Gao, Y.; Jiang, H. Strength and
+            Failure Behavior of Carbon Fiber Composite Laminates Under Biaxial
+            Compression for Deep-Sea Application.
+            <em>Journal of Composites Science</em> 2026, 10, 130.
+            <a
+              href="https://doi.org/10.3390/jcs10030130"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="color: #93c5fd"
+              >https://doi.org/10.3390/jcs10030130</a
+            ><br /><br />Open access, published 28 February 2026 by MDPI under
+            the Creative Commons Attribution (<a
+              href="https://creativecommons.org/licenses/by/4.0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="color: #93c5fd"
+              >CC BY 4.0</a
+            >) license. © 2026 by the authors.<br /><br />Affiliations:
+            Institute of Mechanics, Chinese Academy of Sciences; School of
+            Engineering Science, University of Chinese Academy of Sciences;
+            Tianjin Istar-Space Technology Co., Ltd.; and the Department of
+            Mechanics and Engineering Science, Nanjing University of Science and
+            Technology.
+          </p>
+        </div>
+
+        <!-- Learn More -->
+        <section id="learn-more">
+          <h2>Learn More</h2>
+          <div class="learn-more-container">
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/all-products/afp-xs"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AFP-XS</span>
+                <span class="learn-more-desc"
+                  >Entry-level automated fiber placement</span
+                >
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/all-products/afp-x"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AFP-X</span>
+                <span class="learn-more-desc">Advanced multi-tow system</span>
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/addpath"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">AddPath</span>
+                <span class="learn-more-desc"
+                  >AI-powered path planning software</span
+                >
+              </div>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/post/afp-machines-and-components"
+              class="learn-more-card"
+            >
+              <div class="learn-more-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <div class="learn-more-text">
+                <span class="learn-more-title">Complete Guide</span>
+                <span class="learn-more-desc"
+                  >The Complete Guide to AFP Machines</span
+                >
+              </div>
+            </a>
+          </div>
+
+          <div class="cta-section">
+            <p>
+              Get in touch to discuss your deep-sea composite manufacturing
+              application →
+            </p>
+            <a
+              target="_blank"
+              href="https://www.addcomposites.com/contact-us"
+              class="cta-button"
+              >Contact Us for a Consultation</a
+            >
+          </div>
+        </section>
+
+        <!-- References -->
+        <section id="references">
+          <h2>References</h2>
+          <ol class="references-list">
+            <li>
+              Zhou, C.; Tang, Z.; Deng, X.; Gao, Y.; Jiang, H. Strength and
+              Failure Behavior of Carbon Fiber Composite Laminates Under Biaxial
+              Compression for Deep-Sea Application.
+              <em>Journal of Composites Science</em> 2026, 10, 130.
+              <a
+                href="https://doi.org/10.3390/jcs10030130"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://doi.org/10.3390/jcs10030130</a
+              >
+            </li>
+          </ol>
+          <p style="font-size: 0.9375rem; color: #475569; margin-top: 1.5rem">
+            Addcomposites builds automated composite manufacturing systems —
+            AFP-XS, AFP-X, and ADDX — together with the AddPath and AddWind
+            software platforms. This article is independent editorial commentary
+            on third-party research; it does not represent an endorsement by the
+            study's authors of Addcomposites or its products.
+          </p>
+        </section>
+
+        <!-- Author Section -->
+        <section class="author-section">
+          <div class="author-card">
+            <div class="author-image-wrapper">
+              <img
+                src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/65dc93e2c8b30f7b6484e473_contact-lwr-img1.jpg"
+                alt="Pravin Luthada"
+                class="author-image"
+              />
+            </div>
+            <div class="author-info">
+              <h3 class="author-name">Pravin Luthada</h3>
+              <p class="author-title">CEO &amp; Co-founder, Addcomposites</p>
+              <div class="author-social">
+                <a
+                  href="https://www.linkedin.com/in/pravinluthada/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <svg viewBox="0 0 24 24" fill="#0A66C2">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                  </svg>
+                </a>
+                <a href="mailto:pravin@addcomposites.com" aria-label="Email">
+                  <svg viewBox="0 0 24 24" fill="#EA4335">
+                    <path
+                      d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.youtube.com/@addcomposites"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
+                  <svg viewBox="0 0 24 24" fill="#FF0000">
+                    <path
+                      d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <h4 class="about-author-label">About Author</h4>
+              <p class="author-bio">
+                As the author of the Addcomposites blog, Pravin Luthada's
+                insights are forged from a distinguished career in advanced
+                materials, beginning as a space scientist at the Indian Space
+                Research Organisation (ISRO). During his tenure, he gained
+                hands-on expertise in manufacturing composite components for
+                satellites and launch vehicles, where he witnessed firsthand the
+                prohibitive costs of traditional Automated Fiber Placement (AFP)
+                systems. This experience became the driving force behind his
+                entrepreneurial venture, Addcomposites Oy, which he co-founded
+                and now leads as CEO. The company is dedicated to democratizing
+                advanced manufacturing by developing patented, plug-and-play AFP
+                toolheads that make automation accessible and affordable. This
+                unique journey from designing space-grade hardware to leading a
+                disruptive technology company provides Pravin with a
+                comprehensive, real-world perspective that informs his writing
+                on the future of the composites industry.
+              </p>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
