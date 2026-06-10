@@ -691,30 +691,8 @@
           </div>
 
           <p>
-            Both the coupons and the shell used a T700 carbon fiber/epoxy system
-            with a fiber volume fraction of about 60% and a nominal ply
-            thickness near 0.2 mm. The flat coupons were produced by prepreg
-            compression molding; the cylindrical shell was made by wet winding
-            carbon fiber and epoxy. The longitudinal modulus of the
-            unidirectional lamina is reported as 138 GPa, with a transverse
-            modulus of 8.55 GPa, an in-plane shear modulus of 4.46 GPa, and a
-            major Poisson's ratio of 0.31. On the strength side, the lamina
-            shows a longitudinal tensile strength of 2110 MPa against a
-            longitudinal compressive strength of 1337 MPa, and a stark
-            transverse asymmetry: 24.5 MPa in transverse tension versus 140 MPa
-            in transverse compression.
-          </p>
-
-          <p>
-            The test program covered three regimes: uniaxial compression along
-            each in-plane axis; biaxial compression in two flavors; and a
-            stepped hydrostatic pressure test on the shell. The biaxial coupons
-            were run on a cruciform biaxial rig under two protocols —
-            equal-displacement control (driving comparable strain in both
-            directions) and a 1:2 proportional-force protocol intended to mimic
-            the roughly 2:1 hoop-to-axial stress split of a real pressure shell.
-            Three valid specimens were tested per condition and the reported
-            numbers are the means.
+            Addcomposites visualization of layup and stiffness data reported in
+            Zhou et al., J. Compos. Sci. 2026.
           </p>
 
           <div class="split-layout">
@@ -750,17 +728,28 @@
               </p>
             </div>
             <div class="split-text">
-              <h3>Material system overview</h3>
               <p>
-                The T700 carbon fiber/epoxy system was chosen for its
-                representative properties in deep-sea applications. A fiber
-                volume fraction of 60% and nominal ply thickness of 0.2 mm are
-                typical of precision-wound pressure vessels.
-              </p>
-              <p>
-                The stark transverse asymmetry — 24.5 MPa in tension versus 140
-                MPa in compression — is a key driver of the layup strategy and
-                of the eventual failure mechanism under biaxial loading.
+                Both the coupons and the shell used a T700 carbon fiber/epoxy
+                system with a fiber volume fraction of about 60% and a nominal
+                ply thickness near 0.2 mm. The flat coupons were produced by
+                prepreg compression molding; the cylindrical shell was made by
+                wet winding carbon fiber and epoxy. The longitudinal modulus of
+                the unidirectional lamina is reported as 138 GPa, with a
+                transverse modulus of 8.55 GPa, an in-plane shear modulus of
+                4.46 GPa, and a major Poisson's ratio of 0.31. On the strength
+                side, the lamina shows a longitudinal tensile strength of 2110
+                MPa against a longitudinal compressive strength of 1337 MPa, and
+                a stark transverse asymmetry: 24.5 MPa in transverse tension
+                versus 140 MPa in transverse compression. The test program
+                covered three regimes: uniaxial compression along each in-plane
+                axis; biaxial compression in two flavors; and a stepped
+                hydrostatic pressure test on the shell. The biaxial coupons were
+                run on a cruciform biaxial rig under two protocols —
+                equal-displacement control (driving comparable strain in both
+                directions) and a 1:2 proportional-force protocol intended to
+                mimic the roughly 2:1 hoop-to-axial stress split of a real
+                pressure shell. Three valid specimens were tested per condition
+                and the reported numbers are the means.
               </p>
             </div>
           </div>
@@ -1565,14 +1554,6 @@
         <!-- Section: Shell test -->
         <section id="shell-test">
           <h2>Scaling up: the shell test</h2>
-          <p>
-            The flat-coupon results are only convincing if they carry over to a
-            real cylinder, so the authors built and pressurized a wet-wound
-            shell with the same family of layup (the hoop-heavy sequence
-            repeated four times and made symmetric). It was fitted with steel
-            end caps, sealed with O-rings, and pressurized in 2 MPa steps inside
-            a sealed hyperbaric vessel.
-          </p>
 
           <div class="split-layout reverse">
             <div class="split-image">
@@ -1607,18 +1588,36 @@
             </div>
             <div class="split-text">
               <h3>Instrumentation and pressurization protocol</h3>
+
+              <p>
+                The flat-coupon results are only convincing if they carry over
+                to a real cylinder, so the authors built and pressurized a
+                wet-wound shell with the same family of layup (the hoop-heavy
+                sequence repeated four times and made symmetric). It was fitted
+                with steel end caps, sealed with O-rings, and pressurized in 2
+                MPa steps inside a sealed hyperbaric vessel.
+              </p>
               <p>
                 Because the shell could not be observed directly inside the
                 vessel, failure was inferred from the pressure history and
-                strain gauges. Four strain-gauge clusters were bonded along the
-                axial centerline, each carrying one circumferential and one
-                axial gauge.
+                strain gauges. At 22 MPa, a loud report sounded inside the cabin
+                and the pressure began to fall — the shell had failed. The
+                Hashin-based simulation predicted collapse at 20.75 MPa, within
+                5.7% of the test.
               </p>
               <p>
-                At 22 MPa, a loud report sounded inside the cabin and the
-                pressure began to fall — the shell had failed. The Hashin-based
-                simulation predicted collapse at 20.75 MPa, within 5.7% of the
-                test.
+                The simulated damage initiated on the outer surface near the
+                strain-gauge point about 30 mm off-center, close to the end cap,
+                and then spread to a global collapse — matching where post-test
+                inspection found the damage. The extracted failure strains at
+                that location were 3,938 µε axially and 3,039 µε
+                circumferentially. Set against the laminate's uniaxial failure
+                strains of 12,311 µε and 10,009 µε, those in-service numbers are
+                lower by roughly 68 to 70%. That single comparison is, in many
+                ways, the most vivid statement of the paper's thesis: the strain
+                a shell can actually tolerate in its working stress state is a
+                small fraction of what a one-directional coupon test would
+                suggest.
               </p>
             </div>
           </div>
@@ -1775,20 +1774,6 @@
               </div>
             </div>
           </div>
-
-          <p>
-            The simulated damage initiated on the outer surface near the
-            strain-gauge point about 30 mm off-center, close to the end cap, and
-            then spread to a global collapse — matching where post-test
-            inspection found the damage. The extracted failure strains at that
-            location were 3,938 µε axially and 3,039 µε circumferentially. Set
-            against the laminate's uniaxial failure strains of 12,311 µε and
-            10,009 µε, those in-service numbers are lower by roughly 68 to 70%.
-            That single comparison is, in many ways, the most vivid statement of
-            the paper's thesis: the strain a shell can actually tolerate in its
-            working stress state is a small fraction of what a one-directional
-            coupon test would suggest.
-          </p>
 
           <p>
             The authors are candid about the study's limits. The simulations are
