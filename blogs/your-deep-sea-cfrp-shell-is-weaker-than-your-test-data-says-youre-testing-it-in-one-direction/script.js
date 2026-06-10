@@ -258,3 +258,242 @@ document.addEventListener("DOMContentLoaded", function () {
 
   createProgressBar();
 });
+// <!-- INFOGRAPHIC SECTION 1: LAYUP AND STIFFNESS ASYMMETRY -->
+(function () {
+  var root = document.getElementById("lsa-root");
+  if (!root) return;
+
+  function animatePlies() {
+    var plies = root.querySelectorAll(".lsa-ply[data-delay]");
+    plies.forEach(function (ply, i) {
+      var delay = parseInt(ply.getAttribute("data-delay") || i);
+      setTimeout(function () {
+        ply.style.opacity = "";
+        ply.classList.add("visible");
+      }, delay * 90);
+    });
+  }
+
+  function animateModulus() {
+    var card = document.getElementById("lsa-modulus");
+    var legend = document.getElementById("lsa-legend");
+    if (card) card.classList.add("visible");
+    if (legend) legend.classList.add("visible");
+
+    setTimeout(function () {
+      var hoop = document.getElementById("lsa-bar-hoop");
+      var axial = document.getElementById("lsa-bar-axial");
+      if (hoop) hoop.style.width = "100%";
+      if (axial) axial.style.width = "56.2%";
+    }, 100);
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animatePlies();
+          animateModulus();
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 },
+  );
+
+  observer.observe(root);
+})();
+//  <!-- INFOGRAPHIC SECTION 2: UNIAXIAL COMPRESSIVE STRENGTH BAR CHART -->
+(function () {
+  var MAX = 817;
+
+  function pct(v) {
+    return ((v / MAX) * 100).toFixed(2) + "%";
+  }
+
+  var root = document.getElementById("ucs-root");
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+
+        var rowAxial = document.getElementById("ucs-row-axial");
+        var rowHoop = document.getElementById("ucs-row-hoop");
+        var callout = document.getElementById("ucs-callout");
+        var barAxial = document.getElementById("ucs-bar-axial");
+        var barHoop = document.getElementById("ucs-bar-hoop");
+
+        // Reveal rows staggered
+        setTimeout(function () {
+          rowAxial.classList.add("visible");
+        }, 0);
+        setTimeout(function () {
+          rowHoop.classList.add("visible");
+        }, 150);
+        setTimeout(function () {
+          callout.classList.add("visible");
+        }, 300);
+
+        // Animate bars after rows appear
+        setTimeout(function () {
+          barAxial.style.width = pct(371);
+        }, 200);
+        setTimeout(function () {
+          barHoop.style.width = pct(817);
+        }, 350);
+      });
+    },
+    { threshold: 0.2 },
+  );
+
+  observer.observe(root);
+})();
+//   <!-- INFOGRAPHIC SECTION 3: UNIAXIAL VS BIAXIAL STRENGTH COMPARISON -->
+(function () {
+  var root = document.getElementById("ubcs-root");
+
+  function animateBars() {
+    var fills = root.querySelectorAll(".ubcs-fill[data-w]");
+    fills.forEach(function (el, i) {
+      setTimeout(function () {
+        el.style.width = el.getAttribute("data-w") + "%";
+      }, i * 80);
+    });
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+
+        [
+          "ubcs-panel-axial",
+          "ubcs-panel-hoop",
+          "ubcs-callout",
+          "ubcs-legend",
+        ].forEach(function (id, i) {
+          setTimeout(function () {
+            var el = document.getElementById(id);
+            if (el) el.classList.add("visible");
+          }, i * 120);
+        });
+
+        setTimeout(animateBars, 200);
+      });
+    },
+    { threshold: 0.15 },
+  );
+
+  observer.observe(root);
+})();
+//   <!-- INFOGRAPHIC SECTION 4: FAILURE CRITERIA ERROR COMPARISON -->
+(function () {
+  var root = document.getElementById("fce-root");
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+
+        // Reveal panels
+        ["fce-panel-hoop", "fce-panel-axial"].forEach(function (id, pi) {
+          setTimeout(function () {
+            var panel = document.getElementById(id);
+            if (panel) panel.classList.add("visible");
+          }, pi * 120);
+        });
+
+        // Stagger rows within each panel
+        ["hoop", "axial"].forEach(function (dir, pi) {
+          var rows = root.querySelectorAll(
+            '.fce-row[data-panel="' + dir + '"]',
+          );
+          rows.forEach(function (row, ri) {
+            setTimeout(
+              function () {
+                row.classList.add("visible");
+              },
+              pi * 120 + ri * 70 + 150,
+            );
+          });
+        });
+
+        // Animate bar fills
+        setTimeout(function () {
+          root.querySelectorAll(".fce-fill[data-w]").forEach(function (el) {
+            el.style.width = el.getAttribute("data-w") + "%";
+          });
+        }, 300);
+
+        // Insight strip
+        setTimeout(function () {
+          var ins = document.getElementById("fce-insight");
+          if (ins) ins.classList.add("visible");
+        }, 500);
+      });
+    },
+    { threshold: 0.15 },
+  );
+
+  observer.observe(root);
+})();
+//    <!-- INFOGRAPHIC SECTION 5: DAMAGE PROGRESSION SEQUENCE -->
+(function () {
+  var root = document.getElementById("dp-root");
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+
+        var timeline = document.getElementById("dp-timeline");
+        var modes = document.getElementById("dp-modes");
+        if (timeline) timeline.classList.add("visible");
+        if (modes) modes.classList.add("visible");
+
+        setTimeout(function () {
+          root.querySelectorAll(".dp-fill[data-w]").forEach(function (el) {
+            el.style.width = el.getAttribute("data-w") + "%";
+          });
+        }, 350);
+      });
+    },
+    { threshold: 0.15 },
+  );
+
+  observer.observe(root);
+})();
+//   <!-- INFOGRAPHIC SECTION 6: SHELL FAILURE PRESSURE AND STRAIN COMPARISON -->
+(function () {
+  var root = document.getElementById("sfp-root");
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+
+        var pressure = document.getElementById("sfp-pressure");
+        var strain = document.getElementById("sfp-strain");
+        if (pressure) pressure.classList.add("visible");
+        if (strain) strain.classList.add("visible");
+
+        setTimeout(function () {
+          root
+            .querySelectorAll(".sfp-pfill[data-w], .sfp-sfill[data-w]")
+            .forEach(function (el) {
+              el.style.width = el.getAttribute("data-w") + "%";
+            });
+        }, 250);
+      });
+    },
+    { threshold: 0.15 },
+  );
+
+  observer.observe(root);
+})();

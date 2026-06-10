@@ -265,16 +265,430 @@
           </p>
 
           <!-- INFOGRAPHIC SECTION 1: LAYUP AND STIFFNESS ASYMMETRY -->
-          <!-- Creative Brief: Visualize the [90/90/90/20/-20]ns stacking sequence as a layered stack diagram.
-               Show each ply as a horizontal band with fiber orientation indicated by directional lines or arrows:
-               - Plies 1–3: horizontal lines (90° = hoop/circumferential)
-               - Ply 4: diagonal lines at +20° (off-axis)
-               - Ply 5: diagonal lines at −20° (mirror off-axis)
-               Annotate with ply labels and repeat/symmetry notation.
-               Below the stack, show a side-by-side bar or ratio graphic:
-               E_hoop : E_axial ≈ 1.78 : 1
-               Use brand colors: navy #47577c for hoop plies, red #bf3425 for off-axis plies, gray for labels.
-               Clean, technical aesthetic. No decorative elements. -->
+          <div class="lsa-wrap" id="lsa-root">
+            <div class="lsa-header">
+              <div class="lsa-eyebrow">Stacking Sequence Analysis</div>
+              <h3 class="lsa-title">Layup and Stiffness Asymmetry</h3>
+              <div class="lsa-subtitle">
+                Hover each ply for fiber direction detail
+              </div>
+            </div>
+
+            <div class="lsa-body">
+              <!-- Left: ply stack -->
+              <div>
+                <div class="lsa-stack-label">
+                  Ply stack — [90/90/90/+20/–20]<sub>ns</sub>
+                </div>
+                <div class="lsa-stack" id="lsa-stack">
+                  <!-- PLY 1 -->
+                  <div
+                    class="lsa-ply lsa-ply-hoop"
+                    data-delay="0"
+                    data-tip="90° — Hoop (circumferential) load path"
+                  >
+                    <div class="lsa-ply-num">Ply 1</div>
+                    <svg
+                      class="lsa-fiber-svg"
+                      viewBox="0 0 180 36"
+                      preserveAspectRatio="none"
+                    >
+                      <line
+                        x1="0"
+                        y1="18"
+                        x2="180"
+                        y2="18"
+                        stroke="rgba(255,255,255,0.55)"
+                        stroke-width="1.5"
+                      />
+                      <line
+                        x1="0"
+                        y1="10"
+                        x2="180"
+                        y2="10"
+                        stroke="rgba(255,255,255,0.25)"
+                        stroke-width="1"
+                      />
+                      <line
+                        x1="0"
+                        y1="26"
+                        x2="180"
+                        y2="26"
+                        stroke="rgba(255,255,255,0.25)"
+                        stroke-width="1"
+                      />
+                    </svg>
+                    <div class="lsa-ply-tag">
+                      <span class="lsa-angle-badge">90°</span>
+                      <span class="lsa-ply-role">Hoop</span>
+                    </div>
+                  </div>
+
+                  <!-- PLY 2 -->
+                  <div
+                    class="lsa-ply lsa-ply-hoop"
+                    data-delay="1"
+                    data-tip="90° — Hoop (circumferential) load path"
+                  >
+                    <div class="lsa-ply-num">Ply 2</div>
+                    <svg
+                      class="lsa-fiber-svg"
+                      viewBox="0 0 180 36"
+                      preserveAspectRatio="none"
+                    >
+                      <line
+                        x1="0"
+                        y1="18"
+                        x2="180"
+                        y2="18"
+                        stroke="rgba(255,255,255,0.55)"
+                        stroke-width="1.5"
+                      />
+                      <line
+                        x1="0"
+                        y1="10"
+                        x2="180"
+                        y2="10"
+                        stroke="rgba(255,255,255,0.25)"
+                        stroke-width="1"
+                      />
+                      <line
+                        x1="0"
+                        y1="26"
+                        x2="180"
+                        y2="26"
+                        stroke="rgba(255,255,255,0.25)"
+                        stroke-width="1"
+                      />
+                    </svg>
+                    <div class="lsa-ply-tag">
+                      <span class="lsa-angle-badge">90°</span>
+                      <span class="lsa-ply-role">Hoop</span>
+                    </div>
+                  </div>
+
+                  <!-- PLY 3 -->
+                  <div
+                    class="lsa-ply lsa-ply-hoop"
+                    data-delay="2"
+                    data-tip="90° — Hoop (circumferential) load path"
+                  >
+                    <div class="lsa-ply-num">Ply 3</div>
+                    <svg
+                      class="lsa-fiber-svg"
+                      viewBox="0 0 180 36"
+                      preserveAspectRatio="none"
+                    >
+                      <line
+                        x1="0"
+                        y1="18"
+                        x2="180"
+                        y2="18"
+                        stroke="rgba(255,255,255,0.55)"
+                        stroke-width="1.5"
+                      />
+                      <line
+                        x1="0"
+                        y1="10"
+                        x2="180"
+                        y2="10"
+                        stroke="rgba(255,255,255,0.25)"
+                        stroke-width="1"
+                      />
+                      <line
+                        x1="0"
+                        y1="26"
+                        x2="180"
+                        y2="26"
+                        stroke="rgba(255,255,255,0.25)"
+                        stroke-width="1"
+                      />
+                    </svg>
+                    <div class="lsa-ply-tag">
+                      <span class="lsa-angle-badge">90°</span>
+                      <span class="lsa-ply-role">Hoop</span>
+                    </div>
+                  </div>
+
+                  <div class="lsa-ply-sep"></div>
+
+                  <!-- PLY 4 -->
+                  <div
+                    class="lsa-ply lsa-ply-offaxis"
+                    data-delay="3"
+                    data-tip="+20° — Shallow off-axis, biases hoop stiffness"
+                  >
+                    <div class="lsa-ply-num">Ply 4</div>
+                    <svg
+                      class="lsa-fiber-svg"
+                      viewBox="0 0 180 36"
+                      preserveAspectRatio="none"
+                    >
+                      <!-- +20 deg lines: slope upward slightly left-to-right -->
+                      <line
+                        x1="0"
+                        y1="28"
+                        x2="180"
+                        y2="2"
+                        stroke="rgba(255,255,255,0.55)"
+                        stroke-width="1.5"
+                      />
+                      <line
+                        x1="0"
+                        y1="36"
+                        x2="150"
+                        y2="0"
+                        stroke="rgba(255,255,255,0.25)"
+                        stroke-width="1"
+                      />
+                      <line
+                        x1="30"
+                        y1="36"
+                        x2="180"
+                        y2="5"
+                        stroke="rgba(255,255,255,0.25)"
+                        stroke-width="1"
+                      />
+                    </svg>
+                    <div class="lsa-ply-tag">
+                      <span class="lsa-angle-badge">+20°</span>
+                      <span class="lsa-ply-role">Off-axis</span>
+                    </div>
+                  </div>
+
+                  <!-- PLY 5 -->
+                  <div
+                    class="lsa-ply lsa-ply-offaxis"
+                    data-delay="4"
+                    data-tip="–20° — Mirror off-axis, balanced pair with Ply 4"
+                  >
+                    <div class="lsa-ply-num">Ply 5</div>
+                    <svg
+                      class="lsa-fiber-svg"
+                      viewBox="0 0 180 36"
+                      preserveAspectRatio="none"
+                    >
+                      <!-- -20 deg lines: slope downward left-to-right -->
+                      <line
+                        x1="0"
+                        y1="2"
+                        x2="180"
+                        y2="28"
+                        stroke="rgba(255,255,255,0.55)"
+                        stroke-width="1.5"
+                      />
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2="150"
+                        y2="36"
+                        stroke="rgba(255,255,255,0.25)"
+                        stroke-width="1"
+                      />
+                      <line
+                        x1="30"
+                        y1="0"
+                        x2="180"
+                        y2="29"
+                        stroke="rgba(255,255,255,0.25)"
+                        stroke-width="1"
+                      />
+                    </svg>
+                    <div class="lsa-ply-tag">
+                      <span class="lsa-angle-badge">–20°</span>
+                      <span class="lsa-ply-role">Off-axis</span>
+                    </div>
+                  </div>
+
+                  <!-- Mirror midplane band -->
+                  <div class="lsa-mirror-band" style="background: #3a4a69">
+                    <span class="lsa-mirror-label">— midplane mirror —</span>
+                  </div>
+
+                  <!-- Mirrored plies (n repeats, shown faded) -->
+                  <div
+                    class="lsa-ply lsa-ply-offaxis"
+                    data-delay="5"
+                    data-tip="–20° (mirrored) — symmetric about midplane"
+                    style="opacity: 0"
+                  >
+                    <div
+                      class="lsa-ply-num"
+                      style="color: rgba(255, 255, 255, 0.45)"
+                    >
+                      Ply 5′
+                    </div>
+                    <svg
+                      class="lsa-fiber-svg"
+                      viewBox="0 0 180 36"
+                      preserveAspectRatio="none"
+                    >
+                      <line
+                        x1="0"
+                        y1="2"
+                        x2="180"
+                        y2="28"
+                        stroke="rgba(255,255,255,0.35)"
+                        stroke-width="1.5"
+                      />
+                    </svg>
+                    <div class="lsa-ply-tag">
+                      <span
+                        class="lsa-angle-badge"
+                        style="color: rgba(255, 255, 255, 0.5)"
+                        >–20°</span
+                      >
+                      <span class="lsa-ply-role">Mirrored</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="lsa-ply lsa-ply-offaxis"
+                    data-delay="6"
+                    data-tip="+20° (mirrored)"
+                    style="opacity: 0"
+                  >
+                    <div
+                      class="lsa-ply-num"
+                      style="color: rgba(255, 255, 255, 0.45)"
+                    >
+                      Ply 4′
+                    </div>
+                    <svg
+                      class="lsa-fiber-svg"
+                      viewBox="0 0 180 36"
+                      preserveAspectRatio="none"
+                    >
+                      <line
+                        x1="0"
+                        y1="28"
+                        x2="180"
+                        y2="2"
+                        stroke="rgba(255,255,255,0.35)"
+                        stroke-width="1.5"
+                      />
+                    </svg>
+                    <div class="lsa-ply-tag">
+                      <span
+                        class="lsa-angle-badge"
+                        style="color: rgba(255, 255, 255, 0.5)"
+                        >+20°</span
+                      >
+                      <span class="lsa-ply-role">Mirrored</span>
+                    </div>
+                  </div>
+
+                  <div
+                    class="lsa-ply lsa-ply-hoop"
+                    data-delay="7"
+                    data-tip="90° (mirrored)"
+                    style="opacity: 0"
+                  >
+                    <div
+                      class="lsa-ply-num"
+                      style="color: rgba(255, 255, 255, 0.45)"
+                    >
+                      Ply 3′
+                    </div>
+                    <svg
+                      class="lsa-fiber-svg"
+                      viewBox="0 0 180 36"
+                      preserveAspectRatio="none"
+                    >
+                      <line
+                        x1="0"
+                        y1="18"
+                        x2="180"
+                        y2="18"
+                        stroke="rgba(255,255,255,0.35)"
+                        stroke-width="1.5"
+                      />
+                    </svg>
+                    <div class="lsa-ply-tag">
+                      <span
+                        class="lsa-angle-badge"
+                        style="color: rgba(255, 255, 255, 0.5)"
+                        >90°</span
+                      >
+                      <span class="lsa-ply-role">Mirrored</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="lsa-notation">[90/90/90/+20/–20]<sub>ns</sub></div>
+              </div>
+
+              <!-- Right: modulus + legend -->
+              <div class="lsa-right">
+                <div class="lsa-modulus-card" id="lsa-modulus">
+                  <div class="lsa-modulus-label">Effective Modulus Ratio</div>
+
+                  <div class="lsa-modulus-row">
+                    <div class="lsa-modulus-dir">E<sub>hoop</sub></div>
+                    <div class="lsa-bar-track">
+                      <div
+                        class="lsa-bar-fill lsa-bar-hoop"
+                        id="lsa-bar-hoop"
+                      ></div>
+                    </div>
+                    <div class="lsa-modulus-val">1.78</div>
+                  </div>
+
+                  <div class="lsa-modulus-row">
+                    <div class="lsa-modulus-dir">E<sub>axial</sub></div>
+                    <div class="lsa-bar-track">
+                      <div
+                        class="lsa-bar-fill lsa-bar-axial"
+                        id="lsa-bar-axial"
+                      ></div>
+                    </div>
+                    <div class="lsa-modulus-val">1.00</div>
+                  </div>
+
+                  <div class="lsa-ratio-box">
+                    <div class="lsa-ratio-num">1.78×</div>
+                    <div class="lsa-ratio-desc">
+                      E<sub>hoop</sub> : E<sub>axial</sub><br />hoop-dominant
+                      stiffness
+                    </div>
+                  </div>
+                </div>
+
+                <div class="lsa-legend-card" id="lsa-legend">
+                  <div class="lsa-legend-label">Ply Type</div>
+                  <div class="lsa-legend-item">
+                    <div
+                      class="lsa-legend-swatch"
+                      style="background: #47577c"
+                    ></div>
+                    <span class="lsa-legend-text">90° — Hoop ply</span>
+                  </div>
+                  <div class="lsa-legend-item">
+                    <div
+                      class="lsa-legend-swatch"
+                      style="background: #5e6f96"
+                    ></div>
+                    <span class="lsa-legend-text">±20° — Off-axis ply</span>
+                  </div>
+                  <div
+                    style="
+                      margin-top: 10px;
+                      padding-top: 10px;
+                      border-top: 1px solid #e2e8f0;
+                    "
+                  >
+                    <div
+                      style="font-size: 11px; color: #475569; line-height: 1.5"
+                    >
+                      3 hoop plies per repeat unit bias stiffness toward the
+                      circumferential direction. The ±20° pair provides balanced
+                      shear coupling.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <p>
             Both the coupons and the shell used a T700 carbon fiber/epoxy system
@@ -363,14 +777,75 @@
           </p>
 
           <!-- INFOGRAPHIC SECTION 2: UNIAXIAL COMPRESSIVE STRENGTH BAR CHART -->
-          <!-- Creative Brief: Horizontal bar chart showing uniaxial compressive strength (MPa) for two directions:
-               x = axial (0°): 371 MPa
-               y = hoop (90°): 817 MPa (~2.2× the axial value)
-               Label each bar with the value in MPa. Annotate the ratio "~2.2×" with a bracket or arrow.
-               Use navy #47577c for the hoop bar, lighter gray-blue for the axial bar.
-               X-axis: 0 to 900 MPa, gridlines at 200, 400, 600, 800.
-               Title: "Uniaxial Compressive Strength (MPa, mean of 3 specimens)"
-               Clean, minimal design. Source attribution at bottom. -->
+
+          <div class="ucs-wrap" id="ucs-root">
+            <div class="ucs-eyebrow">Mechanical Characterisation</div>
+            <h3 class="ucs-title">Uniaxial Compressive Strength</h3>
+            <div class="ucs-subtitle">
+              Mean of 3 specimens &nbsp;·&nbsp; MPa
+            </div>
+
+            <div class="ucs-chart">
+              <!-- Axial row -->
+              <div class="ucs-row" id="ucs-row-axial">
+                <div class="ucs-row-header">
+                  <div class="ucs-dir-label">
+                    <span class="ucs-dir-badge ucs-badge-axial">0°</span>
+                    Axial
+                  </div>
+                  <div>
+                    <span class="ucs-value-label">371</span>
+                    <span class="ucs-value-unit">MPa</span>
+                  </div>
+                </div>
+                <div class="ucs-bar-track">
+                  <div
+                    class="ucs-bar-fill ucs-bar-axial-fill"
+                    id="ucs-bar-axial"
+                  ></div>
+                </div>
+              </div>
+
+              <!-- Hoop row -->
+              <div class="ucs-row" id="ucs-row-hoop">
+                <div class="ucs-row-header">
+                  <div class="ucs-dir-label">
+                    <span class="ucs-dir-badge ucs-badge-hoop">90°</span>
+                    Hoop
+                  </div>
+                  <div>
+                    <span class="ucs-value-label">817</span>
+                    <span class="ucs-value-unit">MPa</span>
+                  </div>
+                </div>
+                <div class="ucs-bar-track">
+                  <div
+                    class="ucs-bar-fill ucs-bar-hoop-fill"
+                    id="ucs-bar-hoop"
+                  ></div>
+                </div>
+              </div>
+
+              <!-- Axis ticks -->
+              <div class="ucs-axis">
+                <span class="ucs-tick">0</span>
+                <span class="ucs-tick">200</span>
+                <span class="ucs-tick">400</span>
+                <span class="ucs-tick">600</span>
+                <span class="ucs-tick">800</span>
+              </div>
+            </div>
+
+            <!-- Callout -->
+            <div class="ucs-callout" id="ucs-callout">
+              <div class="ucs-multiplier">~2.2×</div>
+              <div class="ucs-callout-text">
+                <strong>Hoop strength exceeds axial by 2.2×</strong><br />
+                Consistent with the layup's three 90° plies per repeat unit,
+                concentrating fibre-direction load capacity circumferentially.
+              </div>
+            </div>
+          </div>
 
           <p>
             The authors attribute the difference to the layup itself. The
@@ -395,20 +870,228 @@
           </p>
 
           <!-- INFOGRAPHIC SECTION 3: UNIAXIAL VS BIAXIAL STRENGTH COMPARISON -->
-          <!-- Creative Brief: Grouped horizontal bar chart comparing compressive strength (MPa) across loading conditions for both directions.
-               Groups:
-               X-direction (axial):
-                 - Uniaxial: 371 MPa
-                 - Biaxial equal-displacement: 237 MPa (−36%)
-                 - Biaxial 1:2 force: 164 MPa (−56%)
-               Y-direction (hoop):
-                 - Uniaxial: 817 MPa
-                 - Biaxial equal-displacement: 295 MPa (−64%)
-                 - Biaxial 1:2 force: 326 MPa (−60%)
-               Annotate percentage reduction labels on each bar.
-               Color coding: darker shade for uniaxial, medium for equal-displacement, lighter for 1:2 force.
-               Use brand palette. Title: "Uniaxial vs. Biaxial Compressive Strength (MPa)"
-               Source attribution at bottom. -->
+
+          <div class="ubcs-wrap" id="ubcs-root">
+            <div class="ubcs-eyebrow">Mechanical Characterisation</div>
+            <h3 class="ubcs-title">Uniaxial vs Biaxial Compressive Strength</h3>
+            <div class="ubcs-subtitle">
+              Same direction &nbsp;·&nbsp; MPa &nbsp;·&nbsp; Mean of 3 specimens
+            </div>
+
+            <div class="ubcs-panels">
+              <!-- X — Axial panel -->
+              <div class="ubcs-panel" id="ubcs-panel-axial">
+                <div class="ubcs-panel-header">
+                  <span class="ubcs-dir-badge ubcs-badge-axial">0°</span>
+                  <span class="ubcs-panel-title">Axial (x-direction)</span>
+                </div>
+                <div class="ubcs-bar-group">
+                  <div class="ubcs-bar-row">
+                    <div class="ubcs-bar-meta">
+                      <span class="ubcs-load-label">Uniaxial</span>
+                      <div class="ubcs-val-group">
+                        <span class="ubcs-val">371</span>
+                        <span class="ubcs-delta-ref">MPa</span>
+                      </div>
+                    </div>
+                    <div class="ubcs-track">
+                      <div
+                        class="ubcs-fill ubcs-fill-uni-axial"
+                        data-w="45.4"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="ubcs-bar-row">
+                    <div class="ubcs-bar-meta">
+                      <span class="ubcs-load-label">Biaxial equal-disp</span>
+                      <div class="ubcs-val-group">
+                        <span class="ubcs-val">237</span>
+                        <span class="ubcs-delta">−36%</span>
+                      </div>
+                    </div>
+                    <div class="ubcs-track">
+                      <div
+                        class="ubcs-fill ubcs-fill-bi1-axial"
+                        data-w="29.0"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="ubcs-bar-row">
+                    <div class="ubcs-bar-meta">
+                      <span class="ubcs-load-label">Biaxial 1:2 force</span>
+                      <div class="ubcs-val-group">
+                        <span class="ubcs-val">164</span>
+                        <span class="ubcs-delta">−56%</span>
+                      </div>
+                    </div>
+                    <div class="ubcs-track">
+                      <div
+                        class="ubcs-fill ubcs-fill-bi2-axial"
+                        data-w="20.1"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ubcs-axis">
+                  <span class="ubcs-tick">0</span>
+                  <span class="ubcs-tick">200</span>
+                  <span class="ubcs-tick">400</span>
+                  <span class="ubcs-tick">600</span>
+                  <span class="ubcs-tick">800</span>
+                </div>
+              </div>
+
+              <!-- Y — Hoop panel -->
+              <div
+                class="ubcs-panel"
+                id="ubcs-panel-hoop"
+                style="transition-delay: 0.15s"
+              >
+                <div class="ubcs-panel-header">
+                  <span class="ubcs-dir-badge ubcs-badge-hoop">90°</span>
+                  <span class="ubcs-panel-title">Hoop (y-direction)</span>
+                </div>
+                <div class="ubcs-bar-group">
+                  <div class="ubcs-bar-row">
+                    <div class="ubcs-bar-meta">
+                      <span class="ubcs-load-label">Uniaxial</span>
+                      <div class="ubcs-val-group">
+                        <span class="ubcs-val">817</span>
+                        <span class="ubcs-delta-ref">MPa</span>
+                      </div>
+                    </div>
+                    <div class="ubcs-track">
+                      <div
+                        class="ubcs-fill ubcs-fill-uni-hoop"
+                        data-w="100"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="ubcs-bar-row">
+                    <div class="ubcs-bar-meta">
+                      <span class="ubcs-load-label">Biaxial equal-disp</span>
+                      <div class="ubcs-val-group">
+                        <span class="ubcs-val">295</span>
+                        <span class="ubcs-delta">−64%</span>
+                      </div>
+                    </div>
+                    <div class="ubcs-track">
+                      <div
+                        class="ubcs-fill ubcs-fill-bi1-hoop"
+                        data-w="36.1"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="ubcs-bar-row">
+                    <div class="ubcs-bar-meta">
+                      <span class="ubcs-load-label">Biaxial 1:2 force</span>
+                      <div class="ubcs-val-group">
+                        <span class="ubcs-val">326</span>
+                        <span class="ubcs-delta">−60%</span>
+                      </div>
+                    </div>
+                    <div class="ubcs-track">
+                      <div
+                        class="ubcs-fill ubcs-fill-bi2-hoop"
+                        data-w="39.9"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ubcs-axis">
+                  <span class="ubcs-tick">0</span>
+                  <span class="ubcs-tick">200</span>
+                  <span class="ubcs-tick">400</span>
+                  <span class="ubcs-tick">600</span>
+                  <span class="ubcs-tick">800</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Strength drop summary -->
+            <div class="ubcs-callout-strip" id="ubcs-callout">
+              <div class="ubcs-callout-cell">
+                <div class="ubcs-callout-dir">
+                  Axial — strength drop under biaxial load
+                </div>
+                <div class="ubcs-callout-drops">
+                  <div class="ubcs-callout-pill">
+                    <div class="ubcs-pill-pct">−36%</div>
+                    <div class="ubcs-pill-label">Equal-disp</div>
+                  </div>
+                  <div class="ubcs-callout-pill">
+                    <div class="ubcs-pill-pct">−56%</div>
+                    <div class="ubcs-pill-label">1:2 force</div>
+                  </div>
+                </div>
+              </div>
+              <div class="ubcs-callout-cell">
+                <div class="ubcs-callout-dir">
+                  Hoop — strength drop under biaxial load
+                </div>
+                <div class="ubcs-callout-drops">
+                  <div class="ubcs-callout-pill">
+                    <div class="ubcs-pill-pct">−64%</div>
+                    <div class="ubcs-pill-label">Equal-disp</div>
+                  </div>
+                  <div class="ubcs-callout-pill">
+                    <div class="ubcs-pill-pct">−60%</div>
+                    <div class="ubcs-pill-label">1:2 force</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Legend -->
+            <div class="ubcs-legend" id="ubcs-legend">
+              <div class="ubcs-legend-item">
+                <div
+                  class="ubcs-legend-swatch"
+                  style="background: #9d9d9c"
+                ></div>
+                Uniaxial — Axial (0°)
+              </div>
+              <div class="ubcs-legend-item">
+                <div
+                  class="ubcs-legend-swatch"
+                  style="background: #bfbfbf"
+                ></div>
+                Biaxial equal-disp — Axial
+              </div>
+              <div class="ubcs-legend-item">
+                <div
+                  class="ubcs-legend-swatch"
+                  style="background: #d8d8d8"
+                ></div>
+                Biaxial 1:2 force — Axial
+              </div>
+              <div class="ubcs-legend-item">
+                <div
+                  class="ubcs-legend-swatch"
+                  style="background: #47577c"
+                ></div>
+                Uniaxial — Hoop (90°)
+              </div>
+              <div class="ubcs-legend-item">
+                <div
+                  class="ubcs-legend-swatch"
+                  style="background: #6e80a8"
+                ></div>
+                Biaxial equal-disp — Hoop
+              </div>
+              <div class="ubcs-legend-item">
+                <div
+                  class="ubcs-legend-swatch"
+                  style="background: #96a7c8"
+                ></div>
+                Biaxial 1:2 force — Hoop
+              </div>
+            </div>
+          </div>
 
           <p>
             The reductions are not uniform — they range from about 36% in the
@@ -494,26 +1177,177 @@
           </p>
 
           <!-- INFOGRAPHIC SECTION 4: FAILURE CRITERIA ERROR COMPARISON -->
-          <!-- Creative Brief: Horizontal bar chart showing absolute % error vs experiment for 6 failure criteria,
-               for both y-direction (hoop) and x-direction (axial), equal-displacement biaxial protocol.
-               Y-direction errors (experiment 295.4 MPa):
-                 Hashin: 2.6% (best)
-                 Max stress: 4.0%
-                 Tsai-Wu: 4.8%
-                 Max strain: 6.3%
-                 R-Tsai-Wu: 9.2%
-                 Shokrieh: 23.5%
-               X-direction errors (experiment 236.8 MPa):
-                 Hashin: 15.1% (best)
-                 Max stress: 17.3%
-                 Tsai-Wu: 19.2%
-                 Max strain: 23.1%
-                 R-Tsai-Wu: 31.4%
-                 Shokrieh: 35.2%
-               Highlight the Hashin bar in red #bf3425 ("best" label), others in navy/gray.
-               Lower bar = better. Add a "best" annotation to Hashin in each panel.
-               Two-panel layout: one for each direction. Source at bottom. -->
 
+          <div class="fce-wrap" id="fce-root">
+            <div class="fce-eyebrow">Failure Criteria Evaluation</div>
+            <h3 class="fce-title">Absolute % Error vs Experiment</h3>
+            <div class="fce-subtitle">
+              Equal-displacement biaxial loading &nbsp;·&nbsp; Lower = closer to
+              measured strength
+            </div>
+
+            <div class="fce-panels">
+              <!-- Hoop panel -->
+              <div class="fce-panel" id="fce-panel-hoop">
+                <div class="fce-panel-header">
+                  <span class="fce-dir-badge fce-badge-hoop">90°</span>
+                  <div class="fce-panel-meta">
+                    <span class="fce-panel-dir">Hoop (y-direction)</span>
+                    <span class="fce-panel-exp">Experiment: 295.4 MPa</span>
+                  </div>
+                </div>
+                <div class="fce-rows" id="fce-rows-hoop">
+                  <div class="fce-row" data-panel="hoop" data-i="0">
+                    <span class="fce-criterion"
+                      ><span class="fce-best-star">★</span>Hashin</span
+                    >
+                    <div class="fce-track" data-tip="2.6%">
+                      <div class="fce-fill fce-c0" data-w="7.4"></div>
+                    </div>
+                    <span class="fce-pct fce-pct-best">2.6%</span>
+                  </div>
+                  <div class="fce-row" data-panel="hoop" data-i="1">
+                    <span class="fce-criterion">Max stress</span>
+                    <div class="fce-track" data-tip="4.0%">
+                      <div class="fce-fill fce-c1" data-w="11.4"></div>
+                    </div>
+                    <span class="fce-pct">4.0%</span>
+                  </div>
+                  <div class="fce-row" data-panel="hoop" data-i="2">
+                    <span class="fce-criterion">Tsai-Wu</span>
+                    <div class="fce-track" data-tip="4.8%">
+                      <div class="fce-fill fce-c2" data-w="13.6"></div>
+                    </div>
+                    <span class="fce-pct">4.8%</span>
+                  </div>
+                  <div class="fce-row" data-panel="hoop" data-i="3">
+                    <span class="fce-criterion">Max strain</span>
+                    <div class="fce-track" data-tip="6.3%">
+                      <div class="fce-fill fce-c3" data-w="17.9"></div>
+                    </div>
+                    <span class="fce-pct">6.3%</span>
+                  </div>
+                  <div class="fce-row" data-panel="hoop" data-i="4">
+                    <span class="fce-criterion">R-Tsai-Wu</span>
+                    <div class="fce-track" data-tip="9.2%">
+                      <div class="fce-fill fce-c4" data-w="26.1"></div>
+                    </div>
+                    <span class="fce-pct">9.2%</span>
+                  </div>
+                  <div class="fce-row" data-panel="hoop" data-i="5">
+                    <span class="fce-criterion">Shokrieh</span>
+                    <div class="fce-track" data-tip="23.5%">
+                      <div class="fce-fill fce-c5" data-w="66.8"></div>
+                    </div>
+                    <span class="fce-pct fce-pct-worst">23.5%</span>
+                  </div>
+                </div>
+                <div class="fce-axis">
+                  <span class="fce-tick">0%</span>
+                  <span class="fce-tick">10%</span>
+                  <span class="fce-tick">20%</span>
+                  <span class="fce-tick">30%</span>
+                  <span class="fce-tick">35%</span>
+                </div>
+              </div>
+
+              <!-- Axial panel -->
+              <div
+                class="fce-panel"
+                id="fce-panel-axial"
+                style="transition-delay: 0.12s"
+              >
+                <div class="fce-panel-header">
+                  <span class="fce-dir-badge fce-badge-axial">0°</span>
+                  <div class="fce-panel-meta">
+                    <span class="fce-panel-dir">Axial (x-direction)</span>
+                    <span class="fce-panel-exp">Experiment: 236.8 MPa</span>
+                  </div>
+                </div>
+                <div class="fce-rows" id="fce-rows-axial">
+                  <div class="fce-row" data-panel="axial" data-i="0">
+                    <span class="fce-criterion"
+                      ><span class="fce-best-star">★</span>Hashin</span
+                    >
+                    <div class="fce-track" data-tip="15.1%">
+                      <div class="fce-fill fce-c0" data-w="42.9"></div>
+                    </div>
+                    <span class="fce-pct fce-pct-best">15.1%</span>
+                  </div>
+                  <div class="fce-row" data-panel="axial" data-i="1">
+                    <span class="fce-criterion">Max stress</span>
+                    <div class="fce-track" data-tip="17.3%">
+                      <div class="fce-fill fce-c1" data-w="49.1"></div>
+                    </div>
+                    <span class="fce-pct">17.3%</span>
+                  </div>
+                  <div class="fce-row" data-panel="axial" data-i="2">
+                    <span class="fce-criterion">Tsai-Wu</span>
+                    <div class="fce-track" data-tip="19.2%">
+                      <div class="fce-fill fce-c2" data-w="54.5"></div>
+                    </div>
+                    <span class="fce-pct">19.2%</span>
+                  </div>
+                  <div class="fce-row" data-panel="axial" data-i="3">
+                    <span class="fce-criterion">Max strain</span>
+                    <div class="fce-track" data-tip="23.1%">
+                      <div class="fce-fill fce-c3" data-w="65.6"></div>
+                    </div>
+                    <span class="fce-pct">23.1%</span>
+                  </div>
+                  <div class="fce-row" data-panel="axial" data-i="4">
+                    <span class="fce-criterion">R-Tsai-Wu</span>
+                    <div class="fce-track" data-tip="31.4%">
+                      <div class="fce-fill fce-c4" data-w="89.2"></div>
+                    </div>
+                    <span class="fce-pct">31.4%</span>
+                  </div>
+                  <div class="fce-row" data-panel="axial" data-i="5">
+                    <span class="fce-criterion">Shokrieh</span>
+                    <div class="fce-track" data-tip="35.2%">
+                      <div class="fce-fill fce-c5" data-w="100"></div>
+                    </div>
+                    <span class="fce-pct fce-pct-worst">35.2%</span>
+                  </div>
+                </div>
+                <div class="fce-axis">
+                  <span class="fce-tick">0%</span>
+                  <span class="fce-tick">10%</span>
+                  <span class="fce-tick">20%</span>
+                  <span class="fce-tick">30%</span>
+                  <span class="fce-tick">35%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Insight strip -->
+            <div class="fce-insight" id="fce-insight">
+              <div class="fce-insight-cell">
+                <div class="fce-insight-dir">Hoop (90°) — error range</div>
+                <div class="fce-insight-row">
+                  <span class="fce-insight-label">Best — Hashin</span>
+                  <span class="fce-insight-val fce-best-val">2.6%</span>
+                </div>
+                <div class="fce-insight-row">
+                  <span class="fce-insight-label">Worst — Shokrieh</span>
+                  <span class="fce-insight-val fce-worst-val">23.5%</span>
+                </div>
+                <div class="fce-spread">Spread: <strong>20.9 pp</strong></div>
+              </div>
+              <div class="fce-insight-cell">
+                <div class="fce-insight-dir">Axial (0°) — error range</div>
+                <div class="fce-insight-row">
+                  <span class="fce-insight-label">Best — Hashin</span>
+                  <span class="fce-insight-val fce-best-val">15.1%</span>
+                </div>
+                <div class="fce-insight-row">
+                  <span class="fce-insight-label">Worst — Shokrieh</span>
+                  <span class="fce-insight-val fce-worst-val">35.2%</span>
+                </div>
+                <div class="fce-spread">Spread: <strong>20.1 pp</strong></div>
+              </div>
+            </div>
+          </div>
           <p>
             A few things stand out. In the hoop direction, Hashin landed within
             2.6% of the measured strength, and most criteria did reasonably well
@@ -552,21 +1386,130 @@
           </p>
 
           <!-- INFOGRAPHIC SECTION 5: DAMAGE PROGRESSION SEQUENCE -->
-          <!-- Creative Brief: Sequential diagram showing 5 stages of damage evolution under Hashin model (equal-displacement biaxial):
-               Stage 1: Hoop-surface damage starts (edges)
-               Stage 2: Axial-surface damage appears
-               Stage 3: Zones merge and grow
-               Stage 4: Through-thickness damage band forms
-               Stage 5: Collapse
-               Show as horizontal timeline with labeled nodes and brief descriptions.
-               Below, include a small bar/gauge panel showing damage-mode coefficients at first element deletion:
-                 Fiber compression: ~1.00 (dominant)
-                 Matrix compression: ~0.56
-                 Fiber tension: ~0.23 (not controlling)
-               Use red for fiber compression (dominant), navy for others.
-               Add note: "Damage initiates near specimen edges, propagates toward center."
-               Clean technical aesthetic. Source attribution at bottom. -->
 
+          <div class="dp-wrap" id="dp-root">
+            <div class="dp-eyebrow">
+              Finite Element Analysis — Hashin Criteria
+            </div>
+            <h3 class="dp-title">Damage Progression</h3>
+            <div class="dp-subtitle">Equal-displacement biaxial loading</div>
+
+            <!-- Timeline -->
+            <div class="dp-timeline-label">Progression sequence</div>
+            <div class="dp-timeline" id="dp-timeline">
+              <div class="dp-stage">
+                <div class="dp-stage-dot dp-stage-dot-1"></div>
+                <div class="dp-stage-card dp-stage-card-1">
+                  <div class="dp-stage-num">Stage 1</div>
+                  <div class="dp-stage-name">Hoop-surface damage</div>
+                  <div class="dp-stage-desc">Initiates near specimen edges</div>
+                </div>
+                <div class="dp-stage-arrow"></div>
+              </div>
+
+              <div class="dp-stage">
+                <div class="dp-stage-dot dp-stage-dot-2"></div>
+                <div class="dp-stage-card dp-stage-card-2">
+                  <div class="dp-stage-num">Stage 2</div>
+                  <div class="dp-stage-name">Axial-surface damage</div>
+                  <div class="dp-stage-desc">Appears after hoop initiation</div>
+                </div>
+                <div class="dp-stage-arrow"></div>
+              </div>
+
+              <div class="dp-stage">
+                <div class="dp-stage-dot dp-stage-dot-3"></div>
+                <div class="dp-stage-card dp-stage-card-3">
+                  <div class="dp-stage-num">Stage 3</div>
+                  <div class="dp-stage-name">Merge &amp; grow</div>
+                  <div class="dp-stage-desc">
+                    Damage regions coalesce, propagate toward centre
+                  </div>
+                </div>
+                <div class="dp-stage-arrow"></div>
+              </div>
+
+              <div class="dp-stage">
+                <div class="dp-stage-dot dp-stage-dot-4"></div>
+                <div class="dp-stage-card dp-stage-card-4">
+                  <div class="dp-stage-num">Stage 4</div>
+                  <div class="dp-stage-name">Damage band → collapse</div>
+                  <div class="dp-stage-desc">
+                    Through-thickness band forms; failure
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dp-propagation-note">
+              Damage initiates near specimen edges and propagates toward the
+              centre
+            </div>
+
+            <hr class="dp-divider" />
+
+            <!-- Mode coefficients -->
+            <div class="dp-modes-label">
+              Damage-mode coefficients at first element deletion &nbsp;·&nbsp;
+              scale 0 – 1
+            </div>
+            <div class="dp-modes" id="dp-modes">
+              <!-- Fiber compression -->
+              <div class="dp-mode-row">
+                <div class="dp-mode-label">
+                  Fiber compression
+                  <span class="dp-dominant-tag">dominant</span>
+                </div>
+                <div class="dp-track">
+                  <div class="dp-fill dp-fill-dominant" data-w="100">
+                    <span class="dp-fill-label">~1.00</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="dp-coeff dp-coeff-dominant">1.00</div>
+                  <div class="dp-scale-hint">/ 1.00</div>
+                </div>
+                <div></div>
+              </div>
+
+              <!-- Matrix compression -->
+              <div class="dp-mode-row">
+                <div class="dp-mode-label">Matrix compression</div>
+                <div class="dp-track">
+                  <div class="dp-fill dp-fill-mid" data-w="56">
+                    <span class="dp-fill-label">0.56</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="dp-coeff">0.56</div>
+                  <div class="dp-scale-hint">/ 1.00</div>
+                </div>
+                <div></div>
+              </div>
+
+              <!-- Fiber tension -->
+              <div class="dp-mode-row">
+                <div class="dp-mode-label">
+                  Fiber tension
+                  <span class="dp-minor-tag">not controlling</span>
+                </div>
+                <div class="dp-track">
+                  <div class="dp-fill dp-fill-minor" data-w="23">
+                    <span
+                      class="dp-fill-label"
+                      style="color: rgba(71, 87, 124, 0.7)"
+                      >0.23</span
+                    >
+                  </div>
+                </div>
+                <div>
+                  <div class="dp-coeff dp-coeff-minor">0.23</div>
+                  <div class="dp-scale-hint">/ 1.00</div>
+                </div>
+                <div></div>
+              </div>
+            </div>
+          </div>
           <p>
             Damage appeared first on the hoop-loaded surface, then at the
             matching location on the axial-loaded surface; the two zones grew,
@@ -681,19 +1624,157 @@
           </div>
 
           <!-- INFOGRAPHIC SECTION 6: SHELL FAILURE PRESSURE AND STRAIN COMPARISON -->
-          <!-- Creative Brief: Two-panel visual.
-               Panel 1 — Horizontal bar chart: Shell Failure Pressure (MPa)
-                 Experiment: 22.00 MPa
-                 Hashin simulation: 20.75 MPa (−5.7%)
-                 Annotate the −5.7% difference. Bars should be nearly equal, communicating close agreement.
-               Panel 2 — Grouped bar chart: Failure Strain Comparison (micro-strain)
-                 Axial: Shell 3,938 µε vs. Uniaxial laminate 12,311 µε (shell ~−68%)
-                 Hoop: Shell 3,039 µε vs. Uniaxial laminate 10,009 µε (shell ~−70%)
-                 Show shell strains in red, uniaxial in navy.
-                 Annotate percentage reductions prominently.
-               Title for panel 2: "In-service failure strain vs. uniaxial coupon"
-               Use brand colors. Source attribution at bottom.
-               Key message callout: "The strain a shell can actually tolerate is ~30% of what a one-directional coupon test suggests." -->
+          <div class="sfp-wrap" id="sfp-root">
+            <div class="sfp-eyebrow">Structural Validation</div>
+            <h3 class="sfp-title">
+              Shell Failure Pressure &amp; Failure Strain
+            </h3>
+            <div class="sfp-subtitle">
+              Simulation vs experiment &nbsp;·&nbsp; Hashin criteria
+            </div>
+
+            <!-- PRESSURE -->
+            <div class="sfp-section-label">Shell failure pressure (MPa)</div>
+            <div class="sfp-pressure" id="sfp-pressure">
+              <div class="sfp-prow">
+                <div class="sfp-plabel">Experiment</div>
+                <div class="sfp-ptrack">
+                  <div class="sfp-pfill sfp-pfill-exp" data-w="88.0"></div>
+                </div>
+                <div class="sfp-pval-group">
+                  <span class="sfp-pval">22.00</span>
+                  <span class="sfp-punit">MPa</span>
+                </div>
+              </div>
+
+              <div class="sfp-prow">
+                <div class="sfp-plabel">Hashin sim</div>
+                <div class="sfp-ptrack">
+                  <div class="sfp-pfill sfp-pfill-sim" data-w="83.0"></div>
+                </div>
+                <div class="sfp-pval-group">
+                  <span class="sfp-pval">20.75</span>
+                  <span class="sfp-pdelta">−5.7%</span>
+                </div>
+              </div>
+
+              <div class="sfp-axis-row">
+                <div></div>
+                <div class="sfp-axis">
+                  <span class="sfp-tick">0</span>
+                  <span class="sfp-tick">5</span>
+                  <span class="sfp-tick">10</span>
+                  <span class="sfp-tick">15</span>
+                  <span class="sfp-tick">20</span>
+                  <span class="sfp-tick">25</span>
+                </div>
+                <div></div>
+              </div>
+
+              <div class="sfp-validation">
+                <div class="sfp-validation-dot"></div>
+                <span class="sfp-validation-text">
+                  Simulation within
+                  <span class="sfp-validation-num">5.7%</span> of experiment
+                  &nbsp;—&nbsp; Hashin model validated for shell-level failure
+                  prediction
+                </span>
+              </div>
+            </div>
+
+            <hr class="sfp-divider" />
+
+            <!-- STRAIN -->
+            <div class="sfp-section-label">
+              Failure strain: shell in service vs laminate uniaxial
+              (micro-strain)
+            </div>
+            <div class="sfp-strain" id="sfp-strain">
+              <div class="sfp-strain-panels">
+                <!-- Axial panel -->
+                <div class="sfp-strain-panel">
+                  <div class="sfp-strain-header">
+                    <span class="sfp-dir-badge sfp-badge-axial">0°</span>
+                    <span class="sfp-strain-dir">Axial</span>
+                  </div>
+
+                  <div class="sfp-srow">
+                    <div class="sfp-stype">Shell</div>
+                    <div class="sfp-strack">
+                      <div
+                        class="sfp-sfill sfp-sfill-shell-axial"
+                        data-w="32.0"
+                      ></div>
+                    </div>
+                    <div>
+                      <div class="sfp-sval">3,938</div>
+                      <span class="sfp-sval-unit">με</span>
+                    </div>
+                  </div>
+
+                  <div class="sfp-srow">
+                    <div class="sfp-stype">Uniax</div>
+                    <div class="sfp-strack">
+                      <div
+                        class="sfp-sfill sfp-sfill-uniax-axial"
+                        data-w="100.0"
+                      ></div>
+                    </div>
+                    <div>
+                      <div class="sfp-sval">12,311</div>
+                      <span class="sfp-sval-unit">με</span>
+                    </div>
+                  </div>
+
+                  <div class="sfp-drop-pill">
+                    <span class="sfp-drop-label">Shell vs uniaxial</span>
+                    <span class="sfp-drop-val">−68%</span>
+                  </div>
+                </div>
+
+                <!-- Hoop panel -->
+                <div class="sfp-strain-panel">
+                  <div class="sfp-strain-header">
+                    <span class="sfp-dir-badge sfp-badge-hoop">90°</span>
+                    <span class="sfp-strain-dir">Hoop</span>
+                  </div>
+
+                  <div class="sfp-srow">
+                    <div class="sfp-stype">Shell</div>
+                    <div class="sfp-strack">
+                      <div
+                        class="sfp-sfill sfp-sfill-shell-hoop"
+                        data-w="30.4"
+                      ></div>
+                    </div>
+                    <div>
+                      <div class="sfp-sval">3,039</div>
+                      <span class="sfp-sval-unit">με</span>
+                    </div>
+                  </div>
+
+                  <div class="sfp-srow">
+                    <div class="sfp-stype">Uniax</div>
+                    <div class="sfp-strack">
+                      <div
+                        class="sfp-sfill sfp-sfill-uniax-hoop"
+                        data-w="100.0"
+                      ></div>
+                    </div>
+                    <div>
+                      <div class="sfp-sval">10,009</div>
+                      <span class="sfp-sval-unit">με</span>
+                    </div>
+                  </div>
+
+                  <div class="sfp-drop-pill">
+                    <span class="sfp-drop-label">Shell vs uniaxial</span>
+                    <span class="sfp-drop-val">−70%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <p>
             The simulated damage initiated on the outer surface near the
