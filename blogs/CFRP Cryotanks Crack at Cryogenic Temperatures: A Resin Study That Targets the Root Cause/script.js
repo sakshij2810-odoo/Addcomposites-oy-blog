@@ -456,3 +456,33 @@ document.addEventListener("DOMContentLoaded", function () {
     plugins: [windowPlugin, eventPlugin]
   });
 })();
+
+/* infographic 2*/
+
+(function() {
+  var wrap = document.getElementById('rtpWrap');
+  var animated = false;
+ 
+  function animateBars() {
+    if (animated) return;
+    animated = true;
+    var fills = wrap.querySelectorAll('.rtp-bar-fill');
+    fills.forEach(function(fill, i) {
+      var pct = parseFloat(fill.getAttribute('data-pct'));
+      setTimeout(function() {
+        fill.style.width = pct + '%';
+      }, i * 80);
+    });
+  }
+ 
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        wrap.classList.add('rtp-visible');
+        setTimeout(animateBars, 300);
+        io.disconnect();
+      }
+    });
+  }, { threshold: 0.15 });
+  io.observe(wrap);
+})();
