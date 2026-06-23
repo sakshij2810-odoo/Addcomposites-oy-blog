@@ -1117,41 +1117,6 @@ section {
   }
 }
 
-/* ============================================
-   STICKY SIDEBAR SAFETY (appended below reference rules — reference rules above are unchanged)
-   position: sticky silently fails inside a flex container without flex-start alignment,
-   and dies if any ancestor sets overflow/transform/filter. These rules guarantee the
-   sidebar sticks the same way it does in the reference build, including inside Webflow's
-   rich-text wrapper.
-   ============================================ */
-html,
-body {
-  overflow-x: hidden;
-}
-
-/* Do NOT clip vertically anywhere in the ancestry — that is what kills sticky. */
-html,
-body,
-.blog-layout {
-  overflow-y: visible;
-}
-
-.blog-layout {
-  align-items: flex-start;
-}
-
-.blog-sidebar {
-  align-self: flex-start;
-}
-
-/* Re-assert sticky in case a host stylesheet (e.g. Webflow) overrides position on the wrapper. */
-@media (min-width: 1025px) {
-  .blog-sidebar {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 40px;
-  }
-}
 
 /* ============================================
    IMAGE CAPTION — links inside captions
