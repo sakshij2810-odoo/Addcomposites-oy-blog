@@ -486,3 +486,32 @@ document.addEventListener("DOMContentLoaded", function () {
   }, { threshold: 0.15 });
   io.observe(wrap);
 })();
+
+/*info 3*/
+(function() {
+  var wrap = document.getElementById('cteWrap');
+  var animated = false;
+ 
+  function animateBars() {
+    if (animated) return;
+    animated = true;
+    var fills = wrap.querySelectorAll('.cte-bar-fill');
+    fills.forEach(function(fill, i) {
+      var pct = parseFloat(fill.getAttribute('data-pct'));
+      setTimeout(function() {
+        fill.style.width = pct + '%';
+      }, i * 120);
+    });
+  }
+ 
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        wrap.classList.add('cte-visible');
+        setTimeout(animateBars, 300);
+        io.disconnect();
+      }
+    });
+  }, { threshold: 0.15 });
+  io.observe(wrap);
+})();
