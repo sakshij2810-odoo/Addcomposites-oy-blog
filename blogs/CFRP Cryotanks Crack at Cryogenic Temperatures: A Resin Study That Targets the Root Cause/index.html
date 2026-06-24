@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -72,9 +71,7 @@
           <a href="#thermal-mismatch" class="blog-sidebar-link"
             >Thermal Mismatch</a
           >
-          <a href="#orientation-split" class="blog-sidebar-link"
-            >0° vs 90°</a
-          >
+          <a href="#orientation-split" class="blog-sidebar-link">0° vs 90°</a>
           <a href="#mechanisms" class="blog-sidebar-link"
             >Competing Mechanisms</a
           >
@@ -300,8 +297,7 @@
               rel="noopener noreferrer"
               >https://doi.org/10.3390/polym17172296</a
             >
-            — © 2025 by the authors. Licensed under CC BY 4.0
-            (<a
+            — © 2025 by the authors. Licensed under CC BY 4.0 (<a
               href="https://creativecommons.org/licenses/by/4.0/"
               target="_blank"
               rel="noopener noreferrer"
@@ -314,8 +310,8 @@
             describes it reacting with the epoxy as the system cures, growing
             branched, pliable chains that spread through the finished network —
             in effect seeding soft pockets inside an otherwise rigid thermoset,
-            an interpenetrating-network approach meant to absorb energy and blunt
-            cracks rather than let them run.
+            an interpenetrating-network approach meant to absorb energy and
+            blunt cracks rather than let them run.
           </p>
 
           <!-- Split reverse: VARI schematic right, text left -->
@@ -341,8 +337,7 @@
                   rel="noopener noreferrer"
                   >https://doi.org/10.3390/polym17172296</a
                 >
-                — © 2025 by the authors. Licensed under CC BY 4.0
-                (<a
+                — © 2025 by the authors. Licensed under CC BY 4.0 (<a
                   href="https://creativecommons.org/licenses/by/4.0/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -386,8 +381,7 @@
               rel="noopener noreferrer"
               >https://doi.org/10.3390/polym17172296</a
             >
-            — © 2025 by the authors. Licensed under CC BY 4.0
-            (<a
+            — © 2025 by the authors. Licensed under CC BY 4.0 (<a
               href="https://creativecommons.org/licenses/by/4.0/"
               target="_blank"
               rel="noopener noreferrer"
@@ -399,8 +393,8 @@
             A point worth flagging for relevance: the authors measured a fibre
             volume fraction of roughly 41% in their VARI laminates and reported
             this closely matched the ~43.6% they measured in actual
-            wet-filament-wound vessel specimens, which is their argument that the
-            coupon data transfers to real wound hardware.
+            wet-filament-wound vessel specimens, which is their argument that
+            the coupon data transfers to real wound hardware.
           </p>
         </section>
 
@@ -420,8 +414,8 @@
             wet-out before the exotherm kicks in and viscosity climbs sharply
             toward gelation. The curing window itself, extrapolated from
             differential scanning calorimetry, runs from about 72.9&nbsp;°C
-            onset to 210.9&nbsp;°C, which the authors describe as broad enough to
-            allow flow before crosslinking locks the network.
+            onset to 210.9&nbsp;°C, which the authors describe as broad enough
+            to allow flow before crosslinking locks the network.
           </p>
 
           <!-- INFOGRAPHIC 1 PLACEHOLDER -->
@@ -436,51 +430,64 @@
             not a reproduction of the paper's figure.
           -->
 
-          
-<div class="visc-wrap" id="viscWrap">
-  <div class="visc-header">
-    <div class="visc-eyebrow">Resin Processing Characterisation</div>
-    <h3 class="visc-title">Viscosity vs. Temperature</h3>
-    <p class="visc-subtitle">Modified DGEBA / T5000 / CY179 system &nbsp;·&nbsp; Qi et al., <em>Polymers</em> 2025</p>
-  </div>
- 
-  <div class="visc-chart-outer">
-    <canvas id="viscCanvas"></canvas>
-    <div class="visc-tooltip-card" id="viscTooltip"></div>
-  </div>
- 
-  <div class="visc-legend">
-    <div class="visc-legend-item">
-      <div class="visc-legend-swatch" style="background:#47577c;height:3px;"></div>
-      Viscosity curve
-    </div>
-    <div class="visc-legend-item">
-      <div class="visc-legend-swatch" style="background:rgba(71,87,124,0.15);width:28px;height:14px;border-radius:3px;"></div>
-      Usable processing window (25 – 120 °C)
-    </div>
-    <div class="visc-legend-item">
-      <div class="visc-legend-swatch dashed"></div>
-      Wet-winding threshold (850 mPa·s)
-    </div>
-    <div class="visc-legend-item">
-      <div class="visc-legend-dot" style="background:#bf3425;"></div>
-      Gelation onset
-    </div>
-    <div class="visc-legend-item">
-      <div class="visc-legend-dot" style="background:#9d9d9c;"></div>
-      Exotherm onset
-    </div>
-  </div>
-</div>
- 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+          <div class="visc-wrap" id="viscWrap">
+            <div class="visc-header">
+              <div class="visc-eyebrow">Resin Processing Characterisation</div>
+              <h3 class="visc-title">Viscosity vs. Temperature</h3>
+              <p class="visc-subtitle">
+                Modified DGEBA / T5000 / CY179 system &nbsp;·&nbsp; Qi et al.,
+                <em>Polymers</em> 2025
+              </p>
+            </div>
+
+            <div class="visc-chart-outer">
+              <canvas id="viscCanvas"></canvas>
+              <div class="visc-tooltip-card" id="viscTooltip"></div>
+            </div>
+
+            <div class="visc-legend">
+              <div class="visc-legend-item">
+                <div
+                  class="visc-legend-swatch"
+                  style="background: #47577c; height: 3px"
+                ></div>
+                Viscosity curve
+              </div>
+              <div class="visc-legend-item">
+                <div
+                  class="visc-legend-swatch"
+                  style="
+                    background: rgba(71, 87, 124, 0.15);
+                    width: 28px;
+                    height: 14px;
+                    border-radius: 3px;
+                  "
+                ></div>
+                Usable processing window (25 – 120 °C)
+              </div>
+              <div class="visc-legend-item">
+                <div class="visc-legend-swatch dashed"></div>
+                Wet-winding threshold (850 mPa·s)
+              </div>
+              <div class="visc-legend-item">
+                <div class="visc-legend-dot" style="background: #bf3425"></div>
+                Gelation onset
+              </div>
+              <div class="visc-legend-item">
+                <div class="visc-legend-dot" style="background: #9d9d9c"></div>
+                Exotherm onset
+              </div>
+            </div>
+          </div>
+
+          <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
           <p>
             From the DSC and rheology, the authors built a four-stage cure — a
-            pre-cure hold, two primary crosslinking stages, and a post-cure above
-            the peak exotherm temperature — to drive the network toward full
-            conversion while managing the thermal stress that develops during
-            cool-down.
+            pre-cure hold, two primary crosslinking stages, and a post-cure
+            above the peak exotherm temperature — to drive the network toward
+            full conversion while managing the thermal stress that develops
+            during cool-down.
           </p>
 
           <div class="highlight-box">
@@ -489,10 +496,10 @@
               This is the detail that should catch a process engineer's eye. The
               headline result is cryogenic toughness, but the enabling result is
               that ~800&nbsp;mPa·s number. A system that hits cryogenic targets
-              yet behaves like honey at the tow is a lab curiosity; a system that
-              wets out cleanly on a winding head is a manufacturing input. The
-              paper treats processability as a gating requirement rather than an
-              afterthought, and that ordering is the right one.
+              yet behaves like honey at the tow is a lab curiosity; a system
+              that wets out cleanly on a winding head is a manufacturing input.
+              The paper treats processability as a gating requirement rather
+              than an afterthought, and that ordering is the right one.
             </p>
           </div>
         </section>
@@ -526,114 +533,192 @@
             Table 3. Original chart; not a reproduction of the paper's figure.
           -->
 
-           
-<div class="rtp-wrap" id="rtpWrap">
-  <div class="rtp-eyebrow">Cryogenic Property Characterisation</div>
-  <h3 class="rtp-title">Neat Modified Resin — Tensile Properties vs. Temperature</h3>
-  <p class="rtp-subtitle">DGEBA / T5000 / CY179 system &nbsp;·&nbsp; Qi et al., <em>Polymers</em> 2025, Table 3</p>
- 
-  <div class="rtp-panels">
-    <!-- Strength panel -->
-    <div class="rtp-panel">
-      <div class="rtp-panel-title">Tensile Strength</div>
-      <div class="rtp-panel-delta">300 K → 90 K &nbsp;·&nbsp; <span>+77%</span></div>
- 
-      <div class="rtp-bar-row" data-val="69.2" data-max="130" data-type="strength">
-        <div class="rtp-temp-label">300 K</div>
-        <div class="rtp-bar-track">
-          <div class="rtp-bar-fill strength" data-pct="53.2">69.2 MPa</div>
-        </div>
-      </div>
-      <div class="rtp-bar-row" data-val="83.9" data-max="130" data-type="strength">
-        <div class="rtp-temp-label">250 K</div>
-        <div class="rtp-bar-track">
-          <div class="rtp-bar-fill strength" data-pct="64.5">83.9 MPa</div>
-        </div>
-      </div>
-      <div class="rtp-bar-row" data-val="92.1" data-max="130" data-type="strength">
-        <div class="rtp-temp-label">200 K</div>
-        <div class="rtp-bar-track">
-          <div class="rtp-bar-fill strength" data-pct="70.8">92.1 MPa</div>
-        </div>
-      </div>
-      <div class="rtp-bar-row" data-val="103.8" data-max="130" data-type="strength">
-        <div class="rtp-temp-label">150 K</div>
-        <div class="rtp-bar-track">
-          <div class="rtp-bar-fill strength" data-pct="79.8">103.8 MPa</div>
-        </div>
-      </div>
-      <div class="rtp-bar-row rtp-coldest" data-val="122.6" data-max="130" data-type="strength">
-        <div class="rtp-temp-label">90 K</div>
-        <div class="rtp-bar-track">
-          <div class="rtp-bar-fill strength" data-pct="94.3">122.6 MPa</div>
-        </div>
-      </div>
- 
-      <div class="rtp-arrow-row">
-        <span class="rtp-arrow">↓</span> Colder → stronger
-      </div>
-    </div>
- 
-    <!-- Modulus panel -->
-    <div class="rtp-panel">
-      <div class="rtp-panel-title">Tensile Modulus</div>
-      <div class="rtp-panel-delta">300 K → 90 K &nbsp;·&nbsp; <span>+180%</span></div>
- 
-      <div class="rtp-bar-row" data-val="2433" data-max="7200" data-type="modulus">
-        <div class="rtp-temp-label">300 K</div>
-        <div class="rtp-bar-track">
-          <div class="rtp-bar-fill modulus" data-pct="33.8">2433 MPa</div>
-        </div>
-      </div>
-      <div class="rtp-bar-row" data-val="3650" data-max="7200" data-type="modulus">
-        <div class="rtp-temp-label">250 K</div>
-        <div class="rtp-bar-track">
-          <div class="rtp-bar-fill modulus" data-pct="50.7">3650 MPa</div>
-        </div>
-      </div>
-      <div class="rtp-bar-row" data-val="4631" data-max="7200" data-type="modulus">
-        <div class="rtp-temp-label">200 K</div>
-        <div class="rtp-bar-track">
-          <div class="rtp-bar-fill modulus" data-pct="64.3">4631 MPa</div>
-        </div>
-      </div>
-      <div class="rtp-bar-row" data-val="5921" data-max="7200" data-type="modulus">
-        <div class="rtp-temp-label">150 K</div>
-        <div class="rtp-bar-track">
-          <div class="rtp-bar-fill modulus" data-pct="82.2">5921 MPa</div>
-        </div>
-      </div>
-      <div class="rtp-bar-row rtp-coldest" data-val="6802" data-max="7200" data-type="modulus">
-        <div class="rtp-temp-label">90 K</div>
-        <div class="rtp-bar-track">
-          <div class="rtp-bar-fill modulus" data-pct="94.5">6802 MPa</div>
-        </div>
-      </div>
- 
-      <div class="rtp-arrow-row">
-        <span class="rtp-arrow">↓</span> Colder → stiffer
-      </div>
-    </div>
-  </div>
- 
-  <!-- Footer badges -->
-  <div class="rtp-footer">
-    <div class="rtp-badge">
-      <div class="rtp-badge-icon">💪</div>
-      <div class="rtp-badge-text">
-        <strong>+77% strength</strong>
-        300 K → 90 K &nbsp;(69.2 → 122.6 MPa)
-      </div>
-    </div>
-    <div class="rtp-badge">
-      <div class="rtp-badge-icon">📐</div>
-      <div class="rtp-badge-text">
-        <strong>+180% modulus</strong>
-        300 K → 90 K &nbsp;(2433 → 6802 MPa)
-      </div>
-    </div>
-  </div>
-</div>
+          <div class="rtp-wrap" id="rtpWrap">
+            <div class="rtp-eyebrow">Cryogenic Property Characterisation</div>
+            <h3 class="rtp-title">
+              Neat Modified Resin — Tensile Properties vs. Temperature
+            </h3>
+            <p class="rtp-subtitle">
+              DGEBA / T5000 / CY179 system &nbsp;·&nbsp; Qi et al.,
+              <em>Polymers</em> 2025, Table 3
+            </p>
+
+            <div class="rtp-panels">
+              <!-- Strength panel -->
+              <div class="rtp-panel">
+                <div class="rtp-panel-title">Tensile Strength</div>
+                <div class="rtp-panel-delta">
+                  300 K → 90 K &nbsp;·&nbsp; <span>+77%</span>
+                </div>
+
+                <div
+                  class="rtp-bar-row"
+                  data-val="69.2"
+                  data-max="130"
+                  data-type="strength"
+                >
+                  <div class="rtp-temp-label">300 K</div>
+                  <div class="rtp-bar-track">
+                    <div class="rtp-bar-fill strength" data-pct="53.2">
+                      69.2 MPa
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="rtp-bar-row"
+                  data-val="83.9"
+                  data-max="130"
+                  data-type="strength"
+                >
+                  <div class="rtp-temp-label">250 K</div>
+                  <div class="rtp-bar-track">
+                    <div class="rtp-bar-fill strength" data-pct="64.5">
+                      83.9 MPa
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="rtp-bar-row"
+                  data-val="92.1"
+                  data-max="130"
+                  data-type="strength"
+                >
+                  <div class="rtp-temp-label">200 K</div>
+                  <div class="rtp-bar-track">
+                    <div class="rtp-bar-fill strength" data-pct="70.8">
+                      92.1 MPa
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="rtp-bar-row"
+                  data-val="103.8"
+                  data-max="130"
+                  data-type="strength"
+                >
+                  <div class="rtp-temp-label">150 K</div>
+                  <div class="rtp-bar-track">
+                    <div class="rtp-bar-fill strength" data-pct="79.8">
+                      103.8 MPa
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="rtp-bar-row rtp-coldest"
+                  data-val="122.6"
+                  data-max="130"
+                  data-type="strength"
+                >
+                  <div class="rtp-temp-label">90 K</div>
+                  <div class="rtp-bar-track">
+                    <div class="rtp-bar-fill strength" data-pct="94.3">
+                      122.6 MPa
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rtp-arrow-row">
+                  <span class="rtp-arrow">↓</span> Colder → stronger
+                </div>
+              </div>
+
+              <!-- Modulus panel -->
+              <div class="rtp-panel">
+                <div class="rtp-panel-title">Tensile Modulus</div>
+                <div class="rtp-panel-delta">
+                  300 K → 90 K &nbsp;·&nbsp; <span>+180%</span>
+                </div>
+
+                <div
+                  class="rtp-bar-row"
+                  data-val="2433"
+                  data-max="7200"
+                  data-type="modulus"
+                >
+                  <div class="rtp-temp-label">300 K</div>
+                  <div class="rtp-bar-track">
+                    <div class="rtp-bar-fill modulus" data-pct="33.8">
+                      2433 MPa
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="rtp-bar-row"
+                  data-val="3650"
+                  data-max="7200"
+                  data-type="modulus"
+                >
+                  <div class="rtp-temp-label">250 K</div>
+                  <div class="rtp-bar-track">
+                    <div class="rtp-bar-fill modulus" data-pct="50.7">
+                      3650 MPa
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="rtp-bar-row"
+                  data-val="4631"
+                  data-max="7200"
+                  data-type="modulus"
+                >
+                  <div class="rtp-temp-label">200 K</div>
+                  <div class="rtp-bar-track">
+                    <div class="rtp-bar-fill modulus" data-pct="64.3">
+                      4631 MPa
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="rtp-bar-row"
+                  data-val="5921"
+                  data-max="7200"
+                  data-type="modulus"
+                >
+                  <div class="rtp-temp-label">150 K</div>
+                  <div class="rtp-bar-track">
+                    <div class="rtp-bar-fill modulus" data-pct="82.2">
+                      5921 MPa
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="rtp-bar-row rtp-coldest"
+                  data-val="6802"
+                  data-max="7200"
+                  data-type="modulus"
+                >
+                  <div class="rtp-temp-label">90 K</div>
+                  <div class="rtp-bar-track">
+                    <div class="rtp-bar-fill modulus" data-pct="94.5">
+                      6802 MPa
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rtp-arrow-row">
+                  <span class="rtp-arrow">↓</span> Colder → stiffer
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer badges -->
+            <div class="rtp-footer">
+              <div class="rtp-badge">
+                <div class="rtp-badge-icon">💪</div>
+                <div class="rtp-badge-text">
+                  <strong>+77% strength</strong>
+                  300 K → 90 K &nbsp;(69.2 → 122.6 MPa)
+                </div>
+              </div>
+              <div class="rtp-badge">
+                <div class="rtp-badge-icon">📐</div>
+                <div class="rtp-badge-text">
+                  <strong>+180% modulus</strong>
+                  300 K → 90 K &nbsp;(2433 → 6802 MPa)
+                </div>
+              </div>
+            </div>
+          </div>
 
           <p>
             What stops this from being a simple "colder is better" story is what
@@ -645,18 +730,19 @@
           </p>
           <p>
             And it does soften it, according to the fracture analysis. SEM of
-            the resin's fracture surfaces showed dimples — a signature of plastic
-            deformation — at every temperature tested, broad and open when warm
-            and compressed into flatter, plate-shaped features when cold, but
-            never gone entirely. The authors attribute this partly to phase
-            separation: the polyetheramine does not disperse perfectly, leaving a
-            "soft phase / hard phase" morphology. Small soft domains act as
-            pinning points that catch and redirect advancing cracks, and the
-            surfaces show the resulting toughening behaviour — cracks that change
-            direction, particles tearing loose from the matrix, and debonding at
-            the fibre–resin interface. The authors are careful to note the limit
-            of this: too high a density of phase-separated regions creates stress
-            concentrations that can seed cracks instead of stopping them.
+            the resin's fracture surfaces showed dimples — a signature of
+            plastic deformation — at every temperature tested, broad and open
+            when warm and compressed into flatter, plate-shaped features when
+            cold, but never gone entirely. The authors attribute this partly to
+            phase separation: the polyetheramine does not disperse perfectly,
+            leaving a "soft phase / hard phase" morphology. Small soft domains
+            act as pinning points that catch and redirect advancing cracks, and
+            the surfaces show the resulting toughening behaviour — cracks that
+            change direction, particles tearing loose from the matrix, and
+            debonding at the fibre–resin interface. The authors are careful to
+            note the limit of this: too high a density of phase-separated
+            regions creates stress concentrations that can seed cracks instead
+            of stopping them.
           </p>
         </section>
 
@@ -691,116 +777,163 @@
             Original schematic.
           -->
 
-           
-<div class="cte-wrap" id="cteWrap">
-  <div class="cte-eyebrow">Thermal Compatibility</div>
-  <h3 class="cte-title">CTE Comparison — Why the Matrix Drives Thermal Stress</h3>
-  <p class="cte-subtitle">Representative values &nbsp;·&nbsp; Qi et al., <em>Polymers</em> 2025, Tables 2 & 6</p>
- 
-  <!-- Axis ticks -->
-  <div class="cte-axis">
-    <span>0</span>
-    <span>14</span>
-    <span>28</span>
-    <span>42</span>
-    <span>56 ×10⁻⁶ /K</span>
-  </div>
- 
-  <!-- Group: Carbon Fibre -->
-  <div class="cte-group-label">Carbon Fibre</div>
- 
-  <div class="cte-row">
-    <div class="cte-row-label">
-      Axial (∥ fibre)
-      <span class="cte-row-sub">essentially inert</span>
-    </div>
-    <div class="cte-bar-track">
-      <!-- near-zero: show a tiny negative indicator -->
-      <div class="cte-bar-fill cte-inert" data-pct="1.6" style="background:#9d9d9c;"></div>
-    </div>
-    <div class="cte-val-label cte-val-inert">≈ −0.9 ×10⁻⁶ /K</div>
-  </div>
- 
-  <div class="cte-row">
-    <div class="cte-row-label">
-      Transverse (⊥ fibre)
-    </div>
-    <div class="cte-bar-track">
-      <div class="cte-bar-fill cte-fibre" data-pct="12.9"></div>
-    </div>
-    <div class="cte-val-label cte-val-fibre">≈ 7.2 ×10⁻⁶ /K</div>
-  </div>
- 
-  <hr class="cte-divider">
- 
-  <!-- Group: CFRP Laminate -->
-  <div class="cte-group-label">CFRP Laminate</div>
- 
-  <div class="cte-row">
-    <div class="cte-row-label">
-      CFRP-0°
-      <span class="cte-row-sub">fibre-aligned, fibre-dominated</span>
-    </div>
-    <div class="cte-bar-track">
-      <!-- mid-point of 4–6 = 5 -->
-      <div class="cte-bar-fill cte-cfrp-low" data-pct="8.9" style="position:relative;">
-        <!-- range overlay -->
-        <div class="cte-bar-range" style="left:7.1%;width:3.6%;background:#6b7da0;border-radius:0 7px 7px 0;"></div>
-      </div>
-    </div>
-    <div class="cte-val-label cte-val-cfrp-low">4 – 6 ×10⁻⁶ /K</div>
-  </div>
- 
-  <div class="cte-row">
-    <div class="cte-row-label">
-      CFRP-90°
-      <span class="cte-row-sub">across fibre, matrix-dominated</span>
-    </div>
-    <div class="cte-bar-track">
-      <!-- mid-point 36, max pct = 36/56 = 64.3%; range 30–42 -->
-      <div class="cte-bar-fill cte-matrix" data-pct="64.3" style="position:relative;">
-        <div class="cte-bar-range" style="left:53.6%;width:21.4%;background:#bf3425;border-radius:0 7px 7px 0;"></div>
-      </div>
-    </div>
-    <div class="cte-val-label cte-val-matrix">30 – 42 ×10⁻⁶ /K</div>
-  </div>
- 
-  <hr class="cte-divider">
- 
-  <!-- Group: Neat Resin -->
-  <div class="cte-group-label">Neat Resin (120 – 275 K)</div>
- 
-  <div class="cte-row">
-    <div class="cte-row-label">
-      Modified DGEBA/T5000/CY179
-      <span class="cte-row-sub">temperature-dependent range</span>
-    </div>
-    <div class="cte-bar-track">
-      <!-- mid-point ~42.5; range 29–56 -->
-      <div class="cte-bar-fill cte-matrix" data-pct="75.9" style="position:relative;">
-        <div class="cte-bar-range" style="left:51.8%;width:48.2%;background:#bf3425;border-radius:0 7px 7px 0;"></div>
-      </div>
-    </div>
-    <div class="cte-val-label cte-val-matrix">29 – 56 ×10⁻⁶ /K</div>
-  </div>
- 
-  <!-- Insight footer -->
-  <div class="cte-insight">
-    <div class="cte-insight-icon">⚠️</div>
-    <div class="cte-insight-text">
-      Larger CTE → more thermal contraction on cooling → <strong>greater internal stress at the fibre–matrix interface.</strong>
-      The resin and off-axis plies contract up to <strong>60× more</strong> than the axial fibre direction,
-      driving the cryogenic failure modes in CFRP pressure vessels.
-    </div>
-  </div>
-</div>
+          <div class="cte-wrap" id="cteWrap">
+            <div class="cte-eyebrow">Thermal Compatibility</div>
+            <h3 class="cte-title">
+              CTE Comparison — Why the Matrix Drives Thermal Stress
+            </h3>
+            <p class="cte-subtitle">
+              Representative values &nbsp;·&nbsp; Qi et al.,
+              <em>Polymers</em> 2025, Tables 2 & 6
+            </p>
+
+            <!-- Axis ticks -->
+            <div class="cte-axis">
+              <span>0</span>
+              <span>14</span>
+              <span>28</span>
+              <span>42</span>
+              <span>56 ×10⁻⁶ /K</span>
+            </div>
+
+            <!-- Group: Carbon Fibre -->
+            <div class="cte-group-label">Carbon Fibre</div>
+
+            <div class="cte-row">
+              <div class="cte-row-label">
+                Axial (∥ fibre)
+                <span class="cte-row-sub">essentially inert</span>
+              </div>
+              <div class="cte-bar-track">
+                <!-- near-zero: show a tiny negative indicator -->
+                <div
+                  class="cte-bar-fill cte-inert"
+                  data-pct="1.6"
+                  style="background: #9d9d9c"
+                ></div>
+              </div>
+              <div class="cte-val-label cte-val-inert">≈ −0.9 ×10⁻⁶ /K</div>
+            </div>
+
+            <div class="cte-row">
+              <div class="cte-row-label">Transverse (⊥ fibre)</div>
+              <div class="cte-bar-track">
+                <div class="cte-bar-fill cte-fibre" data-pct="12.9"></div>
+              </div>
+              <div class="cte-val-label cte-val-fibre">≈ 7.2 ×10⁻⁶ /K</div>
+            </div>
+
+            <hr class="cte-divider" />
+
+            <!-- Group: CFRP Laminate -->
+            <div class="cte-group-label">CFRP Laminate</div>
+
+            <div class="cte-row">
+              <div class="cte-row-label">
+                CFRP-0°
+                <span class="cte-row-sub">fibre-aligned, fibre-dominated</span>
+              </div>
+              <div class="cte-bar-track">
+                <!-- mid-point of 4–6 = 5 -->
+                <div
+                  class="cte-bar-fill cte-cfrp-low"
+                  data-pct="8.9"
+                  style="position: relative"
+                >
+                  <!-- range overlay -->
+                  <div
+                    class="cte-bar-range"
+                    style="
+                      left: 7.1%;
+                      width: 3.6%;
+                      background: #6b7da0;
+                      border-radius: 0 7px 7px 0;
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div class="cte-val-label cte-val-cfrp-low">4 – 6 ×10⁻⁶ /K</div>
+            </div>
+
+            <div class="cte-row">
+              <div class="cte-row-label">
+                CFRP-90°
+                <span class="cte-row-sub">across fibre, matrix-dominated</span>
+              </div>
+              <div class="cte-bar-track">
+                <!-- mid-point 36, max pct = 36/56 = 64.3%; range 30–42 -->
+                <div
+                  class="cte-bar-fill cte-matrix"
+                  data-pct="64.3"
+                  style="position: relative"
+                >
+                  <div
+                    class="cte-bar-range"
+                    style="
+                      left: 53.6%;
+                      width: 21.4%;
+                      background: #bf3425;
+                      border-radius: 0 7px 7px 0;
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div class="cte-val-label cte-val-matrix">30 – 42 ×10⁻⁶ /K</div>
+            </div>
+
+            <hr class="cte-divider" />
+
+            <!-- Group: Neat Resin -->
+            <div class="cte-group-label">Neat Resin (120 – 275 K)</div>
+
+            <div class="cte-row">
+              <div class="cte-row-label">
+                Modified DGEBA/T5000/CY179
+                <span class="cte-row-sub">temperature-dependent range</span>
+              </div>
+              <div class="cte-bar-track">
+                <!-- mid-point ~42.5; range 29–56 -->
+                <div
+                  class="cte-bar-fill cte-matrix"
+                  data-pct="75.9"
+                  style="position: relative"
+                >
+                  <div
+                    class="cte-bar-range"
+                    style="
+                      left: 51.8%;
+                      width: 48.2%;
+                      background: #bf3425;
+                      border-radius: 0 7px 7px 0;
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div class="cte-val-label cte-val-matrix">29 – 56 ×10⁻⁶ /K</div>
+            </div>
+
+            <!-- Insight footer -->
+            <div class="cte-insight">
+              <div class="cte-insight-icon">⚠️</div>
+              <div class="cte-insight-text">
+                Larger CTE → more thermal contraction on cooling →
+                <strong
+                  >greater internal stress at the fibre–matrix
+                  interface.</strong
+                >
+                The resin and off-axis plies contract up to
+                <strong>60× more</strong> than the axial fibre direction,
+                driving the cryogenic failure modes in CFRP pressure vessels.
+              </div>
+            </div>
+          </div>
 
           <p>
             In the fibre direction, the composite's contraction is governed by
             the near-inert fibres, so the longitudinal CTE stayed low and barely
-            changed with temperature. Across the fibres, the matrix dominates, so
-            the transverse CTE was much higher — and it decreased as the resin
-            stiffened on cooling. This asymmetry is the seed of the most
+            changed with temperature. Across the fibres, the matrix dominates,
+            so the transverse CTE was much higher — and it decreased as the
+            resin stiffened on cooling. This asymmetry is the seed of the most
             important composite-level finding.
           </p>
         </section>
@@ -814,19 +947,20 @@
             practical core of the paper.
           </p>
           <p>
-            <strong>Longitudinal (0°, load along the fibres).</strong> Properties
-            were dominated by the carbon fibre, which the authors note is only
-            minimally temperature-sensitive. From 300&nbsp;K to 90&nbsp;K,
-            tensile strength rose only about 4.3% (1,928.9 → 2,010.4&nbsp;MPa)
-            and modulus about 7.7%, with elongation down slightly. Stable,
-            predictable, fibre-controlled.
+            <strong>Longitudinal (0°, load along the fibres).</strong>
+            Properties were dominated by the carbon fibre, which the authors
+            note is only minimally temperature-sensitive. From 300&nbsp;K to
+            90&nbsp;K, tensile strength rose only about 4.3% (1,928.9 →
+            2,010.4&nbsp;MPa) and modulus about 7.7%, with elongation down
+            slightly. Stable, predictable, fibre-controlled.
           </p>
           <p>
             <strong>Transverse (90°, load across the fibres).</strong> Here the
             matrix and the interface carry the load, so the resin's cryogenic
             strengthening showed up directly. The paper reports transverse
-            tensile strength up about 52.2% (43.1 → 65.6&nbsp;MPa) and transverse
-            modulus up about 82.4% (6,561 → 11,969&nbsp;MPa) over the same span.
+            tensile strength up about 52.2% (43.1 → 65.6&nbsp;MPa) and
+            transverse modulus up about 82.4% (6,561 → 11,969&nbsp;MPa) over the
+            same span.
           </p>
 
           <!-- INFOGRAPHIC 4 PLACEHOLDER -->
@@ -841,75 +975,99 @@
             chart.
           -->
 
-          
-  <div class="pg-grid">
- 
-    <!-- Strength -->
-    <div class="pg-panel">
-      <div class="pg-panel-title">Tensile Strength</div>
- 
-      <div class="pg-row">
-        <div class="pg-row-header">
-          <div class="pg-orient">0° <span class="pg-orient-sub">longitudinal</span></div>
-          <div class="pg-pct low">+4.3%</div>
-        </div>
-        <div class="pg-track">
-          <div class="pg-fill fibre" data-pct="5.1"></div>
-        </div>
-        <div class="pg-tag">Fibre-controlled — near flat</div>
-      </div>
- 
-      <div class="pg-row">
-        <div class="pg-row-header">
-          <div class="pg-orient">90° <span class="pg-orient-sub">transverse</span></div>
-          <div class="pg-pct high">+52.2%</div>
-        </div>
-        <div class="pg-track">
-          <div class="pg-fill matrix" data-pct="62.2"></div>
-        </div>
-        <div class="pg-tag accent">Matrix-dominated — strong gain</div>
-      </div>
-    </div>
- 
-    <!-- Modulus -->
-    <div class="pg-panel">
-      <div class="pg-panel-title">Tensile Modulus</div>
- 
-      <div class="pg-row">
-        <div class="pg-row-header">
-          <div class="pg-orient">0° <span class="pg-orient-sub">longitudinal</span></div>
-          <div class="pg-pct low">+7.7%</div>
-        </div>
-        <div class="pg-track">
-          <div class="pg-fill fibre" data-pct="9.2"></div>
-        </div>
-        <div class="pg-tag">Fibre-controlled &nbsp;·&nbsp; non-monotonic response</div>
-      </div>
- 
-      <div class="pg-row">
-        <div class="pg-row-header">
-          <div class="pg-orient">90° <span class="pg-orient-sub">transverse</span></div>
-          <div class="pg-pct high">+82.4%</div>
-        </div>
-        <div class="pg-track">
-          <div class="pg-fill matrix" data-pct="98.3"></div>
-        </div>
-        <div class="pg-tag accent">Matrix-dominated — decisive gain</div>
-      </div>
-    </div>
- 
-  </div>
- 
-  <!-- Verdict -->
-  <div class="pg-verdict">
-    <div class="pg-verdict-icon">🔬</div>
-    <div class="pg-verdict-text">
-      The matrix improvement is <strong>invisible along the fibre</strong> and <strong>decisive across it.</strong>
-      The 90° direction is effectively a direct test of matrix behaviour —
-      +52% in strength and +82% in modulus from 300 K to 90 K, versus single-digit gains in the fibre-aligned direction.
-    </div>
-  </div>
-</div>
+          <div class="pg-wrap" id="pgWrap">
+            <div class="pg-eyebrow">
+              Cryogenic Property Gains by Fibre Orientation
+            </div>
+            <h3 class="pg-title">Property Gain: 300 K → 90 K</h3>
+            <p class="pg-subtitle">
+              CFRP laminate orientations &nbsp;·&nbsp; Qi et al.,
+              <em>Polymers</em> 2025, Tables 7 & 9
+            </p>
+
+            <div class="pg-grid">
+              <!-- Strength -->
+              <div class="pg-panel">
+                <div class="pg-panel-title">Tensile Strength</div>
+
+                <div class="pg-row">
+                  <div class="pg-row-header">
+                    <div class="pg-orient">
+                      0° <span class="pg-orient-sub">longitudinal</span>
+                    </div>
+                    <div class="pg-pct low">+4.3%</div>
+                  </div>
+                  <div class="pg-track">
+                    <div class="pg-fill fibre" data-pct="5.1"></div>
+                  </div>
+                  <div class="pg-tag">Fibre-controlled — near flat</div>
+                </div>
+
+                <div class="pg-row">
+                  <div class="pg-row-header">
+                    <div class="pg-orient">
+                      90° <span class="pg-orient-sub">transverse</span>
+                    </div>
+                    <div class="pg-pct high">+52.2%</div>
+                  </div>
+                  <div class="pg-track">
+                    <div class="pg-fill matrix" data-pct="62.2"></div>
+                  </div>
+                  <div class="pg-tag accent">
+                    Matrix-dominated — strong gain
+                  </div>
+                </div>
+              </div>
+
+              <!-- Modulus -->
+              <div class="pg-panel">
+                <div class="pg-panel-title">Tensile Modulus</div>
+
+                <div class="pg-row">
+                  <div class="pg-row-header">
+                    <div class="pg-orient">
+                      0° <span class="pg-orient-sub">longitudinal</span>
+                    </div>
+                    <div class="pg-pct low">+7.7%</div>
+                  </div>
+                  <div class="pg-track">
+                    <div class="pg-fill fibre" data-pct="9.2"></div>
+                  </div>
+                  <div class="pg-tag">
+                    Fibre-controlled &nbsp;·&nbsp; non-monotonic response
+                  </div>
+                </div>
+
+                <div class="pg-row">
+                  <div class="pg-row-header">
+                    <div class="pg-orient">
+                      90° <span class="pg-orient-sub">transverse</span>
+                    </div>
+                    <div class="pg-pct high">+82.4%</div>
+                  </div>
+                  <div class="pg-track">
+                    <div class="pg-fill matrix" data-pct="98.3"></div>
+                  </div>
+                  <div class="pg-tag accent">
+                    Matrix-dominated — decisive gain
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Verdict -->
+            <div class="pg-verdict">
+              <div class="pg-verdict-icon">🔬</div>
+              <div class="pg-verdict-text">
+                The matrix improvement is
+                <strong>invisible along the fibre</strong> and
+                <strong>decisive across it.</strong>
+                The 90° direction is effectively a direct test of matrix
+                behaviour — +52% in strength and +82% in modulus from 300 K to
+                90 K, versus single-digit gains in the fibre-aligned direction.
+              </div>
+            </div>
+          </div>
 
           <p>
             There is a subtlety in the longitudinal modulus that the simple
@@ -929,33 +1087,47 @@
             Polymers 2025, 17, 2296, Table 7 and Section 3.3.3. Original schematic.
           -->
           <div class="nmm-wrap" id="nmmWrap">
-  <div class="nmm-eyebrow">Non-Monotonic Cryogenic Response</div>
-  <h3 class="nmm-title">CFRP-0° Longitudinal Modulus — Peak near 150 K</h3>
-  <p class="nmm-subtitle">Qi et al., <em>Polymers</em> 2025, Table 7 / Figure 12b</p>
- 
-  <div class="nmm-chart-outer">
-    <canvas id="nmmCanvas"></canvas>
-  </div>
- 
-  <div class="nmm-cards">
-    <div class="nmm-card">
-      <div class="nmm-card-icon">📈</div>
-      <div class="nmm-card-body">
-        <div class="nmm-card-leg rising">Rising leg · 300 K → 150 K</div>
-        <div class="nmm-card-desc">Better fibre–matrix bonding at low temperature shares load more effectively, driving the modulus upward.</div>
-      </div>
-    </div>
-    <div class="nmm-card">
-      <div class="nmm-card-icon">⚠️</div>
-      <div class="nmm-card-body">
-        <div class="nmm-card-leg falling">Falling leg · 150 K → 90 K</div>
-        <div class="nmm-card-desc">Accumulated thermal-stress microdamage offsets bonding gains, causing a slight drop back to 103.3 GPa.</div>
-      </div>
-    </div>
-  </div>
-</div>
- 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+            <div class="nmm-eyebrow">Non-Monotonic Cryogenic Response</div>
+            <h3 class="nmm-title">
+              CFRP-0° Longitudinal Modulus — Peak near 150 K
+            </h3>
+            <p class="nmm-subtitle">
+              Qi et al., <em>Polymers</em> 2025, Table 7 / Figure 12b
+            </p>
+
+            <div class="nmm-chart-outer">
+              <canvas id="nmmCanvas"></canvas>
+            </div>
+
+            <div class="nmm-cards">
+              <div class="nmm-card">
+                <div class="nmm-card-icon">📈</div>
+                <div class="nmm-card-body">
+                  <div class="nmm-card-leg rising">
+                    Rising leg · 300 K → 150 K
+                  </div>
+                  <div class="nmm-card-desc">
+                    Better fibre–matrix bonding at low temperature shares load
+                    more effectively, driving the modulus upward.
+                  </div>
+                </div>
+              </div>
+              <div class="nmm-card">
+                <div class="nmm-card-icon">⚠️</div>
+                <div class="nmm-card-body">
+                  <div class="nmm-card-leg falling">
+                    Falling leg · 150 K → 90 K
+                  </div>
+                  <div class="nmm-card-desc">
+                    Accumulated thermal-stress microdamage offsets bonding
+                    gains, causing a slight drop back to 103.3 GPa.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
         </section>
 
         <!-- Section 7: The two competing mechanisms -->
@@ -968,14 +1140,14 @@
           <p>
             <strong>Mechanism 1 — cryogenic strengthening.</strong> Resin and
             fibre both stiffen, and matrix contraction tightens the grip on the
-            fibres ("encapsulation"), so the bond carries load better between the
-            two. This pushes strength and modulus up.
+            fibres ("encapsulation"), so the bond carries load better between
+            the two. This pushes strength and modulus up.
           </p>
           <p>
             <strong>Mechanism 2 — thermal-stress microdamage.</strong> The same
-            contraction mismatch that improves encapsulation also builds internal
-            stress, which can debond the interface and crack the matrix. This
-            pulls properties down.
+            contraction mismatch that improves encapsulation also builds
+            internal stress, which can debond the interface and crack the
+            matrix. This pulls properties down.
           </p>
 
           <!-- INFOGRAPHIC 6 PLACEHOLDER -->
@@ -992,98 +1164,130 @@
             Original schematic.
           -->
 
-          
-<div class="mw-wrap" id="mwWrap">
-  <div class="mw-eyebrow">Cryogenic Deformation Mechanisms</div>
-  <h3 class="mw-title">Which Mechanism Wins?</h3>
-  <p class="mw-subtitle">Competing effects at low temperature — outcome depends on what carries the load</p>
- 
-  <!-- Top: two mechanism cards -->
-  <div class="mw-mechs">
-    <div class="mw-mech mw-mech-1">
-      <div class="mw-mech-badge">Mechanism 1</div>
-      <div class="mw-mech-title">Strengthening</div>
-      <ul class="mw-mech-bullets">
-        <li>Stiffer resin matrix</li>
-        <li>Tighter interfacial bonding</li>
-        <li>More efficient load transfer</li>
-      </ul>
-    </div>
-    <div class="mw-vs">
-      <div class="mw-vs-line"></div>
-      <span>vs</span>
-      <div class="mw-vs-line"></div>
-    </div>
-    <div class="mw-mech mw-mech-2">
-      <div class="mw-mech-badge">Mechanism 2</div>
-      <div class="mw-mech-title">Microdamage</div>
-      <ul class="mw-mech-bullets">
-        <li>Thermal-stress microcracking</li>
-        <li>Interfacial debonding</li>
-        <li>Accumulated damage on cooling</li>
-      </ul>
-    </div>
-  </div>
- 
-  <!-- 0° orientation -->
-  <div class="mw-orient-section">
-    <div class="mw-orient-label-row">
-      <div class="mw-orient-pill deg0">0° Longitudinal</div>
-      <div>
-        <span class="mw-orient-title">Fibre-dominated </span>
-        <span class="mw-orient-sub">— fibre carries the load</span>
-      </div>
-    </div>
- 
-    <div class="mw-balance-wrap">
-      <div class="mw-balance-track">
-        <div class="mw-balance-left gray"  data-pct="48" style="background:#c8cedc;"></div>
-        <div class="mw-balance-right lgray" data-pct="46" style="background:#e8b4ad;"></div>
-      </div>
-      <div class="mw-balance-ticks">
-        <span style="color:#47577c; font-weight:600;">Mech 1 (small)</span>
-        <span style="color:#bf3425; font-weight:600;">Mech 2 (small)</span>
-      </div>
-    </div>
- 
-    <div class="mw-orient-desc">
-      Both mechanisms are <em>small</em> — the fibre dominates and is relatively insensitive
-      to what the matrix does. Net result: <strong>nearly flat</strong> property gain (+4–8%),
-      with Mech 2 overtaking just enough near 150 K to produce a slight modulus dip.
-    </div>
-  </div>
- 
-  <hr class="mw-divider">
- 
-  <!-- 90° orientation -->
-  <div class="mw-orient-section">
-    <div class="mw-orient-label-row">
-      <div class="mw-orient-pill deg90">90° Transverse</div>
-      <div>
-        <span class="mw-orient-title">Matrix-dominated </span>
-        <span class="mw-orient-sub">— matrix + interface carry the load</span>
-      </div>
-    </div>
- 
-    <div class="mw-balance-wrap">
-      <div class="mw-balance-track">
-        <div class="mw-balance-left navy"  data-pct="72" style="background:#47577c;"></div>
-        <div class="mw-balance-right red"  data-pct="22" style="background:#bf3425;"></div>
-      </div>
-      <div class="mw-balance-ticks">
-        <span style="color:#47577c; font-weight:600;">Mech 1 (dominant)</span>
-        <span style="color:#bf3425; font-weight:600;">Mech 2 (minor)</span>
-      </div>
-    </div>
- 
-    <div class="mw-orient-desc">
-      Mech 1 <em>dominates throughout</em> — the matrix and interface are directly in the load path,
-      so stiffening and improved bonding translate directly into property gains.
-      Net result: a <strong>strong, roughly linear rise</strong> in strength (+52%) and modulus (+82%)
-      from 300 K to 90 K. The 90° direction <em>is</em> the matrix test.
-    </div>
-  </div>
-</div>
+          <div class="mw-wrap" id="mwWrap">
+            <div class="mw-eyebrow">Cryogenic Deformation Mechanisms</div>
+            <h3 class="mw-title">Which Mechanism Wins?</h3>
+            <p class="mw-subtitle">
+              Competing effects at low temperature — outcome depends on what
+              carries the load
+            </p>
+
+            <!-- Top: two mechanism cards -->
+            <div class="mw-mechs">
+              <div class="mw-mech mw-mech-1">
+                <div class="mw-mech-badge">Mechanism 1</div>
+                <div class="mw-mech-title">Strengthening</div>
+                <ul class="mw-mech-bullets">
+                  <li>Stiffer resin matrix</li>
+                  <li>Tighter interfacial bonding</li>
+                  <li>More efficient load transfer</li>
+                </ul>
+              </div>
+              <div class="mw-vs">
+                <div class="mw-vs-line"></div>
+                <span>vs</span>
+                <div class="mw-vs-line"></div>
+              </div>
+              <div class="mw-mech mw-mech-2">
+                <div class="mw-mech-badge">Mechanism 2</div>
+                <div class="mw-mech-title">Microdamage</div>
+                <ul class="mw-mech-bullets">
+                  <li>Thermal-stress microcracking</li>
+                  <li>Interfacial debonding</li>
+                  <li>Accumulated damage on cooling</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 0° orientation -->
+            <div class="mw-orient-section">
+              <div class="mw-orient-label-row">
+                <div class="mw-orient-pill deg0">0° Longitudinal</div>
+                <div>
+                  <span class="mw-orient-title">Fibre-dominated </span>
+                  <span class="mw-orient-sub">— fibre carries the load</span>
+                </div>
+              </div>
+
+              <div class="mw-balance-wrap">
+                <div class="mw-balance-track">
+                  <div
+                    class="mw-balance-left gray"
+                    data-pct="48"
+                    style="background: #c8cedc"
+                  ></div>
+                  <div
+                    class="mw-balance-right lgray"
+                    data-pct="46"
+                    style="background: #e8b4ad"
+                  ></div>
+                </div>
+                <div class="mw-balance-ticks">
+                  <span style="color: #47577c; font-weight: 600"
+                    >Mech 1 (small)</span
+                  >
+                  <span style="color: #bf3425; font-weight: 600"
+                    >Mech 2 (small)</span
+                  >
+                </div>
+              </div>
+
+              <div class="mw-orient-desc">
+                Both mechanisms are <em>small</em> — the fibre dominates and is
+                relatively insensitive to what the matrix does. Net result:
+                <strong>nearly flat</strong> property gain (+4–8%), with Mech 2
+                overtaking just enough near 150 K to produce a slight modulus
+                dip.
+              </div>
+            </div>
+
+            <hr class="mw-divider" />
+
+            <!-- 90° orientation -->
+            <div class="mw-orient-section">
+              <div class="mw-orient-label-row">
+                <div class="mw-orient-pill deg90">90° Transverse</div>
+                <div>
+                  <span class="mw-orient-title">Matrix-dominated </span>
+                  <span class="mw-orient-sub"
+                    >— matrix + interface carry the load</span
+                  >
+                </div>
+              </div>
+
+              <div class="mw-balance-wrap">
+                <div class="mw-balance-track">
+                  <div
+                    class="mw-balance-left navy"
+                    data-pct="72"
+                    style="background: #47577c"
+                  ></div>
+                  <div
+                    class="mw-balance-right red"
+                    data-pct="22"
+                    style="background: #bf3425"
+                  ></div>
+                </div>
+                <div class="mw-balance-ticks">
+                  <span style="color: #47577c; font-weight: 600"
+                    >Mech 1 (dominant)</span
+                  >
+                  <span style="color: #bf3425; font-weight: 600"
+                    >Mech 2 (minor)</span
+                  >
+                </div>
+              </div>
+
+              <div class="mw-orient-desc">
+                Mech 1 <em>dominates throughout</em> — the matrix and interface
+                are directly in the load path, so stiffening and improved
+                bonding translate directly into property gains. Net result: a
+                <strong>strong, roughly linear rise</strong> in strength (+52%)
+                and modulus (+82%) from 300 K to 90 K. The 90° direction
+                <em>is</em> the matrix test.
+              </div>
+            </div>
+          </div>
 
           <p>
             The fracture surfaces backed this up. In the 0° coupons, the authors
@@ -1111,8 +1315,8 @@
             <h4>Our perspective</h4>
             <p>
               The finding that lands hardest for a manufacturer is the
-              orientation split. In a real wound vessel or tank, hoop and helical
-              plies put the matrix and interface in the load path — the
+              orientation split. In a real wound vessel or tank, hoop and
+              helical plies put the matrix and interface in the load path — the
               conditions that map onto the 90° coupon, where this resin showed
               its biggest gains. The directions most vulnerable to cryogenic
               matrix cracking are exactly the directions where the modification
@@ -1142,8 +1346,8 @@
                 It also reinforces a position we hold about process choice. The
                 Addcomposites AFP head is configurable for both automated fibre
                 placement and filament winding — switching between them is a
-                software and materials decision in AddPath (toolpath planning and
-                simulation) and AddWind (filament winding simulation), not a
+                software and materials decision in AddPath (toolpath planning
+                and simulation) and AddWind (filament winding simulation), not a
                 separate capital purchase. A resin characterised here for wet
                 filament winding, at a viscosity our customers' processes can
                 handle, sits naturally inside that flexibility. The same cell
@@ -1160,12 +1364,13 @@
             class="full-width-image"
           />
           <p class="image-caption">
-            The cell winds hoop and helical carbon fibre onto a mandrel while the
-            same layup is planned and simulated in AddPath on the laptop. The
-            choice between AFP and filament winding is made here, in software —
-            not with new hardware. The same head winding hoop and helical carbon
-            fibre layers onto a mandrel. A wet resin in the viscosity class
-            characterised in this paper fits naturally into this process.
+            The cell winds hoop and helical carbon fibre onto a mandrel while
+            the same layup is planned and simulated in AddPath on the laptop.
+            The choice between AFP and filament winding is made here, in
+            software — not with new hardware. The same head winding hoop and
+            helical carbon fibre layers onto a mandrel. A wet resin in the
+            viscosity class characterised in this paper fits naturally into this
+            process.
           </p>
 
           <p>
@@ -1178,13 +1383,13 @@
               The physics transfers cleanly — matrix embrittlement and CTE
               mismatch behave the same way regardless of what is inside the tank
               — but the authors did not test propellant-tank hardware, and
-              nothing here should be read as their endorsement of any spaceflight
-              application.
+              nothing here should be read as their endorsement of any
+              spaceflight application.
             </li>
             <li>
               The tested floor is 90&nbsp;K. That is close to liquid-oxygen
-              service (~90&nbsp;K). Liquid hydrogen sits near 20&nbsp;K, below the
-              range these tests cover. Extending the trends to 20&nbsp;K is
+              service (~90&nbsp;K). Liquid hydrogen sits near 20&nbsp;K, below
+              the range these tests cover. Extending the trends to 20&nbsp;K is
               extrapolation on our part, not a measured result, and matrix
               behaviour can change in ways linear fits will not predict.
             </li>
@@ -1200,16 +1405,16 @@
           <div class="highlight-box">
             <h4>Our perspective on the bigger picture</h4>
             <p>
-              The value of work like this to an AFP or filament-winding operation
-              is that it narrows the materials search. When a customer asks
-              whether composite can replace metal in a cryogenic tank, the honest
-              historical answer has been "the fibres can, but the matrix is a
-              liability." Studies that quantify a processable resin's cryogenic
-              behaviour — and explain why it behaves that way, mechanism by
-              mechanism — are how that liability gets retired. Pairing a
-              characterised resin system with deterministic toolpath and winding
-              simulation is how a promising chemistry becomes a repeatable,
-              qualifiable part.
+              The value of work like this to an AFP or filament-winding
+              operation is that it narrows the materials search. When a customer
+              asks whether composite can replace metal in a cryogenic tank, the
+              honest historical answer has been "the fibres can, but the matrix
+              is a liability." Studies that quantify a processable resin's
+              cryogenic behaviour — and explain why it behaves that way,
+              mechanism by mechanism — are how that liability gets retired.
+              Pairing a characterised resin system with deterministic toolpath
+              and winding simulation is how a promising chemistry becomes a
+              repeatable, qualifiable part.
             </p>
           </div>
         </section>
@@ -1219,14 +1424,14 @@
           <h2>What the Authors Flagged as Next Steps</h2>
           <p>
             The paper closes by pointing forward, not declaring the problem
-            solved. The authors flag two open questions: how the balance of resin
-            to fibre shapes the interface and the way the laminate expands and
-            behaves in the cold, and — importantly for reusable hardware — how
-            the material holds up across repeated cold cycles rather than a single
-            cool-down. That last point matters: as the broader cryotank
-            literature shows, it is repeated fill-and-drain cycling, not a single
-            cold soak, that historically accumulates the microcrack networks
-            responsible for leakage.
+            solved. The authors flag two open questions: how the balance of
+            resin to fibre shapes the interface and the way the laminate expands
+            and behaves in the cold, and — importantly for reusable hardware —
+            how the material holds up across repeated cold cycles rather than a
+            single cool-down. That last point matters: as the broader cryotank
+            literature shows, it is repeated fill-and-drain cycling, not a
+            single cold soak, that historically accumulates the microcrack
+            networks responsible for leakage.
           </p>
         </section>
 
@@ -1350,7 +1555,9 @@
           </div>
 
           <div class="cta-section">
-            <p>Get in touch to discuss your cryogenic composite application →</p>
+            <p>
+              Get in touch to discuss your cryogenic composite application →
+            </p>
             <a
               target="_blank"
               href="https://www.addcomposites.com/contact-us"
@@ -1385,10 +1592,9 @@
           </ol>
 
           <p style="font-size: 0.9375rem; color: #475569; margin-top: 1.5rem">
-            © 2025 by the authors. Published by MDPI, Basel, Switzerland. This is
-            an open-access article distributed under the terms of the Creative
-            Commons Attribution (CC BY 4.0) license
-            (<a
+            © 2025 by the authors. Published by MDPI, Basel, Switzerland. This
+            is an open-access article distributed under the terms of the
+            Creative Commons Attribution (CC BY 4.0) license (<a
               href="https://creativecommons.org/licenses/by/4.0/"
               target="_blank"
               rel="noopener noreferrer"
@@ -1472,8 +1678,8 @@
                 toolheads that make automation accessible and affordable. This
                 unique journey from designing space-grade hardware to leading a
                 disruptive technology company provides Pravin with a
-                comprehensive, real-world perspective that informs his writing on
-                the future of the composites industry.
+                comprehensive, real-world perspective that informs his writing
+                on the future of the composites industry.
               </p>
             </div>
           </div>
