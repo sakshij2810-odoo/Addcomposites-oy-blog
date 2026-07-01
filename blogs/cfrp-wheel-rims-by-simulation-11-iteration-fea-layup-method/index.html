@@ -144,6 +144,11 @@
 
         <!-- Overview Section -->
         <section id="overview">
+          <img
+            src="images/fig_01.jpg"
+            alt="Formula Student CFRP wheel rims: can simulation replace build-and-break? Addcomposites engineering deep-dive banner."
+            class="full-width-image"
+          />
           <p class="drop-cap">
             A carbon-fiber wheel rim is one of the meaner structural problems in
             motorsport composites. It spins, it carries the entire vehicle's
@@ -222,6 +227,11 @@
             &mdash; shown working from start to finish on an actual component.
           </p>
 
+          <img
+            src="images/fig_02.jpg"
+            alt="A silver aluminum disc-shaped laminating tool beside a finished three-piece CFRP rim with a star-spoked 3D-printed center and glossy woven-carbon barrel."
+            class="full-width-image"
+          />
           <p class="image-caption">
             A silver aluminum disc-shaped laminating tool sits beside a finished
             three-piece CFRP rim with a star-spoked metal 3D-printed center and
@@ -297,6 +307,27 @@
             described in B&aacute;rsony, Kaszab &amp; Feszty (2025), Figure 2.
             Recreated from the paper's data; not a reproduction of the original
             figure.
+          </p>
+          <img
+            src="images/fig_03.png"
+            alt="Flowchart of the iterative design loop, branching on which criterion failed and looping until all pass."
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            A flowchart of the iterative design loop: it runs from Requirements
+            through geometry and load calculations into FEM analysis, then
+            branches on which criterion failed &mdash; adding a twill layer,
+            removing a twill layer, or adding a UD layer &mdash; and loops back
+            until all three pass. Figure 2 from: B&aacute;rsony, D.; Kaszab, M.;
+            Feszty, D. "An Iterative Method for the Design of Carbon-Fiber
+            Reinforced Polymer Wheel Rims." Applied Sciences 2025, 15, 11434.
+            <a
+              href="https://doi.org/10.3390/app152111434"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://doi.org/10.3390/app152111434</a
+            >
+            &mdash; &copy; 2025 by the authors. Licensed under CC BY 4.0.
           </p>
 
           <p>
@@ -383,6 +414,26 @@
             laminate &mdash; so thermal loading was kept out of the structural
             runs entirely.
           </p>
+          <img
+            src="images/fig_04.jpg"
+            alt="Adhesive temperature-indicator strips fixed to the rim surface and front brake assembly."
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            Adhesive temperature-indicator strips are fixed to the rim surface
+            and to the front brake assembly, shown alongside the brake disc,
+            caliper, and hub used to log peak temperatures. Figure 3 from:
+            B&aacute;rsony, D.; Kaszab, M.; Feszty, D. "An Iterative Method for
+            the Design of Carbon-Fiber Reinforced Polymer Wheel Rims." Applied
+            Sciences 2025, 15, 11434.
+            <a
+              href="https://doi.org/10.3390/app152111434"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://doi.org/10.3390/app152111434</a
+            >
+            &mdash; &copy; 2025 by the authors. Licensed under CC BY 4.0.
+          </p>
 
           <h3>Validating the virtual car</h3>
 
@@ -434,6 +485,46 @@
             destined for the wheel &mdash; a 2&times;2 twill prepreg and a UD
             prepreg &mdash; and tested them under ASTM D 3039 (tension) and ASTM
             D 3518M (in-plane shear), pulling at 2 mm/min in a 20 &deg;C room.
+          </p>
+          <img
+            src="images/fig_05.png"
+            alt="Dimensioned drawings of the unidirectional and twill tensile coupon geometries."
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            Dimensioned drawings of the two tensile coupon geometries &mdash; the
+            unidirectional specimen (above) and the twill specimen (below) &mdash;
+            with gauge lengths and a 1.5 mm thickness called out in millimetres.
+            Figure 5 from: B&aacute;rsony, D.; Kaszab, M.; Feszty, D. "An
+            Iterative Method for the Design of Carbon-Fiber Reinforced Polymer
+            Wheel Rims." Applied Sciences 2025, 15, 11434.
+            <a
+              href="https://doi.org/10.3390/app152111434"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://doi.org/10.3390/app152111434</a
+            >
+            &mdash; &copy; 2025 by the authors. Licensed under CC BY 4.0.
+          </p>
+          <img
+            src="images/fig_06.jpg"
+            alt="Red-framed universal tensile testing machine gripping a flat carbon coupon."
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            A red-framed universal tensile testing machine grips a flat carbon
+            coupon between its jaws, with the testing software screen visible
+            alongside; tests ran at 2 mm/min and 20 &deg;C. Figure 6 from:
+            B&aacute;rsony, D.; Kaszab, M.; Feszty, D. "An Iterative Method for
+            the Design of Carbon-Fiber Reinforced Polymer Wheel Rims." Applied
+            Sciences 2025, 15, 11434.
+            <a
+              href="https://doi.org/10.3390/app152111434"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://doi.org/10.3390/app152111434</a
+            >
+            &mdash; &copy; 2025 by the authors. Licensed under CC BY 4.0.
           </p>
 
           <p>
@@ -509,6 +600,47 @@
             centroid, coupled out to the rim; drive torque was fed in through the
             center the same way; and Abaqus's pressure load acted on the rim's
             inner walls.
+          </p>
+          <img
+            src="images/fig_07.jpg"
+            alt="Two FEM views of the wheel load setup: contact-patch forces and drive-torque coupling."
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            Two FEM views of the load setup: the left shows contact-patch forces
+            fed through a single coupled reference node out to the rim, and the
+            right shows yellow coupling lines radiating to the wheel-center point
+            B where drive torque is applied. Figure 8 from: B&aacute;rsony, D.;
+            Kaszab, M.; Feszty, D. "An Iterative Method for the Design of
+            Carbon-Fiber Reinforced Polymer Wheel Rims." Applied Sciences 2025,
+            15, 11434.
+            <a
+              href="https://doi.org/10.3390/app152111434"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://doi.org/10.3390/app152111434</a
+            >
+            &mdash; &copy; 2025 by the authors. Licensed under CC BY 4.0.
+          </p>
+          <img
+            src="images/fig_08.png"
+            alt="Overlaid cross-section of the aluminum and CFRP rim profiles."
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            An overlaid cross-section of the two rim profiles &mdash; the
+            commercial aluminum rim in blue and the custom CFRP rim in red &mdash;
+            showing the wider barrel and revised bead-seat geometry of the new
+            design. Figure 4 from: B&aacute;rsony, D.; Kaszab, M.; Feszty, D. "An
+            Iterative Method for the Design of Carbon-Fiber Reinforced Polymer
+            Wheel Rims." Applied Sciences 2025, 15, 11434.
+            <a
+              href="https://doi.org/10.3390/app152111434"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://doi.org/10.3390/app152111434</a
+            >
+            &mdash; &copy; 2025 by the authors. Licensed under CC BY 4.0.
           </p>
         </section>
 
@@ -667,6 +799,27 @@ TSAI&ndash;WU FAILURE INDEX [-]           target &#8804; 0.833 &#183;&#183;&#183
             keeping every intermediate layup manufacturable, with integer fiber
             angles a real layup process can actually achieve.
           </p>
+          <img
+            src="images/fig_09.jpg"
+            alt="Tsai&ndash;Wu failure-index contour and Von Mises stress map on the final rim."
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            A color contour plot of the Tsai&ndash;Wu failure index across the
+            final rim (left) and a Von Mises stress map at the spoke interface
+            (right), with the highest values concentrated near the bead seat and
+            the spoke-to-barrel junction. Figure 17 from: B&aacute;rsony, D.;
+            Kaszab, M.; Feszty, D. "An Iterative Method for the Design of
+            Carbon-Fiber Reinforced Polymer Wheel Rims." Applied Sciences 2025,
+            15, 11434.
+            <a
+              href="https://doi.org/10.3390/app152111434"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://doi.org/10.3390/app152111434</a
+            >
+            &mdash; &copy; 2025 by the authors. Licensed under CC BY 4.0.
+          </p>
         </section>
 
         <!-- Where AFP fits -->
@@ -703,6 +856,18 @@ TSAI&ndash;WU FAILURE INDEX [-]           target &#8804; 0.833 &#183;&#183;&#183
             When the part that comes off the tool no longer matches the model,
             the eleven iterations of analysis lose some of their meaning.
           </p>
+          <img
+            src="images/fig_10.jpg"
+            alt="Addcomposites AFP-XS head laying carbon-fiber tow onto a rotating mandrel with a glowing nip point."
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            An Addcomposites AFP-XS head lays carbon-fiber tow onto a rotating
+            cylindrical mandrel, the heated nip point glowing as the compaction
+            roller consolidates the tape against the already-wound surface
+            &mdash; placing each course at a programmed angle rather than
+            approximating it by hand. Image: Addcomposites.
+          </p>
 
           <p>
             This is the class of problem automated fiber placement is built for.
@@ -720,6 +885,16 @@ TSAI&ndash;WU FAILURE INDEX [-]           target &#8804; 0.833 &#183;&#183;&#183
             <strong>AddPath</strong> software for path planning, simulation, and
             digital-twin monitoring &mdash; including direct control over heat,
             ply drop-off, and tool tilt.
+          </p>
+          <img
+            src="images/fig_11.jpg"
+            alt="AddPath software turning a layup design into programmed AFP toolpaths."
+            class="full-width-image"
+          />
+          <p class="image-caption">
+            The other half of the workflow: AddPath turns a layup design into
+            programmed toolpaths, so the fiber lands where the analysis intended.
+            Image: Addcomposites.
           </p>
 
           <div class="highlight-box">
@@ -749,6 +924,12 @@ TSAI&ndash;WU FAILURE INDEX [-]           target &#8804; 0.833 &#183;&#183;&#183
               >Get in Touch with Addcomposites</a
             >
           </div>
+
+          <img
+            src="images/fig_12.jpg"
+            alt="Addcomposites — ideate, innovate, automate."
+            class="full-width-image"
+          />
         </section>
 
         <!-- References Section -->
